@@ -1,10 +1,4 @@
-import { CALCULATORS } from "@/lib/data/calculators";
-import { DRUGS } from "@/lib/data/drugs";
-import { foods } from "@/lib/data/foods";
-import { guidelines } from "@/lib/data/guidelines";
-import { icd10Codes } from "@/lib/data/icd10";
-import { drugInteractions } from "@/lib/data/interactions";
-import { SCORES } from "@/lib/data/scores";
+import { CATALOG_COUNTS } from "@/lib/catalog-counts";
 
 export interface ContentCoverage {
   label: string;
@@ -25,13 +19,13 @@ export const REFERENCE_COUNTS = {
 
 export function getContentCoverage(): ContentCoverage[] {
   const rows = [
-    { label: "Skrining & Skor", local: SCORES.length, reference: REFERENCE_COUNTS.scores },
-    { label: "Kalkulator Klinis", local: CALCULATORS.length, reference: REFERENCE_COUNTS.calculators },
-    { label: "Dosis Obat", local: DRUGS.length, reference: REFERENCE_COUNTS.drugs },
-    { label: "Interaksi Obat", local: drugInteractions.length, reference: REFERENCE_COUNTS.interactions },
-    { label: "Panduan Klinis", local: guidelines.length, reference: REFERENCE_COUNTS.guidelines },
-    { label: "Kamus ICD-10", local: icd10Codes.length, reference: REFERENCE_COUNTS.icd10 },
-    { label: "Bahan Pangan", local: foods.length, reference: REFERENCE_COUNTS.foods },
+    { label: "Skrining & Skor", local: CATALOG_COUNTS.scores, reference: REFERENCE_COUNTS.scores },
+    { label: "Kalkulator Klinis", local: CATALOG_COUNTS.calculators, reference: REFERENCE_COUNTS.calculators },
+    { label: "Dosis Obat", local: CATALOG_COUNTS.drugs, reference: REFERENCE_COUNTS.drugs },
+    { label: "Interaksi Obat", local: CATALOG_COUNTS.interactions, reference: REFERENCE_COUNTS.interactions },
+    { label: "Panduan Klinis", local: CATALOG_COUNTS.guidelines, reference: REFERENCE_COUNTS.guidelines },
+    { label: "Kamus ICD-10", local: CATALOG_COUNTS.icd10, reference: REFERENCE_COUNTS.icd10 },
+    { label: "Bahan Pangan", local: CATALOG_COUNTS.foods, reference: REFERENCE_COUNTS.foods },
   ];
 
   return rows.map((row) => ({

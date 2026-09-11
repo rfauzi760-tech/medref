@@ -4,12 +4,6 @@ import { DRUGS } from "@/lib/data/drugs";
 import { DrugView } from "@/components/drug-view";
 import { BackLink } from "@/components/shared";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return DRUGS.map((d) => ({ slug: d.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const drug = DRUGS.find((d) => d.slug === slug);

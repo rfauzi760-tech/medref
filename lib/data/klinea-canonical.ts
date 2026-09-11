@@ -1,3 +1,4 @@
+import "server-only";
 import content from "@/lib/generated/klinea-content.json";
 import type {
   ClinicalSource,

@@ -1,3 +1,4 @@
+import "server-only";
 import Fuse from "fuse.js";
 import { SCORES } from "@/lib/data/scores";
 import { CALCULATORS } from "@/lib/data/calculators";
@@ -7,15 +8,7 @@ import { ICD10 } from "@/lib/data/icd10";
 import { PROCEDURES } from "@/lib/data/indications";
 import { foods } from "@/lib/data/foods";
 import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
-
-export interface SearchHit {
-  id: string;
-  title: string;
-  subtitle?: string;
-  href: string;
-  group: string;
-  badge?: string;
-}
+import type { SearchGroup, SearchHit } from "@/lib/search-types";
 
 type ScoreItem = (typeof SCORES)[number];
 type CalcItem = (typeof CALCULATORS)[number];
@@ -128,10 +121,10 @@ const engines = groups.map((g) => ({
   }),
 }));
 
-export function globalSearch(query: string, limitPerGroup = 5): { label: string; key: string; hits: SearchHit[] }[] {
+export function globalSearch(query: string, limitPerGroup = 5): SearchGroup[] {
   const q = query.trim().toLowerCase();
   if (q.length < 2) return [];
-  const out: { label: string; key: string; hits: SearchHit[] }[] = [];
+  const out: SearchGroup[] = [];
   for (const g of engines) {
     const raw = g.fuse.search(q);
     const hits = raw.slice(0, limitPerGroup).map((r) => g.map(r.item as never));

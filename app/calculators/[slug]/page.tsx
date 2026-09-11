@@ -4,12 +4,6 @@ import { CALCULATORS } from "@/lib/data/calculators";
 import { CalculatorToolView } from "@/components/calculator-tool";
 import { BackLink } from "@/components/shared";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return CALCULATORS.map((c) => ({ slug: c.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const tool = CALCULATORS.find((c) => c.slug === slug);

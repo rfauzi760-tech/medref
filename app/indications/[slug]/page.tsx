@@ -5,12 +5,6 @@ import { BackLink, PageHeader } from "@/components/shared";
 import { SpecialtyTags } from "@/components/action-buttons";
 import { SourceBlock } from "@/components/source-block";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return procedureEntries.map((p) => ({ slug: p.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const p = procedureEntries.find((x) => x.slug === slug);

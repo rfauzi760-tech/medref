@@ -4,12 +4,6 @@ import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 import { BackLink } from "@/components/shared";
 import { SourceBlock } from "@/components/source-block";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return nutritionGuidance.map((n) => ({ slug: n.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const n = nutritionGuidance.find((x) => x.slug === slug);

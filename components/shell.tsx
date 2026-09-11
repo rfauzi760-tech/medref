@@ -125,6 +125,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           (WHO, CDC, KDIGO, perhimpunan spesialis, studi validasi asli) dan ditelaah untuk akurasi, tetapi tidak menggantikan penilaian klinis profesional
           atau protokol institusi setempat. Periksa kembali setiap dosis dan keputusan terhadap formularium serta panduan setempat Anda.
           Sumber ditampilkan pada setiap alat.
+          {" "}<Link href="/terms" className="font-semibold underline underline-offset-2">Ketentuan Penggunaan</Link>.
         </footer>
       </div>
     </div>

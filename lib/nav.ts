@@ -17,15 +17,7 @@ import {
   Workflow,
   type LucideIcon,
 } from "lucide-react";
-import { SCORES } from "@/lib/data/scores";
-import { CALCULATORS } from "@/lib/data/calculators";
-import { DRUGS } from "@/lib/data/drugs";
-import { drugInteractions } from "@/lib/data/interactions";
-import { procedureEntries } from "@/lib/data/indications";
-import { guidelines } from "@/lib/data/guidelines";
-import { icd10Codes } from "@/lib/data/icd10";
-import { foods } from "@/lib/data/foods";
-import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
+import { CATALOG_COUNTS } from "@/lib/catalog-counts";
 
 export interface NavModule {
   slug: string;
@@ -44,7 +36,7 @@ export const modules: NavModule[] = [
     description: "Skor klinis, aturan, dan kriteria diagnosis yang tervalidasi. Semua alat menghitung secara otomatis.",
     href: "/scores",
     icon: ListChecks,
-    count: SCORES.length,
+    count: CATALOG_COUNTS.scores,
     countLabel: "alat",
   },
   {
@@ -53,7 +45,7 @@ export const modules: NavModule[] = [
     description: "Kalkulator dosis, cairan, ginjal, elektrolit, kardiologi dan tubuh.",
     href: "/calculators",
     icon: Calculator,
-    count: CALCULATORS.length,
+    count: CATALOG_COUNTS.calculators,
     countLabel: "kalkulator",
   },
   {
@@ -62,7 +54,7 @@ export const modules: NavModule[] = [
     description: "Referensi prosedur terstruktur: indikasi, kontraindikasi, dan tindakan pencegahan.",
     href: "/indications",
     icon: ClipboardList,
-    count: procedureEntries.length,
+    count: CATALOG_COUNTS.indications,
     countLabel: "prosedur",
   },
   {
@@ -71,7 +63,7 @@ export const modules: NavModule[] = [
     description: "Referensi dosis dewasa & anak dengan kalkulator dosis berbasis berat badan.",
     href: "/drugs",
     icon: Pill,
-    count: DRUGS.length,
+    count: CATALOG_COUNTS.drugs,
     countLabel: "obat",
   },
   {
@@ -80,7 +72,7 @@ export const modules: NavModule[] = [
     description: "Pemeriksa interaksi obat antar pasangan obat secara berpasangan.",
     href: "/interactions",
     icon: ShieldAlert,
-    count: drugInteractions.length,
+    count: CATALOG_COUNTS.interactions,
     countLabel: "interaksi",
   },
   {
@@ -89,7 +81,7 @@ export const modules: NavModule[] = [
     description: "Ringkasan tata laksana penyakit terstruktur untuk dipakai di samping tempat tidur.",
     href: "/guidelines",
     icon: BookOpen,
-    count: guidelines.length,
+    count: CATALOG_COUNTS.guidelines,
     countLabel: "panduan",
   },
   {
@@ -125,7 +117,7 @@ export const modules: NavModule[] = [
     description: "Pencarian cepat kode ICD-10 dengan istilah Bahasa Indonesia.",
     href: "/icd10",
     icon: Search,
-    count: icd10Codes.length,
+    count: CATALOG_COUNTS.icd10,
     countLabel: "kode",
   },
   {
@@ -134,7 +126,7 @@ export const modules: NavModule[] = [
     description: "Komposisi pangan untuk praktik klinis Indonesia.",
     href: "/nutrition",
     icon: Utensils,
-    count: foods.length,
+    count: CATALOG_COUNTS.foods,
     countLabel: "bahan pangan",
   },
   {
@@ -152,7 +144,7 @@ export const modules: NavModule[] = [
     description: "Prinsip gizi per kondisi penyakit dan panduan pemilihan makanan.",
     href: "/nutrition-guidance",
     icon: HeartPulse,
-    count: nutritionGuidance.length,
+    count: CATALOG_COUNTS.nutritionGuidance,
     countLabel: "kondisi",
   },
   {

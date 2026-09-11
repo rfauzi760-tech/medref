@@ -5,12 +5,6 @@ import { GUIDELINE_SECTIONS } from "@/lib/types";
 import { BackLink } from "@/components/shared";
 import { SourceBlock } from "@/components/source-block";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return guidelines.map((g) => ({ slug: g.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const g = guidelines.find((x) => x.slug === slug);

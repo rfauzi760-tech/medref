@@ -6,7 +6,7 @@ import { runCalculator } from "@/lib/calc/calculators";
 import { CopyButton, ResetButton, PrintButton, SpecialtyTags } from "@/components/action-buttons";
 import { SourceBlock } from "@/components/source-block";
 import { useRecordVisit } from "@/components/use-local-store";
-import { translateCalculatorText } from "@/lib/data/calculators";
+import { translateCalculatorText } from "@/lib/calc/calculator-text";
 
 const toneClasses: Record<string, string> = {
   success: "border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-200",

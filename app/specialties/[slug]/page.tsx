@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SPECIALTIES, specialtyName } from "@/lib/specialties";
+import { SPECIALTIES } from "@/lib/specialties";
 import { SCORES } from "@/lib/data/scores";
 import { CALCULATORS } from "@/lib/data/calculators";
 import { DRUGS } from "@/lib/data/drugs";
 import { guidelines } from "@/lib/data/guidelines";
 import { procedureEntries } from "@/lib/data/indications";
 import { ToolCard, BackLink } from "@/components/shared";
-
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return SPECIALTIES.map((s) => ({ slug: s.slug }));
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

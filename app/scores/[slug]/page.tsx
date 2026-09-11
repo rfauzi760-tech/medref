@@ -3,11 +3,19 @@ import { notFound } from "next/navigation";
 import { SCORES } from "@/lib/data/scores";
 import { ScoreToolView } from "@/components/score-tool";
 import { BackLink } from "@/components/shared";
+import type { PublicScoreTool } from "@/lib/score-public";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return SCORES.map((s) => ({ slug: s.slug }));
+function publicScore(tool: (typeof SCORES)[number]): PublicScoreTool {
+  const { compute: _compute, variables, ...rest } = tool;
+  void _compute;
+  return {
+    ...rest,
+    variables: variables.map(({ scale: _scale, hideWhen: _hideWhen, ...variable }) => {
+      void _scale;
+      void _hideWhen;
+      return variable;
+    }),
+  };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -28,7 +36,7 @@ export default async function ScorePage({ params }: { params: Promise<{ slug: st
   return (
     <div>
       <BackLink href="/scores" label="Semua skor" />
-      <ScoreToolView slug={slug} />
+      <ScoreToolView tool={publicScore(tool)} />
     </div>
   );
 }

@@ -1,0 +1,11 @@
+export const CATALOG_COUNTS = {
+  scores: 163,
+  calculators: 28,
+  indications: 14,
+  drugs: 517,
+  interactions: 2479,
+  guidelines: 340,
+  icd10: 638,
+  foods: 478,
+  nutritionGuidance: 16,
+} as const;

@@ -1,9 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import type { ScoreValues } from "@/lib/types";
-import { SCORES } from "@/lib/data/scores";
-import { evaluateScore, isComplete, scoreToText } from "@/lib/calc/scores";
+import { useEffect, useState } from "react";
+import type { ScoreEvaluation, ScoreValues } from "@/lib/types";
+import type { PublicScoreTool } from "@/lib/score-public";
 import { CopyButton, ResetButton, PrintButton, SpecialtyTags } from "@/components/action-buttons";
 import { SourceBlock } from "@/components/source-block";
 import { useRecordVisit } from "@/components/use-local-store";
@@ -15,23 +14,57 @@ const toneClasses: Record<string, string> = {
   danger: "border-red-200 bg-red-50 text-red-800 dark:border-red-900 dark:bg-red-950 dark:text-red-200",
 };
 
-export function ScoreToolView({ slug }: { slug: string }) {
-  const tool = SCORES.find((s) => s.slug === slug);
-  if (!tool) return <p className="text-sm text-zinc-400">Alat tidak ditemukan.</p>;
-  return <ScoreToolInner tool={tool} key={slug} />;
-}
-
-function ScoreToolInner({ tool }: { tool: (typeof SCORES)[number] }) {
+export function ScoreToolView({ tool }: { tool: PublicScoreTool }) {
   useRecordVisit({ href: `/scores/${tool.slug}`, title: tool.title, group: "scores" });
   const [values, setValues] = useState<ScoreValues>({});
   const [touched, setTouched] = useState(false);
+  const [result, setResult] = useState<{
+    evaluation: ScoreEvaluation;
+    complete: boolean;
+    visibleVariableIds: string[];
+    resultText: string;
+  } | null>(null);
+  const [requestFailed, setRequestFailed] = useState(false);
 
-  const ev = useMemo(() => evaluateScore(tool, values), [tool, values]);
-  const complete = isComplete(tool, values);
+  useEffect(() => {
+    if (Object.keys(values).length === 0) {
+      return;
+    }
+    const controller = new AbortController();
+    fetch(`/api/scores/${tool.slug}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ values }),
+      cache: "no-store",
+      signal: controller.signal,
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Penghitungan skor gagal");
+        return response.json() as Promise<NonNullable<typeof result>>;
+      })
+      .then((payload) => {
+        setResult(payload);
+        setRequestFailed(false);
+      })
+      .catch((error: unknown) => {
+        if (!(error instanceof DOMException && error.name === "AbortError")) {
+          setResult(null);
+          setRequestFailed(true);
+        }
+      });
+    return () => controller.abort();
+  }, [tool.slug, values]);
+
+  const ev = result?.evaluation;
+  const complete = result?.complete ?? false;
   const canShow = touched && Object.keys(values).length > 0;
-  const visibleVars = tool.variables.filter((v) => !(v.hideWhen && v.hideWhen(values)));
+  const loading = canShow && !result && !requestFailed;
+  const visibleIds = result?.visibleVariableIds;
+  const visibleVars = visibleIds ? tool.variables.filter((variable) => visibleIds.includes(variable.id)) : tool.variables;
 
   const set = (id: string, v: string | number | undefined) => {
+    setResult(null);
+    setRequestFailed(false);
     setValues((prev) => ({ ...prev, [id]: v }));
     setTouched(true);
   };
@@ -39,6 +72,8 @@ function ScoreToolInner({ tool }: { tool: (typeof SCORES)[number] }) {
   const reset = () => {
     setValues({});
     setTouched(false);
+    setResult(null);
+    setRequestFailed(false);
   };
 
   return (
@@ -147,11 +182,15 @@ function ScoreToolInner({ tool }: { tool: (typeof SCORES)[number] }) {
           <div className="workspace-panel overflow-hidden">
             <div className="section-band justify-between">
               <h2 className="display-type text-base font-medium">Hasil</h2>
-              {canShow && complete && <CopyButton text={scoreToText(tool, ev)} />}
+              {canShow && complete && result && <CopyButton text={result.resultText} />}
             </div>
 
             {!canShow ? (
               <p className="px-4 py-10 text-center text-sm text-[var(--muted)]">Isi kolom penilaian untuk menghitung skor.</p>
+            ) : requestFailed ? (
+              <p className="px-4 py-10 text-center text-sm text-red-600 dark:text-red-400">Penghitungan gagal. Coba ubah jawaban atau muat ulang halaman.</p>
+            ) : loading || !ev ? (
+              <p className="px-4 py-10 text-center text-sm text-[var(--muted)]">Menghitung…</p>
             ) : !complete ? (
               <p className="px-4 py-10 text-center text-sm text-amber-600 dark:text-amber-400">
                 Input wajib belum diisi: {ev.missing.join(", ")}

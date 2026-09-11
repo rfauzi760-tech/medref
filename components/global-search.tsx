@@ -3,17 +3,42 @@
 import { Search, X, CornerDownLeft } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { globalSearch, type SearchHit } from "@/lib/search";
+import type { SearchGroup, SearchHit } from "@/lib/search-types";
 
 export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: boolean; onNavigate?: () => void }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
+  const [results, setResults] = useState<SearchGroup[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  const results = useMemo(() => globalSearch(query), [query]);
   const flat = useMemo(() => results.flatMap((g) => g.hits), [results]);
+
+  useEffect(() => {
+    const q = query.trim();
+    if (q.length < 2) return;
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      try {
+        const response = await fetch(`/api/search?q=${encodeURIComponent(q)}`, {
+          cache: "no-store",
+          signal: controller.signal,
+        });
+        if (!response.ok) return;
+        const data = (await response.json()) as { groups?: SearchGroup[] };
+        setResults(data.groups ?? []);
+      } catch (error) {
+        if (!(error instanceof DOMException && error.name === "AbortError")) setResults([]);
+      }
+    }, 220);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [query]);
 
   const openPalette = useCallback(() => {
     setActive(0);
@@ -23,6 +48,7 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
   const close = useCallback(() => {
     setOpen(false);
     setQuery("");
+    setResults([]);
     setActive(0);
     onNavigate?.();
   }, [onNavigate]);
@@ -106,6 +132,7 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
+              if (e.target.value.trim().length < 2) setResults([]);
               setActive(0);
             }}
             onKeyDown={onKeyDown}
