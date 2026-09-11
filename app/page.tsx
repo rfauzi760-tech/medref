@@ -22,7 +22,7 @@ export default function Home() {
       <section className="grid gap-8 border-b border-[var(--line)] pb-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
         <div>
           <span className="inline-flex rounded-md border border-accent/35 bg-accent/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Referensi klinis terbuka</span>
-          <h1 className="display-type mt-5 max-w-3xl text-4xl font-light leading-[1.02] tracking-[-0.04em] sm:text-6xl">
+          <h1 className="display-type mt-5 max-w-3xl text-4xl font-bold leading-[1.02] tracking-[-0.04em] sm:text-6xl">
             Keputusan klinis yang lebih jelas, <span className="text-accent-strong dark:text-accent">dalam hitungan detik.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-sm leading-6 text-[var(--muted)] sm:text-base">
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="mb-4 flex items-end justify-between gap-4">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Cakupan aktual</p>
-            <h2 id="coverage-title" className="display-type mt-1 text-2xl font-light">Isi yang tersedia hari ini</h2>
+            <h2 id="coverage-title" className="display-type mt-1 text-2xl font-bold">Isi yang tersedia hari ini</h2>
           </div>
           <ShieldCheck className="h-5 w-5 text-accent-strong dark:text-accent" aria-hidden="true" />
         </div>
@@ -65,7 +65,7 @@ export default function Home() {
       <section aria-labelledby="modules-title">
         <div className="mb-4">
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Ruang kerja</p>
-          <h2 id="modules-title" className="display-type mt-1 text-2xl font-light">Modul klinis utama</h2>
+          <h2 id="modules-title" className="display-type mt-1 text-2xl font-bold">Modul klinis utama</h2>
         </div>
         <div className="workspace-panel grid overflow-hidden md:grid-cols-2">
           {primary.map((module) => {
@@ -89,7 +89,7 @@ export default function Home() {
 
       <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div>
-          <h2 className="display-type mb-3 text-xl font-light">Layanan klinis lainnya</h2>
+          <h2 className="display-type mb-3 text-xl font-bold">Layanan klinis lainnya</h2>
           <div className="workspace-panel overflow-hidden">
             {secondary.map((module) => {
               const Icon = module.icon;
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <h2 className="display-type mb-3 text-xl font-light">Per spesialisasi</h2>
+          <h2 className="display-type mb-3 text-xl font-bold">Per spesialisasi</h2>
           <div className="workspace-panel flex flex-wrap gap-2 p-4">
             {SPECIALTIES.map((specialty) => (
               <Link key={specialty.slug} href={`/specialties/${specialty.slug}`} className="focus-ring rounded-md border border-[var(--line)] px-2.5 py-1.5 text-[11px] text-[var(--muted)] transition-colors hover:border-accent/50 hover:text-[var(--ink)]">
@@ -124,7 +124,7 @@ function SavedTools({ title, icon, items }: { title: string; icon: React.ReactNo
     <div className="workspace-panel overflow-hidden">
       <div className="section-band">
         <span className="text-accent-strong dark:text-accent">{icon}</span>
-        <h2 className="display-type text-base font-medium">{title}</h2>
+        <h2 className="display-type text-base font-bold">{title}</h2>
       </div>
       {items.map((item) => (
         <Link key={item.href} href={item.href} className="index-row focus-ring flex items-center justify-between gap-3 px-4 py-3 text-sm">

@@ -1,25 +1,19 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Drug, DosePopulation } from "@/lib/types";
-import { calculateDose, doseToText, pickDoseEntry, estimateAgeYearsFromWeight } from "@/lib/calc/drugs";
+import type { Drug } from "@/lib/types";
+import { calculateDose, doseToText, estimateAgeYearsFromWeight } from "@/lib/calc/drugs";
 import { CopyButton, PrintButton, SpecialtyTags } from "@/components/action-buttons";
 import { SourceBlock } from "@/components/source-block";
 import { useRecordVisit } from "@/components/use-local-store";
+import { ClinicalContent } from "@/components/clinical-content";
 
 function Section({ title, items }: { title: string; items: string[] }) {
   if (!items || items.length === 0) return null;
   return (
     <div className="workspace-panel overflow-hidden">
-      <h3 className="section-band display-type text-base font-medium">{title}</h3>
-      <ul className="clinical-list space-y-1 p-4 text-sm text-zinc-700 dark:text-zinc-200">
-        {items.map((i, idx) => (
-          <li key={idx} className="flex gap-2">
-            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-zinc-300 dark:bg-zinc-600" />
-            <span>{i}</span>
-          </li>
-        ))}
-      </ul>
+      <h2 className="section-band display-type text-base font-bold">{title}</h2>
+      <ClinicalContent items={items} className="p-4" />
     </div>
   );
 }
@@ -48,7 +42,7 @@ export function DrugView({ drug }: { drug: Drug }) {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="display-type text-3xl font-light tracking-tight sm:text-4xl">{drug.genericName}</h1>
+        <h1 className="display-type text-3xl font-bold tracking-tight sm:text-4xl">{drug.genericName}</h1>
         {drug.brandNames && drug.brandNames.length > 0 && (
           <p className="mt-1 text-sm text-zinc-400">Merek: {drug.brandNames.join(", ")}</p>
         )}
@@ -75,7 +69,7 @@ export function DrugView({ drug }: { drug: Drug }) {
       {/* Dose calculator */}
       <div className="workspace-panel overflow-hidden pb-4">
         <div className="section-band justify-between">
-          <h2 className="display-type text-base font-medium">Kalkulator dosis berbasis berat badan</h2>
+          <h2 className="display-type text-base font-bold">Kalkulator dosis berbasis berat badan</h2>
           <div className="flex gap-2">
             <CopyButton text={result ? doseToText(drug, result) : ""} label="Salin dosis" />
             <PrintButton />

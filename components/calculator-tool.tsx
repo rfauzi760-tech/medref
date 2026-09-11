@@ -51,7 +51,7 @@ export function CalculatorToolView({ tool }: { tool: CalculatorTool }) {
     <div className="space-y-6">
       <div className="space-y-3">
         <div>
-          <h1 className="display-type text-3xl font-light tracking-tight sm:text-4xl">
+          <h1 className="display-type text-3xl font-bold tracking-tight sm:text-4xl">
             {tool.title}
             {tool.abbreviation && <span className="ml-2 rounded bg-zinc-100 px-2 py-0.5 font-mono text-sm text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">{tool.abbreviation}</span>}
           </h1>
@@ -68,7 +68,7 @@ export function CalculatorToolView({ tool }: { tool: CalculatorTool }) {
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div className="workspace-panel overflow-hidden pb-4">
           <div className="section-band justify-between">
-            <h2 className="display-type text-base font-medium">Input klinis</h2>
+            <h2 className="display-type text-base font-bold">Input klinis</h2>
             <ResetButton onReset={reset} />
           </div>
 
@@ -147,7 +147,7 @@ export function CalculatorToolView({ tool }: { tool: CalculatorTool }) {
         <div className="space-y-3 lg:sticky lg:top-24 lg:self-start">
           <div className="workspace-panel overflow-hidden">
             <div className="section-band justify-between">
-              <h2 className="display-type text-base font-medium">Hasil</h2>
+              <h2 className="display-type text-base font-bold">Hasil</h2>
               {canShow && <CopyButton text={toResultText(tool, result)} />}
             </div>
 

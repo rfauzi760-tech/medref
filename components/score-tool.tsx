@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { ScoreEvaluation, ScoreValues } from "@/lib/types";
 import type { PublicScoreTool } from "@/lib/score-public";
+import { scoreSelectionKey } from "@/lib/calc/scores";
 import { CopyButton, ResetButton, PrintButton, SpecialtyTags } from "@/components/action-buttons";
 import { SourceBlock } from "@/components/source-block";
 import { useRecordVisit } from "@/components/use-local-store";
@@ -80,7 +81,7 @@ export function ScoreToolView({ tool }: { tool: PublicScoreTool }) {
     <div className="space-y-6">
       <div className="space-y-3">
         <div>
-          <h1 className="display-type text-3xl font-light tracking-tight sm:text-4xl">
+          <h1 className="display-type text-3xl font-bold tracking-tight sm:text-4xl">
             {tool.title}
             {tool.abbreviation && <span className="ml-2 rounded bg-zinc-100 px-2 py-0.5 font-mono text-sm text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">{tool.abbreviation}</span>}
           </h1>
@@ -99,7 +100,7 @@ export function ScoreToolView({ tool }: { tool: PublicScoreTool }) {
         {/* Inputs */}
         <div className="workspace-panel overflow-hidden pb-4">
           <div className="section-band justify-between">
-            <h2 className="display-type text-base font-medium">Penilaian</h2>
+            <h2 className="display-type text-base font-bold">Penilaian</h2>
             <ResetButton onReset={reset} />
           </div>
 
@@ -112,11 +113,12 @@ export function ScoreToolView({ tool }: { tool: PublicScoreTool }) {
               {v.help && <p className="text-xs text-zinc-400">{v.help}</p>}
               {v.type === "select" && (
                 <div className="space-y-1.5">
-                  {v.options?.map((o) => {
-                    const selected = String(values[v.id]) === String(o.value);
+                  {v.options?.map((o, optionIndex) => {
+                    const selectionKey = scoreSelectionKey(v.id, optionIndex);
+                    const selected = String(values[v.id]) === selectionKey;
                     return (
                       <label
-                        key={String(o.value)}
+                        key={selectionKey}
                         className={`focus-ring flex min-h-11 cursor-pointer items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm transition-colors ${
                           selected
                             ? "border-accent bg-accent/5 ring-1 ring-accent"
@@ -128,7 +130,7 @@ export function ScoreToolView({ tool }: { tool: PublicScoreTool }) {
                           name={`${tool.slug}-${v.id}`}
                           className="sr-only"
                           checked={selected}
-                          onChange={() => set(v.id, o.value)}
+                          onChange={() => set(v.id, selectionKey)}
                         />
                         <span className="text-zinc-700 dark:text-zinc-200">{o.label}</span>
                         {o.value !== 0 && <span className="shrink-0 font-mono text-xs text-zinc-400">{o.value > 0 ? "+" : ""}{o.value} poin</span>}
@@ -181,7 +183,7 @@ export function ScoreToolView({ tool }: { tool: PublicScoreTool }) {
         <div className="space-y-3 lg:sticky lg:top-24 lg:self-start">
           <div className="workspace-panel overflow-hidden">
             <div className="section-band justify-between">
-              <h2 className="display-type text-base font-medium">Hasil</h2>
+              <h2 className="display-type text-base font-bold">Hasil</h2>
               {canShow && complete && result && <CopyButton text={result.resultText} />}
             </div>
 

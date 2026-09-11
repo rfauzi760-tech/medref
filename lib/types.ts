@@ -256,6 +256,13 @@ export interface ProcedureEntry {
 /* Guidelines                                                          */
 /* ------------------------------------------------------------------ */
 
+export type ClinicalContentItem =
+  | string
+  | {
+      heading: string;
+      children: ClinicalContentItem[];
+    };
+
 export interface GuidelineEntry {
   id: string;
   slug: string;
@@ -265,7 +272,7 @@ export interface GuidelineEntry {
   emergency: boolean;
   ageGroup: "adult" | "pediatric" | "both" | "neonatal";
   pregnancyRelevant?: boolean;
-  sections: Partial<Record<GuidelineSectionKey, string[]>>;
+  sections: Partial<Record<GuidelineSectionKey, ClinicalContentItem[]>>;
   references: ClinicalSource[];
   lastReviewed: string;
 }

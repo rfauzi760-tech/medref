@@ -36,7 +36,7 @@ export default function NutritionGuidancePageClient({ items }: { items: Nutritio
               href={`/nutrition-guidance/${n.slug}`}
               className="index-row focus-ring group flex min-h-32 flex-col p-4 sm:odd:border-r"
             >
-              <h3 className="display-type text-base font-medium group-hover:text-accent-strong dark:group-hover:text-accent">{n.title}</h3>
+              <h3 className="display-type text-base font-bold group-hover:text-accent-strong dark:group-hover:text-accent">{n.title}</h3>
               <p className="mt-1.5 line-clamp-3 flex-1 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">{n.summary}</p>
               <div className="mt-3 flex flex-wrap gap-1">
                 {n.specialties.slice(0, 3).map((s) => (

@@ -45,7 +45,7 @@ export default function GrowthChart({
   return (
     <div className="workspace-panel p-5">
       <div className="mb-2 flex items-center justify-between">
-        <h3 className="text-sm font-medium text-zinc-700 dark:text-zinc-200">{TITLES[indicator] ?? indicator}</h3>
+        <h3 className="text-sm font-bold text-zinc-700 dark:text-zinc-200">{TITLES[indicator] ?? indicator}</h3>
         <div className="flex items-center gap-2 text-[10px] text-zinc-400">
           <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" /> pasien
         </div>

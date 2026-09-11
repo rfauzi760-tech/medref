@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { evaluateScore, isComplete, scoreToText } from "@/lib/calc/scores";
+import { evaluateScore, isComplete, scoreToText, visibleScoreVariableIds } from "@/lib/calc/scores";
 import { SCORES } from "@/lib/data/scores";
 import type { ScoreValues } from "@/lib/types";
 
@@ -38,7 +38,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ slu
     {
       evaluation,
       complete: isComplete(tool, values),
-      visibleVariableIds: tool.variables.filter((variable) => !(variable.hideWhen && variable.hideWhen(values))).map((variable) => variable.id),
+      visibleVariableIds: visibleScoreVariableIds(tool, values),
       resultText: scoreToText(tool, evaluation),
     },
     { headers: { "Cache-Control": "private, no-store, max-age=0" } },

@@ -51,6 +51,33 @@ describe("CURB-65", () => {
   });
 });
 
+describe("identitas pilihan dengan poin yang sama", () => {
+  it("membedakan pria dan wanita pada PSI serta menerapkan pengurang wanita", () => {
+    const psi = tool("psi");
+    const male = evaluateScore(psi, { age: 40, sex: "sex::0" });
+    const female = evaluateScore(psi, { age: 40, sex: "sex::1" });
+
+    expect(male.perVariable.find((item) => item.id === "sex")?.selected).toBe("Male");
+    expect(female.perVariable.find((item) => item.id === "sex")?.selected).toBe("Female");
+    expect(male.appliedModifiers).toHaveLength(0);
+    expect(female.appliedModifiers).toEqual([expect.objectContaining({ delta: -10 })]);
+    expect(female.total).toBe(male.total - 10);
+  });
+
+  it("membedakan setiap pilihan yang berbagi jumlah poin di seluruh skor", () => {
+    for (const score of SCORES) {
+      for (const variable of score.variables) {
+        for (const [index, option] of (variable.options ?? []).entries()) {
+          const duplicates = variable.options?.filter((candidate) => candidate.value === option.value).length ?? 0;
+          if (duplicates < 2) continue;
+          const evaluation = evaluateScore(score, { [variable.id]: `${variable.id}::${index}` });
+          expect(evaluation.perVariable.find((item) => item.id === variable.id)?.selected).toBe(option.label);
+        }
+      }
+    }
+  });
+});
+
 describe("GCS", () => {
   const g = tool("gcs");
   it("scores 15 for fully alert patient", () => {

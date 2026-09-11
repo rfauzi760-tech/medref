@@ -8,6 +8,19 @@ import { INTERACTIONS } from "@/lib/data/interactions";
 import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 
 describe("adapter konten kanonik Klinea", () => {
+  it("mempertahankan hierarki subjudul dan butir panduan", () => {
+    const hypertension = GUIDELINES.find((item) => item.slug === "hipertensi");
+    const investigations = hypertension?.sections.investigations ?? [];
+    expect(investigations).toContainEqual({
+      heading: "Pengukuran tekanan darah",
+      children: expect.arrayContaining([
+        expect.stringContaining("Diagnosis:"),
+        expect.stringContaining("Konfirmasi"),
+      ]),
+    });
+    expect(investigations).not.toContain(expect.stringContaining("Pengukuran tekanan darah Diagnosis:"));
+  });
+
   it("memakai katalog lengkap dan istilah Indonesia", () => {
     expect(DRUGS).toHaveLength(517);
     expect(DRUGS.find((item) => item.slug === "paracetamol")?.genericName).toBe(

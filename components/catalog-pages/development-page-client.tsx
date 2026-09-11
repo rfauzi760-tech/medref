@@ -5,6 +5,7 @@ import type { MilestoneAge, MilestoneDomain } from "@/lib/types";
 import { PageHeader } from "@/components/shared";
 import { SourceBlock } from "@/components/source-block";
 import { PrintButton } from "@/components/action-buttons";
+import { ClinicalContent } from "@/components/clinical-content";
 
 const milestoneDomains: { key: MilestoneDomain; label: string; icon: string }[] = [
   { key: "gross", label: "Motorik kasar", icon: "🏃" },
@@ -85,7 +86,7 @@ export default function DevelopmentPageClient({ milestoneAges }: { milestoneAges
         <div className="space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
-              <h2 className="text-base font-semibold">
+              <h2 className="text-base font-bold">
                 Usia: {entry.label}
                 {isClose(entry.ageMonths) ? "" : " (usia tonggak terdekat)"}
               </h2>
@@ -112,17 +113,10 @@ export default function DevelopmentPageClient({ milestoneAges }: { milestoneAges
               const items = entry.milestones[d.key] ?? [];
               return (
                 <div key={d.key} className="workspace-panel p-5">
-                  <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-zinc-700 dark:text-zinc-200">
+                  <h3 className="mb-2 flex items-center gap-2 text-sm font-bold text-zinc-700 dark:text-zinc-200">
                     <span className="text-base">{d.icon}</span> {d.label}
                   </h3>
-                  <ul className="clinical-list space-y-1.5">
-                    {items.map((m, i) => (
-                      <li key={i} className="flex gap-2 text-sm text-zinc-600 dark:text-zinc-300">
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
-                        <span>{m}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <ClinicalContent items={items} tone="success" />
                 </div>
               );
             })}
@@ -130,31 +124,17 @@ export default function DevelopmentPageClient({ milestoneAges }: { milestoneAges
 
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-xl border border-red-200 bg-white p-4 dark:border-red-900 dark:bg-zinc-900">
-              <h3 className="mb-2 text-sm font-semibold text-red-700 dark:text-red-300">Tanda bahaya perkembangan - rujuk bila ada</h3>
-              <ul className="clinical-list space-y-1.5">
-                {entry.redFlags.map((r, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-red-800/90 dark:text-red-200/90">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-red-400" />
-                    <span>{r}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="mb-2 text-sm font-bold text-red-700 dark:text-red-300">Tanda bahaya perkembangan. Rujuk bila ada</h3>
+              <ClinicalContent items={entry.redFlags} tone="danger" />
             </div>
             <div className="workspace-panel p-5">
-              <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-200">Aktivitas sesuai usia</h3>
-              <ul className="clinical-list space-y-1.5">
-                {entry.activities.map((a, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-zinc-600 dark:text-zinc-300">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                    <span>{a}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="mb-2 text-sm font-bold text-zinc-700 dark:text-zinc-200">Aktivitas sesuai usia</h3>
+              <ClinicalContent items={entry.activities} tone="accent" />
             </div>
           </div>
 
           <p className="text-xs leading-relaxed text-zinc-400">
-            Tonggak perkembangan disusun dari daftar periksa CDC “Learn the Signs. Act Early.” - alat bantu skrining, bukan diagnosis.
+            Tonggak perkembangan disusun dari daftar periksa CDC “Learn the Signs. Act Early.”. Alat ini membantu skrining, bukan diagnosis.
             Keterlambatan tonggak atau hilangnya kemampuan yang sudah dikuasai memerlukan penilaian perkembangan formal.
           </p>
 

@@ -85,7 +85,7 @@ export default function GuidelinesPageClient({ items }: { items: GuidelineSummar
                   </span>
                 )}
               </div>
-              <h3 className="display-type mt-3 text-base font-medium group-hover:text-accent-strong dark:group-hover:text-accent">{g.title}</h3>
+              <h3 className="display-type mt-3 text-base font-bold group-hover:text-accent-strong dark:group-hover:text-accent">{g.title}</h3>
               <div className="mt-2 flex flex-wrap gap-1">
                 <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
                   {g.ageGroup === "both" ? "Dewasa & anak" : g.ageGroup === "adult" ? "Dewasa" : g.ageGroup === "pediatric" ? "Anak" : g.ageGroup === "neonatal" ? "Neonatus" : g.ageGroup}

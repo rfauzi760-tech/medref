@@ -1,6 +1,7 @@
 import "server-only";
 import content from "@/lib/generated/klinea-content.json";
 import type {
+  ClinicalContentItem,
   ClinicalSource,
   Drug,
   DrugInteraction,
@@ -57,6 +58,20 @@ const flatten = (value: unknown): string[] => {
     const children = flatten(row.sub);
     return title ? [title, ...children.map((child) => `${title} ${child}`)] : children;
   }).filter(Boolean);
+};
+
+const structuredContent = (value: unknown): ClinicalContentItem[] => {
+  if (typeof value === "string") {
+    const text = clean(value);
+    return text ? [text] : [];
+  }
+  if (Array.isArray(value)) return value.flatMap(structuredContent);
+  if (!value || typeof value !== "object") return [];
+  const row = value as Dict;
+  const heading = clean(row.t).replace(/:\s*$/, "");
+  const children = structuredContent(row.sub);
+  if (heading) return [{ heading, children }];
+  return children;
 };
 
 type KlineaField = {
@@ -304,10 +319,10 @@ export function canonicalGuidelines(legacyGuidelines: GuidelineEntry[]): Guideli
     const sections: GuidelineEntry["sections"] = {};
     for (const [sourceKey, targetKey] of Object.entries(sectionMap)) {
       if (!targetKey) continue;
-      const values = flatten(merged[sourceKey]);
+      const values = structuredContent(merged[sourceKey]);
       if (values.length) sections[targetKey] = [...(sections[targetKey] ?? []), ...values];
     }
-    const overview = flatten(merged.ringkas ?? merged.overview);
+    const overview = structuredContent(merged.ringkas ?? merged.overview);
     if (overview.length) sections.overview = overview;
     return {
       id: guide.id,

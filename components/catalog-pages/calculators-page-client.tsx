@@ -68,7 +68,7 @@ export default function CalculatorsPageClient({ calculators }: { calculators: Ca
         <div className="space-y-8">
           {grouped.map(([label, tools]) => (
             <section key={label}>
-              <h2 className="display-type mb-3 text-lg font-light">{label} · {tools.length}</h2>
+              <h2 className="display-type mb-3 text-lg font-bold">{label} · {tools.length}</h2>
               <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 [&_.index-row]:border-[var(--line)] sm:[&_.index-row:nth-child(odd)]:border-r">
                 {tools.map((c) => (
                   <ToolCard

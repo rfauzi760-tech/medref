@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { ArrowLeft, Search } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export function SectionBand({ children, action }: { children: React.ReactNode; action?: React.ReactNode }) {
   return (
     <div className="section-band justify-between">
-      <div className="display-type text-base font-medium">{children}</div>
+      <div className="display-type text-base font-bold">{children}</div>
       {action}
     </div>
   );
@@ -18,7 +18,7 @@ export function PageHeader({ title, description, count, countLabel }: { title: s
   return (
     <div className="mb-7 border-b border-[var(--line)] pb-5">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h1 className="display-type text-3xl font-light leading-tight tracking-tight sm:text-4xl">{title}</h1>
+        <h1 className="display-type text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{title}</h1>
         {count !== undefined && (
           <span className="rounded-md border border-accent/30 bg-accent/10 px-2 py-1 font-mono text-[10px] font-medium text-accent-strong dark:text-accent">
             {count} {countLabel}
@@ -74,7 +74,7 @@ export function ToolCard({ tool }: { tool: ToolCardData }) {
       className="index-row focus-ring group flex min-h-28 flex-col px-4 py-4 first:rounded-t-xl last:rounded-b-xl sm:px-5"
     >
       <div className="flex items-start justify-between gap-2">
-        <h3 className="display-type text-base font-medium leading-snug group-hover:text-accent-strong dark:group-hover:text-accent">{tool.title}</h3>
+        <h3 className="display-type text-base font-bold leading-snug group-hover:text-accent-strong dark:group-hover:text-accent">{tool.title}</h3>
         {tool.badge && <span className="shrink-0 rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">{tool.badge}</span>}
       </div>
       <p className="mt-1.5 line-clamp-2 flex-1 text-xs leading-relaxed text-[var(--muted)]">{tool.description}</p>
