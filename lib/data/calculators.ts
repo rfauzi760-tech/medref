@@ -401,6 +401,26 @@ const RAW_CALCULATORS: CalculatorTool[] = [
     lastReviewed: "2025-06-01",
     source: { org: "Holliday MA, Segar WE", title: "The maintenance need for water in parenteral fluid therapy", year: 1957, url: "https://publications.aap.org/pediatrics/article-abstract/19/5/823/26552" },
   },
+
+  /* ---------------- Acid-base ---------------- */
+  {
+    id: "abg", slug: "abg", title: "Blood Gas & Acid-Base Analysis", abbreviation: "AGD", type: "calculator", category: "metabolic",
+    description: "Interpret a blood gas: primary acid-base disorder, expected compensation, anion gap and delta ratio.",
+    specialties: ["Internal Medicine", "Intensive Care", "Emergency Medicine", "Nephrology", "Pulmonology"],
+    keywords: ["abg", "blood gas", "acid base", "asidosis", "alkalosis", "anion gap", "winter", "delta ratio"],
+    formulaText: "Winter (asidosis metabolik): pCO2 = 1.5 x HCO3 + 8. Anion gap = Na - Cl - HCO3. Delta ratio = (AG - 12) / (24 - HCO3).",
+    inputs: [
+      { id: "ph", label: "pH", type: "number", min: 6.5, max: 8, step: 0.01, required: true },
+      { id: "pco2", label: "pCO2", unit: "mmHg", type: "number", min: 5, max: 150, step: 1, required: true },
+      { id: "hco3", label: "HCO3", unit: "mmol/L", type: "number", min: 1, max: 60, step: 1, required: true },
+      { id: "na", label: "Natrium (opsional)", unit: "mmol/L", type: "number", min: 100, max: 180, step: 1 },
+      { id: "cl", label: "Klorida (opsional)", unit: "mmol/L", type: "number", min: 70, max: 140, step: 1 },
+      { id: "albumin", label: "Albumin (opsional)", unit: "g/dL", type: "number", min: 1, max: 6, step: 0.1 },
+    ],
+    interpretation: "Nilai normal: pH 7.35-7.45, pCO2 35-45 mmHg, HCO3 22-26 mmol/L, anion gap 8-12 mmol/L.",
+    lastReviewed: "2026-09-11",
+    source: { org: "Standard acid-base reference", title: "Arterial blood gas interpretation", year: 2020 },
+  },
 ];
 
 const CALCULATOR_TITLES: Record<string, string> = {
@@ -432,6 +452,7 @@ const CALCULATOR_TITLES: Record<string, string> = {
   dilution: "Kalkulator Pengenceran C1V1=C2V2",
   "ga-edd": "Usia Kehamilan dan Taksiran Persalinan",
   "paediatric-maint": "Cairan Rumatan Anak",
+  abg: "Analisis Gas Darah",
 };
 
 const SPECIALTY_ID: Record<string, string> = {

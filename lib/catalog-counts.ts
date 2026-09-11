@@ -1,6 +1,6 @@
 export const CATALOG_COUNTS = {
   scores: 163,
-  calculators: 28,
+  calculators: 29,
   indications: 14,
   drugs: 517,
   interactions: 2479,

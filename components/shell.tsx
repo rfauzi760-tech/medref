@@ -20,7 +20,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   const nav = (
     <nav aria-label="Navigasi klinis" className="flex flex-col gap-1 px-3 pb-4">
-      {modules.map((m) => {
+      {modules.filter((module) => module.showInNav !== false).map((m) => {
         const Icon = m.icon;
         const active = isActive(m.href);
         return (

@@ -5,6 +5,7 @@ import { GUIDELINE_SECTIONS } from "@/lib/types";
 import { BackLink } from "@/components/shared";
 import { SourceBlock } from "@/components/source-block";
 import { ClinicalContent } from "@/components/clinical-content";
+import { guidelineSourceTier, SOURCE_TIER_LABEL } from "@/lib/evidence";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -21,6 +22,7 @@ export default async function GuidelinePage({ params }: { params: Promise<{ slug
   const { slug } = await params;
   const g = guidelines.find((x) => x.slug === slug);
   if (!g) notFound();
+  const tier = guidelineSourceTier(g);
 
   return (
     <div>
@@ -40,6 +42,9 @@ export default async function GuidelinePage({ params }: { params: Promise<{ slug
           ))}
           <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[11px] font-medium text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
             {{ both: "Dewasa dan anak", adult: "Dewasa", pediatric: "Anak", neonatal: "Neonatus" }[g.ageGroup]}
+          </span>
+          <span title={SOURCE_TIER_LABEL[tier]} className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[11px] font-medium text-accent-strong dark:text-accent">
+            {SOURCE_TIER_LABEL[tier]}
           </span>
         </div>
       </div>

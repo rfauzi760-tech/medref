@@ -9,15 +9,20 @@ import {
   ListChecks,
   Pill,
   Salad,
+  ScanSearch,
   Search,
   ShieldAlert,
+  Siren,
   Syringe,
+  Timer,
   Utensils,
   Weight,
   Workflow,
   type LucideIcon,
 } from "lucide-react";
 import { CATALOG_COUNTS } from "@/lib/catalog-counts";
+import { EMERGENCY_PATHWAYS } from "@/lib/data/emergency";
+import { EMERGENCY_PROTOCOLS } from "@/lib/data/protocols";
 
 export interface NavModule {
   slug: string;
@@ -27,9 +32,79 @@ export interface NavModule {
   icon: LucideIcon;
   count: number;
   countLabel: string;
+  showInNav?: boolean;
 }
 
 export const modules: NavModule[] = [
+  {
+    slug: "igd-toolkit",
+    name: "Toolkit IGD",
+    description: "Kumpulan kalkulator dan referensi cepat untuk penanganan pasien di IGD.",
+    href: "/igd-toolkit",
+    icon: Siren,
+    count: 10,
+    countLabel: "alat",
+  },
+  {
+    slug: "emergency-dose",
+    name: "Kalkulator Dosis IGD",
+    description: "Hitung dosis total, laju pompa, dan dosis dari laju infus.",
+    href: "/emergency-dose",
+    icon: Pill,
+    count: 8,
+    countLabel: "preset",
+    showInNav: false,
+  },
+  {
+    slug: "bilirubin",
+    name: "Kalkulator Bilirubin",
+    description: "Ambang fototerapi dan transfusi tukar neonatus berdasarkan AAP 2022.",
+    href: "/bilirubin",
+    icon: Baby,
+    count: 1,
+    countLabel: "alat",
+    showInNav: false,
+  },
+  {
+    slug: "antidotes",
+    name: "Toksikologi & Antidot",
+    description: "Referensi cepat pajanan toksik dan dosis antidot.",
+    href: "/antidotes",
+    icon: FlaskConical,
+    count: 19,
+    countLabel: "antidot",
+    showInNav: false,
+  },
+  {
+    slug: "pregnancy-drugs",
+    name: "Obat Kehamilan & Menyusui",
+    description: "Ringkasan pertimbangan obat pada kehamilan dan laktasi.",
+    href: "/pregnancy-drugs",
+    icon: HeartPulse,
+    count: 51,
+    countLabel: "obat",
+    showInNav: false,
+  },
+  {
+    slug: "electrolytes",
+    name: "Koreksi Elektrolit",
+    description: "Koreksi natrium, kalsium, kalium, magnesium, dan defisit air bebas.",
+    href: "/electrolytes",
+    icon: Activity,
+    count: 5,
+    countLabel: "alat",
+    showInNav: false,
+  },
+  {
+    slug: "ddx",
+    name: "Mesin Diagnosis Banding",
+    description: "Prioritaskan diagnosis banding berdasarkan temuan klinis terpilih.",
+    href: "/ddx",
+    icon: Search,
+    count: 20,
+    countLabel: "diagnosis",
+    showInNav: false,
+  },
   {
     slug: "scores",
     name: "Skrining & Skor",
@@ -83,6 +158,51 @@ export const modules: NavModule[] = [
     icon: BookOpen,
     count: CATALOG_COUNTS.guidelines,
     countLabel: "panduan",
+  },
+  {
+    slug: "emergency",
+    name: "Algoritma IGD",
+    description: "Alur kegawatan dari triase sampai disposisi, menghubungkan panduan, skor, dan kalkulator yang tersedia.",
+    href: "/emergency",
+    icon: Siren,
+    count: EMERGENCY_PATHWAYS.length,
+    countLabel: "alur",
+  },
+  {
+    slug: "timer",
+    name: "Timer Protokol",
+    description: "Penghitung waktu untuk alur waktu-kritis: code stroke, PCI, trombolisis, sepsis, dan trauma.",
+    href: "/timer",
+    icon: Timer,
+    count: EMERGENCY_PROTOCOLS.length,
+    countLabel: "protokol",
+  },
+  {
+    slug: "pediatric-emergency",
+    name: "Gawat Darurat Anak",
+    description: "Ukuran jalan napas, dosis resusitasi, estimasi berat badan, dan tanda vital pediatri.",
+    href: "/pediatric-emergency",
+    icon: Baby,
+    count: 0,
+    countLabel: "",
+  },
+  {
+    slug: "ecg-atlas",
+    name: "Atlas EKG",
+    description: "Pengenalan cepat 43 pola ritme, iskemia, blok, dan perubahan metabolik.",
+    href: "/ecg-atlas",
+    icon: Activity,
+    count: 43,
+    countLabel: "pola",
+  },
+  {
+    slug: "radiology-atlas",
+    name: "Imaging",
+    description: "Pengenalan cepat 159 pola X-ray, CT, MRI, dan USG.",
+    href: "/radiology-atlas",
+    icon: ScanSearch,
+    count: 159,
+    countLabel: "pola",
   },
   {
     slug: "anthropometry",

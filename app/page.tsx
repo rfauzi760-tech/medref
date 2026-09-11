@@ -14,8 +14,9 @@ export default function Home() {
   const { recent } = useRecentTools();
   const { favorites } = useFavorites();
   const coverage = getContentCoverage();
-  const primary = modules.filter((module) => primaryModules.has(module.slug));
-  const secondary = modules.filter((module) => !primaryModules.has(module.slug));
+  const visibleModules = modules.filter((module) => module.showInNav !== false);
+  const primary = visibleModules.filter((module) => primaryModules.has(module.slug));
+  const secondary = visibleModules.filter((module) => !primaryModules.has(module.slug));
 
   return (
     <div className="space-y-12">

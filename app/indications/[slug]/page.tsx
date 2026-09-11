@@ -5,6 +5,7 @@ import { BackLink } from "@/components/shared";
 import { SpecialtyTags } from "@/components/action-buttons";
 import { SourceBlock } from "@/components/source-block";
 import { ClinicalContent } from "@/components/clinical-content";
+import ProcedureChecklist from "@/components/procedure-checklist";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -48,6 +49,10 @@ export default async function ProcedurePage({ params }: { params: Promise<{ slug
         <Block title="Kewaspadaan" items={p.precautions} tone="warning" />
         <Block title="Persiapan" items={p.preparation} />
         <Block title="Komplikasi" items={p.complications} />
+      </div>
+
+      <div className="mt-4">
+        <ProcedureChecklist title="Checklist Persiapan" steps={p.preparation} />
       </div>
 
       <div className="mt-6 space-y-2">

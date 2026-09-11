@@ -5,13 +5,17 @@ import Link from "next/link";
 import { BookOpen, Siren } from "lucide-react";
 import type { GuidelineEntry } from "@/lib/types";
 import { PageHeader, FilterInput, EmptyState } from "@/components/shared";
+import { SOURCE_TIER_LABEL, SOURCE_TIER_SHORT, type SourceTier } from "@/lib/evidence";
 
-type GuidelineSummary = Pick<GuidelineEntry, "slug" | "title" | "specialties" | "keywords" | "emergency" | "ageGroup" | "pregnancyRelevant">;
+type GuidelineSummary = Pick<GuidelineEntry, "slug" | "title" | "specialties" | "keywords" | "emergency" | "ageGroup" | "pregnancyRelevant"> & {
+  tier: SourceTier;
+};
 
 export default function GuidelinesPageClient({ items }: { items: GuidelineSummary[] }) {
   const [q, setQ] = useState("");
   const [specialty, setSpecialty] = useState("");
   const [emergency, setEmergency] = useState<"all" | "emergency" | "non-emergency">("all");
+  const [tier, setTier] = useState<"all" | "1" | "2" | "3">("all");
 
   const specialties = useMemo(() => [...new Set(items.flatMap((g) => g.specialties))].sort(), []);
   const filtered = useMemo(() => {
@@ -20,10 +24,11 @@ export default function GuidelinesPageClient({ items }: { items: GuidelineSummar
       if (specialty && !g.specialties.includes(specialty)) return false;
       if (emergency === "emergency" && !g.emergency) return false;
       if (emergency === "non-emergency" && g.emergency) return false;
+      if (tier !== "all" && String(g.tier) !== tier) return false;
       if (!query) return true;
       return g.title.toLowerCase().includes(query) || g.keywords.some((k) => k.includes(query));
     });
-  }, [q, specialty, emergency]);
+  }, [q, specialty, emergency, tier]);
 
   return (
     <div>
@@ -48,6 +53,26 @@ export default function GuidelinesPageClient({ items }: { items: GuidelineSummar
               key={key}
               onClick={() => setEmergency(key)}
               className={`px-3 py-1.5 text-xs font-medium transition-colors ${emergency === key ? "bg-accent text-white" : "text-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-800 dark:text-zinc-400"}`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <span className="mx-1 hidden h-4 w-px bg-zinc-200 dark:bg-zinc-700 sm:block" />
+        <div className="flex overflow-hidden rounded-full border border-zinc-200 dark:border-zinc-700">
+          {(
+            [
+              ["all", "Semua sumber"],
+              ["1", "T1"],
+              ["2", "T2"],
+              ["3", "T3"],
+            ] as const
+          ).map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setTier(key)}
+              title={key === "all" ? "Semua tingkat sumber" : SOURCE_TIER_LABEL[Number(key) as SourceTier]}
+              className={`px-3 py-1.5 text-xs font-medium transition-colors ${tier === key ? "bg-accent text-white" : "text-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-800 dark:text-zinc-400"}`}
             >
               {label}
             </button>
@@ -89,6 +114,12 @@ export default function GuidelinesPageClient({ items }: { items: GuidelineSummar
               <div className="mt-2 flex flex-wrap gap-1">
                 <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
                   {g.ageGroup === "both" ? "Dewasa & anak" : g.ageGroup === "adult" ? "Dewasa" : g.ageGroup === "pediatric" ? "Anak" : g.ageGroup === "neonatal" ? "Neonatus" : g.ageGroup}
+                </span>
+                <span
+                  title={SOURCE_TIER_LABEL[g.tier]}
+                  className="rounded bg-accent/8 px-1.5 py-0.5 font-mono text-[10px] font-medium text-accent-strong/80 dark:text-accent/80"
+                >
+                  Sumber {SOURCE_TIER_SHORT[g.tier]}
                 </span>
                 {g.pregnancyRelevant && <span className="rounded bg-rose-100 px-1.5 py-0.5 text-[10px] text-rose-600 dark:bg-rose-950 dark:text-rose-300">Terkait kehamilan</span>}
               </div>

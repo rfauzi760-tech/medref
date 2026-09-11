@@ -19,6 +19,21 @@ type ProcItem = (typeof PROCEDURES)[number];
 type FoodItem = (typeof foods)[number];
 type NutritionItem = (typeof nutritionGuidance)[number];
 
+const igdTools = [
+  { id: "igd-toolkit", title: "Toolkit IGD", subtitle: "Kumpulan alat kegawatdaruratan", href: "/igd-toolkit", keywords: "emergensi gawat darurat" },
+  { id: "emergency-dose", title: "Kalkulator Dosis Obat IGD", subtitle: "Dosis total dan laju infus", href: "/emergency-dose", keywords: "infus pompa vasopresor" },
+  { id: "bilirubin", title: "Kalkulator Bilirubin Neonatus", subtitle: "Ambang terapi AAP 2022", href: "/bilirubin", keywords: "fototerapi transfusi tukar bayi" },
+  { id: "antidotes", title: "Panduan Toksikologi dan Antidot", subtitle: "Referensi keracunan", href: "/antidotes", keywords: "racun toksin antidote" },
+  { id: "pregnancy-drugs", title: "Obat Kehamilan dan Menyusui", subtitle: "Kehamilan dan laktasi", href: "/pregnancy-drugs", keywords: "hamil bumil busui asi" },
+  { id: "electrolytes", title: "Koreksi Elektrolit", subtitle: "Natrium, kalsium, kalium, magnesium", href: "/electrolytes", keywords: "defisit air hiponatremia hipokalemia" },
+  { id: "ddx", title: "Mesin Diagnosis Banding", subtitle: "Prioritas diagnosis berdasarkan temuan", href: "/ddx", keywords: "differential diagnosis ddx" },
+  { id: "pediatric-emergency", title: "Gawat Darurat Anak", subtitle: "Resusitasi pediatri", href: "/pediatric-emergency", keywords: "pediatric emergency anak" },
+  { id: "emergency", title: "Algoritma IGD", subtitle: "Alur kegawatan", href: "/emergency", keywords: "protokol emergensi" },
+  { id: "timer", title: "Timer Protokol", subtitle: "Target waktu tindakan kritis", href: "/timer", keywords: "stroke pci sepsis trauma" },
+  { id: "ecg-atlas", title: "Atlas EKG", subtitle: "43 pola elektrokardiografi", href: "/ecg-atlas", keywords: "curve of life irama iskemia" },
+  { id: "radiology-atlas", title: "Imaging", subtitle: "159 pola radiologi", href: "/radiology-atlas", keywords: "monochrome worlds xray ct mri usg" },
+];
+
 interface GroupDef<T> {
   key: string;
   label: string;
@@ -28,6 +43,16 @@ interface GroupDef<T> {
 }
 
 const groups: GroupDef<unknown>[] = [
+  {
+    key: "igd-toolkit",
+    label: "Toolkit IGD",
+    items: igdTools as unknown[],
+    keys: ["title", "subtitle", "keywords"],
+    map: (item) => {
+      const tool = item as (typeof igdTools)[number];
+      return { id: tool.id, title: tool.title, subtitle: tool.subtitle, href: tool.href, group: "igd-toolkit" };
+    },
+  },
   {
     key: "scores",
     label: "Skor & Kriteria",

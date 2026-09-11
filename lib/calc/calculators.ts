@@ -1,5 +1,6 @@
 import type { CalcResult, FormulaFn } from "@/lib/types";
 import { fmt, num, round, zToPercentile } from "@/lib/calc/units";
+import { abgToCalcResult } from "@/lib/calc/abg";
 
 /**
  * Formula registry. Each formula is a pure function of raw input values.
@@ -7,6 +8,10 @@ import { fmt, num, round, zToPercentile } from "@/lib/calc/units";
  */
 
 const n = (v: Record<string, number | string | undefined>, id: string): number => num(v[id]);
+const opt = (v: Record<string, number | string | undefined>, id: string): number | undefined => {
+  const value = num(v[id]);
+  return Number.isFinite(value) ? value : undefined;
+};
 
 function gapLine(label: string, value: number, unit: string, low: number, high: number, tone?: CalcResult["lines"][0]["tone"]): CalcResult["lines"][0] {
   const out = `${fmt(value)}${unit ? " " + unit : ""}`;
@@ -449,6 +454,17 @@ export const FORMULAS: Record<string, FormulaFn> = {
       note: "Holliday–Segar (4-2-1 rule). For children <10 kg use 100 mL/kg/day.",
     };
   },
+
+  /* ---------------- Acid-base ---------------- */
+  abg: (v) =>
+    abgToCalcResult({
+      ph: n(v, "ph"),
+      pco2: n(v, "pco2"),
+      hco3: n(v, "hco3"),
+      na: opt(v, "na"),
+      cl: opt(v, "cl"),
+      albumin: opt(v, "albumin"),
+    }),
 };
 
 export const CALCULATOR_CATEGORIES: { key: string; label: string }[] = [

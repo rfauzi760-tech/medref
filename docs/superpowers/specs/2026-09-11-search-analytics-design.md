@@ -1,8 +1,14 @@
-# MedRef Search and Analytics Design
+# RFSmed Search and Analytics Design
 
 ## Scope
 
 Add Vercel Web Analytics globally and refine the existing global search overlay without changing search data or ranking logic.
+
+## Search data source
+
+- `components/global-search.tsx` sends each query to `GET /api/search` after a short debounce instead of bundling clinical catalogs on the client.
+- The route calls `globalSearch` from `lib/search.ts`, which reads the Klinea canonical catalogs through `server-only` modules and returns grouped hits with `Cache-Control: private, no-store`.
+- Queries shorter than two characters or longer than 80 characters return no groups.
 
 ## Search experience
 
