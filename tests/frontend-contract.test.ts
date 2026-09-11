@@ -45,4 +45,18 @@ describe("frontend design contract", () => {
     ];
     for (const path of details) expect(read(path)).toMatch(/workspace-panel|section-band/);
   });
+
+  test("interactive tools share structured form language", () => {
+    const files = ["components/calculator-tool.tsx", "components/score-tool.tsx", "components/drug-view.tsx"];
+    for (const path of files) {
+      const source = read(path);
+      expect(source).toContain("section-band");
+      expect(source).toContain("workspace-panel");
+      expect(source).toContain("<label");
+      expect(source).toContain("focus-ring");
+    }
+    expect(read(files[0])).toContain("runCalculator");
+    expect(read(files[1])).toContain("evaluateScore");
+    expect(read(files[2])).toContain("calculateDose");
+  });
 });
