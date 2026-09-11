@@ -10,7 +10,7 @@ The application is functionally coherent: all 92 tests pass, including calculati
 
 - Clinical scores and guidelines meet or exceed the stated baseline.
 - Calculators exceed the stated baseline.
-- Drug monographs, drug interactions, ICD-10 entries, and foods remain partial.
+- Drug interactions, ICD-10 entries, and foods remain partial; drug monographs exceed the audited baseline.
 - The README and coverage test use different reference totals for scores and drugs. The UI must not claim universal completeness until these baselines are reconciled.
 
 The redesign will not invent or bulk-fill clinical content. It will present actual dataset counts and add a concise coverage disclosure where appropriate.
