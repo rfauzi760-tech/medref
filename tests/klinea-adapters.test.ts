@@ -26,4 +26,14 @@ describe("adapter konten kanonik Klinea", () => {
     expect(INTERACTIONS.length).toBeGreaterThan(152);
     expect(INTERACTIONS.some((item) => item.mechanism.includes("kalium"))).toBe(true);
   });
+
+  it("memisahkan panduan emergensi dan non-emergensi", () => {
+    const emergency = GUIDELINES.filter((item) => item.emergency);
+    const nonEmergency = GUIDELINES.filter((item) => !item.emergency);
+
+    expect(emergency.length).toBeGreaterThan(0);
+    expect(nonEmergency.length).toBeGreaterThan(0);
+    expect(GUIDELINES.find((item) => item.slug === "stemi")?.emergency).toBe(true);
+    expect(GUIDELINES.find((item) => item.slug === "hipertensi")?.emergency).toBe(false);
+  });
 });

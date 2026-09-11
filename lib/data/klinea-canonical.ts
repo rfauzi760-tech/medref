@@ -265,6 +265,34 @@ const sectionMap: Partial<Record<string, GuidelineSectionKey>> = {
   severe: "redFlags",
 };
 
+// `warning` and `severe` describe warning signs inside a guideline. Their
+// presence does not make the whole condition an emergency. Most Klinea
+// guidelines map to the curated RFS classification; these IDs cover the few
+// source records whose translated names or IDs do not match that catalog.
+const klineaEmergencyGuidelineIds = new Set([
+  "stemi",
+  "acs-nste",
+  "ghf",
+  "af",
+  "dvt",
+  "pe",
+  "dka2",
+  "pankreatitis2",
+  "ensefalopati-hepatik",
+  "sbp",
+  "sepsis2",
+  "asma2",
+  "ppok2",
+  "cap2",
+  "stroke2",
+  "gbs",
+  "myasthenia",
+  "preeklampsia2",
+  "diare-anak",
+  "pneumonia-anak",
+  "rds-neo",
+]);
+
 export function canonicalGuidelines(legacyGuidelines: GuidelineEntry[]): GuidelineEntry[] {
   const byId = new Map(legacyGuidelines.flatMap((item) => [[item.id, item], [item.slug, item]]));
   const extraById = content.guidelineExtra as Record<string, Dict>;
@@ -286,7 +314,7 @@ export function canonicalGuidelines(legacyGuidelines: GuidelineEntry[]): Guideli
       title: clean(guide.name) || guide.id,
       specialties: list(guide.cat),
       keywords: [...words(guide.q), ...words(guide.name)],
-      emergency: Boolean(sections.redFlags?.length),
+      emergency: legacy?.emergency ?? klineaEmergencyGuidelineIds.has(guide.id),
       ageGroup: legacy?.ageGroup ?? (/anak|pediatri/i.test(clean(guide.cat)) ? "pediatric" : "both"),
       pregnancyRelevant: legacy?.pregnancyRelevant,
       sections,
