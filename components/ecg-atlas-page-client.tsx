@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Activity, ChevronDown, ScanSearch, Search } from "lucide-react";
+import { Activity, ChevronDown, ScanSearch, Search, X } from "lucide-react";
 import { BackLink, EmptyState, PageHeader } from "@/components/shared";
 
 interface AtlasEntry {
@@ -9,11 +9,12 @@ interface AtlasEntry {
   category: string;
   tag: string;
   detail: string;
+  images: { src: string; caption: string }[];
 }
 
 const SECTION_TITLES = new Set(["KENALI CEPAT", "TEMUAN UTAMA", "PEARL IGD", "⚠ PITFALL"]);
 
-function Detail({ text }: { text: string }) {
+function Detail({ text, images, title, onPreview }: { text: string; images: AtlasEntry["images"]; title: string; onPreview: (image: AtlasEntry["images"][number]) => void }) {
   const groups: { title: string; lines: string[] }[] = [];
   for (const line of text.split("\n").filter(Boolean)) {
     if (SECTION_TITLES.has(line)) groups.push({ title: line, lines: [] });
@@ -21,8 +22,8 @@ function Detail({ text }: { text: string }) {
   }
 
   return (
-    <div className="grid gap-4 border-t border-[var(--line)] px-4 py-4 sm:grid-cols-2">
-      {groups.map((group) => (
+    <div className="border-t border-[var(--line)] px-4 py-4">
+      <div className="grid gap-4 sm:grid-cols-2">{groups.map((group) => (
         <section key={group.title} className={group.title === "⚠ PITFALL" ? "rounded-lg bg-amber-50 p-3 dark:bg-amber-950/25" : ""}>
           <h4 className="text-xs font-bold tracking-wide text-[var(--foreground)]">{group.title}</h4>
           {group.lines.length === 1 ? (
@@ -33,7 +34,20 @@ function Detail({ text }: { text: string }) {
             </ul>
           )}
         </section>
-      ))}
+      ))}</div>
+      <section className="mt-5 border-t border-[var(--line)] pt-4">
+        <h4 className="text-xs font-bold tracking-wide text-[var(--foreground)]">GAMBAR REFERENSI</h4>
+        <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {images.map((image, index) => (
+            <button key={`${image.src}-${index}`} type="button" onClick={() => onPreview(image)} className="focus-ring group overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)] text-left">
+              <span className="block aspect-[4/3] overflow-hidden bg-black/5 dark:bg-white/5">
+                <img src={image.src} alt={`${title}, gambar ${index + 1}`} loading="lazy" className="h-full w-full object-contain transition-transform duration-200 group-hover:scale-[1.02]" />
+              </span>
+              <span className="block min-h-9 px-2.5 py-2 text-xs font-semibold leading-4 text-[var(--muted)]">{image.caption || `Gambar ${index + 1}`}</span>
+            </button>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
@@ -44,6 +58,7 @@ export default function ClinicalAtlasPageClient({ mode = "ecg" }: { mode?: "ecg"
   const [category, setCategory] = useState("");
   const [open, setOpen] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [preview, setPreview] = useState<AtlasEntry["images"][number] | null>(null);
 
   useEffect(() => {
     fetch(mode === "ecg" ? "/api/ecg-atlas" : "/api/radiology-atlas", { cache: "no-store" })
@@ -82,9 +97,18 @@ export default function ClinicalAtlasPageClient({ mode = "ecg" }: { mode?: "ecg"
                 <span className="hidden rounded bg-accent/10 px-2 py-1 text-[10px] font-bold text-accent-strong sm:block dark:text-accent">{item.tag}</span>
                 <ChevronDown className={`h-4 w-4 text-[var(--muted)] transition-transform ${expanded ? "rotate-180" : ""}`} />
               </button>
-              {expanded && <Detail text={item.detail} />}
+              {expanded && <Detail text={item.detail} images={item.images} title={item.title} onPreview={setPreview} />}
             </article>;
           })}
+        </div>
+      )}
+      {preview && (
+        <div role="dialog" aria-modal="true" aria-label="Pratinjau gambar" className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4" onClick={() => setPreview(null)}>
+          <div className="relative max-h-full max-w-6xl" onClick={(event) => event.stopPropagation()}>
+            <button type="button" onClick={() => setPreview(null)} aria-label="Tutup pratinjau" className="focus-ring absolute right-2 top-2 z-10 rounded-full bg-black/70 p-2 text-white"><X className="h-5 w-5" /></button>
+            <img src={preview.src} alt={preview.caption || "Gambar referensi klinis"} className="max-h-[85vh] max-w-full rounded-xl bg-black object-contain" />
+            {preview.caption && <p className="mt-2 text-center text-sm font-semibold text-white">{preview.caption}</p>}
+          </div>
         </div>
       )}
     </div>

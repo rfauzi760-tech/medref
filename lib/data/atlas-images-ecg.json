@@ -1,0 +1,1080 @@
+[
+  {
+    "id": "entry-ecg-0",
+    "index": 0,
+    "images": [
+      {
+        "caption": "Sinus takikardia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/cd5e3f9b-cc16-49d8-8790-5907527f7e40/0c870c7c-1787222971702.png"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-1",
+    "index": 1,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/df873f85-35cf-479f-9b5f-9cdafd022fa5/3a82a786-1787660131025.png"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-2",
+    "index": 2,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2fc5e4ac-3f3a-4013-9d2a-7f83f36edd6c/e6d668d4-1787660185012.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2fc5e4ac-3f3a-4013-9d2a-7f83f36edd6c/6d58b270-1787660185522.jpg"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-3",
+    "index": 3,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/16ca9872-f5f5-439f-b515-e76947fd154e/9bda3de0-1787660221647.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/16ca9872-f5f5-439f-b515-e76947fd154e/6100a99a-1787660222187.webp"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/16ca9872-f5f5-439f-b515-e76947fd154e/c79da628-1787660222420.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-4",
+    "index": 4,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/0758fbf1-af9a-4b2c-8cbc-9c3cf06dfea5/eb27aed4-1787660295044.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/0758fbf1-af9a-4b2c-8cbc-9c3cf06dfea5/daf2181f-1787660295491.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-5",
+    "index": 5,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/feecf95d-898f-4843-8ffb-55e8fadafde8/fa9164c6-1787660401474.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/feecf95d-898f-4843-8ffb-55e8fadafde8/e38bafc3-1787660401797.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/feecf95d-898f-4843-8ffb-55e8fadafde8/07780494-1787660401995.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-6",
+    "index": 6,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/aad1d895-455e-41af-adc6-d173f439f917/4635c2d7-1787660524214.webp"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/aad1d895-455e-41af-adc6-d173f439f917/747d5d05-1787660524762.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/aad1d895-455e-41af-adc6-d173f439f917/7a2ee2c2-1787660525124.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-7",
+    "index": 7,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/8568ff1e-b112-4b0c-a966-b3e8a85882db/4e333b10-1787660573111.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/8568ff1e-b112-4b0c-a966-b3e8a85882db/03a03323-1787660574071.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-8",
+    "index": 8,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/b8ad3139-dc0f-44c7-94d6-37393d7b43b1/6eccc29f-1787660595074.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/b8ad3139-dc0f-44c7-94d6-37393d7b43b1/13d90a91-1787660595424.png"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/b8ad3139-dc0f-44c7-94d6-37393d7b43b1/4bb02a20-1787660595840.jpg"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-9",
+    "index": 9,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/8eeb5c27-9616-42a9-a677-9cebc39482d2/762adaee-1787660638604.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/8eeb5c27-9616-42a9-a677-9cebc39482d2/df00918e-1787660638962.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/8eeb5c27-9616-42a9-a677-9cebc39482d2/67e79d49-1787660639234.jpg"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-10",
+    "index": 10,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/cb46a5d5-4f92-4cdd-9bd0-30883e56f3cf/657fdaaf-1787660663211.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/cb46a5d5-4f92-4cdd-9bd0-30883e56f3cf/8f142a49-1787660663522.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/cb46a5d5-4f92-4cdd-9bd0-30883e56f3cf/d720c067-1787660663757.jpg"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-11",
+    "index": 11,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6da399e8-6b3d-496e-b8d5-1305accb4db9/dae472b1-1787660694243.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6da399e8-6b3d-496e-b8d5-1305accb4db9/d4deba1e-1787660694820.jpg"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-12",
+    "index": 12,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/febef43d-c4b4-4521-9ca5-9dda2c48c8c7/584821e4-1787660723142.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/febef43d-c4b4-4521-9ca5-9dda2c48c8c7/6fd32a78-1787660723374.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/febef43d-c4b4-4521-9ca5-9dda2c48c8c7/e3d10775-1787660723631.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-13",
+    "index": 13,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/46038187-771f-426c-a149-58f0c789395d/64eb8be4-1787660759668.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/46038187-771f-426c-a149-58f0c789395d/23881a3f-1787660760039.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/46038187-771f-426c-a149-58f0c789395d/93bca756-1787660760289.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/46038187-771f-426c-a149-58f0c789395d/267ce9ff-1787660760583.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/46038187-771f-426c-a149-58f0c789395d/93b2e625-1787660760921.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-14",
+    "index": 14,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6c21950d-00b2-4f86-b7dd-96e75d867fe3/ab7774b2-1787660835377.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6c21950d-00b2-4f86-b7dd-96e75d867fe3/799fdd75-1787660835974.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6c21950d-00b2-4f86-b7dd-96e75d867fe3/6919bfc7-1787660836329.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6c21950d-00b2-4f86-b7dd-96e75d867fe3/e483a8ad-1787660836554.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6c21950d-00b2-4f86-b7dd-96e75d867fe3/7f6ae41b-1787660836873.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-15",
+    "index": 15,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/74743b66-4115-4192-8440-bddd28295b83/12163699-1787660862788.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/74743b66-4115-4192-8440-bddd28295b83/c6cb86ef-1787660863042.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/74743b66-4115-4192-8440-bddd28295b83/4c84999e-1787660863348.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/74743b66-4115-4192-8440-bddd28295b83/69398c73-1787660863588.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/74743b66-4115-4192-8440-bddd28295b83/ae1d3685-1787660863809.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-16",
+    "index": 16,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/98668fa1-1787660903195.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/53b0424c-1787660903536.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/12108133-1787660903906.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/8fb6067a-1787660904172.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/bf7e6f04-1787660904398.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/d2e372a8-1787660904738.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/938da95f-1787660905089.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/b4e4a521-1787660905354.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/3e40dc62-b712-467b-a1ca-520827a2fb6a/d22ae172-1787660905725.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-17",
+    "index": 17,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2c51798e-fa8e-40b7-a5fc-82b99e7bbb7c/4ddb6d43-1787661008936.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2c51798e-fa8e-40b7-a5fc-82b99e7bbb7c/a0e8bcc5-1787661009479.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2c51798e-fa8e-40b7-a5fc-82b99e7bbb7c/1d7fcfb9-1787661010133.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2c51798e-fa8e-40b7-a5fc-82b99e7bbb7c/1cb85b55-1787661010399.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2c51798e-fa8e-40b7-a5fc-82b99e7bbb7c/66cc503f-1787661010865.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/2c51798e-fa8e-40b7-a5fc-82b99e7bbb7c/df900177-1787661011241.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-18",
+    "index": 18,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e26a23b8-3af9-4409-8bc1-f28e729aefb5/ed5c61e8-1787661443542.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e26a23b8-3af9-4409-8bc1-f28e729aefb5/7b4a2288-1787661444242.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e26a23b8-3af9-4409-8bc1-f28e729aefb5/f6ca8c79-1787661444517.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e26a23b8-3af9-4409-8bc1-f28e729aefb5/0b56c891-1787661444768.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e26a23b8-3af9-4409-8bc1-f28e729aefb5/69cbc757-1787661445170.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-19",
+    "index": 19,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1df2ec85-7071-482d-9853-57d0c87f06d1/a34ea1af-1787661502923.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1df2ec85-7071-482d-9853-57d0c87f06d1/11ae1958-1787661503340.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1df2ec85-7071-482d-9853-57d0c87f06d1/49b56a38-1787661503954.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1df2ec85-7071-482d-9853-57d0c87f06d1/8a4ad01f-1787661504236.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1df2ec85-7071-482d-9853-57d0c87f06d1/3b13e076-1787661504550.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1df2ec85-7071-482d-9853-57d0c87f06d1/c1cbb5f3-1787661505406.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-20",
+    "index": 20,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6cc4df27-f370-4671-af56-f1e171f7f087/7e1a4bf7-1787661535159.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6cc4df27-f370-4671-af56-f1e171f7f087/bac6cd95-1787661535715.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6cc4df27-f370-4671-af56-f1e171f7f087/cbb3189a-1787661536264.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6cc4df27-f370-4671-af56-f1e171f7f087/6eea0768-1787661536543.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/6cc4df27-f370-4671-af56-f1e171f7f087/750bcb76-1787661536796.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-21",
+    "index": 21,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c7cc1d1b-c698-45f7-a036-77b36baf2633/bd52fad0-1787661605490.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c7cc1d1b-c698-45f7-a036-77b36baf2633/d2a57b04-1787661605802.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c7cc1d1b-c698-45f7-a036-77b36baf2633/d9238c7b-1787661606706.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-22",
+    "index": 22,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/708b4f26-5dcd-4289-8c22-3fe3615680e5/4b79c73a-1787661642627.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/708b4f26-5dcd-4289-8c22-3fe3615680e5/d5c34d80-1787661643115.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/708b4f26-5dcd-4289-8c22-3fe3615680e5/7dad94c6-1787661643364.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/708b4f26-5dcd-4289-8c22-3fe3615680e5/4fbbaeaf-1787661643577.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/708b4f26-5dcd-4289-8c22-3fe3615680e5/c6ceee8b-1787661643846.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-23",
+    "index": 23,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e79c85a5-444a-476f-9384-5466cb2e4075/a6bba5d3-1787663301413.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e79c85a5-444a-476f-9384-5466cb2e4075/4bfb497a-1787663302019.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e79c85a5-444a-476f-9384-5466cb2e4075/01fe73b5-1787663302365.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e79c85a5-444a-476f-9384-5466cb2e4075/dd1b6296-1787663302651.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e79c85a5-444a-476f-9384-5466cb2e4075/07ca492e-1787663303176.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/e79c85a5-444a-476f-9384-5466cb2e4075/1b704bab-1787663303851.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-24",
+    "index": 24,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4d205c00-d4ba-4be9-9177-80f17ab5280d/87cb5b86-1787663372720.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4d205c00-d4ba-4be9-9177-80f17ab5280d/8d923e2c-1787663373150.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4d205c00-d4ba-4be9-9177-80f17ab5280d/e780bfbb-1787663373464.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4d205c00-d4ba-4be9-9177-80f17ab5280d/7a0b4bab-1787663373760.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4d205c00-d4ba-4be9-9177-80f17ab5280d/76ce212a-1787663374161.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-25",
+    "index": 25,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/db346a05-7a7f-4f0e-bf03-6ff86810023c/c148f9e4-1787663671601.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/db346a05-7a7f-4f0e-bf03-6ff86810023c/46142e44-1787663672300.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/db346a05-7a7f-4f0e-bf03-6ff86810023c/416ddde6-1787663672628.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/db346a05-7a7f-4f0e-bf03-6ff86810023c/5f2e363f-1787663673013.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/db346a05-7a7f-4f0e-bf03-6ff86810023c/2c8831f4-1787663673336.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/db346a05-7a7f-4f0e-bf03-6ff86810023c/27af895a-1787663673675.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-26",
+    "index": 26,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/72948f57-ca1c-4ee1-b412-3f6a1f352c75/7945b34a-1787663703106.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/72948f57-ca1c-4ee1-b412-3f6a1f352c75/a4a812ac-1787663704140.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/72948f57-ca1c-4ee1-b412-3f6a1f352c75/b58aa7b8-1787663704588.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/72948f57-ca1c-4ee1-b412-3f6a1f352c75/60184139-1787663705535.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-27",
+    "index": 27,
+    "images": [
+      {
+        "caption": "Digoxin effect",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/49ba0c4b-1787663847815.jfif"
+      },
+      {
+        "caption": "Digoxin effect",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/3f8c7e4b-1787663848414.jfif"
+      },
+      {
+        "caption": "Digoxin effect",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/c0211145-1787663848956.jfif"
+      },
+      {
+        "caption": "Digoxin effect",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/0d7ae55f-1787663849267.jfif"
+      },
+      {
+        "caption": "Toxicity",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/8cd94c44-1787663966872.jfif"
+      },
+      {
+        "caption": "Toxicity",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/b6b36841-1787663968037.jfif"
+      },
+      {
+        "caption": "Toxicity",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/eee7de21-1787663968366.jfif"
+      },
+      {
+        "caption": "Toxicity",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/e3d5ba0c-1787663968796.jfif"
+      },
+      {
+        "caption": "Toxicity",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/1dab4058-1787663969057.jfif"
+      },
+      {
+        "caption": "Toxicity",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/41be5502-8227-4829-8578-d9311e7da81c/b9aad9e7-1787663969584.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-28",
+    "index": 28,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c12816b4-b648-4f5a-90e5-f8165e934fe9/c3e5298e-1787664068079.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c12816b4-b648-4f5a-90e5-f8165e934fe9/734824d2-1787664069598.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c12816b4-b648-4f5a-90e5-f8165e934fe9/0c676e1a-1787664069947.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c12816b4-b648-4f5a-90e5-f8165e934fe9/a5e8a08f-1787664070277.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c12816b4-b648-4f5a-90e5-f8165e934fe9/d17330db-1787664070654.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-29",
+    "index": 29,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1b2452bc-f8da-4e42-8722-4163c7936af1/d07b1d89-1787664318588.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1b2452bc-f8da-4e42-8722-4163c7936af1/6834e3a1-1787664319526.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1b2452bc-f8da-4e42-8722-4163c7936af1/43272e99-1787664320516.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1b2452bc-f8da-4e42-8722-4163c7936af1/a36a77e0-1787664320790.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1b2452bc-f8da-4e42-8722-4163c7936af1/b6836681-1787664321134.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1b2452bc-f8da-4e42-8722-4163c7936af1/c7a159a2-1787664321414.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-30",
+    "index": 30,
+    "images": [
+      {
+        "caption": "Kardiomiopati",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/a59bc88d-a4b9-4aed-a647-f59d5e8ab6bc/51d3476c-1787664369677.jfif"
+      },
+      {
+        "caption": "Kardiomiopati",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/a59bc88d-a4b9-4aed-a647-f59d5e8ab6bc/2b570b8a-1787664370189.jfif"
+      },
+      {
+        "caption": "Kardiomiopati",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/a59bc88d-a4b9-4aed-a647-f59d5e8ab6bc/0261e8f6-1787664370489.jfif"
+      },
+      {
+        "caption": "Kardiomiopati",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/a59bc88d-a4b9-4aed-a647-f59d5e8ab6bc/34ac28f2-1787664371210.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-31",
+    "index": 31,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/c70aa438-f450-4c83-882c-dd4bc5457ff5/5d58b729-1787664420401.png"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-32",
+    "index": 32,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/185960bc-dece-4045-b763-bb32cd76648a/12e10940-1787664447016.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/185960bc-dece-4045-b763-bb32cd76648a/8e93b4fb-1787664447384.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/185960bc-dece-4045-b763-bb32cd76648a/ba6e1c1b-1787664447877.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/185960bc-dece-4045-b763-bb32cd76648a/51f7c304-1787664448415.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/185960bc-dece-4045-b763-bb32cd76648a/07bfeb73-1787664448861.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-33",
+    "index": 33,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/407fb0c2-154a-45b7-a016-0cc6539e259c/fd4e506d-1787664560476.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/407fb0c2-154a-45b7-a016-0cc6539e259c/84cce5ed-1787664560804.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-34",
+    "index": 34,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/b300edc0-3b01-46b3-892d-3b2f2d46a83f/81d94bd0-1787700701833.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/b300edc0-3b01-46b3-892d-3b2f2d46a83f/6ad9419d-1787700702346.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/b300edc0-3b01-46b3-892d-3b2f2d46a83f/1e4cc7ae-1787700702572.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-35",
+    "index": 35,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/202f4135-70dc-496d-8260-a53dcca10dd8/8123f900-1787700734701.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/202f4135-70dc-496d-8260-a53dcca10dd8/4ea10aae-1787700735736.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/202f4135-70dc-496d-8260-a53dcca10dd8/89bb16bf-1787700735950.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/202f4135-70dc-496d-8260-a53dcca10dd8/4f4557b7-1787700736341.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/202f4135-70dc-496d-8260-a53dcca10dd8/3e25c499-1787700736685.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/202f4135-70dc-496d-8260-a53dcca10dd8/f233f46a-1787700736892.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-36",
+    "index": 36,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/71a6c0b8-31c8-4fc3-89fb-411714b38085/8f486135-1787700759452.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/71a6c0b8-31c8-4fc3-89fb-411714b38085/f50fe323-1787700759989.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/71a6c0b8-31c8-4fc3-89fb-411714b38085/4498bb8a-1787700760394.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-37",
+    "index": 37,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/f1bf3be8-af3e-4690-9ed6-85010c79ba54/f2b692ed-1787700786251.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/f1bf3be8-af3e-4690-9ed6-85010c79ba54/bc1c027f-1787700786460.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/f1bf3be8-af3e-4690-9ed6-85010c79ba54/7c4d63ac-1787700786674.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/f1bf3be8-af3e-4690-9ed6-85010c79ba54/e5cc06b9-1787700786907.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/f1bf3be8-af3e-4690-9ed6-85010c79ba54/f1951ead-1787700787111.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-38",
+    "index": 38,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/53263412-606a-447a-97c9-fd54e791187d/268d4c15-1787700811861.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/53263412-606a-447a-97c9-fd54e791187d/8efeaff3-1787700812303.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/53263412-606a-447a-97c9-fd54e791187d/63fbe4f7-1787700812624.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/53263412-606a-447a-97c9-fd54e791187d/b40a1ffb-1787700812855.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/53263412-606a-447a-97c9-fd54e791187d/b3006109-1787700813083.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/53263412-606a-447a-97c9-fd54e791187d/59e10dfc-1787700813303.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-39",
+    "index": 39,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/48b64f11-5965-463d-919e-007016306978/556d8c72-1787700853238.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/48b64f11-5965-463d-919e-007016306978/224da34b-1787700853602.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/48b64f11-5965-463d-919e-007016306978/4560d84b-1787700853802.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/48b64f11-5965-463d-919e-007016306978/d3c68f45-1787700854140.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/48b64f11-5965-463d-919e-007016306978/c7613616-1787700854333.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/48b64f11-5965-463d-919e-007016306978/70503f09-1787700854573.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-40",
+    "index": 40,
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4f3ed772-de82-4220-923a-373c8e48a7ca/987b25c0-1787700902897.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4f3ed772-de82-4220-923a-373c8e48a7ca/948ab5db-1787700903443.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4f3ed772-de82-4220-923a-373c8e48a7ca/e5e28862-1787700903900.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4f3ed772-de82-4220-923a-373c8e48a7ca/605c5bab-1787700904210.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4f3ed772-de82-4220-923a-373c8e48a7ca/7beddd59-1787700904604.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/4f3ed772-de82-4220-923a-373c8e48a7ca/88bff18a-1787700904919.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-41",
+    "index": 41,
+    "images": [
+      {
+        "caption": "pacemaker",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/45272b66-1787700945150.jfif"
+      },
+      {
+        "caption": "pacemaker",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/a0c36bbf-1787700945843.jfif"
+      },
+      {
+        "caption": "pacemaker",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/b8723a68-1787700946107.jfif"
+      },
+      {
+        "caption": "pacemaker",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/fd4079a9-1787700946338.jfif"
+      },
+      {
+        "caption": "pacemaker",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/b59c4002-1787700946547.jfif"
+      },
+      {
+        "caption": "pacemaker",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/d8481926-1787700946934.jfif"
+      },
+      {
+        "caption": "fail to capture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/f4bea363-1787700969226.jfif"
+      },
+      {
+        "caption": "fail to capture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/08d59614-1787700969584.jfif"
+      },
+      {
+        "caption": "fail to capture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/29d48dc3-1787700969758.jfif"
+      },
+      {
+        "caption": "fail to capture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/c6a59215-1787700969986.jfif"
+      },
+      {
+        "caption": "fail to capture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/12d70f4b-1787700970271.jfif"
+      },
+      {
+        "caption": "failure to pace",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/55be4dad-1787701004387.jfif"
+      },
+      {
+        "caption": "failure to pace",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/4e1f8ed7-1787701004873.jfif"
+      },
+      {
+        "caption": "failure to pace",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/3d248a51-1787701005073.jfif"
+      },
+      {
+        "caption": "failure to pace",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/7effd30f-1787701005279.jfif"
+      },
+      {
+        "caption": "oversensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/01e410ab-1787701066167.jfif"
+      },
+      {
+        "caption": "oversensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/b18b612b-1787701066556.jfif"
+      },
+      {
+        "caption": "oversensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/284dc95a-1787701066784.jfif"
+      },
+      {
+        "caption": "oversensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/ad8223bd-1787701067068.jfif"
+      },
+      {
+        "caption": "undersensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/154b63b4-1787701085792.jfif"
+      },
+      {
+        "caption": "undersensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/1a9a4ff3-1787701086117.jfif"
+      },
+      {
+        "caption": "undersensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/b476b426-1787701086297.jfif"
+      },
+      {
+        "caption": "undersensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/31bf48d8-1787701086693.jfif"
+      },
+      {
+        "caption": "undersensing",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/43971e67-3c3d-419b-965c-d4963689f32b/75b865d2-1787701086881.jfif"
+      }
+    ]
+  },
+  {
+    "id": "entry-ecg-42",
+    "index": 42,
+    "images": [
+      {
+        "caption": "lvh patologis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/686ece23-735a-4573-a566-67f168a548fc/197cfc71-1787701152914.jfif"
+      },
+      {
+        "caption": "lvh patologis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/686ece23-735a-4573-a566-67f168a548fc/cf46dce4-1787701153485.jfif"
+      },
+      {
+        "caption": "lvh patologis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/686ece23-735a-4573-a566-67f168a548fc/55dcd1fb-1787701153688.jfif"
+      },
+      {
+        "caption": "lvh patologis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/686ece23-735a-4573-a566-67f168a548fc/60a1d017-1787701153872.jfif"
+      },
+      {
+        "caption": "lvh patologis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/686ece23-735a-4573-a566-67f168a548fc/77b3de28-1787701154075.jfif"
+      },
+      {
+        "caption": "athlete hearts",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/686ece23-735a-4573-a566-67f168a548fc/36ba8a61-1787701170486.jfif"
+      },
+      {
+        "caption": "athlete hearts",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/686ece23-735a-4573-a566-67f168a548fc/f3365c01-1787701170780.jfif"
+      }
+    ]
+  }
+]

@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { createRateLimiter, isBlockedAgent } from "@/lib/security/request-policy";
 
 const limiter = createRateLimiter({ limit: 80, windowMs: 60_000 });
+const imageLimiter = createRateLimiter({ limit: 600, windowMs: 60_000 });
 
 const protectionHeaders = {
   "X-Robots-Tag": "noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai",
@@ -25,7 +26,7 @@ export function proxy(request: NextRequest) {
   }
 
   const key = clientKey(request);
-  const rate = key ? limiter.consume(key) : null;
+  const rate = key ? (request.nextUrl.pathname.startsWith("/api/atlas-image/") ? imageLimiter : limiter).consume(key) : null;
   if (rate && !rate.allowed) {
     return new NextResponse("Terlalu banyak permintaan. Coba lagi nanti.", {
       status: 429,

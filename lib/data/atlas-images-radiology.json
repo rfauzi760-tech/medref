@@ -1,0 +1,3896 @@
+[
+  {
+    "id": "entry-pneumotoraks",
+    "images": [
+      {
+        "caption": "Simple PTX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7fedaba9-e53a-46ba-ad9f-31adcbe198aa/969f8f59-1787752036388.jfif"
+      },
+      {
+        "caption": "Simple PTX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7fedaba9-e53a-46ba-ad9f-31adcbe198aa/e8080492-1787752037072.jfif"
+      },
+      {
+        "caption": "Simple PTX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7fedaba9-e53a-46ba-ad9f-31adcbe198aa/8c076609-1787752037365.jpeg"
+      }
+    ],
+    "title": "Pneumotoraks"
+  },
+  {
+    "id": "entry-tension-pneumothorax",
+    "images": [
+      {
+        "caption": "TENSION PTX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d0b2da0a-09ad-45c5-9e40-2eb198076d06/6472e5cd-1787752075372.jfif"
+      },
+      {
+        "caption": "TENSION PTX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d0b2da0a-09ad-45c5-9e40-2eb198076d06/3441dd64-1787752075909.jfif"
+      },
+      {
+        "caption": "TENSION PTX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d0b2da0a-09ad-45c5-9e40-2eb198076d06/fd15535c-1787752076368.jfif"
+      },
+      {
+        "caption": "TENSION PTX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d0b2da0a-09ad-45c5-9e40-2eb198076d06/6f46acf1-1787752076701.jfif"
+      }
+    ],
+    "title": "Tension pneumothorax"
+  },
+  {
+    "id": "entry-hemotoraks",
+    "images": [
+      {
+        "caption": "HEMOTHORAX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e3d720ce-b3ed-4241-8d09-a09d72d13b01/2f61626d-1787752114098.jfif"
+      },
+      {
+        "caption": "HEMOTHORAX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e3d720ce-b3ed-4241-8d09-a09d72d13b01/aff3b05f-1787752114495.jfif"
+      },
+      {
+        "caption": "HEMOTHORAX",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e3d720ce-b3ed-4241-8d09-a09d72d13b01/b4679441-1787752115385.jfif"
+      }
+    ],
+    "title": "Hemotoraks"
+  },
+  {
+    "id": "entry-edema-paru-kardiogenik",
+    "images": [
+      {
+        "caption": "Edema paru kardiogenik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ffc0b888-2579-4891-bcc3-b00a8f0c2868/c33f73f1-1787752164254.jfif"
+      },
+      {
+        "caption": "Edema paru kardiogenik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ffc0b888-2579-4891-bcc3-b00a8f0c2868/7b6a1a18-1787752164643.jfif"
+      },
+      {
+        "caption": "Edema paru kardiogenik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ffc0b888-2579-4891-bcc3-b00a8f0c2868/b5653cf7-1787752165043.jfif"
+      }
+    ],
+    "title": "Edema paru kardiogenik"
+  },
+  {
+    "id": "entry-efusi-pleura",
+    "images": [
+      {
+        "caption": "Efusi pleura",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2021108e-7e2c-44ab-a590-df75a837ea99/b2a3b91a-1788085743913.jfif"
+      },
+      {
+        "caption": "Efusi pleura",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2021108e-7e2c-44ab-a590-df75a837ea99/ab95b7d7-1788085744389.jfif"
+      },
+      {
+        "caption": "Efusi pleura",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2021108e-7e2c-44ab-a590-df75a837ea99/ec77e8b4-1788085744740.jfif"
+      },
+      {
+        "caption": "Efusi pleura",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2021108e-7e2c-44ab-a590-df75a837ea99/e8ead06d-1788085745073.jfif"
+      }
+    ],
+    "title": "Efusi pleura"
+  },
+  {
+    "id": "entry-kardiomegali-pembesaran-siluet-jantung",
+    "images": [
+      {
+        "caption": "Kardiomegali / pembesaran siluet jantung",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2aee675b-d0b3-453c-b133-e100b5b968a4/24744e73-1788099786920.jfif"
+      },
+      {
+        "caption": "Kardiomegali / pembesaran siluet jantung",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2aee675b-d0b3-453c-b133-e100b5b968a4/aed377da-1788099792840.jfif"
+      },
+      {
+        "caption": "Kardiomegali / pembesaran siluet jantung",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2aee675b-d0b3-453c-b133-e100b5b968a4/e5a70893-1788099793129.jfif"
+      },
+      {
+        "caption": "Kardiomegali / pembesaran siluet jantung",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2aee675b-d0b3-453c-b133-e100b5b968a4/e1bb8a77-1788099793382.jfif"
+      },
+      {
+        "caption": "Kardiomegali / pembesaran siluet jantungKardiomegali / pembesaran siluet jantung",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2aee675b-d0b3-453c-b133-e100b5b968a4/0cbb343b-1788099793705.jfif"
+      }
+    ],
+    "title": "Kardiomegali / pembesaran siluet jantung"
+  },
+  {
+    "id": "entry-pneumonia",
+    "images": [
+      {
+        "caption": "Pneumonia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0ba2fa71-0dc9-4af5-9f38-7cc3f1411d10/89096f8e-1788103549623.jfif"
+      },
+      {
+        "caption": "Pneumonia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0ba2fa71-0dc9-4af5-9f38-7cc3f1411d10/b76a1fcb-1788103550115.jfif"
+      },
+      {
+        "caption": "Pneumonia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0ba2fa71-0dc9-4af5-9f38-7cc3f1411d10/2d04f84e-1788103550483.jfif"
+      },
+      {
+        "caption": "Pneumonia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0ba2fa71-0dc9-4af5-9f38-7cc3f1411d10/81ada444-1788103550713.jfif"
+      },
+      {
+        "caption": "Pneumonia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0ba2fa71-0dc9-4af5-9f38-7cc3f1411d10/4729ba0f-1788103550936.jfif"
+      },
+      {
+        "caption": "Pneumonia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0ba2fa71-0dc9-4af5-9f38-7cc3f1411d10/214e67f6-1788103551143.jfif"
+      }
+    ],
+    "title": "Pneumonia"
+  },
+  {
+    "id": "entry-tb-paru-kavitas",
+    "images": [
+      {
+        "caption": "TB paru kavitas",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6dc4afd8-6389-4ba2-afcd-0cdcc6bb29a9/fadb4756-1788214987964.jpg"
+      },
+      {
+        "caption": "TB paru kavitas",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6dc4afd8-6389-4ba2-afcd-0cdcc6bb29a9/3836652d-1788214989019.jpg"
+      },
+      {
+        "caption": "TB paru kavitas",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6dc4afd8-6389-4ba2-afcd-0cdcc6bb29a9/d2d05eca-1788214989404.jpg"
+      },
+      {
+        "caption": "TB paru kavitas",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6dc4afd8-6389-4ba2-afcd-0cdcc6bb29a9/3e62e587-1788214989684.jpg"
+      }
+    ],
+    "title": "TB paru kavitas"
+  },
+  {
+    "id": "entry-tb-milier",
+    "images": [
+      {
+        "caption": "TB milier",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/83deac75-e874-46f5-a50c-a8a9c41ffa5e/a6ac8433-1788215884216.jpg"
+      },
+      {
+        "caption": "TB milier",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/83deac75-e874-46f5-a50c-a8a9c41ffa5e/0809514d-1788215884841.jpg"
+      },
+      {
+        "caption": "TB milier",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/83deac75-e874-46f5-a50c-a8a9c41ffa5e/600d0ba2-1788215885046.jpg"
+      },
+      {
+        "caption": "TB milier",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/83deac75-e874-46f5-a50c-a8a9c41ffa5e/4e68f050-1788215885301.jpg"
+      },
+      {
+        "caption": "TB milier",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/83deac75-e874-46f5-a50c-a8a9c41ffa5e/3a609c9b-1788215885652.jpg"
+      }
+    ],
+    "title": "TB milier"
+  },
+  {
+    "id": "entry-kontusio-paru",
+    "images": [
+      {
+        "caption": "Kontusio paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2e4fa4cf-e302-44ec-b1d7-079abf36c2f9/71c091d7-1788217134034.jpg"
+      },
+      {
+        "caption": "Kontusio paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2e4fa4cf-e302-44ec-b1d7-079abf36c2f9/5fa428fd-1788217134817.jpg"
+      },
+      {
+        "caption": "Kontusio paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2e4fa4cf-e302-44ec-b1d7-079abf36c2f9/c78e0ce8-1788217135149.jpg"
+      },
+      {
+        "caption": "Kontusio paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2e4fa4cf-e302-44ec-b1d7-079abf36c2f9/ae1ee84f-1788217135413.jpg"
+      },
+      {
+        "caption": "Kontusio paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2e4fa4cf-e302-44ec-b1d7-079abf36c2f9/33190a8a-1788217135701.jpg"
+      }
+    ],
+    "title": "Kontusio paru"
+  },
+  {
+    "id": "entry-fraktur-iga",
+    "images": [
+      {
+        "caption": "Fraktur costae",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/650bfcf4-e462-4bce-b572-617f24e48cfa/c16465bf-1788218729691.jpg"
+      },
+      {
+        "caption": "Fraktur costae",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/650bfcf4-e462-4bce-b572-617f24e48cfa/fc41ff90-1788218730085.jpg"
+      },
+      {
+        "caption": "Fraktur costae",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/650bfcf4-e462-4bce-b572-617f24e48cfa/ce4e67cf-1788218730294.jpg"
+      },
+      {
+        "caption": "Fraktur costae",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/650bfcf4-e462-4bce-b572-617f24e48cfa/32ec5505-1788218730573.jpg"
+      },
+      {
+        "caption": "Fraktur costae",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/650bfcf4-e462-4bce-b572-617f24e48cfa/beb8ba84-1788218730905.jpg"
+      }
+    ],
+    "title": "Fraktur iga"
+  },
+  {
+    "id": "entry-flail-chest",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e95e6f50-590a-432b-bd7a-a8bd3a0f3868/4a0eefeb-1788219517316.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e95e6f50-590a-432b-bd7a-a8bd3a0f3868/e7a81ad5-1788219517933.jpg"
+      }
+    ],
+    "title": "Flail chest"
+  },
+  {
+    "id": "entry-nec",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2a26e0af-fe3a-4754-b659-d056fd64c0e3/a1f36ace-1788219767906.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2a26e0af-fe3a-4754-b659-d056fd64c0e3/5aef065f-1788219768596.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2a26e0af-fe3a-4754-b659-d056fd64c0e3/8cb63b1f-1788219768891.jpg"
+      }
+    ],
+    "title": "NEC"
+  },
+  {
+    "id": "entry-obstruksi-neonatal",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d63ef96e-859a-4264-b44f-e9ada36d4e66/95efc2c2-1788219947703.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d63ef96e-859a-4264-b44f-e9ada36d4e66/1d882a07-1788219948311.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d63ef96e-859a-4264-b44f-e9ada36d4e66/97e310c8-1788219948566.jpg"
+      }
+    ],
+    "title": "Obstruksi neonatal"
+  },
+  {
+    "id": "entry-rds-hmd-neonatus",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/685f701e-51d0-42dd-a3d6-41477b4e3759/5fbb43b8-1788220034149.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/685f701e-51d0-42dd-a3d6-41477b4e3759/6b1a09d2-1788220034479.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/685f701e-51d0-42dd-a3d6-41477b4e3759/31dd5066-1788220034693.jpg"
+      }
+    ],
+    "title": "RDS/HMD neonatus"
+  },
+  {
+    "id": "entry-ttn",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98d11afc-347f-48b0-a272-bebefdd201f8/597e1674-1788220321905.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98d11afc-347f-48b0-a272-bebefdd201f8/0fdc2d5a-1788220322415.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98d11afc-347f-48b0-a272-bebefdd201f8/0166c03b-1788220322935.jpg"
+      }
+    ],
+    "title": "TTN"
+  },
+  {
+    "id": "entry-meconium-aspiration-syndrome",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1f9c572-d900-4a65-87ce-f9194d4af321/1b89d345-1788220384381.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1f9c572-d900-4a65-87ce-f9194d4af321/2781a6b3-1788220385387.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1f9c572-d900-4a65-87ce-f9194d4af321/7ef102c1-1788220385657.jpg"
+      }
+    ],
+    "title": "Meconium aspiration syndrome"
+  },
+  {
+    "id": "entry-obstruksi-usus-mekanik",
+    "images": [
+      {
+        "caption": "Ileus Obstruksi",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eda44f06-aa3b-4570-a54b-ed3f234900a1/b4212b02-1787786228739.jfif"
+      },
+      {
+        "caption": "Ileus Obstruksi",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eda44f06-aa3b-4570-a54b-ed3f234900a1/5cc8ab18-1787786229556.jfif"
+      },
+      {
+        "caption": "Ileus Obstruksi",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eda44f06-aa3b-4570-a54b-ed3f234900a1/a3eaa431-1787786229811.jfif"
+      },
+      {
+        "caption": "Ileus Obstruksi",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eda44f06-aa3b-4570-a54b-ed3f234900a1/1b5eca90-1787786230052.jfif"
+      },
+      {
+        "caption": "Ileus Obstruksi",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eda44f06-aa3b-4570-a54b-ed3f234900a1/6ad80868-1787786230261.jfif"
+      }
+    ],
+    "title": "Obstruksi usus mekanik"
+  },
+  {
+    "id": "entry-ileus-paralitik",
+    "images": [
+      {
+        "caption": "Ileus paralitik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1b7eaf5-0c5a-4caa-a39b-f71ff1683a71/2d2f379d-1787786424817.jfif"
+      },
+      {
+        "caption": "Ileus paralitik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1b7eaf5-0c5a-4caa-a39b-f71ff1683a71/0bcafd3a-1787786425498.jfif"
+      },
+      {
+        "caption": "Ileus paralitik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1b7eaf5-0c5a-4caa-a39b-f71ff1683a71/ff8846e0-1787786533928.jfif"
+      },
+      {
+        "caption": "Ileus paralitik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1b7eaf5-0c5a-4caa-a39b-f71ff1683a71/3c759703-1787786535298.jfif"
+      },
+      {
+        "caption": "Ileus paralitik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1b7eaf5-0c5a-4caa-a39b-f71ff1683a71/7d73d856-1787786535506.jfif"
+      }
+    ],
+    "title": "Ileus paralitik"
+  },
+  {
+    "id": "entry-perforasi-viskus",
+    "images": [
+      {
+        "caption": "Perforasi viskus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a9d79858-e14c-4be5-b469-8c34f7804df1/6c31fb22-1787971613740.jfif"
+      },
+      {
+        "caption": "Perforasi viskus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a9d79858-e14c-4be5-b469-8c34f7804df1/db095177-1787971614571.jfif"
+      },
+      {
+        "caption": "Perforasi viskus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a9d79858-e14c-4be5-b469-8c34f7804df1/ff1e8cf0-1787971614923.jfif"
+      },
+      {
+        "caption": "Perforasi viskus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a9d79858-e14c-4be5-b469-8c34f7804df1/751398d9-1787971615530.jfif"
+      },
+      {
+        "caption": "Perforasi viskus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a9d79858-e14c-4be5-b469-8c34f7804df1/c474acae-1787971616852.jfif"
+      },
+      {
+        "caption": "Perforasi viskus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a9d79858-e14c-4be5-b469-8c34f7804df1/1b8533d8-1787971617225.jfif"
+      }
+    ],
+    "title": "Perforasi viskus"
+  },
+  {
+    "id": "entry-peritonitis-generalisata",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ec64415-64fe-4359-ba06-03230bfd2fdb/d6e9a9b0-1787977931405.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ec64415-64fe-4359-ba06-03230bfd2fdb/eb54be32-1787977932208.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ec64415-64fe-4359-ba06-03230bfd2fdb/7b84caad-1787977932526.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ec64415-64fe-4359-ba06-03230bfd2fdb/d0ff024f-1787977932851.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ec64415-64fe-4359-ba06-03230bfd2fdb/99107922-1787977933139.jfif"
+      }
+    ],
+    "title": "Peritonitis generalisata"
+  },
+  {
+    "id": "entry-batu-saluran-kemih-kub",
+    "images": [
+      {
+        "caption": "Batu saluran kemih X RAY",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9f4186af-3057-41e7-94b9-f54765aa9830/d73061ae-1788086081615.jfif"
+      },
+      {
+        "caption": "Batu saluran kemih X RAY",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9f4186af-3057-41e7-94b9-f54765aa9830/b2637382-1788086082496.jfif"
+      },
+      {
+        "caption": "Batu saluran kemih X RAY",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9f4186af-3057-41e7-94b9-f54765aa9830/aea46995-1788086082937.jfif"
+      },
+      {
+        "caption": "Batu saluran kemih X RAY",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9f4186af-3057-41e7-94b9-f54765aa9830/456be0f2-1788086083264.jfif"
+      },
+      {
+        "caption": "Batu saluran kemih X RAY",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9f4186af-3057-41e7-94b9-f54765aa9830/6f6e2d22-1788086083765.jfif"
+      },
+      {
+        "caption": "Batu saluran kemih X RAY",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9f4186af-3057-41e7-94b9-f54765aa9830/491eb49d-1788086084156.jfif"
+      }
+    ],
+    "title": "Batu saluran kemih X RAY"
+  },
+  {
+    "id": "entry-corpus-alienum-gastrointestinal",
+    "images": [
+      {
+        "caption": "Corpus alienum gastrointestinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f446cb9c-2eb7-408c-9aba-f28b2dd48447/f238c2fc-1788095471567.jfif"
+      },
+      {
+        "caption": "Corpus alienum gastrointestinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f446cb9c-2eb7-408c-9aba-f28b2dd48447/40887d17-1788095472214.jfif"
+      },
+      {
+        "caption": "Corpus alienum gastrointestinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f446cb9c-2eb7-408c-9aba-f28b2dd48447/3197a0a8-1788095472596.jfif"
+      },
+      {
+        "caption": "Corpus alienum gastrointestinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f446cb9c-2eb7-408c-9aba-f28b2dd48447/48914867-1788095472937.jfif"
+      },
+      {
+        "caption": "Corpus alienum gastrointestinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f446cb9c-2eb7-408c-9aba-f28b2dd48447/01b92da1-1788095473257.jfif"
+      },
+      {
+        "caption": "Corpus alienum gastrointestinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f446cb9c-2eb7-408c-9aba-f28b2dd48447/6d068ade-1788095473537.jfif"
+      }
+    ],
+    "title": "Corpus alienum gastrointestinal"
+  },
+  {
+    "id": "entry-sigmoid-volvulus",
+    "images": [
+      {
+        "caption": "Sigmoid volvulus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5ff29995-3390-4b4f-a204-67f391b0961c/f9510940-1788101545107.jfif"
+      },
+      {
+        "caption": "Sigmoid volvulus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5ff29995-3390-4b4f-a204-67f391b0961c/f3fe4867-1788101545650.jfif"
+      },
+      {
+        "caption": "Sigmoid volvulus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5ff29995-3390-4b4f-a204-67f391b0961c/cc7fed8b-1788101545926.jfif"
+      },
+      {
+        "caption": "Sigmoid volvulus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5ff29995-3390-4b4f-a204-67f391b0961c/fedcfa66-1788101546195.jfif"
+      },
+      {
+        "caption": "Sigmoid volvulus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5ff29995-3390-4b4f-a204-67f391b0961c/9159586b-1788101546430.jfif"
+      }
+    ],
+    "title": "Sigmoid volvulus"
+  },
+  {
+    "id": "entry-midgut-volvulus-neonatus",
+    "images": [
+      {
+        "caption": "Midgut volvulus neonatus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a93655a4-03e9-4019-a699-5c1333647e56/ce5ee6f5-1788215257391.jpg"
+      },
+      {
+        "caption": "Midgut volvulus neonatus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a93655a4-03e9-4019-a699-5c1333647e56/2280b63d-1788215258486.jpg"
+      },
+      {
+        "caption": "Midgut volvulus neonatus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a93655a4-03e9-4019-a699-5c1333647e56/b15952a2-1788215258838.jpg"
+      }
+    ],
+    "title": "Midgut volvulus neonatus"
+  },
+  {
+    "id": "entry-fraktur-klavikula",
+    "images": [
+      {
+        "caption": "Fraktur klavikula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c4a461d9-15b6-43a4-85d1-53f7ddd07459/04d73068-1787831545824.jfif"
+      },
+      {
+        "caption": "Fraktur klavikula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c4a461d9-15b6-43a4-85d1-53f7ddd07459/58f10953-1787831548403.jfif"
+      },
+      {
+        "caption": "Fraktur klavikula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c4a461d9-15b6-43a4-85d1-53f7ddd07459/ec3e4d8f-1787831548669.jfif"
+      }
+    ],
+    "title": "Fraktur klavikula"
+  },
+  {
+    "id": "entry-fraktur-scapula",
+    "images": [
+      {
+        "caption": "Fraktur scapula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1e386705-8598-4652-9d73-8a6a856186e9/0d605c8b-1787835419034.jfif"
+      },
+      {
+        "caption": "Fraktur scapula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1e386705-8598-4652-9d73-8a6a856186e9/f3a53931-1787835420156.jfif"
+      },
+      {
+        "caption": "Fraktur scapula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1e386705-8598-4652-9d73-8a6a856186e9/fed5adb9-1787835420468.jfif"
+      },
+      {
+        "caption": "Fraktur scapula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1e386705-8598-4652-9d73-8a6a856186e9/745b41ba-1787835420759.jfif"
+      },
+      {
+        "caption": "Fraktur scapula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1e386705-8598-4652-9d73-8a6a856186e9/9df570ab-1787835421442.jfif"
+      },
+      {
+        "caption": "Fraktur scapula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1e386705-8598-4652-9d73-8a6a856186e9/c7ab81b8-1787835421751.jfif"
+      }
+    ],
+    "title": "Fraktur scapula"
+  },
+  {
+    "id": "entry-fraktur-proksimal-humerus",
+    "images": [
+      {
+        "caption": "Fraktur proksimal humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2f9c01d2-0e88-4058-b661-74c266a987f5/ce747ad8-1787972165655.jfif"
+      },
+      {
+        "caption": "Fraktur proksimal humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2f9c01d2-0e88-4058-b661-74c266a987f5/75770e2f-1787972166167.jfif"
+      },
+      {
+        "caption": "Fraktur proksimal humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2f9c01d2-0e88-4058-b661-74c266a987f5/414dfa90-1787972166525.jfif"
+      },
+      {
+        "caption": "Fraktur proksimal humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2f9c01d2-0e88-4058-b661-74c266a987f5/132ece7a-1787972166851.jfif"
+      },
+      {
+        "caption": "Fraktur proksimal humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2f9c01d2-0e88-4058-b661-74c266a987f5/9e92bee7-1787972167199.jfif"
+      }
+    ],
+    "title": "Fraktur proksimal humerus"
+  },
+  {
+    "id": "entry-fraktur-shaft-humerus",
+    "images": [
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/d095ada9-1787976211248.jfif"
+      },
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/d5cdc7fc-1787976211908.jfif"
+      },
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/87566dd5-1787976212367.jfif"
+      },
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/4d58b797-1787976212644.jfif"
+      },
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/3b477ce3-1787976213098.jfif"
+      },
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/623ee226-1787976213469.jfif"
+      },
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/84e22805-1787976213887.jfif"
+      },
+      {
+        "caption": "Fraktur shaft humerus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8b56ef8d-f272-4514-9044-7986e1d7e8f2/1cfd55d0-1787976214243.jfif"
+      }
+    ],
+    "title": "Fraktur shaft humerus"
+  },
+  {
+    "id": "entry-fraktur-distal-humerus-dewasa",
+    "images": [
+      {
+        "caption": "Fraktur distal humerus dewasa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/57ba3e61-c14f-47e5-b4ac-0f3ea3341568/3801c471-1788085355311.jfif"
+      },
+      {
+        "caption": "Fraktur distal humerus dewasa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/57ba3e61-c14f-47e5-b4ac-0f3ea3341568/9d129bd8-1788085356184.jfif"
+      },
+      {
+        "caption": "Fraktur distal humerus dewasa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/57ba3e61-c14f-47e5-b4ac-0f3ea3341568/8a51b945-1788085356644.jfif"
+      },
+      {
+        "caption": "Fraktur distal humerus dewasa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/57ba3e61-c14f-47e5-b4ac-0f3ea3341568/e733e2d4-1788085357066.jfif"
+      }
+    ],
+    "title": "Fraktur distal humerus dewasa"
+  },
+  {
+    "id": "entry-fraktur-suprakondiler-humerus-anak",
+    "images": [
+      {
+        "caption": "Fraktur suprakondiler humerus anak",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/472d118c-a8f2-4793-97b7-119c1a28b3e1/409c3740-1788096296056.jfif"
+      },
+      {
+        "caption": "Fraktur suprakondiler humerus anak",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/472d118c-a8f2-4793-97b7-119c1a28b3e1/2af794e5-1788096302001.jfif"
+      },
+      {
+        "caption": "Fraktur suprakondiler humerus anak",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/472d118c-a8f2-4793-97b7-119c1a28b3e1/5f16b008-1788096302563.jfif"
+      },
+      {
+        "caption": "Fraktur suprakondiler humerus anak",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/472d118c-a8f2-4793-97b7-119c1a28b3e1/59109739-1788096302771.jfif"
+      },
+      {
+        "caption": "Fraktur suprakondiler humerus anak",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/472d118c-a8f2-4793-97b7-119c1a28b3e1/275e5111-1788096303375.jfif"
+      },
+      {
+        "caption": "Fraktur suprakondiler humerus anak",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/472d118c-a8f2-4793-97b7-119c1a28b3e1/860f91c3-1788096303615.jfif"
+      }
+    ],
+    "title": "Fraktur suprakondiler humerus anak"
+  },
+  {
+    "id": "entry-fraktur-olecranon",
+    "images": [
+      {
+        "caption": "fraktur olekranon",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/36d0713b-4c3d-4b84-96d4-064bced8a574/0ad68a6d-1788100252113.jfif"
+      },
+      {
+        "caption": "fraktur olekranon",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/36d0713b-4c3d-4b84-96d4-064bced8a574/6ed203e5-1788100252742.jfif"
+      },
+      {
+        "caption": "fraktur olekranon",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/36d0713b-4c3d-4b84-96d4-064bced8a574/217d8dc9-1788100254013.jfif"
+      },
+      {
+        "caption": "fraktur olekranon",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/36d0713b-4c3d-4b84-96d4-064bced8a574/7da9b168-1788100254233.jfif"
+      }
+    ],
+    "title": "Fraktur olecranon"
+  },
+  {
+    "id": "entry-fraktur-kepala-radius",
+    "images": [
+      {
+        "caption": "Fraktur kepala radius",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cd264a86-1d08-4c93-926c-39cb59ce81e4/e9fea4d0-1788215573404.jpg"
+      },
+      {
+        "caption": "Fraktur kepala radius",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cd264a86-1d08-4c93-926c-39cb59ce81e4/3f5506f6-1788215574247.jpg"
+      }
+    ],
+    "title": "Fraktur kepala radius"
+  },
+  {
+    "id": "entry-fraktur-coronoid",
+    "images": [
+      {
+        "caption": "Fraktur coronoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39348b65-757d-4488-adf9-bc27b7139209/0d738d99-1788216752881.jpg"
+      },
+      {
+        "caption": "Fraktur coronoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39348b65-757d-4488-adf9-bc27b7139209/8487e269-1788216753595.jpg"
+      },
+      {
+        "caption": "Fraktur coronoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39348b65-757d-4488-adf9-bc27b7139209/1a0be5a5-1788216753856.jpg"
+      },
+      {
+        "caption": "Fraktur coronoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39348b65-757d-4488-adf9-bc27b7139209/9f08703c-1788216754218.jpg"
+      }
+    ],
+    "title": "Fraktur coronoid"
+  },
+  {
+    "id": "entry-fraktur-shaft-radius",
+    "images": [
+      {
+        "caption": "Fraktur shaft radius",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b0416167-313a-4e7d-90a5-87005639ae17/1e8a09bb-1787786610467.jfif"
+      },
+      {
+        "caption": "Fraktur shaft radius",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b0416167-313a-4e7d-90a5-87005639ae17/122546fe-1787786610859.jfif"
+      },
+      {
+        "caption": "Fraktur shaft radius",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b0416167-313a-4e7d-90a5-87005639ae17/7afddc8a-1787786611117.jfif"
+      }
+    ],
+    "title": "Fraktur shaft radius"
+  },
+  {
+    "id": "entry-fraktur-shaft-ulna-nightstick",
+    "images": [
+      {
+        "caption": "Fraktur shaft ulna / nightstick",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/23727203-d44c-40a9-85f8-b47f78acdeb3/d98a2c6e-1787834776629.jfif"
+      },
+      {
+        "caption": "Fraktur shaft ulna / nightstick",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/23727203-d44c-40a9-85f8-b47f78acdeb3/bf5a73e3-1787834777663.jfif"
+      },
+      {
+        "caption": "Fraktur shaft ulna / nightstick",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/23727203-d44c-40a9-85f8-b47f78acdeb3/d101cc79-1787834778212.jfif"
+      },
+      {
+        "caption": "Fraktur shaft ulna / nightstick",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/23727203-d44c-40a9-85f8-b47f78acdeb3/59daf7dd-1787834778577.jfif"
+      },
+      {
+        "caption": "Fraktur shaft ulna / nightstick",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/23727203-d44c-40a9-85f8-b47f78acdeb3/36d0183c-1787834778819.jfif"
+      }
+    ],
+    "title": "Fraktur shaft ulna / nightstick"
+  },
+  {
+    "id": "entry-both-bone-forearm-fracture",
+    "images": [
+      {
+        "caption": "Both-bone forearm fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f20ebf40-b883-44b1-ad53-d660404efa8a/bce04148-1787975906604.jfif"
+      },
+      {
+        "caption": "Both-bone forearm fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f20ebf40-b883-44b1-ad53-d660404efa8a/39ab7dee-1787975907339.jfif"
+      },
+      {
+        "caption": "Both-bone forearm fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f20ebf40-b883-44b1-ad53-d660404efa8a/e1010311-1787975907642.jfif"
+      },
+      {
+        "caption": "Both-bone forearm fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f20ebf40-b883-44b1-ad53-d660404efa8a/ff5e2e88-1787975908000.jfif"
+      }
+    ],
+    "title": "Both-bone forearm fracture"
+  },
+  {
+    "id": "entry-monteggia-fracture-dislocation",
+    "images": [
+      {
+        "caption": "Monteggia fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/92c1219e-3ebf-413e-ad65-42cc41c99dc3/b39d6e24-1787978180855.jfif"
+      },
+      {
+        "caption": "Monteggia fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/92c1219e-3ebf-413e-ad65-42cc41c99dc3/79fab6a5-1787978181986.jfif"
+      },
+      {
+        "caption": "Monteggia fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/92c1219e-3ebf-413e-ad65-42cc41c99dc3/9ef8c156-1787978182517.jfif"
+      },
+      {
+        "caption": "Monteggia fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/92c1219e-3ebf-413e-ad65-42cc41c99dc3/de39fb4b-1787978182926.jfif"
+      }
+    ],
+    "title": "Monteggia fracture-dislocation"
+  },
+  {
+    "id": "entry-galeazzi-fracture-dislocation",
+    "images": [
+      {
+        "caption": "Galeazzi fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6a7d64da-9bf1-44ca-8d8e-8e42ffc8fd05/1d56b65e-1788086305681.jfif"
+      },
+      {
+        "caption": "Galeazzi fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6a7d64da-9bf1-44ca-8d8e-8e42ffc8fd05/cb11b66b-1788086306381.jfif"
+      },
+      {
+        "caption": "Galeazzi fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6a7d64da-9bf1-44ca-8d8e-8e42ffc8fd05/242f2b66-1788086306881.jfif"
+      },
+      {
+        "caption": "Galeazzi fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6a7d64da-9bf1-44ca-8d8e-8e42ffc8fd05/b4e706b8-1788086307195.jfif"
+      },
+      {
+        "caption": "Galeazzi fracture-dislocation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6a7d64da-9bf1-44ca-8d8e-8e42ffc8fd05/3b1b4067-1788086307510.jfif"
+      }
+    ],
+    "title": "Galeazzi fracture-dislocation"
+  },
+  {
+    "id": "entry-fraktur-colles",
+    "images": [
+      {
+        "caption": "Fraktur Colles",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8785e8df-e7d5-4379-b1cf-21a50881f294/7a17150b-1788095692081.jfif"
+      },
+      {
+        "caption": "Fraktur Colles",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8785e8df-e7d5-4379-b1cf-21a50881f294/08657ab5-1788095697794.jfif"
+      },
+      {
+        "caption": "Fraktur Colles",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8785e8df-e7d5-4379-b1cf-21a50881f294/5b723b15-1788095698313.jfif"
+      },
+      {
+        "caption": "Fraktur Colles",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8785e8df-e7d5-4379-b1cf-21a50881f294/d0780580-1788095698606.jfif"
+      },
+      {
+        "caption": "Fraktur Colles",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8785e8df-e7d5-4379-b1cf-21a50881f294/fd78ca91-1788095698846.jfif"
+      }
+    ],
+    "title": "Fraktur Colles"
+  },
+  {
+    "id": "entry-fraktur-smith",
+    "images": [
+      {
+        "caption": "Fraktur Smith",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f0a3447f-8ce7-4c54-9c66-a9ec0de1bc8c/f1d99f6c-1788106162840.jfif"
+      },
+      {
+        "caption": "Fraktur Smith",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f0a3447f-8ce7-4c54-9c66-a9ec0de1bc8c/2c8ba501-1788106168755.jfif"
+      },
+      {
+        "caption": "Fraktur Smith",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f0a3447f-8ce7-4c54-9c66-a9ec0de1bc8c/c9a4d5f2-1788106169002.jfif"
+      },
+      {
+        "caption": "Fraktur Smith",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f0a3447f-8ce7-4c54-9c66-a9ec0de1bc8c/f368293a-1788106169256.jfif"
+      },
+      {
+        "caption": "Fraktur Smith",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f0a3447f-8ce7-4c54-9c66-a9ec0de1bc8c/8cd184c0-1788106169466.jfif"
+      }
+    ],
+    "title": "Fraktur Smith"
+  },
+  {
+    "id": "entry-fraktur-barton",
+    "images": [
+      {
+        "caption": "Fraktur Barton",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7507658d-d8e4-43c8-b8f9-b298b66f33ea/7967a8a2-1788215327973.jpg"
+      },
+      {
+        "caption": "Fraktur Barton",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7507658d-d8e4-43c8-b8f9-b298b66f33ea/74d615f5-1788215328609.jpg"
+      },
+      {
+        "caption": "Fraktur Barton",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7507658d-d8e4-43c8-b8f9-b298b66f33ea/9066dad5-1788215328990.jpg"
+      },
+      {
+        "caption": "Fraktur Barton",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7507658d-d8e4-43c8-b8f9-b298b66f33ea/1ffe6a8c-1788215329405.jpg"
+      },
+      {
+        "caption": "Fraktur Barton",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7507658d-d8e4-43c8-b8f9-b298b66f33ea/90f882c6-1788215329804.jpg"
+      },
+      {
+        "caption": "Fraktur Barton",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7507658d-d8e4-43c8-b8f9-b298b66f33ea/17920964-1788215330148.jpg"
+      }
+    ],
+    "title": "Fraktur Barton"
+  },
+  {
+    "id": "entry-fraktur-chauffeur",
+    "images": [
+      {
+        "caption": "Fraktur Chauffeur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/10b76ec6-0a08-49bd-80b4-5b17d688a355/5d9e4ace-1788215723272.jpg"
+      },
+      {
+        "caption": "Fraktur Chauffeur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/10b76ec6-0a08-49bd-80b4-5b17d688a355/5526670a-1788215723732.jpg"
+      },
+      {
+        "caption": "Fraktur Chauffeur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/10b76ec6-0a08-49bd-80b4-5b17d688a355/7bfca95d-1788215724002.jpg"
+      },
+      {
+        "caption": "Fraktur Chauffeur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/10b76ec6-0a08-49bd-80b4-5b17d688a355/08cc363e-1788215724268.jpg"
+      }
+    ],
+    "title": "Fraktur Chauffeur"
+  },
+  {
+    "id": "entry-fraktur-scaphoid",
+    "images": [
+      {
+        "caption": "Fraktur scaphoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8c3fab6f-fd1c-4f5b-b39a-93e86a6544b9/7d39f5f2-1788217272689.jpg"
+      },
+      {
+        "caption": "Fraktur scaphoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8c3fab6f-fd1c-4f5b-b39a-93e86a6544b9/eb0605ea-1788217273091.jpg"
+      },
+      {
+        "caption": "Fraktur scaphoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8c3fab6f-fd1c-4f5b-b39a-93e86a6544b9/669e07a5-1788217273295.jpg"
+      },
+      {
+        "caption": "Fraktur scaphoid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8c3fab6f-fd1c-4f5b-b39a-93e86a6544b9/ff12e884-1788217273842.jpg"
+      }
+    ],
+    "title": "Fraktur scaphoid"
+  },
+  {
+    "id": "entry-bennett-fracture",
+    "images": [
+      {
+        "caption": "Bennett fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b9853596-5d7e-469c-873e-539d16d76c54/f2c1b165-1787787600573.jfif"
+      },
+      {
+        "caption": "Bennett fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b9853596-5d7e-469c-873e-539d16d76c54/28156994-1787787605984.jfif"
+      },
+      {
+        "caption": "Bennett fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b9853596-5d7e-469c-873e-539d16d76c54/b8f1b3b4-1787787606238.jfif"
+      },
+      {
+        "caption": "Bennett fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b9853596-5d7e-469c-873e-539d16d76c54/488da5e8-1787787606482.jfif"
+      },
+      {
+        "caption": "Bennett fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b9853596-5d7e-469c-873e-539d16d76c54/cac104bf-1787787606659.jfif"
+      },
+      {
+        "caption": "Bennett fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b9853596-5d7e-469c-873e-539d16d76c54/d6a964ea-1787787606883.jfif"
+      }
+    ],
+    "title": "Bennett fracture"
+  },
+  {
+    "id": "entry-rolando-fracture",
+    "images": [
+      {
+        "caption": "Rolando fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/505d5a5e-99d0-4f6d-becb-4e9293005c0a/17073bd5-1787970854500.jfif"
+      },
+      {
+        "caption": "Rolando fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/505d5a5e-99d0-4f6d-becb-4e9293005c0a/c2f83562-1787970855311.jfif"
+      },
+      {
+        "caption": "Rolando fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/505d5a5e-99d0-4f6d-becb-4e9293005c0a/bae9cdf3-1787970855895.webp"
+      }
+    ],
+    "title": "Rolando fracture"
+  },
+  {
+    "id": "entry-boxers-fracture",
+    "images": [
+      {
+        "caption": "Boxer's fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1df6d36d-61cb-4965-8773-8e835498270c/583bd5ec-1787974270667.jfif"
+      },
+      {
+        "caption": "Boxer's fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1df6d36d-61cb-4965-8773-8e835498270c/22e984fc-1787974271268.jfif"
+      },
+      {
+        "caption": "Boxer's fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1df6d36d-61cb-4965-8773-8e835498270c/429d4aa7-1787974271723.jfif"
+      },
+      {
+        "caption": "Boxer's fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1df6d36d-61cb-4965-8773-8e835498270c/9ce4f521-1787974272066.jfif"
+      },
+      {
+        "caption": "Boxer's fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1df6d36d-61cb-4965-8773-8e835498270c/886499f3-1787974272399.jfif"
+      },
+      {
+        "caption": "Boxer's fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1df6d36d-61cb-4965-8773-8e835498270c/aae009be-1787974272737.jfif"
+      }
+    ],
+    "title": "Boxer's fracture"
+  },
+  {
+    "id": "entry-fraktur-shaft-metakarpal",
+    "images": [
+      {
+        "caption": "Fraktur shaft metakarpal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9b4979f8-4911-40f2-9da2-83b4f5ac50e6/cddc77e3-1787976464925.jfif"
+      },
+      {
+        "caption": "Fraktur shaft metakarpal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9b4979f8-4911-40f2-9da2-83b4f5ac50e6/60184865-1787976465505.jfif"
+      },
+      {
+        "caption": "Fraktur shaft metakarpal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9b4979f8-4911-40f2-9da2-83b4f5ac50e6/d84bd16c-1787976465776.jfif"
+      },
+      {
+        "caption": "Fraktur shaft metakarpal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9b4979f8-4911-40f2-9da2-83b4f5ac50e6/11e420da-1787976466200.jfif"
+      },
+      {
+        "caption": "Fraktur shaft metakarpal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9b4979f8-4911-40f2-9da2-83b4f5ac50e6/2d6b15f5-1787976466565.jfif"
+      },
+      {
+        "caption": "Fraktur shaft metakarpal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9b4979f8-4911-40f2-9da2-83b4f5ac50e6/39f7ac5f-1787976466902.jfif"
+      }
+    ],
+    "title": "Fraktur shaft metakarpal"
+  },
+  {
+    "id": "entry-fraktur-falang-tangan",
+    "images": [
+      {
+        "caption": "Fraktur falang tangan",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2831589-2a7f-4729-9203-faf54c3c5362/8920a00e-1788085189619.jfif"
+      },
+      {
+        "caption": "Fraktur falang tangan",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2831589-2a7f-4729-9203-faf54c3c5362/6686b7a4-1788085190231.jfif"
+      },
+      {
+        "caption": "Fraktur falang tangan",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2831589-2a7f-4729-9203-faf54c3c5362/e006199b-1788085190947.jfif"
+      },
+      {
+        "caption": "Fraktur falang tangan",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2831589-2a7f-4729-9203-faf54c3c5362/8cd86695-1788085191320.jfif"
+      },
+      {
+        "caption": "Fraktur falang tangan",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2831589-2a7f-4729-9203-faf54c3c5362/b4a44322-1788085191649.jfif"
+      },
+      {
+        "caption": "Fraktur falang tangan",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2831589-2a7f-4729-9203-faf54c3c5362/43505c84-1788085191988.jfif"
+      }
+    ],
+    "title": "Fraktur falang tangan"
+  },
+  {
+    "id": "entry-mallet-fracture",
+    "images": [
+      {
+        "caption": "Mallet fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/285332d3-d347-4d30-8e48-8e9fb5e48b9b/14c0cee3-1788088413015.jfif"
+      },
+      {
+        "caption": "Mallet fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/285332d3-d347-4d30-8e48-8e9fb5e48b9b/635bba51-1788088414006.jfif"
+      },
+      {
+        "caption": "Mallet fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/285332d3-d347-4d30-8e48-8e9fb5e48b9b/91b96fbd-1788088414354.jfif"
+      }
+    ],
+    "title": "Mallet fracture"
+  },
+  {
+    "id": "entry-volar-plate-avulsion",
+    "images": [
+      {
+        "caption": "Volar plate avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8e750f54-af9c-4b22-a47d-d5d6580aa013/14c9a452-1788105679737.jfif"
+      },
+      {
+        "caption": "Volar plate avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8e750f54-af9c-4b22-a47d-d5d6580aa013/5e838764-1788105680656.jfif"
+      },
+      {
+        "caption": "Volar plate avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8e750f54-af9c-4b22-a47d-d5d6580aa013/8294b488-1788105680920.jfif"
+      },
+      {
+        "caption": "Volar plate avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8e750f54-af9c-4b22-a47d-d5d6580aa013/dd571a89-1788105681178.jfif"
+      }
+    ],
+    "title": "Volar plate avulsion"
+  },
+  {
+    "id": "entry-jersey-finger",
+    "images": [
+      {
+        "caption": "Jersey finger",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1d20b1f-3637-4e5e-9428-a23d4505eb88/52bfbdfb-1788214361957.jpg"
+      },
+      {
+        "caption": "Jersey finger",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1d20b1f-3637-4e5e-9428-a23d4505eb88/5488b600-1788214364175.jpg"
+      },
+      {
+        "caption": "Jersey finger",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1d20b1f-3637-4e5e-9428-a23d4505eb88/5de7993b-1788214364578.jpg"
+      },
+      {
+        "caption": "Jersey finger",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1d20b1f-3637-4e5e-9428-a23d4505eb88/09ac0871-1788214365119.jpg"
+      }
+    ],
+    "title": "Jersey finger"
+  },
+  {
+    "id": "entry-fraktur-pelvis-pelvic-ring",
+    "images": [
+      {
+        "caption": "Fraktur pelvis / pelvic ring",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/50468670-ac9b-44f6-af5a-a1b8b0451515/1629b9e7-1787787183426.jfif"
+      },
+      {
+        "caption": "Fraktur pelvis / pelvic ring",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/50468670-ac9b-44f6-af5a-a1b8b0451515/742f5689-1787787188867.jfif"
+      },
+      {
+        "caption": "Fraktur pelvis / pelvic ring",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/50468670-ac9b-44f6-af5a-a1b8b0451515/75a5f518-1787787189126.jfif"
+      }
+    ],
+    "title": "Fraktur pelvis / pelvic ring"
+  },
+  {
+    "id": "entry-open-book-pelvic-injury",
+    "images": [
+      {
+        "caption": "Open-book pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c2773939-a5f8-457b-afbe-5c1b42da8a1a/e5aceccd-1787971208212.jfif"
+      },
+      {
+        "caption": "Open-book pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c2773939-a5f8-457b-afbe-5c1b42da8a1a/48cae146-1787971209086.jfif"
+      },
+      {
+        "caption": "Open-book pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c2773939-a5f8-457b-afbe-5c1b42da8a1a/60cb27d2-1787971209433.jfif"
+      },
+      {
+        "caption": "Open-book pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c2773939-a5f8-457b-afbe-5c1b42da8a1a/a1f33f86-1787971209704.jfif"
+      },
+      {
+        "caption": "Open-book pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c2773939-a5f8-457b-afbe-5c1b42da8a1a/25c33165-1787971210065.jfif"
+      }
+    ],
+    "title": "Open-book pelvic injury"
+  },
+  {
+    "id": "entry-vertical-shear-pelvic-injury",
+    "images": [
+      {
+        "caption": "Vertical shear pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/14eb995c-b1f9-4550-ac92-8dce509ce4f8/09af95a6-1787974137190.jfif"
+      },
+      {
+        "caption": "Vertical shear pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/14eb995c-b1f9-4550-ac92-8dce509ce4f8/b7deacf4-1787974138123.jfif"
+      },
+      {
+        "caption": "Vertical shear pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/14eb995c-b1f9-4550-ac92-8dce509ce4f8/ed3b0612-1787974138564.jfif"
+      },
+      {
+        "caption": "Vertical shear pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/14eb995c-b1f9-4550-ac92-8dce509ce4f8/649ec056-1787974138840.jfif"
+      },
+      {
+        "caption": "Vertical shear pelvic injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/14eb995c-b1f9-4550-ac92-8dce509ce4f8/4c652ca5-1787974139709.jfif"
+      }
+    ],
+    "title": "Vertical shear pelvic injury"
+  },
+  {
+    "id": "entry-fraktur-acetabulum",
+    "images": [
+      {
+        "caption": "Fraktur acetabulum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a4d6d7b4-f69f-405f-af1d-6887b75e5d13/4cb5350a-1787976532455.jfif"
+      },
+      {
+        "caption": "Fraktur acetabulum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a4d6d7b4-f69f-405f-af1d-6887b75e5d13/03da9b4e-1787976533102.jfif"
+      },
+      {
+        "caption": "Fraktur acetabulum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a4d6d7b4-f69f-405f-af1d-6887b75e5d13/a684d693-1787976533392.jfif"
+      },
+      {
+        "caption": "Fraktur acetabulum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a4d6d7b4-f69f-405f-af1d-6887b75e5d13/0d7aab6a-1787976533778.jfif"
+      },
+      {
+        "caption": "Fraktur acetabulum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a4d6d7b4-f69f-405f-af1d-6887b75e5d13/426b3edc-1787976534120.jfif"
+      },
+      {
+        "caption": "Fraktur acetabulum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a4d6d7b4-f69f-405f-af1d-6887b75e5d13/7ef72c29-1787976534498.jfif"
+      }
+    ],
+    "title": "Fraktur acetabulum"
+  },
+  {
+    "id": "entry-fraktur-collum-femur",
+    "images": [
+      {
+        "caption": "Fraktur collum femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/704f2183-3c9d-4e6e-b048-a18d5cbb9d42/51850f24-1788086453955.jfif"
+      },
+      {
+        "caption": "Fraktur collum femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/704f2183-3c9d-4e6e-b048-a18d5cbb9d42/3b3bda8c-1788086454677.jfif"
+      },
+      {
+        "caption": "Fraktur collum femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/704f2183-3c9d-4e6e-b048-a18d5cbb9d42/4c44a19d-1788086455211.jfif"
+      },
+      {
+        "caption": "Fraktur collum femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/704f2183-3c9d-4e6e-b048-a18d5cbb9d42/6d70fca2-1788086455655.jfif"
+      },
+      {
+        "caption": "Fraktur collum femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/704f2183-3c9d-4e6e-b048-a18d5cbb9d42/3295365f-1788086456253.jfif"
+      }
+    ],
+    "title": "Fraktur collum femur"
+  },
+  {
+    "id": "entry-fraktur-intertrokanterik",
+    "images": [
+      {
+        "caption": "Fraktur intertrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/79fb5d1e-8e07-42b9-b5ba-c9cd874638f7/bd63679c-1788096387266.jfif"
+      },
+      {
+        "caption": "Fraktur intertrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/79fb5d1e-8e07-42b9-b5ba-c9cd874638f7/89e6344e-1788096392690.jfif"
+      },
+      {
+        "caption": "Fraktur intertrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/79fb5d1e-8e07-42b9-b5ba-c9cd874638f7/54b593c9-1788096392953.jfif"
+      },
+      {
+        "caption": "Fraktur intertrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/79fb5d1e-8e07-42b9-b5ba-c9cd874638f7/13b64dce-1788096393152.jfif"
+      },
+      {
+        "caption": "Fraktur intertrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/79fb5d1e-8e07-42b9-b5ba-c9cd874638f7/833781e8-1788096393362.jfif"
+      }
+    ],
+    "title": "Fraktur intertrokanterik"
+  },
+  {
+    "id": "entry-fraktur-subtrokanterik",
+    "images": [
+      {
+        "caption": "Fraktur subtrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cb8e87f0-c4ee-4fd1-9e85-a672662d93ac/3b6ee473-1788100587484.jfif"
+      },
+      {
+        "caption": "Fraktur subtrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cb8e87f0-c4ee-4fd1-9e85-a672662d93ac/1d1ffa35-1788100588633.jfif"
+      },
+      {
+        "caption": "Fraktur subtrokanterik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cb8e87f0-c4ee-4fd1-9e85-a672662d93ac/26508338-1788100588860.jfif"
+      }
+    ],
+    "title": "Fraktur subtrokanterik"
+  },
+  {
+    "id": "entry-fraktur-shaft-femur",
+    "images": [
+      {
+        "caption": "Fraktur shaft femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0cde71ca-e1d3-4b2d-a16b-01888fdef597/d21aaf8b-1788106745850.jfif"
+      },
+      {
+        "caption": "Fraktur shaft femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0cde71ca-e1d3-4b2d-a16b-01888fdef597/89eb797e-1788106746580.jfif"
+      },
+      {
+        "caption": "Fraktur shaft femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0cde71ca-e1d3-4b2d-a16b-01888fdef597/df9ba385-1788106746811.jfif"
+      },
+      {
+        "caption": "Fraktur shaft femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0cde71ca-e1d3-4b2d-a16b-01888fdef597/a2ac4151-1788106747080.jfif"
+      },
+      {
+        "caption": "Fraktur shaft femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0cde71ca-e1d3-4b2d-a16b-01888fdef597/f658f960-1788106747311.jfif"
+      },
+      {
+        "caption": "Fraktur shaft femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0cde71ca-e1d3-4b2d-a16b-01888fdef597/cd619211-1788106747521.jfif"
+      }
+    ],
+    "title": "Fraktur shaft femur"
+  },
+  {
+    "id": "entry-fraktur-distal-femur",
+    "images": [
+      {
+        "caption": "Fraktur distal femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cdc58a5c-7210-47e6-bd3c-b386d9a4233f/c364056c-1788216636728.jpg"
+      },
+      {
+        "caption": "Fraktur distal femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cdc58a5c-7210-47e6-bd3c-b386d9a4233f/82dad846-1788216637780.jpg"
+      },
+      {
+        "caption": "Fraktur distal femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cdc58a5c-7210-47e6-bd3c-b386d9a4233f/34b767d1-1788216638019.jpg"
+      },
+      {
+        "caption": "Fraktur distal femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cdc58a5c-7210-47e6-bd3c-b386d9a4233f/21e1d1b8-1788216638395.jpg"
+      },
+      {
+        "caption": "Fraktur distal femur",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cdc58a5c-7210-47e6-bd3c-b386d9a4233f/f1325522-1788216639246.jpg"
+      }
+    ],
+    "title": "Fraktur distal femur"
+  },
+  {
+    "id": "entry-fraktur-patella",
+    "images": [
+      {
+        "caption": "Fraktur patella",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc8e318f-c7a5-4961-9378-addc85673d30/6baeff12-1787787383481.jfif"
+      },
+      {
+        "caption": "Fraktur patella",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc8e318f-c7a5-4961-9378-addc85673d30/e2bf3f53-1787787384044.jfif"
+      },
+      {
+        "caption": "Fraktur patella",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc8e318f-c7a5-4961-9378-addc85673d30/f31ca0aa-1787787384362.jfif"
+      },
+      {
+        "caption": "Fraktur patella",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc8e318f-c7a5-4961-9378-addc85673d30/d8410a8c-1787787384542.jfif"
+      },
+      {
+        "caption": "Fraktur patella",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc8e318f-c7a5-4961-9378-addc85673d30/b9912a05-1787787384792.jfif"
+      },
+      {
+        "caption": "Fraktur patella",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc8e318f-c7a5-4961-9378-addc85673d30/26103b2c-1787787385004.jfif"
+      }
+    ],
+    "title": "Fraktur patella"
+  },
+  {
+    "id": "entry-fraktur-tibial-plateau",
+    "images": [
+      {
+        "caption": "Fraktur tibial plateau",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/832b7c06-84ec-4de2-9bcd-43a2376299a0/fc584c74-1787832360828.jfif"
+      },
+      {
+        "caption": "Fraktur tibial plateau",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/832b7c06-84ec-4de2-9bcd-43a2376299a0/934ad0d7-1787832361325.jfif"
+      },
+      {
+        "caption": "Fraktur tibial plateau",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/832b7c06-84ec-4de2-9bcd-43a2376299a0/a249a853-1787832363023.jfif"
+      },
+      {
+        "caption": "Fraktur tibial plateau",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/832b7c06-84ec-4de2-9bcd-43a2376299a0/792ac4d6-1787832363321.jfif"
+      },
+      {
+        "caption": "Fraktur tibial plateau",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/832b7c06-84ec-4de2-9bcd-43a2376299a0/845ec7d2-1787832363714.jfif"
+      },
+      {
+        "caption": "Fraktur tibial plateau",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/832b7c06-84ec-4de2-9bcd-43a2376299a0/f91d053e-1787832363939.jfif"
+      }
+    ],
+    "title": "Fraktur tibial plateau"
+  },
+  {
+    "id": "entry-tibial-spine-avulsion",
+    "images": [
+      {
+        "caption": "Tibial spine avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/683d1959-8fe1-4b58-888a-6da0b8702185/09c6c55a-1787971957495.jfif"
+      },
+      {
+        "caption": "Tibial spine avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/683d1959-8fe1-4b58-888a-6da0b8702185/e889f4e5-1787971958379.jfif"
+      },
+      {
+        "caption": "Tibial spine avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/683d1959-8fe1-4b58-888a-6da0b8702185/43488a2c-1787971958746.jfif"
+      },
+      {
+        "caption": "Tibial spine avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/683d1959-8fe1-4b58-888a-6da0b8702185/b0ee63e7-1787971959406.jfif"
+      },
+      {
+        "caption": "Tibial spine avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/683d1959-8fe1-4b58-888a-6da0b8702185/bcd4e67f-1787971959815.jfif"
+      },
+      {
+        "caption": "Tibial spine avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/683d1959-8fe1-4b58-888a-6da0b8702185/831ab769-1787971960110.jfif"
+      },
+      {
+        "caption": "Tibial spine avulsion",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/683d1959-8fe1-4b58-888a-6da0b8702185/b4a653f6-1787971960535.jfif"
+      }
+    ],
+    "title": "Tibial spine avulsion"
+  },
+  {
+    "id": "entry-fraktur-shaft-tibia",
+    "images": [
+      {
+        "caption": "Fraktur shaft tibia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/fcd96067-d504-4621-82a5-6d442804a1c0/ddaa0501-1787980146535.jfif"
+      },
+      {
+        "caption": "Fraktur shaft tibia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/fcd96067-d504-4621-82a5-6d442804a1c0/4ae088c9-1787980147285.jfif"
+      },
+      {
+        "caption": "Fraktur shaft tibia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/fcd96067-d504-4621-82a5-6d442804a1c0/d5718952-1787980147580.jfif"
+      },
+      {
+        "caption": "Fraktur shaft tibia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/fcd96067-d504-4621-82a5-6d442804a1c0/8234c423-1787980147986.jfif"
+      },
+      {
+        "caption": "Fraktur shaft tibia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/fcd96067-d504-4621-82a5-6d442804a1c0/837b2ab6-1787980148597.jfif"
+      },
+      {
+        "caption": "Fraktur shaft tibia",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/fcd96067-d504-4621-82a5-6d442804a1c0/95247a0f-1787980148966.jfif"
+      }
+    ],
+    "title": "Fraktur shaft tibia"
+  },
+  {
+    "id": "entry-fraktur-shaft-fibula",
+    "images": [
+      {
+        "caption": "Fraktur shaft fibula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/89e9a582-76ec-4e6f-8cca-699b7ca3fa14/67548493-1787982605985.jfif"
+      },
+      {
+        "caption": "Fraktur shaft fibula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/89e9a582-76ec-4e6f-8cca-699b7ca3fa14/58c5e63c-1787982606620.jfif"
+      },
+      {
+        "caption": "Fraktur shaft fibula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/89e9a582-76ec-4e6f-8cca-699b7ca3fa14/ce5a8474-1787982606924.jfif"
+      },
+      {
+        "caption": "Fraktur shaft fibula",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/89e9a582-76ec-4e6f-8cca-699b7ca3fa14/12ba690f-1787982607269.jfif"
+      }
+    ],
+    "title": "Fraktur shaft fibula"
+  },
+  {
+    "id": "entry-maisonneuve-fracture",
+    "images": [
+      {
+        "caption": "maisonneuve fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f49d5978-c05b-4d04-bb62-b3a7cd71591b/afc67071-1787831657992.jfif"
+      },
+      {
+        "caption": "maisonneuve fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f49d5978-c05b-4d04-bb62-b3a7cd71591b/9d526880-1787831663537.jfif"
+      },
+      {
+        "caption": "maisonneuve fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f49d5978-c05b-4d04-bb62-b3a7cd71591b/b4dc493a-1787831663995.jfif"
+      },
+      {
+        "caption": "maisonneuve fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f49d5978-c05b-4d04-bb62-b3a7cd71591b/78d98868-1787831664232.jfif"
+      },
+      {
+        "caption": "maisonneuve fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f49d5978-c05b-4d04-bb62-b3a7cd71591b/7d25e2d6-1787831664476.jfif"
+      },
+      {
+        "caption": "maisonneuve fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f49d5978-c05b-4d04-bb62-b3a7cd71591b/8438730a-1787831664724.jfif"
+      }
+    ],
+    "title": "Maisonneuve fracture"
+  },
+  {
+    "id": "entry-pilon-fracture",
+    "images": [
+      {
+        "caption": "pilon fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc7b3e31-8e22-4230-9bb8-6ce718ba3f19/227eca1d-1787968606815.png"
+      },
+      {
+        "caption": "pilon fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc7b3e31-8e22-4230-9bb8-6ce718ba3f19/ca708144-1787968609932.png"
+      },
+      {
+        "caption": "pilon fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc7b3e31-8e22-4230-9bb8-6ce718ba3f19/1cf55f71-1787968611882.png"
+      },
+      {
+        "caption": "pilon fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dc7b3e31-8e22-4230-9bb8-6ce718ba3f19/edd065e7-1787968613981.png"
+      }
+    ],
+    "title": "Pilon fracture"
+  },
+  {
+    "id": "entry-fraktur-lateral-malleolus",
+    "images": [
+      {
+        "caption": "Fraktur lateral malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22ff9997-fbad-46df-819b-f9cac14e7bcb/76cb5b0e-1787976059311.jfif"
+      },
+      {
+        "caption": "Fraktur lateral malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22ff9997-fbad-46df-819b-f9cac14e7bcb/be6300a3-1787976060149.jfif"
+      },
+      {
+        "caption": "Fraktur lateral malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22ff9997-fbad-46df-819b-f9cac14e7bcb/7ba268cb-1787976060526.jfif"
+      }
+    ],
+    "title": "Fraktur lateral malleolus"
+  },
+  {
+    "id": "entry-fraktur-medial-malleolus",
+    "images": [
+      {
+        "caption": "Fraktur medial malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/bdf77197-dec5-4769-a049-e1de00d15989/9848ecb9-1787979956981.jfif"
+      },
+      {
+        "caption": "Fraktur medial malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/bdf77197-dec5-4769-a049-e1de00d15989/8a6b3d85-1787979957688.jfif"
+      },
+      {
+        "caption": "Fraktur medial malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/bdf77197-dec5-4769-a049-e1de00d15989/c1b132e9-1787979958560.jfif"
+      },
+      {
+        "caption": "Fraktur medial malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/bdf77197-dec5-4769-a049-e1de00d15989/7e4e83cf-1787979958913.jfif"
+      }
+    ],
+    "title": "Fraktur medial malleolus"
+  },
+  {
+    "id": "entry-fraktur-posterior-malleolus",
+    "images": [
+      {
+        "caption": "Fraktur posterior malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f072314c-65cb-49d7-a1c3-59851ce161b3/8fc4ddd7-1788083405757.jfif"
+      },
+      {
+        "caption": "Fraktur posterior malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f072314c-65cb-49d7-a1c3-59851ce161b3/af7e11f9-1788083406462.jfif"
+      },
+      {
+        "caption": "Fraktur posterior malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f072314c-65cb-49d7-a1c3-59851ce161b3/e7644000-1788083406846.jfif"
+      },
+      {
+        "caption": "Fraktur posterior malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f072314c-65cb-49d7-a1c3-59851ce161b3/801d54e8-1788083407173.jfif"
+      },
+      {
+        "caption": "Fraktur posterior malleolus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f072314c-65cb-49d7-a1c3-59851ce161b3/b8435f11-1788083407450.jfif"
+      }
+    ],
+    "title": "Fraktur posterior malleolus"
+  },
+  {
+    "id": "entry-bimalleolar-fracture",
+    "images": [
+      {
+        "caption": "Bimalleolar fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/74066d9e-8135-4224-881f-34c345063c39/3efac9b5-1788089781483.jfif"
+      },
+      {
+        "caption": "Bimalleolar fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/74066d9e-8135-4224-881f-34c345063c39/b946809e-1788089781924.jfif"
+      }
+    ],
+    "title": "Bimalleolar fracture"
+  },
+  {
+    "id": "entry-trimalleolar-fracture",
+    "images": [
+      {
+        "caption": "Trimalleolar fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c8afd72f-47aa-41f0-a3d6-650cb276ffff/a4018d77-1788105444518.jfif"
+      },
+      {
+        "caption": "Trimalleolar fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c8afd72f-47aa-41f0-a3d6-650cb276ffff/9bc24dc4-1788105445603.jfif"
+      },
+      {
+        "caption": "Trimalleolar fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c8afd72f-47aa-41f0-a3d6-650cb276ffff/78e0e3dd-1788105445830.jfif"
+      },
+      {
+        "caption": "Trimalleolar fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c8afd72f-47aa-41f0-a3d6-650cb276ffff/ecb3f7f5-1788105446422.jfif"
+      },
+      {
+        "caption": "Trimalleolar fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c8afd72f-47aa-41f0-a3d6-650cb276ffff/2b3a257e-1788105446742.jfif"
+      }
+    ],
+    "title": "Trimalleolar fracture"
+  },
+  {
+    "id": "entry-cedera-syndesmosis-ankle",
+    "images": [
+      {
+        "caption": "Cedera syndesmosis ankle",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d4442196-648c-4190-bc12-a9b624cdac4a/e0b526a9-1788214742277.jpg"
+      },
+      {
+        "caption": "Cedera syndesmosis ankle",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d4442196-648c-4190-bc12-a9b624cdac4a/538098f6-1788214742876.jpg"
+      },
+      {
+        "caption": "Cedera syndesmosis ankle",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d4442196-648c-4190-bc12-a9b624cdac4a/455b2d91-1788214743218.jpg"
+      },
+      {
+        "caption": "Cedera syndesmosis ankle",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d4442196-648c-4190-bc12-a9b624cdac4a/e0f0fcb8-1788214743571.jpg"
+      }
+    ],
+    "title": "Cedera syndesmosis ankle"
+  },
+  {
+    "id": "entry-fraktur-talar-neck",
+    "images": [
+      {
+        "caption": "Fraktur talar neck",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2ddc336-3425-49dd-848f-cfb267b2c084/d3a8d244-1787786813352.jfif"
+      },
+      {
+        "caption": "Fraktur talar neck",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2ddc336-3425-49dd-848f-cfb267b2c084/6808c91b-1787786818936.jfif"
+      },
+      {
+        "caption": "Fraktur talar neck",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2ddc336-3425-49dd-848f-cfb267b2c084/d6140acd-1787786819163.jfif"
+      },
+      {
+        "caption": "Fraktur talar neck",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2ddc336-3425-49dd-848f-cfb267b2c084/08e261dc-1787786819424.jfif"
+      },
+      {
+        "caption": "Fraktur talar neck",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2ddc336-3425-49dd-848f-cfb267b2c084/57baf15f-1787786819660.jfif"
+      },
+      {
+        "caption": "Fraktur talar neck",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2ddc336-3425-49dd-848f-cfb267b2c084/369610df-1787786819859.jfif"
+      },
+      {
+        "caption": "Fraktur talar neck",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f2ddc336-3425-49dd-848f-cfb267b2c084/de876b98-1787786820107.jfif"
+      }
+    ],
+    "title": "Fraktur talar neck"
+  },
+  {
+    "id": "entry-osteochondral-lesion-talar-dome",
+    "images": [
+      {
+        "caption": "Osteochondral lesion talar dome",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6bd58716-540c-4d40-96cc-6b2b17214187/c9885d40-1787968931785.png"
+      },
+      {
+        "caption": "Osteochondral lesion talar dome",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6bd58716-540c-4d40-96cc-6b2b17214187/f9dada58-1787968934799.png"
+      },
+      {
+        "caption": "Osteochondral lesion talar dome",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6bd58716-540c-4d40-96cc-6b2b17214187/bd58d5c4-1787968937040.png"
+      },
+      {
+        "caption": "Osteochondral lesion talar dome",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6bd58716-540c-4d40-96cc-6b2b17214187/198f32d8-1787968939042.png"
+      }
+    ],
+    "title": "Osteochondral lesion talar dome"
+  },
+  {
+    "id": "entry-fraktur-calcaneus",
+    "images": [
+      {
+        "caption": "Fraktur calcaneus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/480fff07-fcc3-4a8e-82c0-8434a2d74073/0f751ab1-1787973751017.jfif"
+      },
+      {
+        "caption": "Fraktur calcaneus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/480fff07-fcc3-4a8e-82c0-8434a2d74073/fbe06571-1787973753268.jfif"
+      },
+      {
+        "caption": "Fraktur calcaneus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/480fff07-fcc3-4a8e-82c0-8434a2d74073/99608d84-1787973754104.jfif"
+      },
+      {
+        "caption": "Fraktur calcaneus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/480fff07-fcc3-4a8e-82c0-8434a2d74073/277651a8-1787973754602.jfif"
+      },
+      {
+        "caption": "Fraktur calcaneus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/480fff07-fcc3-4a8e-82c0-8434a2d74073/e2f1dc63-1787973755592.jfif"
+      }
+    ],
+    "title": "Fraktur calcaneus"
+  },
+  {
+    "id": "entry-lisfranc-injury",
+    "images": [
+      {
+        "caption": "lisfranc injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/af618f11-07b6-445f-91ff-b16292504200/81ab5d0e-1787979888279.jfif"
+      },
+      {
+        "caption": "lisfranc injury",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/af618f11-07b6-445f-91ff-b16292504200/c64a0d92-1787979889077.jfif"
+      }
+    ],
+    "title": "Lisfranc injury"
+  },
+  {
+    "id": "entry-fraktur-navicular",
+    "images": [
+      {
+        "caption": "Fraktur navicular",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/41fce7d1-c57d-4e9e-aa67-6e95b702c074/0aca6534-1788085653847.jfif"
+      },
+      {
+        "caption": "Fraktur navicular",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/41fce7d1-c57d-4e9e-aa67-6e95b702c074/087fe202-1788085654826.jfif"
+      },
+      {
+        "caption": "Fraktur navicular",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/41fce7d1-c57d-4e9e-aa67-6e95b702c074/73662578-1788085655190.jfif"
+      },
+      {
+        "caption": "Fraktur navicular",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/41fce7d1-c57d-4e9e-aa67-6e95b702c074/09261ad5-1788085655672.jfif"
+      }
+    ],
+    "title": "Fraktur navicular"
+  },
+  {
+    "id": "entry-fraktur-cuboid",
+    "images": [
+      {
+        "caption": "Fraktur cuboid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1bb73c7-ac70-4088-b01f-2d46dff6aa16/2afa7cde-1788089689574.jfif"
+      },
+      {
+        "caption": "Fraktur cuboid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1bb73c7-ac70-4088-b01f-2d46dff6aa16/681dee85-1788089690052.jfif"
+      },
+      {
+        "caption": "Fraktur cuboid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1bb73c7-ac70-4088-b01f-2d46dff6aa16/51a2fcbd-1788089690525.jfif"
+      },
+      {
+        "caption": "Fraktur cuboid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e1bb73c7-ac70-4088-b01f-2d46dff6aa16/c4a272a4-1788089690824.jfif"
+      }
+    ],
+    "title": "Fraktur cuboid"
+  },
+  {
+    "id": "entry-fraktur-cuneiform",
+    "images": [
+      {
+        "caption": "Fraktur cuneiform",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5910b27b-c705-4d2c-a226-5928917657f2/54e43597-1788101210066.jfif"
+      },
+      {
+        "caption": "Fraktur cuneiform",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5910b27b-c705-4d2c-a226-5928917657f2/c6271a88-1788101215740.jfif"
+      },
+      {
+        "caption": "Fraktur cuneiform",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5910b27b-c705-4d2c-a226-5928917657f2/2b8faeb5-1788101216402.jfif"
+      },
+      {
+        "caption": "Fraktur cuneiform",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5910b27b-c705-4d2c-a226-5928917657f2/42067df2-1788101216623.jfif"
+      },
+      {
+        "caption": "Fraktur cuneiform",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5910b27b-c705-4d2c-a226-5928917657f2/e1fffca5-1788101216847.jfif"
+      }
+    ],
+    "title": "Fraktur cuneiform"
+  },
+  {
+    "id": "entry-fraktur-metatarsal-i",
+    "images": [
+      {
+        "caption": "Fraktur metatarsal I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/3fb0a204-f3e8-436e-ac00-11596a96bcdb/429a883b-1788214809957.jpg"
+      },
+      {
+        "caption": "Fraktur metatarsal I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/3fb0a204-f3e8-436e-ac00-11596a96bcdb/9ae24692-1788214810390.jpg"
+      }
+    ],
+    "title": "Fraktur metatarsal I"
+  },
+  {
+    "id": "entry-fraktur-metatarsal-ii-iv",
+    "images": [
+      {
+        "caption": "Fraktur metatarsal II-IV",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6320806f-a554-46c0-b56b-29b0c0236161/46f9ff1c-1788216433921.jpg"
+      },
+      {
+        "caption": "Fraktur metatarsal II-IV",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6320806f-a554-46c0-b56b-29b0c0236161/9bd69260-1788216434649.jpg"
+      }
+    ],
+    "title": "Fraktur metatarsal II-IV"
+  },
+  {
+    "id": "entry-avulsion-proksimal-metatarsal-v",
+    "images": [
+      {
+        "caption": "Avulsion proximal metatarsal V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6fb48d-d9a2-4dc5-82d3-7109c3be4229/3b2641d2-1788217359291.jpg"
+      },
+      {
+        "caption": "Avulsion proximal metatarsal V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6fb48d-d9a2-4dc5-82d3-7109c3be4229/166ea25d-1788217359931.jpg"
+      },
+      {
+        "caption": "Avulsion proximal metatarsal V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6fb48d-d9a2-4dc5-82d3-7109c3be4229/ea5f9170-1788217360149.jpg"
+      },
+      {
+        "caption": "Avulsion proximal metatarsal V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6fb48d-d9a2-4dc5-82d3-7109c3be4229/245f9faf-1788217360484.jpg"
+      },
+      {
+        "caption": "Avulsion proximal metatarsal V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6fb48d-d9a2-4dc5-82d3-7109c3be4229/368c389d-1788217360834.jpg"
+      },
+      {
+        "caption": "Avulsion proximal metatarsal V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6fb48d-d9a2-4dc5-82d3-7109c3be4229/07a46ac6-1788217361188.jpg"
+      }
+    ],
+    "title": "Avulsion proximal metatarsal V"
+  },
+  {
+    "id": "entry-jones-fracture",
+    "images": [
+      {
+        "caption": "Jones fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22a1a3ee-c862-41d7-bd3c-a78cf6d7ae67/9af05f3a-1788218886319.jpg"
+      },
+      {
+        "caption": "Jones fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22a1a3ee-c862-41d7-bd3c-a78cf6d7ae67/469d5ef6-1788218886694.jpg"
+      },
+      {
+        "caption": "Jones fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22a1a3ee-c862-41d7-bd3c-a78cf6d7ae67/661650a0-1788218886975.jpg"
+      },
+      {
+        "caption": "Jones fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22a1a3ee-c862-41d7-bd3c-a78cf6d7ae67/a2900e24-1788218887301.jpg"
+      },
+      {
+        "caption": "Jones fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22a1a3ee-c862-41d7-bd3c-a78cf6d7ae67/4297a283-1788218887722.jpg"
+      },
+      {
+        "caption": "Jones fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/22a1a3ee-c862-41d7-bd3c-a78cf6d7ae67/5ac779bc-1788218888101.jpg"
+      }
+    ],
+    "title": "Jones fracture"
+  },
+  {
+    "id": "entry-fraktur-falang-kaki",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dd40e85d-5f93-424a-8c87-12f5c9a3f387/b0629055-1788219115555.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dd40e85d-5f93-424a-8c87-12f5c9a3f387/eef92ea8-1788219116025.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dd40e85d-5f93-424a-8c87-12f5c9a3f387/8e5c56ee-1788219116393.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dd40e85d-5f93-424a-8c87-12f5c9a3f387/da0c2001-1788219116728.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dd40e85d-5f93-424a-8c87-12f5c9a3f387/c601ab61-1788219117003.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dd40e85d-5f93-424a-8c87-12f5c9a3f387/a5bd014a-1788219117314.jpg"
+      }
+    ],
+    "title": "Fraktur falang kaki"
+  },
+  {
+    "id": "entry-salter-harris-i",
+    "images": [
+      {
+        "caption": "Salter-Harris I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9cc00393-31e5-485b-a7f0-62d5c47ed68d/d2888922-1787812518487.jfif"
+      },
+      {
+        "caption": "Salter-Harris I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9cc00393-31e5-485b-a7f0-62d5c47ed68d/e8002a02-1787812519424.jfif"
+      },
+      {
+        "caption": "Salter-Harris I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9cc00393-31e5-485b-a7f0-62d5c47ed68d/ff348df7-1787812519654.jfif"
+      },
+      {
+        "caption": "Salter-Harris I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9cc00393-31e5-485b-a7f0-62d5c47ed68d/390ed9c9-1787812519922.jfif"
+      },
+      {
+        "caption": "Salter-Harris I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9cc00393-31e5-485b-a7f0-62d5c47ed68d/3d750e08-1787812520183.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9cc00393-31e5-485b-a7f0-62d5c47ed68d/5b5e6831-1787812520476.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9cc00393-31e5-485b-a7f0-62d5c47ed68d/7f9bf3e5-1787812520960.jfif"
+      }
+    ],
+    "title": "Salter-Harris I"
+  },
+  {
+    "id": "entry-salter-harris-ii",
+    "images": [
+      {
+        "caption": "Salter-Harris II",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9a6696bc-fe3e-4c40-b8fa-560a108941d1/7ceb2d09-1787969995202.png"
+      },
+      {
+        "caption": "Salter-Harris II",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9a6696bc-fe3e-4c40-b8fa-560a108941d1/3548e264-1787969996919.png"
+      },
+      {
+        "caption": "Salter-Harris II",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9a6696bc-fe3e-4c40-b8fa-560a108941d1/c739394f-1787969998342.png"
+      }
+    ],
+    "title": "Salter-Harris II"
+  },
+  {
+    "id": "entry-salter-harris-iii",
+    "images": [
+      {
+        "caption": "Salter-Harris III",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2cb4404b-7187-46a3-9e7e-11aabb9b8b65/30a1798f-1787974784680.jfif"
+      }
+    ],
+    "title": "Salter-Harris III"
+  },
+  {
+    "id": "entry-salter-harris-iv",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5deacbda-d9ce-49ac-bcbc-1f43c15be031/e165e9ae-1787976578250.jfif"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5deacbda-d9ce-49ac-bcbc-1f43c15be031/384bd68a-1787976578733.jfif"
+      },
+      {
+        "caption": "Salter-Harris IV",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5deacbda-d9ce-49ac-bcbc-1f43c15be031/4d4c46d3-1787976627698.jfif"
+      },
+      {
+        "caption": "Salter-Harris IV",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5deacbda-d9ce-49ac-bcbc-1f43c15be031/d9083006-1787976628118.jfif"
+      }
+    ],
+    "title": "Salter-Harris IV"
+  },
+  {
+    "id": "entry-salter-harris-v",
+    "images": [
+      {
+        "caption": "Salter-Harris V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c7a440c2-0d81-4b5c-9d18-36ecd899d5dc/9d04a0ec-1788085865498.jfif"
+      },
+      {
+        "caption": "Salter-Harris V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c7a440c2-0d81-4b5c-9d18-36ecd899d5dc/0de0193d-1788085865959.jfif"
+      },
+      {
+        "caption": "Salter-Harris V",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c7a440c2-0d81-4b5c-9d18-36ecd899d5dc/fbfdd097-1788085866207.jfif"
+      }
+    ],
+    "title": "Salter-Harris V"
+  },
+  {
+    "id": "entry-gustilo-anderson-classification",
+    "images": [
+      {
+        "caption": "Gustilo-Anderson open fracture classification",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6f4e1cf9-df85-4ca1-bd12-2e76c582e1d4/259b639a-1788088808583.jfif"
+      },
+      {
+        "caption": "Gustilo-Anderson open fracture classification",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6f4e1cf9-df85-4ca1-bd12-2e76c582e1d4/542ad0cd-1788088809299.jfif"
+      },
+      {
+        "caption": "Gustilo-Anderson open fracture classification",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6f4e1cf9-df85-4ca1-bd12-2e76c582e1d4/880d52c7-1788088809805.jfif"
+      },
+      {
+        "caption": "Gustilo-Anderson open fracture classification",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6f4e1cf9-df85-4ca1-bd12-2e76c582e1d4/caccfa39-1788088810136.jfif"
+      },
+      {
+        "caption": "Gustilo-Anderson open fracture classification",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6f4e1cf9-df85-4ca1-bd12-2e76c582e1d4/375a255e-1788088810427.jfif"
+      }
+    ],
+    "title": "Gustilo-Anderson open fracture classification"
+  },
+  {
+    "id": "entry-fraktur-kompresi-vertebra",
+    "images": [
+      {
+        "caption": "Fraktur kompresi vertebra",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b4091ef0-5324-4088-b5c7-91c68a42e1d6/b412fb49-1787832139310.jfif"
+      },
+      {
+        "caption": "Fraktur kompresi vertebra",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b4091ef0-5324-4088-b5c7-91c68a42e1d6/ff42cf6b-1787832139825.jfif"
+      },
+      {
+        "caption": "Fraktur kompresi vertebra",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b4091ef0-5324-4088-b5c7-91c68a42e1d6/ae033e70-1787832140184.jfif"
+      },
+      {
+        "caption": "Fraktur kompresi vertebra",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b4091ef0-5324-4088-b5c7-91c68a42e1d6/eb3ddc4e-1787832140427.jfif"
+      },
+      {
+        "caption": "Fraktur kompresi vertebra",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b4091ef0-5324-4088-b5c7-91c68a42e1d6/98f836b3-1787832140710.jfif"
+      },
+      {
+        "caption": "Fraktur kompresi vertebra",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b4091ef0-5324-4088-b5c7-91c68a42e1d6/c883a558-1787832140935.jfif"
+      },
+      {
+        "caption": "Fraktur kompresi vertebra",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b4091ef0-5324-4088-b5c7-91c68a42e1d6/b4c2e7ca-1787832141145.jfif"
+      }
+    ],
+    "title": "Fraktur kompresi vertebra"
+  },
+  {
+    "id": "entry-burst-fracture",
+    "images": [
+      {
+        "caption": "Burst fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1140d2e-995d-4745-a6fd-e58500a1ed29/1158e2f0-1787969163992.png"
+      },
+      {
+        "caption": "Burst fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1140d2e-995d-4745-a6fd-e58500a1ed29/3477a0d2-1787969166709.png"
+      },
+      {
+        "caption": "Burst fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1140d2e-995d-4745-a6fd-e58500a1ed29/c4b127d2-1787969169179.png"
+      },
+      {
+        "caption": "Burst fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b1140d2e-995d-4745-a6fd-e58500a1ed29/5979c3fc-1787969171502.png"
+      }
+    ],
+    "title": "Burst fracture"
+  },
+  {
+    "id": "entry-jefferson-fracture-c1",
+    "images": [
+      {
+        "caption": "Jefferson fracture C1",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d9cb7677-18ac-4b13-9fe8-31e22f914a67/cd2d355e-1787973872134.jfif"
+      },
+      {
+        "caption": "Jefferson fracture C1",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d9cb7677-18ac-4b13-9fe8-31e22f914a67/141a105d-1787973873150.jfif"
+      },
+      {
+        "caption": "Jefferson fracture C1",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d9cb7677-18ac-4b13-9fe8-31e22f914a67/47d01850-1787973874630.jfif"
+      },
+      {
+        "caption": "Jefferson fracture C1",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d9cb7677-18ac-4b13-9fe8-31e22f914a67/0a4ff60e-1787973875316.jfif"
+      },
+      {
+        "caption": "Jefferson fracture C1",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d9cb7677-18ac-4b13-9fe8-31e22f914a67/1c6981ef-1787973876196.jfif"
+      },
+      {
+        "caption": "Jefferson fracture C1",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/d9cb7677-18ac-4b13-9fe8-31e22f914a67/f7dc226a-1787973879189.jfif"
+      }
+    ],
+    "title": "Jefferson fracture C1"
+  },
+  {
+    "id": "entry-odontoid-fracture",
+    "images": [
+      {
+        "caption": "Odontoid fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ec38d538-14bc-4742-8072-1036c7d5777d/e1e88153-1787978417799.jfif"
+      },
+      {
+        "caption": "Odontoid fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ec38d538-14bc-4742-8072-1036c7d5777d/446aebc7-1787978418358.jfif"
+      },
+      {
+        "caption": "Odontoid fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ec38d538-14bc-4742-8072-1036c7d5777d/d0fd72ce-1787978418844.jfif"
+      },
+      {
+        "caption": "Odontoid fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ec38d538-14bc-4742-8072-1036c7d5777d/ec1f0a29-1787978419194.jfif"
+      },
+      {
+        "caption": "Odontoid fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ec38d538-14bc-4742-8072-1036c7d5777d/aac78f84-1787978419958.jfif"
+      }
+    ],
+    "title": "Odontoid fracture"
+  },
+  {
+    "id": "entry-hangman-fracture",
+    "images": [
+      {
+        "caption": "Hangman fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6bdbd1-232c-49a8-b391-be4ee7c566cb/3fe90359-1788085532587.jfif"
+      },
+      {
+        "caption": "Hangman fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6bdbd1-232c-49a8-b391-be4ee7c566cb/fa26e841-1788085533478.jfif"
+      },
+      {
+        "caption": "Hangman fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6bdbd1-232c-49a8-b391-be4ee7c566cb/e77e66a8-1788085533824.jfif"
+      }
+    ],
+    "title": "Hangman fracture"
+  },
+  {
+    "id": "entry-flexion-teardrop-fracture",
+    "images": [
+      {
+        "caption": "Flexion teardrop fracture",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2e304f07-722b-4767-af52-2d62bee757d6/29ec0817-1788086612736.jfif"
+      }
+    ],
+    "title": "Flexion teardrop fracture"
+  },
+  {
+    "id": "entry-spondylosis",
+    "images": [
+      {
+        "caption": "Spondylosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e2a042c1-32fc-4656-8914-9b8a37b49329/0d47294d-1788100017264.jfif"
+      },
+      {
+        "caption": "Spondylosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e2a042c1-32fc-4656-8914-9b8a37b49329/f39294ef-1788100017879.jfif"
+      },
+      {
+        "caption": "Spondylosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e2a042c1-32fc-4656-8914-9b8a37b49329/c01b37c1-1788100018110.jfif"
+      },
+      {
+        "caption": "Spondylosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e2a042c1-32fc-4656-8914-9b8a37b49329/222c843e-1788100018377.jfif"
+      },
+      {
+        "caption": "Spondylosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e2a042c1-32fc-4656-8914-9b8a37b49329/d81bfd62-1788100018604.jfif"
+      }
+    ],
+    "title": "Spondylosis"
+  },
+  {
+    "id": "entry-spondylolysis",
+    "images": [
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/bae793d8-1788214488122.jpg"
+      },
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/0710f45b-1788214488881.jpg"
+      },
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/5013f581-1788214489144.jpg"
+      },
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/add3e5a6-1788214489395.jpg"
+      },
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/902f47ef-1788214489661.jpg"
+      },
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/37c1b62c-1788214489927.jpg"
+      },
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/5a318e5c-1788214490199.jpg"
+      },
+      {
+        "caption": "Spondylolysis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5d01f29c-7f06-4396-8729-ee5f5db3ac54/8b004655-1788214490683.jpg"
+      }
+    ],
+    "title": "Spondylolysis"
+  },
+  {
+    "id": "entry-spondylolisthesis",
+    "images": [
+      {
+        "caption": "Spondylolisthesis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c40d6959-e893-4fd4-85f5-2f13e6e9d904/a6827817-1788216319448.jpg"
+      },
+      {
+        "caption": "Spondylolisthesis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c40d6959-e893-4fd4-85f5-2f13e6e9d904/c2c628ed-1788216320102.jpg"
+      },
+      {
+        "caption": "Spondylolisthesis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c40d6959-e893-4fd4-85f5-2f13e6e9d904/12648372-1788216320447.jpg"
+      },
+      {
+        "caption": "Spondylolisthesis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c40d6959-e893-4fd4-85f5-2f13e6e9d904/9445f227-1788216320745.jpg"
+      },
+      {
+        "caption": "Spondylolisthesis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c40d6959-e893-4fd4-85f5-2f13e6e9d904/762fccd8-1788216321083.jpg"
+      }
+    ],
+    "title": "Spondylolisthesis"
+  },
+  {
+    "id": "entry-trauma-wajah-prinsip-ct",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eb734c10-4b0a-49e7-8e68-0caae1b8c3e9/e1383c4d-1788218456934.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eb734c10-4b0a-49e7-8e68-0caae1b8c3e9/bcdc6696-1788218458366.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eb734c10-4b0a-49e7-8e68-0caae1b8c3e9/699f0962-1788218458639.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/eb734c10-4b0a-49e7-8e68-0caae1b8c3e9/9b51b7c8-1788218458957.jpg"
+      }
+    ],
+    "title": "Trauma wajah - prinsip CT"
+  },
+  {
+    "id": "entry-le-fort-i",
+    "images": [
+      {
+        "caption": "Le Fort I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a1f331a4-0e8a-4002-936f-41eeb8994df3/c1cda558-1788218828829.jpg"
+      },
+      {
+        "caption": "Le Fort I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a1f331a4-0e8a-4002-936f-41eeb8994df3/a5db355d-1788218829592.jpg"
+      },
+      {
+        "caption": "Le Fort I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a1f331a4-0e8a-4002-936f-41eeb8994df3/7aa70ff0-1788218829872.jpg"
+      },
+      {
+        "caption": "Le Fort I",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a1f331a4-0e8a-4002-936f-41eeb8994df3/11544f7e-1788218830185.jpg"
+      }
+    ],
+    "title": "Le Fort I"
+  },
+  {
+    "id": "entry-le-fort-ii",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2359cca4-c9dc-4900-a0f3-37b5e955d950/a5ad46ef-1788219265082.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2359cca4-c9dc-4900-a0f3-37b5e955d950/8a977bca-1788219265842.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2359cca4-c9dc-4900-a0f3-37b5e955d950/5233448a-1788219266207.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2359cca4-c9dc-4900-a0f3-37b5e955d950/d597e5ae-1788219266518.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2359cca4-c9dc-4900-a0f3-37b5e955d950/bc38d90a-1788219266927.jpg"
+      }
+    ],
+    "title": "Le Fort II"
+  },
+  {
+    "id": "entry-le-fort-iii",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cfe08305-3704-4464-a82d-f6aecf0f435c/3da24a29-1788219810157.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cfe08305-3704-4464-a82d-f6aecf0f435c/e00b880d-1788219810583.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/cfe08305-3704-4464-a82d-f6aecf0f435c/f8bfb573-1788219810806.jpg"
+      }
+    ],
+    "title": "Le Fort III"
+  },
+  {
+    "id": "entry-epidural-hematoma",
+    "images": [
+      {
+        "caption": "EDH",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/aacfa820-6579-4edd-b21f-a88f39d4143c/efecd49c-1787786932697.jfif"
+      },
+      {
+        "caption": "EDH",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/aacfa820-6579-4edd-b21f-a88f39d4143c/0cb4787f-1787786938085.jfif"
+      },
+      {
+        "caption": "EDH",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/aacfa820-6579-4edd-b21f-a88f39d4143c/fe2e2245-1787786938305.jfif"
+      },
+      {
+        "caption": "EDH",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/aacfa820-6579-4edd-b21f-a88f39d4143c/5f859b44-1787786938544.jfif"
+      },
+      {
+        "caption": "EDH",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/aacfa820-6579-4edd-b21f-a88f39d4143c/c04e01ea-1787786938773.jfif"
+      },
+      {
+        "caption": "EDH",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/aacfa820-6579-4edd-b21f-a88f39d4143c/4e5195dc-1787786938990.jfif"
+      }
+    ],
+    "title": "Epidural hematoma"
+  },
+  {
+    "id": "entry-subdural-hematoma",
+    "images": [
+      {
+        "caption": "Subdural hematoma",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ba239e1b-41fc-4322-8646-e7958c564230/c6e49e2d-1787968694333.jfif"
+      },
+      {
+        "caption": "Subdural hematoma",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ba239e1b-41fc-4322-8646-e7958c564230/6d731001-1787968695442.jfif"
+      },
+      {
+        "caption": "Subdural hematoma",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ba239e1b-41fc-4322-8646-e7958c564230/df7a318e-1787968695839.jfif"
+      }
+    ],
+    "title": "Subdural hematoma"
+  },
+  {
+    "id": "entry-subarachnoid-hemorrhage",
+    "images": [
+      {
+        "caption": "Subarachnoid hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dec1e127-39fc-42c8-8d18-5b530527af25/59cbf085-1787975702521.jfif"
+      },
+      {
+        "caption": "Subarachnoid hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dec1e127-39fc-42c8-8d18-5b530527af25/20cfa355-1787975703657.jfif"
+      },
+      {
+        "caption": "Subarachnoid hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dec1e127-39fc-42c8-8d18-5b530527af25/7e7dc80d-1787975704493.jfif"
+      },
+      {
+        "caption": "Subarachnoid hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dec1e127-39fc-42c8-8d18-5b530527af25/27b5414b-1787975704823.jfif"
+      },
+      {
+        "caption": "Subarachnoid hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/dec1e127-39fc-42c8-8d18-5b530527af25/f31396d2-1787975705234.jfif"
+      }
+    ],
+    "title": "Subarachnoid hemorrhage"
+  },
+  {
+    "id": "entry-intracerebral-hemorrhage",
+    "images": [
+      {
+        "caption": "Intracerebral hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f16d3813-84c7-4685-b1ef-8303ab137bd0/233c9542-1787979789695.jfif"
+      },
+      {
+        "caption": "Intracerebral hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f16d3813-84c7-4685-b1ef-8303ab137bd0/f6043b28-1787979790537.jfif"
+      },
+      {
+        "caption": "Intracerebral hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f16d3813-84c7-4685-b1ef-8303ab137bd0/44c8fdc2-1787979791121.jfif"
+      },
+      {
+        "caption": "Intracerebral hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f16d3813-84c7-4685-b1ef-8303ab137bd0/ca18558b-1787979791411.jfif"
+      },
+      {
+        "caption": "Intracerebral hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f16d3813-84c7-4685-b1ef-8303ab137bd0/a76ee91d-1787979791722.jfif"
+      },
+      {
+        "caption": "Intracerebral hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f16d3813-84c7-4685-b1ef-8303ab137bd0/4c660f03-1787979792002.jfif"
+      }
+    ],
+    "title": "Intracerebral hemorrhage"
+  },
+  {
+    "id": "entry-intraventricular-hemorrhage",
+    "images": [
+      {
+        "caption": "Intraventricular hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3035dc0-d76d-4652-abbf-b742613a939e/4c995984-1788084180371.jfif"
+      },
+      {
+        "caption": "Intraventricular hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3035dc0-d76d-4652-abbf-b742613a939e/df65a4d4-1788084181011.jfif"
+      },
+      {
+        "caption": "Intraventricular hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3035dc0-d76d-4652-abbf-b742613a939e/e4a09231-1788084181403.jfif"
+      },
+      {
+        "caption": "Intraventricular hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3035dc0-d76d-4652-abbf-b742613a939e/41dadd06-1788084181666.jfif"
+      },
+      {
+        "caption": "Intraventricular hemorrhage",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3035dc0-d76d-4652-abbf-b742613a939e/7b61a7e4-1788084182009.jfif"
+      }
+    ],
+    "title": "Intraventricular hemorrhage"
+  },
+  {
+    "id": "entry-stroke-iskemik-akut-ct-awal",
+    "images": [
+      {
+        "caption": "Stroke iskemik akut - CT awal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04f36d9d-99f0-4889-a091-ff6c987a029f/0df0f211-1788099523583.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - CT awal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04f36d9d-99f0-4889-a091-ff6c987a029f/894fffde-1788099525223.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - CT awal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04f36d9d-99f0-4889-a091-ff6c987a029f/46d05219-1788099525512.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - CT awal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04f36d9d-99f0-4889-a091-ff6c987a029f/e96d0b6b-1788099525815.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - CT awal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04f36d9d-99f0-4889-a091-ff6c987a029f/2b88b593-1788099526383.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - CT awal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04f36d9d-99f0-4889-a091-ff6c987a029f/b1d40c23-1788099526677.jfif"
+      }
+    ],
+    "title": "Stroke iskemik akut - CT awal"
+  },
+  {
+    "id": "entry-edema-serebri",
+    "images": [
+      {
+        "caption": "Edema serebri",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2c63bda2-a206-4ff2-b465-e12fe7a28439/ce9c3be2-1788103443013.jfif"
+      },
+      {
+        "caption": "Edema serebri",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/2c63bda2-a206-4ff2-b465-e12fe7a28439/80b6d625-1788103443791.jfif"
+      }
+    ],
+    "title": "Edema serebri"
+  },
+  {
+    "id": "entry-herniasi-subfalcine",
+    "images": [
+      {
+        "caption": "Herniasi subfalcine",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a44fb533-72e1-4887-bbad-a88f61cd3854/66fd0a93-1788214569541.jpg"
+      },
+      {
+        "caption": "Herniasi subfalcine",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a44fb533-72e1-4887-bbad-a88f61cd3854/db2779e1-1788214569911.jpg"
+      },
+      {
+        "caption": "Herniasi subfalcine",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a44fb533-72e1-4887-bbad-a88f61cd3854/7c0af2ee-1788214570366.jpg"
+      },
+      {
+        "caption": "Herniasi subfalcine",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a44fb533-72e1-4887-bbad-a88f61cd3854/ea6e482c-1788214570707.jpg"
+      },
+      {
+        "caption": "Herniasi subfalcine",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a44fb533-72e1-4887-bbad-a88f61cd3854/46c33d54-1788214571017.jpg"
+      },
+      {
+        "caption": "Herniasi subfalcine",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a44fb533-72e1-4887-bbad-a88f61cd3854/ba31aceb-1788214571299.jpg"
+      }
+    ],
+    "title": "Herniasi subfalcine"
+  },
+  {
+    "id": "entry-herniasi-uncal",
+    "images": [
+      {
+        "caption": "Herniasi uncal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5de700e3-5591-4e91-bc50-18f7640c4b70/5fe00a9e-1788216086036.jpg"
+      },
+      {
+        "caption": "Herniasi uncal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5de700e3-5591-4e91-bc50-18f7640c4b70/4812b26f-1788216086599.jpg"
+      },
+      {
+        "caption": "Herniasi uncal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5de700e3-5591-4e91-bc50-18f7640c4b70/48082b2c-1788216086918.jpg"
+      },
+      {
+        "caption": "Herniasi uncal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5de700e3-5591-4e91-bc50-18f7640c4b70/ea01ef39-1788216087268.jpg"
+      },
+      {
+        "caption": "Herniasi uncal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/5de700e3-5591-4e91-bc50-18f7640c4b70/6d198d89-1788216087684.jpg"
+      }
+    ],
+    "title": "Herniasi uncal"
+  },
+  {
+    "id": "entry-tonsillar-downward-herniation",
+    "images": [
+      {
+        "caption": "Tonsillar/downward herniation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ddabf6a9-d725-455c-b4f7-031c2c26a474/1d99223c-1788217453502.jpg"
+      },
+      {
+        "caption": "Tonsillar/downward herniation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ddabf6a9-d725-455c-b4f7-031c2c26a474/1385bde2-1788217454210.jpg"
+      },
+      {
+        "caption": "Tonsillar/downward herniation",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/ddabf6a9-d725-455c-b4f7-031c2c26a474/dd9a7514-1788217454466.jpg"
+      }
+    ],
+    "title": "Tonsillar/downward herniation"
+  },
+  {
+    "id": "entry-malignant-mca-infarction",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/4fc5d56c-7af2-4fd1-8dfd-f17371194392/e1fc1e2e-1788218968868.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/4fc5d56c-7af2-4fd1-8dfd-f17371194392/15034e9b-1788218969400.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/4fc5d56c-7af2-4fd1-8dfd-f17371194392/5b77822a-1788218969610.jpg"
+      }
+    ],
+    "title": "Malignant MCA infarction"
+  },
+  {
+    "id": "entry-kontusio-serebri",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/3b09cd7f-3afc-45b8-adf7-bcb053d63b80/67a248a0-1788219469359.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/3b09cd7f-3afc-45b8-adf7-bcb053d63b80/9d3f0b94-1788219470301.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/3b09cd7f-3afc-45b8-adf7-bcb053d63b80/f58dd23c-1788219470711.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/3b09cd7f-3afc-45b8-adf7-bcb053d63b80/57f1b965-1788219471132.jpg"
+      }
+    ],
+    "title": "Kontusio serebri (tambahan trauma)"
+  },
+  {
+    "id": "entry-diffuse-axonal-injury",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6c1b1343-d540-4765-8de7-b68fce129dbd/a6fc7136-1788219712957.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6c1b1343-d540-4765-8de7-b68fce129dbd/5a0ade39-1788219713492.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6c1b1343-d540-4765-8de7-b68fce129dbd/575d49de-1788219713755.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6c1b1343-d540-4765-8de7-b68fce129dbd/4563fc74-1788219714004.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6c1b1343-d540-4765-8de7-b68fce129dbd/2475b6f8-1788219716791.jpg"
+      }
+    ],
+    "title": "Diffuse axonal injury - CT clue"
+  },
+  {
+    "id": "entry-fraktur-tengkorak",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/040e24aa-6087-42a3-b01d-910f499dcc84/0f8e5fbc-1788219996986.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/040e24aa-6087-42a3-b01d-910f499dcc84/323d0486-1788219997401.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/040e24aa-6087-42a3-b01d-910f499dcc84/66a67645-1788219997648.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/040e24aa-6087-42a3-b01d-910f499dcc84/f95c7a60-1788219997956.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/040e24aa-6087-42a3-b01d-910f499dcc84/8d599bb7-1788219998212.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/040e24aa-6087-42a3-b01d-910f499dcc84/d1c4047d-1788219998448.jpg"
+      }
+    ],
+    "title": "Fraktur tengkorak"
+  },
+  {
+    "id": "entry-diseksi-aorta",
+    "images": [
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/be3f1032-1787788974883.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/e2fab185-1787788975682.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/f975ac10-1787788975939.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/ee4a3509-1787788976167.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/d558a15c-1787788976539.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/65420d27-1787788976908.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/120fda27-1787789120040.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/1ac39d4d-1787789120658.jfif"
+      },
+      {
+        "caption": "Diseksi aorta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/263ebc55-2879-44b4-aad0-9010a0f7efa1/7d7a079c-1787789120945.jfif"
+      }
+    ],
+    "title": "Diseksi aorta"
+  },
+  {
+    "id": "entry-pulmonary-embolism-ct",
+    "images": [
+      {
+        "caption": "Pulmonary embolism",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6dad77-e6a5-4078-87ee-f55288c23e0b/f678a7ce-1787834228896.jfif"
+      },
+      {
+        "caption": "Pulmonary embolism",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6dad77-e6a5-4078-87ee-f55288c23e0b/3d188be2-1787834229643.jfif"
+      },
+      {
+        "caption": "Pulmonary embolism",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6dad77-e6a5-4078-87ee-f55288c23e0b/3eeb25ae-1787834229968.jfif"
+      },
+      {
+        "caption": "Pulmonary embolism",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6dad77-e6a5-4078-87ee-f55288c23e0b/062c0d87-1787834230222.jfif"
+      },
+      {
+        "caption": "Pulmonary embolism",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6dad77-e6a5-4078-87ee-f55288c23e0b/bf91df68-1787834230699.jfif"
+      },
+      {
+        "caption": "Pulmonary embolism",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6d6dad77-e6a5-4078-87ee-f55288c23e0b/a8d304c0-1787834231230.jfif"
+      }
+    ],
+    "title": "Pulmonary embolism"
+  },
+  {
+    "id": "entry-kontusio-paru-ct",
+    "images": [
+      {
+        "caption": "Kontusio paru CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7cb43088-3511-4a90-adf4-f62cf3347337/6e7525aa-1787971787505.jfif"
+      },
+      {
+        "caption": "Kontusio paru CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7cb43088-3511-4a90-adf4-f62cf3347337/11f8b5c3-1787971788404.jfif"
+      },
+      {
+        "caption": "Kontusio paru CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7cb43088-3511-4a90-adf4-f62cf3347337/1dcedf4f-1787971788701.jfif"
+      },
+      {
+        "caption": "Kontusio paru CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7cb43088-3511-4a90-adf4-f62cf3347337/eb5ccbff-1787971789058.jfif"
+      },
+      {
+        "caption": "Kontusio paru CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7cb43088-3511-4a90-adf4-f62cf3347337/6c64fe6e-1787971789380.jfif"
+      },
+      {
+        "caption": "Kontusio paru CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7cb43088-3511-4a90-adf4-f62cf3347337/fd57d01a-1787971789746.jfif"
+      }
+    ],
+    "title": "Kontusio paru CT"
+  },
+  {
+    "id": "entry-laserasi-paru",
+    "images": [
+      {
+        "caption": "Laserasi paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/94420ccb-578c-4837-861d-4a79da5b8bfd/070e3d5e-1787976749839.jfif"
+      },
+      {
+        "caption": "Laserasi paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/94420ccb-578c-4837-861d-4a79da5b8bfd/f07dc6d4-1787976750499.jfif"
+      },
+      {
+        "caption": "Laserasi paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/94420ccb-578c-4837-861d-4a79da5b8bfd/ea78aeab-1787976750818.jfif"
+      },
+      {
+        "caption": "Laserasi paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/94420ccb-578c-4837-861d-4a79da5b8bfd/b85bdc65-1787976751292.jfif"
+      },
+      {
+        "caption": "Laserasi paru",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/94420ccb-578c-4837-861d-4a79da5b8bfd/ee3c33fe-1787976751754.jfif"
+      }
+    ],
+    "title": "Laserasi paru"
+  },
+  {
+    "id": "entry-pneumomediastinum",
+    "images": [
+      {
+        "caption": "Pneumomediastinum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98866e94-5f9c-4e3b-8621-cbebf6aa6ac4/da8af15c-1788084977418.jfif"
+      },
+      {
+        "caption": "Pneumomediastinum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98866e94-5f9c-4e3b-8621-cbebf6aa6ac4/f686b9fa-1788084978435.jfif"
+      },
+      {
+        "caption": "Pneumomediastinum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98866e94-5f9c-4e3b-8621-cbebf6aa6ac4/9c152aa8-1788084978856.jfif"
+      },
+      {
+        "caption": "Pneumomediastinum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98866e94-5f9c-4e3b-8621-cbebf6aa6ac4/d67f4f92-1788084979194.jfif"
+      },
+      {
+        "caption": "Pneumomediastinum",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98866e94-5f9c-4e3b-8621-cbebf6aa6ac4/19b8241b-1788084979497.jfif"
+      }
+    ],
+    "title": "Pneumomediastinum"
+  },
+  {
+    "id": "entry-aortic-traumatic-injury",
+    "images": [
+      {
+        "caption": "Aortic traumatic injury (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/192a5842-1eea-410d-be1e-f86506ae64bc/ea753ade-1788096961599.jfif"
+      },
+      {
+        "caption": "Aortic traumatic injury (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/192a5842-1eea-410d-be1e-f86506ae64bc/2330c36a-1788096967445.jfif"
+      },
+      {
+        "caption": "Aortic traumatic injury (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/192a5842-1eea-410d-be1e-f86506ae64bc/6fa86395-1788096967674.jfif"
+      },
+      {
+        "caption": "Aortic traumatic injury (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/192a5842-1eea-410d-be1e-f86506ae64bc/de8d1fc0-1788096967937.jfif"
+      },
+      {
+        "caption": "Aortic traumatic injury (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/192a5842-1eea-410d-be1e-f86506ae64bc/481327fc-1788096968278.jfif"
+      },
+      {
+        "caption": "Aortic traumatic injury (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/192a5842-1eea-410d-be1e-f86506ae64bc/89d0d2b0-1788096968729.jfif"
+      }
+    ],
+    "title": "Aortic traumatic injury (tambahan)"
+  },
+  {
+    "id": "entry-apendisitis-ct",
+    "images": [
+      {
+        "caption": "Apendisitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39b15c78-e8cc-412c-b829-8f8f409fe0f9/ad952a18-1787832233101.jfif"
+      },
+      {
+        "caption": "Apendisitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39b15c78-e8cc-412c-b829-8f8f409fe0f9/8321c4af-1787832233799.jfif"
+      },
+      {
+        "caption": "Apendisitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39b15c78-e8cc-412c-b829-8f8f409fe0f9/18fcc856-1787832234112.jfif"
+      },
+      {
+        "caption": "Apendisitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/39b15c78-e8cc-412c-b829-8f8f409fe0f9/b0342711-1787832234541.jfif"
+      }
+    ],
+    "title": "Apendisitis CT"
+  },
+  {
+    "id": "entry-hernia-inkarserata",
+    "images": [
+      {
+        "caption": "Hernia inkarserata",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e5fdb6c3-4b9d-4faf-bb3b-414cd2fe8f48/c5f18435-1787834585978.jfif"
+      },
+      {
+        "caption": "Hernia inkarserata",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e5fdb6c3-4b9d-4faf-bb3b-414cd2fe8f48/e2417c9f-1787834586656.jfif"
+      },
+      {
+        "caption": "Hernia inkarserata",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e5fdb6c3-4b9d-4faf-bb3b-414cd2fe8f48/f99d71e5-1787834586879.jfif"
+      }
+    ],
+    "title": "Hernia inkarserata"
+  },
+  {
+    "id": "entry-hernia-strangulata",
+    "images": [
+      {
+        "caption": "hernia strangulata",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/b140f723-8970-4cd1-aa47-83582d80f3c6/18e6596b-1787834634346.jfif"
+      }
+    ],
+    "title": "Hernia strangulata"
+  },
+  {
+    "id": "entry-peritonitis-ct",
+    "images": [
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/b2e63aee-1787977188063.jfif"
+      },
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/948dd85d-1787977188949.jfif"
+      },
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/f71934eb-1787977189318.jfif"
+      },
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/6814ec52-1787977189615.jfif"
+      },
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/e56ae2b0-1787977189869.jfif"
+      },
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/a8fb70c2-1787977190243.jfif"
+      },
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/57395daf-1787977190526.jfif"
+      },
+      {
+        "caption": "Peritonitis CT",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1d03d0b1-144f-4189-90c4-cd61258080a1/16f6aa48-1787977190861.jfif"
+      }
+    ],
+    "title": "Peritonitis CT"
+  },
+  {
+    "id": "entry-batu-ureter",
+    "images": [
+      {
+        "caption": "Batu ureter",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3b09011-ee39-4be6-b2bb-593d44fa2c2a/7035068f-1788084595761.jfif"
+      },
+      {
+        "caption": "Batu ureter",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3b09011-ee39-4be6-b2bb-593d44fa2c2a/373ab920-1788084596248.jfif"
+      },
+      {
+        "caption": "Batu ureter",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3b09011-ee39-4be6-b2bb-593d44fa2c2a/4bbbe743-1788084596662.jfif"
+      },
+      {
+        "caption": "Batu ureter",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3b09011-ee39-4be6-b2bb-593d44fa2c2a/cd7504c7-1788084597114.jfif"
+      },
+      {
+        "caption": "Batu ureter",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c3b09011-ee39-4be6-b2bb-593d44fa2c2a/4e21119f-1788084597469.jfif"
+      }
+    ],
+    "title": "Batu ureter"
+  },
+  {
+    "id": "entry-perforasi-gastrointestinal",
+    "images": [
+      {
+        "caption": "Perforasi gastrointestinal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/09cade7b-b6de-4a5e-8c30-5fe089cbbfe6/fe61d185-1788096166085.jfif"
+      },
+      {
+        "caption": "Perforasi gastrointestinal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/09cade7b-b6de-4a5e-8c30-5fe089cbbfe6/9805041c-1788096167303.jfif"
+      },
+      {
+        "caption": "Perforasi gastrointestinal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/09cade7b-b6de-4a5e-8c30-5fe089cbbfe6/36fb6fd8-1788096167541.jfif"
+      },
+      {
+        "caption": "Perforasi gastrointestinal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/09cade7b-b6de-4a5e-8c30-5fe089cbbfe6/fcd80486-1788096169595.jfif"
+      },
+      {
+        "caption": "Perforasi gastrointestinal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/09cade7b-b6de-4a5e-8c30-5fe089cbbfe6/8c3838ca-1788096169856.jfif"
+      },
+      {
+        "caption": "Perforasi gastrointestinal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/09cade7b-b6de-4a5e-8c30-5fe089cbbfe6/de83ed9d-1788096170156.jfif"
+      }
+    ],
+    "title": "Perforasi gastrointestinal (tambahan)"
+  },
+  {
+    "id": "entry-iskemia-usus",
+    "images": [
+      {
+        "caption": "iskemia usus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e7153627-bf9d-4f6d-9e1e-fec5f8a96c32/107fa534-1788105271086.jfif"
+      },
+      {
+        "caption": "iskemia usus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e7153627-bf9d-4f6d-9e1e-fec5f8a96c32/a76b6ab6-1788105271606.jfif"
+      },
+      {
+        "caption": "iskemia usus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e7153627-bf9d-4f6d-9e1e-fec5f8a96c32/ff4d43b5-1788105271844.jfif"
+      },
+      {
+        "caption": "iskemia usus",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e7153627-bf9d-4f6d-9e1e-fec5f8a96c32/f3f76384-1788105272056.jfif"
+      }
+    ],
+    "title": "Iskemia usus (tambahan)"
+  },
+  {
+    "id": "entry-trauma-limpa",
+    "images": [
+      {
+        "caption": "Trauma limpa (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/24a52e11-82b3-46b1-9059-80fa45fc40c3/f78e3648-1788215658125.jpg"
+      },
+      {
+        "caption": "Trauma limpa (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/24a52e11-82b3-46b1-9059-80fa45fc40c3/1db388c4-1788215659062.jpg"
+      },
+      {
+        "caption": "Trauma limpa (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/24a52e11-82b3-46b1-9059-80fa45fc40c3/66c5a3eb-1788215659372.jpg"
+      },
+      {
+        "caption": "Trauma limpa (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/24a52e11-82b3-46b1-9059-80fa45fc40c3/e1ebcdaa-1788215659806.jpg"
+      }
+    ],
+    "title": "Trauma limpa (tambahan)"
+  },
+  {
+    "id": "entry-trauma-hati",
+    "images": [
+      {
+        "caption": "Trauma hati (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/adb4b233-0dde-40eb-bb4d-a869cbe8af8e/855896b5-1788215989828.jpg"
+      },
+      {
+        "caption": "Trauma hati (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/adb4b233-0dde-40eb-bb4d-a869cbe8af8e/5f687c1f-1788215990206.jpg"
+      },
+      {
+        "caption": "Trauma hati (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/adb4b233-0dde-40eb-bb4d-a869cbe8af8e/08ea06c2-1788215990510.jpg"
+      },
+      {
+        "caption": "Trauma hati (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/adb4b233-0dde-40eb-bb4d-a869cbe8af8e/f734cbed-1788215990766.jpg"
+      },
+      {
+        "caption": "Trauma hati (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/adb4b233-0dde-40eb-bb4d-a869cbe8af8e/0629cbcd-1788215991114.jpg"
+      },
+      {
+        "caption": "Trauma hati (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/adb4b233-0dde-40eb-bb4d-a869cbe8af8e/135f9ee8-1788215991443.jpg"
+      }
+    ],
+    "title": "Trauma hati (tambahan)"
+  },
+  {
+    "id": "entry-trauma-ginjal",
+    "images": [
+      {
+        "caption": "Trauma ginjal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f7781869-ab55-4844-a703-b5582d398c0f/427cb39d-1788217223483.jpg"
+      },
+      {
+        "caption": "Trauma ginjal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f7781869-ab55-4844-a703-b5582d398c0f/e4d93d69-1788217224031.jpg"
+      },
+      {
+        "caption": "Trauma ginjal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f7781869-ab55-4844-a703-b5582d398c0f/68e10989-1788217224284.jpg"
+      },
+      {
+        "caption": "Trauma ginjal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f7781869-ab55-4844-a703-b5582d398c0f/77f83ee6-1788217224514.jpg"
+      },
+      {
+        "caption": "Trauma ginjal (tambahan)",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/f7781869-ab55-4844-a703-b5582d398c0f/4d68ae20-1788217224943.jpg"
+      }
+    ],
+    "title": "Trauma ginjal (tambahan)"
+  },
+  {
+    "id": "entry-internal-bleeding-whole-body-trauma",
+    "images": [
+      {
+        "caption": "Internal bleeding pada whole-body trauma",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8dd3d206-ef4f-46f5-aad3-154f96a2f420/7acc07f5-1788219053244.jpg"
+      },
+      {
+        "caption": "Internal bleeding pada whole-body trauma",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8dd3d206-ef4f-46f5-aad3-154f96a2f420/d46824d6-1788219053957.jpg"
+      },
+      {
+        "caption": "Internal bleeding pada whole-body trauma",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8dd3d206-ef4f-46f5-aad3-154f96a2f420/c02968df-1788219054231.jpg"
+      },
+      {
+        "caption": "Internal bleeding pada whole-body trauma",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/8dd3d206-ef4f-46f5-aad3-154f96a2f420/e0066b06-1788219054527.jpg"
+      }
+    ],
+    "title": "Internal bleeding pada whole-body trauma"
+  },
+  {
+    "id": "entry-ct-hypoperfusion-complex-shock",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e59d054c-fb19-4faa-81cc-c582b500e65f/728dac6b-1788219340967.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e59d054c-fb19-4faa-81cc-c582b500e65f/91475756-1788219341418.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e59d054c-fb19-4faa-81cc-c582b500e65f/5cc393e4-1788219341659.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e59d054c-fb19-4faa-81cc-c582b500e65f/965492a2-1788219341916.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e59d054c-fb19-4faa-81cc-c582b500e65f/779eebe9-1788219342223.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/e59d054c-fb19-4faa-81cc-c582b500e65f/70de81d5-1788219342548.jpg"
+      }
+    ],
+    "title": "CT hypoperfusion complex pada shock"
+  },
+  {
+    "id": "entry-stroke-iskemik-akut-mri",
+    "images": [
+      {
+        "caption": "Stroke iskemik akut - MRI",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/51fdd317-db43-4a14-8194-92d13a0257a1/c3af2dd5-1787787041772.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - MRI",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/51fdd317-db43-4a14-8194-92d13a0257a1/3384616c-1787787042294.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - MRI",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/51fdd317-db43-4a14-8194-92d13a0257a1/4a6c098b-1787787042538.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - MRI",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/51fdd317-db43-4a14-8194-92d13a0257a1/832be0f0-1787787042763.jfif"
+      },
+      {
+        "caption": "Stroke iskemik akut - MRI",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/51fdd317-db43-4a14-8194-92d13a0257a1/3102b528-1787787043083.jfif"
+      }
+    ],
+    "title": "Stroke iskemik akut - MRI"
+  },
+  {
+    "id": "entry-cedera-medula-spinalis",
+    "images": [
+      {
+        "caption": "Cedera medula spinalis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9126bfad-e0c4-4dc5-9282-03a3c812d42a/ddbbb085-1787905697250.webp"
+      },
+      {
+        "caption": "Cedera medula spinalis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9126bfad-e0c4-4dc5-9282-03a3c812d42a/e5a4a8df-1787905698028.webp"
+      },
+      {
+        "caption": "Cedera medula spinalis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9126bfad-e0c4-4dc5-9282-03a3c812d42a/fe77bc10-1787905698238.jfif"
+      }
+    ],
+    "title": "Cedera medula spinalis"
+  },
+  {
+    "id": "entry-abses-epidural-spinal",
+    "images": [
+      {
+        "caption": "Abses epidural spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7c657517-cefa-4b97-bc73-138a9704fedf/5bda85b6-1787972088981.jfif"
+      },
+      {
+        "caption": "Abses epidural spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7c657517-cefa-4b97-bc73-138a9704fedf/6cbc8629-1787972089635.jfif"
+      },
+      {
+        "caption": "Abses epidural spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7c657517-cefa-4b97-bc73-138a9704fedf/ea704f10-1787972089962.jfif"
+      },
+      {
+        "caption": "Abses epidural spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7c657517-cefa-4b97-bc73-138a9704fedf/85280dd7-1787972090270.jfif"
+      },
+      {
+        "caption": "Abses epidural spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7c657517-cefa-4b97-bc73-138a9704fedf/ca0e636e-1787972090556.jfif"
+      },
+      {
+        "caption": "Abses epidural spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7c657517-cefa-4b97-bc73-138a9704fedf/10e933b8-1787972090894.jfif"
+      }
+    ],
+    "title": "Abses epidural spinal"
+  },
+  {
+    "id": "entry-epidural-hematoma-spinal",
+    "images": [
+      {
+        "caption": "Epidural hematoma spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/030433e3-269f-4188-9a3e-de87481080c9/10f57801-1787978315846.jfif"
+      },
+      {
+        "caption": "Epidural hematoma spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/030433e3-269f-4188-9a3e-de87481080c9/67920856-1787978317010.jfif"
+      },
+      {
+        "caption": "Epidural hematoma spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/030433e3-269f-4188-9a3e-de87481080c9/02e1cd8e-1787978317393.jfif"
+      },
+      {
+        "caption": "Epidural hematoma spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/030433e3-269f-4188-9a3e-de87481080c9/5bc5a199-1787978317692.jfif"
+      },
+      {
+        "caption": "Epidural hematoma spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/030433e3-269f-4188-9a3e-de87481080c9/338d7ebf-1787978318001.jfif"
+      },
+      {
+        "caption": "Epidural hematoma spinal",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/030433e3-269f-4188-9a3e-de87481080c9/0231edbb-1787978318317.jfif"
+      }
+    ],
+    "title": "Epidural hematoma spinal"
+  },
+  {
+    "id": "entry-miokarditis-cmr",
+    "images": [
+      {
+        "caption": "Miokarditis - CMR",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f3e6e15-87f4-4c97-8177-64fcd114d04c/b5217fd4-1788084397666.jfif"
+      },
+      {
+        "caption": "Miokarditis - CMR",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f3e6e15-87f4-4c97-8177-64fcd114d04c/cd0c4571-1788084398445.jfif"
+      },
+      {
+        "caption": "Miokarditis - CMR",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f3e6e15-87f4-4c97-8177-64fcd114d04c/441834f8-1788084398751.jfif"
+      },
+      {
+        "caption": "Miokarditis - CMR",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f3e6e15-87f4-4c97-8177-64fcd114d04c/b08c5990-1788084399065.jfif"
+      },
+      {
+        "caption": "Miokarditis - CMR",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f3e6e15-87f4-4c97-8177-64fcd114d04c/92559483-1788084399659.jfif"
+      },
+      {
+        "caption": "Miokarditis - CMR",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f3e6e15-87f4-4c97-8177-64fcd114d04c/5dd3dd7e-1788084400009.jfif"
+      },
+      {
+        "caption": "Miokarditis - CMR",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f3e6e15-87f4-4c97-8177-64fcd114d04c/49e374c0-1788084400347.jfif"
+      }
+    ],
+    "title": "Miokarditis - CMR"
+  },
+  {
+    "id": "entry-ket-mola-mri-pelvis",
+    "images": [
+      {
+        "caption": "KET/Mola pada MRI pelvis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/81c0fa04-b648-4a8d-81af-34be5d5e80f8/1d4169b1-1788088655227.jfif"
+      },
+      {
+        "caption": "KET/Mola pada MRI pelvis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/81c0fa04-b648-4a8d-81af-34be5d5e80f8/063840fc-1788088656117.jfif"
+      },
+      {
+        "caption": "KET/Mola pada MRI pelvis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/81c0fa04-b648-4a8d-81af-34be5d5e80f8/fbb5619c-1788088656968.jfif"
+      },
+      {
+        "caption": "KET/Mola pada MRI pelvis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/81c0fa04-b648-4a8d-81af-34be5d5e80f8/a9e2de60-1788088657390.jfif"
+      },
+      {
+        "caption": "KET/Mola pada MRI pelvis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/81c0fa04-b648-4a8d-81af-34be5d5e80f8/bec2d750-1788088657714.jfif"
+      }
+    ],
+    "title": "KET/Mola pada MRI pelvis"
+  },
+  {
+    "id": "entry-kehamilan-ektopik",
+    "images": [
+      {
+        "caption": "Kehamilan ektopik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04dfdfc5-decd-4117-b1e6-5a0d1e58e1d8/07848e74-1787785971238.jfif"
+      },
+      {
+        "caption": "Kehamilan ektopik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04dfdfc5-decd-4117-b1e6-5a0d1e58e1d8/e349a368-1787785972095.jfif"
+      },
+      {
+        "caption": "Kehamilan ektopik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04dfdfc5-decd-4117-b1e6-5a0d1e58e1d8/202bb641-1787785972326.jfif"
+      },
+      {
+        "caption": "Kehamilan ektopik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04dfdfc5-decd-4117-b1e6-5a0d1e58e1d8/e7f2d9f5-1787785972851.jfif"
+      },
+      {
+        "caption": "Kehamilan ektopik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04dfdfc5-decd-4117-b1e6-5a0d1e58e1d8/282acfd6-1787785973055.jfif"
+      },
+      {
+        "caption": "Kehamilan ektopik",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/04dfdfc5-decd-4117-b1e6-5a0d1e58e1d8/f9c567fa-1787785973311.jfif"
+      }
+    ],
+    "title": "Kehamilan ektopik"
+  },
+  {
+    "id": "entry-mola-hidatidosa",
+    "images": [
+      {
+        "caption": "Mola hidatidosa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ea30b37-eb83-4942-9096-203274f0da8e/8d6bab85-1787971442468.jfif"
+      },
+      {
+        "caption": "Mola hidatidosa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ea30b37-eb83-4942-9096-203274f0da8e/106e4820-1787971443612.jfif"
+      },
+      {
+        "caption": "Mola hidatidosa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ea30b37-eb83-4942-9096-203274f0da8e/75a231fd-1787971443937.jfif"
+      },
+      {
+        "caption": "Mola hidatidosa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ea30b37-eb83-4942-9096-203274f0da8e/92aeda1b-1787971444251.jfif"
+      },
+      {
+        "caption": "Mola hidatidosa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ea30b37-eb83-4942-9096-203274f0da8e/5d685311-1787971444543.jfif"
+      },
+      {
+        "caption": "Mola hidatidosa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/9ea30b37-eb83-4942-9096-203274f0da8e/961c84b2-1787971444857.jfif"
+      }
+    ],
+    "title": "Mola hidatidosa"
+  },
+  {
+    "id": "entry-solusio-plasenta",
+    "images": [
+      {
+        "caption": "Solusio plasenta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1096592c-af25-4a0e-883b-73e7f9329d78/9e9b83e0-1787974882607.jfif"
+      },
+      {
+        "caption": "Solusio plasenta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1096592c-af25-4a0e-883b-73e7f9329d78/b59b1e91-1787974883243.jfif"
+      },
+      {
+        "caption": "Solusio plasenta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1096592c-af25-4a0e-883b-73e7f9329d78/48462415-1787974883616.jfif"
+      },
+      {
+        "caption": "Solusio plasenta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1096592c-af25-4a0e-883b-73e7f9329d78/1d89f566-1787974883952.jfif"
+      },
+      {
+        "caption": "Solusio plasenta",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1096592c-af25-4a0e-883b-73e7f9329d78/bc44d17b-1787974884319.jfif"
+      }
+    ],
+    "title": "Solusio plasenta"
+  },
+  {
+    "id": "entry-plasenta-previa",
+    "images": [
+      {
+        "caption": "Plasenta previa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/930f262c-18f2-4874-8de3-3ff61ea086fe/1ca3d9c8-1787976388601.jfif"
+      },
+      {
+        "caption": "Plasenta previa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/930f262c-18f2-4874-8de3-3ff61ea086fe/dfcaee2e-1787976389308.jfif"
+      },
+      {
+        "caption": "Plasenta previa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/930f262c-18f2-4874-8de3-3ff61ea086fe/8283f29b-1787976389639.jfif"
+      },
+      {
+        "caption": "Plasenta previa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/930f262c-18f2-4874-8de3-3ff61ea086fe/1d9d3f67-1787976390080.jfif"
+      },
+      {
+        "caption": "Plasenta previa",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/930f262c-18f2-4874-8de3-3ff61ea086fe/f3a05312-1787976390457.jfif"
+      }
+    ],
+    "title": "Plasenta previa"
+  },
+  {
+    "id": "entry-apendisitis-us",
+    "images": [
+      {
+        "caption": "Apendisitis USG",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7665a8c5-b981-433f-a3fe-97d4993c3595/0bbfbc47-1788083999666.jfif"
+      },
+      {
+        "caption": "Apendisitis USG",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7665a8c5-b981-433f-a3fe-97d4993c3595/185bfd2f-1788084000380.jfif"
+      },
+      {
+        "caption": "Apendisitis USG",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7665a8c5-b981-433f-a3fe-97d4993c3595/2693d7f4-1788084001218.jfif"
+      },
+      {
+        "caption": "Apendisitis USG",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7665a8c5-b981-433f-a3fe-97d4993c3595/ec4801df-1788084001943.jfif"
+      },
+      {
+        "caption": "Apendisitis USG",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7665a8c5-b981-433f-a3fe-97d4993c3595/ac26285c-1788084002332.jfif"
+      },
+      {
+        "caption": "Apendisitis USG",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/7665a8c5-b981-433f-a3fe-97d4993c3595/40ae9cf0-1788084002678.jfif"
+      }
+    ],
+    "title": "Apendisitis USG"
+  },
+  {
+    "id": "entry-hidronefrosis",
+    "images": [
+      {
+        "caption": "Hidronefrosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/616e0c62-df3b-4d17-a0b8-1b7be1552c8d/fae93401-1788090089076.jfif"
+      },
+      {
+        "caption": "Hidronefrosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/616e0c62-df3b-4d17-a0b8-1b7be1552c8d/4cc76ede-1788090089833.jfif"
+      },
+      {
+        "caption": "Hidronefrosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/616e0c62-df3b-4d17-a0b8-1b7be1552c8d/308b7a1d-1788090090213.jfif"
+      },
+      {
+        "caption": "Hidronefrosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/616e0c62-df3b-4d17-a0b8-1b7be1552c8d/43585224-1788090090839.jfif"
+      },
+      {
+        "caption": "Hidronefrosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/616e0c62-df3b-4d17-a0b8-1b7be1552c8d/35f06a71-1788090092359.jfif"
+      },
+      {
+        "caption": "Hidronefrosis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/616e0c62-df3b-4d17-a0b8-1b7be1552c8d/7940b69e-1788090092656.jfif"
+      }
+    ],
+    "title": "Hidronefrosis"
+  },
+  {
+    "id": "entry-asites-free-fluid",
+    "images": [
+      {
+        "caption": "ascites",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/01dea58a-eb98-4492-b6a7-4290bceb781c/6aa1261f-1788100364804.jfif"
+      },
+      {
+        "caption": "ascites",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/01dea58a-eb98-4492-b6a7-4290bceb781c/e3544a99-1788100365668.jfif"
+      },
+      {
+        "caption": "free fluid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/01dea58a-eb98-4492-b6a7-4290bceb781c/80237b24-1788100379264.jfif"
+      },
+      {
+        "caption": "free fluid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/01dea58a-eb98-4492-b6a7-4290bceb781c/21461b4f-1788100379609.jfif"
+      },
+      {
+        "caption": "free fluid",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/01dea58a-eb98-4492-b6a7-4290bceb781c/dec68eb2-1788100379982.jfif"
+      },
+      {
+        "caption": "free fluid morrison pouch",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/01dea58a-eb98-4492-b6a7-4290bceb781c/dbfcc4e8-1788100394817.jfif"
+      },
+      {
+        "caption": "free fluid morrison pouch",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/01dea58a-eb98-4492-b6a7-4290bceb781c/09678d7a-1788100395036.jfif"
+      }
+    ],
+    "title": "Asites / free fluid"
+  },
+  {
+    "id": "entry-hepatomegali",
+    "images": [
+      {
+        "caption": "Hepatomegali",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f959f0e-15bb-4e49-bf7b-4467a41955e9/2a6e77f9-1788215400213.jpg"
+      },
+      {
+        "caption": "Hepatomegali",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/0f959f0e-15bb-4e49-bf7b-4467a41955e9/5342d49f-1788215400686.jpg"
+      }
+    ],
+    "title": "Hepatomegali"
+  },
+  {
+    "id": "entry-torsio-testis",
+    "images": [
+      {
+        "caption": "Torsio testis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6234c210-1c2d-4696-8412-50e47bb5f646/f1e54d6c-1788216553993.jpg"
+      },
+      {
+        "caption": "Torsio testis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6234c210-1c2d-4696-8412-50e47bb5f646/d6ae764e-1788216555164.jpg"
+      },
+      {
+        "caption": "Torsio testis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6234c210-1c2d-4696-8412-50e47bb5f646/8d9b842d-1788216555544.jpg"
+      },
+      {
+        "caption": "Torsio testis",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6234c210-1c2d-4696-8412-50e47bb5f646/9470a162-1788216556126.jpg"
+      }
+    ],
+    "title": "Torsio testis"
+  },
+  {
+    "id": "entry-epididimitis",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c5218a6a-752c-45f9-8d7c-26d652605554/cefdd440-1788218509020.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/c5218a6a-752c-45f9-8d7c-26d652605554/074d0afa-1788218509495.jpg"
+      }
+    ],
+    "title": "Epididimitis"
+  },
+  {
+    "id": "entry-us-kepala-neonatus-normal",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/acd37bc7-11c6-480a-9651-dc3905c55ec6/11dd89ee-1788218674677.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/acd37bc7-11c6-480a-9651-dc3905c55ec6/4999b15f-1788218675355.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/acd37bc7-11c6-480a-9651-dc3905c55ec6/8b899a45-1788218675635.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/acd37bc7-11c6-480a-9651-dc3905c55ec6/44e0da54-1788218675953.jpg"
+      }
+    ],
+    "title": "US kepala neonatus - normal melalui fontanel"
+  },
+  {
+    "id": "entry-ivh-neonatus",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98a35daa-de54-41ac-8eff-1955c58b0a56/829f8a17-1788219582905.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98a35daa-de54-41ac-8eff-1955c58b0a56/e3f9cd9a-1788219583388.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98a35daa-de54-41ac-8eff-1955c58b0a56/bbaacc93-1788219583651.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98a35daa-de54-41ac-8eff-1955c58b0a56/f4fccc8b-1788219583860.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/98a35daa-de54-41ac-8eff-1955c58b0a56/494f2cf9-1788219584123.jpg"
+      }
+    ],
+    "title": "IVH neonatus"
+  },
+  {
+    "id": "entry-hidrosefalus-neonatus",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/78533b89-04b9-4f13-9252-bf2894407704/5985d660-1788219652310.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/78533b89-04b9-4f13-9252-bf2894407704/c4ad0bbc-1788219652900.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/78533b89-04b9-4f13-9252-bf2894407704/c5606355-1788219653150.jpg"
+      }
+    ],
+    "title": "Hidrosefalus neonatus"
+  },
+  {
+    "id": "entry-fast-efast-pneumotoraks",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a45ee693-0930-4acb-a095-c5951a985e15/99d0bb9b-1788219899756.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/a45ee693-0930-4acb-a095-c5951a985e15/acf9d180-1788219900331.jpg"
+      }
+    ],
+    "title": "FAST/EFAST pneumotoraks (tambahan)"
+  },
+  {
+    "id": "entry-tamponade-pocus",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6d4f3a-b992-4846-b78c-e887ac6d2c2a/3fdac920-1788220155180.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6d4f3a-b992-4846-b78c-e887ac6d2c2a/cd723306-1788220155572.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6d4f3a-b992-4846-b78c-e887ac6d2c2a/b8fd0b23-1788220155840.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/6e6d4f3a-b992-4846-b78c-e887ac6d2c2a/6b4690a0-1788220156190.jpg"
+      }
+    ],
+    "title": "Tamponade pada POCUS (tambahan)"
+  },
+  {
+    "id": "entry-aaa-pocus",
+    "images": [
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1776c7ee-0b5a-468f-94e9-44ac8fd6fc16/4ad72408-1788220214572.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1776c7ee-0b5a-468f-94e9-44ac8fd6fc16/46562d04-1788220215124.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1776c7ee-0b5a-468f-94e9-44ac8fd6fc16/ad677152-1788220215414.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1776c7ee-0b5a-468f-94e9-44ac8fd6fc16/8488380b-1788220215698.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1776c7ee-0b5a-468f-94e9-44ac8fd6fc16/1a6adc78-1788220216286.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1776c7ee-0b5a-468f-94e9-44ac8fd6fc16/d4c967e2-1788220217207.jpg"
+      },
+      {
+        "caption": "",
+        "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/radiologi/1776c7ee-0b5a-468f-94e9-44ac8fd6fc16/1a69cd15-1788220217535.jpg"
+      }
+    ],
+    "title": "AAA pada POCUS (tambahan)"
+  }
+]
