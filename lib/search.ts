@@ -1,0 +1,151 @@
+import Fuse from "fuse.js";
+import { SCORES } from "@/lib/data/scores";
+import { CALCULATORS } from "@/lib/data/calculators";
+import { DRUGS } from "@/lib/data/drugs";
+import { GUIDELINES } from "@/lib/data/guidelines";
+import { ICD10 } from "@/lib/data/icd10";
+import { PROCEDURES } from "@/lib/data/indications";
+import { foods } from "@/lib/data/foods";
+import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
+
+export interface SearchHit {
+  id: string;
+  title: string;
+  subtitle?: string;
+  href: string;
+  group: string;
+  badge?: string;
+}
+
+type ScoreItem = (typeof SCORES)[number];
+type CalcItem = (typeof CALCULATORS)[number];
+type DrugItem = (typeof DRUGS)[number];
+type GuideItem = (typeof GUIDELINES)[number];
+type IcdItem = (typeof ICD10)[number];
+type ProcItem = (typeof PROCEDURES)[number];
+type FoodItem = (typeof foods)[number];
+type NutritionItem = (typeof nutritionGuidance)[number];
+
+interface GroupDef<T> {
+  key: string;
+  label: string;
+  items: T[];
+  keys: string[];
+  map: (item: T) => SearchHit;
+}
+
+const groups: GroupDef<unknown>[] = [
+  {
+    key: "scores",
+    label: "Skor & Kriteria",
+    items: SCORES as unknown[],
+    keys: ["title", "abbreviation", "description", "keywords", "specialties"],
+    map: (item) => {
+      const s = item as ScoreItem;
+      return { id: s.slug, title: s.title, subtitle: s.description, href: `/scores/${s.slug}`, group: "scores", badge: s.abbreviation };
+    },
+  },
+  {
+    key: "calculators",
+    label: "Kalkulator",
+    items: CALCULATORS as unknown[],
+    keys: ["title", "abbreviation", "description", "keywords", "specialties"],
+    map: (item) => {
+      const c = item as CalcItem;
+      return { id: c.slug, title: c.title, subtitle: c.description, href: `/calculators/${c.slug}`, group: "calculators", badge: c.abbreviation };
+    },
+  },
+  {
+    key: "drugs",
+    label: "Obat",
+    items: DRUGS as unknown[],
+    keys: ["genericName", "brandNames", "drugClass", "indications", "keywords", "specialties"],
+    map: (item) => {
+      const d = item as DrugItem;
+      return { id: d.slug, title: d.genericName, subtitle: d.drugClass, href: `/drugs/${d.slug}`, group: "drugs", badge: d.drugClass };
+    },
+  },
+  {
+    key: "guidelines",
+    label: "Panduan Klinis",
+    items: GUIDELINES as unknown[],
+    keys: ["title", "keywords", "specialties"],
+    map: (item) => {
+      const g = item as GuideItem;
+      return { id: g.slug, title: g.title, subtitle: "Guideline navigator", href: `/guidelines/${g.slug}`, group: "guidelines" };
+    },
+  },
+  {
+    key: "icd10",
+    label: "ICD-10",
+    items: ICD10 as unknown[],
+    keys: ["code", "en", "id"],
+    map: (item) => {
+      const c = item as IcdItem;
+      return { id: c.code, title: `${c.code} — ${c.en}`, subtitle: c.id, href: `/icd10?q=${encodeURIComponent(c.code)}`, group: "icd10", badge: c.code };
+    },
+  },
+  {
+    key: "indications",
+    label: "Prosedur",
+    items: PROCEDURES as unknown[],
+    keys: ["title", "keywords", "specialties"],
+    map: (item) => {
+      const p = item as ProcItem;
+      return { id: p.slug, title: p.title, subtitle: "Indications & contraindications", href: `/indications/${p.slug}`, group: "indications" };
+    },
+  },
+  {
+    key: "nutrition",
+    label: "Bahan Pangan",
+    items: foods as unknown[],
+    keys: ["name", "nameId", "category"],
+    map: (item) => {
+      const f = item as FoodItem;
+      return { id: f.id, title: f.name, subtitle: f.category, href: `/nutrition?q=${encodeURIComponent(f.name)}`, group: "nutrition", badge: f.category };
+    },
+  },
+  {
+    key: "nutrition-guidance",
+    label: "Panduan Gizi Klinis",
+    items: nutritionGuidance as unknown[],
+    keys: ["title", "keywords", "specialties"],
+    map: (item) => {
+      const n = item as NutritionItem;
+      return { id: n.slug, title: n.title, subtitle: "Clinical nutrition guidance", href: `/nutrition-guidance/${n.slug}`, group: "nutrition-guidance" };
+    },
+  },
+];
+
+const engines = groups.map((g) => ({
+  ...g,
+  fuse: new Fuse(g.items as object[], {
+    keys: g.keys,
+    threshold: 0.42,
+    ignoreLocation: true,
+    includeScore: true,
+    minMatchCharLength: 2,
+  }),
+}));
+
+export function globalSearch(query: string, limitPerGroup = 5): { label: string; key: string; hits: SearchHit[] }[] {
+  const q = query.trim().toLowerCase();
+  if (q.length < 2) return [];
+  const out: { label: string; key: string; hits: SearchHit[] }[] = [];
+  for (const g of engines) {
+    const raw = g.fuse.search(q);
+    const hits = raw.slice(0, limitPerGroup).map((r) => g.map(r.item as never));
+    if (hits.length > 0) out.push({ label: g.label, key: g.key, hits });
+  }
+  return out;
+}
+
+/** Exact slug lookup helpers for static generation. */
+export const allSearchableSlugs = {
+  scores: SCORES.map((s) => s.slug),
+  calculators: CALCULATORS.map((c) => c.slug),
+  drugs: DRUGS.map((d) => d.slug),
+  guidelines: GUIDELINES.map((g) => g.slug),
+  indications: PROCEDURES.map((p) => p.slug),
+  nutritionGuidance: nutritionGuidance.map((n) => n.slug),
+};
