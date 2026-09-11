@@ -59,4 +59,18 @@ describe("frontend design contract", () => {
     expect(read(files[1])).toContain("evaluateScore");
     expect(read(files[2])).toContain("calculateDose");
   });
+
+  test("specialized workspaces consume the shared visual system", () => {
+    const paths = [
+      "app/anthropometry/page.tsx", "components/growth-chart.tsx", "app/development/page.tsx",
+      "app/immunization/page.tsx", "app/interactions/page.tsx", "app/meal-planner/page.tsx",
+      "app/nutrition/page.tsx",
+    ];
+    for (const path of paths) expect(read(path)).toContain("workspace-panel");
+    for (const path of paths.filter((path) => !path.includes("growth-chart") && !path.includes("nutrition/page"))) {
+      expect(read(path)).toContain("focus-ring");
+    }
+    expect(read(paths[0])).toContain("assess");
+    expect(read(paths[3])).toContain("assessImmunization");
+  });
 });
