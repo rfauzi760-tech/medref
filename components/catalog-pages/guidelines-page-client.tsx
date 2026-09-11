@@ -72,7 +72,7 @@ export default function GuidelinesPageClient({ items }: { items: GuidelineSummar
           {filtered.map((g) => (
             <Link
               key={g.slug}
-              href={`/items/${g.slug}`}
+              href={`/guidelines/${g.slug}`}
               className="index-row focus-ring group flex min-h-32 flex-col p-4 sm:odd:border-r"
             >
               <div className="flex items-start justify-between gap-2">

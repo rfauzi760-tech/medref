@@ -61,6 +61,13 @@ describe("frontend design contract", () => {
     for (const path of details) expect(read(path)).toMatch(/workspace-panel|section-band/);
   });
 
+  test("clinical guideline cards link to the existing detail route", () => {
+    const guidelines = read("components/catalog-pages/guidelines-page-client.tsx");
+
+    expect(guidelines).toContain('href={`/guidelines/${g.slug}`}');
+    expect(guidelines).not.toContain('href={`/items/${g.slug}`}');
+  });
+
   test("interactive tools share structured form language", () => {
     const files = ["components/calculator-tool.tsx", "components/score-tool.tsx", "components/drug-view.tsx"];
     for (const path of files) {
