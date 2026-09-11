@@ -1,4 +1,5 @@
 import type { Drug } from "@/lib/types";
+import { canonicalDrugs } from "./klinea-canonical";
 import { EXTRA_DRUGS } from "./drugs-extra";
 import { EXTRA_DRUGS_B } from "./drugs-extra-b";
 import { EXTRA_DRUGS_C } from "./drugs-extra-c";
@@ -24,7 +25,7 @@ import { EXTRA_DRUGS_L } from "./drugs-extra-l";
 
 const WHO_EML: Drug["source"] = { org: "WHO", title: "Model List of Essential Medicines", year: 2023, url: "https://www.who.int/groups/expert-committee-on-selection-and-use-of-essential-medicines" };
 
-export const DRUGS: Drug[] = [
+const RFS_DRUGS: Drug[] = [
   /* ---------- Analgesics / antipyretics ---------- */
   {
     id: "paracetamol", slug: "paracetamol", genericName: "Paracetamol (Acetaminophen)", brandNames: ["Panadol", "Sanmol", "Tempra"],
@@ -1392,6 +1393,8 @@ export const DRUGS: Drug[] = [
   ...EXTRA_DRUGS_K,
   ...EXTRA_DRUGS_L,
 ];
+
+export const DRUGS: Drug[] = canonicalDrugs(RFS_DRUGS);
 
 export const DRUGS_BY_SLUG: Record<string, Drug> = Object.fromEntries(DRUGS.map((d) => [d.slug, d]));
 export const DRUG_CLASSES: string[] = [...new Set(DRUGS.map((d) => d.drugClass))].sort();

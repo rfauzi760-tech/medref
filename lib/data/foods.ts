@@ -1,4 +1,5 @@
 import type { FoodItem } from "@/lib/types";
+import { canonicalFoods } from "./klinea-canonical";
 
 /**
  * Indonesian food database.
@@ -8,7 +9,7 @@ import type { FoodItem } from "@/lib/types";
  * reported. Used by the meal planner — never invented by an LLM.
  */
 
-export const foods: FoodItem[] = [
+const RFS_FOODS: FoodItem[] = [
   // ---- Rice & staples ----
   { id: "white-rice", name: "White rice (cooked)", nameId: "Nasi putih", category: "Rice & staples", kcal: 130, protein: 2.7, carbs: 28.2, fat: 0.3, fiber: 0.4, sodium: 1, potassium: 35, servingG: 150 },
   { id: "brown-rice", name: "Brown rice (cooked)", nameId: "Nasi merah", category: "Rice & staples", kcal: 111, protein: 2.6, carbs: 23, fat: 0.9, fiber: 1.8, sodium: 5, potassium: 43, servingG: 150 },
@@ -108,5 +109,8 @@ export const foods: FoodItem[] = [
   { id: "soy-sauce", name: "Soy sauce", nameId: "Kecap", category: "Condiments", kcal: 53, protein: 8.1, carbs: 4.9, fat: 0.6, fiber: 0.8, sodium: 5493, potassium: 435, servingG: 15 },
   { id: "salt", name: "Salt", nameId: "Garam", category: "Condiments", kcal: 0, protein: 0, carbs: 0, fat: 0, fiber: 0, sodium: 38758, potassium: 8, servingG: 5 },
 ];
+
+void RFS_FOODS;
+export const foods: FoodItem[] = canonicalFoods;
 
 export const foodCategories = [...new Set(foods.map((f) => f.category))];

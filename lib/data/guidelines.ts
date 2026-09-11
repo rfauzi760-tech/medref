@@ -1,4 +1,5 @@
 import type { GuidelineEntry } from "@/lib/types";
+import { canonicalGuidelines } from "./klinea-canonical";
 import { EXTRA_GUIDELINES_A } from "./guidelines-extra";
 import { EXTRA_GUIDELINES_B } from "./guidelines-extra-b";
 import { EXTRA_GUIDELINES_C } from "./guidelines-extra-c";
@@ -25,7 +26,7 @@ import { EXTRA_GUIDELINES_R2 } from "./guidelines-extra-r2";
  * Always verify details against the cited full guideline before clinical use.
  */
 
-export const GUIDELINES: GuidelineEntry[] = [
+const RFS_GUIDELINES: GuidelineEntry[] = [
   {
     id: "hypertension", slug: "hypertension", title: "Hypertension",
     specialties: ["Hypertension", "Cardiology", "Internal Medicine", "Nephrology"], keywords: ["hypertension", "blood pressure", "hbp", "anti-hypertensive", "krisis hipertensi"],
@@ -991,6 +992,8 @@ export const GUIDELINES: GuidelineEntry[] = [
   ...EXTRA_GUIDELINES_R,
   ...EXTRA_GUIDELINES_R2,
 ];
+
+export const GUIDELINES: GuidelineEntry[] = canonicalGuidelines(RFS_GUIDELINES);
 
 export const GUIDELINES_BY_SLUG: Record<string, GuidelineEntry> = Object.fromEntries(GUIDELINES.map((g) => [g.slug, g]));
 export const guidelines = GUIDELINES;

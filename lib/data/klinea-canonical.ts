@@ -1,0 +1,346 @@
+import content from "@/lib/generated/klinea-content.json";
+import type {
+  ClinicalSource,
+  Drug,
+  DrugInteraction,
+  FoodItem,
+  GuidelineEntry,
+  GuidelineSectionKey,
+  Icd10Entry,
+  MilestoneAge,
+  MilestoneDomain,
+  NutritionGuidance,
+  ScoreRange,
+  ScoreTool,
+  ScoreVariable,
+} from "@/lib/types";
+
+type Dict = Record<string, unknown>;
+
+const KLINEA_SOURCE: ClinicalSource = {
+  org: "Klinea",
+  title: "Basis data klinis Klinea",
+  year: 2026,
+  url: "https://www.klinea.id/app.html",
+};
+
+const REVIEWED = "2026-09-11";
+const clean = (value: unknown) => String(value ?? "").replace(/\[\[|\]\]/g, "").trim();
+const list = (value: unknown): string[] =>
+  Array.isArray(value) ? value.map(clean).filter(Boolean) : value ? [clean(value)] : [];
+const words = (value: unknown): string[] => clean(value).toLowerCase().split(/\s+/).filter(Boolean);
+const number = (value: unknown): number | undefined => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : undefined;
+};
+
+const sourceFrom = (refs: unknown): ClinicalSource[] => {
+  if (!Array.isArray(refs) || refs.length === 0) return [KLINEA_SOURCE];
+  return refs.map((ref) => {
+    const row = ref as Dict;
+    return {
+      org: clean(row.src) || "Klinea",
+      title: clean(row.src) || "Referensi klinis",
+      year: Number.parseInt(clean(row.year), 10) || 2026,
+    };
+  });
+};
+
+const flatten = (value: unknown): string[] => {
+  if (!Array.isArray(value)) return list(value);
+  return value.flatMap((item) => {
+    if (typeof item === "string") return [clean(item)];
+    if (!item || typeof item !== "object") return [];
+    const row = item as Dict;
+    const title = clean(row.t);
+    const children = flatten(row.sub);
+    return title ? [title, ...children.map((child) => `${title} ${child}`)] : children;
+  }).filter(Boolean);
+};
+
+type KlineaField = {
+  id?: string;
+  label?: string;
+  type?: "check" | "radio" | "num";
+  options?: { label?: string; points?: number }[];
+};
+
+type KlineaTool = {
+  id: string;
+  sp?: string;
+  name?: string;
+  blurb?: string;
+  guideline?: string;
+  showScore?: boolean;
+  fields?: KlineaField[];
+};
+
+const scoreRange = (row: Dict): ScoreRange => {
+  const score = clean(row.skor).toLowerCase();
+  const values = score.match(/-?\d+(?:[.,]\d+)?/g)?.map((item) => Number(item.replace(",", "."))) ?? [];
+  let min = values[0] ?? -9999;
+  let max = values[1] ?? values[0] ?? 9999;
+  if (/^(>|>=|≥)/.test(score) || /ke atas|atau lebih/.test(score)) max = 9999;
+  if (/^(<|<=|≤)/.test(score) || /ke bawah|atau kurang/.test(score)) {
+    min = -9999;
+    max = values[0] ?? 9999;
+  }
+  const toneName = clean(row.tone);
+  const tone: ScoreRange["tone"] = toneName === "danger" ? "danger" : toneName === "warn" ? "warning" : toneName === "ok" ? "success" : "info";
+  const steps = flatten(row.langkah);
+  return {
+    min,
+    max,
+    category: clean(row.risiko) || "Interpretasi",
+    label: clean(row.risiko) || `Skor ${clean(row.skor)}`,
+    action: steps.join(" "),
+    tone,
+  };
+};
+
+function toolVariables(tool: KlineaTool, legacy?: ScoreTool): ScoreVariable[] {
+  const fields = (tool.fields ?? []).filter((field) => field.id);
+  return fields.map((field, index) => {
+    const previous = legacy?.variables.find((item) => item.id === field.id) ?? legacy?.variables[index];
+    if (field.type === "num") {
+      return {
+        ...previous,
+        id: field.id!,
+        label: clean(field.label),
+        type: "number",
+        required: true,
+        min: previous?.min ?? 0,
+        max: previous?.max ?? 100,
+        step: previous?.step ?? 1,
+      };
+    }
+    const options = field.type === "radio"
+      ? (field.options ?? []).map((option) => ({ label: clean(option.label), value: Number(option.points ?? 0) }))
+      : [{ label: "Tidak", value: 0 }, { label: "Ya", value: 1 }];
+    return {
+      ...previous,
+      id: field.id!,
+      label: clean(field.label),
+      type: "select",
+      required: true,
+      options,
+    };
+  });
+}
+
+export function canonicalScores(legacyScores: ScoreTool[]): ScoreTool[] {
+  const byId = new Map(legacyScores.flatMap((score) => [[score.id, score], [score.slug, score]]));
+  const extras = content.toolExtra as Record<string, Dict>;
+  return (content.tools as KlineaTool[]).map((tool) => {
+    const legacy = byId.get(tool.id);
+    const extra = extras[tool.id] ?? {};
+    const ranges = Array.isArray(extra.pita) && extra.pita.length
+      ? (extra.pita as Dict[]).map(scoreRange)
+      : legacy?.ranges ?? [{ min: -9999, max: 9999, category: "Interpretasi", label: clean(tool.guideline) || "Lihat panduan klinis", tone: "info" }];
+    const references = sourceFrom(extra.refs);
+    return {
+      ...legacy,
+      id: tool.id,
+      slug: tool.id,
+      title: clean(tool.name) || tool.id,
+      description: clean(tool.blurb) || clean(extra.dasar) || "Alat bantu klinis.",
+      specialties: list(tool.sp),
+      keywords: [...words(tool.name), ...words(tool.blurb), tool.id],
+      type: "score",
+      category: tool.showScore === false ? "criteria" : "score",
+      variables: toolVariables(tool, legacy),
+      ranges,
+      indication: flatten(extra.pakai).join(" ") || clean(tool.guideline),
+      limitations: flatten(extra.jangan).join(" "),
+      warnings: flatten(extra.jangan),
+      lastReviewed: REVIEWED,
+      source: references[0],
+    };
+  });
+}
+
+type KlineaDrug = {
+  id: string;
+  nm?: string;
+  kelas?: string;
+  cat?: string;
+  q?: string;
+  kontra?: unknown;
+  indikasi?: unknown;
+  dewasa?: unknown;
+  anak?: unknown;
+  sediaan?: unknown;
+  perhatian?: unknown;
+  refs?: unknown;
+};
+
+export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
+  const aliases: Record<string, string> = { parasetamol: "paracetamol" };
+  const legacyById = new Map(legacyDrugs.flatMap((drug) => [[drug.id, drug], [drug.slug, drug]]));
+  return (content.drugs as KlineaDrug[]).map((drug) => {
+    const legacy = legacyById.get(drug.id) ?? legacyById.get(aliases[drug.id]);
+    const adultWeight = legacy?.doses.find((dose) => dose.population === "adult" || dose.population === "all")?.weightBased;
+    const childWeight = legacy?.doses.find((dose) => dose.population === "pediatric" || dose.population === "all")?.weightBased;
+    const adult = list(drug.dewasa).map((text, index) => ({ population: "adult" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? adultWeight : undefined }));
+    const child = list(drug.anak).map((text, index) => ({ population: "pediatric" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? childWeight : undefined }));
+    return {
+      id: drug.id,
+      slug: drug.id,
+      genericName: clean(drug.nm) || drug.id,
+      brandNames: legacy?.brandNames,
+      drugClass: clean(drug.kelas) || clean(drug.cat) || "Obat",
+      specialties: list(drug.cat),
+      keywords: [...words(drug.q), ...words(drug.nm)],
+      indications: list(drug.indikasi),
+      doses: [...adult, ...child],
+      contraindications: list(drug.kontra),
+      majorWarnings: list(drug.perhatian),
+      preparations: list(drug.sediaan),
+      pregnancy: legacy?.pregnancy,
+      lactation: legacy?.lactation,
+      lastReviewed: REVIEWED,
+      source: sourceFrom(drug.refs)[0],
+    };
+  });
+}
+
+type KlineaGuideline = Dict & { id: string; name?: string; cat?: string; q?: string; refs?: unknown };
+
+const sectionMap: Partial<Record<string, GuidelineSectionKey>> = {
+  diagnosis: "diagnosticCriteria",
+  penunjang: "investigations",
+  klasifikasi: "classification",
+  tatalaksana: "initialManagement",
+  monitoring: "followUp",
+  admit: "admissionCriteria",
+  rujuk: "icuCriteria",
+  edukasi: "discharge",
+  warning: "redFlags",
+  severe: "redFlags",
+};
+
+export function canonicalGuidelines(legacyGuidelines: GuidelineEntry[]): GuidelineEntry[] {
+  const byId = new Map(legacyGuidelines.flatMap((item) => [[item.id, item], [item.slug, item]]));
+  const extraById = content.guidelineExtra as Record<string, Dict>;
+  return (content.guidelines as KlineaGuideline[]).map((guide) => {
+    const legacy = byId.get(guide.id);
+    const merged: Dict = { ...guide, ...(extraById[guide.id] ?? {}) };
+    const sections: GuidelineEntry["sections"] = {};
+    for (const [sourceKey, targetKey] of Object.entries(sectionMap)) {
+      const values = flatten(merged[sourceKey]);
+      if (values.length) sections[targetKey] = [...(sections[targetKey] ?? []), ...values];
+    }
+    const overview = flatten(merged.ringkas ?? merged.overview);
+    if (overview.length) sections.overview = overview;
+    return {
+      id: guide.id,
+      slug: guide.id,
+      title: clean(guide.name) || guide.id,
+      specialties: list(guide.cat),
+      keywords: [...words(guide.q), ...words(guide.name)],
+      emergency: Boolean(sections.redFlags?.length),
+      ageGroup: legacy?.ageGroup ?? (/anak|pediatri/i.test(clean(guide.cat)) ? "pediatric" : "both"),
+      pregnancyRelevant: legacy?.pregnancyRelevant,
+      sections,
+      references: sourceFrom(merged.refs),
+      lastReviewed: REVIEWED,
+    };
+  });
+}
+
+const chapters: Record<string, string> = {
+  A: "Penyakit infeksi dan parasit", B: "Penyakit infeksi dan parasit", C: "Neoplasma", D: "Darah dan sistem imun",
+  E: "Endokrin, nutrisi, dan metabolik", F: "Gangguan mental dan perilaku", G: "Sistem saraf", H: "Mata dan telinga",
+  I: "Sistem sirkulasi", J: "Sistem pernapasan", K: "Sistem pencernaan", L: "Kulit dan jaringan subkutan",
+  M: "Muskuloskeletal", N: "Genitourinaria", O: "Kehamilan dan persalinan", P: "Perinatal", Q: "Kelainan kongenital",
+  R: "Gejala dan temuan klinis", S: "Cedera dan keracunan", T: "Cedera dan keracunan", V: "Penyebab eksternal",
+  W: "Penyebab eksternal", X: "Penyebab eksternal", Y: "Penyebab eksternal", Z: "Faktor yang memengaruhi status kesehatan",
+};
+
+export const canonicalIcd10: Icd10Entry[] = (content.icd10 as Dict[]).map((row) => ({
+  code: clean(row.c),
+  en: clean(row.en),
+  id: clean(row.nm),
+  chapter: chapters[clean(row.c)[0]] ?? "Lainnya",
+}));
+
+export const canonicalFoods: FoodItem[] = (content.foods as Dict[]).map((row) => ({
+  id: clean(row.id),
+  name: clean(row.nm),
+  nameId: clean(row.nm),
+  category: clean(row.cat),
+  servingG: number(row.g),
+  kcal: number(row.kcal) ?? 0,
+  protein: number(row.p) ?? 0,
+  fat: number(row.f) ?? 0,
+  carbs: number(row.c) ?? 0,
+  fiber: number(row.fib),
+  sodium: number(row.na),
+  potassium: number(row.k),
+}));
+
+export const canonicalNutrition: NutritionGuidance[] = (content.nutrition as Dict[]).map((row) => {
+  const calc = (row.calc && typeof row.calc === "object" ? row.calc : {}) as Dict;
+  const calculationNotes = Object.entries(calc).map(([key, value]) => {
+    const labels: Record<string, string> = { kcalKg: "Energi", protKg: "Protein", naMax: "Batas natrium", fluid: "Cairan" };
+    const shown = Array.isArray(value) ? value.join(" sampai ") : clean(value);
+    return `${labels[key] ?? key}: ${shown}`;
+  });
+  return {
+    id: clean(row.id),
+    slug: clean(row.id),
+    title: clean(row.nm),
+    specialties: [clean(row.cat), "Gizi klinis"].filter(Boolean),
+    keywords: [...words(row.nm), ...words(row.cat)],
+    summary: clean(row.ringkas),
+    principles: [...calculationNotes, ...list(row.catatan)],
+    foodsRecommended: list(row.anjur),
+    foodsLimited: list(row.batasi),
+    references: [KLINEA_SOURCE],
+    lastReviewed: REVIEWED,
+  };
+});
+
+const domainMap: Record<string, MilestoneDomain> = {
+  "motorik kasar": "gross",
+  "motorik halus": "fine",
+  bahasa: "language",
+  sosial: "social",
+  kognitif: "cognitive",
+};
+
+export const canonicalMilestones: MilestoneAge[] = Object.values(
+  (content.milestones as Dict[]).reduce<Record<number, MilestoneAge>>((groups, row) => {
+    const age = number(row.expectBy) ?? 0;
+    const domain = domainMap[clean(row.domain).toLowerCase()] ?? "cognitive";
+    groups[age] ??= {
+      ageMonths: age,
+      label: `${age} bulan`,
+      milestones: {},
+      redFlags: [],
+      activities: [],
+      source: KLINEA_SOURCE,
+    };
+    groups[age].milestones[domain] ??= [];
+    groups[age].milestones[domain]!.push(clean(row.item));
+    return groups;
+  }, {}),
+).sort((a, b) => a.ageMonths - b.ageMonths);
+
+export const canonicalInteractions: DrugInteraction[] = (content.interactions as Dict[]).flatMap((rule, ruleIndex) => {
+  const groups = content.drugGroups as Record<string, string[]>;
+  const aValues = groups[clean(rule.a)] ?? [clean(rule.a)];
+  const bValues = groups[clean(rule.b)] ?? [clean(rule.b)];
+  const severityName = clean(rule.sev).toLowerCase();
+  const severity: DrugInteraction["severity"] = severityName.includes("kontra") ? "contraindicated" : severityName.includes("mayor") ? "major" : severityName.includes("moderat") ? "moderate" : severityName.includes("minor") ? "minor" : "unknown";
+  return aValues.flatMap((a) => bValues.filter((b) => a !== b).map((b) => ({
+    id: `${ruleIndex}-${a}-${b}`,
+    a,
+    b,
+    severity,
+    mechanism: clean(rule.mech),
+    effect: clean(rule.efek),
+    management: clean(rule.advice),
+    source: KLINEA_SOURCE,
+  })));
+});

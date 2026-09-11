@@ -1,4 +1,5 @@
 import type { Icd10Entry } from "@/lib/types";
+import { canonicalIcd10 } from "./klinea-canonical";
 
 /**
  * Curated ICD-10 subset for point-of-care lookup.
@@ -948,7 +949,8 @@ const ROWS: Row[] = [
   ["T90.9", "Sequelae of injury of head", "Sekuele cedera kepala", "Injury & poisoning"],
 ];
 
-export const ICD10: Icd10Entry[] = ROWS.map(([code, en, id, chapter]) => ({ code, en, id, chapter }));
+void ROWS;
+export const ICD10: Icd10Entry[] = canonicalIcd10;
 
 export const ICD10_CHAPTERS: string[] = [...new Set(ICD10.map((r) => r.chapter))];
 export const icd10Codes = ICD10;

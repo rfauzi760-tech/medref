@@ -1,4 +1,5 @@
 import type { ScoreTool } from "@/lib/types";
+import { canonicalScores } from "./klinea-canonical";
 import { EXTRA_SCORES_A } from "./scores-extra";
 import { EXTRA_SCORES_B } from "./scores-extra-b";
 import { EXTRA_SCORES_C } from "./scores-extra-c";
@@ -15,7 +16,7 @@ import { EXTRA_SCORES_I } from "./scores-extra-i";
  * Clinical content authored from the cited authoritative sources.
  */
 
-export const SCORES: ScoreTool[] = [
+const RFS_SCORES: ScoreTool[] = [
   /* ------------------------------------------------------------------ */
   /* Emergency & Critical Care                                           */
   /* ------------------------------------------------------------------ */
@@ -1004,5 +1005,7 @@ export const SCORES: ScoreTool[] = [
   ...EXTRA_SCORES_H,
   ...EXTRA_SCORES_I,
 ];
+
+export const SCORES: ScoreTool[] = canonicalScores(RFS_SCORES);
 
 export const SCORES_BY_SLUG: Record<string, ScoreTool> = Object.fromEntries(SCORES.map((s) => [s.slug, s]));

@@ -1,4 +1,5 @@
 import type { NutritionGuidance } from "@/lib/types";
+import { canonicalNutrition } from "./klinea-canonical";
 
 /**
  * Condition-specific clinical nutrition guidance.
@@ -6,7 +7,7 @@ import type { NutritionGuidance } from "@/lib/types";
  * AHA/ACC, WHO). Keep concise bedside reference format.
  */
 
-export const nutritionGuidance: NutritionGuidance[] = [
+const RFS_NUTRITION: NutritionGuidance[] = [
   {
     id: "diabetes",
     slug: "diabetes",
@@ -380,3 +381,6 @@ export const nutritionGuidance: NutritionGuidance[] = [
     lastReviewed: "2025-01-15",
   },
 ];
+
+void RFS_NUTRITION;
+export const nutritionGuidance: NutritionGuidance[] = canonicalNutrition;

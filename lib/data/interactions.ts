@@ -1,4 +1,5 @@
 import type { DrugInteraction } from "@/lib/types";
+import { canonicalInteractions } from "./klinea-canonical";
 
 /**
  * Drug-drug interactions (curated, well-documented pairs).
@@ -24,7 +25,7 @@ const I = (a: string, b: string, severity: DrugInteraction["severity"], mechanis
   source: SRC,
 });
 
-export const INTERACTIONS: DrugInteraction[] = [
+const RFS_INTERACTIONS: DrugInteraction[] = [
   /* ---- Warfarin ---- */
   I("warfarin", "ibuprofen", "major", "NSAIDs inhibit platelet function and irritate the GI mucosa; additive anticoagulant effect.", "Increased bleeding risk (GI bleeding especially).", "Avoid or use with extreme caution; if unavoidable, monitor INR and watch for GI bleeding; consider gastroprotection.", "warfarin-ibuprofen"),
   I("warfarin", "aspirin", "major", "Additive antiplatelet and anticoagulant effects.", "Significant increase in bleeding risk.", "Only combine when clearly indicated (e.g. mechanical valves); monitor closely.", "warfarin-aspirin"),
@@ -144,6 +145,9 @@ export const INTERACTIONS: DrugInteraction[] = [
   I("diazepam", "morphine", "major", "Additive CNS/respiratory depression.", "Severe respiratory depression.", "Avoid combination outside monitored settings.", "diazepam-morphine"),
 ];
 
+void RFS_INTERACTIONS;
+export const INTERACTIONS: DrugInteraction[] = canonicalInteractions;
+
 /** Map: drug slug → interactions involving it. */
 export function interactionsFor(slug: string): DrugInteraction[] {
   return INTERACTIONS.filter((x) => x.a === slug || x.b === slug);
@@ -152,10 +156,10 @@ export function interactionsFor(slug: string): DrugInteraction[] {
 export const SEVERITY_ORDER: DrugInteraction["severity"][] = ["contraindicated", "major", "moderate", "minor", "unknown"];
 
 export const SEVERITY_LABEL: Record<DrugInteraction["severity"], string> = {
-  contraindicated: "Contraindicated",
-  major: "Major",
-  moderate: "Moderate",
+  contraindicated: "Kontraindikasi",
+  major: "Mayor",
+  moderate: "Moderat",
   minor: "Minor",
-  unknown: "Unknown / insufficient data",
+  unknown: "Tidak diketahui / data tidak cukup",
 };
 export const drugInteractions = INTERACTIONS;

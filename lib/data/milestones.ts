@@ -1,4 +1,5 @@
 import type { MilestoneAge } from "@/lib/types";
+import { canonicalMilestones } from "./klinea-canonical";
 
 /**
  * Developmental milestones by age.
@@ -7,7 +8,7 @@ import type { MilestoneAge } from "@/lib/types";
  * applicable. Red flags signal when a professional assessment is warranted.
  */
 
-export const milestoneAges: MilestoneAge[] = [
+const RFS_MILESTONES: MilestoneAge[] = [
   {
     ageMonths: 1,
     label: "1 month",
@@ -282,12 +283,15 @@ export const milestoneAges: MilestoneAge[] = [
   },
 ];
 
+void RFS_MILESTONES;
+export const milestoneAges: MilestoneAge[] = canonicalMilestones;
+
 export const milestoneDomains: { key: "gross" | "fine" | "language" | "social" | "cognitive"; label: string; icon: string }[] = [
-  { key: "gross", label: "Gross Motor", icon: "🏃" },
-  { key: "fine", label: "Fine Motor", icon: "✋" },
-  { key: "language", label: "Language", icon: "🗣️" },
-  { key: "social", label: "Social & Personal", icon: "👥" },
-  { key: "cognitive", label: "Cognitive", icon: "🧠" },
+  { key: "gross", label: "Motorik Kasar", icon: "🏃" },
+  { key: "fine", label: "Motorik Halus", icon: "✋" },
+  { key: "language", label: "Bahasa", icon: "🗣️" },
+  { key: "social", label: "Sosial & Personal", icon: "👥" },
+  { key: "cognitive", label: "Kognitif", icon: "🧠" },
 ];
 
 /** Best-matching milestone age entry for a given age in months. */
