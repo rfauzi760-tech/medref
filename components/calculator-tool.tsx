@@ -6,6 +6,7 @@ import { runCalculator } from "@/lib/calc/calculators";
 import { CopyButton, ResetButton, PrintButton, SpecialtyTags } from "@/components/action-buttons";
 import { SourceBlock } from "@/components/source-block";
 import { useRecordVisit } from "@/components/use-local-store";
+import { translateCalculatorText } from "@/lib/data/calculators";
 
 const toneClasses: Record<string, string> = {
   success: "border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-200",
@@ -16,11 +17,11 @@ const toneClasses: Record<string, string> = {
 
 function toResultText(tool: CalculatorTool, result: ReturnType<typeof runCalculator>): string {
   const lines = [`${tool.title}${tool.abbreviation ? ` (${tool.abbreviation})` : ""}`];
-  for (const l of result.lines) lines.push(`• ${l.label}: ${l.value}${l.unit ? " " + l.unit : ""}${l.detail ? ` — ${l.detail}` : ""}`);
-  for (const w of result.warnings ?? []) lines.push(`⚠ ${w}`);
-  if (result.note) lines.push(result.note);
-  lines.push(`Source: ${tool.source.org}, ${tool.source.title} (${tool.source.year})`);
-  lines.push("Clinical decision support only — does not replace clinical judgment.");
+  for (const l of result.lines) lines.push(`• ${translateCalculatorText(l.label)}: ${translateCalculatorText(l.value)}${l.unit ? " " + l.unit : ""}${l.detail ? ` - ${translateCalculatorText(l.detail)}` : ""}`);
+  for (const w of result.warnings ?? []) lines.push(`⚠ ${translateCalculatorText(w)}`);
+  if (result.note) lines.push(translateCalculatorText(result.note));
+  lines.push(`Sumber: ${tool.source.org}, ${tool.source.title} (${tool.source.year})`);
+  lines.push("Hanya alat bantu keputusan klinis. Tidak menggantikan penilaian klinis.");
   return lines.join("\n");
 }
 
@@ -128,14 +129,14 @@ export function CalculatorToolView({ tool }: { tool: CalculatorTool }) {
                     onClick={() => set(i.id, "yes")}
                     className={`focus-ring min-h-11 flex-1 rounded-lg border px-3 py-2 text-sm ${String(values[i.id]) === "yes" ? "border-accent bg-accent/10" : "border-[var(--line)]"}`}
                   >
-                    Yes
+                    Ya
                   </button>
                   <button
                     type="button"
                     onClick={() => set(i.id, "no")}
                     className={`focus-ring min-h-11 flex-1 rounded-lg border px-3 py-2 text-sm ${String(values[i.id]) === "no" ? "border-accent bg-accent/10" : "border-[var(--line)]"}`}
                   >
-                    No
+                    Tidak
                   </button>
                 </div>
               )}
@@ -156,7 +157,7 @@ export function CalculatorToolView({ tool }: { tool: CalculatorTool }) {
               <div className="space-y-2 p-4">
                 {result.warnings?.map((w) => (
                   <div key={w} className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
-                    ⚠ {w}
+                    ⚠ {translateCalculatorText(w)}
                   </div>
                 ))}
                 {result.lines.map((l, i) => (
@@ -167,23 +168,23 @@ export function CalculatorToolView({ tool }: { tool: CalculatorTool }) {
                     }`}
                   >
                     <div className="min-w-0">
-                      <div className="text-xs font-medium opacity-80">{l.label}</div>
-                      {l.detail && <div className="text-[11px] opacity-70">{l.detail}</div>}
+                      <div className="text-xs font-medium opacity-80">{translateCalculatorText(l.label)}</div>
+                      {l.detail && <div className="text-[11px] opacity-70">{translateCalculatorText(l.detail)}</div>}
                     </div>
                     <div className="shrink-0 text-right">
-                      <span className="text-base font-bold">{l.value}</span>
+                      <span className="text-base font-bold">{translateCalculatorText(l.value)}</span>
                       {l.unit && <span className="ml-1 text-xs opacity-70">{l.unit}</span>}
                     </div>
                   </div>
                 ))}
-                {result.note && <p className="pt-1 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">{result.note}</p>}
+                {result.note && <p className="pt-1 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">{translateCalculatorText(result.note)}</p>}
               </div>
             )}
           </div>
 
           {tool.interpretation && (
             <div className="workspace-panel p-4 text-xs leading-relaxed text-[var(--muted)]">
-              <span className="font-semibold text-zinc-600 dark:text-zinc-300">Interpretation. </span>
+              <span className="font-semibold text-zinc-600 dark:text-zinc-300">Interpretasi. </span>
               {tool.interpretation}
             </div>
           )}

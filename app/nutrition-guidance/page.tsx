@@ -19,13 +19,13 @@ export default function NutritionGuidancePage() {
     <div>
       <PageHeader
         title="Panduan Gizi Klinis"
-        description="Prinsip gizi spesifik per kondisi, makanan yang dianjurkan dan dibatasi, serta contoh hari makan — berdasarkan panduan otoritatif (ADA, KDIGO/KDOQI, ACC/AHA, WHO)."
+        description="Prinsip gizi spesifik per kondisi, makanan yang dianjurkan dan dibatasi, serta contoh hari makan - berdasarkan panduan otoritatif (ADA, KDIGO/KDOQI, ACC/AHA, WHO)."
         count={nutritionGuidance.length}
         countLabel="kondisi"
       />
       <FilterInput value={q} onChange={setQ} placeholder="Cari kondisi… mis. diabetes, CKD, hipertensi" />
       {filtered.length === 0 ? (
-        <EmptyState message={`No nutrition guidance matches “${q}”.`} />
+        <EmptyState message={`Tidak ada panduan gizi yang cocok dengan “${q}”.`} />
       ) : (
         <div className="workspace-panel grid overflow-hidden sm:grid-cols-2">
           {filtered.map((n) => (

@@ -17,7 +17,7 @@ import { EXTRA_DRUGS_L } from "./drugs-extra-l";
  * Drug dosing database.
  *
  * Doses are standard published doses (WHO Model List of Essential Medicines,
- * national formularies, IDSA/WHO guidance) — never invented. Where reliable
+ * national formularies, IDSA/WHO guidance) - never invented. Where reliable
  * dosing is not available the field is simply omitted and marked unavailable.
  * Weight-based schemas power the dose calculator; text entries document fixed,
  * band-based or infusion dosing.
@@ -35,10 +35,10 @@ const RFS_DRUGS: Drug[] = [
       {
         population: "all", route: "PO / PR", indication: "Fever & pain",
         text: "Adults: 500–1000 mg q4–6h (max 4 g/day, 3 g/day if chronic liver disease or elderly). Children: 10–15 mg/kg/dose q4–6h (max 5 doses/day; max 75 mg/kg/day, not exceeding 4 g/day). Neonates: 10–15 mg/kg/dose q6–8h.",
-        weightBased: { min: 10, max: 15, per: "dose", frequencyPerDay: 4, maxPerDoseMg: 1000, maxDailyMg: 4000, maxText: "Maximum 5 doses in 24 h; do not exceed 4 g/day (adults) or 75 mg/kg/day (children).", note: "Use weight-based dose in children; syrup concentration 120 mg/5 mL or 250 mg/5 mL — check preparation." },
+        weightBased: { min: 10, max: 15, per: "dose", frequencyPerDay: 4, maxPerDoseMg: 1000, maxDailyMg: 4000, maxText: "Maximum 5 doses in 24 h; do not exceed 4 g/day (adults) or 75 mg/kg/day (children).", note: "Use weight-based dose in children; syrup concentration 120 mg/5 mL or 250 mg/5 mL - check preparation." },
       },
     ],
-    contraindications: ["Severe hepatic impairment"], majorWarnings: ["Hepatotoxicity in overdose — treat with N-acetylcysteine within 8–10 h of ingestion."],
+    contraindications: ["Severe hepatic impairment"], majorWarnings: ["Hepatotoxicity in overdose - treat with N-acetylcysteine within 8–10 h of ingestion."],
     renalConsideration: "Reduce interval to q8h in severe renal impairment (CrCl < 10).", preparations: ["Tablet 500 mg", "Syrup 120 mg/5 mL, 250 mg/5 mL", "Suppository 125/250 mg", "IV 10 mg/mL"],
     pregnancy: "Generally safe in therapeutic doses.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
@@ -74,8 +74,8 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 0.05, max: 0.1, per: "dose", frequencyPerDay: 6, maxPerDoseMg: 10 },
       },
     ],
-    contraindications: ["Respiratory depression", "Paralytic ileus"], majorWarnings: ["Respiratory depression — monitor sedation and respiratory rate; naloxone available."],
-    renalConsideration: "Active metabolite accumulates — reduce dose in renal impairment.", preparations: ["Ampoule 10 mg/mL", "Tablet 10 mg", "Syrup 10 mg/5 mL"],
+    contraindications: ["Respiratory depression", "Paralytic ileus"], majorWarnings: ["Respiratory depression - monitor sedation and respiratory rate; naloxone available."],
+    renalConsideration: "Active metabolite accumulates - reduce dose in renal impairment.", preparations: ["Ampoule 10 mg/mL", "Tablet 10 mg", "Syrup 10 mg/5 mL"],
     pregnancy: "Use only if clearly needed (neonatal withdrawal risk with chronic use).", lactation: "Short-term use generally compatible.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -127,11 +127,11 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "neonatal", route: "PO / IV", indication: "Neonatal infections",
-        text: "25–50 mg/kg/day divided q12h (first week of life) — per neonatal formulary.",
+        text: "25–50 mg/kg/day divided q12h (first week of life) - per neonatal formulary.",
         weightBased: { min: 25, max: 50, per: "day", frequencyPerDay: 2 },
       },
     ],
-    contraindications: ["Penicillin allergy (anaphylaxis)"], majorWarnings: ["Anaphylaxis risk in penicillin allergy — cross-reaction with cephalosporins ~1-2%."],
+    contraindications: ["Penicillin allergy (anaphylaxis)"], majorWarnings: ["Anaphylaxis risk in penicillin allergy - cross-reaction with cephalosporins ~1-2%."],
     renalConsideration: "CrCl < 30 mL/min: increase interval (e.g. q12h → q24h).", preparations: ["Capsule 250/500 mg", "Syrup 125/250 mg per 5 mL", "IV 500 mg/1 g"],
     pregnancy: "Safe (category B).", lactation: "Compatible.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
@@ -151,7 +151,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 20, max: 40, per: "day", frequencyPerDay: 3, maxPerDoseMg: 875, maxText: "High-dose: 80–90 mg/kg/day of amoxicillin component.", note: "Example: 18 kg child → 40 mg/kg/day = 720 mg/day ÷ 3 = 240 mg q8h." },
       },
     ],
-    contraindications: ["Penicillin allergy"], majorWarnings: ["Hepatotoxicity (especially elderly, prolonged use)", "Diarrhoea — C. difficile risk"],
+    contraindications: ["Penicillin allergy"], majorWarnings: ["Hepatotoxicity (especially elderly, prolonged use)", "Diarrhoea - C. difficile risk"],
     renalConsideration: "CrCl < 30: extend interval.", preparations: ["Tablet 625 mg (500/125), 1 g (875/125)", "Syrup 156.25 mg/5 mL (125/31.25)", "IV 1.2 g"],
     pregnancy: "Safe.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
@@ -172,7 +172,7 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "neonatal", route: "IV", indication: "Neonatal sepsis",
-        text: "50 mg/kg/dose IV — q12h (< 7 days, < 2 kg), q8h (< 7 days, ≥ 2 kg), q8h (7–28 days, < 2 kg), q6h (7–28 days, ≥ 2 kg).",
+        text: "50 mg/kg/dose IV - q12h (< 7 days, < 2 kg), q8h (< 7 days, ≥ 2 kg), q8h (7–28 days, < 2 kg), q6h (7–28 days, ≥ 2 kg).",
         weightBased: { min: 50, max: 50, per: "dose", frequencyPerDay: 2, note: "Interval per gestational/postnatal age (see text)." },
       },
     ],
@@ -196,7 +196,7 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "neonatal", route: "IV", indication: "Neonatal sepsis",
-        text: "50 mg/kg/day IV once daily — use with caution (bilirubin displacement); alternatives preferred in jaundiced neonates.",
+        text: "50 mg/kg/day IV once daily - use with caution (bilirubin displacement); alternatives preferred in jaundiced neonates.",
         weightBased: { min: 50, max: 50, per: "day", frequencyPerDay: 1 },
       },
     ],
@@ -222,7 +222,7 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "neonatal", route: "IV", indication: "Neonatal sepsis",
-        text: "50 mg/kg/dose IV — q12h (< 7 days), q8h (≥ 7 days).",
+        text: "50 mg/kg/dose IV - q12h (< 7 days), q8h (≥ 7 days).",
         weightBased: { min: 50, max: 50, per: "dose", frequencyPerDay: 2 },
       },
     ],
@@ -341,7 +341,7 @@ const RFS_DRUGS: Drug[] = [
       },
     ],
     contraindications: ["Macrolide allergy", "Concurrent cisapride/pimozide/ergotamine", "Prolonged QT"],
-    majorWarnings: ["QT prolongation", "CYP3A4 inhibition — many interactions", "Hepatotoxicity"],
+    majorWarnings: ["QT prolongation", "CYP3A4 inhibition - many interactions", "Hepatotoxicity"],
     renalConsideration: "CrCl < 30: halve dose.", preparations: ["Tablet 250/500 mg", "Suspension 125/250 mg per 5 mL"], lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -384,7 +384,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 7.5, max: 7.5, per: "dose", frequencyPerDay: 2, note: "After 15 mg/kg loading dose." },
       },
     ],
-    contraindications: ["Metronidazole allergy", "First trimester (relative — avoid)"],
+    contraindications: ["Metronidazole allergy", "First trimester (relative - avoid)"],
     majorWarnings: ["Disulfiram-like reaction with alcohol", "Peripheral neuropathy (prolonged use)"],
     preparations: ["Tablet 250/500 mg", "IV 500 mg/100 mL", "Suspension 200 mg/5 mL"], pregnancy: "Avoid in first trimester.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
@@ -404,7 +404,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 20, max: 40, per: "day", frequencyPerDay: 3, maxPerDoseMg: 900, maxDailyMg: 2700 },
       },
     ],
-    contraindications: ["Clindamycin allergy"], majorWarnings: ["C. difficile colitis — highest risk antibiotic", "Neuromuscular blockade potentiation"],
+    contraindications: ["Clindamycin allergy"], majorWarnings: ["C. difficile colitis - highest risk antibiotic", "Neuromuscular blockade potentiation"],
     preparations: ["Capsule 150/300 mg", "IV 600 mg/4 mL", "Cream 2%"], lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -425,7 +425,7 @@ const RFS_DRUGS: Drug[] = [
       {
         population: "neonatal", route: "IV", indication: "Neonatal sepsis (gram-positive)",
         text: "15 mg/kg loading, then 10–15 mg/kg/dose q12–48h depending on postmenstrual age and renal function.",
-        weightBased: { min: 10, max: 15, per: "dose", frequencyPerDay: 1, note: "Interval per postmenstrual age — monitor levels." },
+        weightBased: { min: 10, max: 15, per: "dose", frequencyPerDay: 1, note: "Interval per postmenstrual age - monitor levels." },
       },
       {
         population: "adult", route: "PO", indication: "C. difficile colitis",
@@ -457,8 +457,8 @@ const RFS_DRUGS: Drug[] = [
       },
     ],
     contraindications: ["Aminoglycoside allergy", "Myasthenia gravis (relative)"],
-    majorWarnings: ["Nephrotoxicity and ototoxicity — monitor levels and renal function", "Neuromuscular blockade"],
-    renalConsideration: "Extended intervals in renal impairment; levels mandatory.", preparations: ["IV/IM 40 mg/mL, 80 mg/2 mL"], pregnancy: "Avoid — fetal ototoxicity risk.", lastReviewed: "2025-06-01", source: WHO_EML,
+    majorWarnings: ["Nephrotoxicity and ototoxicity - monitor levels and renal function", "Neuromuscular blockade"],
+    renalConsideration: "Extended intervals in renal impairment; levels mandatory.", preparations: ["IV/IM 40 mg/mL, 80 mg/2 mL"], pregnancy: "Avoid - fetal ototoxicity risk.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
     id: "meropenem", slug: "meropenem", genericName: "Meropenem", brandNames: ["Meronem"],
@@ -515,7 +515,7 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "pediatric", route: "PO", indication: "Specific approved indications only",
-        text: "10–20 mg/kg/dose PO q12h (max 750 mg/dose) — fluoroquinolones only for specific indications (e.g. complicated UTI, anthrax, MDR typhoid).",
+        text: "10–20 mg/kg/dose PO q12h (max 750 mg/dose) - fluoroquinolones only for specific indications (e.g. complicated UTI, anthrax, MDR typhoid).",
         weightBased: { min: 10, max: 20, per: "dose", frequencyPerDay: 2, maxPerDoseMg: 750 },
       },
     ],
@@ -538,7 +538,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 2.2, max: 4.4, per: "day", frequencyPerDay: 2, maxDailyMg: 200 },
       },
     ],
-    contraindications: ["Tetracycline allergy", "Children < 8 years (tooth discolouration)"], majorWarnings: ["Oesophagitis — take with water upright", "Photosensitivity"],
+    contraindications: ["Tetracycline allergy", "Children < 8 years (tooth discolouration)"], majorWarnings: ["Oesophagitis - take with water upright", "Photosensitivity"],
     preparations: ["Capsule 100 mg", "Tablet 100 mg"], pregnancy: "Avoid (fetal teeth/bone effects).", lactation: "Avoid.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -601,7 +601,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 10, max: 20, per: "dose", frequencyPerDay: 3, maxPerDoseMg: 800, note: "Neonatal HSV: 20 mg/kg IV q8h × 14–21 days." },
       },
     ],
-    contraindications: ["Aciclovir allergy"], majorWarnings: ["Renal impairment/crystalluria — hydrate well", "Neurotoxicity (elderly, renal)"],
+    contraindications: ["Aciclovir allergy"], majorWarnings: ["Renal impairment/crystalluria - hydrate well", "Neurotoxicity (elderly, renal)"],
     renalConsideration: "CrCl < 50: reduce dose/interval.", preparations: ["Tablet 200/400/800 mg", "IV 250/500 mg", "Cream 5%"], pregnancy: "Generally safe (IV for severe HSV).", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -625,7 +625,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 3, max: 3, per: "dose", frequencyPerDay: 2 },
       },
     ],
-    contraindications: ["Severe renal impairment (CrCl < 10)"], majorWarnings: ["Neuropsychiatric events (rare)", "Nausea/vomiting — take with food"],
+    contraindications: ["Severe renal impairment (CrCl < 10)"], majorWarnings: ["Neuropsychiatric events (rare)", "Nausea/vomiting - take with food"],
     renalConsideration: "CrCl 10–30: 75 mg daily (treatment).", preparations: ["Capsule 30/45/75 mg", "Suspension 6 mg/mL"], lastReviewed: "2025-06-01", source: WHO_EML,
   },
 
@@ -642,7 +642,7 @@ const RFS_DRUGS: Drug[] = [
       },
     ],
     contraindications: ["Hypersensitivity to salbutamol"], majorWarnings: ["Tachycardia/tremor", "Hypokalaemia (high dose)"],
-    preparations: ["MDI 100 mcg/dose", "Nebule 2.5 mg/2.5 mL, 5 mg/2.5 mL", "Syrup 2 mg/5 mL"], pregnancy: "Safe — preferred bronchodilator.", lactation: "Compatible.", lastReviewed: "2025-06-01", source: WHO_EML,
+    preparations: ["MDI 100 mcg/dose", "Nebule 2.5 mg/2.5 mL, 5 mg/2.5 mL", "Syrup 2 mg/5 mL"], pregnancy: "Safe - preferred bronchodilator.", lactation: "Compatible.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
     id: "ipratropium", slug: "ipratropium", genericName: "Ipratropium bromide", brandNames: ["Atrovent"],
@@ -679,7 +679,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 1, max: 2, per: "day", frequencyPerDay: 1, maxDailyMg: 60 },
       },
     ],
-    contraindications: ["Systemic fungal infection (untreated)"], majorWarnings: ["Hyperglycaemia", "Immunosuppression", "Long-term: osteoporosis, adrenal suppression — taper"],
+    contraindications: ["Systemic fungal infection (untreated)"], majorWarnings: ["Hyperglycaemia", "Immunosuppression", "Long-term: osteoporosis, adrenal suppression - taper"],
     preparations: ["Tablet 5 mg", "Syrup 5 mg/5 mL"], pregnancy: "Use lowest effective dose.", lactation: "Compatible (doses > 40 mg: delay 4 h).", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -757,7 +757,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 1, max: 3, per: "day", frequencyPerDay: 1, maxDailyMg: 100 },
       },
     ],
-    contraindications: ["Hyperkalaemia", "Addison's disease", "Severe renal impairment"], majorWarnings: ["Hyperkalaemia — monitor K⁺ and renal function", "Gynaecomastia"],
+    contraindications: ["Hyperkalaemia", "Addison's disease", "Severe renal impairment"], majorWarnings: ["Hyperkalaemia - monitor K⁺ and renal function", "Gynaecomastia"],
     lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -795,7 +795,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 0.3, max: 0.5, per: "dose", frequencyPerDay: 3, maxDailyMg: 150 },
       },
     ],
-    contraindications: ["Pregnancy", "Angioedema history", "Bilateral renal artery stenosis"], majorWarnings: ["Angioedema", "Hyperkalaemia", "Cough", "First-dose hypotension — check K⁺/Cr at baseline"],
+    contraindications: ["Pregnancy", "Angioedema history", "Bilateral renal artery stenosis"], majorWarnings: ["Angioedema", "Hyperkalaemia", "Cough", "First-dose hypotension - check K⁺/Cr at baseline"],
     lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -834,7 +834,7 @@ const RFS_DRUGS: Drug[] = [
   {
     id: "aspirin", slug: "aspirin", genericName: "Aspirin (Acetylsalicylic acid)", brandNames: ["Aspro", "Bayer"],
     drugClass: "Antiplatelet / NSAID", specialties: ["Cardiology", "Neurology", "Internal Medicine", "Emergency Medicine"], keywords: ["aspirin", "asa", "acetylsalicylic", "antiplatelet", "antiplatelet", "stroke", "mi"],
-    indications: ["Acute coronary syndrome", "Secondary prevention of MI/stroke/TIA", "Acute ischaemic stroke (within 24–48 h, no thrombolysis)", "Analgesia/antipyretic (low priority — paracetamol preferred in children)"],
+    indications: ["Acute coronary syndrome", "Secondary prevention of MI/stroke/TIA", "Acute ischaemic stroke (within 24–48 h, no thrombolysis)", "Analgesia/antipyretic (low priority - paracetamol preferred in children)"],
     doses: [
       {
         population: "adult", route: "PO", indication: "ACS / secondary prevention",
@@ -842,12 +842,12 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 75, max: 100, per: "day", frequencyPerDay: 1, maxDailyMg: 325, note: "Maintenance 75–100 mg/day; loading dose 150–325 mg." },
       },
       {
-        population: "pediatric", route: "PO", indication: "Kawasaki disease (adjunct) — specialist use",
+        population: "pediatric", route: "PO", indication: "Kawasaki disease (adjunct) - specialist use",
         text: "Only under specialist guidance (e.g. Kawasaki disease high-dose phase). Avoid for routine fever in children (Reye syndrome risk).",
       },
     ],
     contraindications: ["Active peptic ulcer / GI bleeding", "Aspirin hypersensitivity / NSAID allergy", "Children with viral illness (Reye syndrome)", "Severe haemophilia"],
-    majorWarnings: ["GI bleeding risk", "Bleeding with anticoagulants/antiplatelets", "Reye syndrome in children with viral infection — avoid"],
+    majorWarnings: ["GI bleeding risk", "Bleeding with anticoagulants/antiplatelets", "Reye syndrome in children with viral infection - avoid"],
     renalConsideration: "Avoid in severe renal impairment.", hepaticConsideration: "Caution in severe liver disease.", preparations: ["Tablet 80/100 mg (enteric-coated)", "Tablet 325 mg", "Chewable 81 mg"],
     pregnancy: "Low-dose aspirin may be used for preeclampsia prevention (high-risk women); avoid high dose in third trimester.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
@@ -879,7 +879,7 @@ const RFS_DRUGS: Drug[] = [
       {
         population: "adult", route: "PO", indication: "Anticoagulation",
         text: "Start 5 mg daily (2.5 mg elderly/low-weight); adjust by INR (target 2–3; mechanical mitral valve 2.5–3.5).",
-        weightBased: { min: 0.1, max: 0.1, per: "day", frequencyPerDay: 1, maxDailyMg: 10, doseUnit: "mg", note: "INR-guided titration — never fixed dose long-term." },
+        weightBased: { min: 0.1, max: 0.1, per: "day", frequencyPerDay: 1, maxDailyMg: 10, doseUnit: "mg", note: "INR-guided titration - never fixed dose long-term." },
       },
       {
         population: "pediatric", route: "PO", indication: "Anticoagulation",
@@ -887,8 +887,8 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 0.1, max: 0.1, per: "day", frequencyPerDay: 1, maxDailyMg: 10 },
       },
     ],
-    contraindications: ["Active bleeding", "Pregnancy (fetopathy)", "Uncontrolled hypertension"], majorWarnings: ["Bleeding — INR monitoring essential", "Many drug/food interactions", "Teratogenic"],
-    preparations: ["Tablet 1/2/5 mg"], pregnancy: "Contraindicated — switch to LMWH.", lastReviewed: "2025-06-01", source: WHO_EML,
+    contraindications: ["Active bleeding", "Pregnancy (fetopathy)", "Uncontrolled hypertension"], majorWarnings: ["Bleeding - INR monitoring essential", "Many drug/food interactions", "Teratogenic"],
+    preparations: ["Tablet 1/2/5 mg"], pregnancy: "Contraindicated - switch to LMWH.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
 
   /* ---------- Endocrine ---------- */
@@ -917,7 +917,7 @@ const RFS_DRUGS: Drug[] = [
       {
         population: "all", route: "IV infusion", indication: "DKA",
         text: "DKA: 0.1 units/kg/h IV infusion (children: 0.05–0.1 units/kg/h); continue until gap closes and ketones clear.",
-        weightBased: { min: 0.05, max: 0.1, per: "dose", frequencyPerDay: 24, doseUnit: "units", note: "units/kg/hour — see the infusion-rate calculator for pump settings. Dextrose added when glucose < 250 mg/dL." },
+        weightBased: { min: 0.05, max: 0.1, per: "dose", frequencyPerDay: 24, doseUnit: "units", note: "units/kg/hour - see the infusion-rate calculator for pump settings. Dextrose added when glucose < 250 mg/dL." },
       },
       {
         population: "adult", route: "SC", indication: "Maintenance (basal-bolus)",
@@ -925,7 +925,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 0.25, max: 0.3, per: "day", frequencyPerDay: 3, doseUnit: "units", note: "Bolus portion of a basal-bolus regimen; split across meals." },
       },
     ],
-    contraindications: ["Hypoglycaemia"], majorWarnings: ["Hypoglycaemia — monitor glucose hourly in IV therapy", "Hypokalaemia"],
+    contraindications: ["Hypoglycaemia"], majorWarnings: ["Hypoglycaemia - monitor glucose hourly in IV therapy", "Hypokalaemia"],
     renalConsideration: "Reduce doses as renal function declines.", preparations: ["Vial 100 units/mL"], pregnancy: "Insulin is the preferred agent in pregnancy.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -936,7 +936,7 @@ const RFS_DRUGS: Drug[] = [
       {
         population: "adult", route: "SC", indication: "Basal insulin",
         text: "Start 10 units (or 0.1–0.2 units/kg) once daily; titrate by fasting glucose. Typical 0.3–0.5 units/kg/day when combined with bolus insulin.",
-        weightBased: { min: 0.1, max: 0.2, per: "dose", frequencyPerDay: 1, doseUnit: "units", note: "Starting dose — titrate to fasting glucose target." },
+        weightBased: { min: 0.1, max: 0.2, per: "dose", frequencyPerDay: 1, doseUnit: "units", note: "Starting dose - titrate to fasting glucose target." },
       },
     ],
     majorWarnings: ["Hypoglycaemia", "Do not mix with other insulins"], preparations: ["Vial/pen 100 units/mL"], lastReviewed: "2025-06-01", source: WHO_EML,
@@ -978,7 +978,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 0.1, max: 0.2, per: "dose", frequencyPerDay: 1, maxPerDoseMg: 10 },
       },
     ],
-    contraindications: ["Severe respiratory depression"], majorWarnings: ["Respiratory depression — have reversal agent (flumazenil) available", "Hypotension"],
+    contraindications: ["Severe respiratory depression"], majorWarnings: ["Respiratory depression - have reversal agent (flumazenil) available", "Hypotension"],
     renalConsideration: "Reduce in renal impairment (accumulation).", preparations: ["Ampoule 1/5 mg/mL", "Buccal 10 mg/mL"], lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -1034,7 +1034,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 10, max: 20, per: "day", frequencyPerDay: 2, maxDailyMg: 1200 },
       },
     ],
-    contraindications: ["AV block", "Bone marrow suppression", "MAO inhibitors"], majorWarnings: ["Hyponatraemia", "SJS/TEN (HLA-B*1502 in Asian populations)", "CYP3A4 induction — many interactions", "Aplastic anaemia (rare)"],
+    contraindications: ["AV block", "Bone marrow suppression", "MAO inhibitors"], majorWarnings: ["Hyponatraemia", "SJS/TEN (HLA-B*1502 in Asian populations)", "CYP3A4 induction - many interactions", "Aplastic anaemia (rare)"],
     lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -1048,7 +1048,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 0.05, max: 0.15, per: "day", frequencyPerDay: 2, maxDailyMg: 20, note: "Paediatric use: 0.05–0.15 mg/kg/day divided (specialist only)." },
       },
     ],
-    contraindications: ["Comatose states", "Parkinson's disease (relative)", "Prolonged QT"], majorWarnings: ["QT prolongation — monitor", "Extrapyramidal reactions", "Neuroleptic malignant syndrome (rare)"],
+    contraindications: ["Comatose states", "Parkinson's disease (relative)", "Prolonged QT"], majorWarnings: ["QT prolongation - monitor", "Extrapyramidal reactions", "Neuroleptic malignant syndrome (rare)"],
     lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -1062,7 +1062,7 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "pediatric", route: "PO", indication: "OCD (6–17 y)",
-        text: "25 mg once daily (children) / 50 mg (adolescents), titrate to max 200 mg/day — specialist supervision.",
+        text: "25 mg once daily (children) / 50 mg (adolescents), titrate to max 200 mg/day - specialist supervision.",
       },
     ],
     contraindications: ["MAO inhibitors (14 days)"], majorWarnings: ["Serotonin syndrome (with triptans, tramadol, linezolid)", "Suicidality (young adults, early treatment)", "GI bleeding risk"],
@@ -1082,7 +1082,7 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "pediatric", route: "IM", indication: "Anaphylaxis",
-        text: "0.01 mg/kg IM (max 0.5 mg; max single dose 0.3 mg per convention in some guidelines) — repeat q5–15min.",
+        text: "0.01 mg/kg IM (max 0.5 mg; max single dose 0.3 mg per convention in some guidelines) - repeat q5–15min.",
         weightBased: { min: 0.01, max: 0.01, per: "dose", frequencyPerDay: 1, maxPerDoseMg: 0.5 },
       },
       {
@@ -1110,7 +1110,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 0.01, max: 0.1, per: "dose", frequencyPerDay: 1, maxPerDoseMg: 2 },
       },
     ],
-    majorWarnings: ["Acute withdrawal (agitation, seizures in dependence)", "Short half-life — re-dose as opioid effect returns", "Cardiac irritability"],
+    majorWarnings: ["Acute withdrawal (agitation, seizures in dependence)", "Short half-life - re-dose as opioid effect returns", "Cardiac irritability"],
     lastReviewed: "2025-06-01", source: WHO_EML,
   },
   {
@@ -1166,7 +1166,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 25, max: 75, per: "dose", frequencyPerDay: 1, maxPerDoseMg: 2000, note: "Paediatric asthma: 25–75 mg/kg IV (max 2 g)." },
       },
     ],
-    contraindications: ["Heart block", "Myasthenia gravis", "Renal failure (relative)"], majorWarnings: ["Respiratory depression/loss of reflexes at toxicity — have calcium gluconate available", "Hypotension"],
+    contraindications: ["Heart block", "Myasthenia gravis", "Renal failure (relative)"], majorWarnings: ["Respiratory depression/loss of reflexes at toxicity - have calcium gluconate available", "Hypotension"],
     renalConsideration: "Reduce dose in renal impairment.", preparations: ["IV 20% (2 g/10 mL), 50% (5 g/10 mL)"], lastReviewed: "2025-06-01", source: WHO_EML,
   },
 
@@ -1227,8 +1227,8 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 10, max: 10, per: "day", frequencyPerDay: 1, maxDailyMg: 300 },
       },
     ],
-    contraindications: ["Acute liver disease", "INH-resistant TB (as monotherapy)"], majorWarnings: ["Hepatitis (esp. with rifampicin — monitor LFTs)", "Peripheral neuropathy — pyridoxine (vit B6) 10–25 mg/day", "Drug interactions (CYP)"],
-    preparations: ["Tablet 100/300 mg", "Syrup 50 mg/5 mL"], pregnancy: "Safe — first-line in pregnancy.", lastReviewed: "2025-06-01", source: { org: "WHO", title: "Guidelines for treatment of drug-susceptible tuberculosis", year: 2022, url: "https://www.who.int/publications/i/item/9789240048126" },
+    contraindications: ["Acute liver disease", "INH-resistant TB (as monotherapy)"], majorWarnings: ["Hepatitis (esp. with rifampicin - monitor LFTs)", "Peripheral neuropathy - pyridoxine (vit B6) 10–25 mg/day", "Drug interactions (CYP)"],
+    preparations: ["Tablet 100/300 mg", "Syrup 50 mg/5 mL"], pregnancy: "Safe - first-line in pregnancy.", lastReviewed: "2025-06-01", source: { org: "WHO", title: "Guidelines for treatment of drug-susceptible tuberculosis", year: 2022, url: "https://www.who.int/publications/i/item/9789240048126" },
   },
   {
     id: "rifampicin", slug: "rifampicin", genericName: "Rifampicin (Rifampin)", brandNames: ["Rifadin", "Rimactane"],
@@ -1246,8 +1246,8 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 15, max: 15, per: "day", frequencyPerDay: 1, maxDailyMg: 600 },
       },
     ],
-    contraindications: ["Rifampicin allergy"], majorWarnings: ["Orange discolouration of body fluids", "Hepatotoxicity", "Strong CYP3A4 inducer — reduces efficacy of OCP, warfarin, many drugs"],
-    preparations: ["Capsule 150/300 mg", "Syrup 100 mg/5 mL", "IV 600 mg"], pregnancy: "Safe — first-line.", lastReviewed: "2025-06-01", source: { org: "WHO", title: "Guidelines for treatment of drug-susceptible tuberculosis", year: 2022, url: "https://www.who.int/publications/i/item/9789240048126" },
+    contraindications: ["Rifampicin allergy"], majorWarnings: ["Orange discolouration of body fluids", "Hepatotoxicity", "Strong CYP3A4 inducer - reduces efficacy of OCP, warfarin, many drugs"],
+    preparations: ["Capsule 150/300 mg", "Syrup 100 mg/5 mL", "IV 600 mg"], pregnancy: "Safe - first-line.", lastReviewed: "2025-06-01", source: { org: "WHO", title: "Guidelines for treatment of drug-susceptible tuberculosis", year: 2022, url: "https://www.who.int/publications/i/item/9789240048126" },
   },
   {
     id: "ethambutol", slug: "ethambutol", genericName: "Ethambutol", brandNames: ["Myambutol"],
@@ -1265,7 +1265,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 15, max: 25, per: "day", frequencyPerDay: 1, maxDailyMg: 1600 },
       },
     ],
-    majorWarnings: ["Optic neuritis (colour vision loss) — test visual acuity/colour monthly", "Renal excretion — reduce dose in renal impairment"],
+    majorWarnings: ["Optic neuritis (colour vision loss) - test visual acuity/colour monthly", "Renal excretion - reduce dose in renal impairment"],
     preparations: ["Tablet 400 mg"], lastReviewed: "2025-06-01", source: { org: "WHO", title: "Guidelines for treatment of drug-susceptible tuberculosis", year: 2022, url: "https://www.who.int/publications/i/item/9789240048126" },
   },
   {
@@ -1313,8 +1313,8 @@ const RFS_DRUGS: Drug[] = [
     doses: [
       {
         population: "all", route: "PO", indication: "Uncomplicated malaria",
-        text: "Weight-band dosing (20/120 mg tablets): 5–14 kg: 1 tab; 15–24 kg: 2 tabs; 25–34 kg: 3 tabs; ≥ 35 kg: 4 tabs — at 0, 8, 24, 36, 48 and 60 h (6 doses total).",
-        weightBased: { min: 1.15, max: 1.7, per: "dose", frequencyPerDay: 1, maxPerDoseMg: 4, doseUnit: "mg", note: "Use the official weight-band table (6 doses over 3 days) — the per-kg figure is approximate." },
+        text: "Weight-band dosing (20/120 mg tablets): 5–14 kg: 1 tab; 15–24 kg: 2 tabs; 25–34 kg: 3 tabs; ≥ 35 kg: 4 tabs - at 0, 8, 24, 36, 48 and 60 h (6 doses total).",
+        weightBased: { min: 1.15, max: 1.7, per: "dose", frequencyPerDay: 1, maxPerDoseMg: 4, doseUnit: "mg", note: "Use the official weight-band table (6 doses over 3 days) - the per-kg figure is approximate." },
       },
     ],
     contraindications: ["First trimester (prefer quinine-based regimens per WHO)", "Severe malaria (IV artesunate instead)"], majorWarnings: ["QT prolongation (avoid with halofantrine)", "Take with fatty food to improve absorption", "Repeat course if vomiting within 30 min"],
@@ -1325,7 +1325,7 @@ const RFS_DRUGS: Drug[] = [
   {
     id: "zinc-sulfate", slug: "zinc-sulfate", genericName: "Zinc sulfate", brandNames: ["Zincid", "Zinc"],
     drugClass: "Micronutrient", specialties: ["Pediatrics", "Nutrition"], keywords: ["zinc", "diarrhea", "micronutrient", "children"],
-    indications: ["Acute diarrhoea in children (WHO — reduces duration/severity)"],
+    indications: ["Acute diarrhoea in children (WHO - reduces duration/severity)"],
     doses: [
       {
         population: "pediatric", route: "PO", indication: "Acute diarrhoea",
@@ -1341,10 +1341,10 @@ const RFS_DRUGS: Drug[] = [
     doses: [
       {
         population: "all", route: "PO", indication: "Rehydration (WHO Plan B)",
-        text: "WHO low-osmolarity ORS. Give in small frequent sips: after each loose stool — < 2 years: 50–100 mL; 2–10 years: 100–200 mL; > 10 years and adults: ad libitum. Reassess at 2–4 h.",
+        text: "WHO low-osmolarity ORS. Give in small frequent sips: after each loose stool - < 2 years: 50–100 mL; 2–10 years: 100–200 mL; > 10 years and adults: ad libitum. Reassess at 2–4 h.",
       },
     ],
-    majorWarnings: ["Not a substitute for IV therapy in severe dehydration (Plan C)", "Use clean water", "Reassess hydration status regularly"], preparations: ["Sachet (WHO formula): Na 75 mmol/L, K 20, Cl 65, citrate 10, glucose 75 mmol/L"], lastReviewed: "2025-06-01", source: { org: "WHO", title: "The treatment of diarrhoea — a manual for physicians", year: 2005, url: "https://www.who.int/publications/i/item/9241593180" },
+    majorWarnings: ["Not a substitute for IV therapy in severe dehydration (Plan C)", "Use clean water", "Reassess hydration status regularly"], preparations: ["Sachet (WHO formula): Na 75 mmol/L, K 20, Cl 65, citrate 10, glucose 75 mmol/L"], lastReviewed: "2025-06-01", source: { org: "WHO", title: "The treatment of diarrhoea - a manual for physicians", year: 2005, url: "https://www.who.int/publications/i/item/9241593180" },
   },
   {
     id: "vitamin-d", slug: "vitamin-d", genericName: "Vitamin D (Cholecalciferol)", brandNames: ["Calcivit D"],
@@ -1357,7 +1357,7 @@ const RFS_DRUGS: Drug[] = [
       },
       {
         population: "pediatric", route: "PO", indication: "Deficiency / prophylaxis",
-        text: "Prophylaxis (0–1 y): 400 IU daily. Deficiency: 1000–2000 IU daily for 12 weeks (infants/children) — specialist dose for rickets may be higher.",
+        text: "Prophylaxis (0–1 y): 400 IU daily. Deficiency: 1000–2000 IU daily for 12 weeks (infants/children) - specialist dose for rickets may be higher.",
       },
     ],
     majorWarnings: ["Toxicity at very high doses (hypercalcaemia)"], preparations: ["Capsule 1000/5000 IU", "Drops 400 IU/drop"], lastReviewed: "2025-06-01", source: { org: "Endocrine Society", title: "Evaluation, treatment, and prevention of vitamin D deficiency", year: 2011, url: "https://academic.oup.com/jcem/article/96/7/1911/2833671" },
@@ -1378,7 +1378,7 @@ const RFS_DRUGS: Drug[] = [
         weightBased: { min: 1, max: 3, per: "day", frequencyPerDay: 1, maxDailyMg: 150, doseUnit: "mg" },
       },
     ],
-    majorWarnings: ["Overdose is toxic in children — store safely", "Constipation/black stools", "Take with vitamin C, avoid with tea/coffee"], preparations: ["Tablet 325 mg (65 mg Fe)", "Syrup 25 mg Fe/5 mL", "Drops 15 mg Fe/mL"], pregnancy: "Standard prophylaxis 30–60 mg elemental iron daily.", lastReviewed: "2025-06-01", source: WHO_EML,
+    majorWarnings: ["Overdose is toxic in children - store safely", "Constipation/black stools", "Take with vitamin C, avoid with tea/coffee"], preparations: ["Tablet 325 mg (65 mg Fe)", "Syrup 25 mg Fe/5 mL", "Drops 15 mg Fe/mL"], pregnancy: "Standard prophylaxis 30–60 mg elemental iron daily.", lastReviewed: "2025-06-01", source: WHO_EML,
   },
   ...EXTRA_DRUGS,
   ...EXTRA_DRUGS_B,

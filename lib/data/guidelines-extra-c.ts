@@ -1,6 +1,6 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan klinis ringkas — bagian 3 (Bahasa Indonesia). */
+/** Panduan klinis ringkas - bagian 3 (Bahasa Indonesia). */
 
 export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
   {
@@ -27,9 +27,9 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "LP bila dicurigai meningitis/ensefalitis.",
       ],
       initialManagement: [
-        "Tahap 1 (0–5 mnt): benzodiazepin — midazolam 0,15–0,2 mg/kgBB IM/IV (maks 10 mg) atau diazepam 0,2–0,3 mg/kgBB IV (maks 10 mg), dapat diulang 1×.",
-        "Tahap 2 (5–20 mnt): lini kedua bila tetap kejang — fenitoin 20 mg/kgBB IV (maks 50 mg/mnt, pantau EKG) atau levetirasetam 60 mg/kgBB IV (maks 4,5 g) atau asam valproat 40 mg/kgBB IV.",
-        "Tahap 3 (refrakter > 20–30 mnt): infus anestesi — midazolam infus, propofol, atau barbiturat — intubasi dan rawat ICU.",
+        "Tahap 1 (0–5 mnt): benzodiazepin - midazolam 0,15–0,2 mg/kgBB IM/IV (maks 10 mg) atau diazepam 0,2–0,3 mg/kgBB IV (maks 10 mg), dapat diulang 1×.",
+        "Tahap 2 (5–20 mnt): lini kedua bila tetap kejang - fenitoin 20 mg/kgBB IV (maks 50 mg/mnt, pantau EKG) atau levetirasetam 60 mg/kgBB IV (maks 4,5 g) atau asam valproat 40 mg/kgBB IV.",
+        "Tahap 3 (refrakter > 20–30 mnt): infus anestesi - midazolam infus, propofol, atau barbiturat - intubasi dan rawat ICU.",
         "Koreksi hipoglikemia (dekstrosa 10–25%), gangguan elektrolit; atasi penyebab dasar.",
       ],
       admissionCriteria: [
@@ -39,8 +39,8 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Status refrakter, kebutuhan ventilasi/anestesi, atau etiologi berat (ensefalitis, stroke, sepsis).",
       ],
       redFlags: [
-        "Kejang > 5 menit — jangan menunggu; mulai benzodiazepin.",
-        "Pola kejang fokal berkepanjangan, kehamilan (eklamsia), imunosupresi, atau tidak kembali sadar — cari penyebab spesifik.",
+        "Kejang > 5 menit - jangan menunggu; mulai benzodiazepin.",
+        "Pola kejang fokal berkepanjangan, kehamilan (eklamsia), imunosupresi, atau tidak kembali sadar - cari penyebab spesifik.",
       ],
     },
     references: [
@@ -67,7 +67,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
       ],
       initialAssessment: [
         "Gejala: demam, nyeri kepala, perubahan perilaku/kesadaran, kejang fokal, defisit neurologis baru.",
-        "HSV: onset subakut + gangguan perilaku/bicara + kejang fokal + lesi temporal — terapi empirik segera.",
+        "HSV: onset subakut + gangguan perilaku/bicara + kejang fokal + lesi temporal - terapi empirik segera.",
       ],
       investigations: [
         "LP: pleositosis limfosit, protein meningkat, glukosa normal (virus); PCR HSV/enterovirus bila tersedia.",
@@ -75,7 +75,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Serologi dengue/JE/rabies sesuai epidemiologi; singkirkan TB.",
       ],
       initialManagement: [
-        "Asiklovir IV 10 mg/kgBB tiap 8 jam (dewasa fungsi ginjal normal) bila HSV dicurigai — mulai tanpa menunggu hasil LP bila klinis kuat.",
+        "Asiklovir IV 10 mg/kgBB tiap 8 jam (dewasa fungsi ginjal normal) bila HSV dicurigai - mulai tanpa menunggu hasil LP bila klinis kuat.",
         "Antikonvulsan untuk kejang; manajemen edema serebri bila ada (konsultasi neuro); hindari steroid rutin pada ensefalitis infeksi (kecuali HSV berat dengan edema/indikasi tertentu).",
         "Dukungan: cairan, nutrisi, pencegahan trombosis, rehabilitasi.",
       ],
@@ -114,7 +114,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
       ],
       initialAssessment: [
         "Riwayat kontak genangan air/bekas banjir, pekerjaan (sawah, pasar, kebersihan).",
-        "Demam + mialgia betis + injeksi konjungtiva pada musim banjir — curiga leptospirosis.",
+        "Demam + mialgia betis + injeksi konjungtiva pada musim banjir - curiga leptospirosis.",
       ],
       investigations: [
         "Darah rutin (leukositosis, trombositopenia), fungsi ginjal-hati, urinalisis, kreatinin kinase.",
@@ -127,7 +127,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Kasus berat: rawat, pantau fungsi organ.",
       ],
       redFlags: [
-        "Ikterus + oliguria + perdarahan = sindrom Weil — rawat intensif.",
+        "Ikterus + oliguria + perdarahan = sindrom Weil - rawat intensif.",
         "Hemoptisis masif (perdarahan paru) dapat terjadi cepat.",
       ],
     },
@@ -150,7 +150,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Ensefalitis virus Lyssavirus yang hampir selalu fatal setelah gejala muncul. Penularan: gigitan/cakaran/luka terbuka terpapar saliva hewan terinfeksi (anjing > 95% kasus Indonesia).",
       ],
       classification: [
-        "Kategori pajanan (WHO): I — menyentuh/memberi makan hewan, kulit utuh; II — menggaruk kulit tanpa luka, atau lecet kecil tanpa perdarahan; III — gigitan/luka tembus kulit, luka lecet dengan perdarahan, atau pajanan mukosa.",
+        "Kategori pajanan (WHO): I - menyentuh/memberi makan hewan, kulit utuh; II - menggaruk kulit tanpa luka, atau lecet kecil tanpa perdarahan; III - gigitan/luka tembus kulit, luka lecet dengan perdarahan, atau pajanan mukosa.",
         "Gejala klinis: prodromal (demam, kesemutan di lokasi gigitan) → ensefalitis (hidrofobia, aerofobia, agitasi, kejang) atau bentuk paralitik.",
       ],
       initialAssessment: [
@@ -162,13 +162,13 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Diagnosis rabies klinis/laboratorium (direktorat kesehatan hewan) pada kasus simtomatik; penanganan utama adalah pencegahan pasca pajanan.",
       ],
       initialManagement: [
-        "Kategori II: VAR (vaksin anti-rabies) — jadwal 4 dosis (hari 0, 3, 7, 14) atau sesuai pedoman Kemenkes.",
+        "Kategori II: VAR (vaksin anti-rabies) - jadwal 4 dosis (hari 0, 3, 7, 14) atau sesuai pedoman Kemenkes.",
         "Kategori III: VAR + SAR (serum anti-rabies) secepatnya (idealnya < 24 jam; dapat hingga 7 hari bila luka besar), infiltrasi di sekitar luka bila anatomis memungkinkan.",
         "Bila hewan tersedia dan sehat setelah observasi 10–14 hari, dosis lanjutan dapat dihentikan sesuai keputusan bersama dinas kesehatan.",
         "Profilaksis tetanus dan antibiotik sesuai luka; vaksinasi ulang sesuai status imunisasi rabies sebelumnya.",
       ],
       redFlags: [
-        "Gigitan kepala/leher/tangan (pajanan risiko tinggi) — VAR+SAR segera.",
+        "Gigitan kepala/leher/tangan (pajanan risiko tinggi) - VAR+SAR segera.",
         "Hewan liar/tidak dapat diobservasi = anggap terinfeksi.",
         "Gejala neurologis rabies = mortalitas sangat tinggi; rawat paliatif-suportif di fasilitas yang mampu.",
       ],
@@ -189,7 +189,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
     ageGroup: "both",
     sections: {
       overview: [
-        "Kegawatan di daerah tropis. Keluarga penting di Indonesia: Viperidae (efek koagulopati/sitotoksik — ular tanah, bandotan) dan Elapidae (efek neurotoksik — kobra, weling).",
+        "Kegawatan di daerah tropis. Keluarga penting di Indonesia: Viperidae (efek koagulopati/sitotoksik - ular tanah, bandotan) dan Elapidae (efek neurotoksik - kobra, weling).",
         "Kebanyakan gigitan ular tidak menyuntikkan bisa; tetapi pasien dengan tanda envenomasi membutuhkan antivenom segera.",
       ],
       classification: [
@@ -209,7 +209,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Pertimbangkan foto/evaluasi lokal untuk nekrosis.",
       ],
       initialManagement: [
-        "Antivenom (SABU — serum anti bisa ular) sesuai jenis: polivalen untuk viper/elapid sesuai panduan nasional; berikan di fasilitas yang mampu menangani reaksi anafilaksis.",
+        "Antivenom (SABU - serum anti bisa ular) sesuai jenis: polivalen untuk viper/elapid sesuai panduan nasional; berikan di fasilitas yang mampu menangani reaksi anafilaksis.",
         "Indikasi antivenom: koagulopati (WBCT20 > 20 menit atau perdarahan), neurotoksik progresif, syok, atau bengkak progresif cepat.",
         "Dukungan: ventilasi bila gagal napas (neurotoksik), cairan, koreksi koagulopati, tatalaksana gagal ginjal.",
         "Profilaksis tetanus; antibiotik hanya bila ada tanda infeksi luka.",
@@ -221,7 +221,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Gagal napas (neurotoksik), syok, koagulopati berat dengan perdarahan.",
       ],
       redFlags: [
-        "Ptosis/diplopia = neurotoksik progresif — segera antivenom + siapkan ventilasi.",
+        "Ptosis/diplopia = neurotoksik progresif - segera antivenom + siapkan ventilasi.",
         "Perdarahan tidak berhenti/hematuria = koagulopati berat.",
         "Bengkak menyebar cepat melewati sendi terdekat.",
       ],
@@ -252,7 +252,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Cari tanda: urtikaria, angioedema, stridor, wheezing, muntah, sinkop.",
       ],
       initialManagement: [
-        "Epinefrin IM 0,3–0,5 mg (dewasa) / 0,01 mg/kgBB (maks 0,3 mg, anak) di anterolateral paha — SEGERA, ulangi 5–15 menit bila perlu. Tidak ada kontraindikasi absolut pada anafilaksis.",
+        "Epinefrin IM 0,3–0,5 mg (dewasa) / 0,01 mg/kgBB (maks 0,3 mg, anak) di anterolateral paha - SEGERA, ulangi 5–15 menit bila perlu. Tidak ada kontraindikasi absolut pada anafilaksis.",
         "Hentikan agen penyebab; baringkan dengan kaki elevasi; oksigen aliran tinggi; IV line + kristaloid bolus cepat bila hipotensi.",
         "Bronkospasme: salbutamol nebul; antihistamin (difenhidramin) dan kortikosteroid sebagai terapi tambahan (bukan pengganti epinefrin).",
         "Refrakter/edema laring berat: pertimbangkan epinefrin infus dan rawat ICU.",
@@ -261,7 +261,7 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "Semua anafilaksis: observasi ≥ 4–6 jam (risiko bifasik); rawat bila berat/refrakter/komorbid.",
       ],
       redFlags: [
-        "Jangan menunda epinefrin IM — menunggu obat lain meningkatkan mortalitas.",
+        "Jangan menunda epinefrin IM - menunggu obat lain meningkatkan mortalitas.",
         "Stridor/suara serak = edema laring; siapkan intubasi dini.",
       ],
     },
@@ -298,19 +298,19 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
       initialManagement: [
         "Sadar & bisa menelan: 15–20 g karbohidrat cepat oral (glukosa/gula, jus); ulangi bila < 70 mg/dL setelah 15 menit; lanjut makanan kompleks.",
         "Tidak sadar/tidak bisa menelan: dekstrosa 10–25% IV (0,2–0,5 g/kgBB; dewasa 25 g D40 atau 50 mL D50 bila tersedia) atau glukagon 1 mg IM; pertahankan jalan napas.",
-        "Sulfonilurea: hipoglikemia dapat berulang — observasi ≥ 24 jam, infus dekstrosa sesuai kebutuhan.",
+        "Sulfonilurea: hipoglikemia dapat berulang - observasi ≥ 24 jam, infus dekstrosa sesuai kebutuhan.",
         "Setelah stabil: cari dan atasi penyebab; edukasi pasien (aturan 15-15, membawa gula/glukagon).",
       ],
       admissionCriteria: [
         "Hipoglikemia berat berulang, penyebab sulfonilurea, atau komorbid berat: rawat/observasi.",
       ],
       redFlags: [
-        "Kejang/koma — jangan beri oral; IV glukosa/glukagon.",
+        "Kejang/koma - jangan beri oral; IV glukosa/glukagon.",
         "Jangan berikan insulin pada dugaan hipoglikemia tanpa konfirmasi.",
       ],
     },
     references: [
-      { org: "American Diabetes Association", title: "Standards of Care — Hypoglycemia", year: 2024 },
+      { org: "American Diabetes Association", title: "Standards of Care - Hypoglycemia", year: 2024 },
     ],
     lastReviewed: "2025-06-01",
   },
@@ -329,8 +329,8 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
       ],
       classification: [
         "Depresi ringan: APGAR 7–10 (tidak asfiksia berarti).",
-        "Sedang: APGAR 4–6 — butuh ventilasi.",
-        "Berat: APGAR 0–3 — resusitasi penuh; risiko HIE.",
+        "Sedang: APGAR 4–6 - butuh ventilasi.",
+        "Berat: APGAR 0–3 - resusitasi penuh; risiko HIE.",
       ],
       initialAssessment: [
         "Segera setelah lahir: keringkan, stimulasi, nilai pernapasan & denyut jantung.",
@@ -340,15 +340,15 @@ export const EXTRA_GUIDELINES_C: GuidelineEntry[] = [
         "VTP segera bila bayi tidak bernapas/menegap; nilai denyut jantung (auskultasi atau pulsasi tali pusat).",
         "Denyut < 60/mnt meski VTP 30 detik: kompresi dada (3:1) koordinasi VTP.",
         "Denyut tetap < 60 setelah VTP+kompresi: epinefrin 0,01–0,03 mg/kgBB IV/0,05–0,1 mg/kgBB intratrakeal (0,1–0,3 mL/kg larutan 1:10.000).",
-        "Pertimbangkan volume ekspander bila syok/kehilangan darah; atasi hipotermia (kantong plastik/topi); jangan hiperoksia — titrasi oksigen.",
-        "Jangan mulai resusitasi rutin dengan oksigen 100% — mulai udara ruangan (aterm).",
+        "Pertimbangkan volume ekspander bila syok/kehilangan darah; atasi hipotermia (kantong plastik/topi); jangan hiperoksia - titrasi oksigen.",
+        "Jangan mulai resusitasi rutin dengan oksigen 100% - mulai udara ruangan (aterm).",
       ],
       investigations: [
         "Gas darah tali pusat bila tersedia; gula darah; nilai organ (ginjal, hepar); skrining HIE (Sarnat, EEG/aEEG).",
-        "Hipotermia terapeutik pada HIE sedang-berat (36 jam, fasilitas yang mampu) — rujuk dini.",
+        "Hipotermia terapeutik pada HIE sedang-berat (36 jam, fasilitas yang mampu) - rujuk dini.",
       ],
       redFlags: [
-        "APGAR rendah menetap, kejang, tonus buruk, kesulitan minum = HIE — nilai & rujuk.",
+        "APGAR rendah menetap, kejang, tonus buruk, kesulitan minum = HIE - nilai & rujuk.",
         "Mekonium + bayi tidak bugar → intubasi & hisap trakea sesuai protokol (resusitasi modern tidak lagi hisap rutin pada bayi bugar).",
       ],
     },

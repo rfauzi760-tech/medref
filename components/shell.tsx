@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, Stethoscope, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { modules, appName, appTagline } from "@/lib/nav";
+import { modules, appName } from "@/lib/nav";
 import { GlobalSearch } from "@/components/global-search";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -45,13 +46,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   const brand = (
     <Link href="/" onClick={() => setMobileOpen(false)} className="focus-ring flex items-center gap-2.5 rounded-lg px-4 py-4">
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-accent/60 bg-accent text-[var(--accent-ink)]">
-        <Stethoscope className="h-4.5 w-4.5" />
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-accent/40 bg-[#eefbf3] p-1">
+        <Image src="/rfsmed-mark.png" alt="" width={24} height={24} priority />
       </span>
-      <span>
-        <span className="display-type block text-[15px] font-medium leading-tight">{appName}</span>
-        <span className="block text-[10px] uppercase tracking-[0.14em] text-zinc-400">{appTagline}</span>
-      </span>
+      <span className="display-type block text-[15px] font-bold leading-tight">{appName}</span>
     </Link>
   );
 
@@ -77,8 +75,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <Menu className="h-5 w-5" />
         </button>
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-[var(--accent-ink)]">
-            <Stethoscope className="h-4 w-4" />
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/40 bg-[#eefbf3] p-1">
+            <Image src="/rfsmed-mark.png" alt="" width={20} height={20} priority />
           </span>
           <span className="text-sm font-semibold">{appName}</span>
         </Link>

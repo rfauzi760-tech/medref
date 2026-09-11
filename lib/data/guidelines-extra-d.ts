@@ -1,6 +1,6 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan klinis ringkas — bagian 4 (Bahasa Indonesia). */
+/** Panduan klinis ringkas - bagian 4 (Bahasa Indonesia). */
 
 export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
   {
@@ -23,7 +23,7 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
       ],
       initialAssessment: [
         "Wanita usia reproduksi + nyeri perut/perdarahan → tes kehamilan; jangan pernah menyingkirkan KET sebelum hasil negatif.",
-        "Tanda syok: hipotensi, takikardia, pucat — resusitasi dan rujuk operasi bila ruptur.",
+        "Tanda syok: hipotensi, takikardia, pucat - resusitasi dan rujuk operasi bila ruptur.",
         "Pemeriksaan: nyeri goyang porsio, massa adneksa, kavum Douglas menonjol.",
       ],
       investigations: [
@@ -32,7 +32,7 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
       ],
       initialManagement: [
         "Ruptur/hemodinamik tidak stabil: laparotomi/laparoskopi segera + resusitasi + transfusi.",
-        "Stabil & belum ruptur: pilihan — medikamentosa metotreksat (kriteria ketat) atau operatif (salpingektomi/salpingotomi) sesuai ukuran, β-hCG, dan keinginan fertilitas.",
+        "Stabil & belum ruptur: pilihan - medikamentosa metotreksat (kriteria ketat) atau operatif (salpingektomi/salpingotomi) sesuai ukuran, β-hCG, dan keinginan fertilitas.",
         "Metotreksat hanya bila: β-hCG < 5.000, massa < 3,5–4 cm, tidak ada denyut janin, fungsi hati/ginjal baik, pasien dapat follow-up.",
         "Rujuk jika fasilitas tidak mampu menangani.",
       ],
@@ -68,7 +68,7 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
         "Cari tanda bahaya: apneu, napas < 60 dengan retraksi berat, tidak bisa minum, sianosis, letargi.",
       ],
       investigations: [
-        "Umumnya diagnosis klinis — tidak perlu pemeriksaan rutin.",
+        "Umumnya diagnosis klinis - tidak perlu pemeriksaan rutin.",
         "Foto toraks hanya bila diagnosis meragukan/komplikasi; tes virus hanya untuk kohorting bila tersedia.",
       ],
       initialManagement: [
@@ -115,16 +115,16 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
         "Nasoendoskopi untuk lokalisasi bila fasilitas memungkinkan.",
       ],
       initialManagement: [
-        "Gagal kompresi: identifikasi sumber — kauter (perak nitrat) bila titik perdarahan anterior jelas.",
+        "Gagal kompresi: identifikasi sumber - kauter (perak nitrat) bila titik perdarahan anterior jelas.",
         "Tampon anterior (mis. nasal packing / Rapid Rhino) bila kauter tidak cukup.",
-        "Tampon posterior/balon epistaksis bila anterior gagal — rujuk THT.",
+        "Tampon posterior/balon epistaksis bila anterior gagal - rujuk THT.",
         "Atasi hipertensi bila ada; tinjau antikoagulan bersama dokter; lumasi untuk mencegah kekeringan.",
       ],
       admissionCriteria: [
         "Perdarahan posterior, syok/hemodinamik tidak stabil, koagulopati, atau tampon yang memerlukan pemantauan: rawat.",
       ],
       redFlags: [
-        "Perdarahan mengalir ke belakang (menelan darah/muntah darah) = curiga posterior — rujuk THT.",
+        "Perdarahan mengalir ke belakang (menelan darah/muntah darah) = curiga posterior - rujuk THT.",
         "Perdarahan berulang + massa/ulkus = evaluasi keganasan.",
       ],
     },
@@ -143,7 +143,7 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
     ageGroup: "adult",
     sections: {
       overview: [
-        "Nyeri kolik akibat obstruksi saluran kemih oleh batu — nyeri hebat menjalar dari pinggang ke selangkangan, gelisah, dapat disertai mual/muntah dan hematuria.",
+        "Nyeri kolik akibat obstruksi saluran kemih oleh batu - nyeri hebat menjalar dari pinggang ke selangkangan, gelisah, dapat disertai mual/muntah dan hematuria.",
       ],
       initialAssessment: [
         "Nyeri pinggang unilateral hebat onset mendadak; bedakan dari AAA (usia tua, pulsasi, hipotensi) dan pielonefritis (demam).",
@@ -156,17 +156,17 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
         "Kreatinin, elektrolit; darah rutin + CRP bila demam.",
       ],
       initialManagement: [
-        "Analgesia: OAINS (diklofenak/ketorolak) lini pertama — lebih baik dari opioid; antiemetik; bila kontraindikasi, opioid short-acting.",
+        "Analgesia: OAINS (diklofenak/ketorolak) lini pertama - lebih baik dari opioid; antiemetik; bila kontraindikasi, opioid short-acting.",
         "Hidrasi cukup (tidak ada bukti manfaat 'flush' berlebihan); tamsulosin (alpha-blocker) dapat membantu ekspulsi batu ureter distal 5–10 mm.",
         "Batu < 5 mm: observasi ekspulsi spontan (4–6 minggu); 5–10 mm: ekspulsi mungkin namun pertimbangkan intervensi.",
-        "Batu + demam (urosepsis): drainase segera (DJ stent/PCN) + antibiotik — jangan hanya analgesik.",
+        "Batu + demam (urosepsis): drainase segera (DJ stent/PCN) + antibiotik - jangan hanya analgesik.",
         "Rujuk urologi: batu > 10 mm, gagal ekspulsi, obstruksi dengan gangguan ginjal, nyeri tak terkendali.",
       ],
       admissionCriteria: [
         "Demam/infeksi, gagal ginjal akut, anuria, nyeri tak terkendali rawat jalan, atau kehamilan dengan obstruksi.",
       ],
       redFlags: [
-        "Batu + demam/menggigil = urosepsis — tindakan drainase segera.",
+        "Batu + demam/menggigil = urosepsis - tindakan drainase segera.",
         "Anuria/oliguria, kreatinin naik = obstruksi bilateral/ginjal soliter.",
       ],
     },
@@ -190,7 +190,7 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
       ],
       classification: [
         "Gejala awal: nyeri hebat tidak sebanding cedera, memburuk dengan peregangan pasif otot, kompartemen tegang.",
-        "Tanda lanjut ('5P'/'6P'): parestesia, pallor, pulselessness, paralysis, poikilotermia — tanda lanjut yang TIDAK boleh ditunggu.",
+        "Tanda lanjut ('5P'/'6P'): parestesia, pallor, pulselessness, paralysis, poikilotermia - tanda lanjut yang TIDAK boleh ditunggu.",
       ],
       initialAssessment: [
         "Tingkatkan kecurigaan pada fraktur tungkai bawah + nyeri berlebih. Periksa sensasi, motorik, dan peregangan pasif.",
@@ -209,7 +209,7 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
       ],
     },
     references: [
-      { org: "American Academy of Orthopaedic Surgeons", title: "Acute Compartment Syndrome — Appropriate Use Criteria", year: 2019 },
+      { org: "American Academy of Orthopaedic Surgeons", title: "Acute Compartment Syndrome - Appropriate Use Criteria", year: 2019 },
     ],
     lastReviewed: "2025-06-01",
   },
@@ -232,10 +232,10 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
       ],
       initialAssessment: [
         "Gejala: lemah, pucat, sesak saat aktivitas, pica; pada anak dapat gangguan kognisi/perilaku.",
-        "Pada pria/pascamenopause dengan ADB: cari sumber perdarahan saluran cerna (endoskopi) — jangan hanya suplementasi.",
+        "Pada pria/pascamenopause dengan ADB: cari sumber perdarahan saluran cerna (endoskopi) - jangan hanya suplementasi.",
       ],
       investigations: [
-        "Darah lengkap + indeks; feritin (penanda terbaik; pada inflamasi nilai 'normal' bisa menipu — gunakan ambang lebih tinggi atau saturasi transferin).",
+        "Darah lengkap + indeks; feritin (penanda terbaik; pada inflamasi nilai 'normal' bisa menipu - gunakan ambang lebih tinggi atau saturasi transferin).",
         "Sesuai kecurigaan: darah saming feses, endoskopi, evaluasi menstruasi/kehamilan.",
       ],
       initialManagement: [
@@ -287,13 +287,13 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
         "MRSA (curiga/berisiko/riwayat): tambahkan kotrimoksazol atau doksisiklin.",
         "Elevasi tungkai, analgesik, antipiretik; obati tinea pedis/luka dasar.",
         "Perluasan cepat/tanda sistemik/selulitis wajah (risiko orbita/SSP): rawat, antibiotik IV (sefazolin/kloksasilin; + vankomisin bila MRSA).",
-        "Kaki diabetik: pendekatan khusus (osteomielitis? iskemia?) — nilai dan rujuk.",
+        "Kaki diabetik: pendekatan khusus (osteomielitis? iskemia?) - nilai dan rujuk.",
       ],
       admissionCriteria: [
         "Tanda sistemik, imunosupresi, perluasan cepat, wajah/periorbita, atau kegagalan terapi oral.",
       ],
       redFlags: [
-        "Nyeri tidak sebanding + bulla hemoragik + krepitasi = necrotizing soft tissue infection — operasi segera.",
+        "Nyeri tidak sebanding + bulla hemoragik + krepitasi = necrotizing soft tissue infection - operasi segera.",
         "Selulitis orbita (nyeri mata, proptosis, oftalmoplegia) = gawat.",
       ],
     },
@@ -331,7 +331,7 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
       ],
       initialManagement: [
         "Puasa + IV line + resusitasi cairan; koreksi elektrolit.",
-        "Analgesia: jangan menahan opioid sampai diagnosis pada abdomen akut stabil (analgesia tidak menutupi tanda peritonitis yang menentukan keputusan operasi — bukti mendukung pemberian dini).",
+        "Analgesia: jangan menahan opioid sampai diagnosis pada abdomen akut stabil (analgesia tidak menutupi tanda peritonitis yang menentukan keputusan operasi - bukti mendukung pemberian dini).",
         "Antibiotik bila peritonitis/perforasi/dugaan sepsis abdomen (jangan untuk semua nyeri perut).",
         "NGT bila ileus/obstruksi/muntah berulang; kateter urine untuk monitor pada syok/operasi.",
         "Konsultasi bedah segera bila: nyeri lepas/defans, distensi progresif dengan obstruksi, tanda iskemia/hemodinamik tidak stabil, atau diagnosis bedah kemungkinan besar.",
@@ -344,12 +344,12 @@ export const EXTRA_GUIDELINES_D: GuidelineEntry[] = [
       ],
       redFlags: [
         "Nyeri hebat mendadak 'seperti disayat', defans, hilang bising usus = peritonitis.",
-        "Lansia dengan nyeri 'ringan' namun takikardia/laktat naik — iskemia mesenterika mudah terlewat.",
+        "Lansia dengan nyeri 'ringan' namun takikardia/laktat naik - iskemia mesenterika mudah terlewat.",
         "Vaginal bleeding + nyeri = KET/aborsi sampai terbukti.",
       ],
     },
     references: [
-      { org: "World Society of Emergency Surgery", title: "Diagnosis and management of acute abdomen — recommendations", year: 2020 },
+      { org: "World Society of Emergency Surgery", title: "Diagnosis and management of acute abdomen - recommendations", year: 2020 },
     ],
     lastReviewed: "2025-06-01",
   },

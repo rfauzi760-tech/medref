@@ -1,7 +1,7 @@
 import type { GuidelineEntry } from "@/lib/types";
 
 /**
- * Panduan klinis ringkas — bagian 1 (Bahasa Indonesia).
+ * Panduan klinis ringkas - bagian 1 (Bahasa Indonesia).
  * Konten disusun secara orisinal merujuk sumber-sumber resmi yang dikutip;
  * tidak menyalin teks dari sumber mana pun secara verbatim.
  */
@@ -19,26 +19,26 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       overview: [
         "Cedera kepala = trauma pada kepala yang dapat mengenai kulit kepala, tulang tengkorak, duramater, atau jaringan otak (Traumatic Brain Injury/TBI).",
         "Skala keparahan fungsional memakai GCS pasca-resusitasi: ringan 13–15, sedang 9–12, berat ≤ 8.",
-        "Penyebab tersering: kecelakaan lalu lintas, jatuh, dan kekerasan. Penilaian sistematis mengikuti prinsip ATLS: trauma kepala adalah diagnosis sistemik — cedera lain (servikal, toraks, abdomen) sering menyertai.",
+        "Penyebab tersering: kecelakaan lalu lintas, jatuh, dan kekerasan. Penilaian sistematis mengikuti prinsip ATLS: trauma kepala adalah diagnosis sistemik - cedera lain (servikal, toraks, abdomen) sering menyertai.",
       ],
       classification: [
         "Berdasarkan GCS pasca-resusitasi (bukan GCS saat kejadian):",
-        "Ringan: GCS 13–15 — mayoritas; namun risiko perdarahan intrakranial tetap ada (lihat Canadian CT Head Rule / NICE).",
-        "Sedang: GCS 9–12 — perlu rawat dan CT kepala.",
-        "Berat: GCS ≤ 8 — intubasi dini bila tidak dapat melindungi jalan napas; CT kepala segera setelah stabilisasi.",
+        "Ringan: GCS 13–15 - mayoritas; namun risiko perdarahan intrakranial tetap ada (lihat Canadian CT Head Rule / NICE).",
+        "Sedang: GCS 9–12 - perlu rawat dan CT kepala.",
+        "Berat: GCS ≤ 8 - intubasi dini bila tidak dapat melindungi jalan napas; CT kepala segera setelah stabilisasi.",
         "Lesi intrakranial: epidural (EDH), subdural (SDH), subaraknoid traumatik, kontusio/perdarahan intraserebral, perdarahan intraventrikular, diffuse axonal injury.",
         "Fraktur tengkorak: linear, impresi, basis kranii (gejala: rinorea/otorea CSS, hemotimpanum, mata rakun, tanda Battle).",
       ],
       initialAssessment: [
-        "Primary survey (ABCDE): Airway + imobilisasi C-spine (kolar) pada semua trauma berisiko; Breathing — oksigenasi, pertahankan SpO₂ ≥ 94%; Circulation — kendalikan perdarahan, hindari hipotensi (SBP ≥ 100–110 mmHg); Disability — GCS serial, pupil, tanda lateralisasi; Exposure — cari cedera lain.",
-        "Hipoksia dan hipotensi memperburuk cedera otak sekunder — keduanya harus dicegah/dikoreksi agresif.",
+        "Primary survey (ABCDE): Airway + imobilisasi C-spine (kolar) pada semua trauma berisiko; Breathing - oksigenasi, pertahankan SpO₂ ≥ 94%; Circulation - kendalikan perdarahan, hindari hipotensi (SBP ≥ 100–110 mmHg); Disability - GCS serial, pupil, tanda lateralisasi; Exposure - cari cedera lain.",
+        "Hipoksia dan hipotensi memperburuk cedera otak sekunder - keduanya harus dicegah/dikoreksi agresif.",
         "Penilaian neurologis serial: GCS tiap 15–30 menit pada pasien berisiko; dokumentasikan ukuran dan reaktivitas pupil.",
-        "Perburukan neurologis (GCS turun ≥ 2, anisokoria baru, lateralisasi) = tanda herniasi — tindakan segera.",
+        "Perburukan neurologis (GCS turun ≥ 2, anisokoria baru, lateralisasi) = tanda herniasi - tindakan segera.",
       ],
       investigations: [
         "CT kepala non-kontras adalah baku emas penilaian lesi intrakranial akut pada pasien bergejala/berisiko.",
         "Indikasi CT pada cedera kepala ringan: ikuti Canadian CT Head Rule (faktor risiko tinggi: GCS < 15 pada 2 jam, curiga fraktur terbuka/impresi, tanda fraktur basis kranii, muntah ≥ 2×, usia ≥ 65; atau amnesia ≥ 30 menit + mekanisme berbahaya) atau pedoman NICE.",
-        "Foto polos tengkorak jarang mengubah tata laksana — tidak menggantikan CT.",
+        "Foto polos tengkorak jarang mengubah tata laksana - tidak menggantikan CT.",
         "CT servikal harus dipikirkan bersamaan pada trauma (CT kapito-servikal).",
         "Laboratorium: darah rutin, koagulasi, glukosa, elektrolit; toksikologi bila ada indikasi.",
       ],
@@ -57,14 +57,14 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Terapi peningkatan ICP: sedasi- analgesia, drainase CSS, manitol/NaCl hipertonik, hiperventilasi singkat hanya pada herniasi (jangan profilaksis), dekompresi kraniektomi pada kasus terpilih.",
       ],
       medications: [
-        "Tidak ada neuroprotektor yang terbukti; hindari kortikosteroid (meningkatkan mortalitas pada TBI — CRASH trial).",
+        "Tidak ada neuroprotektor yang terbukti; hindari kortikosteroid (meningkatkan mortalitas pada TBI - CRASH trial).",
         "Antikonvulsan profilaksis (fenitoin/levetirasetam) hanya jangka pendek (7 hari) pada pasien berisiko kejang dini pasca-trauma; tidak untuk profilaksis epilepsi jangka panjang.",
         "Analgesia adekuat (hindari sedasi berlebih yang menutupi pemeriksaan); parasetamol lini pertama.",
         "Koreksi koagulopati; pada pasien antikoagulan, balikkan efek obat sesuai protokol.",
       ],
       admissionCriteria: [
         "Rawat inap: GCS 13–14 dengan faktor risiko, defisit neurologis, gangguan koagulasi, CT abnormal, atau tidak ada pengawas yang andal di rumah.",
-        "Rawat observasi singkat untuk pasien sedang dan lesi intrakranial kecil yang tidak dioperasi — nilai ulang serial.",
+        "Rawat observasi singkat untuk pasien sedang dan lesi intrakranial kecil yang tidak dioperasi - nilai ulang serial.",
       ],
       icuCriteria: [
         "ICU: GCS ≤ 8 (setelah stabilisasi), intubasi, perburukan neurologis, lesi intrakranial dengan efek massa, syok, atau trauma multisistem.",
@@ -72,7 +72,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       discharge: [
         "Pasien ringan yang dipulangkan: edukasi pengawas tentang tanda bahaya dan instruksi kapan kembali; hindari alkohol.",
-        "Jadwalkan kontrol bila ada keluhan menetap (nyeri kepala, pusing, gangguan konsentrasi — sindrom pasca-konkusi).",
+        "Jadwalkan kontrol bila ada keluhan menetap (nyeri kepala, pusing, gangguan konsentrasi - sindrom pasca-konkusi).",
       ],
       followUp: [
         "Evaluasi ulang 24–72 jam bila nyeri kepala/gejala menetap; CT ulang hanya bila ada indikasi klinis (bukan rutin).",
@@ -112,7 +112,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Pneumotoraks terbuka (sucking chest wound) vs tertutup; tension pneumothorax = kegawatan (udara satu arah, mediastinum terdorong).",
         "Hemotoraks: darah dalam rongga pleura (≥ 1.500 mL = masif).",
         "Flail chest: ≥ 2 fraktur iga berdekatan dalam ≥ 2 tempat → segmen dada paradoks.",
-        "Tamponade jantung: trias Beck (hipotensi, JVP meninggi, bunyi jantung jauh) — pada trauma tajam/penetrasi.",
+        "Tamponade jantung: trias Beck (hipotensi, JVP meninggi, bunyi jantung jauh) - pada trauma tajam/penetrasi.",
       ],
       initialAssessment: [
         "Primary survey ABCDE: inspeksi (gerakan dada simetris?), palpasi, perkusi, auskultasi kedua lapang paru.",
@@ -120,12 +120,12 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "eFAST untuk mendeteksi cairan pleura/perikardial dan pneumotoraks.",
       ],
       investigations: [
-        "Foto toraks AP tegak (bila memungkinkan) — pneumotoraks, hemotoraks, pelebaran mediastinum.",
+        "Foto toraks AP tegak (bila memungkinkan) - pneumotoraks, hemotoraks, pelebaran mediastinum.",
         "CT toraks untuk trauma tumpul berenergi tinggi dan dugaan cedera aorta.",
         "USG (eFAST) sebagai pelengkap penilaian cepat.",
       ],
       initialManagement: [
-        "Tension pneumothorax: dekompresi jarum segera (line midklavikula sela iga II) lalu water seal drainage (WSD) — jangan menunggu foto.",
+        "Tension pneumothorax: dekompresi jarum segera (line midklavikula sela iga II) lalu water seal drainage (WSD) - jangan menunggu foto.",
         "Pneumotoraks terbuka: tutup luka dengan dressing tiga sisi, lalu WSD.",
         "Hemotoraks masif: WSD; darah awal ≥ 1.500 mL atau ≥ 200 mL/jam selama 2–4 jam = indikasi torakotomi.",
         "Flail chest + gagal napas: oksigen, analgesia epidural/IV adekuat, ventilasi bila diperlukan.",
@@ -169,7 +169,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       initialAssessment: [
         "Hentikan proses terbakar, lepaskan pakaian dan perhiasan; jaga suhu tubuh.",
-        "Primary survey ABCDE: perhatikan inhalasi asap (suara serak, jelaga, bulu hidung terbakar, COHb) — intubasi dini bila dicurigai edema jalan napas.",
+        "Primary survey ABCDE: perhatikan inhalasi asap (suara serak, jelaga, bulu hidung terbakar, COHb) - intubasi dini bila dicurigai edema jalan napas.",
         "Akses IV besar melalui kulit sehat; mulai resusitasi.",
         "Kaji mekanisme: listrik (risiko aritmia/rhabdomiolisis), kimia (bilas lama), ledakan (cedera tersembunyi).",
       ],
@@ -178,7 +178,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Rontgen/CT sesuai mekanisme trauma penyerta.",
       ],
       initialManagement: [
-        "Resusitasi cairan Parkland: 4 mL × berat badan (kg) × %TBSA per 24 jam — separuh dalam 8 jam pertama, separuh dalam 16 jam berikutnya; kristaloid (RL).",
+        "Resusitasi cairan Parkland: 4 mL × berat badan (kg) × %TBSA per 24 jam - separuh dalam 8 jam pertama, separuh dalam 16 jam berikutnya; kristaloid (RL).",
         "Sasaran diuresis: 0,5–1 mL/kgBB/jam dewasa, 1–1,5 mL/kgBB/jam anak.",
         "Analgesia adekuat (opioid titrasi). Balutan steril; jangan pecahkan bulla besar yang utuh; salep perak sulfadiazin/antibiotik topikal sesuai fase.",
         "Tetanus prophylaxis sesuai status imunisasi.",
@@ -195,7 +195,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       redFlags: [
         "Distres napas/suara serak pasca paparan api di ruang tertutup.",
-        "Hipotensi tidak responsif — cari penyebab lain (perdarahan, sepsis dini).",
+        "Hipotensi tidak responsif - cari penyebab lain (perdarahan, sepsis dini).",
         "Luka bakar sirkumferensial ekstremitas/dada → kompartemen/eskarotomi.",
       ],
     },
@@ -218,7 +218,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Hipertensi krisis = tekanan darah sangat tinggi (umumnya TD ≥ 180/120 mmHg). Dibedakan menjadi emergensi (ada kerusakan organ target akut) dan urgensi (tanpa kerusakan organ akut).",
       ],
       classification: [
-        "Emergensi hipertensif: TD ≥ 180/120 + kerusakan organ akut — ensefalopati, perdarahan intraserebral, iskemia/infark, gagal jantung akut/edema paru, ACS, diseksi aorta, eklampsia, gagal ginjal akut, retinopati/ papiledema.",
+        "Emergensi hipertensif: TD ≥ 180/120 + kerusakan organ akut - ensefalopati, perdarahan intraserebral, iskemia/infark, gagal jantung akut/edema paru, ACS, diseksi aorta, eklampsia, gagal ginjal akut, retinopati/ papiledema.",
         "Urgensi hipertensif: TD sangat tinggi tanpa kerusakan organ akut.",
       ],
       initialAssessment: [
@@ -232,7 +232,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Pencitraan sesuai kecurigaan organ target.",
       ],
       initialManagement: [
-        "Emergensi: rawat ICU/HD; obat IV titrasi — target penurunan bertahap (tidak > 25% dalam 1 jam pertama).",
+        "Emergensi: rawat ICU/HD; obat IV titrasi - target penurunan bertahap (tidak > 25% dalam 1 jam pertama).",
         "Pilihan IV: nikardipin, labetalol, nitrogliserin (sindrom koroner/gagal jantung), sodium nitroprusida (hindari pada uremia/kehamilan), esmolol, hidralazin (kehamilan).",
         "Pengecualian penurunan cepat: diseksi aorta (SBP < 120 dalam 20 menit), perdarahan intraserebral (sesuai pedoman), edema paru, eklampsia.",
         "Urgensi: mulai/kembalikan obat oral; jangan turunkan terlalu cepat atau berikan nifedipin sublingual (berbahaya).",
@@ -244,7 +244,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       redFlags: [
         "Nyeri dada/retak, sesak berat, defisit neurologis, kejang, kehamilan, atau TD asimetris.",
-        "Jangan pernah menurunkan TD terlalu cepat pada pasien tanpa kerusakan organ — risiko iskemia organ.",
+        "Jangan pernah menurunkan TD terlalu cepat pada pasien tanpa kerusakan organ - risiko iskemia organ.",
       ],
     },
     references: [
@@ -279,10 +279,10 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "CT angiografi bila dicurigai malformasi/aneurisma atau perdarahan atipikal; MRI sesuai indikasi.",
       ],
       initialManagement: [
-        "Kendalikan tekanan darah: target SBP 130–140 mmHg (dengan IV titrasi, mis. nikardipin/labetalol) bila tidak ada kontraindikasi — ATACH-2/INTERACT-2.",
+        "Kendalikan tekanan darah: target SBP 130–140 mmHg (dengan IV titrasi, mis. nikardipin/labetalol) bila tidak ada kontraindikasi - ATACH-2/INTERACT-2.",
         "Balikkan antikoagulan segera (vitamin K + PCC/FFP untuk warfarin; antidot spesifik untuk DOAC bila ada); trombosit pada trombositopenia berat.",
         "GCS ≤ 8/aspirasi: intubasi; jaga normoksia; hindari hiperglikemia/hipoglikemia.",
-        "Antikonvulsan profilaksis tidak rutin — obati kejang klinis/EEG.",
+        "Antikonvulsan profilaksis tidak rutin - obati kejang klinis/EEG.",
       ],
       definitiveManagement: [
         "Evakuasi bedah: perdarahan serebelum > 3 cm dengan perburukan/kompresi batang otak/hidrosefalus.",
@@ -298,7 +298,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       redFlags: [
         "Perburukan neurologis cepat, dilatasi pupil, pernapasan tidak teratur.",
-        "Perdarahan saat antikoagulan = gawat — balikkan efek segera.",
+        "Perdarahan saat antikoagulan = gawat - balikkan efek segera.",
       ],
     },
     references: [
@@ -320,11 +320,11 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       classification: [
         "Bakterial: pneumokokus, meningokokus, Haemophilus influenzae tipe b (vaksinable), Listeria (usia ekstrem/immunosupresi), E. coli (neonatus).",
-        "Tuberkulosis: subakut, lebih sering di Indonesia — awasi pada demam berkepanjangan + tanda meningitis.",
+        "Tuberkulosis: subakut, lebih sering di Indonesia - awasi pada demam berkepanjangan + tanda meningitis.",
         "Viral: enterovirus, herpes simpleks (ensefalitis fokal).",
       ],
       initialAssessment: [
-        "Trias klasik: demam, nyeri kepala, kaku kuduk — bisa tidak lengkap pada bayi/lansia.",
+        "Trias klasik: demam, nyeri kepala, kaku kuduk - bisa tidak lengkap pada bayi/lansia.",
         "Tanda meningeal: kaku kuduk, Kernig, Brudzinski.",
         "Bayi: iritabel, tangis melengking, ubun-ubun menonjol, kejang, letargi, tidak mau minum, hipotermia.",
         "Cari tanda bahaya: penurunan kesadaran, kejang fokal, defisit neurologis, petekie/ruam, papiledema.",
@@ -337,7 +337,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       initialManagement: [
         "Curiga bakterial: beri antibiotik empirik SEGERA (sebelum CT/LP bila LP tertunda): seftriakson 2 g IV + vankomisin; + ampisilin pada usia < 3 bulan, > 55 tahun, atau imunosupresi (Listeria).",
-        "Deksametason 0,15 mg/kgBB IV sebelum/sesaat setelah antibiotik pertama (pneumokokus dewasa/anak) — lanjutkan 4 hari bila bakterial terkonfirmasi.",
+        "Deksametason 0,15 mg/kgBB IV sebelum/sesaat setelah antibiotik pertama (pneumokokus dewasa/anak) - lanjutkan 4 hari bila bakterial terkonfirmasi.",
         "Isolasi droplet pada dugaan meningokokus; profilaksis kontak erat (rifampisin/siprofloksasin).",
         "Cairan: jaga normovolemia; awasi SIADH.",
       ],
@@ -352,7 +352,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       redFlags: [
         "Petekie/ruam purpura progresif (meningokokus).",
-        "Defisit neurologis fokal, kejang, papiledema — jangan LP sebelum CT.",
+        "Defisit neurologis fokal, kejang, papiledema - jangan LP sebelum CT.",
         "Kegagalan respons 48 jam → cari komplikasi (abses, sinusitis, mastoiditis) dan TB.",
       ],
     },
@@ -386,12 +386,12 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Tanda yang mengarah ke infeksi SSP: ubun-ubun menonjol, letargi berkepanjangan, kejang fokal lama, atau tidak pulih sadar penuh → LP dipertimbangkan.",
       ],
       investigations: [
-        "Tidak semua kejang demam sederhana perlu pemeriksaan luas — fokus pada mencari penyebab demam.",
+        "Tidak semua kejang demam sederhana perlu pemeriksaan luas - fokus pada mencari penyebab demam.",
         "Elektrolit, glukosa, LP, EEG, dan neuroimaging hanya sesuai indikasi (kejang kompleks, tanda SSP, atau atipikal).",
         "EEG tidak rutin pada kejang demam sederhana.",
       ],
       initialManagement: [
-        "Atasi demam (parasetamol/ibuprofen) untuk kenyamanan — antipiretik tidak mencegah kejang berulang.",
+        "Atasi demam (parasetamol/ibuprofen) untuk kenyamanan - antipiretik tidak mencegah kejang berulang.",
         "Edukasi orang tua: cara menangani kejang di rumah dan kapan harus ke fasilitas.",
         "Profilaksis diazepam intermiten/antikonvulsan harian TIDAK dianjurkan rutin.",
       ],
@@ -407,7 +407,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       redFlags: [
         "Kejang > 15 menit/status epileptikus, kejang fokal, kejang tanpa demam.",
         "Tanda infeksi SSP (letargi, ubun-ubun menonjol, tidak pulih).",
-        "Anak < 6 bulan atau > 5 tahun dengan gambaran kejang demam — cari penyebab lain.",
+        "Anak < 6 bulan atau > 5 tahun dengan gambaran kejang demam - cari penyebab lain.",
       ],
     },
     references: [
@@ -433,7 +433,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Komplikasi: perdarahan usus, perforasi usus (nyeri perut hebat mendadak), ensefalopati, syok.",
       ],
       initialAssessment: [
-        "Demam ≥ 3–7 hari tanpa fokus + gejala gastrointestinal — tanyakan riwayat makanan/minuman dan kontak.",
+        "Demam ≥ 3–7 hari tanpa fokus + gejala gastrointestinal - tanyakan riwayat makanan/minuman dan kontak.",
         "Periksa tanda dehidrasi dan komplikasi abdomen (distensi, nyeri lepas, defans).",
       ],
       investigations: [
@@ -444,12 +444,12 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
       initialManagement: [
         "Antibiotik: seftriakson 1–2 g IV/hari (dewasa) atau 75 mg/kgBB/hari (anak) 5–7 hari; alternatif oral azitromisin 1 g/hari (dewasa) 7 hari untuk kasus tanpa komplikasi.",
-        "Kloramfenikol/ampisilin/kotrimoksazol: resistensi luas — hanya bila sensitivitas mendukung.",
+        "Kloramfenikol/ampisilin/kotrimoksazol: resistensi luas - hanya bila sensitivitas mendukung.",
         "Hidrasi, antipiretik, nutrisi adekuat; jangan berikan antimotilitas.",
         "Perforasi usus → konsultasi bedah + antibiotik antianaerob.",
       ],
       admissionCriteria: [
-        "Demam tinggi tidak dapat minum, toksik, komplikasi, atau bayi/lansia/immunosupresi — rawat.",
+        "Demam tinggi tidak dapat minum, toksik, komplikasi, atau bayi/lansia/immunosupresi - rawat.",
       ],
       redFlags: [
         "Nyeri perut hebat mendadak/peritonitis (perforasi).",
@@ -461,7 +461,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
       ],
     },
     references: [
-      { org: "World Health Organization", title: "Typhoid fever — background document", year: 2023, url: "https://www.who.int/news-room/fact-sheets/detail/typhoid" },
+      { org: "World Health Organization", title: "Typhoid fever - background document", year: 2023, url: "https://www.who.int/news-room/fact-sheets/detail/typhoid" },
       { org: "Kementerian Kesehatan RI", title: "Pedoman Pengendalian Demam Tifoid", year: 2022 },
     ],
     lastReviewed: "2025-06-01",
@@ -487,13 +487,13 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Cari tanda malaria berat: letargi/koma, napas cepat/asidosis, ikterus, perdarahan, syok, dehidrasi.",
       ],
       investigations: [
-        "Sediaan apus darah tipis & tebal (konfirmasi, spesies, parasitemia) — ulangi bila negatif dan klinis kuat (interval 6–12 jam).",
+        "Sediaan apus darah tipis & tebal (konfirmasi, spesies, parasitemia) - ulangi bila negatif dan klinis kuat (interval 6–12 jam).",
         "RDT (rapid diagnostic test) di layanan tanpa mikroskop.",
         "Darah rutin, glukosa, fungsi ginjal-hati, elektrolit pada kasus berat.",
       ],
       initialManagement: [
         "Malaria falciparum tanpa komplikasi: ACT (mis. DHP/artemether-lumefantrine sesuai pedoman nasional); vivax/ovale: ACT + primakuin (eradikasi hipnozoit; skrining G6PD bila memungkinkan).",
-        "Malaria berat: artesunat IV (2,4 mg/kgBB pada jam 0, 12, 24, lalu 1×/hari) — berikan segera meski harus merujuk; lanjutkan ACT oral setelah mampu.",
+        "Malaria berat: artesunat IV (2,4 mg/kgBB pada jam 0, 12, 24, lalu 1×/hari) - berikan segera meski harus merujuk; lanjutkan ACT oral setelah mampu.",
         "Koreksi hipoglikemia, anemia, dehidrasi; awasi gagal ginjal (hindari NSAID).",
         "Ibu hamil: ACT yang aman (kinin + klindamisin pada trimester 1 sesuai pedoman); vivax: profilaksis primakuin setelah melahirkan.",
       ],
@@ -501,7 +501,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Malaria berat, falciparum pada ibu hamil/bayi, atau tidak dapat minum obat: rawat.",
       ],
       redFlags: [
-        "Kesadaran menurun, kejang, napas asidotik, urin gelap, ikterus, syok — malaria berat.",
+        "Kesadaran menurun, kejang, napas asidotik, urin gelap, ikterus, syok - malaria berat.",
         "Jangan menunda terapi menunggu konfirmasi parasit pada klinis kuat di daerah endemis.",
       ],
       followUp: [
@@ -524,7 +524,7 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
     ageGroup: "both",
     sections: {
       overview: [
-        "Infeksi Clostridium tetani — toksin tetanospasmin menghambat pelepasan GABA → hipertonia dan spasme. Umumnya melalui luka terkontaminasi tanah.",
+        "Infeksi Clostridium tetani - toksin tetanospasmin menghambat pelepasan GABA → hipertonia dan spasme. Umumnya melalui luka terkontaminasi tanah.",
         "Neonatal (tetanus neonatorum) terkait perawatan tali pusat tidak higienis.",
       ],
       classification: [
@@ -537,11 +537,11 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Nilai keparahan: frekuensi spasme, keterlibatan pernapasan, disfungsi otonom.",
       ],
       investigations: [
-        "Diagnosis klinis — laboratorium tidak membantu rutin.",
+        "Diagnosis klinis - laboratorium tidak membantu rutin.",
         "Kultur luka anaerob (jarang positif); jangan menunda terapi.",
       ],
       initialManagement: [
-        "AIG (anti-immunoglobulin tetanus) 3.000–6.000 unit IM — netralkan toksin bebas; bila tidak ada, ATS serum.",
+        "AIG (anti-immunoglobulin tetanus) 3.000–6.000 unit IM - netralkan toksin bebas; bila tidak ada, ATS serum.",
         "Debridement luka + antibiotik (metronidazol 500 mg IV q8h selama 7–10 hari; alternatif penisilin).",
         "Kontrol spasme: benzodiazepin (diazepam titrasi); spasme berat: magnesium sulfat IV, atau relaksan neuromuskular + ventilasi di ICU.",
         "Ruangan tenang, minim rangsang; monitor otonom.",
@@ -551,14 +551,14 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Semua kasus tetanus: rawat (ideal ICU bila spasme/gangguan menelan).",
       ],
       redFlags: [
-        "Spasme laring, dispnea, disfagia — risiko henti napas.",
+        "Spasme laring, dispnea, disfagia - risiko henti napas.",
         "Disfungsi otonom parah (takikardia/hipotensi fluktuatif).",
         "Pencegahan: TT booster 10 tahunan + perawatan luka yang benar.",
       ],
     },
     references: [
-      { org: "Centers for Disease Control and Prevention", title: "Tetanus — Pink Book / clinical guidance", year: 2023, url: "https://www.cdc.gov/tetanus/index.html" },
-      { org: "World Health Organization", title: "Tetanus — fact sheet & treatment", year: 2023 },
+      { org: "Centers for Disease Control and Prevention", title: "Tetanus - Pink Book / clinical guidance", year: 2023, url: "https://www.cdc.gov/tetanus/index.html" },
+      { org: "World Health Organization", title: "Tetanus - fact sheet & treatment", year: 2023 },
     ],
     lastReviewed: "2025-06-01",
   },
@@ -597,9 +597,9 @@ export const EXTRA_GUIDELINES_A: GuidelineEntry[] = [
         "Perdarahan varises, SBP, ensefalopati grade ≥ 2, atau dekompensasi akut: rawat.",
       ],
       redFlags: [
-        "Hematemesis/melena (varises) — resusitasi + terapi vasoaktif (terlipresin/oktreotid) + antibiotik profilaksis + endoskopi < 12 jam.",
+        "Hematemesis/melena (varises) - resusitasi + terapi vasoaktif (terlipresin/oktreotid) + antibiotik profilaksis + endoskopi < 12 jam.",
         "Demam + asites + nyeri perut → SBP: paracentesis diagnostik (PMN ≥ 250/µL → antibiotik).",
-        "Penurunan kesadaran mendadak — cari perdarahan GI/ensefalopati.",
+        "Penurunan kesadaran mendadak - cari perdarahan GI/ensefalopati.",
         "Hepatoseluler: nyeri perut, BB turun, AFP naik.",
       ],
       followUp: [

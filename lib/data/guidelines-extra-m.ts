@@ -1,6 +1,6 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan tambahan — bagian M: neurologi & psikiatri. */
+/** Panduan tambahan - bagian M: neurologi & psikiatri. */
 
 export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
   {
@@ -26,7 +26,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "cluster-headache", slug: "cluster-headache", title: "Cluster Headache", specialties: ["Neurology"],
     keywords: ["cluster headache", "sakit kepala klaster", "nyeri orbita", "lakrimasi"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Nyeri kepala unilateral sangat berat di orbita/temporal, 15–180 menit, dengan gejala otonom ipsilateral — 'sakit kepala bunuh diri'."],
+      overview: ["Nyeri kepala unilateral sangat berat di orbita/temporal, 15–180 menit, dengan gejala otonom ipsilateral - 'sakit kepala bunuh diri'."],
       diagnosticCriteria: ["ICHD-3: ≥ 5 serangan nyeri unilateral hebat orbita/supraorbital/temporal, 15–180 menit, dengan ≥ 1 gejala otonom ipsilateral (lakrimasi, injeksi konjungtiva, rhinorea, miosis/ptosis, edema kelopak) atau gelisah."],
       differentials: ["Migrain", "TTH", "Neuralgia trigeminal", "Lesi parasellar/pituitari", "Arteritis temporalis"],
       classification: ["Episodik (klaster 1–12 bulan dengan remisi) vs kronik (tanpa remisi ≥ 1 tahun); berdasarkan durasi/frekuensi."],
@@ -45,7 +45,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "tth", slug: "tth", title: "Tension-Type Headache (TTH)", specialties: ["Neurology"],
     keywords: ["tth", "tension type headache", "sakit kepala tegang", "nyeri kepala bilateral"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Nyeri kepala primer tersering — bilateral, menekan/mengikat, ringan-sedang, tanpa mual; terkait stres & ketegangan otot."],
+      overview: ["Nyeri kepala primer tersering - bilateral, menekan/mengikat, ringan-sedang, tanpa mual; terkait stres & ketegangan otot."],
       diagnosticCriteria: ["ICHD-3: ≥ 10 episode 30 menit–7 hari, bilateral, menekan, ringan-sedang, tidak diperberat aktivitas rutin, tanpa mual/muntah, fotofobia/fonofobia maksimal satu."],
       differentials: ["Migrain ringan", "Sakit kepala servikogenik", "Sakit kepala sekunder (sinusitis, bruxism, gangguan TMJ)", "Hipotiroid/anemia"],
       classification: ["Episodik jarang (< 1 hari/bulan), episodik sering (1–14 hari/bulan), kronik (≥ 15 hari/bulan)."],
@@ -64,7 +64,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "epilepsi", slug: "epilepsi", title: "Epilepsi", specialties: ["Neurology"],
     keywords: ["epilepsi", "kejang", "bangkitan", "antiepilepsi", "aura"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Gangguan neurologis dengan kecenderungan bangkitan berulang (> 2 bangkitan tak beralasan atau 1 + risiko tinggi rekuren) — tata laksana dengan antiepilepsi."],
+      overview: ["Gangguan neurologis dengan kecenderungan bangkitan berulang (> 2 bangkitan tak beralasan atau 1 + risiko tinggi rekuren) - tata laksana dengan antiepilepsi."],
       diagnosticCriteria: ["≥ 2 kejang tak beralasan ≥ 24 jam terpisah, atau 1 kejang + risiko rekurensi ≥ 60%, atau sindrom epilepsi; klasifikasi ILAE berdasarkan onset."],
       differentials: ["Kejang demam", "Sinkop", "Pseudoseizure (psikogenik)", "TIA", "Hipoglikemia", "Serangan panik", "Parasomnia"],
       classification: ["Fokal (dengan/tanpa gangguan kesadaran), generalisata (tonik-klonik, absans, mioklonik, atonik), unknown onset; sindrom spesifik (kejang demam, juvenile myoclonic)."],
@@ -84,7 +84,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "parkinson", slug: "parkinson", title: "Penyakit Parkinson", specialties: ["Neurology"],
     keywords: ["parkinson", "tremor istirahat", "bradikinesia", "rigiditas", "levodopa"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Gangguan neurodegeneratif — bradikinesia + tremor istirahat + rigiditas + instabilitas postural; respons levodopa khas."],
+      overview: ["Gangguan neurodegeneratif - bradikinesia + tremor istirahat + rigiditas + instabilitas postural; respons levodopa khas."],
       diagnosticCriteria: ["Bradikinesia + ≥ 1 (tremor istirahat, rigiditas, instabilitas postural) + respons levodopa; eksklusi parkinsonisme sekunder (obat, vaskular, atrofi multisistem)."],
       differentials: ["Parkinsonisme obat (neuroleptik, metoklopramid)", "PSP", "Atrofi multisistem", "Demensia Lewy body", "Tremor esensial", "Parkinsonisme vaskular"],
       classification: ["Hoehn & Yahr (1–5); MDS-UPDRS untuk monitoring; onset motorik vs non-motorik."],
@@ -103,13 +103,13 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "neuralgia-trigeminal", slug: "neuralgia-trigeminal", title: "Neuralgia Trigeminal", specialties: ["Neurology"],
     keywords: ["neuralgia trigeminal", "nyeri wajah", "tlc", "tic douloureux"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Nyeri wajah paroksismal unilateral, singkat (detik–menit), seperti tersetrum — cabang V2/V3; karbamazepin sangat responsif."],
+      overview: ["Nyeri wajah paroksismal unilateral, singkat (detik–menit), seperti tersetrum - cabang V2/V3; karbamazepin sangat responsif."],
       diagnosticCriteria: ["ICHD-3: nyeri unilateral V2/V3, paroksismal < 2 menit, tajam/seperti syok, dipicu stimulus ringan (menyikat gigi, makan, angin), tanpa defisit neurologis."],
       differentials: ["Sakit gigi/abses", "Sinusitis", "Gangguan TMJ", "Nyeri atipikal wajah", "Cluster headache", "Lesi sudut serebelopontin (tumor, MS)"],
       classification: ["Klasik (kompresi vaskular), sekunder (MS, tumor), idiopatik; dengan/tanpa nyeri latar (atipikal)."],
       initialAssessment: ["Nyeri tersetrum singkat + trigger zone; usia > 50 khas; cari defisit sensorik (bila ada → cari penyebab sekunder)."],
       investigations: ["MRI + MRA (singkirkan MS/tumor/kompresi vaskular) terutama bila onset < 50 th atau defisit."],
-      initialManagement: ["Karbamazepin (lini pertama, mulai 100–200 mg 2×/hari, titrasi) — respons dramatis mendukung diagnosis."],
+      initialManagement: ["Karbamazepin (lini pertama, mulai 100–200 mg 2×/hari, titrasi) - respons dramatis mendukung diagnosis."],
       definitiveManagement: ["Okskarbazepin bila intoleran karbamazepin; refrakter → bedah (microvascular decompression) atau ablasi; tambah baklofen/lamotrigin bila perlu."],
       medications: ["Karbamazepin 100–400 mg 2–3×/hari", "Okskarbazepin 150–600 mg 2×/hari", "Baklofen 5–20 mg 3×/hari (adjuvan)"],
       admissionCriteria: ["Jarang; evaluasi sekunder bila defisit"],
@@ -122,7 +122,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "neuropati-perifer", slug: "neuropati-perifer", title: "Neuropati Perifer / Polineuropati", specialties: ["Neurology"],
     keywords: ["neuropati", "polineuropati", "kesemutan", "baal", "stocking glove"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Gangguan saraf perifer — distribusi stocking-glove (DM, alkohol, defisiensi vitamin, toksik) atau mononeuropati (kompresi)."],
+      overview: ["Gangguan saraf perifer - distribusi stocking-glove (DM, alkohol, defisiensi vitamin, toksik) atau mononeuropati (kompresi)."],
       diagnosticCriteria: ["Gejala sensorik distal simetris (kesemutan, baal, nyeri terbakar) + refleks menurun + gangguan vibrasi; elektromiografi/NCS konfirmasi tipe (aksonal vs demielinasi)."],
       differentials: ["Polineuropati diabetik (tersering)", "Alkohol/defisiensi B12/tiamin", "Uremia", "Hipotiroid", "CIDP/GBS", "Toksik (obat: isoniazid, metformin, vincristin)", "Radikulopati/stenosis spinal"],
       classification: ["Distal simetris polineuropati vs mononeuropati vs pleksopati; aksonal vs demielinasi (EMG); akut (< 4 minggu) vs kronik."],
@@ -132,7 +132,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
       definitiveManagement: ["Nyeri neuropatik: gabapentin/pregabalin, amitriptilin, duloksetin (pilih 1, titrasi); fisioterapi; monitor komplikasi."],
       medications: ["Gabapentin 300–900 mg 3×/hari (titrasi)", "Pregabalin 75–150 mg 2×/hari", "Amitriptilin 10–50 mg malam", "Duloksetin 30–60 mg/hari"],
       admissionCriteria: ["Progresi cepat (GBS/CIDP)", "Kelemahan berat"],
-      redFlags: ["Onset akut + progresif (GBS — emergensi)", "Kelemahan asimetris", "Gangguan sfingter/otonom", "Fasikulasi + BB turun (MND)"],
+      redFlags: ["Onset akut + progresif (GBS - emergensi)", "Kelemahan asimetris", "Gangguan sfingter/otonom", "Fasikulasi + BB turun (MND)"],
     },
     references: [{ org: "AAN", title: "Evidence-based guideline: treatment of painful diabetic neuropathy", year: 2011 }],
     lastReviewed: "2025-06-01",
@@ -141,13 +141,13 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "delirium", slug: "delirium", title: "Delirium", specialties: ["Psychiatry", "Emergency Medicine", "Geriatrics"],
     keywords: ["delirium", "bingung akut", "gangguan kesadaran", "halusinasi", "cam"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Gangguan kesadaran akut fluktuatif dengan inatensi — sekunder penyebab organik (infeksi, obat, metabolik); umum pada lansia rawat; sering terlewat."],
+      overview: ["Gangguan kesadaran akut fluktuatif dengan inatensi - sekunder penyebab organik (infeksi, obat, metabolik); umum pada lansia rawat; sering terlewat."],
       diagnosticCriteria: ["DSM-5: gangguan atensi/kesadaran akut + fluktuasi + kognitif + bukan demensia + bukti penyebab organik; CAM positif (onset akut, inatensi, pikiran tak teratur, kesadaran berubah)."],
       differentials: ["Demensia", "Depresi", "Psikosis fungsional", "Afasia", "Kejang nonkonvulsif"],
       classification: ["Hiperaktif, hipoaktif (sering terlewat!), campuran; berdasarkan penyebab (infeksi, obat, metabolik, hipoksia, retensi urin, konstipasi)."],
       initialAssessment: ["Onset akut + fluktuasi + inatensi (CAM); cari penyebab: infeksi (ISK, pneumonia), obat baru (antikolinergik, opioid, benzodiazepin), metabolik (Na, glukosa, Ca, ureum), hipoksia, retensi urin, nyeri, kurang tidur."],
       investigations: ["CBC, elektrolit, glukosa, fungsi ginjal/hati, urinalisis, kultur, EKG, oksimetri; CT kepala/EEG/LP bila indikasi; toksikologi bila perlu."],
-      initialManagement: ["Koreksi penyebab + lingkungan: orientasi (jam/kalender), keluarga, kacamata/alat dengar, mobilisasi dini, hindari restraint, jaga siklus tidur, hentikan obat tak perlu.", "Non-farmakologi dulu — farmakologi hanya untuk agitasi berat/risiko bahaya: haloperidol 0,5–2 mg dosis rendah atau antipsikotik atipikal dosis rendah; hindari benzodiazepin kecuali putus alkohol/status epileptikus."],
+      initialManagement: ["Koreksi penyebab + lingkungan: orientasi (jam/kalender), keluarga, kacamata/alat dengar, mobilisasi dini, hindari restraint, jaga siklus tidur, hentikan obat tak perlu.", "Non-farmakologi dulu - farmakologi hanya untuk agitasi berat/risiko bahaya: haloperidol 0,5–2 mg dosis rendah atau antipsikotik atipikal dosis rendah; hindari benzodiazepin kecuali putus alkohol/status epileptikus."],
       definitiveManagement: ["Monitoring serial (CAM), cegah komplikasi (jatuh, dehidrasi, infeksi nosokomial), evaluasi ulang obat."],
       medications: ["Haloperidol 0,5–2 mg oral/IM (agitasi)", "Risperidon 0,25–1 mg (lansia, dosis rendah)", "Tiamin 100 mg IV/IM (risiko alkohol)"],
       admissionCriteria: ["Penyebab memerlukan rawat (sepsis, metabolik)", "Agitasi tidak terkontrol", "Jatuh berulang"],
@@ -161,13 +161,13 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "ptsd", slug: "ptsd", title: "Gangguan Stres Pascatrauma (PTSD)", specialties: ["Psychiatry"],
     keywords: ["ptsd", "trauma", "flashback", "gangguan stres pascatrauma"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Respons maladaptif setelah paparan trauma — reexperiencing, avoidance, hiperarousal, perubahan kognisi/mood ≥ 1 bulan, mengganggu fungsi."],
+      overview: ["Respons maladaptif setelah paparan trauma - reexperiencing, avoidance, hiperarousal, perubahan kognisi/mood ≥ 1 bulan, mengganggu fungsi."],
       diagnosticCriteria: ["DSM-5: paparan trauma + ≥ 1 reexperiencing + ≥ 1 avoidance + ≥ 2 hiperarousal/kognisi negatif + ≥ 2 mood/kognisi, ≥ 1 bulan, distress/fungsi terganggu."],
       differentials: ["Gangguan stres akut (< 1 bulan)", "Depresi", "Gangguan panik", "GAD", "Penyalahgunaan zat", "Gangguan kepribadian"],
       classification: ["Akut (< 3 bulan) vs kronik; dengan gejala disosiatif (depersonalisasi/derealisasi); dengan onset tertunda."],
       initialAssessment: ["Skrining (PCL-5), riwayat trauma (hindari retraumatisasi), skrining bunuh diri, komorbid (depresi, zat, tidur)."],
       investigations: ["Tidak ada tes laboratorium; skrining komorbid."],
-      initialManagement: ["Trauma-focused CBT (TF-CBT), EMDR, prolonged exposure — psikoterapi lini pertama; SSRI bila psikoterapi tidak tersedia/refrakter."],
+      initialManagement: ["Trauma-focused CBT (TF-CBT), EMDR, prolonged exposure - psikoterapi lini pertama; SSRI bila psikoterapi tidak tersedia/refrakter."],
       definitiveManagement: ["Sertraline/paroxetine (lini pertama farmakologi) 8–12 minggu; lanjutkan 12 bulan setelah remisi; tata laksana komorbid tidur/alkohol."],
       medications: ["Sertraline 50–200 mg/hari", "Paroxetine 20–50 mg/hari", "Prazosin 1–10 mg malam (nightmare)"],
       admissionCriteria: ["Risiko bunuh diri", "Disosiasi berat/dekompensasi"],
@@ -180,13 +180,13 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "ocd", slug: "ocd", title: "Gangguan Obsesif-Kompulsif (OCD)", specialties: ["Psychiatry"],
     keywords: ["ocd", "obsesi", "kompulsi", "cuci tangan", "memeriksa"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Obsesi (pikiran berulang tak diinginkan) + kompulsi (perilaku ritual untuk mengurangi cemas) — memakan waktu ≥ 1 jam/hari, mengganggu fungsi."],
+      overview: ["Obsesi (pikiran berulang tak diinginkan) + kompulsi (perilaku ritual untuk mengurangi cemas) - memakan waktu ≥ 1 jam/hari, mengganggu fungsi."],
       diagnosticCriteria: ["DSM-5: obsesi/kompulsi ≥ 1 jam/hari atau mengganggu fungsi; insight baik–buruk (dengan keyakinan delusional)."],
       differentials: ["Gangguan kecemasan/panik", "Gangguan depresif dengan ruminasi", "Gangguan spektrum (body dysmorphic, hoarding)", "Psikosis (obsesi ekstrem)", "Tourette (tics)"],
       classification: ["Insight baik/cukup/buruk; dengan tics; onset anak vs dewasa."],
       initialAssessment: ["Skrining (Y-BOCS), tanyakan isi obsesi/kompulsi, gangguan fungsi, riwayat keluarga, skrining bunuh diri; eksklusi medis (obat, neurologis)."],
       investigations: ["Tidak ada tes laboratorium; skrining komorbid."],
-      initialManagement: ["ERP (exposure & response prevention) — psikoterapi lini pertama; SSRI dosis tinggi (fluoxetine/sertraline/fluvoxamine) bila perlu."],
+      initialManagement: ["ERP (exposure & response prevention) - psikoterapi lini pertama; SSRI dosis tinggi (fluoxetine/sertraline/fluvoxamine) bila perlu."],
       definitiveManagement: ["SSRI titrasi sampai dosis efektif 12 minggu; tambah antipsikotik dosis rendah (risperidon) bila refrakter; durasi minimal 1–2 tahun setelah remisi."],
       medications: ["Fluoxetine 20–80 mg/hari", "Sertraline 50–200 mg/hari", "Fluvoxamine 50–300 mg/hari", "Risperidon 0,5–2 mg/hari (adjuvan)"],
       admissionCriteria: ["Risiko bunuh diri", "Kompulsi membahayakan"],
@@ -205,7 +205,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
       classification: ["Ringan (2–3), sedang (4–5), berat (≥ 6 kriteria DSM-5); CIWA-Ar < 8 ringan, 8–15 sedang, > 15 berat."],
       initialAssessment: ["Skor CIWA-Ar, tanda putus (tremor, takikardia, hipertensi, berkeringat, mual, agitasi), riwayat kejang/delirium tremens, cari komorbid (hepatitis alkoholik, pankreatitis, defisiensi tiamin)."],
       investigations: ["Elektrolit (Mg, K, fosfat), glukosa, fungsi hati, CBC (MCV), koagulasi, tiamin; EKG."],
-      initialManagement: ["Tiamin 100 mg IV/IM SEBELUM glukosa (cegah Wernicke), koreksi elektrolit, cairan.", "Benzodiazepin sesuai skor CIWA-Ar (diazem 10–20 mg atau lorazepam 2–4 mg titrasi) — bukan dosis tetap."],
+      initialManagement: ["Tiamin 100 mg IV/IM SEBELUM glukosa (cegah Wernicke), koreksi elektrolit, cairan.", "Benzodiazepin sesuai skor CIWA-Ar (diazem 10–20 mg atau lorazepam 2–4 mg titrasi) - bukan dosis tetap."],
       definitiveManagement: ["CIWA-protocol 4–6 jam, monitoring; delirium tremens → benzodiazepin agresif + rawat ICU; rujuk adiksi setelah stabil (naltrekson, akamprosat, disulfiram + psikoterapi)."],
       medications: ["Diazepam 10–20 mg oral/IV sesuai CIWA", "Lorazepam 2–4 mg (lansia/hepatik)", "Tiamin 100 mg IV", "Magnesium sulfat bila hipomagnesemia"],
       admissionCriteria: ["CIWA ≥ 15 atau delirium tremens", "Kejang putus alkohol", "Komorbid medis berat"],
@@ -238,7 +238,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "gangguan-opioid", slug: "gangguan-opioid", title: "Gangguan Penggunaan Opioid & Putus Opioid", specialties: ["Psychiatry", "Emergency Medicine"],
     keywords: ["opioid", "ketergantungan opioid", "putus opioid", "metadon", "nalokson"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Penggunaan opioid bermasalah (heroin, tramadol, morfin) — overdosis dapat fatal (depresi napas); putus opioid sangat tidak nyaman namun jarang fatal."],
+      overview: ["Penggunaan opioid bermasalah (heroin, tramadol, morfin) - overdosis dapat fatal (depresi napas); putus opioid sangat tidak nyaman namun jarang fatal."],
       diagnosticCriteria: ["DSM-5: ≥ 2 dari 11 kriteria; overdosis: miosis + depresi napas + penurunan kesadaran; withdrawal: lakrimasi, rinorea, yawning, nyeri otot, kram, diare, piloereksi."],
       differentials: ["Overdosis: sedatif/alkohol, hipoglikemia, stroke, sepsis", "Putus: gastroenteritis, flu, nyeri kronik"],
       classification: ["Intoksikasi/overdosis vs withdrawal; opioid agonist (metadon/buprenorfin) therapy vs abstinensia."],
@@ -258,7 +258,7 @@ export const EXTRA_GUIDELINES_M: GuidelineEntry[] = [
     id: "kdrt", slug: "kdrt", title: "Kekerasan dalam Rumah Tangga (KDRT)", specialties: ["Psychiatry", "Emergency Medicine", "Forensic Medicine"],
     keywords: ["kdrt", "kekerasan rumah tangga", "abuse", "domestic violence", "visum"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Kekerasan fisik/psikis/ekonomi/sexual dalam rumah tangga — skrining rutin, dokumentasi luka, keselamatan korban adalah prioritas."],
+      overview: ["Kekerasan fisik/psikis/ekonomi/sexual dalam rumah tangga - skrining rutin, dokumentasi luka, keselamatan korban adalah prioritas."],
       diagnosticCriteria: ["Skrining (HITS/WAST) positif; pola cedera khas (multiple healing stages, sentral, menjelaskan tidak sesuai luka); keterlambatan mencari pertolongan."],
       differentials: ["Kecelakaan", "Self-harm", "Luka akibat pekerjaan"],
       classification: ["Fisik, psikis, seksual, ekonomi; tingkat risiko (lethal risk assessment: ancaman senjata, strangulasi, kehamilan, eskalasi)."],

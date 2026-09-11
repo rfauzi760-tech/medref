@@ -45,7 +45,7 @@ export default async function ProcedurePage({ params }: { params: Promise<{ slug
 
   return (
     <div>
-      <BackLink href="/indications" label="All procedures" />
+      <BackLink href="/indications" label="Semua prosedur" />
       <div className="mb-6">
         <h1 className="display-type text-3xl font-light tracking-tight sm:text-4xl">{p.title}</h1>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">{p.definition}</p>
@@ -55,7 +55,7 @@ export default async function ProcedurePage({ params }: { params: Promise<{ slug
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Block title="Indications" items={p.indications} />
+        <Block title="Indikasi" items={p.indications} />
         <Block title="Absolute contraindications" items={p.absoluteContraindications} tone="danger" />
         <Block title="Relative contraindications" items={p.relativeContraindications} tone="warning" />
         <Block title="Precautions" items={p.precautions} tone="warning" />

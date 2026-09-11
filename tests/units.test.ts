@@ -7,8 +7,8 @@ describe("rounding and formatting", () => {
     expect(round(2.5, 0)).toBe(3);
   });
   it("formats with a dash for non-finite", () => {
-    expect(fmt(NaN)).toBe("—");
-    expect(fmt(Infinity)).toBe("—");
+    expect(fmt(NaN)).toBe("-");
+    expect(fmt(Infinity)).toBe("-");
   });
   it("clamps into range", () => {
     expect(clamp(5, 0, 10)).toBe(5);

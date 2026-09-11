@@ -41,7 +41,7 @@ export const modules: NavModule[] = [
   {
     slug: "scores",
     name: "Skrining & Skor",
-    description: "Skor klinis, aturan dan kriteria diagnosis yang tervalidasi — semuanya menghitung secara otomatis.",
+    description: "Skor klinis, aturan, dan kriteria diagnosis yang tervalidasi. Semua alat menghitung secara otomatis.",
     href: "/scores",
     icon: ListChecks,
     count: SCORES.length,
@@ -59,7 +59,7 @@ export const modules: NavModule[] = [
   {
     slug: "indications",
     name: "Indikasi & Kontraindikasi",
-    description: "Referensi prosedur terstruktur — indikasi, kontraindikasi, dan tindakan pencegahan.",
+    description: "Referensi prosedur terstruktur: indikasi, kontraindikasi, dan tindakan pencegahan.",
     href: "/indications",
     icon: ClipboardList,
     count: procedureEntries.length,
@@ -95,7 +95,7 @@ export const modules: NavModule[] = [
   {
     slug: "anthropometry",
     name: "Antropometri Anak",
-    description: "Standar pertumbuhan WHO — z-score, persentil, dan grafik pertumbuhan.",
+    description: "Standar pertumbuhan WHO: z-score, persentil, dan grafik pertumbuhan.",
     href: "/anthropometry",
     icon: Weight,
     count: 0,
@@ -113,7 +113,7 @@ export const modules: NavModule[] = [
   {
     slug: "immunization",
     name: "Imunisasi",
-    description: "Jadwal imunisasi Indonesia — telah, jatuh tempo, akan datang, tertunda.",
+    description: "Jadwal imunisasi Indonesia: telah, jatuh tempo, akan datang, dan tertunda.",
     href: "/immunization",
     icon: Syringe,
     count: 0,
@@ -166,5 +166,4 @@ export const modules: NavModule[] = [
   },
 ];
 
-export const appName = "MedRef";
-export const appTagline = "Pendukung keputusan klinis, gratis untuk semua";
+export const appName = "RFSmed";

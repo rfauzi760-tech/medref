@@ -1,13 +1,13 @@
 import type { ScoreTool } from "@/lib/types";
 
-/** Skor tambahan — bagian H: neurologi (ICHD-3, status epileptikus), psikiatri
+/** Skor tambahan - bagian H: neurologi (ICHD-3, status epileptikus), psikiatri
  *  (DSM-5), skrining perkembangan anak (KPSP, M-CHAT-R, Denver II), urologi
  *  (AUR, OAB, IIEF-5, kolik renal, AKI postrenal, klasifikasi ISK) dan forensik. */
 
 export const EXTRA_SCORES_H: ScoreTool[] = [
   {
     id: "migrain-ichd3", slug: "migrain-ichd3", title: "Kriteria Migrain ICHD-3 (Tanpa Aura)", abbreviation: "ICHD-3", type: "score", category: "criteria",
-    description: "Kriteria diagnostik migrain tanpa aura (ICHD-3) — ≥ 5 episode memenuhi pola khas.",
+    description: "Kriteria diagnostik migrain tanpa aura (ICHD-3) - ≥ 5 episode memenuhi pola khas.",
     specialties: ["Neurology", "Emergency Medicine"], keywords: ["migrain", "nyeri kepala", "ichd", "sakit kepala"],
     indication: "Pasien nyeri kepala berulang untuk klasifikasi migrain.", limitations: "Singkirkan nyeri kepala sekunder (red flags) sebelum diagnosis primer.",
     lastReviewed: "2025-06-01", source: { org: "IHS", title: "Headache Classification Committee: The International Classification of Headache Disorders, 3rd edition", year: 2018, url: "https://doi.org/10.1177/0333102417738202" },
@@ -22,7 +22,7 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "photo", label: "Fotofobia dan fonofobia", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 4, category: "Tidak memenuhi", label: "Kriteria belum lengkap — pertimbangkan diagnosis lain / red flags", tone: "info" },
+      { min: 0, max: 4, category: "Tidak memenuhi", label: "Kriteria belum lengkap - pertimbangkan diagnosis lain / red flags", tone: "info" },
       { min: 5, max: 8, category: "Migrain (tanpa aura)", label: "≥ 5 episode + durasi + ≥ 2 dari 4 karakteristik + ≥ 1 dari 2 gejala penyerta → migrain tanpa aura; tatalaksana abortif & profilaksis", tone: "success" },
     ],
   },
@@ -43,13 +43,13 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "photo_phono", label: "Tidak ada / maksimal salah satu: fotofobia atau fonofobia", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 5, category: "Tidak memenuhi", label: "Kriteria belum lengkap — pertimbangkan diagnosis lain", tone: "info" },
-      { min: 6, max: 8, category: "Tension-type headache", label: "Kriteria terpenuhi — analgesik sederhana, manajemen stres, hindari overuse analgesik", tone: "success" },
+      { min: 0, max: 5, category: "Tidak memenuhi", label: "Kriteria belum lengkap - pertimbangkan diagnosis lain", tone: "info" },
+      { min: 6, max: 8, category: "Tension-type headache", label: "Kriteria terpenuhi - analgesik sederhana, manajemen stres, hindari overuse analgesik", tone: "success" },
     ],
   },
   {
     id: "cluster-headache", slug: "cluster-headache", title: "Kriteria Cluster Headache (ICHD-3)", abbreviation: "Cluster", type: "score", category: "criteria",
-    description: "Kriteria diagnostik nyeri kepala klaster — nyeri unilateral orbita hebat dengan tanda otonom.",
+    description: "Kriteria diagnostik nyeri kepala klaster - nyeri unilateral orbita hebat dengan tanda otonom.",
     specialties: ["Neurology", "Emergency Medicine"], keywords: ["cluster headache", "nyeri kepala", "klaster", "ichd"],
     indication: "Nyeri kepala unilateral hebat berulang.", limitations: "Cluster headache adalah trigeminal autonomic cephalalgia; rujuk neurologi.",
     lastReviewed: "2025-06-01", source: { org: "IHS", title: "ICHD-3: Cluster headache", year: 2018 },
@@ -61,8 +61,8 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "freq", label: "Frekuensi 1 per 2 hari sampai 8 per hari", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 3, category: "Tidak memenuhi", label: "Kriteria belum lengkap — pertimbangkan diagnosis lain", tone: "info" },
-      { min: 4, max: 5, category: "Cluster headache", label: "Kriteria terpenuhi — terapi abortif (oksigen 100% 12–15 L/menit 15 menit, sumatriptan) + profilaksis (verapamil); rujuk neurologi", tone: "danger" },
+      { min: 0, max: 3, category: "Tidak memenuhi", label: "Kriteria belum lengkap - pertimbangkan diagnosis lain", tone: "info" },
+      { min: 4, max: 5, category: "Cluster headache", label: "Kriteria terpenuhi - terapi abortif (oksigen 100% 12–15 L/menit 15 menit, sumatriptan) + profilaksis (verapamil); rujuk neurologi", tone: "danger" },
     ],
   },
   {
@@ -78,31 +78,31 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "refractory", label: "Refrakter (tetap kejang meski 2 antikonvulsan lini kedua)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Bukan status epileptikus", label: "Belum memenuhi kriteria — amankan jalan napas, cek glukosa, observasi", tone: "info" },
+      { min: 0, max: 0, category: "Bukan status epileptikus", label: "Belum memenuhi kriteria - amankan jalan napas, cek glukosa, observasi", tone: "info" },
       { min: 1, max: 2, category: "Status epileptikus konvulsif", label: "SE: ABC + diazepam IV 0,15–0,2 mg/kg (maks 10 mg) atau lorazepam 0,1 mg/kg; lanjut fenitoin 20 mg/kg IV", tone: "danger" },
       { min: 3, max: 4, category: "Refrakter / super-refrakter", label: "SE refrakter: konsul intensivis/neurologi, propofol/midazolam infus, EEG kontinu, koreksi penyebab", tone: "danger" },
     ],
   },
   {
     id: "cam-icu", slug: "cam-icu", title: "CAM-ICU (Delirium di ICU)", abbreviation: "CAM-ICU", type: "score", category: "criteria",
-    description: "Confusion Assessment Method for the ICU — deteksi delirium pada pasien kritis yang tidak dapat berkomunikasi verbal.",
+    description: "Confusion Assessment Method for the ICU - deteksi delirium pada pasien kritis yang tidak dapat berkomunikasi verbal.",
     specialties: ["Intensive Care", "Psychiatry", "Nursing"], keywords: ["cam-icu", "delirium", "icu", "confusion", "skrining"],
     indication: "Skrining delirium harian pada pasien ICU (dengan RASS).", limitations: "Hanya valid bila RASS −3 sampai +4; butuh penilaian terlatih.",
     lastReviewed: "2025-06-01", source: { org: "Ely EW et al.", title: "Delirium in mechanically ventilated patients: validity and reliability of the confusion assessment method for the intensive care unit (CAM-ICU)", year: 2001, url: "https://doi.org/10.1001/jama.286.21.2703" },
     variables: [
       { id: "f1", label: "1. Onset akut / perubahan status mental fluktuatif", type: "bool" },
-      { id: "f2", label: "2. Inatensi (kesulitan memusatkan perhatian — tes huruf/gambar)", type: "bool" },
+      { id: "f2", label: "2. Inatensi (kesulitan memusatkan perhatian - tes huruf/gambar)", type: "bool" },
       { id: "f3", label: "3. Tingkat kesadaran berubah (RASS ≠ 0)", type: "bool" },
       { id: "f4", label: "4. Pikiran tidak terorganisasi (pertanyaan ya/tidak, perintah)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 3, category: "Tidak delirium", label: "CAM-ICU negatif — ulangi skrining tiap shift", tone: "success" },
-      { min: 4, max: 4, category: "Delirium", label: "CAM-ICU positif (fitur 1 + 2 + [3 atau 4]) — cari penyebab (infeksi, obat, metabolik), non-farmakologis dulu, hindari benzodiazepin kecuali alkohol/kejang", tone: "danger" },
+      { min: 0, max: 3, category: "Tidak delirium", label: "CAM-ICU negatif - ulangi skrining tiap shift", tone: "success" },
+      { min: 4, max: 4, category: "Delirium", label: "CAM-ICU positif (fitur 1 + 2 + [3 atau 4]) - cari penyebab (infeksi, obat, metabolik), non-farmakologis dulu, hindari benzodiazepin kecuali alkohol/kejang", tone: "danger" },
     ],
   },
   {
     id: "depresi-mayor", slug: "depresi-mayor", title: "Kriteria Depresi Mayor (DSM-5)", abbreviation: "MDD", type: "score", category: "criteria",
-    description: "Kriteria DSM-5 gangguan depresi mayor — ≥ 5 gejala (termasuk ≥ 1 gejala inti) selama ≥ 2 minggu.",
+    description: "Kriteria DSM-5 gangguan depresi mayor - ≥ 5 gejala (termasuk ≥ 1 gejala inti) selama ≥ 2 minggu.",
     specialties: ["Psychiatry", "Internal Medicine"], keywords: ["depresi", "dsm-5", "mayor", "mood", "mdd"],
     indication: "Skrining/klasifikasi episode depresi.", limitations: "Singkirkan penyebab organik/obat dan episode bipolar/psikotik.",
     lastReviewed: "2025-06-01", source: { org: "APA", title: "Diagnostic and Statistical Manual of Mental Disorders, 5th edition (DSM-5)", year: 2013 },
@@ -118,7 +118,7 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "death", label: "Pikiran kematian / bunuh diri", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 4, category: "Tidak memenuhi", label: "Gejala < 5 atau tanpa gejala inti — pertimbangkan distimia/skrining ulang", tone: "info" },
+      { min: 0, max: 4, category: "Tidak memenuhi", label: "Gejala < 5 atau tanpa gejala inti - pertimbangkan distimia/skrining ulang", tone: "info" },
       { min: 5, max: 9, category: "Depresi mayor", label: "≥ 5 gejala (≥ 1 inti) ≥ 2 minggu + gangguan fungsi → depresi mayor; nilai risiko bunuh diri, mulai SSRI + psikoedukasi", tone: "warning" },
     ],
   },
@@ -139,12 +139,12 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
     ],
     ranges: [
       { min: 0, max: 2, category: "Tidak memenuhi", label: "Kriteria belum lengkap (butuh inti + ≥ 3 gejala ≥ 6 bulan)", tone: "info" },
-      { min: 3, max: 7, category: "GAD", label: "GAD: cemas berlebih ≥ 6 bulan + ≥ 3 gejala — SSRI/SNRI, terapi kognitif-perilaku", tone: "warning" },
+      { min: 3, max: 7, category: "GAD", label: "GAD: cemas berlebih ≥ 6 bulan + ≥ 3 gejala - SSRI/SNRI, terapi kognitif-perilaku", tone: "warning" },
     ],
   },
   {
     id: "panic-dsm5", slug: "panic-dsm5", title: "Kriteria Gangguan Panik (DSM-5)", abbreviation: "Panic", type: "score", category: "criteria",
-    description: "Kriteria DSM-5 gangguan panik — serangan panik berulang tak terduga dengan kekhawatiran berkelanjutan.",
+    description: "Kriteria DSM-5 gangguan panik - serangan panik berulang tak terduga dengan kekhawatiran berkelanjutan.",
     specialties: ["Psychiatry", "Emergency Medicine"], keywords: ["panic", "panik", "serangan panik", "dsm-5"],
     indication: "Pasien dengan episode palpitasi/cemas hebat berulang.", limitations: "Singkirkan penyebab organik (hipertiroid, aritmia, hipoglikemia).",
     lastReviewed: "2025-06-01", source: { org: "APA", title: "DSM-5: Panic Disorder", year: 2013 },
@@ -153,13 +153,13 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "worry", label: "≥ 1 bulan khawatir serangan berikut / perubahan perilaku maladaptif", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Tidak memenuhi", label: "Kriteria belum lengkap — evaluasi penyebab organik", tone: "info" },
-      { min: 2, max: 2, category: "Gangguan panik", label: "Gangguan panik — SSRI + psikoedukasi; hindari benzodiazepin rutin", tone: "warning" },
+      { min: 0, max: 1, category: "Tidak memenuhi", label: "Kriteria belum lengkap - evaluasi penyebab organik", tone: "info" },
+      { min: 2, max: 2, category: "Gangguan panik", label: "Gangguan panik - SSRI + psikoedukasi; hindari benzodiazepin rutin", tone: "warning" },
     ],
   },
   {
     id: "kpsp", slug: "kpsp", title: "KPSP (Kuesioner Pra Skrining Perkembangan)", abbreviation: "KPSP", type: "score", category: "score",
-    description: "Kuesioner Pra Skrining Perkembangan Kemenkes RI — 9–10 pertanyaan sesuai usia untuk deteksi dini keterlambatan perkembangan.",
+    description: "Kuesioner Pra Skrining Perkembangan Kemenkes RI - 9–10 pertanyaan sesuai usia untuk deteksi dini keterlambatan perkembangan.",
     specialties: ["Pediatrics"], keywords: ["kpsp", "skrining", "perkembangan", "kemenkes", "deteksi dini"],
     indication: "Skrining perkembangan rutin anak 0–72 bulan (usia 3, 6, 9, 12, 15, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72 bulan).", limitations: "Hasil 'meragukan' → ulangi 2 minggu; 'penyimpangan' → rujuk.",
     lastReviewed: "2025-06-01", source: { org: "Kemenkes RI", title: "Buku KIA & Pedoman Pelaksanaan Stimulasi, Deteksi dan Intervensi Dini Tumbuh Kembang Anak (SDIDTK)", year: 2022 },
@@ -178,12 +178,12 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
   },
   {
     id: "mchat-r", slug: "mchat-r", title: "M-CHAT-R (Skrining Autisme)", abbreviation: "M-CHAT-R", type: "score", category: "score",
-    description: "Modified Checklist for Autism in Toddlers, Revised — skrining risiko autisme anak usia 16–30 bulan (20 pertanyaan).",
+    description: "Modified Checklist for Autism in Toddlers, Revised - skrining risiko autisme anak usia 16–30 bulan (20 pertanyaan).",
     specialties: ["Pediatrics", "Psychiatry"], keywords: ["mchat", "autisme", "skrining", "asd", "toddler"],
     indication: "Skrining rutin autisme pada kunjungan anak usia 16–30 bulan.", limitations: "Bukan diagnosis; positif → lanjut M-CHAT-R/F follow-up interview.",
     lastReviewed: "2025-06-01", source: { org: "Robins DL et al.", title: "The Modified Checklist for Autism in Toddlers, Revised (M-CHAT-R)", year: 2014, url: "https://doi.org/10.1542/peds.2013-2364" },
     variables: [
-      { id: "q1", label: "1. Menunjuk sesuatu di seberang ruangan — anak melihat ke arahnya?", type: "bool" },
+      { id: "q1", label: "1. Menunjuk sesuatu di seberang ruangan - anak melihat ke arahnya?", type: "bool" },
       { id: "q2", label: "2. Pernah menduga anak tuli?", type: "bool" },
       { id: "q3", label: "3. Bermain pura-pura/berkhayal?", type: "bool" },
       { id: "q4", label: "4. Suka memanjat sesuatu?", type: "bool" },
@@ -212,12 +212,12 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
   },
   {
     id: "denver2", slug: "denver2", title: "Denver II (Skrining Perkembangan)", abbreviation: "Denver II", type: "score", category: "score",
-    description: "Denver Developmental Screening Test II — menilai perkembangan 4 sektor (personal-sosial, motorik halus, bahasa, motorik kasar) pada anak 0–6 tahun.",
+    description: "Denver Developmental Screening Test II - menilai perkembangan 4 sektor (personal-sosial, motorik halus, bahasa, motorik kasar) pada anak 0–6 tahun.",
     specialties: ["Pediatrics"], keywords: ["denver", "denver ii", "perkembangan", "skrining", "ddst"],
     indication: "Skrining perkembangan anak 0–6 tahun.", limitations: "Butuh formulir Denver II resmi dengan garis usia; hasil 'caution'/'delay' perlu interpretasi terlatih.",
     lastReviewed: "2025-06-01", source: { org: "Frankenburg WK et al.", title: "The Denver II: a major revision and restandardization of the Denver Developmental Screening Test", year: 1992, url: "https://doi.org/10.1542/peds.89.1.91" },
     variables: [
-      { id: "delayed", label: "Jumlah item 'Delay' (gagal pada item yang dilewati 75–90% anak seusianya — di kiri garis usia)", shortLabel: "Delay", type: "number", min: 0, max: 20 },
+      { id: "delayed", label: "Jumlah item 'Delay' (gagal pada item yang dilewati 75–90% anak seusianya - di kiri garis usia)", shortLabel: "Delay", type: "number", min: 0, max: 20 },
       { id: "caution", label: "Jumlah item 'Caution' (gagal pada item yang dilewati 75–90% anak seusianya)", shortLabel: "Caution", type: "number", min: 0, max: 20 },
       { id: "untestable", label: "Untestable (banyak penolakan item di kiri garis usia)", shortLabel: "Untestable", type: "bool" },
     ],
@@ -228,7 +228,7 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
   },
   {
     id: "aur-retensi-urin", slug: "aur-retensi-urin", title: "Retensi Urin Akut (Kriteria)", abbreviation: "AUR", type: "score", category: "criteria",
-    description: "Ceklis untuk mengenali retensi urin akut — ketidakmampuan miksi dengan distensi vesika.",
+    description: "Ceklis untuk mengenali retensi urin akut - ketidakmampuan miksi dengan distensi vesika.",
     specialties: ["Urology", "Emergency Medicine"], keywords: ["retensi urin", "aur", "buli", "miksi", "distensi"],
     indication: "Pasien datang dengan keluhan tidak bisa kencing.", limitations: "Periksa USG/bladder scan untuk volume residu bila tersedia.",
     lastReviewed: "2025-06-01", source: { org: "EAU", title: "EAU Guidelines on Non-neurogenic Male Lower Urinary Tract Symptoms", year: 2023 },
@@ -244,7 +244,7 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
   },
   {
     id: "oab", slug: "oab", title: "Overactive Bladder (Skrining)", abbreviation: "OAB", type: "score", category: "criteria",
-    description: "Kriteria sindrom kandung kemih overaktif — urgensi dengan/tanpa inkontinensia urgensi.",
+    description: "Kriteria sindrom kandung kemih overaktif - urgensi dengan/tanpa inkontinensia urgensi.",
     specialties: ["Urology"], keywords: ["oab", "overactive bladder", "urgensi", "beser", "inkontinensia"],
     indication: "Pasien dengan keluhan berkemih sering/urgensi.", limitations: "Singkirkan ISK, obstruksi, dan polidipsia sebelum diagnosis.",
     lastReviewed: "2025-06-01", source: { org: "ICS", title: "The standardisation of terminology of lower urinary tract function", year: 2002 },
@@ -255,13 +255,13 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "incont", label: "Urge incontinence (bocor saat urgensi)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Belum memenuhi", label: "Butuh urgensi sebagai gejala inti — singkirkan ISK/obstruksi", tone: "info" },
-      { min: 2, max: 4, category: "OAB", label: "OAB (urgensi ± frekuensi/nokturia/inkontinensia urgensi) — latihan kandung kemih, batasi kafein, antimuskarinik/mirabegron bila perlu", tone: "warning" },
+      { min: 0, max: 1, category: "Belum memenuhi", label: "Butuh urgensi sebagai gejala inti - singkirkan ISK/obstruksi", tone: "info" },
+      { min: 2, max: 4, category: "OAB", label: "OAB (urgensi ± frekuensi/nokturia/inkontinensia urgensi) - latihan kandung kemih, batasi kafein, antimuskarinik/mirabegron bila perlu", tone: "warning" },
     ],
   },
   {
     id: "iief5", slug: "iief5", title: "IIEF-5 (Disfungsi Ereksi)", abbreviation: "IIEF-5", type: "score", category: "score",
-    description: "International Index of Erectile Function-5 — skrining dan klasifikasi beratnya disfungsi ereksi (skor 5–25).",
+    description: "International Index of Erectile Function-5 - skrining dan klasifikasi beratnya disfungsi ereksi (skor 5–25).",
     specialties: ["Urology", "Endocrinology"], keywords: ["iief", "disfungsi ereksi", "ereksi", "impotensi"],
     indication: "Skrining disfungsi ereksi dan respons terapi.", limitations: "Interpretasi memerlukan konteks klinis (vaskular, neurogenik, psikogenik, obat).",
     lastReviewed: "2025-06-01", source: { org: "Rosen RC et al.", title: "Development and evaluation of an abridged, 5-item version of the International Index of Erectile Function (IIEF-5)", year: 1999, url: "https://doi.org/10.1038/sj.ijir.3900472" },
@@ -273,10 +273,10 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "q5", label: "Kepuasan saat berhubungan", shortLabel: "Q5", type: "select", required: true, options: [{ label: "Sangat rendah (1)", value: 1 }, { label: "Rendah (2)", value: 2 }, { label: "Sedang (3)", value: 3 }, { label: "Tinggi (4)", value: 4 }, { label: "Sangat tinggi (5)", value: 5 }] },
     ],
     ranges: [
-      { min: 22, max: 25, category: "Tidak ada disfungsi ereksi", label: "Skor 22–25 — tidak ada disfungsi ereksi", tone: "success" },
-      { min: 17, max: 21, category: "Ringan", label: "Skor 17–21 — disfungsi ereksi ringan", tone: "info" },
-      { min: 12, max: 16, category: "Sedang", label: "Skor 12–16 — disfungsi ereksi sedang", tone: "warning" },
-      { min: 5, max: 11, category: "Berat", label: "Skor 5–11 — disfungsi ereksi berat; evaluasi vaskular/hormonal", tone: "danger" },
+      { min: 22, max: 25, category: "Tidak ada disfungsi ereksi", label: "Skor 22–25 - tidak ada disfungsi ereksi", tone: "success" },
+      { min: 17, max: 21, category: "Ringan", label: "Skor 17–21 - disfungsi ereksi ringan", tone: "info" },
+      { min: 12, max: 16, category: "Sedang", label: "Skor 12–16 - disfungsi ereksi sedang", tone: "warning" },
+      { min: 5, max: 11, category: "Berat", label: "Skor 5–11 - disfungsi ereksi berat; evaluasi vaskular/hormonal", tone: "danger" },
     ],
   },
   {
@@ -292,8 +292,8 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "fever", label: "Demam (waspada batu infeksi/urosepsis)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Belum pasti", label: "Gambaran tidak khas — pertimbangkan diagnosis lain (diseksi aorta, PID, apendisitis)", tone: "info" },
-      { min: 2, max: 4, category: "Kolik renal", label: "Kolik renal mungkin — analgesik (NSAID/parasetamol), hidrasi, CT non-kontras/USG; demam + obstruksi → dekompresi (stent/PCN) dan antibiotik", tone: "warning" },
+      { min: 0, max: 1, category: "Belum pasti", label: "Gambaran tidak khas - pertimbangkan diagnosis lain (diseksi aorta, PID, apendisitis)", tone: "info" },
+      { min: 2, max: 4, category: "Kolik renal", label: "Kolik renal mungkin - analgesik (NSAID/parasetamol), hidrasi, CT non-kontras/USG; demam + obstruksi → dekompresi (stent/PCN) dan antibiotik", tone: "warning" },
     ],
   },
   {
@@ -314,7 +314,7 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
   },
   {
     id: "klasifikasi-isk", slug: "klasifikasi-isk", title: "Klasifikasi Infeksi Saluran Kemih", abbreviation: "ISK", type: "score", category: "criteria",
-    description: "Klasifikasi ISK berdasarkan lokasi dan kompleksitas — membantu memilih terapi dan tingkat rawat.",
+    description: "Klasifikasi ISK berdasarkan lokasi dan kompleksitas - membantu memilih terapi dan tingkat rawat.",
     specialties: ["Urology", "Internal Medicine", "Pediatrics"], keywords: ["isk", "infeksi saluran kemih", "sistitis", "pielonefritis", "klasifikasi"],
     indication: "Pasien dengan keluhan saluran kemih untuk klasifikasi ISK.", limitations: "Kultur urin bila berulang/kompleks; rawat bila sepsis/obstruksi.",
     lastReviewed: "2025-06-01", source: { org: "IDSA/ESCMID", title: "International clinical practice guidelines for the treatment of acute uncomplicated cystitis and pyelonephritis in women", year: 2011 },
@@ -330,7 +330,7 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
   },
   {
     id: "derajat-luka", slug: "derajat-luka", title: "Kualifikasi Derajat Luka (Medikolegal)", abbreviation: "KUHP", type: "score", category: "criteria",
-    description: "Kualifikasi derajat luka menurut Pasal 90 KUHP — dasar pembuatan visum et repertum.",
+    description: "Kualifikasi derajat luka menurut Pasal 90 KUHP - dasar pembuatan visum et repertum.",
     specialties: ["Forensic Medicine"], keywords: ["derajat luka", "medikolegal", "kuhp", "visum", "forensik"],
     indication: "Penilaian derajat luka untuk kepentingan hukum.", limitations: "Penilaian oleh dokter terlatih medikolegal; dokumentasi foto dan anamnesis kejadian.",
     lastReviewed: "2025-06-01", source: { org: "KITLV / KUHP", title: "Pasal 90 Kitab Undang-Undang Hukum Pidana (Kualifikasi Luka)", year: 1999 },
@@ -345,7 +345,7 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "sementara", label: "Menimbulkan penyakit atau halangan menjalankan pekerjaan untuk SEMENTARA waktu", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Luka ringan", label: "Tidak memenuhi unsur derajat luka berat — luka ringan", tone: "info" },
+      { min: 0, max: 0, category: "Luka ringan", label: "Tidak memenuhi unsur derajat luka berat - luka ringan", tone: "info" },
       { min: 1, max: 99, category: "Derajat luka berat", label: "Luka berat (Pasal 90) bila salah satu butir tercentang; luka yang menyebabkan sakit/halangan sementara → derajat luka sedang/ringan sesuai telaah", tone: "danger" },
     ],
   },
@@ -361,10 +361,10 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "busuk", label: "Tanda pembusukan (hijau abdomen, gas, maserasi)", shortLabel: "Pembusukan", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 2, category: "PMI sangat dini", label: "Estimasi < 2 jam — suhu tubuh & livor awal", tone: "info" },
+      { min: 0, max: 2, category: "PMI sangat dini", label: "Estimasi < 2 jam - suhu tubuh & livor awal", tone: "info" },
       { min: 3, max: 6, category: "PMI dini", label: "Estimasi 2–6 jam", tone: "warning" },
       { min: 7, max: 12, category: "PMI menengah", label: "Estimasi 6–24 jam", tone: "warning" },
-      { min: 13, max: 99, category: "PMI lanjut", label: "Estimasi > 24 jam — pembusukan mulai; perkirakan dengan faktor lingkungan", tone: "danger" },
+      { min: 13, max: 99, category: "PMI lanjut", label: "Estimasi > 24 jam - pembusukan mulai; perkirakan dengan faktor lingkungan", tone: "danger" },
     ],
   },
   {
@@ -379,24 +379,24 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
       { id: "resus", label: "Ada riwayat resusitasi/ventilasi (bias positif palsu)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 99, category: "Interpretasi manual", label: "Paru mengapung tanpa gas pembusukan/resusitasi → sugestif lahir hidup (paru berisi udara); tidak mengapung → sugestif lahir mati; waspadai positif palsu (resusitasi, pembusukan) — interpretasi menyeluruh dengan pemeriksaan lain", tone: "warning" },
+      { min: 0, max: 99, category: "Interpretasi manual", label: "Paru mengapung tanpa gas pembusukan/resusitasi → sugestif lahir hidup (paru berisi udara); tidak mengapung → sugestif lahir mati; waspadai positif palsu (resusitasi, pembusukan) - interpretasi menyeluruh dengan pemeriksaan lain", tone: "warning" },
     ],
   },
   {
-    id: "wifi-svs", slug: "wifi-svs", title: "Klasifikasi WIfI (SVS — Iskemia Kritis Tungkai)", abbreviation: "WIfI", type: "score", category: "score",
-    description: "Society for Vascular Surgery threatened limb classification — menilai luka (Wound), iskemia (Ischemia), dan infeksi kaki (foot Infection) pada iskemia tungkai kritis.",
+    id: "wifi-svs", slug: "wifi-svs", title: "Klasifikasi WIfI (SVS - Iskemia Kritis Tungkai)", abbreviation: "WIfI", type: "score", category: "score",
+    description: "Society for Vascular Surgery threatened limb classification - menilai luka (Wound), iskemia (Ischemia), dan infeksi kaki (foot Infection) pada iskemia tungkai kritis.",
     specialties: ["Vascular Surgery", "Endocrinology", "Surgery"], keywords: ["wifi", "svs", "iskemia kritis", "ulkus diabetik", "clti", "tungkai"],
     indication: "Pasien dengan luka tungkai/ulkus diabetik untuk prediksi amputasi & kebutuhan revaskularisasi.", limitations: "Butuh ABI/TP/TcPO2 dan penilaian luka terlatih.",
     lastReviewed: "2025-06-01", source: { org: "SVS", title: "The Society for Vascular Surgery lower extremity threatened limb classification system: risk stratification based on wound, ischemia, and foot infection (WIfI)", year: 2014, url: "https://doi.org/10.1016/j.jvs.2013.08.003" },
     variables: [
-      { id: "w", label: "Luka (Wound)", shortLabel: "W", type: "select", required: true, options: [{ label: "W0 — tanpa ulkus", value: 0 }, { label: "W1 — ulkus dangkal, tanpa gangren", value: 1 }, { label: "W2 — ulkus dalam, tanpa keterlibatan tulang (kecuali jari)", value: 2 }, { label: "W3 — ulkus dalam + tulang/gangren luas", value: 3 }] },
-      { id: "i", label: "Iskemia (Ischemia)", shortLabel: "I", type: "select", required: true, options: [{ label: "I0 — ABI ≥ 0,80", value: 0 }, { label: "I1 — ABI 0,60–0,79", value: 1 }, { label: "I2 — ABI 0,40–0,59", value: 2 }, { label: "I3 — ABI < 0,40 / TP < 30 mmHg", value: 3 }] },
-      { id: "f", label: "Infeksi kaki (Foot Infection)", shortLabel: "fI", type: "select", required: true, options: [{ label: "fI0 — tanpa infeksi", value: 0 }, { label: "fI1 — infeksi ringan (selulitis lokal)", value: 1 }, { label: "fI2 — infeksi sedang (selulitis luas, abses)", value: 2 }, { label: "fI3 — infeksi berat (sindrom kompartemen, sepsis)", value: 3 }] },
+      { id: "w", label: "Luka (Wound)", shortLabel: "W", type: "select", required: true, options: [{ label: "W0 - tanpa ulkus", value: 0 }, { label: "W1 - ulkus dangkal, tanpa gangren", value: 1 }, { label: "W2 - ulkus dalam, tanpa keterlibatan tulang (kecuali jari)", value: 2 }, { label: "W3 - ulkus dalam + tulang/gangren luas", value: 3 }] },
+      { id: "i", label: "Iskemia (Ischemia)", shortLabel: "I", type: "select", required: true, options: [{ label: "I0 - ABI ≥ 0,80", value: 0 }, { label: "I1 - ABI 0,60–0,79", value: 1 }, { label: "I2 - ABI 0,40–0,59", value: 2 }, { label: "I3 - ABI < 0,40 / TP < 30 mmHg", value: 3 }] },
+      { id: "f", label: "Infeksi kaki (Foot Infection)", shortLabel: "fI", type: "select", required: true, options: [{ label: "fI0 - tanpa infeksi", value: 0 }, { label: "fI1 - infeksi ringan (selulitis lokal)", value: 1 }, { label: "fI2 - infeksi sedang (selulitis luas, abses)", value: 2 }, { label: "fI3 - infeksi berat (sindrom kompartemen, sepsis)", value: 3 }] },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Risiko sangat rendah", label: "WIfI rendah — rawat luka + manajemen risiko vaskular", tone: "success" },
-      { min: 2, max: 3, category: "Risiko rendah-sedang", label: "WIfI sedang — evaluasi revaskularisasi bila iskemia", tone: "warning" },
-      { min: 4, max: 9, category: "Risiko tinggi amputasi", label: "WIfI tinggi — revaskularisasi dini + kontrol infeksi; risiko amputasi tinggi bila ditunda", tone: "danger" },
+      { min: 0, max: 1, category: "Risiko sangat rendah", label: "WIfI rendah - rawat luka + manajemen risiko vaskular", tone: "success" },
+      { min: 2, max: 3, category: "Risiko rendah-sedang", label: "WIfI sedang - evaluasi revaskularisasi bila iskemia", tone: "warning" },
+      { min: 4, max: 9, category: "Risiko tinggi amputasi", label: "WIfI tinggi - revaskularisasi dini + kontrol infeksi; risiko amputasi tinggi bila ditunda", tone: "danger" },
     ],
   },
 ];

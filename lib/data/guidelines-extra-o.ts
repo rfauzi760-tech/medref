@@ -1,13 +1,13 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan tambahan — bagian O: infeksi menular seksual & ginekologi. */
+/** Panduan tambahan - bagian O: infeksi menular seksual & ginekologi. */
 
 export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
   {
     id: "duh-vagina", slug: "duh-vagina", title: "Duh Tubuh Vagina (Pendekatan)", specialties: ["Obstetrics & Gynecology", "Infectious Disease"],
     keywords: ["duh vagina", "keputihan", "vaginal discharge", "fluor albus"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Keputihan abnormal — fisiologis vs patologis (BV, kandidiasis, trikomoniasis, servisitis gonore/klamidia); pH + mikroskopis membedakan."],
+      overview: ["Keputihan abnormal - fisiologis vs patologis (BV, kandidiasis, trikomoniasis, servisitis gonore/klamidia); pH + mikroskopis membedakan."],
       diagnosticCriteria: ["Anamnesis (warna, bau, gatal) + pH vagina + mikroskopis (KOH/saline) + tes amina (whiff)."],
       differentials: ["Vaginosis bakterial", "Kandidiasis vulvovaginalis", "Trikomoniasis", "Servisitis (gonore/klamidia)", "Penyakit radang panggul", "Fisiologis"],
       classification: ["Fisiologis (jernih, tanpa bau/gatal) vs infeksius (BV, KVV, trikomoniasis) vs servisitis (mukopus)."],
@@ -26,7 +26,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "bv", slug: "bv", title: "Vaginosis Bakterial (BV)", specialties: ["Obstetrics & Gynecology"],
     keywords: ["vaginosis bakterial", "bv", "keputihan bau amis", "gardnerella"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Dishiosis vagina — penggantian laktobasilus oleh bakteri anaerob; duh tipis berbau amis; asosiasi dengan komplikasi obstetri."],
+      overview: ["Dishiosis vagina - penggantian laktobasilus oleh bakteri anaerob; duh tipis berbau amis; asosiasi dengan komplikasi obstetri."],
       diagnosticCriteria: ["Amsel ≥ 3 dari 4: duh tipis homogen, pH > 4,5, whiff test positif, clue cells ≥ 20%; atau Nugent score ≥ 7."],
       differentials: ["Kandidiasis vulvovaginalis", "Trikomoniasis", "Servisitis", "Duh fisiologis"],
       classification: ["Simtomatik vs asimtomatik; pada kehamilan (skrining/tatalaksana pada risiko preterm)."],
@@ -45,12 +45,12 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "kvv", slug: "kvv", title: "Kandidiasis Vulvovaginalis (KVV)", specialties: ["Obstetrics & Gynecology"],
     keywords: ["kandidiasis vulvovaginalis", "kvv", "keputihan menggumpal", "gatal vagina", "jamur vagina"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Infeksi Candida vagina (80–90% C. albicans) — gatal hebat + duh putih menggumpal seperti susu; faktor: antibiotik, DM, imunokompromais, kehamilan."],
+      overview: ["Infeksi Candida vagina (80–90% C. albicans) - gatal hebat + duh putih menggumpal seperti susu; faktor: antibiotik, DM, imunokompromais, kehamilan."],
       diagnosticCriteria: ["Gatal + duh putih kental menggumpal + eritema vulvovaginal + KOH positif (pseudohifa) atau kultur."],
       differentials: ["BV", "Trikomoniasis", "Dermatitis kontak", "Liken sclerosus (gatal kronik)", "Herpes genital"],
       classification: ["Uncomplicated (jarang, ringan-sedang, imunokompeten, C. albicans) vs complicated (berulang ≥ 4/tahun, berat, non-albicans, DM/kehamilan/immunosupresi)."],
       initialAssessment: ["Gatal hebat, duh menggumpal, disuria/nyeri saat BAK (iritasi), riwayat antibiotik/DM/kehamilan."],
-      investigations: ["pH vagina (normal 4–4,5 — beda dari BV), KOH mikroskopis, kultur bila complicated/berulang, GDS bila berulang."],
+      investigations: ["pH vagina (normal 4–4,5 - beda dari BV), KOH mikroskopis, kultur bila complicated/berulang, GDS bila berulang."],
       initialManagement: ["Uncomplicated: flukonazol 150 mg dosis tunggal atau azol topikal (klotrimazol/mikonazol) 1–7 hari."],
       definitiveManagement: ["Complicated: flukonazol 150 mg 2 dosis (hari 1 & 3) atau 7–14 hari azol; berulang: terapi induksi lalu maintenance flukonazol mingguan 6 bulan; koreksi DM."],
       medications: ["Flukonazol 150 mg dosis tunggal", "Klotrimazol 2% krim vagina", "Mikonazol supositoria", "Asam borat 600 mg vagina (non-albicans refrakter)"],
@@ -64,7 +64,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "trikomoniasis", slug: "trikomoniasis", title: "Trikomoniasis", specialties: ["Obstetrics & Gynecology", "Infectious Disease"],
     keywords: ["trikomoniasis", "trichomonas", "keputihan berbusa", "ims"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["IMS akibat Trichomonas vaginalis — duh berbusa kuning-hijau berbau, gatal, disuria; dapat asimtomatik; komplikasi kehamilan."],
+      overview: ["IMS akibat Trichomonas vaginalis - duh berbusa kuning-hijau berbau, gatal, disuria; dapat asimtomatik; komplikasi kehamilan."],
       diagnosticCriteria: ["Mikroskopis saline (trikomonad motil) atau NAAT/PCR (lebih sensitif); pH > 4,5."],
       differentials: ["BV", "KVV", "Servisitis gonore/klamidia", "PID"],
       classification: ["Simtomatik vs asimtomatik; pada kehamilan."],
@@ -74,7 +74,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
       definitiveManagement: ["Refrakter: metronidazol 500 mg 2×/hari 7 hari; kehamilan: metronidazol (aman); follow-up bila persisten."],
       medications: ["Metronidazol 2 g dosis tunggal", "Tinidazol 2 g dosis tunggal"],
       admissionCriteria: ["Jarang"],
-      redFlags: ["Kehamilan + trikomoniasis (risiko preterm — terapi)", "Duh + nyeri panggul (PID)", "HIV + trikomoniasis (titer tinggi)"],
+      redFlags: ["Kehamilan + trikomoniasis (risiko preterm - terapi)", "Duh + nyeri panggul (PID)", "HIV + trikomoniasis (titer tinggi)"],
     },
     references: [{ org: "CDC", title: "STI Treatment Guidelines: Trichomoniasis", year: 2021 }],
     lastReviewed: "2025-06-01",
@@ -83,7 +83,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "servisitis", slug: "servisitis", title: "Servisitis (Gonore & Klamidia)", specialties: ["Obstetrics & Gynecology", "Infectious Disease"],
     keywords: ["servisitis", "gonore", "klamidia", "duh mukopus", "ims"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Inflamasi serviks — tersering Chlamydia trachomatis dan Neisseria gonorrhoeae; duh mukopus + mudah berdarah; asimtomatik sering."],
+      overview: ["Inflamasi serviks - tersering Chlamydia trachomatis dan Neisseria gonorrhoeae; duh mukopus + mudah berdarah; asimtomatik sering."],
       diagnosticCriteria: ["Duh mukopus endoservikal atau perdarahan mudah pada pengambilan swab + NAAT positif gonore/klamidia."],
       differentials: ["BV", "Trikomoniasis", "Herpes serviks (ulkus)", "PID", "Kanker serviks (perdarahan kontak)"],
       classification: ["Mukopus (mucopurulent cervicitis) vs ektropion fisiologis; gonore vs klamidia vs campuran."],
@@ -102,7 +102,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "gonore", slug: "gonore", title: "Gonore (GO)", specialties: ["Infectious Disease", "Obstetrics & Gynecology", "Urology"],
     keywords: ["gonore", "gonorrhea", "neisseria gonorrhoeae", "duh purulen", "ims"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["IMS Neisseria gonorrhoeae — uretritis (duh purulen, disuria), servisitis, faringitis, proktitis; komplikasi: PID, epididimitis, arthritis gonokokal, oftalmia neonatorum."],
+      overview: ["IMS Neisseria gonorrhoeae - uretritis (duh purulen, disuria), servisitis, faringitis, proktitis; komplikasi: PID, epididimitis, arthritis gonokokal, oftalmia neonatorum."],
       diagnosticCriteria: ["NAAT (urin, endoserviks, faring, rektum) positif atau kultur; gram negatif intraseluler diplokokus."],
       differentials: ["Klamidia", "Uretritis non-gonokokal (Ureaplasma, Trichomonas)", "Servisitis", "Artritis septik (reaktif)"],
       classification: ["Lokasi: uretritis, servisitis, faringitis, proktitis, diseminata (DGI); komplikasi."],
@@ -112,7 +112,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
       definitiveManagement: ["Test-of-cure bila faringitis (kultur 7–14 hari) atau kehamilan; skrining ulang 3 bulan; DGI → ceftriakson IV 1 g/hari 7 hari + konsultasi infeksi."],
       medications: ["Ceftriakson 500 mg IM dosis tunggal", "Doksisiklin 100 mg 2×/hari × 7 hari", "Ceftriakson 1 g IV/hari (DGI)"],
       admissionCriteria: ["DGI (demam, artritis, lesi kulit)", "PID berat", "Oftalmia neonatorum"],
-      redFlags: ["Artritis + lesi kulit pustular + demam (DGI)", "Nyeri skrotum hebat (epididimitis)", "Neonatus dengan mata bernanah (oftalmia gonokokal — emergensi)"],
+      redFlags: ["Artritis + lesi kulit pustular + demam (DGI)", "Nyeri skrotum hebat (epididimitis)", "Neonatus dengan mata bernanah (oftalmia gonokokal - emergensi)"],
     },
     references: [{ org: "CDC", title: "STI Treatment Guidelines: Gonococcal Infections", year: 2021 }],
     lastReviewed: "2025-06-01",
@@ -121,14 +121,14 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "klamidia", slug: "klamidia", title: "Infeksi Klamidia Genital", specialties: ["Infectious Disease", "Obstetrics & Gynecology"],
     keywords: ["klamidia", "chlamydia", "ims", "doksisiklin", "asimtomatik"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["IMS Chlamydia trachomatis — tersering di usia muda; sering asimtomatik; komplikasi: PID, infertilitas tuba, kehamilan ektopik; konjungtivitis/pneumonia neonatus."],
+      overview: ["IMS Chlamydia trachomatis - tersering di usia muda; sering asimtomatik; komplikasi: PID, infertilitas tuba, kehamilan ektopik; konjungtivitis/pneumonia neonatus."],
       diagnosticCriteria: ["NAAT positif (urin, swab endoserviks/vagina/uretral)."],
       differentials: ["Gonore", "Uretritis non-gonokokal", "Servisitis", "PID"],
       classification: ["Urogenital (uretritis, servisitis, PID), faring, rektal, okular (trachoma), neonatal (konjungtivitis, pneumonia)."],
       initialAssessment: ["Duh, disuria, perdarahan postkoital; sering asimtomatik → skrining rutin usia < 25 / risiko tinggi; skrining IMS lain."],
       investigations: ["NAAT klamidia + gonore, skrining HIV/sifilis, tes kehamilan."],
       initialManagement: ["Doksisiklin 100 mg 2×/hari 7 hari (lini pertama) atau azitromisin 1 g dosis tunggal; tatalaksana pasangan; abstinensia 7 hari."],
-      definitiveManagement: ["Test-of-cure 4 minggu bila kehamilan (NAAT dapat positif hingga 3–4 minggu — gunakan kultur); skrining ulang 3 bulan; PID → terapi PID."],
+      definitiveManagement: ["Test-of-cure 4 minggu bila kehamilan (NAAT dapat positif hingga 3–4 minggu - gunakan kultur); skrining ulang 3 bulan; PID → terapi PID."],
       medications: ["Doksisiklin 100 mg 2×/hari × 7 hari", "Azitromisin 1 g dosis tunggal", "Eritromisin (kehamilan, alternatif)"],
       admissionCriteria: ["PID", "Kehamilan + klamidia (untuk TOC)"],
       redFlags: ["Nyeri panggul + demam (PID)", "Infertilitas/kehamilan ektopik (komplikasi lama)", "Konjungtivitis neonatus"],
@@ -140,8 +140,8 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "sifilis", slug: "sifilis", title: "Sifilis", specialties: ["Infectious Disease", "Dermatology"],
     keywords: ["sifilis", "lues", "treponema pallidum", "ulkus genital", "vdrl"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["IMS Treponema pallidum — stadium primer (ulkus tidak nyeri), sekunder (rash, kondiloma lata), laten, tersier (neurologis, kardiovaskular); dapat transmisi kongenital."],
-      diagnosticCriteria: ["Serologi: nontreponemal (VDRL/RPR — skrining, titer) + treponemal (TPHA/FTA-ABS — konfirmasi); primer dapat langsung dengan darkfield/PCR ulkus."],
+      overview: ["IMS Treponema pallidum - stadium primer (ulkus tidak nyeri), sekunder (rash, kondiloma lata), laten, tersier (neurologis, kardiovaskular); dapat transmisi kongenital."],
+      diagnosticCriteria: ["Serologi: nontreponemal (VDRL/RPR - skrining, titer) + treponemal (TPHA/FTA-ABS - konfirmasi); primer dapat langsung dengan darkfield/PCR ulkus."],
       differentials: ["Ulkus genital lain (herpes, chancroid, limfogranuloma)", "Rash (psoriasis, pitiriasis rosea, erupsi obat)", "Kondiloma akuminata"],
       classification: ["Primer, sekunder, laten (dini < 1 th / lanjut), tersier; kongenital; neuro-sifilis."],
       initialAssessment: ["Ulkus genital indolen + limfadenopati (primer); rash palmoplantar, kondiloma lata, alopesia moth-eaten (sekunder); skrining IMS lain + HIV."],
@@ -150,7 +150,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
       definitiveManagement: ["Neuro-sifilis: penisilin G kristalin 18–24 juta unit IV/hari 10–14 hari; kehamilan: desensitisasi penisilin (doksisiklin kontraindikasi); follow-up titer 6 & 12 bulan (4× turun = respons); tatalaksana pasangan."],
       medications: ["Benzatin penisilin G 2,4 juta unit IM", "Doksisiklin 100 mg 2×/hari", "Penisilin G kristalin IV (neuro)"],
       admissionCriteria: ["Neuro-sifilis", "Kehamilan + sifilis (rawat untuk terapi)", "Komplikasi tersier"],
-      redFlags: ["Rash palmoplantar + ulkus (sekunder)", "Defisit neurologis (neuro-sifilis)", "Ibu hamil + serologi positif (cegah kongenital)", "Jarisch-Herxheimer (demam saat terapi — edukasi)"],
+      redFlags: ["Rash palmoplantar + ulkus (sekunder)", "Defisit neurologis (neuro-sifilis)", "Ibu hamil + serologi positif (cegah kongenital)", "Jarisch-Herxheimer (demam saat terapi - edukasi)"],
     },
     references: [{ org: "CDC", title: "STI Treatment Guidelines: Syphilis", year: 2021 }],
     lastReviewed: "2025-06-01",
@@ -159,7 +159,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "kondiloma", slug: "kondiloma", title: "Kondiloma Akuminata (Kutil Kelamin)", specialties: ["Dermatology", "Obstetrics & Gynecology", "Urology"],
     keywords: ["kondiloma", "kutil kelamin", "hpv genital", "wart genital"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Kutil genital akibat HPV (tipe 6, 11) — papul/papiloma di area genital; jinak namun menular; tatalaksana topikal/ablasi."],
+      overview: ["Kutil genital akibat HPV (tipe 6, 11) - papul/papiloma di area genital; jinak namun menular; tatalaksana topikal/ablasi."],
       diagnosticCriteria: ["Inspeksi: papiloma/papul lunak di genital, perianal, mukosa; asetat white test membantu; biopsi bila atipikal."],
       differentials: ["Kondiloma lata (sifilis sekunder)", "Papul penis (pearly penile papules)", "Moluskum", "Seborrhoeic keratosis", "Karsinoma verukosa (jarang)"],
       classification: ["Berdasarkan jumlah/luas dan lokasi (eksternal, vaginal, anal, uretral)."],
@@ -168,7 +168,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
       initialManagement: ["Topikal (pasien): podofilotoksin 0,5% 2×/hari 3 hari/minggu atau imiquimod 5% 3×/minggu; dokter: krioterapi, TCA 80–90%, elektrokauter."],
       definitiveManagement: ["Lesi besar: eksisi/kuretase; refrakter: laser; vaksin HPV (pencegahan); edukasi rekurensi (sering residif)."],
       medications: ["Podofilotoksin 0,5% larutan/gel", "Imiquimod 5% krim", "TCA 80–90% (dokter)", "Krioterapi"],
-      admissionCriteria: ["Jarang; lesi masif/obstruktif (kehamilan — risiko obstruksi jalan lahir)"],
+      admissionCriteria: ["Jarang; lesi masif/obstruktif (kehamilan - risiko obstruksi jalan lahir)"],
       redFlags: ["Lesi tumbuh cepat/perdarahan (biopsi)", "Kehamilan dengan kutil besar (persalinan)", "Imunokompromais dengan lesi luas"],
     },
     references: [{ org: "CDC", title: "STI Treatment Guidelines: Genital Warts", year: 2021 }],
@@ -178,14 +178,14 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "chancroid", slug: "chancroid", title: "Ulkus Mole (Chancroid)", specialties: ["Infectious Disease", "Dermatology"],
     keywords: ["chancroid", "ulkus mole", "haemophilus ducreyi", "ulkus genital nyeri"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["IMS Haemophilus ducreyi — ulkus genital nyeri dengan tepi ireguler + limfadenopati inguinal nyeri (bubo); endemik di beberapa wilayah."],
+      overview: ["IMS Haemophilus ducreyi - ulkus genital nyeri dengan tepi ireguler + limfadenopati inguinal nyeri (bubo); endemik di beberapa wilayah."],
       diagnosticCriteria: ["Ulkus genital nyeri + tepi ireguler + bubo nyeri + eksklusi sifilis/herpes (tes negatif) → probable; kultur/PCR konfirmasi."],
       differentials: ["Herpes genital (ulkus kecil multipel, vesikel)", "Sifilis primer (ulkus tidak nyeri)", "Limfogranuloma venereum", "Granuloma inguinale"],
       classification: ["Ulkus tunggal/multipel; dengan/tanpa bubo."],
       initialAssessment: ["Ulkus nyeri superfisial, tepi ireguler nekrotik, mudah berdarah; bubo inguinal unilateral nyeri; skrining IMS lain + HIV."],
       investigations: ["Kultur/PCR H. ducreyi bila tersedia; serologi sifilis + HSV PCR untuk eksklusi; skrining HIV."],
       initialManagement: ["Azitromisin 1 g dosis tunggal atau ceftriakson 250 mg IM dosis tunggal; tatalaksana pasangan."],
-      definitiveManagement: ["Bubo → aspirasi (bukan I&D — risiko sinus); follow-up 3–7 hari; HIV + → follow-up lebih ketat."],
+      definitiveManagement: ["Bubo → aspirasi (bukan I&D - risiko sinus); follow-up 3–7 hari; HIV + → follow-up lebih ketat."],
       medications: ["Azitromisin 1 g dosis tunggal", "Ceftriakson 250 mg IM dosis tunggal", "Siprofloksasin 500 mg 2×/hari 3 hari"],
       admissionCriteria: ["Bubo besar nyeri", "Ulkus luas + imunokompromais"],
       redFlags: ["Ulkus genital nyeri + bubo", "HIV + chancroid (penyembuhan lebih lambat)", "Ulkus tidak membaik terapi (evaluasi ulang)"],
@@ -197,7 +197,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "pid", slug: "pid", title: "Penyakit Radang Panggul (PID)", specialties: ["Obstetrics & Gynecology", "Infectious Disease"],
     keywords: ["pid", "penyakit radang panggul", "nyeri panggul", "pelvic inflammatory disease", "ims"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Infeksi asenden traktus genital atas (endometritis, salpingitis, abses tubo-ovarian) — komplikasi gonore/klamidia; infertilitas bila terlambat."],
+      overview: ["Infeksi asenden traktus genital atas (endometritis, salpingitis, abses tubo-ovarian) - komplikasi gonore/klamidia; infertilitas bila terlambat."],
       diagnosticCriteria: ["Kriteria minimum (CDC): nyeri panggul/abdomen bawah + ≥ 1 dari: nyeri serviks (motion tenderness), nyeri uterus, nyeri adneksa + eksklusi penyebab lain."],
       differentials: ["Apendisitis", "Kehamilan ektopik", "Kista ovarium/torsi", "Endometriosis", "ISK/pielonefritis", "Divertikulitis"],
       classification: ["Ringan-sedang (rawat jalan) vs berat (rawat inap: demam tinggi, abses, kehamilan, gagal rawat jalan)."],
@@ -217,13 +217,13 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "aub", slug: "aub", title: "Perdarahan Uterus Abnormal (AUB)", specialties: ["Obstetrics & Gynecology"],
     keywords: ["aub", "perdarahan uterus abnormal", "menoragia", "metroragia", "perdarahan haid banyak"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Perdarahan uterus di luar pola normal (jumlah, durasi, frekuensi) — PALM-COEIN klasifikasi (struktural vs non-struktural)."],
+      overview: ["Perdarahan uterus di luar pola normal (jumlah, durasi, frekuensi) - PALM-COEIN klasifikasi (struktural vs non-struktural)."],
       diagnosticCriteria: ["Anamnesis + eksklusi kehamilan + pemeriksaan + pencitraan; klasifikasi PALM-COEIN (Polip, Adenomiosis, Leiomioma, Malignansi, Coagulopathy, Ovulatory, Endometrial, Iatrogenic, Not classified)."],
       differentials: ["Kehamilan (abortus, ektopik, mola)", "Mioma/polip", "Adenomiosis/endometriosis", "Gangguan ovulasi (PCOS, menopause)", "Koagulopati", "Kanker endometrium/serviks", "Obat (antikoagulan, hormonal)"],
       classification: ["PALM-COEIN; akut vs kronik; berdasarkan usia (remaja: koagulopati; perimenopause: malignansi)."],
       initialAssessment: ["Kapan onset, jumlah (pembalut/jam), durasi, nyeri, riwayat koagulopati/obat; hemodinamik (perdarahan akut berat); tes kehamilan; Hb."],
       investigations: ["β-hCG, CBC, koagulasi (bila remaja/riwayat), USG transvaginal, biopsi endometrium (≥ 45 th atau faktor risiko), histeroskopi bila perlu."],
-      initialManagement: ["Akut berat: stabilisasi + terapi hormonal (COC/medroksiprogesteron) atau asam traneksamat; evakuasi bila perlu.", "Kronik: sesuai penyebab — hormonal (COC, levonorgestrel IUD), asam traneksamat, NSAID untuk dismenore."],
+      initialManagement: ["Akut berat: stabilisasi + terapi hormonal (COC/medroksiprogesteron) atau asam traneksamat; evakuasi bila perlu.", "Kronik: sesuai penyebab - hormonal (COC, levonorgestrel IUD), asam traneksamat, NSAID untuk dismenore."],
       definitiveManagement: ["Mioma/polip → bedah (miomektomi, polipektomi); adenomiosis → hormonal/IUD; malignansi → onkologi ginekologi; koagulopati → hematologi."],
       medications: ["Asam traneksamat 1 g 3×/hari saat haid", "COC (siklik/kontinu)", "Levonorgestrel IUD 52 mg", "Medroksiprogesteron asetat 10 mg 10–14 hari/siklus"],
       admissionCriteria: ["Perdarahan akut berat (Hb turun, hemodinamik tidak stabil)", "Kehamilan + perdarahan"],
@@ -236,7 +236,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "mioma", slug: "mioma", title: "Mioma Uteri (Leiomioma)", specialties: ["Obstetrics & Gynecology"],
     keywords: ["mioma", "leiomioma", "fibroid", "tumor rahim", "menoragia"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Tumor jinak otot polos uterus — sangat umum; mayoritas asimtomatik; gejala: perdarahan banyak, nyeri panggul, massa, infertilitas/komplikasi kehamilan."],
+      overview: ["Tumor jinak otot polos uterus - sangat umum; mayoritas asimtomatik; gejala: perdarahan banyak, nyeri panggul, massa, infertilitas/komplikasi kehamilan."],
       diagnosticCriteria: ["USG transvaginal/abdominal: massa miometrium hipoekoik; MRI bila perencanaan terapi kompleks."],
       differentials: ["Adenomiosis", "Polip endometrium", "Sarkoma uterus (jarang, tumbuh cepat)", "Kehamilan/mola", "Kista ovarium"],
       classification: ["Subserosa, intramural, submukosa (gejala paling banyak); FIGO 0–8; ukuran/lokasi menentukan gejala."],
@@ -255,7 +255,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "endometriosis", slug: "endometriosis", title: "Endometriosis", specialties: ["Obstetrics & Gynecology"],
     keywords: ["endometriosis", "nyeri haid berat", "dispareunia", "infertilitas", "kista coklat"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Jaringan endometrium di luar uterus — nyeri panggul siklik, dispareunia, dismenore berat, infertilitas; diagnosis pasti via laparoskopi."],
+      overview: ["Jaringan endometrium di luar uterus - nyeri panggul siklik, dispareunia, dismenore berat, infertilitas; diagnosis pasti via laparoskopi."],
       diagnosticCriteria: ["Klinis (nyeri siklik + faktor risiko) → terapi empiris hormonal; konfirmasi laparoskopi (lesi biru/coklat, kista endometrioma) + biopsi; MRI membantu untuk endometrioma."],
       differentials: ["Adenomiosis", "PID", "Kista ovarium", "IBS", "Sindrom nyeri panggul lain", "Kehamilan ektopik"],
       classification: ["ASRM stage I–IV (luas/kedalaman); lokasi: peritoneum, ovarium (endometrioma), dalam (deep infiltrating)."],
@@ -274,7 +274,7 @@ export const EXTRA_GUIDELINES_O: GuidelineEntry[] = [
     id: "pcos", slug: "pcos", title: "Sindrom Ovarium Polikistik (PCOS)", specialties: ["Obstetrics & Gynecology", "Endocrinology"],
     keywords: ["pcos", "sindrom ovarium polikistik", "haid tidak teratur", "hirsutisme", "hiperandrogen"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Gangguan endokrin-metabolik tersering wanita usia subur — oligo/anovulasi + hiperandrogenisme klinis/bio + ovarium polikistik (Rotterdam ≥ 2 dari 3)."],
+      overview: ["Gangguan endokrin-metabolik tersering wanita usia subur - oligo/anovulasi + hiperandrogenisme klinis/bio + ovarium polikistik (Rotterdam ≥ 2 dari 3)."],
       diagnosticCriteria: ["Rotterdam: ≥ 2 dari (1) oligo/anovulasi, (2) hiperandrogenisme klinis/bio, (3) ovarium polikistik (USG: ≥ 20 folikel/ovarium atau volume ≥ 10 mL) + eksklusi penyebab lain (CAH non-klasik, tiroid, hiperprolaktinemia)."],
       differentials: ["CAH non-klasik (17-OHP)", "Hiperprolaktinemia", "Gangguan tiroid", "Sindrom Cushing", "Obesitas fungsional"],
       classification: ["Fenotipe A (HA + OA + PCOM), B (HA + OA), C (HA + PCOM), D (OA + PCOM); dengan/tanpa sindrom metabolik."],

@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!tool) return {};
   return {
     title: `${tool.title}${tool.abbreviation ? ` (${tool.abbreviation})` : ""}`,
-    description: `${tool.description} Source: ${tool.source.org}, ${tool.source.year}.`,
-    openGraph: { title: `${tool.title} — Screening & Scores`, description: tool.description, type: "article" },
+    description: `${tool.description} Sumber: ${tool.source.org}, ${tool.source.year}.`,
+    openGraph: { title: `${tool.title} - Skrining dan Skor`, description: tool.description, type: "article" },
   };
 }
 
@@ -27,7 +27,7 @@ export default async function ScorePage({ params }: { params: Promise<{ slug: st
   if (!tool) notFound();
   return (
     <div>
-      <BackLink href="/scores" label="All scores" />
+      <BackLink href="/scores" label="Semua skor" />
       <ScoreToolView slug={slug} />
     </div>
   );

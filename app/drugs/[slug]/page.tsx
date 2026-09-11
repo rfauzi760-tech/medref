@@ -15,9 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const drug = DRUGS.find((d) => d.slug === slug);
   if (!drug) return {};
   return {
-    title: `${drug.genericName} — Dosing`,
-    description: `${drug.drugClass}. Indications: ${drug.indications.join("; ")}. Adult and pediatric dosing with weight-based calculation. Source: ${drug.source.org}, ${drug.source.year}.`,
-    openGraph: { title: `${drug.genericName} — Drug Dosing`, description: drug.drugClass, type: "article" },
+    title: `${drug.genericName} - Dosis`,
+    description: `${drug.drugClass}. Indikasi: ${drug.indications.join("; ")}. Dosis dewasa dan anak dengan perhitungan berbasis berat badan. Sumber: ${drug.source.org}, ${drug.source.year}.`,
+    openGraph: { title: `${drug.genericName} - Dosis Obat`, description: drug.drugClass, type: "article" },
   };
 }
 
@@ -27,7 +27,7 @@ export default async function DrugPage({ params }: { params: Promise<{ slug: str
   if (!drug) notFound();
   return (
     <div>
-      <BackLink href="/drugs" label="All drugs" />
+      <BackLink href="/drugs" label="Semua obat" />
       <DrugView drug={drug} />
     </div>
   );

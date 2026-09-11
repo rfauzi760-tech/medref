@@ -2,7 +2,7 @@ import type { ScoreEvaluation, ScoreTool, ScoreValues } from "@/lib/types";
 
 /**
  * Evaluate a scoring tool / clinical rule against answered values.
- * Pure function — UI-independent and fully testable.
+ * Pure function - UI-independent and fully testable.
  */
 export function evaluateScore(tool: ScoreTool, values: ScoreValues): ScoreEvaluation {
   const perVariable: ScoreEvaluation["perVariable"] = [];
@@ -29,11 +29,11 @@ export function evaluateScore(tool: ScoreTool, values: ScoreValues): ScoreEvalua
       if (s === "true" || s === "1") {
         answered = true;
         points = v.options?.[0]?.value ?? 1;
-        selected = "Yes";
+        selected = "Ya";
       } else if (s === "false" || s === "0") {
         answered = true;
         points = 0;
-        selected = "No";
+        selected = "Tidak";
       }
     } else if (v.type === "number") {
       const n = typeof raw === "number" ? raw : parseFloat(String(raw ?? ""));
@@ -60,7 +60,7 @@ export function evaluateScore(tool: ScoreTool, values: ScoreValues): ScoreEvalua
   for (const m of tool.modifiers ?? []) {
     if (String(values[m.whenVar]) === String(m.whenValue)) {
       total += m.delta;
-      appliedModifiers.push({ note: m.note ?? `Modifier: ${m.whenVar} = ${m.whenValue}`, delta: m.delta });
+      appliedModifiers.push({ note: m.note ?? `Pengubah: ${m.whenVar} = ${m.whenValue}`, delta: m.delta });
     }
   }
 
@@ -80,15 +80,15 @@ export function isComplete(tool: ScoreTool, values: ScoreValues): boolean {
 export function scoreToText(tool: ScoreTool, ev: ScoreEvaluation): string {
   const lines = [
     `${tool.title}${tool.abbreviation ? ` (${tool.abbreviation})` : ""}`,
-    `Total score: ${ev.total}${ev.range ? ` — ${ev.range.category}: ${ev.range.label}` : ""}`,
+    `Skor total: ${ev.total}${ev.range ? ` - ${ev.range.category}: ${ev.range.label}` : ""}`,
   ];
   if (ev.computeDetail) lines.push(ev.computeDetail);
   for (const p of ev.perVariable) {
-    if (p.selected) lines.push(`• ${p.label}: ${p.selected} (${p.points} pts)`);
+    if (p.selected) lines.push(`• ${p.label}: ${p.selected} (${p.points} poin)`);
   }
-  for (const m of ev.appliedModifiers) lines.push(`• ${m.note} (${m.delta > 0 ? "+" : ""}${m.delta} pts)`);
-  if (ev.range?.action) lines.push(`Next: ${ev.range.action}`);
-  lines.push(`Source: ${tool.source.org}, ${tool.source.title} (${tool.source.year})`);
-  lines.push("Clinical decision support only — does not replace clinical judgment.");
+  for (const m of ev.appliedModifiers) lines.push(`• ${m.note} (${m.delta > 0 ? "+" : ""}${m.delta} poin)`);
+  if (ev.range?.action) lines.push(`Langkah berikut: ${ev.range.action}`);
+  lines.push(`Sumber: ${tool.source.org}, ${tool.source.title} (${tool.source.year})`);
+  lines.push("Hanya alat bantu keputusan klinis. Tidak menggantikan penilaian klinis.");
   return lines.join("\n");
 }

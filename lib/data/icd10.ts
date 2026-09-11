@@ -4,8 +4,7 @@ import { canonicalIcd10 } from "./klinea-canonical";
 /**
  * Curated ICD-10 subset for point-of-care lookup.
  * Codes and English terms are from the WHO ICD-10 (public classification);
- * Indonesian terms are common clinical translations. This is a working subset —
- * the UI displays the actual count present.
+ * Indonesian terms are common clinical translations. This is a working subset -  * the UI displays the actual count present.
  */
 
 type Row = [code: string, en: string, id: string, chapter: string];

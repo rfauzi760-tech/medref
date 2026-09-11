@@ -5,7 +5,7 @@ import { ArrowUpRight, Clock, Heart, ShieldCheck } from "lucide-react";
 import { GlobalSearch } from "@/components/global-search";
 import { useFavorites, useRecentTools } from "@/components/use-local-store";
 import { getContentCoverage } from "@/lib/content-coverage";
-import { appName, appTagline, modules } from "@/lib/nav";
+import { modules } from "@/lib/nav";
 import { SPECIALTIES } from "@/lib/specialties";
 
 const primaryModules = new Set(["scores", "calculators", "drugs", "interactions", "guidelines", "icd10"]);
@@ -26,7 +26,7 @@ export default function Home() {
             Keputusan klinis yang lebih jelas, <span className="text-accent-strong dark:text-accent">dalam hitungan detik.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-sm leading-6 text-[var(--muted)] sm:text-base">
-            {appName} · {appTagline}. Skor, kalkulator, dosis, panduan, ICD-10, pediatri, dan gizi tanpa akun atau fitur terkunci.
+            Skor, kalkulator, dosis, panduan, ICD-10, pediatri, dan gizi dalam satu ruang kerja klinis.
           </p>
         </div>
         <div className="workspace-panel p-3">
@@ -64,7 +64,7 @@ export default function Home() {
 
       <section aria-labelledby="modules-title">
         <div className="mb-4">
-          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Workspace</p>
+          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Ruang kerja</p>
           <h2 id="modules-title" className="display-type mt-1 text-2xl font-light">Modul klinis utama</h2>
         </div>
         <div className="workspace-panel grid overflow-hidden md:grid-cols-2">

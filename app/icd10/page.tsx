@@ -40,7 +40,7 @@ export default function Icd10Page() {
     <div>
       <PageHeader
         title="Kamus ICD-10"
-        description="Pencarian cepat kode ICD-10 dengan istilah Indonesia dan Inggris. Salin kode sekali klik — dirancang untuk pemakaian di titik pelayanan."
+        description="Pencarian cepat kode ICD-10 dengan istilah Indonesia dan Inggris. Salin kode sekali klik - dirancang untuk pemakaian di titik pelayanan."
         count={icd10Codes.length}
         countLabel="kode"
       />
@@ -50,7 +50,7 @@ export default function Icd10Page() {
           onClick={() => setChapter("")}
           className={`rounded-full border px-3 py-1 text-xs font-medium ${!chapter ? "border-accent bg-accent/10 text-accent-strong dark:text-accent" : "border-zinc-200 text-zinc-500 hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-400"}`}
         >
-          All chapters
+          Semua bab
         </button>
         {chapters.map((c) => (
           <button
@@ -66,16 +66,16 @@ export default function Icd10Page() {
       <div ref={listRef} className="workspace-panel index-row overflow-x-auto">
         {filtered.length === 0 ? (
           <div className="p-6">
-            <EmptyState message={`No ICD-10 codes match “${q}”.`} />
+            <EmptyState message={`Tidak ada kode ICD-10 yang cocok dengan “${q}”.`} />
           </div>
         ) : (
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-zinc-200 text-left text-xs uppercase tracking-wide text-zinc-400 dark:border-zinc-800">
-                <th className="px-4 py-2.5 font-semibold">Code</th>
-                <th className="px-4 py-2.5 font-semibold">Diagnosis (English)</th>
-                <th className="hidden px-4 py-2.5 font-semibold md:table-cell">Indonesian</th>
-                <th className="hidden px-4 py-2.5 font-semibold lg:table-cell">Chapter</th>
+                <th className="px-4 py-2.5 font-semibold">Kode</th>
+                <th className="px-4 py-2.5 font-semibold">Diagnosis (Inggris)</th>
+                <th className="hidden px-4 py-2.5 font-semibold md:table-cell">Indonesia</th>
+                <th className="hidden px-4 py-2.5 font-semibold lg:table-cell">Bab</th>
                 <th className="px-4 py-2.5" />
               </tr>
             </thead>
@@ -84,17 +84,17 @@ export default function Icd10Page() {
                 <tr key={c.code} className="index-row hover:bg-black/[0.025] dark:hover:bg-white/[0.04]">
                   <td className="whitespace-nowrap px-4 py-2 font-mono text-xs font-semibold text-accent-strong dark:text-accent">{c.code}</td>
                   <td className="px-4 py-2 text-zinc-700 dark:text-zinc-200">{c.en}</td>
-                  <td className="hidden px-4 py-2 text-zinc-500 dark:text-zinc-400 md:table-cell">{c.id ?? "—"}</td>
+                  <td className="hidden px-4 py-2 text-zinc-500 dark:text-zinc-400 md:table-cell">{c.id ?? " - "}</td>
                   <td className="hidden px-4 py-2 text-xs text-zinc-400 lg:table-cell">{c.chapter}</td>
                   <td className="px-3 py-2 text-right">
                     <button
                       type="button"
                       onClick={() => copy(c.code, c.en)}
-                      aria-label={`Copy ${c.code}`}
+                      aria-label={`Salin ${c.code}`}
                       className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 px-2 py-1 text-xs text-zinc-500 hover:border-zinc-300 hover:text-zinc-800 dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-white"
                     >
                       {copied === c.code ? <Check className="h-3 w-3 text-emerald-500" /> : <Copy className="h-3 w-3" />}
-                      {copied === c.code ? "Copied" : "Copy"}
+                      {copied === c.code ? "Tersalin" : "Salin"}
                     </button>
                   </td>
                 </tr>

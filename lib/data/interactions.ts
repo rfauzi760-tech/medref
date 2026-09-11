@@ -6,7 +6,7 @@ import { canonicalInteractions } from "./klinea-canonical";
  *
  * Every entry is a pair of drugs from the drug database with a severity,
  * mechanism, clinical effect and management. Interaction data can be expanded
- * over time — nothing here is invented; entries reflect established
+ * over time - nothing here is invented; entries reflect established
  * pharmacovigilance knowledge (Stockley's Drug Interactions / Lexicomp-style
  * severity categories) and should be re-verified against the latest
  * interaction compendium before clinical use.
@@ -35,17 +35,17 @@ const RFS_INTERACTIONS: DrugInteraction[] = [
   I("warfarin", "cotrimoxazole", "major", "Sulfamethoxazole inhibits CYP2C9; trimethoprim has a stereoselective effect on warfarin.", "INR increase and bleeding risk.", "Avoid if alternatives exist; otherwise monitor INR closely and reduce dose.", "warfarin-cotrimoxazole"),
   I("warfarin", "ciprofloxacin", "major", "Ciprofloxacin inhibits CYP1A2 and reduces warfarin metabolism.", "INR increase and bleeding risk.", "Monitor INR; adjust dose.", "warfarin-ciprofloxacin"),
   I("warfarin", "fluconazole", "major", "Fluconazole inhibits CYP2C9, reducing warfarin clearance.", "INR increase and bleeding risk.", "Monitor INR closely; reduce warfarin dose.", "warfarin-fluconazole"),
-  I("warfarin", "rifampicin", "major", "Rifampicin strongly induces CYP2C9/3A4, accelerating warfarin metabolism.", "Marked INR decrease — subtherapeutic anticoagulation.", "Monitor INR frequently; warfarin dose may need substantial increase.", "warfarin-rifampicin"),
+  I("warfarin", "rifampicin", "major", "Rifampicin strongly induces CYP2C9/3A4, accelerating warfarin metabolism.", "Marked INR decrease - subtherapeutic anticoagulation.", "Monitor INR frequently; warfarin dose may need substantial increase.", "warfarin-rifampicin"),
   I("warfarin", "carbamazepine", "major", "Carbamazepine induces CYP enzymes, increasing warfarin metabolism.", "Reduced INR; thromboembolism risk.", "Monitor INR; increase warfarin dose as needed.", "warfarin-carbamazepine"),
   I("warfarin", "phenytoin", "major", "Complex bidirectional interaction: phenytoin induces and inhibits CYP2C9; warfarin increases phenytoin levels.", "Unpredictable INR changes and phenytoin toxicity.", "Monitor INR and phenytoin levels closely.", "warfarin-phenytoin"),
   I("warfarin", "sertraline", "moderate", "Sertraline inhibits CYP2C9 to a modest degree; additive platelet effects.", "Possible INR increase and bleeding.", "Monitor INR after starting/stopping sertraline.", "warfarin-sertraline"),
   I("warfarin", "azithromycin", "moderate", "Uncertain mechanism; case reports of INR elevation.", "Possible INR increase.", "Monitor INR during co-administration.", "warfarin-azithromycin"),
   I("warfarin", "tramadol", "moderate", "Tramadol has serotonergic activity; additive anticoagulant effect reported.", "Possible INR increase and bleeding.", "Monitor INR; watch for bleeding.", "warfarin-tramadol"),
-  I("warfarin", "enoxaparin", "moderate", "Additive anticoagulant effect (intentional during LMWH-warfarin overlap).", "Increased bleeding risk during overlap.", "This is the standard VTE treatment strategy — monitor for bleeding; discontinue LMWH once INR therapeutic.", "warfarin-enoxaparin"),
+  I("warfarin", "enoxaparin", "moderate", "Additive anticoagulant effect (intentional during LMWH-warfarin overlap).", "Increased bleeding risk during overlap.", "This is the standard VTE treatment strategy - monitor for bleeding; discontinue LMWH once INR therapeutic.", "warfarin-enoxaparin"),
   I("warfarin", "levetiracetam", "minor", "Limited data; possible minor effect on INR.", "Unpredictable INR (minor).", "Routine INR monitoring is sufficient.", "warfarin-levetiracetam"),
 
   /* ---- QT prolongation ---- */
-  I("haloperidol", "clarithromycin", "major", "Clarithromycin inhibits CYP3A4 (haloperidol metabolism) and both prolong QTc.", "Increased haloperidol levels and additive QT prolongation — torsades de pointes risk.", "Avoid combination; if unavoidable, monitor QTc and haloperidol levels.", "haloperidol-clarithromycin"),
+  I("haloperidol", "clarithromycin", "major", "Clarithromycin inhibits CYP3A4 (haloperidol metabolism) and both prolong QTc.", "Increased haloperidol levels and additive QT prolongation - torsades de pointes risk.", "Avoid combination; if unavoidable, monitor QTc and haloperidol levels.", "haloperidol-clarithromycin"),
   I("haloperidol", "fluconazole", "major", "Additive QT prolongation; fluconazole inhibits CYP3A4/2C9.", "Increased torsades risk.", "Avoid; use alternative antipsychotic or antifungal.", "haloperidol-fluconazole"),
   I("haloperidol", "ondansetron", "major", "Additive QT prolongation.", "Increased risk of torsades de pointes.", "Avoid combination; monitor QTc if unavoidable.", "haloperidol-ondansetron"),
   I("haloperidol", "ciprofloxacin", "major", "Additive QT prolongation.", "Increased torsades risk.", "Avoid; check ECG and electrolytes.", "haloperidol-ciprofloxacin"),
@@ -54,7 +54,7 @@ const RFS_INTERACTIONS: DrugInteraction[] = [
   I("ondansetron", "ciprofloxacin", "moderate", "Both prolong QTc to some degree.", "Additive QT prolongation risk.", "Use with caution; monitor QTc in at-risk patients.", "ondansetron-ciprofloxacin"),
   I("ondansetron", "clarithromycin", "moderate", "Additive QT prolongation.", "Increased torsades risk in susceptible patients.", "Caution; check QTc and electrolytes.", "ondansetron-clarithromycin"),
   I("ciprofloxacin", "azithromycin", "moderate", "Additive QT prolongation.", "Increased torsades risk.", "Caution in patients with cardiac disease.", "ciprofloxacin-azithromycin"),
-  I("clarithromycin", "azithromycin", "moderate", "Additive QT prolongation.", "Increased torsades risk.", "Avoid dual macrolides — no added antimicrobial benefit.", "clarithromycin-azithromycin"),
+  I("clarithromycin", "azithromycin", "moderate", "Additive QT prolongation.", "Increased torsades risk.", "Avoid dual macrolides - no added antimicrobial benefit.", "clarithromycin-azithromycin"),
   I("fluconazole", "clarithromycin", "major", "Additive QT prolongation; fluconazole inhibits clarithromycin metabolism.", "Increased torsades risk.", "Avoid combination.", "fluconazole-clarithromycin"),
   I("fluconazole", "ondansetron", "moderate", "Additive QT prolongation.", "Increased torsades risk.", "Monitor QTc if combined.", "fluconazole-ondansetron"),
 
@@ -77,7 +77,7 @@ const RFS_INTERACTIONS: DrugInteraction[] = [
   I("phenytoin", "clarithromycin", "moderate", "Clarithromycin inhibits phenytoin metabolism (variable).", "Possible phenytoin toxicity.", "Monitor phenytoin levels.", "phenytoin-clarithromycin"),
   I("phenytoin", "cotrimoxazole", "major", "Sulfamethoxazole inhibits CYP2C9.", "Phenytoin toxicity.", "Avoid; monitor levels.", "phenytoin-cotrimoxazole"),
   I("phenytoin", "isoniazid", "moderate", "Isoniazid inhibits phenytoin metabolism.", "Phenytoin toxicity.", "Monitor levels; adjust dose.", "phenytoin-isoniazid"),
-  I("phenytoin", "carbamazepine", "moderate", "Mutual induction/inhibition — unpredictable levels.", "Variable levels of both drugs.", "Therapeutic drug monitoring of both.", "phenytoin-carbamazepine"),
+  I("phenytoin", "carbamazepine", "moderate", "Mutual induction/inhibition - unpredictable levels.", "Variable levels of both drugs.", "Therapeutic drug monitoring of both.", "phenytoin-carbamazepine"),
   I("midazolam", "clarithromycin", "major", "Clarithromycin inhibits CYP3A4 (midazolam metabolism).", "Markedly increased/prolonged sedation; respiratory depression.", "Avoid; use alternative benzodiazepine or monitor closely.", "midazolam-clarithromycin"),
   I("midazolam", "erythromycin", "major", "Erythromycin inhibits CYP3A4.", "Increased/prolonged sedation.", "Avoid combination.", "midazolam-erythromycin"),
   I("midazolam", "fluconazole", "moderate", "Fluconazole inhibits CYP3A4.", "Increased sedation.", "Reduce midazolam dose; monitor.", "midazolam-fluconazole"),
@@ -90,7 +90,7 @@ const RFS_INTERACTIONS: DrugInteraction[] = [
   I("rifampicin", "fluconazole", "moderate", "Rifampicin induces CYP3A4; fluconazole inhibits it.", "Reduced fluconazole exposure.", "Increase fluconazole dose if combined.", "rifampicin-fluconazole"),
 
   /* ---- Renal/electrolyte ---- */
-  I("captopril", "spironolactone", "major", "ACE inhibitor + potassium-sparing diuretic both reduce aldosterone-mediated K⁺ excretion.", "Hyperkalaemia — arrhythmia risk.", "Avoid combination unless closely monitored; check K⁺ and renal function.", "captopril-spironolactone"),
+  I("captopril", "spironolactone", "major", "ACE inhibitor + potassium-sparing diuretic both reduce aldosterone-mediated K⁺ excretion.", "Hyperkalaemia - arrhythmia risk.", "Avoid combination unless closely monitored; check K⁺ and renal function.", "captopril-spironolactone"),
   I("captopril", "ibuprofen", "moderate", "NSAIDs reduce renal prostaglandins, blunting ACEi effect and worsening renal function.", "Reduced antihypertensive effect; AKI risk in volume-depleted patients.", "Use alternative analgesia; monitor BP and creatinine.", "captopril-ibuprofen"),
   I("spironolactone", "cotrimoxazole", "major", "Trimethoprim blocks renal tubular potassium secretion (amiloride-like effect).", "Severe hyperkalaemia.", "Avoid combination; if needed, monitor K⁺ closely.", "spironolactone-cotrimoxazole"),
   I("spironolactone", "captopril", "major", "See captopril + spironolactone.", "Hyperkalaemia.", "Avoid unless monitored.", "spironolactone-captopril"),
@@ -102,7 +102,7 @@ const RFS_INTERACTIONS: DrugInteraction[] = [
   I("acyclovir", "gentamicin", "moderate", "Additive nephrotoxicity (acyclovir crystalluria).", "AKI risk.", "Hydrate well; monitor renal function.", "acyclovir-gentamicin"),
   I("acyclovir", "vancomycin", "moderate", "Additive nephrotoxicity.", "AKI risk.", "Monitor renal function.", "acyclovir-vancomycin"),
   I("magnesium-sulfate", "gentamicin", "moderate", "Aminoglycosides can potentiate magnesium-induced neuromuscular blockade.", "Respiratory muscle weakness.", "Monitor reflexes and respiratory status.", "magnesium-sulfate-gentamicin"),
-  I("magnesium-sulfate", "amlodipine", "moderate", "Additive vasodilation and potential neuromuscular effects.", "Hypotension; (with nifedipine — significant hypotension/neuromuscular blockade reported).", "Monitor BP; use caution in preeclampsia protocols combining MgSO₄ with CCBs.", "magnesium-sulfate-amlodipine"),
+  I("magnesium-sulfate", "amlodipine", "moderate", "Additive vasodilation and potential neuromuscular effects.", "Hypotension; (with nifedipine - significant hypotension/neuromuscular blockade reported).", "Monitor BP; use caution in preeclampsia protocols combining MgSO₄ with CCBs.", "magnesium-sulfate-amlodipine"),
   I("magnesium-sulfate", "furosemide", "moderate", "Loop diuretics increase magnesium loss.", "Hypomagnesaemia can blunt MgSO₄ effect; also additive hypotension.", "Monitor magnesium and BP.", "magnesium-sulfate-furosemide"),
 
   /* ---- Antimicrobial absorption / effect ---- */
@@ -119,7 +119,7 @@ const RFS_INTERACTIONS: DrugInteraction[] = [
   I("salbutamol", "furosemide", "moderate", "Both can lower potassium.", "Hypokalaemia (additive).", "Monitor potassium in high-dose therapy.", "salbutamol-furosemide"),
   I("insulin-regular", "atenolol", "moderate", "Beta-blockers mask adrenergic hypoglycaemia symptoms.", "Unrecognised hypoglycaemia.", "Counsel on monitoring; prefer cardioselective agents.", "insulin-regular-atenolol"),
   I("insulin-regular", "salbutamol", "moderate", "β₂-agonists raise glucose and can blunt insulin action.", "Hyperglycaemia during high-dose salbutamol.", "Monitor glucose in diabetic patients.", "insulin-regular-salbutamol"),
-  I("insulin-regular", "prednisone", "moderate", "Corticosteroids induce insulin resistance and gluconeogenesis.", "Hyperglycaemia — higher insulin requirements.", "Increase monitoring; adjust insulin dose.", "insulin-regular-prednisone"),
+  I("insulin-regular", "prednisone", "moderate", "Corticosteroids induce insulin resistance and gluconeogenesis.", "Hyperglycaemia - higher insulin requirements.", "Increase monitoring; adjust insulin dose.", "insulin-regular-prednisone"),
   I("prednisone", "ibuprofen", "major", "Additive GI mucosal injury.", "GI bleeding/perforation risk.", "Avoid; use gastroprotection if unavoidable.", "prednisone-ibuprofen"),
   I("dexamethasone", "ibuprofen", "major", "Additive GI mucosal injury.", "GI bleeding/perforation risk.", "Avoid; use gastroprotection if unavoidable.", "dexamethasone-ibuprofen"),
   I("dexamethasone", "rifampicin", "moderate", "Rifampicin induces corticosteroid metabolism.", "Reduced dexamethasone effect.", "Increase steroid dose if combined.", "dexamethasone-rifampicin"),
@@ -134,8 +134,8 @@ const RFS_INTERACTIONS: DrugInteraction[] = [
 
   /* ---- Electrolytes ---- */
   I("furosemide", "dexamethasone", "moderate", "Corticosteroids cause sodium/water retention opposing diuresis.", "Reduced diuretic effect.", "Monitor fluid balance.", "furosemide-dexamethasone"),
-  I("spironolactone", "furosemide", "moderate", "Opposing potassium effects (K⁺-sparing + K⁺-losing).", "Potassium balance unpredictable — usually beneficial combination but monitor K⁺.", "Monitor potassium and renal function.", "spironolactone-furosemide"),
-  I("captopril", "furosemide", "moderate", "ACEi + diuretic — enhanced hypotensive effect; hypovolaemia increases first-dose hypotension.", "First-dose hypotension; AKI in volume depletion.", "Start ACEi at low dose; hold diuretic if dehydrated.", "captopril-furosemide"),
+  I("spironolactone", "furosemide", "moderate", "Opposing potassium effects (K⁺-sparing + K⁺-losing).", "Potassium balance unpredictable - usually beneficial combination but monitor K⁺.", "Monitor potassium and renal function.", "spironolactone-furosemide"),
+  I("captopril", "furosemide", "moderate", "ACEi + diuretic - enhanced hypotensive effect; hypovolaemia increases first-dose hypotension.", "First-dose hypotension; AKI in volume depletion.", "Start ACEi at low dose; hold diuretic if dehydrated.", "captopril-furosemide"),
 
   /* ---- Anaesthesia/sedation ---- */
   I("ketamine", "haloperidol", "moderate", "Both lower seizure threshold and can prolong QTc (ketamine less so).", "Seizure risk; possible arrhythmia.", "Use with caution in at-risk patients.", "ketamine-haloperidol"),

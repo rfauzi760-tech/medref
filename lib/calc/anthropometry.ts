@@ -11,7 +11,7 @@ import { zToPercentile } from "@/lib/calc/units";
  *
  * Age-based indicators use monthly tables; weight-for-length/height use
  * centimetre tables. Children < 24 months are measured recumbent (length);
- * ≥ 24 months standing (height) — matching WHO Anthro behaviour, including
+ * ≥ 24 months standing (height) - matching WHO Anthro behaviour, including
  * the 0.7 cm design offset at the 24-month junction.
  */
 
@@ -203,8 +203,8 @@ export function assessGrowth(inp: AnthropometryInput): AnthropometryResult {
   let bmi: number | undefined;
 
   if (ageMonths < 0 || ageMonths > 60) {
-    messages.push("This module uses the WHO Child Growth Standards (0–60 months). Ages outside 0–5 years are not supported yet.");
-    return { assessments, status, messages, outOfRange: ["Age outside 0–60 months"] };
+    messages.push("Modul ini memakai Standar Pertumbuhan Anak WHO untuk usia 0–60 bulan.");
+    return { assessments, status, messages, outOfRange: ["Usia di luar rentang 0–60 bulan"] };
   }
 
   const push = (a: GrowthAssessment | null, label: string) => {
@@ -236,8 +236,8 @@ export function assessGrowth(inp: AnthropometryInput): AnthropometryResult {
     assessments.push({ ...lh, indicator: "length-height-for-age" as GrowthIndicator });
     if (lh.classification) status.stunting = lh.classification.startsWith("Severe") ? "severely stunted" : "stunted";
   }
-  if (isUnderTwo) messages.push("Age < 24 months: recumbent length is used (WHO standards).");
-  else messages.push("Age ≥ 24 months: standing height is used (WHO standards).");
+  if (isUnderTwo) messages.push("Usia < 24 bulan: gunakan panjang badan telentang sesuai standar WHO.");
+  else messages.push("Usia ≥ 24 bulan: gunakan tinggi badan berdiri sesuai standar WHO.");
 
   // Weight-for-length (<24 mo) or weight-for-height (≥24 mo)
   const wlIndicator: GrowthIndicator = isUnderTwo ? "weight-for-length" : "weight-for-height";
@@ -267,14 +267,14 @@ export function ageInMonths(dob: Date, now: Date = new Date()): number {
 export function ageLabel(months: number): string {
   const y = Math.floor(months / 12);
   const m = Math.round(months % 12);
-  if (y >= 1) return m === 0 ? `${y} y` : `${y} y ${m} mo`;
-  return `${Math.round(months)} mo`;
+  if (y >= 1) return m === 0 ? `${y} tahun` : `${y} tahun ${m} bulan`;
+  return `${Math.round(months)} bulan`;
 }
 
 export const WHO_GROWTH_INDICATOR_LABELS: Record<string, string> = {
-  "weight-for-age": "Weight-for-age",
-  "length-height-for-age": "Length/Height-for-age",
-  "weight-for-length-height": "Weight-for-length/height",
-  "bmi-for-age": "BMI-for-age",
-  "head-circumference-for-age": "Head circumference-for-age",
+  "weight-for-age": "Berat badan menurut usia",
+  "length-height-for-age": "Panjang/tinggi badan menurut usia",
+  "weight-for-length-height": "Berat badan menurut panjang/tinggi badan",
+  "bmi-for-age": "IMT menurut usia",
+  "head-circumference-for-age": "Lingkar kepala menurut usia",
 };

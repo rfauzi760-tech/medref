@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Shell } from "@/components/shell";
-import { appName, appTagline } from "@/lib/nav";
+import { appName } from "@/lib/nav";
 
 const funnelSans = Funnel_Sans({
   variable: "--font-funnel-sans",
@@ -18,19 +18,19 @@ const funnelDisplay = Funnel_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: `${appName} — ${appTagline}`,
+    default: appName,
     template: `%s · ${appName}`,
   },
   description:
-    "Platform pendukung keputusan klinis gratis: skor skrining, kalkulator, dosis obat, interaksi obat, panduan klinis, ICD-10, tumbuh kembang anak dan gizi — semua alat dapat diakses tanpa bayar atau login.",
+    "Platform pendukung keputusan klinis: skor skrining, kalkulator, dosis obat, interaksi obat, panduan klinis, ICD-10, tumbuh kembang anak, dan gizi.",
   applicationName: appName,
   openGraph: {
-    title: `${appName} — ${appTagline}`,
+    title: appName,
     description: "Pendukung keputusan klinis, gratis diakses: skor, kalkulator, obat, panduan klinis, ICD-10 dan lainnya.",
     type: "website",
   },
   manifest: "/manifest.webmanifest",
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/rfsmed-mark.png" },
 };
 
 export const viewport: Viewport = {

@@ -3,7 +3,7 @@ import type { ImmunizationSchedule, VaccineDose, VaccineStatus } from "@/lib/typ
 /**
  * Immunization status engine.
  * Given DOB + received doses, compute due / upcoming / overdue per vaccine.
- * Pure date logic over structured schedule data — unit-tested.
+ * Pure date logic over structured schedule data - unit-tested.
  */
 
 export interface ReceivedDose {

@@ -95,7 +95,7 @@ export function useFiltered<T extends { title: string }>(items: T[], query: stri
   return items.filter((i) => i.title.toLowerCase().includes(q));
 }
 
-/** Scroll restoration helper — resets scroll on route change. */
+/** Scroll restoration helper - resets scroll on route change. */
 export function useScrollReset() {
   const router = useRouter();
   useEffect(() => {

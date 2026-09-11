@@ -1,13 +1,13 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan tambahan — bagian K: onkologi. */
+/** Panduan tambahan - bagian K: onkologi. */
 
 export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
   {
     id: "kanker-payudara", slug: "kanker-payudara", title: "Kanker Payudara (Ca Mammae)", specialties: ["Oncology", "Surgery"],
     keywords: ["kanker payudara", "ca mammae", "benjolan payudara", "mamografi"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Keganasan jaringan payudara — tersering pada wanita; prognosis membaik dengan deteksi dini."],
+      overview: ["Keganasan jaringan payudara - tersering pada wanita; prognosis membaik dengan deteksi dini."],
       diagnosticCriteria: ["Biopsi (core/FNA) menunjukkan keganasan; staging TNM + reseptor (ER/PR/HER2, Ki-67)."],
       differentials: ["FAM", "Kista payudara", "Mastitis/abses", "Hamartoma", "Kanker payudara inflamasi"],
       classification: ["TNM (tumor, nodus, metastasis); subtipe molekular: luminal A/B, HER2+, triple negative."],
@@ -26,7 +26,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "kanker-serviks", slug: "kanker-serviks", title: "Kanker Serviks", specialties: ["Oncology", "Obstetrics & Gynecology"],
     keywords: ["kanker serviks", "ca cervix", "perdarahan kontak", "hpv", "iva"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Keganasan serviks uteri, berkaitan infeksi HPV persisten — perdarahan kontak/postkoital; dapat dicegah dengan skrining IVA/pap smear + vaksin HPV."],
+      overview: ["Keganasan serviks uteri, berkaitan infeksi HPV persisten - perdarahan kontak/postkoital; dapat dicegah dengan skrining IVA/pap smear + vaksin HPV."],
       diagnosticCriteria: ["Biopsi serviks/konisasi menunjukkan karsinoma; staging klinis (FIGO) termasuk pemeriksaan panggul + pencitraan."],
       differentials: ["Polip serviks", "Erosi/ektropion", "Mioma bertangkai prolaps", "Karsinoma endometrium", "Infeksi serviks (servisitis)"],
       classification: ["FIGO: I (terbatas serviks), II (invasi parametrium/vagina atas), III (dinding panggul/vagina bawah), IV (kandung kemih/rektum/metastasis jauh); histologi: skuamosa (mayoritas), adenokarsinoma."],
@@ -45,10 +45,10 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "knf", slug: "knf", title: "Karsinoma Nasofaring (KNF)", specialties: ["Oncology", "ENT"],
     keywords: ["knf", "karsinoma nasofaring", "epistaksis", "telinga tersumbat", "benjolan leher"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Karsinoma sel skuamosa nasofaring — endemik di Asia Tenggara, terkait EBV; trias: epistaksis, telinga tersumbat, benjolan leher."],
+      overview: ["Karsinoma sel skuamosa nasofaring - endemik di Asia Tenggara, terkait EBV; trias: epistaksis, telinga tersumbat, benjolan leher."],
       diagnosticCriteria: ["Biopsi nasofaring (via nasoendoskopi) + EBV DNA/EBER positif; staging TNM (AJCC)."],
       differentials: ["Limfoma", "Tumor kelenjar ludah", "Hipertrofi adenoid", "TB nasofaring", "Metastasis karsinoma lain"],
-      classification: ["TNM/AJCC; WHO tipe I (skuamosa berkeratin), II (non-keratin), III (undifferentiated — terkait EBV)."],
+      classification: ["TNM/AJCC; WHO tipe I (skuamosa berkeratin), II (non-keratin), III (undifferentiated - terkait EBV)."],
       initialAssessment: ["Epistaksis berulang, hidung tersumbat unilateral, otitis media efusi unilateral, benjolan leher (kelenjar posterior), trismus/neuropati kranial bila lanjut."],
       investigations: ["Nasoendoskopi + biopsi, MRI nasofaring/leher, CT, EBV DNA plasma, pencitraan staging (PET-CT bila tersedia)."],
       initialManagement: ["Rujuk onkologi + THT; KNF radiosensitif: radioterapi ± kemoterapi (induksi/kemoradiasi) untuk stadium lanjut."],
@@ -64,7 +64,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "kanker-paru", slug: "kanker-paru", title: "Kanker Paru", specialties: ["Oncology", "Pulmonology"],
     keywords: ["kanker paru", "ca paru", "batuk darah", "hemoptisis", "nodul paru"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Keganasan paru — penyebab kematian tersering akibat kanker; terkait kuat merokok; batuk persisten, hemoptisis, BB turun."],
+      overview: ["Keganasan paru - penyebab kematian tersering akibat kanker; terkait kuat merokok; batuk persisten, hemoptisis, BB turun."],
       diagnosticCriteria: ["Biopsi (bronkoskopi/CT-guided/EBUS) menunjukkan keganasan; subtipe & staging (TNM) menentukan terapi."],
       differentials: ["TB paru", "Pneumonia/pneumonitis", "Bronkiektasis", "Nodul jinak (hamartoma)", "Limfoma", "Metastasis paru"],
       classification: ["SCLC vs NSCLC (adeno, skuamosa, besar); staging TNM; molekular: EGFR, ALK, ROS1, PD-L1."],
@@ -83,7 +83,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "kanker-kolorektal", slug: "kanker-kolorektal", title: "Kanker Kolorektal", specialties: ["Oncology", "Surgery", "Gastroenterology"],
     keywords: ["kanker kolorektal", "ca kolon", "darah di feses", "perubahan bab", "skrining kolorektal"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Keganasan kolon/rektum — perkembangan dari polip adenomatosa; skrining (FOBT/kolonoskopi) menurunkan mortalitas."],
+      overview: ["Keganasan kolon/rektum - perkembangan dari polip adenomatosa; skrining (FOBT/kolonoskopi) menurunkan mortalitas."],
       diagnosticCriteria: ["Biopsi via kolonoskopi; staging TNM + CEA."],
       differentials: ["Divertikulitis", "IBD", "Hemoroid", "Polip jinak", "LGIB penyebab lain", "IBS"],
       classification: ["TNM (I–IV); lokasi: kolon kanan (anemia, massa) vs kiri/rektum (perubahan BAB, darah, obstruksi)."],
@@ -102,10 +102,10 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "hcc", slug: "hcc", title: "Karsinoma Hepatoselular (HCC)", specialties: ["Oncology", "Gastroenterology", "Hepatology"],
     keywords: ["hcc", "karsinoma hepatoselular", "kanker hati", "sirosis", "alfa-fetoprotein"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Kanker hati primer tersering, hampir selalu pada sirosis (HBV/HCV, alkohol, MASLD) — skrining USG ± AFP 6 bulanan pada sirosis."],
+      overview: ["Kanker hati primer tersering, hampir selalu pada sirosis (HBV/HCV, alkohol, MASLD) - skrining USG ± AFP 6 bulanan pada sirosis."],
       diagnosticCriteria: ["Nodul ≥ 1 cm pada sirosis dengan karakteristik arterial enhancement + washout (CT/MRI 4 fase) = diagnostik tanpa biopsi; biopsi bila atipikal."],
       differentials: ["Hepatoma jinak (hemangioma, FNH, adenoma)", "Metastasis hepar", "Kolangio karsinoma", "Abses hepar"],
-      classification: ["BCLC staging (0–D) menggabungkan tumor burden, fungsi hati (Child-Pugh), performans — menentukan terapi."],
+      classification: ["BCLC staging (0–D) menggabungkan tumor burden, fungsi hati (Child-Pugh), performans - menentukan terapi."],
       initialAssessment: ["Skrining pada sirosis; gejala lanjut: nyeri kanan atas, BB turun, asites dekompensasi, ikterus."],
       investigations: ["USG abdomen, AFP, CT/MRI 4 fase, fungsi hati, Child-Pugh; biopsi bila diagnosis meragukan."],
       initialManagement: ["BCLC 0/A → reseksi/ablasi (RFA)/transplantasi; BCLC B → TACE; BCLC C → sistemik (sorafenib/lenvatinib/atezolizumab-bevacizumab)."],
@@ -121,7 +121,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "kanker-prostat", slug: "kanker-prostat", title: "Kanker Prostat", specialties: ["Oncology", "Urology"],
     keywords: ["kanker prostat", "psa", "prostat", "hesitansi", "skrining prostat"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Keganasan prostat — umum pada pria lanjut; PSA + DRE untuk skrining; banyak yang indolen."],
+      overview: ["Keganasan prostat - umum pada pria lanjut; PSA + DRE untuk skrining; banyak yang indolen."],
       diagnosticCriteria: ["Biopsi prostat (TRUS-guided) menunjukkan adenokarsinoma; Gleason score + PSA + staging menentukan risiko."],
       differentials: ["BPH", "Prostatitis", "Prolaps/hematuria sumber lain"],
       classification: ["Risiko (D'Amico): rendah/sedang/tinggi berdasarkan PSA, Gleason, stadium; TNM; Gleason 6–10."],
@@ -140,7 +140,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "limfoma", slug: "limfoma", title: "Limfoma (Hodgkin & Non-Hodgkin)", specialties: ["Oncology", "Hematology"],
     keywords: ["limfoma", "hodgkin", "non-hodgkin", "benjolan leher", "kelenjar getah bening"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Keganasan limfosit — Hodgkin (sel Reed-Sternberg) vs Non-Hodgkin (beragam); limfadenopati persisten, B symptoms."],
+      overview: ["Keganasan limfosit - Hodgkin (sel Reed-Sternberg) vs Non-Hodgkin (beragam); limfadenopati persisten, B symptoms."],
       diagnosticCriteria: ["Biopsi eksisional kelenjar + imunohistokimia; staging Ann Arbor + PET-CT."],
       differentials: ["Limfadenitis reaktif/TB", "Mononukleosis", "KNF/metastasis", "KLL/leukemia", "Sarkoidosis", "HIV limfadenopati"],
       classification: ["Hodgkin (nodular sclerosis, mixed cellularity, dll) vs NHL (DLBCL, folikular, Burkitt, MALT, dll); Ann Arbor I–IV + A/B (B symptoms)."],
@@ -159,7 +159,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "leukemia", slug: "leukemia", title: "Leukemia Akut (AML / ALL)", specialties: ["Oncology", "Hematology"],
     keywords: ["leukemia", "aml", "all", "leukosit tinggi", "anemia", "perdarahan"], emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Keganasan sel progenitor hematopoietik — AML (dewasa) & ALL (anak); pansitopenia, blast di darah tepi/sumsum."],
+      overview: ["Keganasan sel progenitor hematopoietik - AML (dewasa) & ALL (anak); pansitopenia, blast di darah tepi/sumsum."],
       diagnosticCriteria: ["Blast ≥ 20% di sumsum tulang (WHO); immunophenotyping + sitogenetika untuk subtipe & risiko."],
       differentials: ["Leukemoid reaction (infeksi)", "MDS", "Aplasia sumsum", "Limfoma leukemia", "ITP (bila trombositopenia dominan)"],
       classification: ["AML: WHO/ELN risiko (sitogenetika); ALL: B/T lineage, risiko (usia, WBC, sitogenetika)."],
@@ -179,7 +179,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "osteosarkoma", slug: "osteosarkoma", title: "Osteosarkoma", specialties: ["Oncology", "Orthopedics"],
     keywords: ["osteosarkoma", "tumor tulang", "nyeri tulang malam", "remaja"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Tumor ganas tulang tersering pada anak/remaja — metafisis tulang panjang (femur distal, tibia proksimal); nyeri malam + pembengkakan."],
+      overview: ["Tumor ganas tulang tersering pada anak/remaja - metafisis tulang panjang (femur distal, tibia proksimal); nyeri malam + pembengkakan."],
       diagnosticCriteria: ["Biopsi tulang menunjukkan sel ganas osteoid-forming; staging Enneking/TNM + pencitraan."],
       differentials: ["Sarkoma Ewing", "Osteomielitis", "Tumor tulang jinak (osteokondroma, aneurysmal bone cyst)", "Fraktur stres", "Metastasis tulang"],
       classification: ["Enneking (intra/ekstrakompartemen, metastasis); histologi: osteoblastik, kondroblastik, fibroblastik; konvensional vs varian."],
@@ -198,7 +198,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "sarkoma-ewing", slug: "sarkoma-ewing", title: "Sarkoma Ewing", specialties: ["Oncology", "Orthopedics"],
     keywords: ["ewing", "sarkoma ewing", "tumor tulang anak", "demam"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Tumor ganas tulang/jaringan lunak pada anak-remaja (t(11;22) EWSR1-FLI1) — diafisis tulang panjang; dapat disertai demam & leukositosis."],
+      overview: ["Tumor ganas tulang/jaringan lunak pada anak-remaja (t(11;22) EWSR1-FLI1) - diafisis tulang panjang; dapat disertai demam & leukositosis."],
       diagnosticCriteria: ["Biopsi + imunohistokimia (CD99, FLI1) + molekular (EWSR1 rearrangement); staging + metastasis."],
       differentials: ["Osteosarkoma", "Osteomielitis", "Limfoma tulang", "Eosinophilic granuloma", "Tumor Ewing ekstraosseus"],
       classification: ["Lokal vs metastatik; lokasi aksial vs ekstremitas."],
@@ -217,7 +217,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "gct", slug: "gct", title: "Giant Cell Tumor Tulang (GCT)", specialties: ["Orthopedics", "Oncology"],
     keywords: ["gct", "giant cell tumor", "tumor tulang", "epifisis"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Tumor tulang agresif-lokal (jinak ganas) — epifisis tulang panjang dewasa muda (20–40 th); nyeri + bengkak periartikular."],
+      overview: ["Tumor tulang agresif-lokal (jinak ganas) - epifisis tulang panjang dewasa muda (20–40 th); nyeri + bengkak periartikular."],
       diagnosticCriteria: ["Pencitraan: lesi epifisis/metafisis eksentrik 'soap bubble' + biopsi: sel stroma mononuklear + sel giant osteoklastik."],
       differentials: ["Kista aneurismal tulang", "Kondroblastoma", "Osteosarkoma", "Metastasis tulang", "Hiperparatiroidisme (tumor coklat)"],
       classification: ["Campanacci: I (intraosseus), II (korteks melebar), III (invasi jaringan lunak); jinak tapi dapat metastasis paru (jarang)."],
@@ -236,7 +236,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "kondrosarkoma", slug: "kondrosarkoma", title: "Kondrosarkoma", specialties: ["Orthopedics", "Oncology"],
     keywords: ["kondrosarkoma", "tumor tulang", "dewasa", "panggul", "tulang rawan"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Tumor ganas tulang pembentuk kartilago — usia dewasa/lanjut; pelvis, proksimal femur, bahu; tumbuh lambat, resisten kemoterapi."],
+      overview: ["Tumor ganas tulang pembentuk kartilago - usia dewasa/lanjut; pelvis, proksimal femur, bahu; tumbuh lambat, resisten kemoterapi."],
       diagnosticCriteria: ["Pencitraan (ring-and-arc chondroid calcification) + biopsi: kartilago maligna; grade histologis 1–3."],
       differentials: ["Enkondroma", "Osteokondroma", "GCT", "Osteosarkoma kondroblastik", "Metastasis"],
       classification: ["Konvensional (grade 1–3), perifer (dari osteokondroma), clear cell, mesenchymal, dedifferentiated."],
@@ -255,7 +255,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "metastasis-tulang", slug: "metastasis-tulang", title: "Metastasis Tulang", specialties: ["Oncology", "Orthopedics"],
     keywords: ["metastasis tulang", "nyeri tulang", "fraktur patologis", "kanker prostat", "kanker payudara"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Tersering dari prostat, payudara, paru, ginjal, tiroid — nyeri tulang, fraktur patologis, hiperkalsemia, kompresi medula spinalis."],
+      overview: ["Tersering dari prostat, payudara, paru, ginjal, tiroid - nyeri tulang, fraktur patologis, hiperkalsemia, kompresi medula spinalis."],
       diagnosticCriteria: ["Pencitraan (bone scan, PET-CT, MRI) menunjukkan lesi tulang multipel + biopsi bila primer tidak diketahui; histologi sesuai primer."],
       differentials: ["Mieloma multipel", "Infeksi (osteomielitis)", "Tumor tulang primer", "Penyakit Paget", "Fraktur stres"],
       classification: ["Osteolitik vs osteoblastik (prostat); soliter vs multipel; dengan/tanpa komplikasi (fraktur, kompresi korda)."],
@@ -274,7 +274,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "sarkoma-jaringan-lunak", slug: "sarkoma-jaringan-lunak", title: "Sarkoma Jaringan Lunak", specialties: ["Oncology", "Orthopedics", "Surgery"],
     keywords: ["sarkoma", "jaringan lunak", "massa ekstremitas", "liposarkoma", "leiomiosarkoma"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Tumor ganas mesenkimal jaringan lunak (liposarkoma, leiomiosarkoma, sinovial, dll) — massa ekstremitas/retroperitoneal yang tumbuh."],
+      overview: ["Tumor ganas mesenkimal jaringan lunak (liposarkoma, leiomiosarkoma, sinovial, dll) - massa ekstremitas/retroperitoneal yang tumbuh."],
       diagnosticCriteria: ["MRI + biopsi core (bukan eksisi tanpa diagnosis) + histologi & grading (FNCLCC) + staging."],
       differentials: ["Lipoma", "Hematoma", "Abses", "Limfoma", "Metastasis"],
       classification: ["FNCLCC grade 1–3; lokasi ekstremitas vs retroperitoneal; ukuran, kedalaman, metastasis."],
@@ -293,7 +293,7 @@ export const EXTRA_GUIDELINES_K: GuidelineEntry[] = [
     id: "ulkus-dekubitus", slug: "ulkus-dekubitus", title: "Ulkus Dekubitus (Luka Tekan)", specialties: ["Dermatology", "Nursing", "Geriatrics"],
     keywords: ["ulkus dekubitus", "luka tekan", "bedsore", "pressure ulcer", "skor braden"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Kerusakan kulit/jaringan akibat tekanan lama — pada pasien imobil; pencegahan (reposisi + skor Braden) adalah kunci."],
+      overview: ["Kerusakan kulit/jaringan akibat tekanan lama - pada pasien imobil; pencegahan (reposisi + skor Braden) adalah kunci."],
       diagnosticCriteria: ["Lesi kulit/jaringan akibat tekanan, lokasi prominens tulang (sakrum, tumit, trokanter); stadium I–IV atau unstageable."],
       differentials: ["Ulkus vaskular (vena/arteri)", "Ulkus neuropatik (kaki diabetik)", "Keganasan kulit", "Nekrosis fasia (jarang)"],
       classification: ["NPUAP: I (eritema non-blanching), II (partial thickness), III (full thickness), IV (hingga tulang/otot), unstageable (eschar), deep tissue injury."],

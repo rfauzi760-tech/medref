@@ -6,7 +6,7 @@ import { canonicalFoods } from "./klinea-canonical";
  * Values are per 100 g edible portion, based on public food-composition
  * tables (Indonesian TKPI / USDA SR public-domain equivalents), rounded to
  * practical precision. Sodium/potassium in mg; omitted when not reliably
- * reported. Used by the meal planner — never invented by an LLM.
+ * reported. Used by the meal planner - never invented by an LLM.
  */
 
 const RFS_FOODS: FoodItem[] = [

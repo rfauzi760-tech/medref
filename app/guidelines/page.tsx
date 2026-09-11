@@ -27,7 +27,7 @@ export default function GuidelinesPage() {
     <div>
       <PageHeader
         title="Panduan Klinis"
-        description="Halaman referensi ringkas untuk dipakai di samping tempat tidur — diagnosis, klasifikasi, tatalaksana, kriteria rawat, tanda bahaya, dan referensi."
+        description="Halaman referensi ringkas untuk dipakai di samping tempat tidur - diagnosis, klasifikasi, tatalaksana, kriteria rawat, tanda bahaya, dan referensi."
         count={guidelines.length}
         countLabel="panduan"
       />

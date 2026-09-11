@@ -17,7 +17,7 @@ const RFS_NUTRITION: NutritionGuidance[] = [
     summary:
       "Nutrition therapy for diabetes aims to achieve and maintain glycemic targets while supporting healthy body weight and reducing cardiovascular risk.",
     principles: [
-      "No single macronutrient distribution fits all — individualize based on eating patterns, preferences, and metabolic goals (ADA 2019 consensus).",
+      "No single macronutrient distribution fits all - individualize based on eating patterns, preferences, and metabolic goals (ADA 2019 consensus).",
       "Prefer carbohydrate counting or consistent carbohydrate intake; emphasize whole grains, legumes, vegetables, and fruits.",
       "Minimize added sugars, sugar-sweetened beverages, and refined grains.",
       "Non-nutritive sweeteners may be used in moderation as a sugar substitute.",
@@ -52,7 +52,7 @@ const RFS_NUTRITION: NutritionGuidance[] = [
     references: [
       {
         org: "American Diabetes Association",
-        title: "Standards of Medical Care in Diabetes — Nutrition Therapy",
+        title: "Standards of Medical Care in Diabetes - Nutrition Therapy",
         year: 2024,
         url: "https://diabetesjournals.org/care/issue/47/Supplement_1",
       },
@@ -86,7 +86,7 @@ const RFS_NUTRITION: NutritionGuidance[] = [
     foodsRecommended: [
       "Rice, cassava, sago, potatoes (boiled, water discarded)",
       "Egg white, small portions of fish or chicken",
-      "Low-potassium vegetables (cabbage, cucumber, green beans) — leeched",
+      "Low-potassium vegetables (cabbage, cucumber, green beans) - leeched",
       "Apple, pear, berries (lower potassium fruits)",
       "White rice porridge, clear soups",
     ],
@@ -101,7 +101,7 @@ const RFS_NUTRITION: NutritionGuidance[] = [
       "Breakfast: rice porridge + egg white + leeched cabbage",
       "Lunch: rice (¾ cup) + small fish portion + low-K vegetables",
       "Dinner: rice (¾ cup) + chicken (small) + cucumber & green beans",
-      "Fluids as prescribed (often restricted) — track intake",
+      "Fluids as prescribed (often restricted) - track intake",
     ],
     references: [
       {
@@ -233,7 +233,7 @@ const RFS_NUTRITION: NutritionGuidance[] = [
       "Weight management requires sustained negative energy balance through structured dietary intervention, physical activity, and behavioral support.",
     principles: [
       "Target weight loss of 5–10% over 3–6 months; 500–1000 kcal/day deficit yields ~0.5–1 kg/week.",
-      "Choose a sustainable dietary pattern: reduced-calorie diet, Mediterranean, DASH, or low-carb — adherence matters most.",
+      "Choose a sustainable dietary pattern: reduced-calorie diet, Mediterranean, DASH, or low-carb - adherence matters most.",
       "Increase protein (1.2–1.5 g/kg ideal body weight) to preserve lean mass during loss.",
       "Increase dietary fiber and vegetables for satiety.",
       "Limit sugar-sweetened beverages, refined grains, fried foods, and ultra-processed foods.",
@@ -307,7 +307,7 @@ const RFS_NUTRITION: NutritionGuidance[] = [
       "Foods displacing energy-dense therapeutic feeds",
     ],
     sampleDay: [
-      "Stabilization: F-75 130 mL/kg/day divided 8x (example only — per WHO protocol)",
+      "Stabilization: F-75 130 mL/kg/day divided 8x (example only - per WHO protocol)",
       "Rehabilitation: F-100 or RUTF per protocol + family foods as tolerated",
     ],
     references: [

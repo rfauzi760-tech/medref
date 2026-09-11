@@ -27,7 +27,7 @@ export default function DevelopmentPage() {
     <div>
       <PageHeader
         title="Perkembangan Anak"
-        description="Tonggak perkembangan berdasarkan usia pada domain motorik kasar, motorik halus, bahasa, sosial, dan kognitif — disertai tanda bahaya yang memerlukan penilaian profesional."
+        description="Tonggak perkembangan berdasarkan usia pada domain motorik kasar, motorik halus, bahasa, sosial, dan kognitif - disertai tanda bahaya yang memerlukan penilaian profesional."
       />
 
       <div className="workspace-panel mb-6 grid gap-4 p-5 sm:grid-cols-2">
@@ -111,7 +111,7 @@ export default function DevelopmentPage() {
 
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-xl border border-red-200 bg-white p-4 dark:border-red-900 dark:bg-zinc-900">
-              <h3 className="mb-2 text-sm font-semibold text-red-700 dark:text-red-300">Tanda bahaya perkembangan — rujuk bila ada</h3>
+              <h3 className="mb-2 text-sm font-semibold text-red-700 dark:text-red-300">Tanda bahaya perkembangan - rujuk bila ada</h3>
               <ul className="clinical-list space-y-1.5">
                 {entry.redFlags.map((r, i) => (
                   <li key={i} className="flex gap-2 text-sm text-red-800/90 dark:text-red-200/90">
@@ -135,7 +135,7 @@ export default function DevelopmentPage() {
           </div>
 
           <p className="text-xs leading-relaxed text-zinc-400">
-            Tonggak perkembangan disusun dari daftar periksa CDC “Learn the Signs. Act Early.” — alat bantu skrining, bukan diagnosis.
+            Tonggak perkembangan disusun dari daftar periksa CDC “Learn the Signs. Act Early.” - alat bantu skrining, bukan diagnosis.
             Keterlambatan tonggak atau hilangnya kemampuan yang sudah dikuasai memerlukan penilaian perkembangan formal.
           </p>
 

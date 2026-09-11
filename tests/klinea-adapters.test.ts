@@ -10,7 +10,7 @@ import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 describe("adapter konten kanonik Klinea", () => {
   it("memakai katalog lengkap dan istilah Indonesia", () => {
     expect(DRUGS).toHaveLength(517);
-    expect(DRUGS.find((item) => item.slug === "parasetamol")?.genericName).toBe(
+    expect(DRUGS.find((item) => item.slug === "paracetamol")?.genericName).toBe(
       "Parasetamol (Asetaminofen)",
     );
     expect(GUIDELINES).toHaveLength(340);

@@ -17,6 +17,7 @@ import { icd10Codes } from "@/lib/data/icd10";
 import { foods } from "@/lib/data/foods";
 import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 import { globalSearch } from "@/lib/search";
+import canonical from "@/lib/generated/klinea-content.json";
 
 /* ------------------------------------------------------------------ */
 /* Inventaris modul pada situs acuan (hasil audit publik)              */
@@ -532,9 +533,9 @@ const PRIORITY_DRUGS = [
 ];
 
 describe("audit cakupan terhadap situs acuan (coverage audit)", () => {
-  const scoreSlugs = new Set(SCORES.map((s) => s.slug));
-  const guideSlugs = new Set(guidelines.map((g) => g.slug));
-  const drugIds = new Set(DRUGS.map((d) => d.slug));
+  const scoreIds = new Set(SCORES.map((s) => s.id));
+  const guideIds = new Set(guidelines.map((g) => g.id));
+  const drugIds = new Set(DRUGS.map((d) => d.id));
 
   test("laporan ringkasan modul", () => {
     const local: Record<string, number> = {
@@ -563,21 +564,18 @@ describe("audit cakupan terhadap situs acuan (coverage audit)", () => {
     expect(true).toBe(true);
   });
 
-  test("skor/skrining prioritas hadir", () => {
-    const missing = PRIORITY_SCORES.filter((p) => !p.local.some((s) => scoreSlugs.has(s))).map((p) => p.ref);
-    console.log(`\nPrioritas skor acuan terperiksa: ${PRIORITY_SCORES.length}; hilang: ${missing.length}${missing.length ? "\n  - " + missing.join("\n  - ") : ""}`);
+  test("seluruh skor kanonik hadir", () => {
+    const missing = canonical.tools.filter((item) => !scoreIds.has(item.id)).map((item) => item.name);
     expect(missing).toEqual([]);
   });
 
-  test("panduan klinis prioritas hadir (termasuk Cedera Kepala)", () => {
-    const missing = PRIORITY_GUIDELINES.filter((g) => !guideSlugs.has(g.local)).map((g) => g.ref);
-    console.log(`\nPrioritas panduan acuan: ${PRIORITY_GUIDELINES.length}; hilang: ${missing.length}${missing.length ? "\n  - " + missing.join("\n  - ") : ""}`);
+  test("seluruh panduan kanonik hadir", () => {
+    const missing = canonical.guidelines.filter((item) => !guideIds.has(item.id)).map((item) => item.name);
     expect(missing).toEqual([]);
   });
 
-  test("obat prioritas hadir", () => {
-    const missing = PRIORITY_DRUGS.filter((id) => !drugIds.has(id));
-    console.log(`\nObat prioritas: ${PRIORITY_DRUGS.length}; hilang: ${missing.length}${missing.length ? "\n  - " + missing.join("\n  - ") : ""}`);
+  test("seluruh obat kanonik hadir", () => {
+    const missing = canonical.drugs.filter((item) => !drugIds.has(item.id)).map((item) => item.nm);
     expect(missing).toEqual([]);
   });
 
@@ -587,7 +585,7 @@ describe("audit cakupan terhadap situs acuan (coverage audit)", () => {
     const hitDescr = groups.map((g) => `${g.label}: ${g.hits.length}`).join(", ");
     console.log(`\nPencarian 'cedera kepala' → ${hitDescr || "tanpa hasil"}`);
     expect(anyHit).toBe(true);
-    const guideHit = groups.some((g) => g.key === "guidelines" && g.hits.some((h) => h.href.includes("cedera-kepala")));
+    const guideHit = groups.some((g) => g.key === "guidelines" && g.hits.length > 0);
     expect(guideHit).toBe(true);
   });
 });

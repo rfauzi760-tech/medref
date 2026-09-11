@@ -32,7 +32,7 @@ const RFS_SCORES: ScoreTool[] = [
     keywords: ["sepsis", "septic", "qsofa", "screening", "organ failure", "infection"],
     indication: "Adults with suspected infection outside the ICU. A qSOFA ≥ 2 should prompt further evaluation for organ dysfunction and escalation.",
     limitations: "Not a diagnostic tool for sepsis by itself; does not replace clinical judgement. qSOFA is specific but less sensitive than SIRS.",
-    warnings: ["qSOFA ≥ 2 identifies patients at risk of poor outcomes — escalate promptly."],
+    warnings: ["qSOFA ≥ 2 identifies patients at risk of poor outcomes - escalate promptly."],
     lastReviewed: "2025-06-01",
     source: { org: "Seymour CW et al. / Third International Consensus (Sepsis-3)", title: "Assessment of Clinical Criteria for Sepsis", year: 2016, url: "https://jamanetwork.com/journals/jama/fullarticle/2543070" },
     variables: [
@@ -41,8 +41,8 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "ment", label: "Mental status", shortLabel: "Mental status", type: "select", required: true, options: [{ label: "Altered mentation (GCS < 15)", value: 1 }, { label: "Alert", value: 0 }] },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Low risk", label: "qSOFA 0–1 — monitor and reassess", tone: "success" },
-      { min: 2, max: 3, category: "High risk", label: "qSOFA ≥ 2 — suspected sepsis; escalate care, evaluate for organ dysfunction", action: "Consider lactate, cultures, broad-spectrum antibiotics per local sepsis pathway.", tone: "danger" },
+      { min: 0, max: 1, category: "Low risk", label: "qSOFA 0–1 - monitor and reassess", tone: "success" },
+      { min: 2, max: 3, category: "High risk", label: "qSOFA ≥ 2 - suspected sepsis; escalate care, evaluate for organ dysfunction", action: "Consider lactate, cultures, broad-spectrum antibiotics per local sepsis pathway.", tone: "danger" },
     ],
   },
   {
@@ -70,9 +70,9 @@ const RFS_SCORES: ScoreTool[] = [
     ],
     ranges: [
       { min: 0, max: 1, category: "Minimal dysfunction", label: "SOFA 0–1", tone: "success" },
-      { min: 2, max: 6, category: "Mild–moderate", label: "SOFA 2–6 — escalating organ dysfunction", tone: "info" },
-      { min: 7, max: 12, category: "Severe", label: "SOFA 7–12 — high mortality risk", tone: "warning" },
-      { min: 13, max: 24, category: "Very severe", label: "SOFA ≥ 13 — mortality risk > 50%", tone: "danger" },
+      { min: 2, max: 6, category: "Mild–moderate", label: "SOFA 2–6 - escalating organ dysfunction", tone: "info" },
+      { min: 7, max: 12, category: "Severe", label: "SOFA 7–12 - high mortality risk", tone: "warning" },
+      { min: 13, max: 24, category: "Very severe", label: "SOFA ≥ 13 - mortality risk > 50%", tone: "danger" },
     ],
   },
   {
@@ -98,7 +98,7 @@ const RFS_SCORES: ScoreTool[] = [
     ],
     ranges: [
       { min: 0, max: 1, category: "SIRS 0–1", label: "Does not meet SIRS criteria (2 of 4 required)", tone: "success" },
-      { min: 2, max: 4, category: "SIRS positive", label: "Meets SIRS criteria (≥ 2 of 4) — evaluate for infection and organ dysfunction", action: "Per Sepsis-3, move to qSOFA/SOFA assessment for risk stratification.", tone: "warning" },
+      { min: 2, max: 4, category: "SIRS positive", label: "Meets SIRS criteria (≥ 2 of 4) - evaluate for infection and organ dysfunction", action: "Per Sepsis-3, move to qSOFA/SOFA assessment for risk stratification.", tone: "warning" },
     ],
   },
   {
@@ -125,16 +125,16 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "temp", label: "Temperature (°C)", shortLabel: "Temp", type: "select", required: true, options: [{ label: "≤ 35.0", value: 3 }, { label: "35.1–36.0", value: 1 }, { label: "36.1–38.0", value: 0 }, { label: "38.1–39.0", value: 1 }, { label: "≥ 39.1", value: 2 }] },
     ],
     ranges: [
-      { min: 0, max: 4, category: "Low", label: "NEWS2 0–4 — non-urgent; continue routine monitoring", tone: "success" },
-      { min: 5, max: 6, category: "Medium", label: "NEWS2 5–6 — urgent ward-level response (or any single parameter 3)", action: "Request urgent review; consider escalation per local protocol.", tone: "warning" },
-      { min: 7, max: 20, category: "High", label: "NEWS2 ≥ 7 — emergency assessment; critical care outreach", action: "Escalate immediately; consider transfer to higher level of care.", tone: "danger" },
+      { min: 0, max: 4, category: "Low", label: "NEWS2 0–4 - non-urgent; continue routine monitoring", tone: "success" },
+      { min: 5, max: 6, category: "Medium", label: "NEWS2 5–6 - urgent ward-level response (or any single parameter 3)", action: "Request urgent review; consider escalation per local protocol.", tone: "warning" },
+      { min: 7, max: 20, category: "High", label: "NEWS2 ≥ 7 - emergency assessment; critical care outreach", action: "Escalate immediately; consider transfer to higher level of care.", tone: "danger" },
     ],
     compute: (values) => {
       const pts = Object.values(values).map((v) => Number(v) || 0);
       const maxSingle = Math.max(...pts);
       return {
         total: pts.reduce((a, b) => a + b, 0),
-        detail: maxSingle >= 3 ? "Includes a parameter scoring 3 — NEWS2 mandates at least a medium-threshold clinical response regardless of total." : undefined,
+        detail: maxSingle >= 3 ? "Includes a parameter scoring 3 - NEWS2 mandates at least a medium-threshold clinical response regardless of total." : undefined,
       };
     },
   },
@@ -160,9 +160,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "avpu", label: "Consciousness (AVPU)", shortLabel: "AVPU", type: "select", required: true, options: [{ label: "Alert", value: 0 }, { label: "Voice", value: 1 }, { label: "Pain", value: 2 }, { label: "Unresponsive", value: 3 }] },
     ],
     ranges: [
-      { min: 0, max: 4, category: "Low", label: "MEWS 0–4 — routine monitoring", tone: "success" },
-      { min: 5, max: 6, category: "Elevated", label: "MEWS ≥ 5 — urgent review by ward clinician / rapid response", tone: "warning" },
-      { min: 7, max: 14, category: "High", label: "MEWS ≥ 7 — emergency; senior review and consider critical care", tone: "danger" },
+      { min: 0, max: 4, category: "Low", label: "MEWS 0–4 - routine monitoring", tone: "success" },
+      { min: 5, max: 6, category: "Elevated", label: "MEWS ≥ 5 - urgent review by ward clinician / rapid response", tone: "warning" },
+      { min: 7, max: 14, category: "High", label: "MEWS ≥ 7 - emergency; senior review and consider critical care", tone: "danger" },
     ],
   },
   {
@@ -177,7 +177,7 @@ const RFS_SCORES: ScoreTool[] = [
     keywords: ["consciousness", "coma", "head injury", "neurology", "gcs"],
     indication: "Serial assessment of consciousness in trauma, stroke, intoxication and critical illness.",
     limitations: "Intubation/sedation invalidates verbal scoring; use GCS–E (motor × 6 + eye × 4) or full outline. In children, age-adapted scores are preferred.",
-    warnings: ["GCS ≤ 8 — consider airway protection (intubation threshold)."],
+    warnings: ["GCS ≤ 8 - consider airway protection (intubation threshold)."],
     lastReviewed: "2025-06-01",
     source: { org: "Teasdale G, Jennett B.", title: "Assessment of coma and impaired consciousness", year: 1974, url: "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(74)91639-0/fulltext" },
     variables: [
@@ -186,9 +186,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "motor", label: "Motor response", shortLabel: "Motor (M)", type: "number", min: 1, max: 6, step: 1, required: true, help: "6 obeys commands, 5 localises, 4 withdraws, 3 abnormal flexion, 2 extension, 1 none" },
     ],
     ranges: [
-      { min: 13, max: 15, category: "Mild", label: "GCS 13–15 — mild impairment", tone: "success" },
-      { min: 9, max: 12, category: "Moderate", label: "GCS 9–12 — moderate impairment", tone: "warning" },
-      { min: 3, max: 8, category: "Severe", label: "GCS 3–8 — severe impairment", action: "Consider airway protection; urgent neuroimaging and neurosurgical review.", tone: "danger" },
+      { min: 13, max: 15, category: "Mild", label: "GCS 13–15 - mild impairment", tone: "success" },
+      { min: 9, max: 12, category: "Moderate", label: "GCS 9–12 - moderate impairment", tone: "warning" },
+      { min: 3, max: 8, category: "Severe", label: "GCS 3–8 - severe impairment", action: "Consider airway protection; urgent neuroimaging and neurosurgical review.", tone: "danger" },
     ],
   },
 
@@ -217,9 +217,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "age", label: "Age", shortLabel: "Age", type: "select", required: true, options: [{ label: "≥ 65 years", value: 1 }, { label: "< 65 years", value: 0 }] },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Low severity", label: "CURB-65 0–1 — consider outpatient management", tone: "success" },
-      { min: 2, max: 2, category: "Intermediate", label: "CURB-65 2 — short-stay inpatient or supervised outpatient", tone: "warning" },
-      { min: 3, max: 5, category: "Severe", label: "CURB-65 ≥ 3 — inpatient management", action: "Score ≥ 4: consider ICU admission.", tone: "danger" },
+      { min: 0, max: 1, category: "Low severity", label: "CURB-65 0–1 - consider outpatient management", tone: "success" },
+      { min: 2, max: 2, category: "Intermediate", label: "CURB-65 2 - short-stay inpatient or supervised outpatient", tone: "warning" },
+      { min: 3, max: 5, category: "Severe", label: "CURB-65 ≥ 3 - inpatient management", action: "Score ≥ 4: consider ICU admission.", tone: "danger" },
     ],
   },
   {
@@ -260,11 +260,11 @@ const RFS_SCORES: ScoreTool[] = [
     ],
     modifiers: [{ whenVar: "sex", whenValue: "female", delta: -10, note: "Female sex" }],
     ranges: [
-      { min: 0, max: 49, category: "Class I", label: "Class I (≤ 50) — low risk, outpatient", tone: "success" },
-      { min: 51, max: 70, category: "Class II", label: "Class II (51–70) — outpatient", tone: "success" },
-      { min: 71, max: 90, category: "Class III", label: "Class III (71–90) — brief inpatient observation", tone: "info" },
-      { min: 91, max: 130, category: "Class IV", label: "Class IV (91–130) — inpatient", tone: "warning" },
-      { min: 131, max: 500, category: "Class V", label: "Class V (> 130) — inpatient; consider ICU", tone: "danger" },
+      { min: 0, max: 49, category: "Class I", label: "Class I (≤ 50) - low risk, outpatient", tone: "success" },
+      { min: 51, max: 70, category: "Class II", label: "Class II (51–70) - outpatient", tone: "success" },
+      { min: 71, max: 90, category: "Class III", label: "Class III (71–90) - brief inpatient observation", tone: "info" },
+      { min: 91, max: 130, category: "Class IV", label: "Class IV (91–130) - inpatient", tone: "warning" },
+      { min: 131, max: 500, category: "Class V", label: "Class V (> 130) - inpatient; consider ICU", tone: "danger" },
     ],
   },
   {
@@ -292,9 +292,9 @@ const RFS_SCORES: ScoreTool[] = [
     ],
     modifiers: [{ whenVar: "prior", whenValue: "0", delta: -3, note: "No prior DVT/PE (original Wells −3)" }],
     ranges: [
-      { min: 0, max: 1, category: "Low probability", label: "Wells < 2 — PE unlikely; D-dimer can exclude", tone: "success" },
-      { min: 2, max: 6, category: "Moderate probability", label: "Wells 2–6 — further testing required", tone: "warning" },
-      { min: 6.5, max: 12.5, category: "High probability", label: "Wells > 6 — proceed to imaging (CTPA)", tone: "danger" },
+      { min: 0, max: 1, category: "Low probability", label: "Wells < 2 - PE unlikely; D-dimer can exclude", tone: "success" },
+      { min: 2, max: 6, category: "Moderate probability", label: "Wells 2–6 - further testing required", tone: "warning" },
+      { min: 6.5, max: 12.5, category: "High probability", label: "Wells > 6 - proceed to imaging (CTPA)", tone: "danger" },
     ],
   },
   {
@@ -313,7 +313,7 @@ const RFS_SCORES: ScoreTool[] = [
     lastReviewed: "2025-06-01",
     source: { org: "Kline JA et al.", title: "Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism", year: 2004, url: "https://onlinelibrary.wiley.com/doi/10.1111/j.1538-7836.2004.00777.x" },
     variables: [
-      { id: "age50", label: "Age < 50 years", shortLabel: "Age < 50", type: "select", required: true, options: [{ label: "Yes — low-risk attribute present", value: 1 }, { label: "No", value: 0 }], help: "PERC is negative (PE ruled out) only when ALL eight low-risk attributes are present (total = 8) in a low pre-test probability patient." },
+      { id: "age50", label: "Age < 50 years", shortLabel: "Age < 50", type: "select", required: true, options: [{ label: "Yes - low-risk attribute present", value: 1 }, { label: "No", value: 0 }], help: "PERC is negative (PE ruled out) only when ALL eight low-risk attributes are present (total = 8) in a low pre-test probability patient." },
       { id: "hr100", label: "Heart rate < 100 bpm", shortLabel: "HR < 100", type: "select", required: true, options: [{ label: "Yes", value: 1 }, { label: "No", value: 0 }] },
       { id: "spo2", label: "SpO₂ ≥ 95% on room air", shortLabel: "SpO₂ ≥ 95%", type: "select", required: true, options: [{ label: "Yes", value: 1 }, { label: "No", value: 0 }] },
       { id: "hemoptysis", label: "No hemoptysis", shortLabel: "No hemoptysis", type: "select", required: true, options: [{ label: "Yes", value: 1 }, { label: "No", value: 0 }] },
@@ -323,8 +323,8 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "surgery", label: "No surgery/trauma needing hospitalisation in 4 weeks", shortLabel: "No recent surgery", type: "select", required: true, options: [{ label: "Yes", value: 1 }, { label: "No", value: 0 }] },
     ],
     ranges: [
-      { min: 8, max: 8, category: "PERC negative", label: "All eight low-risk attributes present — PE can be ruled out without D-dimer (low pre-test probability only)", tone: "success" },
-      { min: 0, max: 7, category: "PERC positive", label: "One or more low-risk attributes absent — PERC cannot rule out PE", action: "Proceed with D-dimer (if low/intermediate probability) or CTPA.", tone: "warning" },
+      { min: 8, max: 8, category: "PERC negative", label: "All eight low-risk attributes present - PE can be ruled out without D-dimer (low pre-test probability only)", tone: "success" },
+      { min: 0, max: 7, category: "PERC positive", label: "One or more low-risk attributes absent - PERC cannot rule out PE", action: "Proceed with D-dimer (if low/intermediate probability) or CTPA.", tone: "warning" },
     ],
   },
   {
@@ -354,9 +354,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "alternative", label: "Alternative diagnosis at least as likely as DVT", shortLabel: "Alternative dx", type: "select", required: true, options: [{ label: "Yes", value: -2 }, { label: "No", value: 0 }] },
     ],
     ranges: [
-      { min: -2, max: 0, category: "Low probability", label: "Wells DVT < 2 — DVT unlikely; D-dimer can exclude", tone: "success" },
-      { min: 1, max: 2, category: "Moderate probability", label: "Wells DVT 1–2 — D-dimer then ultrasound if positive", tone: "warning" },
-      { min: 3, max: 10, category: "High probability", label: "Wells DVT ≥ 3 — proceed to compression ultrasound", tone: "danger" },
+      { min: -2, max: 0, category: "Low probability", label: "Wells DVT < 2 - DVT unlikely; D-dimer can exclude", tone: "success" },
+      { min: 1, max: 2, category: "Moderate probability", label: "Wells DVT 1–2 - D-dimer then ultrasound if positive", tone: "warning" },
+      { min: 3, max: 10, category: "High probability", label: "Wells DVT ≥ 3 - proceed to compression ultrasound", tone: "danger" },
     ],
   },
   {
@@ -370,7 +370,7 @@ const RFS_SCORES: ScoreTool[] = [
     specialties: ["Infectious Disease", "ENT", "Pediatrics", "Emergency Medicine"],
     keywords: ["pharyngitis", "strep throat", "tonsillitis", "centor", "mcisaac", "antibiotic"],
     indication: "Adults and children ≥ 3 years with acute sore throat to guide rapid-antigen testing / antibiotics.",
-    limitations: "Does not apply to < 3 years. Score alone should not mandate antibiotics — use with rapid antigen test where available.",
+    limitations: "Does not apply to < 3 years. Score alone should not mandate antibiotics - use with rapid antigen test where available.",
     lastReviewed: "2025-06-01",
     source: { org: "McIsaac WJ et al.", title: "A clinical score to reduce unnecessary antibiotic use in patients with sore throat", year: 1998, url: "https://jamanetwork.com/journals/jama/fullarticle/187645" },
     variables: [
@@ -381,9 +381,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "age", label: "Age", shortLabel: "Age", type: "number", min: 3, max: 100, step: 1, required: true, help: "3–14 y: +1 · ≥ 45 y: −1" },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Low probability", label: "Score 0–1 — GAS pharyngitis unlikely (~1–17%); no antibiotics", tone: "success" },
-      { min: 2, max: 3, category: "Moderate probability", label: "Score 2–3 — GAS ~28–35%; test (rapid antigen or culture) before treating", tone: "warning" },
-      { min: 4, max: 5, category: "High probability", label: "Score 4–5 — GAS ~38–63%; consider empiric antibiotics or rapid test", tone: "danger" },
+      { min: 0, max: 1, category: "Low probability", label: "Score 0–1 - GAS pharyngitis unlikely (~1–17%); no antibiotics", tone: "success" },
+      { min: 2, max: 3, category: "Moderate probability", label: "Score 2–3 - GAS ~28–35%; test (rapid antigen or culture) before treating", tone: "warning" },
+      { min: 4, max: 5, category: "High probability", label: "Score 4–5 - GAS ~38–63%; consider empiric antibiotics or rapid test", tone: "danger" },
     ],
     compute: (values) => {
       const age = Number(values.age);
@@ -418,9 +418,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "respiration", label: "Respiration", shortLabel: "Respiration", type: "select", required: true, options: [{ label: "Absent", value: 0 }, { label: "Weak, irregular, gasping", value: 1 }, { label: "Strong cry", value: 2 }] },
     ],
     ranges: [
-      { min: 7, max: 10, category: "Reassuring", label: "APGAR 7–10 — normal transition", tone: "success" },
-      { min: 4, max: 6, category: "Moderately depressed", label: "APGAR 4–6 — moderate depression; continue stimulation/oxygen per resuscitation algorithm", tone: "warning" },
-      { min: 0, max: 3, category: "Severely depressed", label: "APGAR 0–3 — severe depression; initiate full resuscitation", tone: "danger" },
+      { min: 7, max: 10, category: "Reassuring", label: "APGAR 7–10 - normal transition", tone: "success" },
+      { min: 4, max: 6, category: "Moderately depressed", label: "APGAR 4–6 - moderate depression; continue stimulation/oxygen per resuscitation algorithm", tone: "warning" },
+      { min: 0, max: 3, category: "Severely depressed", label: "APGAR 0–3 - severe depression; initiate full resuscitation", tone: "danger" },
     ],
   },
   {
@@ -445,9 +445,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "air", label: "Air entry", shortLabel: "Air entry", type: "select", required: true, options: [{ label: "Clear", value: 0 }, { label: "Decreased", value: 1 }, { label: "Barely audible", value: 2 }] },
     ],
     ranges: [
-      { min: 0, max: 3, category: "Mild distress", label: "Downes 0–3 — mild; observe, keep warm", tone: "success" },
-      { min: 4, max: 6, category: "Moderate distress", label: "Downes 4–6 — moderate; consider CPAP/nasal prongs, escalate monitoring", tone: "warning" },
-      { min: 7, max: 10, category: "Severe distress", label: "Downes ≥ 7 — impending respiratory failure; NICU and ventilation", tone: "danger" },
+      { min: 0, max: 3, category: "Mild distress", label: "Downes 0–3 - mild; observe, keep warm", tone: "success" },
+      { min: 4, max: 6, category: "Moderate distress", label: "Downes 4–6 - moderate; consider CPAP/nasal prongs, escalate monitoring", tone: "warning" },
+      { min: 7, max: 10, category: "Severe distress", label: "Downes ≥ 7 - impending respiratory failure; NICU and ventilation", tone: "danger" },
     ],
   },
   {
@@ -472,10 +472,10 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "grunt", label: "Expiratory grunting", shortLabel: "Grunting", type: "select", required: true, options: [{ label: "None", value: 0 }, { label: "Audible with stethoscope", value: 1 }, { label: "Audible without stethoscope", value: 2 }] },
     ],
     ranges: [
-      { min: 0, max: 1, category: "No–minimal distress", label: "Silverman 0–1 — minimal distress", tone: "success" },
-      { min: 2, max: 4, category: "Mild distress", label: "Silverman 2–4 — mild; monitor closely", tone: "info" },
-      { min: 5, max: 7, category: "Moderate distress", label: "Silverman 5–7 — moderate; escalate respiratory support", tone: "warning" },
-      { min: 8, max: 10, category: "Severe distress", label: "Silverman 8–10 — severe; consider ventilation", tone: "danger" },
+      { min: 0, max: 1, category: "No–minimal distress", label: "Silverman 0–1 - minimal distress", tone: "success" },
+      { min: 2, max: 4, category: "Mild distress", label: "Silverman 2–4 - mild; monitor closely", tone: "info" },
+      { min: 5, max: 7, category: "Moderate distress", label: "Silverman 5–7 - moderate; escalate respiratory support", tone: "warning" },
+      { min: 8, max: 10, category: "Severe distress", label: "Silverman 8–10 - severe; consider ventilation", tone: "danger" },
     ],
   },
   {
@@ -502,13 +502,13 @@ const RFS_SCORES: ScoreTool[] = [
       const stage = Math.max(Number(values.conscious) || 1, Number(values.tone) || 1, Number(values.seizures) || 1, Number(values.autonomic) || 1);
       return {
         total: stage,
-        detail: `Highest stage among features: ${stage === 1 ? "Stage I — mild" : stage === 2 ? "Stage II — moderate" : "Stage III — severe"}`,
+        detail: `Highest stage among features: ${stage === 1 ? "Stage I - mild" : stage === 2 ? "Stage II - moderate" : "Stage III - severe"}`,
       };
     },
     ranges: [
-      { min: 1, max: 1, category: "Stage I (mild)", label: "Hyperalert, normal tone, no seizures — usually recovers fully; observe for 24–48 h", tone: "info" },
-      { min: 2, max: 2, category: "Stage II (moderate)", label: "Lethargy, hypotonia, seizures — the group most likely to benefit from therapeutic hypothermia", action: "Consider therapeutic hypothermia within 6 h of birth; EEG/aEEG monitoring.", tone: "warning" },
-      { min: 3, max: 3, category: "Stage III (severe)", label: "Stupor/coma, flaccid, frequent seizures — high mortality; significant neurodevelopmental disability in survivors", action: "Therapeutic hypothermia, EEG monitoring, neuroimaging; discuss prognosis with family.", tone: "danger" },
+      { min: 1, max: 1, category: "Stage I (mild)", label: "Hyperalert, normal tone, no seizures - usually recovers fully; observe for 24–48 h", tone: "info" },
+      { min: 2, max: 2, category: "Stage II (moderate)", label: "Lethargy, hypotonia, seizures - the group most likely to benefit from therapeutic hypothermia", action: "Consider therapeutic hypothermia within 6 h of birth; EEG/aEEG monitoring.", tone: "warning" },
+      { min: 3, max: 3, category: "Stage III (severe)", label: "Stupor/coma, flaccid, frequent seizures - high mortality; significant neurodevelopmental disability in survivors", action: "Therapeutic hypothermia, EEG monitoring, neuroimaging; discuss prognosis with family.", tone: "danger" },
     ],
   },
 
@@ -526,7 +526,7 @@ const RFS_SCORES: ScoreTool[] = [
     specialties: ["Nephrology", "Intensive Care", "Internal Medicine"],
     keywords: ["aki", "acute kidney injury", "kdigo", "creatinine", "staging", "renal"],
     indication: "Detect and stage AKI: Stage 1–3 by creatinine rise and/or urine output.",
-    limitations: "Baseline creatinine may be unknown — estimate from lowest recent value or back-calculate; urine output requires catheter or reliable recording.",
+    limitations: "Baseline creatinine may be unknown - estimate from lowest recent value or back-calculate; urine output requires catheter or reliable recording.",
     lastReviewed: "2025-06-01",
     source: { org: "KDIGO", title: "Clinical Practice Guideline for Acute Kidney Injury", year: 2012, url: "https://kdigo.org/guidelines/acute-kidney-injury/" },
     variables: [
@@ -591,14 +591,14 @@ const RFS_SCORES: ScoreTool[] = [
       else if (egfr >= 30) { g = 3; gLabel = "G3b"; }
       else if (egfr >= 15) { g = 4; gLabel = "G4"; }
       else { g = 5; gLabel = "G5"; }
-      return { total: g, detail: `Combined category: ${gLabel}A${alb} — eGFR ${egfr} mL/min/1.73 m²` };
+      return { total: g, detail: `Combined category: ${gLabel}A${alb} - eGFR ${egfr} mL/min/1.73 m²` };
     },
     ranges: [
-      { min: 1, max: 1, category: "G1", label: "G1 — normal or high eGFR (≥ 90). CKD only if kidney damage markers present", tone: "success" },
-      { min: 2, max: 2, category: "G2", label: "G2 — mildly decreased (60–89). CKD only if kidney damage markers present", tone: "success" },
-      { min: 3, max: 3, category: "G3", label: "G3 — moderately to severely decreased (30–59); review nephrotoxins and cardiovascular risk", tone: "warning" },
-      { min: 4, max: 4, category: "G4", label: "G4 — severely decreased (15–29); prepare renal replacement options, nephrology referral", tone: "warning" },
-      { min: 5, max: 5, category: "G5", label: "G5 — kidney failure (< 15); consider dialysis/transplant, urgent nephrology", tone: "danger" },
+      { min: 1, max: 1, category: "G1", label: "G1 - normal or high eGFR (≥ 90). CKD only if kidney damage markers present", tone: "success" },
+      { min: 2, max: 2, category: "G2", label: "G2 - mildly decreased (60–89). CKD only if kidney damage markers present", tone: "success" },
+      { min: 3, max: 3, category: "G3", label: "G3 - moderately to severely decreased (30–59); review nephrotoxins and cardiovascular risk", tone: "warning" },
+      { min: 4, max: 4, category: "G4", label: "G4 - severely decreased (15–29); prepare renal replacement options, nephrology referral", tone: "warning" },
+      { min: 5, max: 5, category: "G5", label: "G5 - kidney failure (< 15); consider dialysis/transplant, urgent nephrology", tone: "danger" },
     ],
   },
 
@@ -617,7 +617,7 @@ const RFS_SCORES: ScoreTool[] = [
     specialties: ["Endocrinology", "Emergency Medicine", "Internal Medicine", "Pediatrics"],
     keywords: ["dka", "ketoacidosis", "diabetes", "hyperglycemia", "ketones", "metabolic acidosis"],
     indication: "Diagnose DKA and grade severity (mild/moderate/severe).",
-    limitations: "Euglycaemic DKA (SGLT2 inhibitors) can present with glucose < 250 mg/dL — check ketones and gap.",
+    limitations: "Euglycaemic DKA (SGLT2 inhibitors) can present with glucose < 250 mg/dL - check ketones and gap.",
     lastReviewed: "2025-06-01",
     source: { org: "American Diabetes Association", title: "Hyperglycemic Crises in Adult Patients With Diabetes (Position Statement)", year: 2009, url: "https://diabetesjournals.org/care/article/32/7/1335/27958" },
     variables: [
@@ -647,7 +647,7 @@ const RFS_SCORES: ScoreTool[] = [
       return { total: met ? 1 : 0, detail: met && severity ? severity : undefined };
     },
     ranges: [
-      { min: 0, max: 0, category: "Not DKA", label: "Criteria not fully met — consider other causes of high anion gap acidosis (lactate, toxins, renal failure)", tone: "success" },
+      { min: 0, max: 0, category: "Not DKA", label: "Criteria not fully met - consider other causes of high anion gap acidosis (lactate, toxins, renal failure)", tone: "success" },
       { min: 1, max: 1, category: "DKA", label: "DKA criteria met (hyperglycaemia + ketosis + acidemia with elevated anion gap)", action: "Start protocol: IV fluids, insulin infusion, potassium replacement, monitor glucose hourly and electrolytes 2–4 hourly.", tone: "danger" },
     ],
   },
@@ -662,7 +662,7 @@ const RFS_SCORES: ScoreTool[] = [
     description: "ADA criteria for hyperosmolar hyperglycaemic state (formerly HONK).",
     specialties: ["Endocrinology", "Emergency Medicine", "Internal Medicine"],
     keywords: ["hhs", "honk", "hyperosmolar", "hyperglycemia", "diabetes", "dehydration"],
-    indication: "Diagnose HHS — distinguished from DKA by marked hyperosmolality and minimal ketosis.",
+    indication: "Diagnose HHS - distinguished from DKA by marked hyperosmolality and minimal ketosis.",
     limitations: "HHS and DKA can overlap; treat the dominant process.",
     lastReviewed: "2025-06-01",
     source: { org: "American Diabetes Association", title: "Hyperglycemic Crises in Adult Patients With Diabetes (Position Statement)", year: 2009, url: "https://diabetesjournals.org/care/article/32/7/1335/27958" },
@@ -676,11 +676,11 @@ const RFS_SCORES: ScoreTool[] = [
     ],
     compute: (values) => {
       const met = Number(values.glucose) === 1 && Number(values.osmol) === 1 && Number(values.ketones) === 1 && Number(values.ph) === 1 && Number(values.hco3) === 1;
-      return { total: met ? 1 : 0, detail: Number(values.mental) === 1 ? "Altered mental status present — common in HHS" : undefined };
+      return { total: met ? 1 : 0, detail: Number(values.mental) === 1 ? "Altered mental status present - common in HHS" : undefined };
     },
     ranges: [
-      { min: 0, max: 0, category: "Not HHS", label: "Criteria not fully met — consider DKA or other hyperglycaemic emergencies", tone: "success" },
-      { min: 1, max: 1, category: "HHS", label: "HHS criteria met — marked hyperglycaemia, hyperosmolality, minimal ketosis", action: "Aggressive but careful IV fluid rehydration (0.9% saline initially), low-dose insulin after fluids, potassium replacement, treat precipitant.", tone: "danger" },
+      { min: 0, max: 0, category: "Not HHS", label: "Criteria not fully met - consider DKA or other hyperglycaemic emergencies", tone: "success" },
+      { min: 1, max: 1, category: "HHS", label: "HHS criteria met - marked hyperglycaemia, hyperosmolality, minimal ketosis", action: "Aggressive but careful IV fluid rehydration (0.9% saline initially), low-dose insulin after fluids, potassium replacement, treat precipitant.", tone: "danger" },
     ],
   },
 
@@ -716,15 +716,15 @@ const RFS_SCORES: ScoreTool[] = [
       const proteinuria = Number(values.proteinuria) || 0;
       const severe = ["thrombo", "renal", "liver", "edema", "neuro"].reduce((s, k) => s + (Number(values[k]) || 0), 0);
       const met = bp === 1 && (proteinuria === 1 || severe > 0);
-      const severeLabel = severe > 0 ? " — WITH severe features" : "";
+      const severeLabel = severe > 0 ? " - WITH severe features" : "";
       return {
         total: met ? 1 : 0,
         detail: met ? `Preeclampsia diagnosed${severeLabel}${severe > 0 ? " (manage as severe: IV antihypertensives, MgSO₄, delivery planning)" : ""}` : undefined,
       };
     },
     ranges: [
-      { min: 0, max: 0, category: "Not preeclampsia", label: "Criteria not met — evaluate other causes of hypertension/symptoms", tone: "success" },
-      { min: 1, max: 1, category: "Preeclampsia", label: "Preeclampsia — new hypertension + proteinuria or end-organ dysfunction after 20 weeks", action: "Admit; monitor BP/fetal wellbeing; treat severe features aggressively (MgSO₄, antihypertensives, delivery planning).", tone: "danger" },
+      { min: 0, max: 0, category: "Not preeclampsia", label: "Criteria not met - evaluate other causes of hypertension/symptoms", tone: "success" },
+      { min: 1, max: 1, category: "Preeclampsia", label: "Preeclampsia - new hypertension + proteinuria or end-organ dysfunction after 20 weeks", action: "Admit; monitor BP/fetal wellbeing; treat severe features aggressively (MgSO₄, antihypertensives, delivery planning).", tone: "danger" },
     ],
   },
   {
@@ -755,15 +755,15 @@ const RFS_SCORES: ScoreTool[] = [
       return {
         total: met ? plts : 0,
         detail: met
-          ? `HELLP syndrome (Tennessee criteria met) — Mississippi class ${plts === 3 ? "I (platelets < 50,000)" : plts === 2 ? "II (50,000–99,999)" : "III (100,000–150,000)"}`
-          : "Not all Tennessee criteria met (partial HELLP possible — recheck in 4–6 h)",
+          ? `HELLP syndrome (Tennessee criteria met) - Mississippi class ${plts === 3 ? "I (platelets < 50,000)" : plts === 2 ? "II (50,000–99,999)" : "III (100,000–150,000)"}`
+          : "Not all Tennessee criteria met (partial HELLP possible - recheck in 4–6 h)",
       };
     },
     ranges: [
-      { min: 0, max: 0, category: "Not HELLP", label: "Criteria not met — monitor closely if preeclampsia present", tone: "info" },
-      { min: 1, max: 1, category: "HELLP class III", label: "HELLP class III — platelets 100,000–150,000", action: "Admit; monitor platelets/LDH/AST; delivery planning; MgSO₄ per preeclampsia protocol.", tone: "warning" },
-      { min: 2, max: 2, category: "HELLP class II", label: "HELLP class II — platelets 50,000–99,999", action: "Urgent obstetric and ICU involvement; consider steroids and delivery.", tone: "warning" },
-      { min: 3, max: 3, category: "HELLP class I", label: "HELLP class I — platelets < 50,000 (most severe)", action: "Emergency: control BP, MgSO₄, platelet transfusion if bleeding/surgery, expedite delivery.", tone: "danger" },
+      { min: 0, max: 0, category: "Not HELLP", label: "Criteria not met - monitor closely if preeclampsia present", tone: "info" },
+      { min: 1, max: 1, category: "HELLP class III", label: "HELLP class III - platelets 100,000–150,000", action: "Admit; monitor platelets/LDH/AST; delivery planning; MgSO₄ per preeclampsia protocol.", tone: "warning" },
+      { min: 2, max: 2, category: "HELLP class II", label: "HELLP class II - platelets 50,000–99,999", action: "Urgent obstetric and ICU involvement; consider steroids and delivery.", tone: "warning" },
+      { min: 3, max: 3, category: "HELLP class I", label: "HELLP class I - platelets < 50,000 (most severe)", action: "Emergency: control BP, MgSO₄, platelet transfusion if bleeding/surgery, expedite delivery.", tone: "danger" },
     ],
   },
 
@@ -800,9 +800,9 @@ const RFS_SCORES: ScoreTool[] = [
       return { total, detail: `Anticoagulation guidance (${female ? "female" : "male"}): ${rec}. Always weigh bleeding risk (HAS-BLED).` };
     },
     ranges: [
-      { min: 0, max: 1, category: "Low–intermediate", label: "Score 0 (men) / 1 (women, sex only) — annual stroke risk ~0.2–1.3%; usually no anticoagulation", tone: "success" },
-      { min: 2, max: 2, category: "Intermediate", label: "Score 1 (men) / 2 (women) — consider oral anticoagulation", tone: "warning" },
-      { min: 3, max: 9, category: "High", label: "Score ≥ 2 (men) / ≥ 3 (women) — oral anticoagulation recommended", action: "Discuss DOAC vs warfarin; reassess bleeding risk (HAS-BLED).", tone: "danger" },
+      { min: 0, max: 1, category: "Low–intermediate", label: "Score 0 (men) / 1 (women, sex only) - annual stroke risk ~0.2–1.3%; usually no anticoagulation", tone: "success" },
+      { min: 2, max: 2, category: "Intermediate", label: "Score 1 (men) / 2 (women) - consider oral anticoagulation", tone: "warning" },
+      { min: 3, max: 9, category: "High", label: "Score ≥ 2 (men) / ≥ 3 (women) - oral anticoagulation recommended", action: "Discuss DOAC vs warfarin; reassess bleeding risk (HAS-BLED).", tone: "danger" },
     ],
   },
   {
@@ -830,8 +830,8 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "drugs", label: "Drugs (antiplatelet, NSAID) or alcohol", shortLabel: "Drugs/alcohol", type: "select", required: true, options: [{ label: "Yes", value: 1 }, { label: "No", value: 0 }] },
     ],
     ranges: [
-      { min: 0, max: 2, category: "Low risk", label: "HAS-BLED 0–2 — low bleeding risk", tone: "success" },
-      { min: 3, max: 9, category: "High risk", label: "HAS-BLED ≥ 3 — high bleeding risk", action: "Address modifiable factors (BP, INR, alcohol, NSAIDs); reassess frequently. High score alone should not preclude anticoagulation when clearly indicated.", tone: "warning" },
+      { min: 0, max: 2, category: "Low risk", label: "HAS-BLED 0–2 - low bleeding risk", tone: "success" },
+      { min: 3, max: 9, category: "High risk", label: "HAS-BLED ≥ 3 - high bleeding risk", action: "Address modifiable factors (BP, INR, alcohol, NSAIDs); reassess frequently. High score alone should not preclude anticoagulation when clearly indicated.", tone: "warning" },
     ],
   },
   {
@@ -856,9 +856,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "trop", label: "Troponin", shortLabel: "Troponin", type: "select", required: true, options: [{ label: "> 3× normal limit", value: 2 }, { label: "1–3× normal limit", value: 1 }, { label: "≤ normal limit", value: 0 }] },
     ],
     ranges: [
-      { min: 0, max: 3, category: "Low risk", label: "HEART 0–3 — MACE ~1.7% (6 weeks); consider discharge with early follow-up", tone: "success" },
-      { min: 4, max: 6, category: "Moderate risk", label: "HEART 4–6 — MACE ~13–17%; admit for observation, serial troponins, stress testing", tone: "warning" },
-      { min: 7, max: 10, category: "High risk", label: "HEART 7–10 — MACE ~50%; urgent cardiology, invasive strategy", tone: "danger" },
+      { min: 0, max: 3, category: "Low risk", label: "HEART 0–3 - MACE ~1.7% (6 weeks); consider discharge with early follow-up", tone: "success" },
+      { min: 4, max: 6, category: "Moderate risk", label: "HEART 4–6 - MACE ~13–17%; admit for observation, serial troponins, stress testing", tone: "warning" },
+      { min: 7, max: 10, category: "High risk", label: "HEART 7–10 - MACE ~50%; urgent cardiology, invasive strategy", tone: "danger" },
     ],
   },
   {
@@ -885,9 +885,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "std", label: "ST deviation ≥ 0.5 mm", shortLabel: "ST deviation", type: "select", required: true, options: [{ label: "Yes", value: 1 }, { label: "No", value: 0 }] },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Low risk", label: "TIMI 0–1 — 14-day event rate ~4.7%", tone: "success" },
-      { min: 2, max: 4, category: "Intermediate risk", label: "TIMI 2–4 — 14-day event rate ~8.3–19.9%", tone: "warning" },
-      { min: 5, max: 7, category: "High risk", label: "TIMI 5–7 — 14-day event rate ~26.2–40.9%", action: "Aggressive management: antiplatelet/anticoagulation, early invasive strategy.", tone: "danger" },
+      { min: 0, max: 1, category: "Low risk", label: "TIMI 0–1 - 14-day event rate ~4.7%", tone: "success" },
+      { min: 2, max: 4, category: "Intermediate risk", label: "TIMI 2–4 - 14-day event rate ~8.3–19.9%", tone: "warning" },
+      { min: 5, max: 7, category: "High risk", label: "TIMI 5–7 - 14-day event rate ~26.2–40.9%", action: "Aggressive management: antiplatelet/anticoagulation, early invasive strategy.", tone: "danger" },
     ],
   },
 
@@ -919,9 +919,9 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "shift", label: "Neutrophil shift to left", shortLabel: "Shift", type: "select", required: true, options: [{ label: "> 75% neutrophils", value: 1 }, { label: "≤ 75%", value: 0 }] },
     ],
     ranges: [
-      { min: 0, max: 4, category: "Low probability", label: "Alvarado 0–4 — appendicitis unlikely; observe / consider imaging", tone: "success" },
-      { min: 5, max: 6, category: "Equivocal", label: "Alvarado 5–6 — possible appendicitis; imaging advised", tone: "warning" },
-      { min: 7, max: 10, category: "High probability", label: "Alvarado ≥ 7 — probable appendicitis; surgical consultation", tone: "danger" },
+      { min: 0, max: 4, category: "Low probability", label: "Alvarado 0–4 - appendicitis unlikely; observe / consider imaging", tone: "success" },
+      { min: 5, max: 6, category: "Equivocal", label: "Alvarado 5–6 - possible appendicitis; imaging advised", tone: "warning" },
+      { min: 7, max: 10, category: "High probability", label: "Alvarado ≥ 7 - probable appendicitis; surgical consultation", tone: "danger" },
     ],
   },
   {
@@ -958,10 +958,10 @@ const RFS_SCORES: ScoreTool[] = [
       return { total: admission + h48, detail: `At admission: ${admission}/5 · At 48 h: ${h48}/6 (complete at 48 hours)` };
     },
     ranges: [
-      { min: 0, max: 2, category: "Mild", label: "Ranson 0–2 — mortality < 1%; supportive care", tone: "success" },
-      { min: 3, max: 4, category: "Moderate", label: "Ranson 3–4 — mortality ~15%; close monitoring", tone: "warning" },
-      { min: 5, max: 6, category: "Severe", label: "Ranson 5–6 — mortality ~40%; consider ICU", tone: "warning" },
-      { min: 7, max: 11, category: "Very severe", label: "Ranson ≥ 7 — mortality > 90%; ICU management", tone: "danger" },
+      { min: 0, max: 2, category: "Mild", label: "Ranson 0–2 - mortality < 1%; supportive care", tone: "success" },
+      { min: 3, max: 4, category: "Moderate", label: "Ranson 3–4 - mortality ~15%; close monitoring", tone: "warning" },
+      { min: 5, max: 6, category: "Severe", label: "Ranson 5–6 - mortality ~40%; consider ICU", tone: "warning" },
+      { min: 7, max: 11, category: "Very severe", label: "Ranson ≥ 7 - mortality > 90%; ICU management", tone: "danger" },
     ],
   },
   {
@@ -989,10 +989,10 @@ const RFS_SCORES: ScoreTool[] = [
       { id: "cardiac", label: "Cardiac failure", shortLabel: "Cardiac failure", type: "select", required: true, options: [{ label: "Yes", value: 2 }, { label: "No", value: 0 }] },
     ],
     ranges: [
-      { min: 0, max: 1, category: "Very low risk", label: "Blatchford 0–1 — low risk of needing intervention; consider outpatient management", tone: "success" },
-      { min: 2, max: 5, category: "Low–moderate", label: "Blatchford 2–5 — admit, monitor, plan endoscopy", tone: "info" },
-      { min: 6, max: 11, category: "Moderate–high", label: "Blatchford ≥ 6 — higher risk of intervention/transfusion; early endoscopy", tone: "warning" },
-      { min: 12, max: 23, category: "High", label: "Blatchford ≥ 12 — very high risk; urgent endoscopy and resuscitation", tone: "danger" },
+      { min: 0, max: 1, category: "Very low risk", label: "Blatchford 0–1 - low risk of needing intervention; consider outpatient management", tone: "success" },
+      { min: 2, max: 5, category: "Low–moderate", label: "Blatchford 2–5 - admit, monitor, plan endoscopy", tone: "info" },
+      { min: 6, max: 11, category: "Moderate–high", label: "Blatchford ≥ 6 - higher risk of intervention/transfusion; early endoscopy", tone: "warning" },
+      { min: 12, max: 23, category: "High", label: "Blatchford ≥ 12 - very high risk; urgent endoscopy and resuscitation", tone: "danger" },
     ],
   },
   ...EXTRA_SCORES_A,

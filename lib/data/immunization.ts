@@ -4,7 +4,7 @@ import type { ImmunizationSchedule } from "@/lib/types";
  * Indonesian immunization schedule (children 0–18 years).
  * Structured, versioned data based on the publicly published Kementerian
  * Kesehatan RI basic immunization schedule and IDAI recommended schedule.
- * Used by the immunization status engine — do not hardcode into UI.
+ * Used by the immunization status engine - do not hardcode into UI.
  */
 
 export const immunizationSchedule: ImmunizationSchedule = {
@@ -21,14 +21,14 @@ export const immunizationSchedule: ImmunizationSchedule = {
       id: "hb0",
       name: "Hepatitis B (birth dose)",
       shortName: "HB-0",
-      description: "Hepatitis B vaccine, birth dose — within 24 hours of birth.",
+      description: "Hepatitis B vaccine, birth dose - within 24 hours of birth.",
       doses: [{ doseNumber: 1, dueAgeMonths: 0, windowStart: 0, windowEnd: 0, label: "Birth (≤ 24 hours)" }],
     },
     {
       id: "bcg",
       name: "BCG",
       shortName: "BCG",
-      description: "Tuberculosis vaccine — single dose soon after birth.",
+      description: "Tuberculosis vaccine - single dose soon after birth.",
       doses: [{ doseNumber: 1, dueAgeMonths: 1, windowStart: 0, windowEnd: 2, label: "Age 0–2 months" }],
     },
     {
@@ -77,7 +77,7 @@ export const immunizationSchedule: ImmunizationSchedule = {
       id: "ipv",
       name: "IPV (Inactivated Polio)",
       shortName: "IPV",
-      description: "Inactivated polio vaccine — one dose alongside OPV-3.",
+      description: "Inactivated polio vaccine - one dose alongside OPV-3.",
       doses: [{ doseNumber: 1, dueAgeMonths: 4, windowStart: 3, windowEnd: 5, label: "Age 4 months" }],
     },
     {

@@ -6,7 +6,7 @@ export function round(v: number, digits = 1): number {
 }
 
 export function fmt(v: number, digits = 1): string {
-  if (!Number.isFinite(v)) return "—";
+  if (!Number.isFinite(v)) return "-";
   return String(round(v, digits));
 }
 
@@ -61,12 +61,12 @@ export function caMgdlToMmol(mgdl: number): number {
   return mgdl / 4.008;
 }
 
-/** mg/dL sodium to mmol/L — sodium molar mass 22.99, but clinically 1 mEq = 1 mmol; mg/dL → mmol/L = mg/dL * 10 / 22.99 */
+/** mg/dL sodium to mmol/L - sodium molar mass 22.99, but clinically 1 mEq = 1 mmol; mg/dL → mmol/L = mg/dL * 10 / 22.99 */
 export function naMgdlToMmol(mgdl: number): number {
   return (mgdl * 10) / 22.99;
 }
 
-/** mg/dL urea (BUN) to mmol/L urea — BUN mg/dL * 0.357 = mmol/L urea */
+/** mg/dL urea (BUN) to mmol/L urea - BUN mg/dL * 0.357 = mmol/L urea */
 export function bunMgdlToMmol(bunMgdl: number): number {
   return bunMgdl * 0.357;
 }
@@ -76,7 +76,7 @@ export function bunToUrea(bunMgdl: number): number {
   return bunMgdl * 2.14;
 }
 
-/** standard normal CDF (percentile from z) — Abramowitz & Stegun approximation */
+/** standard normal CDF (percentile from z) - Abramowitz & Stegun approximation */
 export function zToPercentile(z: number): number {
   const t = 1 / (1 + 0.2316419 * Math.abs(z));
   const d = 0.3989422804014327 * Math.exp((-z * z) / 2);
@@ -85,7 +85,7 @@ export function zToPercentile(z: number): number {
   return p * 100;
 }
 
-/** percentile (0-100) to z-score (inverse normal CDF) — Beasley-Springer-Moro / Acklam */
+/** percentile (0-100) to z-score (inverse normal CDF) - Beasley-Springer-Moro / Acklam */
 export function percentileToZ(pct: number): number {
   const p = clamp(pct / 100, 1e-12, 1 - 1e-12);
   const a = [-3.969683028665376e1, 2.209460984245205e2, -2.759285104469687e2, 1.38357751867269e2, -3.066479806614716e1, 2.506628277459239];

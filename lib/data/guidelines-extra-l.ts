@@ -1,13 +1,13 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan tambahan — bagian L: jantung bawaan, neonatologi, hematologi anak. */
+/** Panduan tambahan - bagian L: jantung bawaan, neonatologi, hematologi anak. */
 
 export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
   {
     id: "pjb-pendekatan", slug: "pjb-pendekatan", title: "Penyakit Jantung Bawaan (Pendekatan)", specialties: ["Pediatrics", "Cardiology"],
     keywords: ["pjb", "jantung bawaan", "sianosis", "murmur", "screening jantung anak"], emergency: true, ageGroup: "pediatric",
     sections: {
-      overview: ["Kelainan struktural jantung sejak lahir (~1% kelahiran) — sianotik vs asianotik; deteksi dini (pulse oximetry, murmur) penting."],
+      overview: ["Kelainan struktural jantung sejak lahir (~1% kelahiran) - sianotik vs asianotik; deteksi dini (pulse oximetry, murmur) penting."],
       diagnosticCriteria: ["Ekokardiografi konfirmasi; skrining: saturasi oksigen < 95% (atau perbedaan > 3% pre/post duktus) pada neonatus."],
       differentials: ["Murmur fungsional/innocent", "PJK asianotik (VSD, ASD, PDA)", "PJK sianotik (TOF, TGA, PA)", "Hipertensi pulmonal neonatus", "Sepsis neonatorum (sianosis)"],
       classification: ["Sianotik (TOF, TGA, tricuspid atresia, PA) vs asianotik (shunt kiri-kanan: VSD/ASD/PDA; obstruktif: koarktasio, stenosis aorta); dengan/tanpa gagal jantung."],
@@ -27,7 +27,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "vsd", slug: "vsd", title: "Defek Septum Ventrikel (VSD)", specialties: ["Pediatrics", "Cardiology"],
     keywords: ["vsd", "defek septum ventrikel", "murmur pansistolik", "jantung bocor"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Defek pada septum ventrikel — PJK tersering; kecil asimtomatik, besar menimbulkan gagal jantung + hipertensi pulmonal."],
+      overview: ["Defek pada septum ventrikel - PJK tersering; kecil asimtomatik, besar menimbulkan gagal jantung + hipertensi pulmonal."],
       diagnosticCriteria: ["Ekokardiografi menunjukkan defek; murmur pansistolik keras di sela iga 3–4 kiri bawah."],
       differentials: ["ASD", "PDA", "AVSD", "Murmur innocent"],
       classification: ["Perimembranous (tersering), muskular, suprakristal, inlet (AVSD); ukuran kecil/sedang/besar."],
@@ -46,7 +46,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "asd", slug: "asd", title: "Defek Septum Atrium (ASD)", specialties: ["Pediatrics", "Cardiology"],
     keywords: ["asd", "defek septum atrium", "murmur ejeksi", "fixed split s2"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Defek pada septum atrium — shunt kiri-kanan; sering asimtomatik sampai dewasa; risiko aritmia & hipertensi pulmonal bila besar."],
+      overview: ["Defek pada septum atrium - shunt kiri-kanan; sering asimtomatik sampai dewasa; risiko aritmia & hipertensi pulmonal bila besar."],
       diagnosticCriteria: ["Ekokardiografi menunjukkan defek; murmur ejeksi sistolik pulmonal + fixed split S2; EKG: RBBB, deviasi aksis kanan."],
       differentials: ["VSD", "PDA", "PAPVC (partial anomalous pulmonary venous connection)", "Murmur innocent"],
       classification: ["Ostium secundum (tersering), primum (AVSD), sinus venosus; ukuran kecil/sedang/besar."],
@@ -65,7 +65,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "pda", slug: "pda", title: "Duktus Arteriosus Persisten (PDA)", specialties: ["Pediatrics", "Cardiology"],
     keywords: ["pda", "duktus arteriosus", "murmur mesin", "prematur"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Duktus arteriosus tidak menutup — shunt kiri-kanan; pada prematur dapat menimbulkan gagal jantung & tergantung duktus."],
+      overview: ["Duktus arteriosus tidak menutup - shunt kiri-kanan; pada prematur dapat menimbulkan gagal jantung & tergantung duktus."],
       diagnosticCriteria: ["Ekokardiografi menunjukkan duktus paten; murmur kontinu 'mesin' di daerah subklavikula kiri (bayi cukup bulan)."],
       differentials: ["VSD", "AV fistula koroner", "Venous hum"],
       classification: ["Kecil (asimtomatik) vs hemodinamik signifikan (gagal jantung, CPAP failure pada prematur)."],
@@ -84,7 +84,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "tof", slug: "tof", title: "Tetralogi Fallot (TOF)", specialties: ["Pediatrics", "Cardiology"],
     keywords: ["tof", "tetralogi fallot", "tet spell", "sianosis", "squatting"], emergency: true, ageGroup: "pediatric",
     sections: {
-      overview: ["PJK sianotik tersering: VSD + stenosis pulmonal + overriding aorta + hipertrofi RV — tet spell (paroksismal sianosis) khas."],
+      overview: ["PJK sianotik tersering: VSD + stenosis pulmonal + overriding aorta + hipertrofi RV - tet spell (paroksismal sianosis) khas."],
       diagnosticCriteria: ["Ekokardiografi: VSD + obstruksi alur keluar RV + overriding aorta + hipertrofi RV."],
       differentials: ["TGA", "Atresia pulmonal + VSD", "Trikuspid atresia", "PA dengan VSD"],
       classification: ["TOF klasik vs TOF dengan atresia pulmonal; pink tet (sianosis ringan) vs blue tet."],
@@ -104,7 +104,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "tga", slug: "tga", title: "Transposisi Arteri Besar (TGA)", specialties: ["Pediatrics", "Cardiology"],
     keywords: ["tga", "transposisi arteri besar", "sianosis neonatus", "jantung biru"], emergency: true, ageGroup: "neonatal",
     sections: {
-      overview: ["Aorta dari RV, arteri pulmonalis dari LV — sirkulasi paralel; sianosis neonatal kritis, memerlukan PGE1 + atrial septostomy dini."],
+      overview: ["Aorta dari RV, arteri pulmonalis dari LV - sirkulasi paralel; sianosis neonatal kritis, memerlukan PGE1 + atrial septostomy dini."],
       diagnosticCriteria: ["Ekokardiografi menunjukkan ventriculoarterial discordance; skrining pulse oximetry abnormal."],
       differentials: ["TOF", "Atresia trikuspid", "PA + VSD", "PJB sianotik lain"],
       classification: ["TGA dengan VSD vs intact septum (TGA/IVS); dengan/tanpa obstruksi alur keluar LV."],
@@ -124,7 +124,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "rds-neonatus", slug: "rds-neonatus", title: "Respiratory Distress Syndrome (RDS) Neonatus", specialties: ["Neonatology", "Pediatrics"],
     keywords: ["rds", "neonatus", "hialin membran", "surfaktan", "prematur"], emergency: true, ageGroup: "neonatal",
     sections: {
-      overview: ["Defisiensi surfaktan pada prematur — distres napas progresif sejak lahir (takipnea, grunting, retraksi, sianosis)."],
+      overview: ["Defisiensi surfaktan pada prematur - distres napas progresif sejak lahir (takipnea, grunting, retraksi, sianosis)."],
       diagnosticCriteria: ["Bayi prematur dengan distres napas progresif < 6 jam + foto toraks khas (ground-glass, air bronchogram) + menurunnya saturasi."],
       differentials: ["TTN (transient tachypnea of newborn)", "Pneumonia kongenital/sepsis", "Pneumotoraks", "PJB sianotik", "Aspirasi mekonium"],
       classification: ["Beratnya sesuai kebutuhan O2/ventilasi; radiologi grade I–IV (bilateral retikulogranular)."],
@@ -144,7 +144,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "bblr-prematur", slug: "bblr-prematur", title: "BBLR & Prematuritas", specialties: ["Neonatology", "Pediatrics"],
     keywords: ["bblr", "prematur", "bayi berat lahir rendah", "kangaroo", "neonatus"], emergency: true, ageGroup: "neonatal",
     sections: {
-      overview: ["BB lahir < 2500 g (BBLR), termasuk prematur (< 37 minggu) dan KMK — risiko hipotermia, hipoglikemia, infeksi, RDS."],
+      overview: ["BB lahir < 2500 g (BBLR), termasuk prematur (< 37 minggu) dan KMK - risiko hipotermia, hipoglikemia, infeksi, RDS."],
       diagnosticCriteria: ["BB lahir < 2500 g (BBLR), < 1500 g (BBLR sangat rendah), < 1000 g (BBLSR); usia gestasi < 37 minggu (prematur)."],
       differentials: ["KMK (kecil masa kehamilan)", "BBR (besar masa kehamilan)", "SGA vs prematur"],
       classification: ["Prematur < 37 minggu; BBLR < 2500 g; sangat prematur < 32 minggu; ekstrem < 28 minggu; KMK: < P10."],
@@ -164,7 +164,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "kawasaki", slug: "kawasaki", title: "Penyakit Kawasaki", specialties: ["Pediatrics", "Cardiology"],
     keywords: ["kawasaki", "demam anak", "konjungtivitis", "rash", "aneurisma koroner"], emergency: true, ageGroup: "pediatric",
     sections: {
-      overview: ["Vaskulitis akut anak (usia < 5 th) — demam ≥ 5 hari + kritería klinis; komplikasi utama aneurisma arteri koroner (cegah dengan IVIG dini)."],
+      overview: ["Vaskulitis akut anak (usia < 5 th) - demam ≥ 5 hari + kritería klinis; komplikasi utama aneurisma arteri koroner (cegah dengan IVIG dini)."],
       diagnosticCriteria: ["Demam ≥ 5 hari + ≥ 4 dari 5: (1) konjungtivitis bilateral non-eksudatif, (2) perubahan mukosa (faring, strawberry tongue, bibir pecah), (3) polimorfik rash, (4) perubahan ekstremitas (eritema/edema, deskuamasi), (5) limfadenopati servikal ≥ 1,5 cm.", "Kawasaki inkomplit: demam + < 4 kriteria + ekokardiografi/kriteria lab suportif."],
       differentials: ["Infeksi virus (adenovirus, EBV, measles)", "Demam skarlatina/streptokokus", "SJS", "Artritis idiopatik juvenil sistemik", "Sepsis"],
       classification: ["Komplit vs inkomplit; dengan/tanpa aneurisma koroner (z-score)."],
@@ -184,7 +184,7 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "itp", slug: "itp", title: "ITP (Immune Thrombocytopenia)", specialties: ["Hematology", "Pediatrics"],
     keywords: ["itp", "trombositopenia", "petekie", "purpura", "idiopatik"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Trombositopenia didapat akibat antibodi antiplatelet — petekie/ekimosis tanpa gejala lain; anak sering sembuh spontan, dewasa lebih kronik."],
+      overview: ["Trombositopenia didapat akibat antibodi antiplatelet - petekie/ekimosis tanpa gejala lain; anak sering sembuh spontan, dewasa lebih kronik."],
       diagnosticCriteria: ["Trombosit < 100.000 (umumnya < 30.000) dengan hitung sel darah lain normal; diagnosis eksklusi (tidak ada penyebab lain)."],
       differentials: ["Leukemia akut", "Aplasia sumsum", "SLE", "Infeksi (dengue, HIV, sepsis)", "DIC", "Obat (HIT)", "Hipersplenisme"],
       classification: ["Baru (≤ 3 bulan), persisten (3–12 bulan), kronik (> 12 bulan); ringan (30–100K), sedang, berat (< 10K)."],
@@ -204,14 +204,14 @@ export const EXTRA_GUIDELINES_L: GuidelineEntry[] = [
     id: "sjs-ten", slug: "sjs-ten", title: "SJS / TEN (Stevens-Johnson Syndrome / Toxic Epidermal Necrolysis)", specialties: ["Dermatology", "Emergency Medicine"],
     keywords: ["sjs", "ten", "stevens-johnson", "nekrolisis epidermal", "nikolsky", "erupsi obat"], emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Reaksi kulit berat yang mengancam nyawa, umumnya akibat obat — lepuh + pengelupasan kulit; SCORTEN untuk prognosis."],
+      overview: ["Reaksi kulit berat yang mengancam nyawa, umumnya akibat obat - lepuh + pengelupasan kulit; SCORTEN untuk prognosis."],
       diagnosticCriteria: ["Erupsi makula/lepuh menyebar + nikolsky + keterlibatan mukosa (≥ 2 area); luas pengelupasan < 10% (SJS), 10–30% (overlap), > 30% (TEN)."],
       differentials: ["Erupsi obat makulopapular luas", "Pemfigus/penfigoid", "Staphylococcal scalded skin syndrome (anak)", "GVHD", "Eritema multiforme mayor"],
       classification: ["SJS (< 10% BSA lepas), SJS/TEN overlap (10–30%), TEN (> 30%); SCORTEN (usia, malignansi, HR, glukosa, bikarbonat, urea, BSA lepas)."],
       initialAssessment: ["Hentikan semua obat tersangka (kunci!), nilai luas BSA lepas + mukosa, tanda sepsis/hipovolemia, SCORTEN."],
       investigations: ["CBC, elektrolit, fungsi hati/ginjal, glukosa, gas darah; kultur darah; biopsi kulit (frozen section) bila diagnosis meragukan."],
       initialManagement: ["Hentikan obat penyebab, rawat luka seperti luka bakar (ruang steril, cairan, nutrisi), konsultasi okuloplasti/dermatologi.", "Analgesik, antibiotik hanya bila infeksi klinis, tromboprofilaksis."],
-      definitiveManagement: ["Perawatan luka terstandar (burns unit bila tersedia); siklofosfamid/siklosporin/IVIG kontroversial — konsultasi spesialis; hindari steroid sistemik rutin."],
+      definitiveManagement: ["Perawatan luka terstandar (burns unit bila tersedia); siklofosfamid/siklosporin/IVIG kontroversial - konsultasi spesialis; hindari steroid sistemik rutin."],
       medications: ["Analgesik opioid", "Siklosporin 3–5 mg/kg/hari (dini, pada kasus terpilih)", "Perawatan mata (lubrikan, antibiotik topikal)"],
       admissionCriteria: ["Semua SJS/TEN → rawat (idealnya burns/ICU)"],
       icuCriteria: ["TEN > 30% BSA", "Syok septik", "Kegagalan organ"],

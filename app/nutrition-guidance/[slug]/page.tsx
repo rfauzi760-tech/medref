@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const n = nutritionGuidance.find((x) => x.slug === slug);
   if (!n) return {};
-  return { title: `${n.title} — Panduan Gizi`, description: n.summary };
+  return { title: `${n.title} - Panduan Gizi`, description: n.summary };
 }
 
 function Block({ title, items, tone }: { title: string; items: string[]; tone?: "good" | "limit" }) {
@@ -81,7 +81,7 @@ export default async function NutritionGuidancePage({ params }: { params: Promis
                 </li>
               ))}
             </ul>
-            <p className="px-4 pb-4 text-xs text-zinc-400">Porsi bersifat ilustratif — sesuaikan energi dan protein dengan kebutuhan serta kondisi klinis pasien.</p>
+            <p className="px-4 pb-4 text-xs text-zinc-400">Porsi bersifat ilustratif - sesuaikan energi dan protein dengan kebutuhan serta kondisi klinis pasien.</p>
           </div>
         )}
       </div>

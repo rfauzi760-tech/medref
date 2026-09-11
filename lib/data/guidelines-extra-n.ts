@@ -1,13 +1,13 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan tambahan — bagian N: dermatologi. */
+/** Panduan tambahan - bagian N: dermatologi. */
 
 export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
   {
     id: "kusta", slug: "kusta", title: "Kusta (Morbus Hansen)", specialties: ["Dermatology", "Neurology"],
     keywords: ["kusta", "morbus hansen", "lepra", "bta", "mati rasa"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infeksi Mycobacterium leprae — lesi kulit hipopigmentasi + anestesi + penebalan saraf; endemik di Indonesia; dapat dicegah kecacatan dengan MDT dini."],
+      overview: ["Infeksi Mycobacterium leprae - lesi kulit hipopigmentasi + anestesi + penebalan saraf; endemik di Indonesia; dapat dicegah kecacatan dengan MDT dini."],
       diagnosticCriteria: ["≥ 1 dari: lesi kulit hipopigmentasi/eritematosa dengan anestesi, penebalan saraf perifer, atau BTA positif pada sediaan apus/lesi."],
       differentials: ["Pitiriasis versikolor/alba", "Vitiligo", "Dermatofitosis", "Granuloma annulare", "Sarkoidosis", "Neurofibromatosis"],
       classification: ["WHO: paucibacillary (PB, ≤ 5 lesi, BTA negatif) vs multibacillary (MB, ≥ 6 lesi atau BTA positif); tipe tuberkuloid/borderline/lepromatous (Ridley-Jopling)."],
@@ -26,7 +26,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "frambusia", slug: "frambusia", title: "Frambusia (Patek/Yaws)", specialties: ["Dermatology", "Infectious Disease"],
     keywords: ["frambusia", "yaws", "patek", "treponema pertenue", "ulkus"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Infeksi Treponema pertenue (bukan sifilis) pada anak di daerah tropis — ulkus/mamilla raspberry-like; eradikasi dengan azitromisin dosis tunggal."],
+      overview: ["Infeksi Treponema pertenue (bukan sifilis) pada anak di daerah tropis - ulkus/mamilla raspberry-like; eradikasi dengan azitromisin dosis tunggal."],
       diagnosticCriteria: ["Lesi kulit khas (ulkus eksudatif raspberry, papiloma) + serologi treponema positif (RPR/TPHA) pada anak di area endemik; konfirmasi PCR bila tersedia."],
       differentials: ["Ulkus tropis (bakteri campuran)", "Leishmaniasis kutaneus", "Skabies sekunder infeksi", "Kusta", "Sifilis (kongenital/akuisita)"],
       classification: ["Primer (papiloma/ulkus), sekunder (multiple papiloma, hiperkeratosis palmar-plantar), laten (serologis saja), tersier (destruksi tulang)."],
@@ -45,7 +45,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "tinea", slug: "tinea", title: "Tinea (Dermatofitosis)", specialties: ["Dermatology"],
     keywords: ["tinea", "kurap", "panu", "ringworm", "dermatofit"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infeksi jamur dermatofit (Trichophyton, Microsporum, Epidermophyton) — tinea corporis, cruris, pedis, capitis, unguium; lesi annular bersisik."],
+      overview: ["Infeksi jamur dermatofit (Trichophyton, Microsporum, Epidermophyton) - tinea corporis, cruris, pedis, capitis, unguium; lesi annular bersisik."],
       diagnosticCriteria: ["Lesi annular eritematosa bersisik dengan tepi aktif + KOH 10–20% positif (hifa) atau kultur."],
       differentials: ["Eksema numularis", "Psoriasis", "Pitiriasis rosea", "Liken planus", "Kandidiasis kutis", "Granuloma annulare"],
       classification: ["Tinea corporis, cruris (jock itch), pedis (athlete's foot), capitis, barbae, manuum, unguium (onikomikosis)."],
@@ -55,7 +55,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
       definitiveManagement: ["Tinea capitis/unguium → sistemik: terbinafin (capitis 3–4 mg/kg/hari 4–6 minggu; unguium 250 mg/hari 6–12 minggu) atau itrakonazol; rawat kuku dan lingkungan."],
       medications: ["Terbinafin 1% topikal", "Klotrimazol 2% topikal", "Terbinafin 250 mg/hari oral (capitis/unguium)", "Itrakonazol 100–200 mg/hari"],
       admissionCriteria: ["Jarang; infeksi luas pada imunokompromais"],
-      redFlags: ["Lesi meluas cepat (imunokompromais)", "Keterlibatan folikel (kerion — tinea capitis inflamasi)", "Onikomikosis tidak respons terapi"],
+      redFlags: ["Lesi meluas cepat (imunokompromais)", "Keterlibatan folikel (kerion - tinea capitis inflamasi)", "Onikomikosis tidak respons terapi"],
     },
     references: [{ org: "AAD", title: "Guidelines of care for the management of tinea infections", year: 2014 }],
     lastReviewed: "2025-06-01",
@@ -64,7 +64,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "kandidiasis-kutis", slug: "kandidiasis-kutis", title: "Kandidiasis Kutis & Mukokutan", specialties: ["Dermatology"],
     keywords: ["kandidiasis", "candida", "ruam popok", "sariawan", "intertrigo"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infeksi Candida (albicans tersering) — kulit lembab (intertrigo, ruam popok), mukosa (oral thrush, vulvovaginitis), kuku; sering pada DM/imunokompromais."],
+      overview: ["Infeksi Candida (albicans tersering) - kulit lembab (intertrigo, ruam popok), mukosa (oral thrush, vulvovaginitis), kuku; sering pada DM/imunokompromais."],
       diagnosticCriteria: ["Lesi eritematosa satelit papul/pustul di lipatan + KOH positif (blastospora + pseudohifa); oral thrush: plak putih dapat dikerok."],
       differentials: ["Dermatofitosis", "Bacterial intertrigo", "Psoriasis inversa", "Dermatitis kontak", "Liken planus oral"],
       classification: ["Kutis (intertrigo, diaper rash), mukokutan (orofaringeal, vulvovaginal), kuku (paronikia/onikomikosis), sistemik (imunokompromais)."],
@@ -83,14 +83,14 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "akne-vulgaris", slug: "akne-vulgaris", title: "Akne Vulgaris (Jerawat)", specialties: ["Dermatology"],
     keywords: ["akne", "jerawat", "komedo", "acne vulgaris"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Gangguan folikel pilosebasea — komedo, papul, pustul, nodul di wajah/dada/punggung; multifaktorial (hormon, genetik, bakteri)."],
+      overview: ["Gangguan folikel pilosebasea - komedo, papul, pustul, nodul di wajah/dada/punggung; multifaktorial (hormon, genetik, bakteri)."],
       diagnosticCriteria: ["Klinis: komedo (terbuka/tertutup), papul, pustul, nodul/kista; grading ringan-sedang-berat."],
       differentials: ["Rosasea", "Folikulitis", "Perioral dermatitis", "Akneiform drug eruption", "Miliaria"],
       classification: ["Ringan (komedo/papul sedikit), sedang (papul-pustul banyak), berat (nodul/kista, skar)."],
       initialAssessment: ["Tipe lesi, distribusi, skar, faktor hormonal (hirsutisme, haid tidak teratur → PCOS), obat pemicu (steroid, litium)."],
       investigations: ["Umumnya klinis; tes hormonal bila tanda hiperandrogen."],
       initialManagement: ["Ringan: benzoil peroksida + retinoid topikal (adapalen/tretinoin); sedang: + antibiotik topikal (klindamisin) atau oral (doksisiklin)."],
-      definitiveManagement: ["Berat/refrakter: isotretinoin (monitor lipid, fungsi hati, kontrasepsi ketat — teratogen!); wanita: kontrasepsi hormonal/spironolakton."],
+      definitiveManagement: ["Berat/refrakter: isotretinoin (monitor lipid, fungsi hati, kontrasepsi ketat - teratogen!); wanita: kontrasepsi hormonal/spironolakton."],
       medications: ["Benzoil peroksida 2,5–5% topikal", "Adapalen 0,1% malam", "Klindamisin 1% topikal", "Doksisiklin 100 mg/hari 8–12 minggu", "Isotretinoin 0,5–1 mg/kg/hari (berat)"],
       admissionCriteria: ["Jarang; akne fulminan"],
       redFlags: ["Akne nodulokistik luas", "Skar cepat", "Tanda hiperandrogen (hirsutisme, alopesia)", "Kandidat isotretinoin → edukasi kontrasepsi"],
@@ -102,7 +102,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "impetigo", slug: "impetigo", title: "Impetigo", specialties: ["Dermatology", "Pediatrics"],
     keywords: ["impetigo", "luka lecet", "koreng", "streptokokus", "stafilokokus"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Infeksi kulit superfisial (S. aureus, S. pyogenes) — non-bulosa (krusta madu) atau bulosa; sangat menular pada anak."],
+      overview: ["Infeksi kulit superfisial (S. aureus, S. pyogenes) - non-bulosa (krusta madu) atau bulosa; sangat menular pada anak."],
       diagnosticCriteria: ["Lesi krusta kekuningan 'honey-crust' (non-bulosa) atau bula superfisial (bulosa) + kultur bila perlu."],
       differentials: ["Herpes simpleks", "Eksema terinfeksi", "Kandidiasis", "Varicella sekunder infeksi", "Luka bakar superfisial (bulosa)"],
       classification: ["Non-bulosa (tersering, krusta) vs bulosa (toksik eksfoliatin); dengan komplikasi (selulitis, glomerulonefritis pasca-streptokokus)."],
@@ -121,10 +121,10 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "folikulitis", slug: "folikulitis", title: "Folikulitis, Furunkel & Karbunkel", specialties: ["Dermatology"],
     keywords: ["folikulitis", "furunkel", "karbunkel", "bisul", "infeksi folikel rambut"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infeksi folikel rambut — folikulitis superfisial (papul pustular perifolikular), furunkel (abses folikel), karbunkel (konfluens furunkel dengan selulitis)."],
+      overview: ["Infeksi folikel rambut - folikulitis superfisial (papul pustular perifolikular), furunkel (abses folikel), karbunkel (konfluens furunkel dengan selulitis)."],
       diagnosticCriteria: ["Papul/pustul berpusat rambut (folikulitis), nodul nyeri fluktuasi (furunkel), massa multipel berfistula + demam (karbunkel)."],
       differentials: ["Akne", "Pseudo-folikulitis barbae", "Kandidiasis", "Herpes", "Abses kulit lain", "Hidradenitis suppurativa"],
-      classification: ["Superfisial vs dalam; lokasi (barbae, capitis, hot tub folliculitis — Pseudomonas)."],
+      classification: ["Superfisial vs dalam; lokasi (barbae, capitis, hot tub folliculitis - Pseudomonas)."],
       initialAssessment: ["Faktor risiko: cukur, keringat, imunokompromais, DM, MRSA kolonisasi (riwayat keluarga, berulang)."],
       investigations: ["Umumnya klinis; kultur pus bila berulang/berat; GDS bila berulang."],
       initialManagement: ["Folikulitis superfisial: kompres hangat + antiseptik; hindari bercukur/gesekan; mupirosin topikal bila perlu."],
@@ -140,7 +140,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "veruka", slug: "veruka", title: "Veruka Vulgaris (Kutil)", specialties: ["Dermatology"],
     keywords: ["veruka", "kutil", "hpv kulit", "wart"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infeksi HPV kulit (tipe 1,2,3,4) — papul hiperkeratotik; veruka vulgaris, plantaris, plana; dapat sembuh spontan namun sering residif."],
+      overview: ["Infeksi HPV kulit (tipe 1,2,3,4) - papul hiperkeratotik; veruka vulgaris, plantaris, plana; dapat sembuh spontan namun sering residif."],
       diagnosticCriteria: ["Papul keras berpermukaan kasar 'kembang kol', punctate black dots (kapiler trombosis) setelah skrap."],
       differentials: ["Karsinoma sel skuamosa (veruka menyerupai)", "Kallus/klavus (plantaris)", "Seborrhoeic keratosis", "Moluskum kontagiosum"],
       classification: ["Vulgaris, plantaris, plana (datar), filiformis, periungual, genital (kondiloma)."],
@@ -159,7 +159,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "moluskum", slug: "moluskum", title: "Moluskum Kontagiosum", specialties: ["Dermatology", "Pediatrics"],
     keywords: ["moluskum", "papul mutiara", "poxvirus", "anak"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Infeksi Poxvirus — papul hemispherical 'mutiara' berumbilikasi; anak-anak; sembuh spontan 6–24 bulan."],
+      overview: ["Infeksi Poxvirus - papul hemispherical 'mutiara' berumbilikasi; anak-anak; sembuh spontan 6–24 bulan."],
       diagnosticCriteria: ["Papul 2–5 mm, mengkilap, umbilicatus sentral; dapat mengeluarkan bahan putih seperti keju."],
       differentials: ["Veruka", "Milia", "Kista epidermoid kecil", "Molluscum pada HIV (lesi besar atipikal)"],
       classification: ["Imunokompeten (terbatas) vs imunokompromais (luas, atipikal); lokasi wajah/badan/ekstremitas."],
@@ -178,7 +178,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "pedikulosis", slug: "pedikulosis", title: "Pedikulosis (Kutu Rambut/Badan)", specialties: ["Dermatology"],
     keywords: ["pedikulosis", "kutu rambut", "ketombe bergerak", "nit", "skabies"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infestasi Pediculus humanus (capitis = kutu rambut, corporis = kutu badan) dan Pthirus pubis — pruritus + nit/nit pada rambut."],
+      overview: ["Infestasi Pediculus humanus (capitis = kutu rambut, corporis = kutu badan) dan Pthirus pubis - pruritus + nit/nit pada rambut."],
       diagnosticCriteria: ["Visualisasi kutu dewasa/nit (telur) melekat pada batang rambut; kutu badan: nit pada jahitan pakaian + pruritus."],
       differentials: ["Ketombe/seborrheic dermatitis", "Hair casts", "Skabies", "Dermatitis kontak"],
       classification: ["Capitis (rambut kepala), corporis (badan, terkait kebersihan), pubis (kutu kemaluan)."],
@@ -197,7 +197,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "miliaria", slug: "miliaria", title: "Miliaria (Biang Keringat)", specialties: ["Dermatology", "Pediatrics"],
     keywords: ["miliaria", "biang keringat", "ruam panas", "prickly heat"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Obstruksi duktus kelenjar keringat akibat panas/lembab — papul/vesikel kecil pruritus; bayi & daerah tropis tersering."],
+      overview: ["Obstruksi duktus kelenjar keringat akibat panas/lembab - papul/vesikel kecil pruritus; bayi & daerah tropis tersering."],
       diagnosticCriteria: ["Lesi papulovesikel monomorfik di area berkeringat (dahi, leher, dada, lipatan) pada cuaca panas; sesuai kedalaman obstruksi."],
       differentials: ["Folikulitis", "Kandidiasis", "Eksema", "Skabies", "Erupsi obat"],
       classification: ["Miliaria kristalina (vesikel superfisial jernih), rubra (papul merah pruritus), profunda (papul pucat)."],
@@ -216,12 +216,12 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "psoriasis", slug: "psoriasis", title: "Psoriasis Vulgaris", specialties: ["Dermatology"],
     keywords: ["psoriasis", "plak eritematosa", "skuama perak", "psoriasis vulgaris"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Penyakit kulit inflamasi kronik — plak eritematosa berbatas tegas dengan skuama perak di ekstensor, kulit kepala, kuku; terkait genetik + imun."],
+      overview: ["Penyakit kulit inflamasi kronik - plak eritematosa berbatas tegas dengan skuama perak di ekstensor, kulit kepala, kuku; terkait genetik + imun."],
       diagnosticCriteria: ["Klinis: plak eritematosa + skuama perak + Auspitz sign; lokasi khas (siku, lutut, skalp, sakrum); kuku (pitting, onikolisis); artritis psoriatik."],
       differentials: ["Eksema numularis", "Tinea corporis", "Liken planus", "Pitiriasis rosea", "Sifilis sekunder", "Erupsi obat psoriasiform"],
       classification: ["Plaque (vulgaris), guttate (pasca-streptokokus), inverse, pustular, eritrodermik; PASI untuk keparahan."],
       initialAssessment: ["Luas BSA, lokasi, keterlibatan kuku/sendi, pemicu (stres, infeksi, obat, alkohol), dampak kualitas hidup."],
-      investigations: ["Klinis; biopsi bila meragukan; skrining komorbid (metabolik, kardiovaskular — psoriasis = penyakit sistemik)."],
+      investigations: ["Klinis; biopsi bila meragukan; skrining komorbid (metabolik, kardiovaskular - psoriasis = penyakit sistemik)."],
       initialManagement: ["Terbatas: steroid topikal potensi sedang-tinggi + analog vitamin D (kalsipotriol), kombinasi di malam hari; skalp: salisilat/steroid losion."],
       definitiveManagement: ["Luas/sedang-berat: fototerapi UVB; sistemik: metotreksat, siklosporin, asitretin; biologis (anti-TNF, anti-IL17/23) bila refrakter."],
       medications: ["Betametason/kalsipotriol topikal", "Metotreksat 7,5–25 mg/minggu", "Siklosporin 3–5 mg/kg/hari", "Biologis (adalimumab, secukinumab)"],
@@ -235,7 +235,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "erupsi-obat", slug: "erupsi-obat", title: "Erupsi Obat (Reaksi Kulit Akibat Obat)", specialties: ["Dermatology"],
     keywords: ["erupsi obat", "ruam obat", "drug eruption", "makulopapular"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Reaksi kulit akibat obat — tersering morbiliform/makulopapular; spektrum dari ringan sampai SJS/TEN (emergensi)."],
+      overview: ["Reaksi kulit akibat obat - tersering morbiliform/makulopapular; spektrum dari ringan sampai SJS/TEN (emergensi)."],
       diagnosticCriteria: ["Ruam setelah paparan obat baru (5–14 hari umumnya), morfologi khas, membaik setelah hentikan obat; eksklusi infeksi."],
       differentials: ["Infeksi virus (EBV, measles, HIV serokonversi)", "Eksema/psoriasis", "Sifilis sekunder", "GVHD"],
       classification: ["Morbiliform (tersering), urtikaria, fixed drug eruption, fotoalergi, vaskulitis, AGEP, DRESS, SJS/TEN."],
@@ -255,7 +255,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "pitiriasis-versikolor", slug: "pitiriasis-versikolor", title: "Pitiriasis Versikolor (Panu)", specialties: ["Dermatology"],
     keywords: ["panu", "pitiriasis versikolor", "tinea versicolor", "malassezia"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infeksi Malassezia — makula hipopigmentasi/hiperpigmentasi bersisik halus di dada/punggung; khas di daerah tropis."],
+      overview: ["Infeksi Malassezia - makula hipopigmentasi/hiperpigmentasi bersisik halus di dada/punggung; khas di daerah tropis."],
       diagnosticCriteria: ["Makula diskromik dengan skuama halus (skrap positif KOH: 'spaghetti and meatballs') + lesi khas di seboroik area."],
       differentials: ["Vitiligo", "Pitiriasis alba", "Tinea corporis", "Pityriasis rosea", "Eksema"],
       classification: ["Hipokromik vs hiperkromik; luas terbatas vs luas."],
@@ -274,7 +274,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "pitiriasis-alba", slug: "pitiriasis-alba", title: "Pitiriasis Alba", specialties: ["Dermatology", "Pediatrics"],
     keywords: ["pitiriasis alba", "bercak putih", "anak", "hipopigmentasi"], emergency: false, ageGroup: "pediatric",
     sections: {
-      overview: ["Makula hipopigmentasi bersisik halus pada wajah anak — varian eksema ringan; sembuh spontan, kosmetik saja."],
+      overview: ["Makula hipopigmentasi bersisik halus pada wajah anak - varian eksema ringan; sembuh spontan, kosmetik saja."],
       diagnosticCriteria: ["Makula hipopigmentasi batas tidak tegas + skuama halus di wajah (pipi) anak; musim panas lebih jelas."],
       differentials: ["Vitiligo (batas tegas, depigmentasi total)", "Panu", "Hipopigmentasi pasca-inflamasi", "Sklerosis tuberosa (ash-leaf)"],
       classification: ["Ringan-sedang sesuai jumlah/luas."],
@@ -293,7 +293,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "vitiligo", slug: "vitiligo", title: "Vitiligo", specialties: ["Dermatology"],
     keywords: ["vitiligo", "depigmentasi", "bercak putih", "autoimun"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Gangguan depigmentasi akibat destruksi melanosit — makula putih batas tegas; autoimun; dampak psikososial signifikan."],
+      overview: ["Gangguan depigmentasi akibat destruksi melanosit - makula putih batas tegas; autoimun; dampak psikososial signifikan."],
       diagnosticCriteria: ["Makula depigmentasi total, batas tegas, bilateral simetris, lokasi periorifisial/ekstensor; lampu Wood memperjelas."],
       differentials: ["Pitiriasis alba", "Panu", "Hipopigmentasi pasca-inflamasi", "Lepra (anestesi)", "Sklerosis tuberosa", "Piebaldism (kongenital)"],
       classification: ["Segmental vs non-segmental (umum); sesuai distribusi & luas BSA (VASI/VETF)."],
@@ -312,7 +312,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "melasma", slug: "melasma", title: "Melasma", specialties: ["Dermatology"],
     keywords: ["melasma", "hiperpigmentasi wajah", "mask of pregnancy", "kloasma"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Hiperpigmentasi wajah simetris (pipi, dahi, dagu) — terkait estrogen (kehamilan, kontrasepsi), paparan sinar matahari, genetik."],
+      overview: ["Hiperpigmentasi wajah simetris (pipi, dahi, dagu) - terkait estrogen (kehamilan, kontrasepsi), paparan sinar matahari, genetik."],
       diagnosticCriteria: ["Makula hiperpigmentasi coklat simetris di wajah (malar, centrofacial, mandibular) pada wanita usia subur + riwayat paparan UV/hormonal."],
       differentials: ["Hiperpigmentasi pasca-inflamasi", "Liken planus aktinik", "Poikiloderma", "Dermatosis Riehl (kontak)"],
       classification: ["Epidermal (Wood: coklat jelas), dermal (coklat kebiruan), campuran; Wood lamp membantu."],
@@ -331,7 +331,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "pemfigus", slug: "pemfigus", title: "Pemfigus Vulgaris", specialties: ["Dermatology"],
     keywords: ["pemfigus", "bula", "lepuh", "nikolsky", "autoimun kulit"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Penyakit bula autoimun (anti-desmoglein) — bula flaksid intraepidermal + erosi mukosa; mengancam nyawa tanpa terapi (sepsis, kehilangan cairan)."],
+      overview: ["Penyakit bula autoimun (anti-desmoglein) - bula flaksid intraepidermal + erosi mukosa; mengancam nyawa tanpa terapi (sepsis, kehilangan cairan)."],
       diagnosticCriteria: ["Bula flaksid + erosi mukosa (oral sering pertama) + Nikolsky positif + biopsi: akantolisis suprabasal; DIF: IgG interselular."],
       differentials: ["Penfigoid bulosa (bula tegang, subepidermal, usia lanjut)", "SJS/TEN", "Erupsi obat bulosa", "Impetigo bulosa (anak)", "Dermatitis herpetiformis"],
       classification: ["Pemfigus vulgaris (mukokutan, tersering), foliaceus (superfisial, tanpa mukosa), paraneoplastik, IgA."],
@@ -370,11 +370,11 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "urtikaria-angioedema", slug: "urtikaria-angioedema", title: "Urtikaria & Angioedema", specialties: ["Dermatology", "Allergy"],
     keywords: ["urtikaria", "biduran", "angioedema", "gatal bentol"], emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Wheal (bentol) pruritus + flare akibat pelepasan histamin — akut (< 6 minggu, sering alergi) atau kronik; angioedema = edema dalam (bibir, kelopak, lidah)."],
+      overview: ["Wheal (bentol) pruritus + flare akibat pelepasan histamin - akut (< 6 minggu, sering alergi) atau kronik; angioedema = edema dalam (bibir, kelopak, lidah)."],
       diagnosticCriteria: ["Wheal: timbul < 24 jam, gatal, hilang tanpa sisa; angioedema: edema subkutan asimetris non-pruritus; ≥ 6 minggu = kronik."],
       differentials: ["Urtikaria vaskulitis (lesi > 24 jam, residu purpura)", "Anafilaksis (sistemik)", "Angioedema herediter (C1-INH, tanpa urtikaria, riwayat keluarga)", "Erupsi obat", "Mastositosis"],
       classification: ["Akut vs kronik (spontan vs inducible: dermografisme, dingin, kolinergik); dengan/tanpa angioedema."],
-      initialAssessment: ["Onset, pemicu (obat, makanan, infeksi, fisik), durasi lesi, keterlibatan saluran napas (stridor, dispnea — emergensi), tanda anafilaksis."],
+      initialAssessment: ["Onset, pemicu (obat, makanan, infeksi, fisik), durasi lesi, keterlibatan saluran napas (stridor, dispnea - emergensi), tanda anafilaksis."],
       investigations: ["Akut: umumnya tidak perlu; kronik: CBC, ESR/CRP, TSH, skrining (dermografisme); IgE total tidak rutin; C4 bila curiga HAE."],
       initialManagement: ["Antihistamin H1 non-sedatif dosis standar (setirizin 10 mg/loratadin 10 mg); angioedema ringan: antihistamin ± steroid singkat."],
       definitiveManagement: ["Kronik refrakter: antihistamin hingga 4× dosis; tambah omalizumab (anti-IgE); kortikosteroid singkat untuk eksaserbasi; hindari pemicu.", "Angioedema laring → adrenalin IM + rawat."],
@@ -389,7 +389,7 @@ export const EXTRA_GUIDELINES_N: GuidelineEntry[] = [
     id: "dermatitis-kontak", slug: "dermatitis-kontak", title: "Dermatitis Kontak (Iritan & Alergi)", specialties: ["Dermatology"],
     keywords: ["dermatitis kontak", "eksema kontak", "iritan", "alergi kontak", "nikel"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Eksema akibat kontak kulit — iritan (kimia, sabun, gesekan; tersering) vs alergi (hapten: nikel, parfum, kosmetik; tipe IV)."],
+      overview: ["Eksema akibat kontak kulit - iritan (kimia, sabun, gesekan; tersering) vs alergi (hapten: nikel, parfum, kosmetik; tipe IV)."],
       diagnosticCriteria: ["Dermatitis akut (eritema, vesikel, eksudat) / kronik (likenifikasi) pada area kontak; alergi: patch test positif."],
       differentials: ["Dermatitis atopik", "Eksema numularis", "Tinea", "Psoriasis", "Dermatitis seboroik"],
       classification: ["Iritan (onset cepat, rasa terbakar, semua orang) vs alergi (onset 24–72 jam, gatal, hanya yang tersensitisasi)."],

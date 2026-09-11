@@ -50,7 +50,7 @@ export function DrugView({ drug }: { drug: Drug }) {
       <div>
         <h1 className="display-type text-3xl font-light tracking-tight sm:text-4xl">{drug.genericName}</h1>
         {drug.brandNames && drug.brandNames.length > 0 && (
-          <p className="mt-1 text-sm text-zinc-400">Brands: {drug.brandNames.join(", ")}</p>
+          <p className="mt-1 text-sm text-zinc-400">Merek: {drug.brandNames.join(", ")}</p>
         )}
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <span className="rounded bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{drug.drugClass}</span>
@@ -70,14 +70,14 @@ export function DrugView({ drug }: { drug: Drug }) {
         </div>
       )}
 
-      <Section title="Indications" items={drug.indications} />
+      <Section title="Indikasi" items={drug.indications} />
 
       {/* Dose calculator */}
       <div className="workspace-panel overflow-hidden pb-4">
         <div className="section-band justify-between">
           <h2 className="display-type text-base font-medium">Kalkulator dosis berbasis berat badan</h2>
           <div className="flex gap-2">
-            <CopyButton text={result ? doseToText(drug, result) : ""} label="Copy dose" />
+            <CopyButton text={result ? doseToText(drug, result) : ""} label="Salin dosis" />
             <PrintButton />
           </div>
         </div>
@@ -85,20 +85,20 @@ export function DrugView({ drug }: { drug: Drug }) {
 
         <div className="mt-3 grid gap-3 px-4 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <label className="mb-1 block text-xs font-medium text-zinc-500 dark:text-zinc-400">Weight (kg)</label>
+            <label className="mb-1 block text-xs font-medium text-zinc-500 dark:text-zinc-400">Berat badan (kg)</label>
             <input
               type="number"
               min={0.1}
               step={0.1}
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
-              placeholder="e.g. 18"
+              placeholder="mis. 18"
               className="focus-ring h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 text-sm outline-none"
             />
           </div>
           <div>
             <label className="mb-1 block text-xs font-medium text-zinc-500 dark:text-zinc-400">
-              Age (years) {!age && ageYears && <span className="text-zinc-400">· est. {ageYears.toFixed(1)} y from weight</span>}
+              Usia (tahun) {!age && ageYears && <span className="text-zinc-400">· perkiraan {ageYears.toFixed(1)} tahun dari berat badan</span>}
             </label>
             <input
               type="number"
@@ -106,21 +106,21 @@ export function DrugView({ drug }: { drug: Drug }) {
               step={0.1}
               value={age}
               onChange={(e) => setAge(e.target.value)}
-              placeholder="e.g. 5 (optional)"
+              placeholder="mis. 5 (opsional)"
               className="focus-ring h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 text-sm outline-none"
             />
           </div>
           {populations.length > 1 && (
             <div>
-              <label className="mb-1 block text-xs font-medium text-zinc-500 dark:text-zinc-400">Population</label>                <select
+              <label className="mb-1 block text-xs font-medium text-zinc-500 dark:text-zinc-400">Populasi</label>                <select
                 value={population}
                 onChange={(e) => setPopulation(e.target.value as "" | "adult" | "pediatric" | "neonatal")}
                 className="focus-ring h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 text-sm outline-none"
               >
-                <option value="">Auto (by age)</option>
+                <option value="">Otomatis berdasarkan usia</option>
                 {populations.map((p) => (
                   <option key={p} value={p}>
-                    {p}
+                    {{ adult: "Dewasa", pediatric: "Anak", neonatal: "Neonatus", all: "Semua" }[p] ?? p}
                   </option>
                 ))}
               </select>
@@ -140,13 +140,13 @@ export function DrugView({ drug }: { drug: Drug }) {
                 <div className="mt-2 space-y-1.5 text-sm">
                   {result.perDoseText && (
                     <div className="flex items-baseline justify-between gap-3">
-                      <span className="text-zinc-500 dark:text-zinc-400">Per administration</span>
+                      <span className="text-zinc-500 dark:text-zinc-400">Per pemberian</span>
                       <span className="font-semibold">{result.perDoseText}</span>
                     </div>
                   )}
                   {result.totalDailyText && (
                     <div className="flex items-baseline justify-between gap-3">
-                      <span className="text-zinc-500 dark:text-zinc-400">Total daily</span>
+                      <span className="text-zinc-500 dark:text-zinc-400">Total harian</span>
                       <span className="font-semibold">{result.totalDailyText}</span>
                     </div>
                   )}
@@ -167,18 +167,18 @@ export function DrugView({ drug }: { drug: Drug }) {
         )}
 
         <div className="mt-3 px-4 text-xs text-zinc-400">
-          Routes available: {availableRoutes}. Verify against your local formulary before prescribing.
+          Rute tersedia: {availableRoutes}. Verifikasi dengan formularium setempat sebelum meresepkan.
         </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Section title="Contraindications" items={drug.contraindications ?? []} />
-        <Section title="Renal considerations" items={drug.renalConsideration ? [drug.renalConsideration] : []} />
-        <Section title="Hepatic considerations" items={drug.hepaticConsideration ? [drug.hepaticConsideration] : []} />
-        <Section title="Preparations" items={drug.preparations ?? []} />
-        {drug.pregnancy && <Section title="Pregnancy" items={[drug.pregnancy]} />}
-        {drug.lactation && <Section title="Lactation" items={[drug.lactation]} />}
-        <Section title="Clinical notes" items={drug.notes ?? []} />
+        <Section title="Kontraindikasi" items={drug.contraindications ?? []} />
+        <Section title="Pertimbangan ginjal" items={drug.renalConsideration ? [drug.renalConsideration] : []} />
+        <Section title="Pertimbangan hati" items={drug.hepaticConsideration ? [drug.hepaticConsideration] : []} />
+        <Section title="Sediaan" items={drug.preparations ?? []} />
+        {drug.pregnancy && <Section title="Kehamilan" items={[drug.pregnancy]} />}
+        {drug.lactation && <Section title="Menyusui" items={[drug.lactation]} />}
+        <Section title="Catatan klinis" items={drug.notes ?? []} />
       </div>
 
       <SourceBlock source={drug.source} lastReviewed={drug.lastReviewed} />

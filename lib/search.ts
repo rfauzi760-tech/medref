@@ -72,7 +72,7 @@ const groups: GroupDef<unknown>[] = [
     keys: ["title", "keywords", "specialties"],
     map: (item) => {
       const g = item as GuideItem;
-      return { id: g.slug, title: g.title, subtitle: "Guideline navigator", href: `/guidelines/${g.slug}`, group: "guidelines" };
+      return { id: g.slug, title: g.title, subtitle: "Panduan klinis", href: `/guidelines/${g.slug}`, group: "guidelines" };
     },
   },
   {
@@ -82,7 +82,7 @@ const groups: GroupDef<unknown>[] = [
     keys: ["code", "en", "id"],
     map: (item) => {
       const c = item as IcdItem;
-      return { id: c.code, title: `${c.code} — ${c.en}`, subtitle: c.id, href: `/icd10?q=${encodeURIComponent(c.code)}`, group: "icd10", badge: c.code };
+      return { id: c.code, title: `${c.code} - ${c.id ?? c.en}`, subtitle: c.en, href: `/icd10?q=${encodeURIComponent(c.code)}`, group: "icd10", badge: c.code };
     },
   },
   {
@@ -92,7 +92,7 @@ const groups: GroupDef<unknown>[] = [
     keys: ["title", "keywords", "specialties"],
     map: (item) => {
       const p = item as ProcItem;
-      return { id: p.slug, title: p.title, subtitle: "Indications & contraindications", href: `/indications/${p.slug}`, group: "indications" };
+      return { id: p.slug, title: p.title, subtitle: "Indikasi dan kontraindikasi", href: `/indications/${p.slug}`, group: "indications" };
     },
   },
   {
@@ -112,7 +112,7 @@ const groups: GroupDef<unknown>[] = [
     keys: ["title", "keywords", "specialties"],
     map: (item) => {
       const n = item as NutritionItem;
-      return { id: n.slug, title: n.title, subtitle: "Clinical nutrition guidance", href: `/nutrition-guidance/${n.slug}`, group: "nutrition-guidance" };
+      return { id: n.slug, title: n.title, subtitle: "Panduan gizi klinis", href: `/nutrition-guidance/${n.slug}`, group: "nutrition-guidance" };
     },
   },
 ];

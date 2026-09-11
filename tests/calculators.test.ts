@@ -98,7 +98,7 @@ describe("Drip rate", () => {
   });
   it("shows placeholder on zero rate", () => {
     const r = valueFor("drip-rate", { mlhr: 0, factor: "20" });
-    expect(r.lines[0].value).toBe("—");
+    expect(r.lines[0].value).toBe("-");
   });
 });
 

@@ -56,8 +56,8 @@ describe("assessGrowth", () => {
   it("uses length under 24 months and height at/over 24 months", () => {
     const under = assessGrowth({ sex: "male", ageMonths: 23, weightKg: 10, lengthCm: 80 });
     const over = assessGrowth({ sex: "male", ageMonths: 24, weightKg: 10, heightCm: 85 });
-    expect(under.messages.join(" ")).toContain("recumbent length");
-    expect(over.messages.join(" ")).toContain("standing height");
+    expect(under.messages.join(" ")).toContain("panjang badan telentang");
+    expect(over.messages.join(" ")).toContain("tinggi badan berdiri");
   });
 
   it("rejects age outside 0-60 months", () => {

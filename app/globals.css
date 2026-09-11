@@ -53,6 +53,12 @@ h6,
   letter-spacing: -0.025em;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 700 !important;
+}
+
 ::selection {
   background: color-mix(in srgb, var(--accent) 45%, transparent);
   color: var(--ink);

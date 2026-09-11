@@ -67,7 +67,7 @@ export default function ImmunizationPage() {
           />
         </div>
         <div>
-          <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Summary</label>
+          <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Ringkasan</label>
           {summary ? (
             <div className="flex flex-wrap gap-1.5 pt-1">
               <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">✓ {summary.done} selesai</span>
@@ -133,7 +133,7 @@ export default function ImmunizationPage() {
                         ✓
                       </button>
                       <span className="text-sm text-zinc-700 dark:text-zinc-200">
-                        Dosis {d.doseNumber} — {d.label}
+                        Dosis {d.doseNumber} - {d.label}
                       </span>
                       {d.status.state === "done" ? (
                         <span className="ml-auto text-xs font-medium text-emerald-600 dark:text-emerald-400">
@@ -164,7 +164,7 @@ export default function ImmunizationPage() {
 
           <p className="text-xs leading-relaxed text-zinc-400">
             Waktu pemberian mengikuti jadwal dasar Kemenkes RI dengan rekomendasi IDAI. Dosis kejar (catch-up) harus mengikuti
-            pedoman nasional terkini — konsultasikan dengan dokter anak bila imunisasi anak tertunda.
+            pedoman nasional terkini - konsultasikan dengan dokter anak bila imunisasi anak tertunda.
           </p>
         </div>
       )}

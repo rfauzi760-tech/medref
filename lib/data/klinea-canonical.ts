@@ -77,7 +77,9 @@ type KlineaTool = {
 
 const scoreRange = (row: Dict): ScoreRange => {
   const score = clean(row.skor).toLowerCase();
-  const values = score.match(/-?\d+(?:[.,]\d+)?/g)?.map((item) => Number(item.replace(",", "."))) ?? [];
+  const normalizedScore = score.replace(/(\d)\s*[-–]\s*(\d)/g, "$1 sampai $2");
+  const numericScore = /^(?:[<>≤≥]=?\s*)?-?\d/.test(normalizedScore);
+  const values = numericScore ? normalizedScore.match(/-?\d+(?:[.,]\d+)?/g)?.map((item) => Number(item.replace(",", "."))) ?? [] : [];
   let min = values[0] ?? -9999;
   let max = values[1] ?? values[0] ?? 9999;
   if (/^(>|>=|≥)/.test(score) || /ke atas|atau lebih/.test(score)) max = 9999;
@@ -99,26 +101,47 @@ const scoreRange = (row: Dict): ScoreRange => {
 };
 
 function toolVariables(tool: KlineaTool, legacy?: ScoreTool): ScoreVariable[] {
+  if (legacy) {
+    const translate = (value: string) => value
+      .replace(/Respiratory rate/gi, "Frekuensi napas")
+      .replace(/Systolic blood pressure/gi, "Tekanan darah sistolik")
+      .replace(/Blood pressure/gi, "Tekanan darah")
+      .replace(/Mental status/gi, "Status mental")
+      .replace(/Heart rate/gi, "Frekuensi nadi")
+      .replace(/Age/gi, "Usia")
+      .replace(/History/gi, "Anamnesis")
+      .replace(/Risk factors/gi, "Faktor risiko")
+      .replace(/Present/gi, "Ada")
+      .replace(/Absent/gi, "Tidak ada")
+      .replace(/Yes/gi, "Ya")
+      .replace(/No /gi, "Tanpa ")
+      .replace(/^No$/i, "Tidak")
+      .replace(/Normal/gi, "Normal");
+    return legacy.variables.map((variable) => ({
+      ...variable,
+      label: translate(variable.label),
+      shortLabel: variable.shortLabel ? translate(variable.shortLabel) : undefined,
+      help: variable.help ? translate(variable.help) : undefined,
+      options: variable.options?.map((option) => ({ ...option, label: translate(option.label) })),
+    }));
+  }
   const fields = (tool.fields ?? []).filter((field) => field.id);
-  return fields.map((field, index) => {
-    const previous = legacy?.variables.find((item) => item.id === field.id) ?? legacy?.variables[index];
+  return fields.map((field) => {
     if (field.type === "num") {
       return {
-        ...previous,
         id: field.id!,
         label: clean(field.label),
         type: "number",
         required: true,
-        min: previous?.min ?? 0,
-        max: previous?.max ?? 100,
-        step: previous?.step ?? 1,
+        min: 0,
+        max: 100,
+        step: 1,
       };
     }
     const options = field.type === "radio"
       ? (field.options ?? []).map((option) => ({ label: clean(option.label), value: Number(option.points ?? 0) }))
       : [{ label: "Tidak", value: 0 }, { label: "Ya", value: 1 }];
     return {
-      ...previous,
       id: field.id!,
       label: clean(field.label),
       type: "select",
@@ -130,18 +153,36 @@ function toolVariables(tool: KlineaTool, legacy?: ScoreTool): ScoreVariable[] {
 
 export function canonicalScores(legacyScores: ScoreTool[]): ScoreTool[] {
   const byId = new Map(legacyScores.flatMap((score) => [[score.id, score], [score.slug, score]]));
+  const scoreAliases: Record<string, string> = { aki: "kdigo-aki", ckd: "ckd-stage" };
   const extras = content.toolExtra as Record<string, Dict>;
   return (content.tools as KlineaTool[]).map((tool) => {
-    const legacy = byId.get(tool.id);
+    const normalizedName = clean(tool.name).toLowerCase();
+    const legacy = byId.get(tool.id) ?? byId.get(scoreAliases[tool.id]) ?? legacyScores.find((item) =>
+      item.abbreviation?.toLowerCase() === normalizedName || item.title.toLowerCase() === normalizedName,
+    );
     const extra = extras[tool.id] ?? {};
-    const ranges = Array.isArray(extra.pita) && extra.pita.length
-      ? (extra.pita as Dict[]).map(scoreRange)
-      : legacy?.ranges ?? [{ min: -9999, max: 9999, category: "Interpretasi", label: clean(tool.guideline) || "Lihat panduan klinis", tone: "info" }];
+    const translateRange = (value: string) => value
+      .replace(/Very low risk/gi, "Risiko sangat rendah")
+      .replace(/Low risk/gi, "Risiko rendah")
+      .replace(/Moderate risk/gi, "Risiko sedang")
+      .replace(/High risk/gi, "Risiko tinggi")
+      .replace(/Low probability/gi, "Probabilitas rendah")
+      .replace(/Moderate probability/gi, "Probabilitas sedang")
+      .replace(/High probability/gi, "Probabilitas tinggi")
+      .replace(/PERC negative/gi, "PERC negatif")
+      .replace(/PERC positive/gi, "PERC positif")
+      .replace(/monitor and reassess/gi, "pantau dan nilai ulang")
+      .replace(/further testing required/gi, "perlu pemeriksaan lanjutan");
+    const ranges = legacy
+      ? legacy.ranges.map((range) => ({ ...range, category: translateRange(range.category), label: translateRange(range.label), action: range.action ? translateRange(range.action) : undefined }))
+      : Array.isArray(extra.pita) && extra.pita.length
+        ? (extra.pita as Dict[]).map(scoreRange)
+        : [{ min: -9999, max: 9999, category: "Interpretasi", label: clean(tool.guideline) || "Lihat panduan klinis", tone: "info" as const }];
     const references = sourceFrom(extra.refs);
     return {
       ...legacy,
       id: tool.id,
-      slug: tool.id,
+      slug: legacy?.slug ?? tool.id,
       title: clean(tool.name) || tool.id,
       description: clean(tool.blurb) || clean(extra.dasar) || "Alat bantu klinis.",
       specialties: list(tool.sp),
@@ -174,18 +215,23 @@ type KlineaDrug = {
   refs?: unknown;
 };
 
+const DRUG_SLUG_ALIASES: Record<string, string> = {
+  parasetamol: "paracetamol",
+  amoksisilin: "amoxicillin",
+  azitromisin: "azithromycin",
+};
+
 export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
-  const aliases: Record<string, string> = { parasetamol: "paracetamol" };
   const legacyById = new Map(legacyDrugs.flatMap((drug) => [[drug.id, drug], [drug.slug, drug]]));
   return (content.drugs as KlineaDrug[]).map((drug) => {
-    const legacy = legacyById.get(drug.id) ?? legacyById.get(aliases[drug.id]);
+    const legacy = legacyById.get(drug.id) ?? legacyById.get(DRUG_SLUG_ALIASES[drug.id]);
     const adultWeight = legacy?.doses.find((dose) => dose.population === "adult" || dose.population === "all")?.weightBased;
     const childWeight = legacy?.doses.find((dose) => dose.population === "pediatric" || dose.population === "all")?.weightBased;
     const adult = list(drug.dewasa).map((text, index) => ({ population: "adult" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? adultWeight : undefined }));
     const child = list(drug.anak).map((text, index) => ({ population: "pediatric" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? childWeight : undefined }));
     return {
       id: drug.id,
-      slug: drug.id,
+      slug: DRUG_SLUG_ALIASES[drug.id] ?? drug.id,
       genericName: clean(drug.nm) || drug.id,
       brandNames: legacy?.brandNames,
       drugClass: clean(drug.kelas) || clean(drug.cat) || "Obat",
@@ -223,10 +269,12 @@ export function canonicalGuidelines(legacyGuidelines: GuidelineEntry[]): Guideli
   const byId = new Map(legacyGuidelines.flatMap((item) => [[item.id, item], [item.slug, item]]));
   const extraById = content.guidelineExtra as Record<string, Dict>;
   return (content.guidelines as KlineaGuideline[]).map((guide) => {
-    const legacy = byId.get(guide.id);
+    const normalizedName = clean(guide.name).toLowerCase();
+    const legacy = byId.get(guide.id) ?? legacyGuidelines.find((item) => item.title.toLowerCase() === normalizedName);
     const merged: Dict = { ...guide, ...(extraById[guide.id] ?? {}) };
     const sections: GuidelineEntry["sections"] = {};
     for (const [sourceKey, targetKey] of Object.entries(sectionMap)) {
+      if (!targetKey) continue;
       const values = flatten(merged[sourceKey]);
       if (values.length) sections[targetKey] = [...(sections[targetKey] ?? []), ...values];
     }
@@ -265,7 +313,7 @@ export const canonicalIcd10: Icd10Entry[] = (content.icd10 as Dict[]).map((row) 
 }));
 
 export const canonicalFoods: FoodItem[] = (content.foods as Dict[]).map((row) => ({
-  id: clean(row.id),
+  id: clean(row.id) === "pisang" ? "banana" : clean(row.id),
   name: clean(row.nm),
   nameId: clean(row.nm),
   category: clean(row.cat),
@@ -335,8 +383,8 @@ export const canonicalInteractions: DrugInteraction[] = (content.interactions as
   const severity: DrugInteraction["severity"] = severityName.includes("kontra") ? "contraindicated" : severityName.includes("mayor") ? "major" : severityName.includes("moderat") ? "moderate" : severityName.includes("minor") ? "minor" : "unknown";
   return aValues.flatMap((a) => bValues.filter((b) => a !== b).map((b) => ({
     id: `${ruleIndex}-${a}-${b}`,
-    a,
-    b,
+    a: DRUG_SLUG_ALIASES[a] ?? a,
+    b: DRUG_SLUG_ALIASES[b] ?? b,
     severity,
     mechanism: clean(rule.mech),
     effect: clean(rule.efek),

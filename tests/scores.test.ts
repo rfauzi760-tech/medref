@@ -13,12 +13,12 @@ describe("qSOFA", () => {
   it("scores 0 for a normal patient", () => {
     const ev = evaluateScore(q, { rr: "0", sbp: "0", gcs: "0" });
     expect(ev.total).toBe(0);
-    expect(ev.range?.category).toBe("Low risk");
+    expect(ev.range?.category).toBe("Risiko rendah");
   });
   it("scores 3 when all three criteria present", () => {
     const ev = evaluateScore(q, { rr: "1", sbp: "1", ment: "1" });
     expect(ev.total).toBe(3);
-    expect(ev.range?.category).toBe("High risk");
+    expect(ev.range?.category).toBe("Risiko tinggi");
   });
   it("flags missing required input", () => {
     const ev = evaluateScore(q, { rr: "1" });
@@ -99,7 +99,7 @@ describe("PERC", () => {
       surgery: "1",
     });
     expect(ev.total).toBe(8);
-    expect(ev.range?.category).toBe("PERC negative");
+    expect(ev.range?.category).toBe("PERC negatif");
   });
 });
 
@@ -134,7 +134,7 @@ describe("HEART score", () => {
       trop: "1",
     });
     expect(ev.total).toBe(4);
-    expect(ev.range?.category).toBe("Moderate risk");
+    expect(ev.range?.category).toBe("Risiko sedang");
   });
 });
 
@@ -169,6 +169,6 @@ describe("scoreToText", () => {
     const ev = evaluateScore(q, { rr: "1", sbp: "0", ment: "1" });
     const text = scoreToText(q, ev);
     expect(text).toContain("qSOFA");
-    expect(text).toContain("Total score: 2");
+    expect(text).toContain("Skor total: 2");
   });
 });

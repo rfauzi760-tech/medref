@@ -16,9 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const g = guidelines.find((x) => x.slug === slug);
   if (!g) return {};
   return {
-    title: `${g.title} — Guideline`,
+    title: `${g.title} - Panduan`,
     description: `Bedside reference for ${g.title}: diagnostic criteria, classification, investigations, management, admission criteria, red flags.`,
-    openGraph: { title: `${g.title} — Guideline Navigator`, type: "article" },
+    openGraph: { title: `${g.title} - Panduan Klinis`, type: "article" },
   };
 }
 
@@ -29,12 +29,12 @@ export default async function GuidelinePage({ params }: { params: Promise<{ slug
 
   return (
     <div>
-      <BackLink href="/guidelines" label="All guidelines" />
+      <BackLink href="/guidelines" label="Semua panduan" />
       <div className="mb-6">
         <div className="flex flex-wrap items-center gap-2">
           <h1 className="display-type text-3xl font-light tracking-tight sm:text-4xl">{g.title}</h1>
           {g.emergency && (
-            <span className="rounded bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-700 dark:bg-red-950 dark:text-red-300">EMERGENCY</span>
+            <span className="rounded bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-700 dark:bg-red-950 dark:text-red-300">GAWAT DARURAT</span>
           )}
         </div>
         <div className="mt-2 flex flex-wrap gap-1.5">
@@ -44,7 +44,7 @@ export default async function GuidelinePage({ params }: { params: Promise<{ slug
             </span>
           ))}
           <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[11px] font-medium text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-            {g.ageGroup === "both" ? "Adult & child" : g.ageGroup}
+            {{ both: "Dewasa dan anak", adult: "Dewasa", pediatric: "Anak", neonatal: "Neonatus" }[g.ageGroup]}
           </span>
         </div>
       </div>

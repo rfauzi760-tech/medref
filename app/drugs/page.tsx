@@ -37,7 +37,7 @@ export default function DrugsPage() {
           onClick={() => setCls("")}
           className={`rounded-full border px-3 py-1 text-xs font-medium ${!cls ? "border-accent bg-accent/10 text-accent-strong dark:text-accent" : "border-zinc-200 text-zinc-500 hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-400"}`}
         >
-          All classes
+          Semua kelas
         </button>
         {DRUG_CLASSES.map((c) => (
           <button
@@ -51,7 +51,7 @@ export default function DrugsPage() {
       </div>
 
       {filtered.length === 0 ? (
-        <EmptyState message={`No drugs match “${q}”.`} />
+        <EmptyState message={`Tidak ada obat yang cocok dengan “${q}”.`} />
       ) : (
         <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 [&_.index-row]:border-[var(--line)] sm:[&_.index-row:nth-child(odd)]:border-r">
           {filtered.map((d) => (
@@ -60,7 +60,7 @@ export default function DrugsPage() {
               tool={{
                 slug: d.slug,
                 title: d.genericName,
-                description: `${d.drugClass} — ${d.indications.slice(0, 2).join("; ")}`,
+                description: `${d.drugClass} - ${d.indications.slice(0, 2).join("; ")}`,
                 href: `/drugs/${d.slug}`,
                 specialties: d.specialties,
                 badge: d.drugClass,

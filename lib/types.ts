@@ -221,7 +221,7 @@ export type InteractionSeverity = "contraindicated" | "major" | "moderate" | "mi
 
 export interface DrugInteraction {
   id: string;
-  /** drug slugs — symmetric */
+  /** drug slugs - symmetric */
   a: string;
   b: string;
   severity: InteractionSeverity;

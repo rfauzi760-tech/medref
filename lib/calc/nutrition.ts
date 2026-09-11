@@ -3,7 +3,7 @@ import { clamp, fmt, round } from "@/lib/calc/units";
 
 /**
  * Meal-planning engine. All nutrient values come from the structured food
- * database — no LLM-invented numbers. Pure functions, unit-tested.
+ * database - no LLM-invented numbers. Pure functions, unit-tested.
  */
 
 export interface NutrientTotals {
@@ -73,17 +73,17 @@ export interface MealPlanTarget {
 }
 
 const DEFAULT_MEALS = [
-  { name: "Breakfast", kcalShare: 0.3 },
-  { name: "Lunch", kcalShare: 0.35 },
-  { name: "Dinner", kcalShare: 0.35 },
+  { name: "Sarapan", kcalShare: 0.3 },
+  { name: "Makan siang", kcalShare: 0.35 },
+  { name: "Makan malam", kcalShare: 0.35 },
 ];
 
 const CATEGORY_ROLE: Record<string, { share: number; filter: string[] }> = {
-  staple: { share: 0.35, filter: ["Rice & staples"] },
-  protein: { share: 0.28, filter: ["Meat & poultry", "Fish & seafood", "Eggs", "Legumes & tofu", "Dairy"] },
-  vegetable: { share: 0.17, filter: ["Vegetables"] },
-  fruit: { share: 0.12, filter: ["Fruits"] },
-  other: { share: 0.08, filter: ["Fats & oils", "Snacks & sweets", "Beverages", "Herbs & spices", "Condiments"] },
+  staple: { share: 0.35, filter: ["Makanan Pokok"] },
+  protein: { share: 0.28, filter: ["Lauk Hewani", "Lauk Nabati"] },
+  vegetable: { share: 0.17, filter: ["Sayur"] },
+  fruit: { share: 0.12, filter: ["Buah"] },
+  other: { share: 0.08, filter: ["Minuman", "Bahan & Bumbu", "Kudapan & Jajanan", "Hidangan Indonesia"] },
 };
 
 /**
@@ -146,5 +146,5 @@ export function estimateEnergyRequirement(opts: {
 }
 
 export function formatTotalsLine(t: NutrientTotals): string {
-  return `${fmt(t.kcal, 0)} kcal · P ${fmt(t.protein, 0)}g · C ${fmt(t.carbs, 0)}g · F ${fmt(t.fat, 0)}g · fiber ${fmt(t.fiber, 0)}g`;
+  return `${fmt(t.kcal, 0)} kcal · protein ${fmt(t.protein, 0)} g · karbohidrat ${fmt(t.carbs, 0)} g · lemak ${fmt(t.fat, 0)} g · serat ${fmt(t.fiber, 0)} g`;
 }

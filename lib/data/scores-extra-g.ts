@@ -1,6 +1,6 @@
 import type { ScoreTool } from "@/lib/types";
 
-/** Skor tambahan — bagian G: alat keputusan emergensi/kardiologi/ICU
+/** Skor tambahan - bagian G: alat keputusan emergensi/kardiologi/ICU
  *  (klasifikasi ACS, ASPECTS, kelayakan trombolisis, Framingham HF, CIWA,
  *  Burch, GRACE, PESI, kriteria ICU pneumonia, kontraindikasi & indikasi). */
 
@@ -38,9 +38,9 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "m5", label: "M5 (MCA lateral, superior M2) normal", shortLabel: "M5", type: "bool" }, { id: "m6", label: "M6 (MCA posterior, superior M3) normal", shortLabel: "M6", type: "bool" },
     ],
     ranges: [
-      { min: 8, max: 10, category: "Infark kecil", label: "ASPECTS 8–10 — inti infark kecil; kandidat baik untuk reperfusi bila memenuhi kriteria lain", tone: "success" },
-      { min: 5, max: 7, category: "Infark sedang", label: "ASPECTS 5–7 — trombektomi masih dapat dipertimbangkan (DAWN/DEFUSE-3 bila onset 6–24 jam)", tone: "warning" },
-      { min: 0, max: 4, category: "Infark luas", label: "ASPECTS ≤ 4 — risiko perdarahan reperfusi tinggi; pertimbangkan terapi konservatif", tone: "danger" },
+      { min: 8, max: 10, category: "Infark kecil", label: "ASPECTS 8–10 - inti infark kecil; kandidat baik untuk reperfusi bila memenuhi kriteria lain", tone: "success" },
+      { min: 5, max: 7, category: "Infark sedang", label: "ASPECTS 5–7 - trombektomi masih dapat dipertimbangkan (DAWN/DEFUSE-3 bila onset 6–24 jam)", tone: "warning" },
+      { min: 0, max: 4, category: "Infark luas", label: "ASPECTS ≤ 4 - risiko perdarahan reperfusi tinggi; pertimbangkan terapi konservatif", tone: "danger" },
     ],
   },
   {
@@ -67,7 +67,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
     id: "framingham-hf", slug: "framingham-hf", title: "Kriteria Framingham (Gagal Jantung)", abbreviation: "Framingham HF", type: "score", category: "criteria",
     description: "Kriteria klinis diagnosis gagal jantung: 2 kriteria mayor ATAU 1 mayor + 2 minor.",
     specialties: ["Cardiology", "Internal Medicine", "Emergency Medicine"], keywords: ["framingham", "gagal jantung", "heart failure", "diagnosis"],
-    indication: "Menunjang diagnosis klinis gagal jantung di fasilitas tanpa ekokardiografi segera.", limitations: "Kriteria lama (1971); tidak membedakan HFrEF/HFpEF — perlu ekokardiografi & NT-proBNP.",
+    indication: "Menunjang diagnosis klinis gagal jantung di fasilitas tanpa ekokardiografi segera.", limitations: "Kriteria lama (1971); tidak membedakan HFrEF/HFpEF - perlu ekokardiografi & NT-proBNP.",
     lastReviewed: "2025-06-01", source: { org: "McKee PA et al.", title: "The natural history of congestive heart failure: the Framingham study", year: 1971, url: "https://doi.org/10.1056/NEJM197106232842504" },
     variables: [
       { id: "pnd", label: "PND / ortopnea", type: "bool" }, { id: "jvd", label: "Distensi vena jugularis", type: "bool" }, { id: "rales", label: "Ronki paru", type: "bool" },
@@ -83,26 +83,26 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
   },
   {
     id: "ciwa-ar", slug: "ciwa-ar", title: "Skala CIWA-Ar (Putus Alkohol)", abbreviation: "CIWA-Ar", type: "score", category: "score",
-    description: "Clinical Institute Withdrawal Assessment for Alcohol, revised — menilai beratnya sindrom putus alkohol (skor 0–67).",
+    description: "Clinical Institute Withdrawal Assessment for Alcohol, revised - menilai beratnya sindrom putus alkohol (skor 0–67).",
     specialties: ["Psychiatry", "Emergency Medicine", "Internal Medicine"], keywords: ["ciwa", "alkohol", "putus alkohol", "delirium tremens", "withdrawal"],
     indication: "Pasien dewasa dengan tanda putus alkohol untuk memandu pemberian benzodiazepin.", limitations: "Butuh pasien kooperatif; tidak untuk delirium dengan agitasi ekstrem tanpa penilaian.",
     lastReviewed: "2025-06-01", source: { org: "Sullivan JT et al.", title: "Assessment of alcohol withdrawal: the revised clinical institute withdrawal assessment for alcohol scale (CIWA-Ar)", year: 1989, url: "https://doi.org/10.1111/j.1530-0277.1989.tb00337.x" },
     variables: [
-      { id: "nv", label: "Mual/muntah", shortLabel: "Mual/muntah", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3", value: 2 }, { label: "4–7 (muntah intermiten)", value: 5 }, { label: "≥ 7 (muntah terus)", value: 7 }] },
-      { id: "tremor", label: "Tremor (lengan terentang)", shortLabel: "Tremor", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3 (halus, terlihat)", value: 2 }, { label: "4–6 (nyata, lengan lurus)", value: 4 }, { label: "≥ 7 (gross, sulit menulis)", value: 7 }] },
-      { id: "sw", label: "Keringat paroksismal", shortLabel: "Keringat", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3 (lembap halus)", value: 2 }, { label: "4–6 (tetesan jelas di dahi)", value: 4 }, { label: "≥ 7 (bercucuran)", value: 7 }] },
-      { id: "anx", label: "Ansietas", shortLabel: "Ansietas", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3 (ringan)", value: 2 }, { label: "4–6 (jelas cemas)", value: 4 }, { label: "≥ 7 (panik)", value: 7 }] },
-      { id: "agit", label: "Agitasi", shortLabel: "Agitasi", type: "select", required: true, options: [{ label: "0 — normal", value: 0 }, { label: "1–3 (gelisah ringan)", value: 2 }, { label: "4–6 (mondar-mandir)", value: 4 }, { label: "≥ 7 (mencari-cari / tidak bisa duduk)", value: 7 }] },
-      { id: "tact", label: "Gangguan taktil", shortLabel: "Taktil", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3 (gatal/kesemutan halus)", value: 2 }, { label: "4–6 (meraba sesuatu yang tidak ada)", value: 4 }, { label: "≥ 7 (halusinasi taktil terus)", value: 7 }] },
-      { id: "aud", label: "Gangguan auditori", shortLabel: "Auditori", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3 (suara halus/menakutkan ringan)", value: 2 }, { label: "4–6 (jelas mendengar suara)", value: 4 }, { label: "≥ 7 (halusinasi terus-menerus)", value: 7 }] },
-      { id: "vis", label: "Gangguan visual", shortLabel: "Visual", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3 (sensitivitas cahaya)", value: 2 }, { label: "4–6 (melihat objek tidak nyata)", value: 4 }, { label: "≥ 7 (halusinasi visual terus)", value: 7 }] },
-      { id: "head", label: "Nyeri kepala / rasa penuh di kepala", shortLabel: "Nyeri kepala", type: "select", required: true, options: [{ label: "0 — tidak ada", value: 0 }, { label: "1–3 (ringan)", value: 2 }, { label: "4–6 (sedang)", value: 4 }, { label: "≥ 7 (berat)", value: 7 }] },
-      { id: "orient", label: "Disorientasi / clouding sensorium", shortLabel: "Orientasi", type: "select", required: true, options: [{ label: "0 — orientasi baik", value: 0 }, { label: "1–3 (ragu tanggal/identitas)", value: 2 }, { label: "4–6 (disorientasi tempat/orang, 1–2 item)", value: 4 }, { label: "≥ 7 (disorientasi total, tidak kenal orang)", value: 7 }] },
+      { id: "nv", label: "Mual/muntah", shortLabel: "Mual/muntah", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3", value: 2 }, { label: "4–7 (muntah intermiten)", value: 5 }, { label: "≥ 7 (muntah terus)", value: 7 }] },
+      { id: "tremor", label: "Tremor (lengan terentang)", shortLabel: "Tremor", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3 (halus, terlihat)", value: 2 }, { label: "4–6 (nyata, lengan lurus)", value: 4 }, { label: "≥ 7 (gross, sulit menulis)", value: 7 }] },
+      { id: "sw", label: "Keringat paroksismal", shortLabel: "Keringat", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3 (lembap halus)", value: 2 }, { label: "4–6 (tetesan jelas di dahi)", value: 4 }, { label: "≥ 7 (bercucuran)", value: 7 }] },
+      { id: "anx", label: "Ansietas", shortLabel: "Ansietas", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3 (ringan)", value: 2 }, { label: "4–6 (jelas cemas)", value: 4 }, { label: "≥ 7 (panik)", value: 7 }] },
+      { id: "agit", label: "Agitasi", shortLabel: "Agitasi", type: "select", required: true, options: [{ label: "0 - normal", value: 0 }, { label: "1–3 (gelisah ringan)", value: 2 }, { label: "4–6 (mondar-mandir)", value: 4 }, { label: "≥ 7 (mencari-cari / tidak bisa duduk)", value: 7 }] },
+      { id: "tact", label: "Gangguan taktil", shortLabel: "Taktil", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3 (gatal/kesemutan halus)", value: 2 }, { label: "4–6 (meraba sesuatu yang tidak ada)", value: 4 }, { label: "≥ 7 (halusinasi taktil terus)", value: 7 }] },
+      { id: "aud", label: "Gangguan auditori", shortLabel: "Auditori", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3 (suara halus/menakutkan ringan)", value: 2 }, { label: "4–6 (jelas mendengar suara)", value: 4 }, { label: "≥ 7 (halusinasi terus-menerus)", value: 7 }] },
+      { id: "vis", label: "Gangguan visual", shortLabel: "Visual", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3 (sensitivitas cahaya)", value: 2 }, { label: "4–6 (melihat objek tidak nyata)", value: 4 }, { label: "≥ 7 (halusinasi visual terus)", value: 7 }] },
+      { id: "head", label: "Nyeri kepala / rasa penuh di kepala", shortLabel: "Nyeri kepala", type: "select", required: true, options: [{ label: "0 - tidak ada", value: 0 }, { label: "1–3 (ringan)", value: 2 }, { label: "4–6 (sedang)", value: 4 }, { label: "≥ 7 (berat)", value: 7 }] },
+      { id: "orient", label: "Disorientasi / clouding sensorium", shortLabel: "Orientasi", type: "select", required: true, options: [{ label: "0 - orientasi baik", value: 0 }, { label: "1–3 (ragu tanggal/identitas)", value: 2 }, { label: "4–6 (disorientasi tempat/orang, 1–2 item)", value: 4 }, { label: "≥ 7 (disorientasi total, tidak kenal orang)", value: 7 }] },
     ],
     ranges: [
-      { min: 0, max: 8, category: "Ringan", label: "CIWA < 8 — pantau; terapi simtomatik bila perlu", tone: "success" },
-      { min: 9, max: 15, category: "Sedang", label: "CIWA 9–15 — beri benzodiazepin terjadwal (mis. diazepam 10–20 mg atau lorazepam 2–4 mg), nilai ulang tiap 2–4 jam", tone: "warning" },
-      { min: 16, max: 67, category: "Berat", label: "CIWA ≥ 16 — risiko delirium tremens/kejang; benzodiazepin agresif + tiamin IV, pertimbangkan ICU", tone: "danger" },
+      { min: 0, max: 8, category: "Ringan", label: "CIWA < 8 - pantau; terapi simtomatik bila perlu", tone: "success" },
+      { min: 9, max: 15, category: "Sedang", label: "CIWA 9–15 - beri benzodiazepin terjadwal (mis. diazepam 10–20 mg atau lorazepam 2–4 mg), nilai ulang tiap 2–4 jam", tone: "warning" },
+      { min: 16, max: 67, category: "Berat", label: "CIWA ≥ 16 - risiko delirium tremens/kejang; benzodiazepin agresif + tiamin IV, pertimbangkan ICU", tone: "danger" },
     ],
   },
   {
@@ -121,9 +121,9 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "precip", label: "Riwayat pencetus (bedah, infeksi, trauma, DKA, henti obat antitiroid, kontras iodin, dll.)", shortLabel: "Pencetus", type: "select", required: true, options: [{ label: "Tidak ada", value: 0 }, { label: "Ada", value: 10 }] },
     ],
     ranges: [
-      { min: 0, max: 24, category: "Badai tiroid tidak mungkin", label: "Skor < 25 — badai tiroid tidak mungkin; tatalaksana tirotoksikosis biasa", tone: "success" },
-      { min: 25, max: 44, category: "Impending storm", label: "Skor 25–44 — badai tiroid mengancam: mulai terapi agresif (tiourea, beta-blocker, steroid, iodin)", tone: "warning" },
-      { min: 45, max: 140, category: "Badai tiroid", label: "Skor ≥ 45 — badai tiroid: terapi agresif segera + rawat ICU", tone: "danger" },
+      { min: 0, max: 24, category: "Badai tiroid tidak mungkin", label: "Skor < 25 - badai tiroid tidak mungkin; tatalaksana tirotoksikosis biasa", tone: "success" },
+      { min: 25, max: 44, category: "Impending storm", label: "Skor 25–44 - badai tiroid mengancam: mulai terapi agresif (tiourea, beta-blocker, steroid, iodin)", tone: "warning" },
+      { min: 45, max: 140, category: "Badai tiroid", label: "Skor ≥ 45 - badai tiroid: terapi agresif segera + rawat ICU", tone: "danger" },
     ],
   },
   {
@@ -137,20 +137,20 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "hr", label: "Denyut jantung (menit)", shortLabel: "Nadi", type: "select", required: true, options: [{ label: "< 70", value: 0 }, { label: "70–89", value: 3 }, { label: "90–109", value: 9 }, { label: "110–149", value: 15 }, { label: "150–199", value: 24 }, { label: "≥ 200", value: 38 }] },
       { id: "sbp", label: "TD sistolik (mmHg)", shortLabel: "TDS", type: "select", required: true, options: [{ label: "< 80", value: 58 }, { label: "80–99", value: 53 }, { label: "100–119", value: 43 }, { label: "120–139", value: 34 }, { label: "140–159", value: 24 }, { label: "160–199", value: 10 }, { label: "≥ 200", value: 0 }] },
       { id: "cr", label: "Kreatinin (mg/dL)", shortLabel: "Kreatinin", type: "select", required: true, options: [{ label: "< 0,6", value: 1 }, { label: "0,6–1,1", value: 4 }, { label: "1,2–1,5", value: 9 }, { label: "1,6–1,9", value: 15 }, { label: "2,0–3,9", value: 25 }, { label: "≥ 4,0", value: 40 }] },
-      { id: "killip", label: "Kelas Killip", shortLabel: "Killip", type: "select", required: true, options: [{ label: "I — tanpa gagal jantung", value: 0 }, { label: "II — ronki/galop S3", value: 20 }, { label: "III — edema paru", value: 39 }, { label: "IV — syok kardiogenik", value: 59 }] },
+      { id: "killip", label: "Kelas Killip", shortLabel: "Killip", type: "select", required: true, options: [{ label: "I - tanpa gagal jantung", value: 0 }, { label: "II - ronki/galop S3", value: 20 }, { label: "III - edema paru", value: 39 }, { label: "IV - syok kardiogenik", value: 59 }] },
       { id: "arrest", label: "Henti jantung saat datang", shortLabel: "Henti jantung", type: "select", required: true, options: [{ label: "Tidak", value: 0 }, { label: "Ya", value: 39 }] },
       { id: "stdev", label: "Deviasi segmen ST", shortLabel: "ST deviasi", type: "select", required: true, options: [{ label: "Tidak", value: 0 }, { label: "Ya", value: 28 }] },
       { id: "trop", label: "Penanda jantung meningkat", shortLabel: "Troponin", type: "select", required: true, options: [{ label: "Tidak", value: 0 }, { label: "Ya", value: 14 }] },
     ],
     ranges: [
-      { min: 0, max: 108, category: "Risiko rendah", label: "GRACE < 109 — risiko kematian rawat < 1%", tone: "success" },
-      { min: 109, max: 140, category: "Risiko sedang", label: "GRACE 109–140 — risiko kematian rawat 1–3%; pertimbangkan invasif dini", tone: "warning" },
-      { min: 141, max: 319, category: "Risiko tinggi", label: "GRACE > 140 — risiko kematian rawat > 3%; strategi invasif dini (< 24 jam)", tone: "danger" },
+      { min: 0, max: 108, category: "Risiko rendah", label: "GRACE < 109 - risiko kematian rawat < 1%", tone: "success" },
+      { min: 109, max: 140, category: "Risiko sedang", label: "GRACE 109–140 - risiko kematian rawat 1–3%; pertimbangkan invasif dini", tone: "warning" },
+      { min: 141, max: 319, category: "Risiko tinggi", label: "GRACE > 140 - risiko kematian rawat > 3%; strategi invasif dini (< 24 jam)", tone: "danger" },
     ],
   },
   {
     id: "pesi", slug: "pesi", title: "Skor PESI (Prognosis Emboli Paru)", abbreviation: "PESI", type: "score", category: "score",
-    description: "Pulmonary Embolism Severity Index — memprediksi mortalitas 30 hari pada emboli paru akut (skor 0–~300).",
+    description: "Pulmonary Embolism Severity Index - memprediksi mortalitas 30 hari pada emboli paru akut (skor 0–~300).",
     specialties: ["Pulmonology", "Emergency Medicine", "Cardiology"], keywords: ["pesi", "emboli paru", "pe", "prognosis", "mortalitas"],
     indication: "Pasien PE akut untuk keputusan rawat jalan vs rawat inap.", limitations: "PESI kelas I–II memungkinkan tatalaksana rawat jalan bila stabil; sPESI lebih ringkas.",
     lastReviewed: "2025-06-01", source: { org: "Aujesky D et al.", title: "Derivation and validation of a prognostic model for pulmonary embolism", year: 2005, url: "https://doi.org/10.1164/rccm.200506-862OC" },
@@ -168,11 +168,11 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "spo2", label: "SaO2 < 90% udara ruangan", shortLabel: "SaO2 < 90%", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 65, category: "Kelas I — risiko sangat rendah", label: "Mortalitas 30 hari ~0–1,6% — rawat jalan dapat dipertimbangkan bila stabil", tone: "success" },
-      { min: 66, max: 85, category: "Kelas II — risiko rendah", label: "Mortalitas ~1,7–3,5% — rawat jalan/sebagian rawat inap singkat", tone: "info" },
-      { min: 86, max: 105, category: "Kelas III — risiko sedang", label: "Mortalitas ~3,2–7,1% — rawat inap", tone: "warning" },
-      { min: 106, max: 125, category: "Kelas IV — risiko sedang-tinggi", label: "Mortalitas ~4,0–11,4% — rawat inap, pertimbangkan reperfusi bila disfungsi RV", tone: "warning" },
-      { min: 126, max: 500, category: "Kelas V — risiko tinggi", label: "Mortalitas ~10–24,5% — rawat inap intensif; evaluasi trombolisis", tone: "danger" },
+      { min: 0, max: 65, category: "Kelas I - risiko sangat rendah", label: "Mortalitas 30 hari ~0–1,6% - rawat jalan dapat dipertimbangkan bila stabil", tone: "success" },
+      { min: 66, max: 85, category: "Kelas II - risiko rendah", label: "Mortalitas ~1,7–3,5% - rawat jalan/sebagian rawat inap singkat", tone: "info" },
+      { min: 86, max: 105, category: "Kelas III - risiko sedang", label: "Mortalitas ~3,2–7,1% - rawat inap", tone: "warning" },
+      { min: 106, max: 125, category: "Kelas IV - risiko sedang-tinggi", label: "Mortalitas ~4,0–11,4% - rawat inap, pertimbangkan reperfusi bila disfungsi RV", tone: "warning" },
+      { min: 126, max: 500, category: "Kelas V - risiko tinggi", label: "Mortalitas ~10–24,5% - rawat inap intensif; evaluasi trombolisis", tone: "danger" },
     ],
   },
   {
@@ -189,7 +189,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "hypot", label: "Hipotensi perlu resusitasi cairan agresif", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 2, category: "Tidak memenuhi kriteria ICU", label: "< 3 kriteria minor — rawat biasa dengan observasi ketat", tone: "success" },
+      { min: 0, max: 2, category: "Tidak memenuhi kriteria ICU", label: "< 3 kriteria minor - rawat biasa dengan observasi ketat", tone: "success" },
       { min: 3, max: 9, category: "Indikasi ICU", label: "≥ 3 kriteria minor → pertimbangkan rawat ICU (1 kriteria mayor saja sudah cukup: ventilasi invasif atau vasopresor)", tone: "danger" },
     ],
   },
@@ -207,8 +207,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "brady", label: "Bradikardia < 50 atau takikardia > 100 tanpa gagal jantung", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Aman diberikan", label: "Tidak ada kontraindikasi tercentang — nitrat dapat diberikan dengan pemantauan TD", tone: "success" },
-      { min: 1, max: 99, category: "Kontraindikasi", label: "Hindari nitrat — telaah butir tercentang; konsul kardiologi", tone: "danger" },
+      { min: 0, max: 0, category: "Aman diberikan", label: "Tidak ada kontraindikasi tercentang - nitrat dapat diberikan dengan pemantauan TD", tone: "success" },
+      { min: 1, max: 99, category: "Kontraindikasi", label: "Hindari nitrat - telaah butir tercentang; konsul kardiologi", tone: "danger" },
     ],
   },
   {
@@ -225,8 +225,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "cocaine", label: "Iskemia akibat kokain (risiko unopposed alfa)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Aman diberikan", label: "Tidak ada kontraindikasi tercentang — beta-blocker dapat diberikan", tone: "success" },
-      { min: 1, max: 99, category: "Kontraindikasi / hati-hati", label: "Hindari beta-blocker atau konsul kardiologi — telaah butir tercentang", tone: "danger" },
+      { min: 0, max: 0, category: "Aman diberikan", label: "Tidak ada kontraindikasi tercentang - beta-blocker dapat diberikan", tone: "success" },
+      { min: 1, max: 99, category: "Kontraindikasi / hati-hati", label: "Hindari beta-blocker atau konsul kardiologi - telaah butir tercentang", tone: "danger" },
     ],
   },
   {
@@ -247,7 +247,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
     ],
     ranges: [
       { min: 0, max: 0, category: "Tanpa kontraindikasi absolut", label: "Fibrinolitik dapat diberikan bila ada indikasi (evaluasi butir relatif)", tone: "success" },
-      { min: 1, max: 99, category: "Kontraindikasi", label: "Ada kontraindikasi — hindari fibrinolitik; pertimbangkan PCI primer atau konsul", tone: "danger" },
+      { min: 1, max: 99, category: "Kontraindikasi", label: "Ada kontraindikasi - hindari fibrinolitik; pertimbangkan PCI primer atau konsul", tone: "danger" },
     ],
   },
   {
@@ -264,8 +264,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "dka", label: "Ketoasidosis diabetik / dehidrasi berat", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Dapat dilanjutkan", label: "Tidak ada kontraindikasi tercentang — metformin dapat dilanjutkan", tone: "success" },
-      { min: 1, max: 99, category: "Hentikan / hindari", label: "Hentikan sementara metformin — telaah butir tercentang; pantau fungsi ginjal", tone: "danger" },
+      { min: 0, max: 0, category: "Dapat dilanjutkan", label: "Tidak ada kontraindikasi tercentang - metformin dapat dilanjutkan", tone: "success" },
+      { min: 1, max: 99, category: "Hentikan / hindari", label: "Hentikan sementara metformin - telaah butir tercentang; pantau fungsi ginjal", tone: "danger" },
     ],
   },
   {
@@ -282,15 +282,15 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "aki", label: "AKI / kenaikan kreatinin > 30% setelah memulai", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi tercentang — dapat dimulai dengan pemantauan", tone: "success" },
-      { min: 1, max: 99, category: "Kontraindikasi", label: "Hindari ACEi/ARB — telaah butir tercentang", tone: "danger" },
+      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi tercentang - dapat dimulai dengan pemantauan", tone: "success" },
+      { min: 1, max: 99, category: "Kontraindikasi", label: "Hindari ACEi/ARB - telaah butir tercentang", tone: "danger" },
     ],
   },
   {
     id: "kontra-adenosin", slug: "kontra-adenosin", title: "Kontraindikasi Adenosin", abbreviation: "Adenosin", type: "score", category: "criteria",
     description: "Ceklis kontraindikasi adenosin pada takikardia supraventrikular.",
     specialties: ["Cardiology", "Emergency Medicine"], keywords: ["adenosin", "svt", "kontraindikasi", "wpw", "takikardia"],
-    indication: "Sebelum pemberian adenosin IV pada SVT reguler.", limitations: "Adenosin kontraindikasi pada AF dengan WPW — dapat mempercepat konduksi aksesorius.",
+    indication: "Sebelum pemberian adenosin IV pada SVT reguler.", limitations: "Adenosin kontraindikasi pada AF dengan WPW - dapat mempercepat konduksi aksesorius.",
     lastReviewed: "2025-06-01", source: { org: "AHA", title: "2023 AHA/ACC/ACCP/ASPC/HRS Guideline for the Management of Patients With Atrial Fibrillation", year: 2023 },
     variables: [
       { id: "asthma", label: "Asma / bronkospasme aktif (risiko bronkokonstriksi)", type: "bool" },
@@ -299,8 +299,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "unstable", label: "Pasien tidak stabil (lebih tepat kardioversi)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi tercentang — adenosin 6 mg IV cepat, ulangi 12 mg", tone: "success" },
-      { min: 1, max: 99, category: "Kontraindikasi", label: "Hindari adenosin — telaah butir tercentang", tone: "danger" },
+      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi tercentang - adenosin 6 mg IV cepat, ulangi 12 mg", tone: "success" },
+      { min: 1, max: 99, category: "Kontraindikasi", label: "Hindari adenosin - telaah butir tercentang", tone: "danger" },
     ],
   },
   {
@@ -316,7 +316,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "hit2", label: "Trombosis baru saat mendapat heparin", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi/curiga HIT — heparin dapat diberikan", tone: "success" },
+      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi/curiga HIT - heparin dapat diberikan", tone: "success" },
       { min: 1, max: 99, category: "Hindari / evaluasi HIT", label: "Bila hit1/hit2 tercentang → curiga HIT: hentikan heparin, ganti antikoagulan non-heparin (fondaparinuks/DOAC/argatroban), periksa antibodi PF4-heparin", tone: "danger" },
     ],
   },
@@ -334,15 +334,15 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "nephro", label: "Obat nefrotoksik bersamaan (NSAID, aminoglikosida)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Risiko rendah", label: "Tidak ada faktor risiko tercentang — kontras dapat diberikan", tone: "success" },
+      { min: 0, max: 0, category: "Risiko rendah", label: "Tidak ada faktor risiko tercentang - kontras dapat diberikan", tone: "success" },
       { min: 1, max: 99, category: "Berisiko", label: "Risiko CIN: pertimbangkan alternatif non-kontras, hidrasi (NaHCO3/NaCl), tahan NSAID/metformin; hitung eGFR sebelum prosedur", tone: "warning" },
     ],
   },
   {
     id: "kontra-lp", slug: "kontra-lp", title: "Kontraindikasi Pungsi Lumbal", abbreviation: "LP", type: "score", category: "criteria",
-    description: "Ceklis kontraindikasi pungsi lumbal — temuan berbahaya memerlukan CT kepala dulu atau menunda LP.",
+    description: "Ceklis kontraindikasi pungsi lumbal - temuan berbahaya memerlukan CT kepala dulu atau menunda LP.",
     specialties: ["Neurology", "Emergency Medicine", "Internal Medicine"], keywords: ["pungsi lumbal", "lp", "kontraindikasi", "meningitis", "papiledema"],
-    indication: "Sebelum pungsi lumbal diagnostik.", limitations: "Bila tanda herniasi — jangan LP; beri antibiotik empiris dulu bila curiga meningitis.",
+    indication: "Sebelum pungsi lumbal diagnostik.", limitations: "Bila tanda herniasi - jangan LP; beri antibiotik empiris dulu bila curiga meningitis.",
     lastReviewed: "2025-06-01", source: { org: "AAN", title: "Practice parameters: lumbar puncture (summary statement)", year: 2005 },
     variables: [
       { id: "focal", label: "Defisit neurologis fokal baru", type: "bool" },
@@ -354,13 +354,13 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "mass", label: "Tanda herniasi / massa intrakranial", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "LP dapat dilakukan", label: "Tidak ada kontraindikasi tercentang — LP dapat dilakukan dengan teknik aseptik", tone: "success" },
+      { min: 0, max: 0, category: "LP dapat dilakukan", label: "Tidak ada kontraindikasi tercentang - LP dapat dilakukan dengan teknik aseptik", tone: "success" },
       { min: 1, max: 99, category: "Kontraindikasi / perlu CT dulu", label: "Evaluasi butir tercentang: bila tanda TIK/herniasi → jangan LP, CT kepala dulu; bila curiga meningitis beri antibiotik empiris segera", tone: "danger" },
     ],
   },
   {
     id: "indikasi-intubasi", slug: "indikasi-intubasi", title: "Indikasi Intubasi / Ventilasi", abbreviation: "Intubasi", type: "score", category: "criteria",
-    description: "Ceklis indikasi intubasi endotrakeal — perlindungan jalan napas, gagal oksigenasi, gagal ventilasi.",
+    description: "Ceklis indikasi intubasi endotrakeal - perlindungan jalan napas, gagal oksigenasi, gagal ventilasi.",
     specialties: ["Anesthesiology", "Emergency Medicine", "Intensive Care"], keywords: ["intubasi", "ventilasi", "airway", "jalan napas", "indikasi"],
     indication: "Pasien dengan gagal napas atau risiko kehilangan jalan napas.", limitations: "Keputusan klinis; jangan tunggu kriteria lengkap bila pasien memburuk cepat.",
     lastReviewed: "2025-06-01", source: { org: "ATLS / AHA", title: "Advanced trauma & cardiac life support airway algorithms", year: 2020 },
@@ -371,8 +371,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "anticipate", label: "Antisipasi perburukan (luka bakar jalan napas, syok berat, transfer)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — pantau ketat, siapkan peralatan", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi intubasi", label: "Indikasi intubasi — lakukan persiapan RSI, preoksigenasi, cek kesulitan jalan napas (LEMON)", tone: "danger" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - pantau ketat, siapkan peralatan", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi intubasi", label: "Indikasi intubasi - lakukan persiapan RSI, preoksigenasi, cek kesulitan jalan napas (LEMON)", tone: "danger" },
     ],
   },
   {
@@ -391,7 +391,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
     ],
     ranges: [
       { min: 0, max: 2, category: "Belum ada indikasi jelas", label: "Telaah indikasi; NIV bila salah satu indikasi tercentang dan tanpa kontraindikasi", tone: "info" },
-      { min: 3, max: 99, category: "Indikasi NIV", label: "Ada indikasi (butir 1–3) — NIV dapat dimulai bila tidak ada kontraindikasi (butir 4–6); bila kontraindikasi tercentang → pertimbangkan intubasi", tone: "warning" },
+      { min: 3, max: 99, category: "Indikasi NIV", label: "Ada indikasi (butir 1–3) - NIV dapat dimulai bila tidak ada kontraindikasi (butir 4–6); bila kontraindikasi tercentang → pertimbangkan intubasi", tone: "warning" },
     ],
   },
   {
@@ -406,8 +406,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "crit", label: "Kondisi kritis (syok, sepsis, henti jantung pasca-ROSC)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 92, category: "Target 94–98% (atau 88–92% bila risiko CO2)", label: "Hipoksemia — beri O2 titrasi; target SpO2 94–98% umum, 88–92% bila risiko retensi CO2; kondisi kritis target 94–98% dengan resusitasi", tone: "warning" },
-      { min: 93, max: 100, category: "Saturasi cukup", label: "SpO2 adekuat — O2 tidak rutin diperlukan kecuali kondisi kritis; pantau ulang", tone: "success" },
+      { min: 0, max: 92, category: "Target 94–98% (atau 88–92% bila risiko CO2)", label: "Hipoksemia - beri O2 titrasi; target SpO2 94–98% umum, 88–92% bila risiko retensi CO2; kondisi kritis target 94–98% dengan resusitasi", tone: "warning" },
+      { min: 93, max: 100, category: "Saturasi cukup", label: "SpO2 adekuat - O2 tidak rutin diperlukan kecuali kondisi kritis; pantau ulang", tone: "success" },
     ],
   },
   {
@@ -422,7 +422,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "severe", label: "Tanda berat (sulit bicara, SpO2 turun, otot bantu napas)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — optimalkan bronkodilator dulu", tone: "info" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - optimalkan bronkodilator dulu", tone: "info" },
       { min: 1, max: 99, category: "Indikasi steroid", label: "Berikan steroid sistemik dini: prednison 40–50 mg (asma) / 30–40 mg (PPOK) PO 5–7 hari, atau metilprednisolon 40–125 mg IV", tone: "warning" },
     ],
   },
@@ -439,7 +439,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "loc", label: "Penurunan kesadaran akut", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Stabil", label: "Tanpa tanda tidak stabil — pertimbangkan terapi medikamentosa/elektif", tone: "info" },
+      { min: 0, max: 0, category: "Stabil", label: "Tanpa tanda tidak stabil - pertimbangkan terapi medikamentosa/elektif", tone: "info" },
       { min: 1, max: 99, category: "Kardioversi segera", label: "Tidak stabil → kardioversi sinkron segera (sedasi); VT tanpa nadi → defibrilasi", tone: "danger" },
     ],
   },
@@ -456,8 +456,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "refract", label: "Tidak respons atropin / agen kronotropik", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — atropin & pemantauan dulu", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi pacu", label: "Indikasi pacu jantung sementara — pasang pacu transkutan sambil persiapan transvena/konsul kardiologi", tone: "danger" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - atropin & pemantauan dulu", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi pacu", label: "Indikasi pacu jantung sementara - pasang pacu transkutan sambil persiapan transvena/konsul kardiologi", tone: "danger" },
     ],
   },
   {
@@ -474,7 +474,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "baseline", label: "Status fungsional sebelumnya baik (mRS 0–1)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 4, category: "Tidak memenuhi syarat", label: "Syarat belum lengkap — telaah butir; bila ada kontraindikasi → terapi medikamentosa", tone: "info" },
+      { min: 0, max: 4, category: "Tidak memenuhi syarat", label: "Syarat belum lengkap - telaah butir; bila ada kontraindikasi → terapi medikamentosa", tone: "info" },
       { min: 5, max: 5, category: "Memenuhi syarat", label: "Semua syarat terpenuhi → aktivasi tim trombektomi / transfer ke pusat stroke", tone: "danger" },
     ],
   },
@@ -487,11 +487,11 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
     variables: [
       { id: "shock", label: "Hipotensi/syok persisten (sistolik < 90 mmHg) akibat PE (high-risk/massive)", type: "bool" },
       { id: "arrest", label: "Henti jantung dengan dugaan kuat PE", type: "bool" },
-      { id: "submassive", label: "Disfungsi ventrikel kanan + troponin naik, hemodinamik masih stabil (submasif — pertimbangan kasus per kasus)", type: "bool" },
+      { id: "submassive", label: "Disfungsi ventrikel kanan + troponin naik, hemodinamik masih stabil (submasif - pertimbangan kasus per kasus)", type: "bool" },
       { id: "contra", label: "Kontraindikasi absolut fibrinolitik (perdarahan/ICH/bedah baru)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — antikoagulasi standar", tone: "info" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - antikoagulasi standar", tone: "info" },
       { min: 1, max: 99, category: "Indikasi trombolisis", label: "PE high-risk → trombolisis sistemik segera bila tidak ada kontraindikasi (butir contra); submasif → evaluasi tim", tone: "danger" },
     ],
   },
@@ -509,8 +509,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "htn", label: "Hipertensi berat tak terkontrol", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi tercentang — antikoagulan dapat diberikan", tone: "success" },
-      { min: 1, max: 99, category: "Kontraindikasi / hati-hati", label: "Evaluasi butir tercentang — pertimbangkan tunda antikoagulasi atau alternatif (mis. filter IVC)", tone: "danger" },
+      { min: 0, max: 0, category: "Dapat diberikan", label: "Tidak ada kontraindikasi tercentang - antikoagulan dapat diberikan", tone: "success" },
+      { min: 1, max: 99, category: "Kontraindikasi / hati-hati", label: "Evaluasi butir tercentang - pertimbangkan tunda antikoagulasi atau alternatif (mis. filter IVC)", tone: "danger" },
     ],
   },
   {
@@ -551,7 +551,7 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
   },
   {
     id: "indikasi-ffp", slug: "indikasi-ffp", title: "Indikasi Transfusi Plasma (FFP)", abbreviation: "FFP", type: "score", category: "criteria",
-    description: "Ceklis indikasi fresh frozen plasma — koagulopati dengan perdarahan atau sebelum tindakan invasif.",
+    description: "Ceklis indikasi fresh frozen plasma - koagulopati dengan perdarahan atau sebelum tindakan invasif.",
     specialties: ["Hematology", "Surgery", "Internal Medicine"], keywords: ["ffp", "plasma", "transfusi", "koagulopati", "inr", "indikasi"],
     indication: "Pasien dengan koagulopati dan perdarahan/akan tindakan.", limitations: "FFP bukan pengganti vitamin K/kompleks protrombin pada warfarin; hindari penggunaan rutin tanpa indikasi.",
     lastReviewed: "2025-06-01", source: { org: "AABB", title: "Clinical practice guidelines for plasma transfusion", year: 2010 },
@@ -562,13 +562,13 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "warfarin", label: "Pembalikan warfarin saat perdarahan major (bila PCC tidak tersedia)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — FFP tidak rutin diperlukan", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi FFP", label: "Indikasi FFP — berikan 10–15 mL/kg; koreksi penyebab dasar (vitamin K, PCC pada warfarin)", tone: "warning" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - FFP tidak rutin diperlukan", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi FFP", label: "Indikasi FFP - berikan 10–15 mL/kg; koreksi penyebab dasar (vitamin K, PCC pada warfarin)", tone: "warning" },
     ],
   },
   {
     id: "indikasi-extrip", slug: "indikasi-extrip", title: "Indikasi Dialisis pada Keracunan", abbreviation: "EKTRIP", type: "score", category: "criteria",
-    description: "Kriteria EKTRIP (EXTRIP workgroup) — racun yang dapat dieliminasi hemodialisis dan situasi yang memerlukannya.",
+    description: "Kriteria EKTRIP (EXTRIP workgroup) - racun yang dapat dieliminasi hemodialisis dan situasi yang memerlukannya.",
     specialties: ["Toxicology", "Nephrology", "Emergency Medicine"], keywords: ["dialisis", "keracunan", "extrip", "metanol", "salisilat", "litium"],
     indication: "Keracunan zat yang terdialisis dengan toksisitas berat.", limitations: "Konsul toksikologi/nefrologi; keputusan berdasarkan kadar & klinis.",
     lastReviewed: "2025-06-01", source: { org: "EXTRIP Workgroup", title: "Extracorporeal treatments in poisonings", year: 2015 },
@@ -580,8 +580,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "valp", label: "Asam valproat (kadar sangat tinggi, koma, hiperamonemia)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — terapi suportif & antidot", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi dialisis", label: "Indikasi hemodialisis/hemoperfusi — konsul nefrologi segera; beri antidot bersamaan (fomepizol/etanol, NaHCO3, dll.)", tone: "danger" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - terapi suportif & antidot", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi dialisis", label: "Indikasi hemodialisis/hemoperfusi - konsul nefrologi segera; beri antidot bersamaan (fomepizol/etanol, NaHCO3, dll.)", tone: "danger" },
     ],
   },
   {
@@ -596,8 +596,8 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "failed", label: "Gagal/memburuk dengan terapi antibiotik (jika sempat dicoba)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — observasi/antibiotik terpilih", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi operasi", label: "Indikasi apendektomi — puasa, antibiotik perioperatif, cairan IV, operasi (laparoskopi/terbuka)", tone: "danger" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - observasi/antibiotik terpilih", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi operasi", label: "Indikasi apendektomi - puasa, antibiotik perioperatif, cairan IV, operasi (laparoskopi/terbuka)", tone: "danger" },
     ],
   },
   {
@@ -607,22 +607,22 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
     indication: "Preeklampsia dengan gambaran berat dan eklampsia.", limitations: "Awasi refleks, frekuensi napas, dan diuresis; siapkan antidot kalsium glukonat.",
     lastReviewed: "2025-06-01", source: { org: "ACOG / POGI", title: "Practice Bulletin: Gestational Hypertension and Preeclampsia", year: 2020 },
     variables: [
-      { id: "ecl", label: "Eklampsia (kejang) — terapi & profilaksis kejang ulang", type: "bool" },
+      { id: "ecl", label: "Eklampsia (kejang) - terapi & profilaksis kejang ulang", type: "bool" },
       { id: "severe", label: "Preeklampsia dengan gambaran berat", type: "bool" },
       { id: "reflex", label: "Refleks patela hilang (hentikan)", type: "bool" },
       { id: "rr", label: "Frekuensi napas < 12/menit (hentikan)", type: "bool" },
       { id: "urine", label: "Urin < 0,5 mL/kg/jam (< 100 mL/4 jam) (hentikan)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — pantau ketat", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi MgSO4", label: "Indikasi MgSO4 (dosis 4–6 g IV bolus, lanjut 1–2 g/jam infus) — bila ada tanda hentikan (reflex/rr/urine) → hentikan infus, beri kalsium glukonat 1 g IV, dukung napas", tone: "danger" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - pantau ketat", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi MgSO4", label: "Indikasi MgSO4 (dosis 4–6 g IV bolus, lanjut 1–2 g/jam infus) - bila ada tanda hentikan (reflex/rr/urine) → hentikan infus, beri kalsium glukonat 1 g IV, dukung napas", tone: "danger" },
     ],
   },
   {
     id: "indikasi-nalokson", slug: "indikasi-nalokson", title: "Indikasi Nalokson (Overdosis Opioid)", abbreviation: "Nalokson", type: "score", category: "criteria",
     description: "Ceklis indikasi nalokson pada depresi napas akibat opioid.",
     specialties: ["Emergency Medicine", "Toxicology", "Intensive Care"], keywords: ["nalokson", "opioid", "overdosis", "depresi napas", "indikasi"],
-    indication: "Pasien dengan dugaan overdosis opioid dan depresi napas/kesadaran menurun.", limitations: "Nalokson kerja pendek — observasi minimal 2–4 jam; siapkan dosis ulang.",
+    indication: "Pasien dengan dugaan overdosis opioid dan depresi napas/kesadaran menurun.", limitations: "Nalokson kerja pendek - observasi minimal 2–4 jam; siapkan dosis ulang.",
     lastReviewed: "2025-06-01", source: { org: "WHO", title: "Clinical guidelines for withdrawal management and treatment of drug dependence", year: 2009 },
     variables: [
       { id: "resp", label: "Depresi napas (frekuensi < 12/menit / apnea / SpO2 turun)", type: "bool" },
@@ -630,26 +630,26 @@ export const EXTRA_SCORES_G: ScoreTool[] = [
       { id: "pinpoint", label: "Pupil pinpoint + riwayat/dugaan opioid", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — dukung napas & pantau", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi nalokson", label: "Indikasi nalokson — 0,4 mg IV/IM (anak 0,01 mg/kg), titrasi tiap 2–3 menit sambil bantu napas; pantau ulang (efek 20–90 menit)", tone: "danger" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - dukung napas & pantau", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi nalokson", label: "Indikasi nalokson - 0,4 mg IV/IM (anak 0,01 mg/kg), titrasi tiap 2–3 menit sambil bantu napas; pantau ulang (efek 20–90 menit)", tone: "danger" },
     ],
   },
   {
     id: "indikasi-hd", slug: "indikasi-hd", title: "Indikasi Hemodialisis Akut (AEIOU)", abbreviation: "AEIOU", type: "score", category: "criteria",
-    description: "Mnemonik AEIOU — indikasi dialisis darurat pada gagal ginjal akut.",
+    description: "Mnemonik AEIOU - indikasi dialisis darurat pada gagal ginjal akut.",
     specialties: ["Nephrology", "Intensive Care", "Emergency Medicine"], keywords: ["hemodialisis", "dialisis", "aeiou", "indikasi", "hiperkalemia", "uremia"],
     indication: "Pasien AKI berat/keracunan dengan indikasi dialisis emergensi.", limitations: "Keputusan bersama nefrologi; indikasi relatif dinilai klinis.",
     lastReviewed: "2025-06-01", source: { org: "KDIGO", title: "Clinical Practice Guideline for Acute Kidney Injury", year: 2012 },
     variables: [
-      { id: "acid", label: "A — Asidosis metabolik berat refrakter (pH < 7,1)", type: "bool" },
-      { id: "elec", label: "E — Elektrolit: hiperkalemia > 6,5 mmol/L refrakter atau ada perubahan EKG", type: "bool" },
-      { id: "intox", label: "I — Intoksikasi yang terdialisis (metanol, etilen glikol, salisilat, litium, metformin)", type: "bool" },
-      { id: "overload", label: "O — Overload cairan / edema paru refrakter diuretik", type: "bool" },
-      { id: "uremia", label: "U — Uremia simtomatik (ensefalopati, perikarditis, perdarahan uremik)", type: "bool" },
+      { id: "acid", label: "A - Asidosis metabolik berat refrakter (pH < 7,1)", type: "bool" },
+      { id: "elec", label: "E - Elektrolit: hiperkalemia > 6,5 mmol/L refrakter atau ada perubahan EKG", type: "bool" },
+      { id: "intox", label: "I - Intoksikasi yang terdialisis (metanol, etilen glikol, salisilat, litium, metformin)", type: "bool" },
+      { id: "overload", label: "O - Overload cairan / edema paru refrakter diuretik", type: "bool" },
+      { id: "uremia", label: "U - Uremia simtomatik (ensefalopati, perikarditis, perdarahan uremik)", type: "bool" },
     ],
     ranges: [
-      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang — terapi konservatif", tone: "info" },
-      { min: 1, max: 99, category: "Indikasi dialisis", label: "Ada indikasi dialisis — konsul nefrologi segera; sementara itu koreksi elektrolit (hiperkalemia: kalsium, insulin-glukosa, salbutamol, bikarbonat)", tone: "danger" },
+      { min: 0, max: 0, category: "Belum ada indikasi", label: "Belum ada indikasi tercentang - terapi konservatif", tone: "info" },
+      { min: 1, max: 99, category: "Indikasi dialisis", label: "Ada indikasi dialisis - konsul nefrologi segera; sementara itu koreksi elektrolit (hiperkalemia: kalsium, insulin-glukosa, salbutamol, bikarbonat)", tone: "danger" },
     ],
   },
 ];

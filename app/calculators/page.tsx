@@ -47,7 +47,7 @@ export default function CalculatorsPage() {
           onClick={() => setCat("")}
           className={`rounded-full border px-3 py-1 text-xs font-medium ${!cat ? "border-accent bg-accent/10 text-accent-strong dark:text-accent" : "border-zinc-200 text-zinc-500 hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-400"}`}
         >
-          All
+          Semua
         </button>
         {CALCULATOR_CATEGORIES.map((c) => (
           <button
@@ -61,7 +61,7 @@ export default function CalculatorsPage() {
       </div>
 
       {grouped.length === 0 ? (
-        <EmptyState message={`No calculators match “${q}”.`} />
+        <EmptyState message={`Tidak ada kalkulator yang cocok dengan “${q}”.`} />
       ) : (
         <div className="space-y-8">
           {grouped.map(([label, tools]) => (

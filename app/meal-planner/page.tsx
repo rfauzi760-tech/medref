@@ -63,13 +63,13 @@ export default function MealPlannerPage() {
   };
 
   const planText = useMemo(() => {
-    const lines = [`Meal plan (target ${target.kcal} kcal, ${target.proteinG} g protein)`];
+    const lines = [`Rencana makan (target ${target.kcal} kcal, protein ${target.proteinG} g)`];
     for (const m of withCustom.meals) {
       lines.push(`\n${m.name}: ${formatTotalsLine(m.totals)}`);
-      for (const i of m.items) lines.push(`  • ${i.food.name} — ${i.grams} g (${i.totals.kcal.toFixed(0)} kcal)`);
+      for (const i of m.items) lines.push(`  • ${i.food.name} - ${i.grams} g (${i.totals.kcal.toFixed(0)} kcal)`);
     }
-    lines.push(`\nDaily total: ${formatTotalsLine(withCustom.totals)}`);
-    lines.push("Sources: structured food database (per-100g values).");
+    lines.push(`\nTotal harian: ${formatTotalsLine(withCustom.totals)}`);
+    lines.push("Sumber: basis data pangan terstruktur dengan nilai per 100 g.");
     return lines.join("\n");
   }, [withCustom, target]);
 
@@ -77,14 +77,14 @@ export default function MealPlannerPage() {
     <div>
       <PageHeader
         title="Perencana Makan"
-        description="Buat rencana makan terstruktur dari database gizi — setiap kalori dan zat gizi dihitung dari data terstruktur, tidak pernah dikarang. Sesuaikan target atau kecualikan kategori sesuai kebutuhan."
+        description="Buat rencana makan terstruktur dari database gizi - setiap kalori dan zat gizi dihitung dari data terstruktur, tidak pernah dikarang. Sesuaikan target atau kecualikan kategori sesuai kebutuhan."
       />
 
       <div className="grid gap-6 lg:grid-cols-[360px_minmax(0,1fr)]">
         {/* Controls */}
         <div className="space-y-4">
           <div className="workspace-panel p-5">
-            <h2 className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-200">Patient & targets</h2>
+            <h2 className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-200">Pasien dan target</h2>
             <div className="space-y-3">
               <div className="flex gap-2">
                 {(["male", "female"] as const).map((s) => (
@@ -93,33 +93,33 @@ export default function MealPlannerPage() {
                     onClick={() => setSex(s)}
                     className={`flex-1 rounded-lg border px-3 py-2 text-sm capitalize ${sex === s ? "border-accent bg-accent/5" : "border-zinc-200 dark:border-zinc-700"}`}
                   >
-                    {s}
+                    {s === "male" ? "Laki-laki" : "Perempuan"}
                   </button>
                 ))}
               </div>
               <div className="grid grid-cols-3 gap-2">
                 <div>
-                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Weight (kg)</label>
+                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Berat badan (kg)</label>
                   <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="focus-ring w-full rounded-md border border-line bg-surface px-2 py-1.5 text-sm" />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Height (cm)</label>
+                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Tinggi badan (cm)</label>
                   <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800" />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Age (y)</label>
+                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Usia (tahun)</label>
                   <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800" />
                 </div>
               </div>
               <div>
-                <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Activity level</label>
+                <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Tingkat aktivitas</label>
                 <div className="grid grid-cols-2 gap-1.5">
                   {(
                     [
-                      ["sedentary", "Sedentary"],
-                      ["light", "Light"],
-                      ["moderate", "Moderate"],
-                      ["active", "Active"],
+                      ["sedentary", "Sedenter"],
+                      ["light", "Ringan"],
+                      ["moderate", "Sedang"],
+                      ["active", "Aktif"],
                     ] as [Activity, string][]
                   ).map(([k, label]) => (
                     <button
@@ -134,23 +134,23 @@ export default function MealPlannerPage() {
               </div>
 
               <div className="rounded-lg bg-zinc-50 p-3 text-xs text-zinc-600 dark:bg-zinc-800/60 dark:text-zinc-300">
-                Estimated need (Mifflin-St Jeor): <span className="font-semibold">{estimated.kcal} kcal</span>, protein{" "}
-                <span className="font-semibold">{estimated.proteinG} g</span>. Override below if desired.
+                Perkiraan kebutuhan (Mifflin-St Jeor): <span className="font-semibold">{estimated.kcal} kcal</span>, protein{" "}
+                <span className="font-semibold">{estimated.proteinG} g</span>. Sesuaikan target di bawah bila perlu.
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Calorie target</label>
+                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Target kalori</label>
                   <input type="number" value={kcalTarget} onChange={(e) => setKcalTarget(e.target.value)} placeholder={String(estimated.kcal)} className="w-full rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800" />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Protein target (g)</label>
+                  <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Target protein (g)</label>
                   <input type="number" value={proteinTarget} onChange={(e) => setProteinTarget(e.target.value)} placeholder={String(estimated.proteinG)} className="w-full rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800" />
                 </div>
               </div>
 
               <div>
-                <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Dietary restrictions (exclude food groups)</label>
+                <label className="mb-1 block text-xs text-zinc-500 dark:text-zinc-400">Pembatasan diet (kecualikan kelompok pangan)</label>
                 <div className="flex flex-wrap gap-1.5">
                   {foodCategories.map((c) => (
                     <button
@@ -165,27 +165,27 @@ export default function MealPlannerPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-500 dark:text-zinc-400">Variety</span>
+                <span className="text-xs text-zinc-500 dark:text-zinc-400">Variasi</span>
                 <button onClick={() => setSeed((s) => s + 1)} className="rounded-lg border border-zinc-200 px-2 py-1 text-xs text-zinc-600 hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-300">
-                  Regenerate ↻
+                  Buat ulang ↻
                 </button>
               </div>
             </div>
           </div>
 
           <div className="workspace-panel p-5">
-            <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-200">Add a food manually</h2>
+            <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-200">Tambahkan bahan pangan</h2>
             <div className="flex gap-2">
               <select value={addFood} onChange={(e) => setAddFood(e.target.value)} className="min-w-0 flex-1 rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800">
-                <option value="">Select food…</option>
+                <option value="">Pilih bahan pangan…</option>
                 {foods.map((f) => (
                   <option key={f.id} value={f.id}>{f.name}</option>
                 ))}
               </select>
               <select value={addMeal} onChange={(e) => setAddMeal(Number(e.target.value))} className="rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800">
-                <option value={0}>Breakfast</option>
-                <option value={1}>Lunch</option>
-                <option value={2}>Dinner</option>
+                <option value={0}>Sarapan</option>
+                <option value={1}>Makan siang</option>
+                <option value={2}>Makan malam</option>
               </select>
               <button onClick={addCustom} className="rounded-lg bg-accent px-2.5 py-1.5 text-sm text-white hover:opacity-90">
                 <Plus className="h-4 w-4" />
@@ -220,7 +220,7 @@ export default function MealPlannerPage() {
         <div className="space-y-3">
           <div className="workspace-panel flex items-center justify-between p-5">
             <div>
-              <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-200">Generated plan</h2>
+              <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-200">Rencana makan</h2>
               <p className="text-xs text-zinc-400">
                 {Math.round(withCustom.totals.kcal)} kcal · protein {withCustom.totals.protein.toFixed(0)} g ({Math.round(plan.proteinMet * 100)}% of target) · carbs {withCustom.totals.carbs.toFixed(0)} g · fat {withCustom.totals.fat.toFixed(0)} g
               </p>
@@ -251,13 +251,13 @@ export default function MealPlannerPage() {
           ))}
 
           <p className="text-xs leading-relaxed text-zinc-400">
-            Plans are generated deterministically from the food database by calorie share per food group; adjust for clinical
-            conditions (see Clinical Nutrition Guidance) and local food availability.
+            Rencana dibuat dari basis data pangan berdasarkan pembagian kalori per kelompok pangan. Sesuaikan dengan kondisi klinis,
+            panduan gizi, dan ketersediaan pangan setempat.
           </p>
 
           <SourceBlock
-            source={{ org: "Structured food database", title: "Indonesian food composition (TKPI/USDA public data)", year: 2024 }}
-            lastReviewed="2025-06-01"
+            source={{ org: "Klinea", title: "Basis data komposisi pangan Indonesia", year: 2026, url: "https://www.klinea.id/app.html" }}
+            lastReviewed="2026-09-11"
           />
         </div>
       </div>

@@ -21,7 +21,7 @@ import { EXTRA_GUIDELINES_R } from "./guidelines-extra-r";
 import { EXTRA_GUIDELINES_R2 } from "./guidelines-extra-r2";
 
 /**
- * Guideline Navigator — concise bedside-reference disease pages.
+ * Guideline Navigator - concise bedside-reference disease pages.
  * Structured summaries of authoritative guidelines (not textbook essays).
  * Always verify details against the cited full guideline before clinical use.
  */
@@ -33,11 +33,11 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     emergency: false, ageGroup: "adult",
     sections: {
       overview: [
-        "Persistently elevated blood pressure (BP) — the leading modifiable risk factor for stroke, MI, heart failure and CKD.",
+        "Persistently elevated blood pressure (BP) - the leading modifiable risk factor for stroke, MI, heart failure and CKD.",
         "Diagnosis requires repeated measurements (office, home or ambulatory monitoring).",
       ],
       diagnosticCriteria: [
-        "Office BP ≥ 140/90 mmHg on repeated visits (≥ 2 occasions) — grade 1 hypertension.",
+        "Office BP ≥ 140/90 mmHg on repeated visits (≥ 2 occasions) - grade 1 hypertension.",
         "Grade 2: ≥ 160/100 mmHg. Grade 3: ≥ 180/120 mmHg (hypertensive emergency if end-organ damage).",
         "ISH 2020: home/ambulatory threshold ≥ 135/85 mmHg.",
         "Rule out white-coat and masked hypertension with home/ABPM where available.",
@@ -61,7 +61,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Renal ultrasound and secondary-workup only if clinical clues.",
       ],
       initialManagement: [
-        "All: lifestyle — reduced salt (< 5 g/day), DASH-style diet, weight loss, physical activity, alcohol moderation, smoking cessation.",
+        "All: lifestyle - reduced salt (< 5 g/day), DASH-style diet, weight loss, physical activity, alcohol moderation, smoking cessation.",
         "Grade 1 low-moderate risk: 3–6 months lifestyle before drugs if no target-organ damage.",
         "Drug therapy if BP ≥ 140/90 despite lifestyle, or high risk / grade 2+.",
         "Hypertensive emergency: IV antihypertensives in monitored setting (avoid rapid drops).",
@@ -73,8 +73,8 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "In CKD: ACEi/ARB preferred; in elderly: start low, go slow.",
       ],
       medications: [
-        "ACEi (captopril, enalapril) or ARB — first-line; avoid in pregnancy, check K⁺/Cr.",
-        "CCB (amlodipine) — first-line; good in elderly and Afro-Caribbean.",
+        "ACEi (captopril, enalapril) or ARB - first-line; avoid in pregnancy, check K⁺/Cr.",
+        "CCB (amlodipine) - first-line; good in elderly and Afro-Caribbean.",
         "Thiazide diuretic (HCTZ, indapamide).",
         "Add spironolactone for resistant hypertension (after confirming adherence).",
         "Beta-blockers: not first-line except post-MI, HF, or rate control.",
@@ -87,9 +87,9 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["BP controlled and stable on oral regimen; arrange follow-up in 1–2 weeks; home BP monitoring plan."],
       followUp: ["Recheck BP at 2–4 weeks after starting/titrating therapy; monitor K⁺/Cr with ACEi/ARB (1–2 weeks and at dose change); annual review of CV risk."],
       redFlags: [
-        "BP ≥ 180/120 with neurological deficit, chest pain, breathlessness, visual loss, or seizures — treat as emergency.",
+        "BP ≥ 180/120 with neurological deficit, chest pain, breathlessness, visual loss, or seizures - treat as emergency.",
         "Pregnancy: BP ≥ 140/90 requires urgent obstetric review (preeclampsia).",
-        "Uncontrolled BP despite ≥ 3 drugs including diuretic — screen for secondary causes.",
+        "Uncontrolled BP despite ≥ 3 drugs including diuretic - screen for secondary causes.",
       ],
     },
     references: [
@@ -141,9 +141,9 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Stable glucose on oral/insulin regimen; education on sick-day rules; follow-up within 1–2 weeks; medication review."],
       followUp: ["HbA1c 3–6 monthly; annual retinal screening, foot exam, renal screen, lipid panel; BP each visit."],
       redFlags: [
-        "Nausea/vomiting, abdominal pain, Kussmaul breathing — DKA until proven otherwise.",
-        "Weight loss + polyuria in young patient — think type 1, check ketones.",
-        "Recurrent severe hypoglycaemia — review regimen and education.",
+        "Nausea/vomiting, abdominal pain, Kussmaul breathing - DKA until proven otherwise.",
+        "Weight loss + polyuria in young patient - think type 1, check ketones.",
+        "Recurrent severe hypoglycaemia - review regimen and education.",
       ],
     },
     references: [
@@ -157,7 +157,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Endocrinology", "Emergency Medicine", "Pediatrics", "Intensive Care"], keywords: ["dka", "ketoacidosis", "diabetes", "ketones", "emergency"],
     emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Acute hyperglycaemic emergency with ketosis and metabolic acidosis; requires rapid fluid, insulin and electrolyte replacement.", "Precipitants: infection, missed insulin, new-onset diabetes, MI, stroke, drugs (SGLT2i — euglycaemic DKA)."],
+      overview: ["Acute hyperglycaemic emergency with ketosis and metabolic acidosis; requires rapid fluid, insulin and electrolyte replacement.", "Precipitants: infection, missed insulin, new-onset diabetes, MI, stroke, drugs (SGLT2i - euglycaemic DKA)."],
       diagnosticCriteria: [
         "Glucose ≥ 250 mg/dL (≥ 200 mg/dL if known DM / SGLT2i use possible) AND",
         "pH < 7.30 or HCO₃ < 18 mEq/L AND",
@@ -175,13 +175,13 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       investigations: ["VBG/ABG, glucose hourly, electrolytes 2–4 hourly (K⁺!), β-OHB", "Creatinine, BUN, osmolality, phosphate, magnesium", "Cultures, CXR, urinalysis, amylase/lipase as indicated"],
       initialManagement: [
         "IV fluids: 0.9% saline 1 L in first hour (adult), then 250–500 mL/h; children per weight-based protocol (10–20 mL/kg boluses).",
-        "Potassium: replace early — if K⁺ < 3.3 mEq/L, give K⁺ before insulin; if 3.3–5.2, add K⁺ to fluids; if > 5.2, hold and recheck.",
+        "Potassium: replace early - if K⁺ < 3.3 mEq/L, give K⁺ before insulin; if 3.3–5.2, add K⁺ to fluids; if > 5.2, hold and recheck.",
         "Insulin: 0.1 units/kg/h IV infusion (after K⁺ ≥ 3.3); children 0.05–0.1 units/kg/h.",
         "Add 5% dextrose when glucose < 250 mg/dL (200 in children); continue insulin until gap closes.",
       ],
       definitiveManagement: [
         "Continue insulin infusion until anion gap normalises (β-OHB < 1 mmol/L), not merely glucose normalisation.",
-        "Transition to SC insulin when eating and gap closed — overlap IV/SC by 1–2 h.",
+        "Transition to SC insulin when eating and gap closed - overlap IV/SC by 1–2 h.",
         "Treat precipitant (antibiotics, etc.).",
         "Bicarbonate: only if pH < 6.9 (per some protocols).",
       ],
@@ -191,14 +191,14 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Gap closed, eating, on SC insulin; diabetes education reinforced; review precipitant prevention; follow-up in 1–2 weeks."],
       followUp: ["Endocrinology review; HbA1c; education on sick-day rules, insulin storage, ketone testing; review insulin regimen."],
       redFlags: [
-        "Cerebral oedema (children): headache, bradycardia, hypertension, declining GCS — treat with hypertonic saline/mannitol, reduce fluid rate.",
-        "Refractory acidosis — reassess for sepsis, missed ketones, inadequate insulin.",
-        "Hypokalaemia before insulin — giving insulin without K⁺ can precipitate fatal arrhythmia.",
+        "Cerebral oedema (children): headache, bradycardia, hypertension, declining GCS - treat with hypertonic saline/mannitol, reduce fluid rate.",
+        "Refractory acidosis - reassess for sepsis, missed ketones, inadequate insulin.",
+        "Hypokalaemia before insulin - giving insulin without K⁺ can precipitate fatal arrhythmia.",
       ],
     },
     references: [
       { org: "American Diabetes Association", title: "Hyperglycemic Crises in Adult Patients With Diabetes (Position Statement)", year: 2009, url: "https://diabetesjournals.org/care/article/32/7/1335/27958" },
-      { org: "ISPAD", title: "Clinical Practice Consensus Guidelines — DKA in children", year: 2022 },
+      { org: "ISPAD", title: "Clinical Practice Consensus Guidelines - DKA in children", year: 2022 },
     ],
     lastReviewed: "2025-06-01",
   },
@@ -207,7 +207,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Pulmonology", "Pediatrics", "Emergency Medicine"], keywords: ["asthma", "wheezing", "gina", "bronchodilator", "inhaler"],
     emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Chronic airway inflammation with variable expiratory airflow limitation and bronchial hyperresponsiveness.", "Characterised by wheeze, breathlessness, chest tightness and cough — variable over time and with triggers."],
+      overview: ["Chronic airway inflammation with variable expiratory airflow limitation and bronchial hyperresponsiveness.", "Characterised by wheeze, breathlessness, chest tightness and cough - variable over time and with triggers."],
       diagnosticCriteria: [
         "History of variable respiratory symptoms (wheeze, SOB, chest tightness, cough).",
         "Confirmed variable airflow limitation: bronchodilator reversibility (FEV₁ ↑ ≥ 12% and ≥ 200 mL), or PEF variability > 10%, or positive bronchial challenge.",
@@ -217,7 +217,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       classification: [
         "Acute exacerbation severity: mild, moderate, severe, life-threatening (see red flags).",
         "Asthma control (GINA): well-controlled, partially controlled, uncontrolled.",
-        "Never rely on severity alone — assess control and risk.",
+        "Never rely on severity alone - assess control and risk.",
       ],
       initialAssessment: [
         "Assess severity: ability to speak, RR, HR, SpO₂, PEF (adults), accessory muscle use, consciousness.",
@@ -245,7 +245,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       redFlags: [
         "Life-threatening: silent chest, cyanosis, bradycardia, exhaustion, confusion, SpO₂ < 92%.",
         "PEF < 33% best/predicted.",
-        "Normal or rising PaCO₂ in severe asthma = impending arrest — ICU now.",
+        "Normal or rising PaCO₂ in severe asthma = impending arrest - ICU now.",
       ],
     },
     references: [
@@ -264,7 +264,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Post-bronchodilator FEV₁/FVC < 0.70 (GOLD) confirms persistent airflow limitation.",
         "Risk factors (smoking, biomass exposure) + symptoms of chronic dyspnoea/cough/sputum.",
       ],
-      differentials: ["Asthma (overlap — ACOS)", "Heart failure", "Bronchiectasis", "Tuberculosis (endemic areas)", "Anaemia", "Obesity hypoventilation"],
+      differentials: ["Asthma (overlap - ACOS)", "Heart failure", "Bronchiectasis", "Tuberculosis (endemic areas)", "Anaemia", "Obesity hypoventilation"],
       classification: [
         "GOLD grades 1–4 by FEV₁ % predicted: ≥ 80, 50–79, 30–49, < 30.",
         "GOLD groups A–E: symptom burden (mMRC/CAT) + exacerbation history guide therapy.",
@@ -273,7 +273,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       initialAssessment: ["Smoking/biomass history, symptoms, exacerbation frequency", "Spirometry with post-bronchodilator testing", "Assess comorbidities (CV disease, osteoporosis, depression)", "Exacerbation: severity, hypoxia, CO₂ retention risk"],
       investigations: ["Spirometry (diagnosis/staging)", "CXR (exclude other causes; exacerbation)", "SpO₂, VBG if CO₂ retention suspected", "Alpha-1 antitrypsin if early/panacinar (young, lower lobes)"],
       initialManagement: [
-        "Smoking cessation — the single most effective intervention (counselling + pharmacotherapy).",
+        "Smoking cessation - the single most effective intervention (counselling + pharmacotherapy).",
         "Influenza and pneumococcal vaccination.",
         "Bronchodilators: SABA/SAMA PRN or LAMA ± LABA maintenance.",
         "Pulmonary rehabilitation for symptomatic patients.",
@@ -291,9 +291,9 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Stable on inhaled regimen, oxygen assessed, action plan, follow-up in 4–6 weeks, smoking cessation support."],
       followUp: ["4–6 weeks post-exacerbation review (spirometry, inhaler technique)", "Annual influenza vaccine, pneumococcal per schedule", "Rehabilitation referral", "Monitor for complications (cor pulmonale, osteoporosis)"],
       redFlags: [
-        "Reduced consciousness, paradoxical chest movement, cyanosis — imminent respiratory arrest.",
-        "pH < 7.35 with rising PaCO₂ on controlled oxygen — NIV/ICU.",
-        "Unilateral pleuritic chest pain/haemoptysis — consider pneumothorax or PE.",
+        "Reduced consciousness, paradoxical chest movement, cyanosis - imminent respiratory arrest.",
+        "pH < 7.35 with rising PaCO₂ on controlled oxygen - NIV/ICU.",
+        "Unilateral pleuritic chest pain/haemoptysis - consider pneumothorax or PE.",
       ],
     },
     references: [
@@ -319,14 +319,14 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "PSI class I–II outpatient, III short observation, IV–V inpatient.",
         "Severe CAP: ICU criteria (major: septic shock with vasopressors, respiratory failure needing ventilation).",
       ],
-      initialAssessment: ["ABC and oxygenation; vital signs; hydration", "Severity scoring (CURB-65/PSI)", "Infective exposure history, vaccination status", "Elderly may present without fever — confusion/falls"],
+      initialAssessment: ["ABC and oxygenation; vital signs; hydration", "Severity scoring (CURB-65/PSI)", "Infective exposure history, vaccination status", "Elderly may present without fever - confusion/falls"],
       investigations: ["CXR (confirm, exclude complications)", "Blood: CBC, glucose, urea/creatinine, electrolytes, LFTs, CRP", "Blood cultures (severe CAP, before antibiotics if possible)", "Sputum Gram stain/culture (if available)", "SpO₂/ABG in severe disease", "COVID/flu testing in season", "Consider Legionella/pneumococcal urine antigen in severe CAP"],
       initialManagement: [
         "Oxygen target 94–98% (88–92% in hypercapnic COPD).",
         "Fluids; antipyretics/analgesics.",
-        "Antibiotics: outpatient — amoxicillin (or macrolide).",
-        "Hospitalised non-severe — aminopenicillin ± macrolide (or respiratory fluoroquinolone).",
-        "Severe CAP — β-lactam (e.g. ceftriaxone) + macrolide (or fluoroquinolone) IV.",
+        "Antibiotics: outpatient - amoxicillin (or macrolide).",
+        "Hospitalised non-severe - aminopenicillin ± macrolide (or respiratory fluoroquinolone).",
+        "Severe CAP - β-lactam (e.g. ceftriaxone) + macrolide (or fluoroquinolone) IV.",
         "Give first dose without delay in hospitalised patients.",
       ],
       definitiveManagement: [
@@ -341,9 +341,9 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Stable vitals and oxygenation, eating, oral antibiotics, follow-up plan, 6-week CXR plan if indicated."],
       followUp: ["Review in 2–4 weeks; 6-week CXR for slow responders/smokers/elderly; consider pneumococcal/influenza vaccination."],
       redFlags: [
-        "Hypoxia, tachypnoea, hypotension, confusion — severe CAP.",
+        "Hypoxia, tachypnoea, hypotension, confusion - severe CAP.",
         "Failure to improve at 48–72 h: reassess diagnosis (empyema, abscess, resistant organism, PE, non-infective cause).",
-        "Bloody sputum, recurrent same-lobe pneumonia — investigate malignancy/TB.",
+        "Bloody sputum, recurrent same-lobe pneumonia - investigate malignancy/TB.",
       ],
     },
     references: [
@@ -357,12 +357,12 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Pulmonology", "Infectious Disease", "Pediatrics"], keywords: ["tb", "tuberculosis", "tbc", "acid fast", "pulmonary tuberculosis"],
     emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Chronic infection by Mycobacterium tuberculosis, primarily pulmonary; major cause of preventable death — endemic in Indonesia (3rd highest burden globally).", "Curable with standard short-course chemotherapy; transmission via airborne droplets."],
+      overview: ["Chronic infection by Mycobacterium tuberculosis, primarily pulmonary; major cause of preventable death - endemic in Indonesia (3rd highest burden globally).", "Curable with standard short-course chemotherapy; transmission via airborne droplets."],
       diagnosticCriteria: [
         "Pulmonary TB: cough > 2 weeks + constitutional symptoms (fever, night sweats, weight loss) + suggestive CXR.",
         "Microbiological confirmation: sputum smear (AFB), GeneXpert MTB/RIF (also detects rifampicin resistance), culture.",
         "Bacteriological confirmation preferred; clinically diagnosed TB when strong evidence + response to treatment (per WHO).",
-        "Extra-pulmonary TB: lymph nodes, pleura, meninges, bone, pericardium, miliary — biopsy/fluid for AFB, Xpert, culture.",
+        "Extra-pulmonary TB: lymph nodes, pleura, meninges, bone, pericardium, miliary - biopsy/fluid for AFB, Xpert, culture.",
       ],
       differentials: ["Pneumonia (bacterial/viral)", "Lung malignancy", "Bronchiectasis", "Fungal infection", "HIV-related pulmonary disease", "Sarcoidosis", "Nontuberculous mycobacteria"],
       classification: [
@@ -371,7 +371,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Treatment phase: intensive (2 months) + continuation (4 months) for DS-TB.",
         "Latent TB infection (LTBI): positive IGRA/TST without active disease.",
       ],
-      initialAssessment: ["Cough ≥ 2 weeks — test (sputum Xpert/smear + CXR)", "Symptom screen: fever, night sweats, weight loss, haemoptysis", "HIV test (all TB patients)", "Exposure history; household contact tracing", "Assess severity: hypoxia, haemoptysis, disseminated disease"],
+      initialAssessment: ["Cough ≥ 2 weeks - test (sputum Xpert/smear + CXR)", "Symptom screen: fever, night sweats, weight loss, haemoptysis", "HIV test (all TB patients)", "Exposure history; household contact tracing", "Assess severity: hypoxia, haemoptysis, disseminated disease"],
       investigations: ["Sputum: GeneXpert MTB/RIF (first-line), AFB smear, culture", "CXR", "HIV serology", "LFTs (pre-treatment)", "Lumbar puncture/MRI if meningeal suspicion", "Lymph node FNAC/biopsy with Xpert where relevant"],
       initialManagement: [
         "Notify and start treatment promptly for confirmed/suspected TB.",
@@ -392,10 +392,10 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Treatment plan and DOT arranged, contacts identified, follow-up scheduled, drug side-effect education (orange urine is normal)."],
       followUp: ["Sputum smear at 2 months (and 5 months), clinical review monthly during intensive phase", "CXR at end of treatment", "Screen contacts; monitor LFTs if symptoms", "Retreatment only if relapse confirmed"],
       redFlags: [
-        "Haemoptysis — massive haemorrhage risk (bronchial artery).",
-        "Confusion, neck stiffness, focal deficit — TB meningitis (medical emergency).",
-        "Jaundice/vomiting on treatment — drug-induced hepatitis; stop pyrazinamide/INH/RIF and assess LFTs.",
-        "IRIS in HIV patients starting ART — paradoxical worsening.",
+        "Haemoptysis - massive haemorrhage risk (bronchial artery).",
+        "Confusion, neck stiffness, focal deficit - TB meningitis (medical emergency).",
+        "Jaundice/vomiting on treatment - drug-induced hepatitis; stop pyrazinamide/INH/RIF and assess LFTs.",
+        "IRIS in HIV patients starting ART - paradoxical worsening.",
       ],
     },
     references: [
@@ -426,21 +426,21 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       initialAssessment: [
         "Day of illness (fever onset), warning signs screen, hydration status.",
         "Vital signs, postural BP, capillary refill, abdomen (hepatomegaly, ascites).",
-        "Full blood count (Hct, platelets, WBC) — repeat in critical phase.",
+        "Full blood count (Hct, platelets, WBC) - repeat in critical phase.",
         "Tourniquet test where diagnosis uncertain.",
       ],
       investigations: ["FBC with Hct serial (every 4–24 h in critical phase)", "NS1/IgM serology", "AST/ALT, albumin, electrolytes, glucose (severe)", "Ultrasound for fluid (gallbladder wall thickening, ascites)", "Group/cross-match if bleeding suspected"],
       initialManagement: [
-        "Outpatient: paracetamol for fever (avoid NSAIDs/aspirin — bleeding risk), oral fluids (ORS, water, juice), daily review, warning-sign education, seek care immediately if warning signs.",
+        "Outpatient: paracetamol for fever (avoid NSAIDs/aspirin - bleeding risk), oral fluids (ORS, water, juice), daily review, warning-sign education, seek care immediately if warning signs.",
         "Warning signs/leakage: isotonic IV fluid (crystalloid) 5–7 mL/kg/h over 1–2 h, then reduce; monitor Hct, urine output, vitals 4-hourly.",
         "Do not give unnecessary IV fluids in febrile phase (worsens leak).",
       ],
       definitiveManagement: [
         "Compensated shock: isotonic crystalloid 10 mL/kg over 1 h; reassess; repeat bolus once if needed; then reduce.",
         "Hypotensive shock: fluid resuscitation 20 mL/kg over 15–30 min; escalate to colloid/blood per protocol if refractory; ICU.",
-        "Transfuse packed cells for significant bleeding (Hct falling) — not for low platelet count alone.",
+        "Transfuse packed cells for significant bleeding (Hct falling) - not for low platelet count alone.",
         "Avoid steroids, platelet transfusion for prophylaxis (no evidence of benefit; harm possible).",
-        "Monitor for fluid overload — stop fluids once stable.",
+        "Monitor for fluid overload - stop fluids once stable.",
       ],
       medications: ["Paracetamol (fever)", "Isotonic crystalloid (IV)", "Packed red cells (significant bleeding only)", "No routine antibiotics (unless co-infection)", "No NSAIDs/aspirin"],
       admissionCriteria: ["Warning signs", "Comorbidities (pregnancy, infants, elderly, obesity, chronic disease)", "Rising Hct with falling platelets", "Social factors / inability to return", "Haemoconcentration with hypotension"],
@@ -448,9 +448,9 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Afebrile ≥ 24–48 h, stable vitals, improving appetite, platelet trend improving, no warning signs, Hct stable."],
       followUp: ["Review daily until platelets rising and 24–48 h afebrile; advise on danger signs; report persistent symptoms."],
       redFlags: [
-        "Defervescence day 3–7 with worsening abdominal pain, persistent vomiting, bleeding, lethargy — impending shock.",
+        "Defervescence day 3–7 with worsening abdominal pain, persistent vomiting, bleeding, lethargy - impending shock.",
         "Rapidly rising Hct with falling platelets.",
-        "Cold extremities, delayed capillary refill, narrow pulse pressure — compensated shock.",
+        "Cold extremities, delayed capillary refill, narrow pulse pressure - compensated shock.",
         "Avoid NSAIDs; do not transfuse platelets for count alone.",
       ],
     },
@@ -465,7 +465,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Intensive Care", "Emergency Medicine", "Internal Medicine"], keywords: ["sepsis", "septic shock", "qsofa", "lactate", "vasopressor"],
     emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Life-threatening organ dysfunction caused by a dysregulated host response to infection (Sepsis-3).", "Septic shock: sepsis with persisting hypotension requiring vasopressors and lactate > 2 mmol/L despite adequate fluid resuscitation — mortality > 40%."],
+      overview: ["Life-threatening organ dysfunction caused by a dysregulated host response to infection (Sepsis-3).", "Septic shock: sepsis with persisting hypotension requiring vasopressors and lactate > 2 mmol/L despite adequate fluid resuscitation - mortality > 40%."],
       diagnosticCriteria: [
         "Sepsis: suspected/confirmed infection + acute increase of ≥ 2 SOFA points (or qSOFA ≥ 2 outside ICU as prompt).",
         "Septic shock: vasopressor requirement to maintain MAP ≥ 65 mmHg + lactate > 2 mmol/L despite adequate fluid resuscitation.",
@@ -477,11 +477,11 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Source control urgency (e.g. necrotising fasciitis, empyema, cholangitis).",
         "Risk stratification: qSOFA, lactate, organ failure count.",
       ],
-      initialAssessment: ["ABC; immediate resuscitation if shocked", "Suspected source; cultures before antibiotics (if no delay)", "Lactate, blood count, electrolytes, renal/liver function, coagulation", "Imaging per suspected source", "Reassess frequently — deterioration is dynamic"],
+      initialAssessment: ["ABC; immediate resuscitation if shocked", "Suspected source; cultures before antibiotics (if no delay)", "Lactate, blood count, electrolytes, renal/liver function, coagulation", "Imaging per suspected source", "Reassess frequently - deterioration is dynamic"],
       investigations: ["Lactate (repeat to guide resuscitation)", "Blood cultures × 2 sets (before antibiotics if feasible)", "CBC, CRP/PCT, glucose, creatinine, LFTs, coagulation, VBG", "CXR; urinalysis; imaging per source (US/CT)", "Pregnancy test where relevant"],
       initialManagement: [
-        "SSC 2021: give antimicrobials immediately — within 1 h for septic shock; as soon as possible for sepsis without shock.",
-        "Crystalloid 30 mL/kg for hypotension/lactate ≥ 4 (individualise — assess fluid responsiveness).",
+        "SSC 2021: give antimicrobials immediately - within 1 h for septic shock; as soon as possible for sepsis without shock.",
+        "Crystalloid 30 mL/kg for hypotension/lactate ≥ 4 (individualise - assess fluid responsiveness).",
         "Vasopressors (norepinephrine first-line) to MAP ≥ 65 mmHg.",
         "Source control within 6–12 h (drain abscess, remove infected line).",
         "Reassess volume status; avoid excessive fluids after initial resuscitation.",
@@ -493,15 +493,15 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Sustained low-efficiency dialysis / CRRT for AKI with indications.",
       ],
       medications: ["Crystalloid (balanced preferred)", "Norepinephrine infusion", "Vasopressin (add-on)", "Hydrocortisone (refractory shock)", "Empiric broad-spectrum antibiotics (source-adapted)", "Analgesia/sedation as needed"],
-      admissionCriteria: ["All sepsis with organ dysfunction — hospital admission", "Septic shock — ICU/high-dependency"],
+      admissionCriteria: ["All sepsis with organ dysfunction - hospital admission", "Septic shock - ICU/high-dependency"],
       icuCriteria: ["Persistent hypotension despite fluids (vasopressors)", "Lactate > 2 mmol/L with organ failure", "Respiratory failure/mechanical ventilation", "AKI needing dialysis", "Source requiring surgical/radiological drainage"],
       discharge: ["Haemodynamically stable off vasopressors, source controlled, antibiotics completed/planned, organ function improving, follow-up arranged."],
       followUp: ["Review organ function (renal, cognition), wound/source, antibiotic stewardship review, rehabilitation, vaccination review."],
       redFlags: [
-        "qSOFA ≥ 2 + suspected infection — escalate immediately.",
-        "Lactate ≥ 4 mmol/L — high mortality; aggressive resuscitation.",
-        "Failure to improve within 6 h — reassess source, antimicrobials, volume, and consider other diagnoses.",
-        "Necrotising soft-tissue infection — surgical emergency.",
+        "qSOFA ≥ 2 + suspected infection - escalate immediately.",
+        "Lactate ≥ 4 mmol/L - high mortality; aggressive resuscitation.",
+        "Failure to improve within 6 h - reassess source, antimicrobials, volume, and consider other diagnoses.",
+        "Necrotising soft-tissue infection - surgical emergency.",
       ],
     },
     references: [
@@ -515,17 +515,17 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Nephrology", "Intensive Care", "Internal Medicine"], keywords: ["aki", "acute kidney injury", "creatinine", "oliguria", "kdigo"],
     emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Abrupt decline in kidney function (hours–days) — creatinine rise and/or oliguria.", "Major causes: hypoperfusion (pre-renal), intrinsic (ATN, glomerular, interstitial), obstruction (post-renal). Early recognition prevents progression and mortality."],
+      overview: ["Abrupt decline in kidney function (hours–days) - creatinine rise and/or oliguria.", "Major causes: hypoperfusion (pre-renal), intrinsic (ATN, glomerular, interstitial), obstruction (post-renal). Early recognition prevents progression and mortality."],
       diagnosticCriteria: [
         "KDIGO: rise in creatinine ≥ 0.3 mg/dL within 48 h, OR ≥ 1.5× baseline within 7 days, OR urine output < 0.5 mL/kg/h for 6 h.",
         "Staging 1–3 by creatinine/urine output (see KDIGO AKI tool).",
       ],
       differentials: [
         "Pre-renal: dehydration, haemorrhage, sepsis, heart failure, cirrhosis.",
-        "Intrinsic: acute tubular necrosis (ischaemia, nephrotoxins — NSAIDs, aminoglycosides, contrast, pigments), acute interstitial nephritis (drugs), glomerulonephritis, vasculitis.",
+        "Intrinsic: acute tubular necrosis (ischaemia, nephrotoxins - NSAIDs, aminoglycosides, contrast, pigments), acute interstitial nephritis (drugs), glomerulonephritis, vasculitis.",
         "Post-renal: stones, prostate, pelvic mass, catheter blockage.",
       ],
-      classification: ["Stage 1, 2, 3 (KDIGO) — see staging tool.", "Oliguric vs non-oliguric.", "Aetiological classification: pre-renal / intrinsic / post-renal."],
+      classification: ["Stage 1, 2, 3 (KDIGO) - see staging tool.", "Oliguric vs non-oliguric.", "Aetiological classification: pre-renal / intrinsic / post-renal."],
       initialAssessment: [
         "Volume status: BP, JVP, mucous membranes, skin turgor, oedema, urine output.",
         "Drug history: NSAIDs, ACEi/ARB, diuretics, contrast, antibiotics.",
@@ -546,16 +546,16 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Nutritional support; treat underlying sepsis.",
         "Nephrology referral for stage 3, rapidly progressive, suspected glomerulonephritis, or dialysis need.",
       ],
-      medications: ["Balanced crystalloid (resuscitation)", "Stop nephrotoxins", "Calcium gluconate + insulin-dextrose / salbutamol (hyperkalaemia)", "Sodium bicarbonate (severe acidosis — limited role)", "Diuretics only for fluid overload (not to 'convert' oliguria)"],
+      medications: ["Balanced crystalloid (resuscitation)", "Stop nephrotoxins", "Calcium gluconate + insulin-dextrose / salbutamol (hyperkalaemia)", "Sodium bicarbonate (severe acidosis - limited role)", "Diuretics only for fluid overload (not to 'convert' oliguria)"],
       admissionCriteria: ["AKI stage 2–3", "Hyperkalaemia", "Suspected obstruction", "Uncertain aetiology", "Comorbid decompensation"],
       icuCriteria: ["AKI with dialysis indication", "Hyperkalaemia refractory", "Fluid overload with respiratory failure", "Multi-organ failure"],
       discharge: ["Creatinine stable/improving, electrolytes managed, nephrotoxins reviewed, follow-up renal function in 1–4 weeks."],
       followUp: ["Repeat creatinine within 1–4 weeks; monitor for progression to CKD; review medications; blood pressure control."],
       redFlags: [
-        "K⁺ > 6.5 or ECG changes (peaked T, wide QRS) — treat hyperkalaemia immediately.",
-        "Anuria despite fluids — obstruction or severe intrinsic disease.",
-        "Rapidly rising creatinine with active urine sediment — glomerulonephritis (urgent nephrology + biopsy).",
-        "Eosinophilia + eosinophiluria on new drug — interstitial nephritis (stop drug).",
+        "K⁺ > 6.5 or ECG changes (peaked T, wide QRS) - treat hyperkalaemia immediately.",
+        "Anuria despite fluids - obstruction or severe intrinsic disease.",
+        "Rapidly rising creatinine with active urine sediment - glomerulonephritis (urgent nephrology + biopsy).",
+        "Eosinophilia + eosinophiluria on new drug - interstitial nephritis (stop drug).",
       ],
     },
     references: [
@@ -571,7 +571,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       overview: ["Progressive loss of kidney function over ≥ 3 months, staged by GFR and albuminuria (KDIGO).", "Diabetes and hypertension are the leading causes; early detection slows progression."],
       diagnosticCriteria: [
         "Structural or functional kidney abnormality ≥ 3 months: eGFR < 60, albuminuria (ACR ≥ 30 mg/g), urine sediment abnormality, electrolyte/imaging abnormality, or kidney transplant.",
-        "Stage by GFR (G1–G5) + albuminuria (A1–A3) — see CKD staging tool.",
+        "Stage by GFR (G1–G5) + albuminuria (A1–A3) - see CKD staging tool.",
       ],
       differentials: ["Diabetic nephropathy", "Hypertensive nephrosclerosis", "Glomerulonephritis", "Polycystic kidney disease", "Obstructive uropathy", "Drug-induced (NSAIDs, lithium)", "Myeloma kidney", "Renovascular disease"],
       classification: ["G1–G5 by eGFR; A1–A3 by albuminuria.", "CKD risk categories: low, moderately increased, high, very high (GFR × albuminuria grid)."],
@@ -602,10 +602,10 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Medication reconciliation (dose-adjusted), dialysis planning if G5, follow-up renal function, education on red flags."],
       followUp: ["Monitoring frequency by stage: G3 yearly, G4 6-monthly, G5 1–3 monthly; labs at each visit; annual review of complications; referral to nephrology for G4+ or rapid decline."],
       redFlags: [
-        "K⁺ > 6.0 mEq/L — urgent management.",
-        "eGFR drop > 25–30% or doubling of creatinine — reassess for AKI-on-CKD, obstruction, nephrotoxins.",
-        "New haematuria, rapidly progressive — glomerulonephritis (biopsy).",
-        "Uraemic pericarditis/encephalopathy — dialysis emergency.",
+        "K⁺ > 6.0 mEq/L - urgent management.",
+        "eGFR drop > 25–30% or doubling of creatinine - reassess for AKI-on-CKD, obstruction, nephrotoxins.",
+        "New haematuria, rapidly progressive - glomerulonephritis (biopsy).",
+        "Uraemic pericarditis/encephalopathy - dialysis emergency.",
       ],
     },
     references: [
@@ -618,7 +618,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Cardiology", "Emergency Medicine", "Intensive Care"], keywords: ["acs", "chest pain", "myocardial infarction", "nstemi", "stemi", "coronary"],
     emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Spectrum of acute myocardial ischaemia: STEMI, NSTEMI, unstable angina.", "Time-critical — early reperfusion (primary PCI or fibrinolysis) for STEMI, early invasive strategy for high-risk NSTE-ACS."],
+      overview: ["Spectrum of acute myocardial ischaemia: STEMI, NSTEMI, unstable angina.", "Time-critical - early reperfusion (primary PCI or fibrinolysis) for STEMI, early invasive strategy for high-risk NSTE-ACS."],
       diagnosticCriteria: [
         "STEMI: new ST elevation at J-point in 2 contiguous leads (≥ 1 mm limb, ≥ 2 mm V2–V3 men/1.5 mm women) or new LBBB + symptoms.",
         "NSTEMI: symptoms + elevated cardiac troponin without persistent ST elevation.",
@@ -637,7 +637,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "STEMI: primary PCI < 90 min of first medical contact; if > 120 min delay, fibrinolysis (within 30 min) unless contraindicated.",
         "Antiplatelets: aspirin + P2Y12 inhibitor (ticagrelor/prasugrel preferred).",
         "Anticoagulation: unfractionated heparin or enoxaparin (or bivalirudin at PCI).",
-        "NSTE-ACS: risk-stratify — high risk (dynamic ECG, elevated troponin, GRACE > 140): early invasive (< 24 h); low risk: conservative ± stress test.",
+        "NSTE-ACS: risk-stratify - high risk (dynamic ECG, elevated troponin, GRACE > 140): early invasive (< 24 h); low risk: conservative ± stress test.",
         "Nitrates for ongoing pain/HTN; morphine sparingly.",
       ],
       definitiveManagement: [
@@ -647,15 +647,15 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Echocardiography before discharge; exercise testing in conservatively managed.",
       ],
       medications: ["Aspirin", "Ticagrelor/clopidogrel", "Enoxaparin/UFH", "High-intensity statin (atorvastatin 80/rosuvastatin 40)", "Beta-blocker", "ACEi/ARB", "Nitroglycerin", "Fibrinolytics (STEMI, if PCI unavailable)"],
-      admissionCriteria: ["All suspected ACS — monitor, serial troponin, cardiology review", "NSTE-ACS intermediate/high risk — early invasive"],
+      admissionCriteria: ["All suspected ACS - monitor, serial troponin, cardiology review", "NSTE-ACS intermediate/high risk - early invasive"],
       icuCriteria: ["Haemodynamic instability/cardiogenic shock", "Refractory ischaemia/arrhythmia", "Mechanical complications (papillary muscle rupture, VSD)", "Post-arrest", "Killip III–IV"],
       discharge: ["24–48 h stable post-PCI, medications optimised, rehabilitation referral, follow-up cardiology in 2–4 weeks."],
       followUp: ["Cardiology review; adherence to DAPT/statins; risk factor control (BP, lipids, glucose, smoking); cardiac rehab; echo at 6–12 weeks."],
       redFlags: [
-        "Tearing/ripping pain radiating to back — think aortic dissection before antiplatelets/thrombolysis.",
-        "New murmur + hypotension — mechanical complication.",
-        "Recurrent ischaemia/arrhythmia — re-evaluate (stent thrombosis, incomplete revascularisation).",
-        "Bradycardia/AV block in inferior STEMI — monitor closely.",
+        "Tearing/ripping pain radiating to back - think aortic dissection before antiplatelets/thrombolysis.",
+        "New murmur + hypotension - mechanical complication.",
+        "Recurrent ischaemia/arrhythmia - re-evaluate (stent thrombosis, incomplete revascularisation).",
+        "Bradycardia/AV block in inferior STEMI - monitor closely.",
       ],
     },
     references: [
@@ -693,7 +693,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       definitiveManagement: [
         "HFrEF 'four pillars': ACEi/ARB/ARNI + beta-blocker + MRA + SGLT2i (guideline-directed medical therapy).",
         "Loop diuretics for congestion; titrate to euvolaemia.",
-        "HFpEF: treat congestion and comorbidities (hypertension, AF, obesity — SGLT2i now recommended).",
+        "HFpEF: treat congestion and comorbidities (hypertension, AF, obesity - SGLT2i now recommended).",
         "Device therapy: ICD (EF ≤ 35%, NYHA II–III, > 3 months on GDMT), CRT (LBBB, QRS ≥ 130 ms).",
         "Ivabradine, digoxin (AF/refractory symptoms), iron replacement (ferritin < 100).",
         "Fluid/salt restriction in congested patients; daily weights.",
@@ -704,10 +704,10 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Euvolaemic, stable on oral therapy ≥ 24 h, K⁺/renal stable, GDMT optimised/planned, daily weights and action plan, cardiology follow-up."],
       followUp: ["1–2 weeks post-discharge, then 3–6 monthly", "Monitor renal function/K⁺ with ACEi/MRA titrations", "Echo at 3–6 months after GDMT initiation (EF reassessment)", "Vaccination, rehabilitation, comorbidity management"],
       redFlags: [
-        "Acute pulmonary oedema with hypoxia — emergency.",
-        "New chest pain/ECG changes — ACS precipitant.",
-        "Hypotension + poor perfusion — cardiogenic shock.",
-        "Hyperkalaemia or creatinine rise on ACEi/MRA — adjust before worsening.",
+        "Acute pulmonary oedema with hypoxia - emergency.",
+        "New chest pain/ECG changes - ACS precipitant.",
+        "Hypotension + poor perfusion - cardiogenic shock.",
+        "Hyperkalaemia or creatinine rise on ACEi/MRA - adjust before worsening.",
       ],
     },
     references: [
@@ -721,7 +721,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Neurology", "Emergency Medicine", "Intensive Care"], keywords: ["stroke", "cva", "ischemic", "thrombolysis", "tpa", "facial droop"],
     emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Acute neurological deficit from cerebral ischaemia; time-critical — 'time is brain' (≈ 1.9 million neurons lost per minute).", "Reperfusion (IV thrombolysis / thrombectomy) within the window improves outcomes dramatically."],
+      overview: ["Acute neurological deficit from cerebral ischaemia; time-critical - 'time is brain' (≈ 1.9 million neurons lost per minute).", "Reperfusion (IV thrombolysis / thrombectomy) within the window improves outcomes dramatically."],
       diagnosticCriteria: [
         "Sudden focal neurological deficit (face, arm, speech, vision, gait).",
         "Non-contrast CT head: exclude haemorrhage before thrombolysis.",
@@ -729,13 +729,13 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Ischaemic stroke diagnosed when CT excludes haemorrhage and deficit is consistent.",
       ],
       differentials: ["Intracerebral haemorrhage (exclude on CT)", "Subarachnoid haemorrhage", "Seizure with post-ictal deficit (Todd's paresis)", "Hypoglycaemia (check glucose)", "Migraine with aura", "Functional/psychogenic deficit", "Tumour", "Encephalitis"],
-      classification: ["Ischaemic vs haemorrhagic (CT).", "TOAST aetiology: large artery atherosclerosis, cardioembolic (AF), small vessel, other, cryptogenic.", "Time from symptom onset/last known well — determines reperfusion eligibility."],
+      classification: ["Ischaemic vs haemorrhagic (CT).", "TOAST aetiology: large artery atherosclerosis, cardioembolic (AF), small vessel, other, cryptogenic.", "Time from symptom onset/last known well - determines reperfusion eligibility."],
       initialAssessment: [
         "ABC; airway protection if GCS ≤ 8; oxygen if SpO₂ < 94%.",
         "Rapid history: onset time (last known well), risk factors, anticoagulation.",
         "NIHSS for severity; glucose check (hypoglycaemia mimics stroke).",
-        "ECG (AF), vitals — treat BP per protocol (do not crash-reduce).",
-        "Activate stroke pathway — door-to-imaging < 20–25 min.",
+        "ECG (AF), vitals - treat BP per protocol (do not crash-reduce).",
+        "Activate stroke pathway - door-to-imaging < 20–25 min.",
       ],
       investigations: ["Non-contrast CT head (urgent)", "CT angiography (LVO, if within thrombectomy window)", "Glucose, CBC, electrolytes, coagulation, renal function", "ECG, troponin", "MRI if diagnosis uncertain", "Echo, Holter, lipids, HbA1c (secondary prevention)"],
       initialManagement: [
@@ -743,24 +743,24 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Mechanical thrombectomy for large vessel occlusion within 6 h (selected up to 24 h with perfusion imaging).",
         "BP management: ≤ 185/110 before thrombolysis; after thrombolysis < 180/105 for 24 h; otherwise permissive (no treatment unless > 220/120 or complications).",
         "Aspirin 300 mg (after CT excludes haemorrhage; after 24 h post-thrombolysis).",
-        "Admit to stroke unit — reduces mortality and disability.",
+        "Admit to stroke unit - reduces mortality and disability.",
       ],
       definitiveManagement: [
         "Secondary prevention: antiplatelets (aspirin ± dipyridamole, or clopidogrel), statin, BP control, glucose control, anticoagulation for AF (start timing per guidelines, usually days 4–14).",
         "Carotid revascularisation for symptomatic significant stenosis (within 2 weeks).",
         "DVT prophylaxis, swallowing assessment before oral intake, early mobilisation/rehabilitation.",
-        "Treat complications: aspiration pneumonia, seizures, cerebral oedema (malignant MCA — decompressive craniectomy), urinary retention.",
+        "Treat complications: aspiration pneumonia, seizures, cerebral oedema (malignant MCA - decompressive craniectomy), urinary retention.",
       ],
       medications: ["IV thrombolysis (alteplase 0.9 mg/kg, tenecteplase 0.25 mg/kg)", "Aspirin", "Clopidogrel", "Statin (high-intensity)", "Antihypertensives (after acute phase)", "DOAC/warfarin (AF, after exclusion of haemorrhage)"],
-      admissionCriteria: ["All acute stroke — stroke unit admission", "TIA with ABCD2/risk features — urgent assessment"],
+      admissionCriteria: ["All acute stroke - stroke unit admission", "TIA with ABCD2/risk features - urgent assessment"],
       icuCriteria: ["Malignant MCA oedema", "Thrombolysis with symptomatic intracranial haemorrhage", "Basilar artery occlusion", "Reduced consciousness", "Post-thrombectomy instability"],
       discharge: ["Neurologically stable, swallow assessed, rehabilitation plan, secondary prevention started, BP controlled, follow-up in 4–12 weeks."],
       followUp: ["Neurology follow-up; BP/lipids/glucose targets; adherence to antiplatelets/anticoagulants; rehabilitation continuation; screen for depression; driving advice."],
       redFlags: [
-        "Worsening deficit after thrombolysis — CT urgently (intracranial haemorrhage).",
-        "Severe headache, vomiting, declining consciousness — haemorrhagic transformation/oedema.",
-        "GCS ≤ 8 — airway management.",
-        "Young patient with stroke — investigate dissection, vasculitis, thrombophilia, PFO.",
+        "Worsening deficit after thrombolysis - CT urgently (intracranial haemorrhage).",
+        "Severe headache, vomiting, declining consciousness - haemorrhagic transformation/oedema.",
+        "GCS ≤ 8 - airway management.",
+        "Young patient with stroke - investigate dissection, vasculitis, thrombophilia, PFO.",
       ],
     },
     references: [
@@ -774,7 +774,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Hematology", "Internal Medicine", "Pediatrics"], keywords: ["anemia", "hb", "iron deficiency", "thalassemia", "haemoglobin"],
     emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Reduced haemoglobin below reference values — a sign of underlying disease, not a diagnosis.", "Common causes in Indonesia: iron deficiency, thalassaemia trait, hookworm, malaria, B12/folate deficiency, chronic disease."],
+      overview: ["Reduced haemoglobin below reference values - a sign of underlying disease, not a diagnosis.", "Common causes in Indonesia: iron deficiency, thalassaemia trait, hookworm, malaria, B12/folate deficiency, chronic disease."],
       diagnosticCriteria: [
         "WHO thresholds (Hb g/dL): men < 13.0; non-pregnant women < 12.0; pregnant < 11.0; children 6–59 mo < 11.0; 5–11 y < 11.5; 12–14 y < 12.0.",
         "Severity: mild 10–normal-low, moderate 8–9.9, severe < 8 g/dL.",
@@ -791,7 +791,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Iron deficiency: oral iron (ferrous sulfate 65 mg elemental 1–3×/day adults; 3 mg/kg/day children); continue 3 months after Hb normalises (replete stores).",
         "Treat underlying cause (menorrhagia, hookworm, bleeding source).",
         "B12/folate deficiency: replacement (B12 IM/PO, folate 5 mg).",
-        "Transfusion: symptomatic anaemia (Hb < 7–8 with ischaemia) — not for asymptomatic chronic anaemia.",
+        "Transfusion: symptomatic anaemia (Hb < 7–8 with ischaemia) - not for asymptomatic chronic anaemia.",
         "Severe/life-threatening bleeding: resuscitate and transfuse per protocol.",
       ],
       definitiveManagement: [
@@ -801,16 +801,16 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Anaemia in pregnancy: iron + folate supplementation per national program; treat severe cases.",
         "Hookworm/soil-transmitted helminths: deworming (albendazole) in endemic areas.",
       ],
-      medications: ["Ferrous sulfate", "Folic acid", "Vitamin B12 (hydroxocobalamin)", "Albendazole (deworming)", "Iron IV (intolerance, malabsorption, severe — e.g. ferric carboxymaltose)"],
+      medications: ["Ferrous sulfate", "Folic acid", "Vitamin B12 (hydroxocobalamin)", "Albendazole (deworming)", "Iron IV (intolerance, malabsorption, severe - e.g. ferric carboxymaltose)"],
       admissionCriteria: ["Hb < 7 g/dL with symptoms or cardiovascular compromise", "Haemodynamic instability from blood loss", "Severe haemolysis (uncontrolled)", "New severe anaemia with unknown cause"],
       icuCriteria: ["Exsanguinating haemorrhage", "Severe anaemia with heart failure/shock", "Haemolytic crisis with renal failure"],
       discharge: ["Hb stable/rising, cause identified, replacement therapy and follow-up arranged."],
       followUp: ["Recheck Hb at 2–4 weeks (response to iron: +1 g/dL in 2–4 weeks), then confirm repletion; investigate non-responders."],
       redFlags: [
-        "Chest pain, dyspnoea at rest, syncope with severe anaemia — urgent.",
-        "Microcytic anaemia NOT responding to iron — thalassaemia or ongoing loss.",
-        "Adult unexplained iron deficiency — GI malignancy until excluded.",
-        "Severe anaemia in pregnancy — peripartum risk.",
+        "Chest pain, dyspnoea at rest, syncope with severe anaemia - urgent.",
+        "Microcytic anaemia NOT responding to iron - thalassaemia or ongoing loss.",
+        "Adult unexplained iron deficiency - GI malignancy until excluded.",
+        "Severe anaemia in pregnancy - peripartum risk.",
       ],
     },
     references: [
@@ -824,7 +824,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Urology", "Infectious Disease", "Internal Medicine", "Pediatrics"], keywords: ["uti", "cystitis", "pyelonephritis", "urinary infection", "dysuria"],
     emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Infection of the urinary tract — cystitis (bladder) or pyelonephritis (kidney); common and usually straightforward, but complicated by anatomy, pregnancy, catheters and resistance.", "Differentiate uncomplicated (young healthy non-pregnant women) vs complicated UTI."],
+      overview: ["Infection of the urinary tract - cystitis (bladder) or pyelonephritis (kidney); common and usually straightforward, but complicated by anatomy, pregnancy, catheters and resistance.", "Differentiate uncomplicated (young healthy non-pregnant women) vs complicated UTI."],
       diagnosticCriteria: [
         "Cystitis: dysuria, frequency, urgency ± suprapubic pain; pyuria ± positive culture (≥ 10⁴–10⁵ CFU/mL).",
         "Pyelonephritis: fever, flank pain/tenderness, rigors ± systemic features + positive culture.",
@@ -840,7 +840,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       initialAssessment: ["Symptoms and risk factors (catheter, pregnancy, DM, stones, recent antibiotics)", "Fever/rigors → upper tract; loin tenderness", "Men: consider prostatitis/STI", "Children: congenital anomalies, vesicoureteral reflux"],
       investigations: ["Urinalysis + microscopy (pyuria, nitrites)", "Urine culture ± sensitivity (complicated, recurrent, pregnancy, pyelonephritis, failed therapy)", "Blood cultures in pyelonephritis with systemic features", "Renal ultrasound if obstruction/stone/complicated", "Imaging (CT) in severe pyelonephritis/abscess"],
       initialManagement: [
-        "Uncomplicated cystitis (women): short course — nitrofurantoin 100 mg q6h × 5 days, or TMP-SMX, or fosfomycin 3 g single dose (local resistance matters).",
+        "Uncomplicated cystitis (women): short course - nitrofurantoin 100 mg q6h × 5 days, or TMP-SMX, or fosfomycin 3 g single dose (local resistance matters).",
         "Avoid fluoroquinolones as first-line for uncomplicated cystitis (resistance, collateral damage).",
         "Pyelonephritis: outpatient (stable) with oral fluoroquinolone or TMP-SMX (if sensitive) × 7–14 days; or IV ceftriaxone 1 g daily ± transition.",
         "Catheter-associated: remove/change catheter; treat only if symptomatic.",
@@ -848,25 +848,25 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       ],
       definitiveManagement: [
         "Complicated UTI: culture-guided therapy; treat obstruction/stone; 7–14 days.",
-        "Pregnancy: nitrofurantoin (avoid term), amoxicillin, cephalexin — treat asymptomatic bacteriuria.",
+        "Pregnancy: nitrofurantoin (avoid term), amoxicillin, cephalexin - treat asymptomatic bacteriuria.",
         "Recurrent UTI: behavioural measures, consider prophylaxis (post-coital or nightly), oestrogen (postmenopausal), D-mannose (limited evidence), cranberry (modest effect).",
         "Paediatric UTI: treat promptly, investigate < 3 y or recurrent with ultrasound/DMSA per guidelines.",
       ],
-      medications: ["Nitrofurantoin", "Cefalexin", "Amoxicillin-clavulanate", "Ceftriaxone (IV, pyelonephritis)", "Ciprofloxacin (reserve — resistant pyelonephritis)", "TMP-SMX (per local sensitivity)"],
+      medications: ["Nitrofurantoin", "Cefalexin", "Amoxicillin-clavulanate", "Ceftriaxone (IV, pyelonephritis)", "Ciprofloxacin (reserve - resistant pyelonephritis)", "TMP-SMX (per local sensitivity)"],
       admissionCriteria: ["Pyelonephritis with sepsis, vomiting, or inability to take oral", "Pregnancy with pyelonephritis", "Complicated UTI with obstruction/abscess", "Failed outpatient management"],
       icuCriteria: ["Urosepsis/septic shock", "Emphysematous pyelonephritis"],
       discharge: ["Afebrile and improving, culture-guided antibiotics, follow-up urine culture if indicated."],
       followUp: ["Repeat culture 1–2 weeks after treatment in complicated/pregnancy/recurrent; investigate anatomical causes in recurrent."],
       redFlags: [
-        "Fever + flank pain + nausea — pyelonephritis (admit if pregnant/septic).",
-        "Recurrent pyelonephritis — investigate obstruction/stone.",
-        "Neonates/infants with fever — UTI workup per protocol (serious bacterial infection).",
-        "Emphysematous pyelonephritis (DM) — surgical/radiological emergency.",
+        "Fever + flank pain + nausea - pyelonephritis (admit if pregnant/septic).",
+        "Recurrent pyelonephritis - investigate obstruction/stone.",
+        "Neonates/infants with fever - UTI workup per protocol (serious bacterial infection).",
+        "Emphysematous pyelonephritis (DM) - surgical/radiological emergency.",
       ],
     },
     references: [
       { org: "IDSA/ESCMID", title: "International clinical practice guidelines for the treatment of acute uncomplicated cystitis and pyelonephritis in women", year: 2011, url: "https://academic.oup.com/cid/article/52/5/e103/414618" },
-      { org: "NICE", title: "Urinary tract infection (lower) — antimicrobial prescribing", year: 2018, url: "https://www.nice.org.uk/guidance/ng109" },
+      { org: "NICE", title: "Urinary tract infection (lower) - antimicrobial prescribing", year: 2018, url: "https://www.nice.org.uk/guidance/ng109" },
     ],
     lastReviewed: "2025-06-01",
   },
@@ -875,11 +875,11 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Pediatrics", "Infectious Disease", "Emergency Medicine", "Nutrition"], keywords: ["diarrhea", "diare", "dehydration", "ors", "cholera", "gastroenteritis"],
     emergency: true, ageGroup: "both",
     sections: {
-      overview: ["≥ 3 loose stools per day lasting < 14 days; most episodes are self-limited (viral), but dehydration kills — assessment and rehydration are the priority.", "WHO Plan A/B/C framework for management."],
+      overview: ["≥ 3 loose stools per day lasting < 14 days; most episodes are self-limited (viral), but dehydration kills - assessment and rehydration are the priority.", "WHO Plan A/B/C framework for management."],
       diagnosticCriteria: [
         "Clinical diagnosis: increased stool frequency/looseness; fever, vomiting and cramps common.",
-        "Severe dehydrating diarrhoea (cholera-like) in outbreaks — treat empirically for cholera.",
-        "Dysentery: visible blood in stool — consider Shigella, amoebiasis, E. coli.",
+        "Severe dehydrating diarrhoea (cholera-like) in outbreaks - treat empirically for cholera.",
+        "Dysentery: visible blood in stool - consider Shigella, amoebiasis, E. coli.",
         "Chronic (> 14 days): different workup.",
       ],
       differentials: ["Viral gastroenteritis (rotavirus, norovirus)", "Bacterial: Salmonella, Shigella, Campylobacter, ETEC, cholera (Vibrio cholerae)", "Parasitic: amoebiasis, giardiasis", "Food poisoning (toxin-mediated)", "Malaria (febrile illness + diarrhoea in endemic areas)", "Antibiotic-associated / C. difficile", "Surgical abdomen mimics (appendicitis, intussusception)"],
@@ -889,16 +889,16 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "Type: watery vs dysenteric.",
       ],
       initialAssessment: ["Assess hydration: thirst, urine output, mucous membranes, skin turgor, sunken eyes, capillary refill, mental status, fontanelle (infants)", "Vitals, weight (for deficit calculation)", "Recent intake/output, vomiting, fever, blood in stool", "Recent antibiotics/travel/contacts"],
-      investigations: ["Usually none needed — clinical assessment suffices", "Stool microscopy/culture: dysentery, persistent, outbreak, immunocompromise", "Electrolytes/creatinine: severe dehydration, IV therapy", "Malaria smear in febrile endemic setting", "Rotavirus antigen if available"],
+      investigations: ["Usually none needed - clinical assessment suffices", "Stool microscopy/culture: dysentery, persistent, outbreak, immunocompromise", "Electrolytes/creatinine: severe dehydration, IV therapy", "Malaria smear in febrile endemic setting", "Rotavirus antigen if available"],
       initialManagement: [
         "Plan A (no dehydration): extra fluids (ORS after each loose stool), continue feeding, zinc 10–20 mg × 10–14 days, return if worsens.",
         "Plan B (some dehydration): ORS 75 mL/kg over 4 h in clinic, reassess; continue breastfeeding/feeding.",
-        "Plan C (severe dehydration): IV Ringer's lactate/0.9% saline 100 mL/kg — 30 mL/kg in first 30 min (infants) / 100 mL/kg over 3 h; then reassess; ORS when drinking.",
+        "Plan C (severe dehydration): IV Ringer's lactate/0.9% saline 100 mL/kg - 30 mL/kg in first 30 min (infants) / 100 mL/kg over 3 h; then reassess; ORS when drinking.",
         "Zinc supplementation for all children with diarrhoea (reduces duration/severity).",
-        "Continue feeding (including breastfeeding) throughout — do NOT starve.",
+        "Continue feeding (including breastfeeding) throughout - do NOT starve.",
       ],
       definitiveManagement: [
-        "Antibiotics only when indicated: dysentery (empiric per local sensitivity), cholera (severe/dehydration — doxycycline/azithromycin), severe bacterial infection, immunocompromise, persistent symptomatic giardiasis/amoebiasis.",
+        "Antibiotics only when indicated: dysentery (empiric per local sensitivity), cholera (severe/dehydration - doxycycline/azithromycin), severe bacterial infection, immunocompromise, persistent symptomatic giardiasis/amoebiasis.",
         "No routine antibiotics for watery diarrhoea.",
         "Antimotility agents: avoid in children; loperamide with caution in adults (not in dysentery).",
         "Probiotics: modest benefit, optional.",
@@ -909,14 +909,14 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["Rehydrated, tolerating oral intake, mother/carer educated on ORS and danger signs, zinc course prescribed."],
       followUp: ["Weight check, nutrition counselling, hygiene education (handwashing, safe water), vaccination catch-up (rotavirus)."],
       redFlags: [
-        "Lethargy, sunken eyes, absent tears, dry mouth, slow skin pinch — severe dehydration.",
-        "Bloody diarrhoea + fever + pallor + decreasing urine — HUS risk (E. coli O157).",
-        "Persistent high fever, abdominal rigidity, distension — surgical/typhoid/amoebic liver abscess.",
-        "Infants: bulging fontanelle, seizures — meningoencephalitis.",
+        "Lethargy, sunken eyes, absent tears, dry mouth, slow skin pinch - severe dehydration.",
+        "Bloody diarrhoea + fever + pallor + decreasing urine - HUS risk (E. coli O157).",
+        "Persistent high fever, abdominal rigidity, distension - surgical/typhoid/amoebic liver abscess.",
+        "Infants: bulging fontanelle, seizures - meningoencephalitis.",
       ],
     },
     references: [
-      { org: "WHO", title: "The treatment of diarrhoea — a manual for physicians", year: 2005, url: "https://www.who.int/publications/i/item/9241593180" },
+      { org: "WHO", title: "The treatment of diarrhoea - a manual for physicians", year: 2005, url: "https://www.who.int/publications/i/item/9241593180" },
       { org: "WHO/UNICEF", title: "Clinical management of acute diarrhoea (zinc + ORS statement)", year: 2004 },
     ],
     lastReviewed: "2025-06-01",
@@ -926,7 +926,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
     specialties: ["Obstetrics & Gynecology", "Emergency Medicine", "Intensive Care"], keywords: ["preeclampsia", "eclampsia", "pregnancy", "hypertension", "magnesium sulfate"],
     emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Hypertensive disorder of pregnancy: new-onset hypertension after 20 weeks with proteinuria or end-organ dysfunction (ACOG/ISSHP).", "A leading cause of maternal and perinatal mortality — eclampsia (seizures) is a preventable emergency with magnesium sulfate."],
+      overview: ["Hypertensive disorder of pregnancy: new-onset hypertension after 20 weeks with proteinuria or end-organ dysfunction (ACOG/ISSHP).", "A leading cause of maternal and perinatal mortality - eclampsia (seizures) is a preventable emergency with magnesium sulfate."],
       diagnosticCriteria: [
         "SBP ≥ 140 and/or DBP ≥ 90 mmHg on 2 occasions ≥ 4 h apart after 20 weeks (or chronic HTN with new proteinuria/end-organ dysfunction).",
         "Plus ≥ 1 of: proteinuria (≥ 300 mg/24 h, P/Cr ≥ 0.3, dipstick 1+), thrombocytopenia < 100,000, renal insufficiency (Cr > 1.1 or doubling), impaired liver (transaminases 2×), pulmonary oedema, new neurological symptoms.",
@@ -946,7 +946,7 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
         "BP targets: keep SBP < 160 / DBP < 110 during labour; oral antihypertensives (nifedipine, labetalol, methyldopa) for maintenance.",
         "Eclampsia: terminate seizure with magnesium (additional 2 g) or diazepam if unavailable; protect airway; deliver after stabilisation.",
         "Corticosteroids for fetal lung maturity if < 34 weeks (betamethasone/dexamethasone).",
-        "Delivery is the definitive treatment — timing per severity and gestation.",
+        "Delivery is the definitive treatment - timing per severity and gestation.",
       ],
       definitiveManagement: [
         "Delivery: severe features → deliver once stabilised (regardless of gestation, with steroids < 34 weeks); without severe features → deliver at 37 weeks; expectant management 34–37 weeks with monitoring.",
@@ -960,10 +960,10 @@ const RFS_GUIDELINES: GuidelineEntry[] = [
       discharge: ["BP controlled on oral therapy, MgSO₄ completed, labs improving, postnatal follow-up in 1 week (BP, symptoms, contraception)."],
       followUp: ["Weekly BP and symptoms postpartum; resolution of proteinuria by 6 weeks; counsel recurrence risk (~20–25%) and aspirin prophylaxis next pregnancy; long-term CV risk counselling."],
       redFlags: [
-        "Seizure in pregnancy — treat as eclampsia (MgSO₄) until proven otherwise.",
-        "Severe epigastric/right upper quadrant pain — HELLP/liver involvement.",
-        "Blurred vision, severe headache, clonus — impending eclampsia.",
-        "BP ≥ 160/110 with symptoms — obstetric emergency; antihypertensives within 30–60 min.",
+        "Seizure in pregnancy - treat as eclampsia (MgSO₄) until proven otherwise.",
+        "Severe epigastric/right upper quadrant pain - HELLP/liver involvement.",
+        "Blurred vision, severe headache, clonus - impending eclampsia.",
+        "BP ≥ 160/110 with symptoms - obstetric emergency; antihypertensives within 30–60 min.",
       ],
     },
     references: [

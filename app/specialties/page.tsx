@@ -16,7 +16,7 @@ export default function SpecialtiesPage() {
     <div>
       <PageHeader
         title="Spesialisasi"
-        description="Setiap alat terhubung ke spesialisasi melalui metadata — halaman ini menggabungkannya secara otomatis, sehingga konten tidak pernah diduplikasi manual."
+        description="Setiap alat terhubung ke spesialisasi melalui metadata - halaman ini menggabungkannya secara otomatis, sehingga konten tidak pernah diduplikasi manual."
       />
       <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
         {SPECIALTIES.map((s) => {
@@ -30,7 +30,7 @@ export default function SpecialtiesPage() {
               <div className="flex items-start justify-between">
                 <h3 className="display-type text-base font-medium group-hover:text-accent-strong dark:group-hover:text-accent">{s.name}</h3>
                 <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[11px] font-medium text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-                  {count} tools
+                  {count} alat
                 </span>
               </div>
               <p className="mt-1.5 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">{s.description}</p>

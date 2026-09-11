@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const s = SPECIALTIES.find((x) => x.slug === slug);
   if (!s) return {};
-  return { title: `${s.name} — Tools`, description: s.description };
+  return { title: `${s.name} - Alat`, description: s.description };
 }
 
 export default async function SpecialtyPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -34,16 +34,16 @@ export default async function SpecialtyPage({ params }: { params: Promise<{ slug
   const proc = procedureEntries.filter((t) => t.specialties.includes(name));
 
   const sections: { label: string; cards: ReturnType<typeof ToolCard>[] }[] = [
-    { label: "Scores & criteria", cards: scores.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, abbreviation: t.abbreviation, description: t.description, href: `/scores/${t.slug}`, specialties: t.specialties, badge: t.abbreviation }} />) },
-    { label: "Calculators", cards: calcs.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, abbreviation: t.abbreviation, description: t.description, href: `/calculators/${t.slug}`, specialties: t.specialties, badge: t.abbreviation }} />) },
-    { label: "Drugs", cards: drugs.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.genericName, description: t.drugClass, href: `/drugs/${t.slug}`, specialties: t.specialties, badge: t.drugClass }} />) },
-    { label: "Guidelines", cards: guid.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, description: "Guideline navigator", href: `/guidelines/${t.slug}`, specialties: t.specialties }} />) },
-    { label: "Procedures", cards: proc.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, description: t.definition, href: `/indications/${t.slug}`, specialties: t.specialties }} />) },
+    { label: "Skor dan kriteria", cards: scores.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, abbreviation: t.abbreviation, description: t.description, href: `/scores/${t.slug}`, specialties: t.specialties, badge: t.abbreviation }} />) },
+    { label: "Kalkulator", cards: calcs.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, abbreviation: t.abbreviation, description: t.description, href: `/calculators/${t.slug}`, specialties: t.specialties, badge: t.abbreviation }} />) },
+    { label: "Obat", cards: drugs.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.genericName, description: t.drugClass, href: `/drugs/${t.slug}`, specialties: t.specialties, badge: t.drugClass }} />) },
+    { label: "Panduan", cards: guid.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, description: "Panduan klinis", href: `/guidelines/${t.slug}`, specialties: t.specialties }} />) },
+    { label: "Prosedur", cards: proc.map((t) => <ToolCard key={t.slug} tool={{ slug: t.slug, title: t.title, description: t.definition, href: `/indications/${t.slug}`, specialties: t.specialties }} />) },
   ].filter((s) => s.cards.length > 0);
 
   return (
     <div>
-      <BackLink href="/specialties" label="All specialties" />
+      <BackLink href="/specialties" label="Semua spesialisasi" />
       <div className="mb-6">
         <h1 className="display-type text-3xl font-light tracking-tight sm:text-4xl">{name}</h1>
         <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{spec.description}</p>

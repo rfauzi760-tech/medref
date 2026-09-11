@@ -21,7 +21,7 @@ export default function NutritionPage() {
     <div>
       <PageHeader
         title="Database Gizi"
-        description="Data komposisi pangan (per 100 g bagian yang dapat dimakan) dari tabel komposisi pangan publik — dipakai perencana makan sehingga semua hitungan berasal dari data terstruktur."
+        description="Data komposisi pangan (per 100 g bagian yang dapat dimakan) dari tabel komposisi pangan publik - dipakai perencana makan sehingga semua hitungan berasal dari data terstruktur."
         count={foods.length}
         countLabel="bahan pangan"
       />
@@ -45,19 +45,19 @@ export default function NutritionPage() {
       </div>
 
       {filtered.length === 0 ? (
-        <EmptyState message={`No foods match “${q}”.`} />
+        <EmptyState message={`Tidak ada bahan pangan yang cocok dengan “${q}”.`} />
       ) : (
         <div className="workspace-panel index-row overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-zinc-200 text-left text-xs uppercase tracking-wide text-zinc-400 dark:border-zinc-800">
-                <th className="px-4 py-2.5 font-semibold">Food</th>
-                <th className="hidden px-4 py-2.5 font-semibold sm:table-cell">Category</th>
+                <th className="px-4 py-2.5 font-semibold">Bahan pangan</th>
+                <th className="hidden px-4 py-2.5 font-semibold sm:table-cell">Kategori</th>
                 <th className="px-4 py-2.5 text-right font-semibold">kcal</th>
                 <th className="px-4 py-2.5 text-right font-semibold">Protein (g)</th>
-                <th className="px-4 py-2.5 text-right font-semibold">Carb (g)</th>
-                <th className="px-4 py-2.5 text-right font-semibold">Fat (g)</th>
-                <th className="hidden px-4 py-2.5 text-right font-semibold md:table-cell">Fiber (g)</th>
+                <th className="px-4 py-2.5 text-right font-semibold">Karbohidrat (g)</th>
+                <th className="px-4 py-2.5 text-right font-semibold">Lemak (g)</th>
+                <th className="hidden px-4 py-2.5 text-right font-semibold md:table-cell">Serat (g)</th>
                 <th className="hidden px-4 py-2.5 text-right font-semibold lg:table-cell">Na (mg)</th>
                 <th className="hidden px-4 py-2.5 text-right font-semibold lg:table-cell">K (mg)</th>
               </tr>
@@ -74,16 +74,16 @@ export default function NutritionPage() {
                   <td className="px-4 py-2 text-right text-zinc-600 dark:text-zinc-300">{f.protein}</td>
                   <td className="px-4 py-2 text-right text-zinc-600 dark:text-zinc-300">{f.carbs}</td>
                   <td className="px-4 py-2 text-right text-zinc-600 dark:text-zinc-300">{f.fat}</td>
-                  <td className="hidden px-4 py-2 text-right text-zinc-500 dark:text-zinc-400 md:table-cell">{f.fiber ?? "—"}</td>
-                  <td className="hidden px-4 py-2 text-right text-zinc-500 dark:text-zinc-400 lg:table-cell">{f.sodium ?? "—"}</td>
-                  <td className="hidden px-4 py-2 text-right text-zinc-500 dark:text-zinc-400 lg:table-cell">{f.potassium ?? "—"}</td>
+                  <td className="hidden px-4 py-2 text-right text-zinc-500 dark:text-zinc-400 md:table-cell">{f.fiber ?? " - "}</td>
+                  <td className="hidden px-4 py-2 text-right text-zinc-500 dark:text-zinc-400 lg:table-cell">{f.sodium ?? " - "}</td>
+                  <td className="hidden px-4 py-2 text-right text-zinc-500 dark:text-zinc-400 lg:table-cell">{f.potassium ?? " - "}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       )}
-      <p className="mt-3 text-xs text-zinc-400">Values per 100 g edible portion. Sources: Indonesian TKPI and USDA public-domain composition data, rounded to practical precision.</p>
+      <p className="mt-3 text-xs text-zinc-400">Nilai per 100 g bagian yang dapat dimakan. Sumber: data komposisi pangan Klinea.</p>
     </div>
   );
 }

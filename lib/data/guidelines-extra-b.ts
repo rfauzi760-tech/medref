@@ -1,6 +1,6 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan klinis ringkas — bagian 2 (Bahasa Indonesia). */
+/** Panduan klinis ringkas - bagian 2 (Bahasa Indonesia). */
 
 export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
   {
@@ -16,7 +16,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "Perdarahan dari esofagus, lambung, atau duodenum proksimal (ligamen Treitz). Penyebab: ulkus peptik, varises, Mallory-Weiss, gastritis erosif, keganasan.",
       ],
       initialAssessment: [
-        "Primary survey: airway (aspirasi darah), breathing, circulation — 2 akses IV besar; resusitasi kristaloid; transfusi PRC sesuai target Hb ≥ 7 g/dL (≥ 8–9 pada penyakit kardiovaskular/perdarahan masif).",
+        "Primary survey: airway (aspirasi darah), breathing, circulation - 2 akses IV besar; resusitasi kristaloid; transfusi PRC sesuai target Hb ≥ 7 g/dL (≥ 8–9 pada penyakit kardiovaskular/perdarahan masif).",
         "Kaji jumlah, warna muntahan/tinja, sinkop, penggunaan NSAID/antikoagulan/aspirin, riwayat penyakit hati/alkohol.",
         "Tanda syok: hipotensi, takikardia, pucat, penurunan produksi urin.",
       ],
@@ -41,12 +41,12 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
       ],
       redFlags: [
         "Hematemesis masif, melena + syok, penurunan Hb cepat.",
-        "Perdarahan pada sirosis — anggap varises sampai terbukti.",
+        "Perdarahan pada sirosis - anggap varises sampai terbukti.",
       ],
     },
     references: [
       { org: "Gralnek IM et al. (ESGE)", title: "Diagnosis and management of nonvariceal upper gastrointestinal hemorrhage", year: 2021, url: "https://doi.org/10.1055/a-1369-5274" },
-      { org: "de Franchis R et al. (Baveno VII)", title: "Baveno VII — portal hypertension", year: 2022 },
+      { org: "de Franchis R et al. (Baveno VII)", title: "Baveno VII - portal hypertension", year: 2022 },
     ],
     lastReviewed: "2025-06-01",
   },
@@ -68,7 +68,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "Konfirmasi nilai (ulang, hindari hemolisis). Kaji penyebab dan obat.",
       ],
       initialManagement: [
-        "Kalsium IV (kalsium glukonas 10% 10–30 mL atau kalsium klorida) untuk stabilisasi membran bila EKG abnormal/aritmia — tidak menurunkan kalium.",
+        "Kalsium IV (kalsium glukonas 10% 10–30 mL atau kalsium klorida) untuk stabilisasi membran bila EKG abnormal/aritmia - tidak menurunkan kalium.",
         "Redistribusi: insulin regular 10 unit IV + dekstrosa 25–50 g (jangan tanpa glukosa bila gula normal); nebul salbutamol; NaHCO₃ hanya pada asidosis metabolik.",
         "Eliminasi: diuretik loop (furosemid), resin penukar kation (kayexalate / patiromer), atau dialisis (indikasi: gagal ginjal, kalium sangat tinggi, refrakter).",
         "Hentikan/ tinjau obat penahan kalium; diet rendah kalium.",
@@ -80,8 +80,8 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "Aritmia, QRS melebar, kalium > 6,5, atau gagal ginjal dengan indikasi dialisis urgensi.",
       ],
       redFlags: [
-        "EKG abnormal = tanda bahaya — berikan kalsium tanpa menunda.",
-        "Pseudohiperkalemia (hemolisis) — konfirmasi sebelum terapi agresif.",
+        "EKG abnormal = tanda bahaya - berikan kalsium tanpa menunda.",
+        "Pseudohiperkalemia (hemolisis) - konfirmasi sebelum terapi agresif.",
       ],
     },
     references: [
@@ -103,7 +103,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "Infeksi sistemik pada bayi usia < 28 hari. Early-onset (< 72 jam, umumnya infeksi perinatal: GBS, E. coli) vs late-onset (≥ 72 jam, infeksi nosokomial/komunitas: koagulase-negatif stafilokokus, Klebsiella, E. coli).",
       ],
       classification: [
-        "Early-onset: faktor risiko — KPD lama, korioamnionitis ibu, prematuritas, BBLR.",
+        "Early-onset: faktor risiko - KPD lama, korioamnionitis ibu, prematuritas, BBLR.",
         "Late-onset: terkait prosedur (kateter vaskular), menyusui/lingkungan, atau infeksi komunitas.",
       ],
       initialAssessment: [
@@ -145,7 +145,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
     ageGroup: "neonatal",
     sections: {
       overview: [
-        "Ikterus (kuning) karena akumulasi bilirubin — fisiologis pada banyak bayi, namun hiperbilirubinemia signifikan dapat menyebabkan ensefalopati bilirubin (kernikterus).",
+        "Ikterus (kuning) karena akumulasi bilirubin - fisiologis pada banyak bayi, namun hiperbilirubinemia signifikan dapat menyebabkan ensefalopati bilirubin (kernikterus).",
       ],
       classification: [
         "Fisiologis: muncul hari ke-2–3, memuncak hari ke-3–5, hilang < 2 minggu; kadar di bawah ambang patologis sesuai usia jam.",
@@ -171,7 +171,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
       ],
       redFlags: [
         "Ikterus < 24 jam, tinja pucat, urine pekat, BB turun banyak, atau tanda ensefalopati bilirubin.",
-        "Ikterus menetap > 2 minggu (aterm) — cari penyebab patologis.",
+        "Ikterus menetap > 2 minggu (aterm) - cari penyebab patologis.",
       ],
     },
     references: [
@@ -204,23 +204,23 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
       ],
       initialManagement: [
         "Atonia: uterine massage + oksitosin 10 IU IM/IV lambat; lanjut metilergometrin 0,2 mg IM (hindari hipertensi) atau karboprost 0,25 mg IM (hindari asma) atau misoprostol 600–800 µg PR; kalau semua tersedia ikuti algoritma lokal.",
-        "Traneksamat 1 g IV (dalam 3 jam, ulangi 1 g bila perlu) — HELLP/antikoagulan tetap boleh.",
+        "Traneksamat 1 g IV (dalam 3 jam, ulangi 1 g bila perlu) - HELLP/antikoagulan tetap boleh.",
         "Perbaiki laserasi; plasenta tertahan → manual removal/kuretase dengan anestesi; koagulopati → komponen darah.",
-        "Perdarahan tidak berhenti: balon intrauterin (Bakri), kompresi uterus bimanual, kompresi jahitan (B-Lynch), ligasi arteri, atau histerektomi — jangan terlambat.",
+        "Perdarahan tidak berhenti: balon intrauterin (Bakri), kompresi uterus bimanual, kompresi jahitan (B-Lynch), ligasi arteri, atau histerektomi - jangan terlambat.",
         "Aktifkan protokol transfusi masif bila perdarahan masif (PRC:FFP:trombosit 1:1:1).",
       ],
       icuCriteria: [
-        "Syok tidak responsif, perdarahan masif berlanjut, koagulopati berat — ICU + konsultasi obstetri senior/anestesi.",
+        "Syok tidak responsif, perdarahan masif berlanjut, koagulopati berat - ICU + konsultasi obstetri senior/anestesi.",
       ],
       redFlags: [
-        "Perdarahan terus meski uterus kontraksi baik — cari trauma/koagulopati.",
-        "Tanda syok bisa muncul mendadak — jangan menunggu hipotensi.",
+        "Perdarahan terus meski uterus kontraksi baik - cari trauma/koagulopati.",
+        "Tanda syok bisa muncul mendadak - jangan menunggu hipotensi.",
         "Jangan terlambat merujuk ke operasi bila perdarahan tidak terkendali.",
       ],
     },
     references: [
       { org: "World Health Organization", title: "WHO recommendations on prevention and treatment of postpartum haemorrhage", year: 2023, url: "https://www.who.int/publications/i/item/9789240085390" },
-      { org: "Kementerian Kesehatan RI", title: "PONED/PONEK — penanganan perdarahan pascapersalinan", year: 2021 },
+      { org: "Kementerian Kesehatan RI", title: "PONED/PONEK - penanganan perdarahan pascapersalinan", year: 2021 },
     ],
     lastReviewed: "2025-06-01",
   },
@@ -251,17 +251,17 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "EKG, elektrolit, glukosa; gas darah pada gangguan napas.",
       ],
       initialManagement: [
-        "Atropin: titrasi agresif sampai tanda atropinisasi (bebas sekresi, pupil midriasis) — bolus awal 1–3 mg dewasa (0,02–0,05 mg/kgBB anak), gandakan tiap 3–5 menit; sering butuh dosis total besar.",
-        "Oksim (pralidoksim): berikan dini (1–2 g dewasa IV selama 30 menit, dilanjutkan infus) — efektivitas terbaik bila diberikan awal.",
+        "Atropin: titrasi agresif sampai tanda atropinisasi (bebas sekresi, pupil midriasis) - bolus awal 1–3 mg dewasa (0,02–0,05 mg/kgBB anak), gandakan tiap 3–5 menit; sering butuh dosis total besar.",
+        "Oksim (pralidoksim): berikan dini (1–2 g dewasa IV selama 30 menit, dilanjutkan infus) - efektivitas terbaik bila diberikan awal.",
         "Diazepam untuk kejang/agitasi.",
         "Ventilasi dini untuk kelemahan otot pernapasan dan sekresi masif.",
       ],
       icuCriteria: [
-        "Gagal napas, kejang, hipoksia, atau kebutuhan atropin berkelanjutan — rawat ICU.",
+        "Gagal napas, kejang, hipoksia, atau kebutuhan atropin berkelanjutan - rawat ICU.",
       ],
       redFlags: [
-        "Bradikardia + bronkore + miosis = toksisitas muskarinik berat — atropin segera.",
-        "Intermediate syndrome dapat muncul setelah perbaikan awal — pantau kekuatan napas ≥ 72 jam.",
+        "Bradikardia + bronkore + miosis = toksisitas muskarinik berat - atropin segera.",
+        "Intermediate syndrome dapat muncul setelah perbaikan awal - pantau kekuatan napas ≥ 72 jam.",
       ],
     },
     references: [
@@ -307,12 +307,12 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "Kadar di atas garis perawatan, dosis > 150 mg/kgBB, fungsi hati terganggu, atau sediaan extended-release: rawat untuk NAC.",
       ],
       redFlags: [
-        "Keterlambatan > 8 jam = risiko hepatotoksisitas tinggi — NAC tetap diberikan.",
+        "Keterlambatan > 8 jam = risiko hepatotoksisitas tinggi - NAC tetap diberikan.",
         "Ensefalopati, INR > 1,5, hipoglikemia, asidosis = gagal hati berat.",
       ],
     },
     references: [
-      { org: "American College of Medical Toxicology", title: "Acetaminophen poisoning — position statement & management", year: 2020 },
+      { org: "American College of Medical Toxicology", title: "Acetaminophen poisoning - position statement & management", year: 2020 },
       { org: "Chiew AL et al.", title: "Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand", year: 2020 },
     ],
     lastReviewed: "2025-06-01",
@@ -343,7 +343,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "Diagnosis klinis; gonioskopi oleh spesialis mata untuk konfirmasi sudut tertutup.",
       ],
       initialManagement: [
-        "Rujuk ke dokter mata segera — tata laksana awal sambil menunggu:",
+        "Rujuk ke dokter mata segera - tata laksana awal sambil menunggu:",
         "Asetazolamid 500 mg IV/PO; timolol 0,5% tetes; pilokarpin 2% (hanya bila TIO < 40 mmHg dan sudut tidak sepenuhnya tertutup); apraklonidin.",
         "Hiperosmolar (manitol IV) bila TIO sangat tinggi.",
         "Pasien telentang; analgesik & antiemetik; hindari midriatik.",
@@ -353,12 +353,12 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
         "TIO tidak terkendali atau komplikasi → rawat koordinasi mata.",
       ],
       redFlags: [
-        "Mata merah nyeri + mual/muntah + penglihatan kabur — jangan diagnosis 'migrain'.",
+        "Mata merah nyeri + mual/muntah + penglihatan kabur - jangan diagnosis 'migrain'.",
         "Jangan berikan obat antikolinergik/midriatik (memperburuk).",
       ],
     },
     references: [
-      { org: "American Academy of Ophthalmology", title: "Primary Angle-Closure Disease — Preferred Practice Pattern", year: 2020 },
+      { org: "American Academy of Ophthalmology", title: "Primary Angle-Closure Disease - Preferred Practice Pattern", year: 2020 },
       { org: "PERDAMI", title: "Panduan Penatalaksanaan Glaukoma di Indonesia", year: 2021 },
     ],
     lastReviewed: "2025-06-01",
@@ -430,7 +430,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
       ],
       classification: [
         "Skrining: semua ibu hamil idealnya diperiksa; lakukan lebih awal (trimester 1) bila berisiko tinggi (obesitas, riwayat GDM, riwayat keluarga DM, riwayat bayi besar, PCOS, glikosuria).",
-        "Diagnosis: TTGO 75 g — satu dari: GDP ≥ 92 mg/dL, atau 1 jam ≥ 180 mg/dL, atau 2 jam ≥ 153 mg/dL (IADPSG/WHO).",
+        "Diagnosis: TTGO 75 g - satu dari: GDP ≥ 92 mg/dL, atau 1 jam ≥ 180 mg/dL, atau 2 jam ≥ 153 mg/dL (IADPSG/WHO).",
       ],
       initialAssessment: [
         "Skrining 24–28 minggu bila belum dilakukan; nilai faktor risiko dan riwayat obstetri.",
@@ -452,7 +452,7 @@ export const EXTRA_GUIDELINES_B: GuidelineEntry[] = [
       ],
       redFlags: [
         "Gula sangat tinggi / ketoasidosis pada kehamilan = kegawatan.",
-        "Makrosomia berat / polihidramnion — koordinasi obstetri.",
+        "Makrosomia berat / polihidramnion - koordinasi obstetri.",
       ],
     },
     references: [

@@ -3,7 +3,7 @@ import { fmt, num } from "@/lib/calc/units";
 
 /**
  * Weight-based drug dose calculation.
- * Pure functions over structured drug data — unit-tested.
+ * Pure functions over structured drug data - unit-tested.
  */
 
 export interface DoseCalculationInput {
@@ -45,7 +45,7 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   const notes: string[] = [];
   const maxWarnings: string[] = [];
   if (!entry) {
-    return { entry: drug.doses[0], textOnly: true, notes: ["No dosing entry available — consult a local formulary."], maxWarnings: [] };
+    return { entry: drug.doses[0], textOnly: true, notes: ["Data dosis belum tersedia. Periksa formularium setempat."], maxWarnings: [] };
   }
   const w = num(inp.weightKg);
   const wb = entry.weightBased;
@@ -58,7 +58,7 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
     return {
       entry,
       textOnly: true,
-      notes: [...(entry.notes ?? []), "Weight not provided — showing per-kg schema; enter weight to calculate."],
+      notes: [...(entry.notes ?? []), "Berat badan belum diisi. Masukkan berat badan untuk menghitung dosis."],
       maxWarnings: [],
     };
   }
@@ -73,28 +73,28 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
     if (wb.frequencyPerDay) totalDailyMg = perDoseMg * wb.frequencyPerDay;
     if (wb.maxPerDoseMg && perDoseMg > wb.maxPerDoseMg) {
       perDoseMg = wb.maxPerDoseMg;
-      maxWarnings.push(`Calculated dose exceeds maximum per dose (${fmt(wb.maxPerDoseMg, 0)} ${unit}) — capped.`);
+      maxWarnings.push(`Dosis terhitung melebihi dosis maksimal per pemberian (${fmt(wb.maxPerDoseMg, 0)} ${unit}). Nilai dibatasi.`);
     }
     if (wb.maxDailyMg && totalDailyMg && totalDailyMg > wb.maxDailyMg) {
       totalDailyMg = wb.maxDailyMg;
-      maxWarnings.push(`Calculated daily dose exceeds maximum (${fmt(wb.maxDailyMg, 0)} ${unit}/day) — capped.`);
+      maxWarnings.push(`Dosis harian terhitung melebihi batas maksimal (${fmt(wb.maxDailyMg, 0)} ${unit}/hari). Nilai dibatasi.`);
     }
   } else {
     // per day
     totalDailyMg = w * perKg;
     if (wb.maxDailyMg && totalDailyMg > wb.maxDailyMg) {
       totalDailyMg = wb.maxDailyMg;
-      maxWarnings.push(`Calculated daily dose exceeds maximum (${fmt(wb.maxDailyMg, 0)} ${unit}/day) — capped.`);
+      maxWarnings.push(`Dosis harian terhitung melebihi batas maksimal (${fmt(wb.maxDailyMg, 0)} ${unit}/hari). Nilai dibatasi.`);
     }
     // divide into per-dose amounts when a frequency is given
     if (wb.frequencyPerDay) perDoseMg = totalDailyMg / wb.frequencyPerDay;
   }
 
-  const perDoseText = perDoseMg !== undefined ? `${fmt(perDoseMg, perDoseMg < 10 ? 1 : 0)} ${unit}${wb.frequencyPerDay ? ` ×${wb.frequencyPerDay}/day` : ""}` : undefined;
-  const totalDailyText = totalDailyMg !== undefined ? `${fmt(totalDailyMg, totalDailyMg < 10 ? 1 : 0)} ${unit}/day` : undefined;
+  const perDoseText = perDoseMg !== undefined ? `${fmt(perDoseMg, perDoseMg < 10 ? 1 : 0)} ${unit}${wb.frequencyPerDay ? ` ×${wb.frequencyPerDay}/hari` : ""}` : undefined;
+  const totalDailyText = totalDailyMg !== undefined ? `${fmt(totalDailyMg, totalDailyMg < 10 ? 1 : 0)} ${unit}/hari` : undefined;
 
   notes.push(
-    `Based on ${fmt(wb.min, 2)}${wb.max !== undefined ? `–${fmt(wb.max, 2)}` : ""} ${unit}/kg${wb.per === "day" ? "/day" : ""} (mid-range selected; titrate clinically).`,
+    `Berdasarkan ${fmt(wb.min, 2)}${wb.max !== undefined ? ` sampai ${fmt(wb.max, 2)}` : ""} ${unit}/kg${wb.per === "day" ? "/hari" : ""}. Nilai tengah dipakai dan perlu dititrasi secara klinis.`,
   );
   if (wb.maxText) notes.push(wb.maxText);
   if (wb.note) notes.push(wb.note);
@@ -106,14 +106,14 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
 /** Human-readable summary used for the copy button. */
 export function doseToText(drug: Drug, out: DoseCalculationOutput): string {
   const lines = [
-    `${drug.genericName} — weight-based dose`,
-    `Route: ${out.entry.route}${out.entry.indication ? ` (${out.entry.indication})` : ""}`,
+    `${drug.genericName} - dosis berbasis berat badan`,
+    `Rute: ${out.entry.route}${out.entry.indication ? ` (${out.entry.indication})` : ""}`,
   ];
-  if (out.perDoseText) lines.push(`Dose per administration: ${out.perDoseText}`);
-  if (out.totalDailyText) lines.push(`Total daily: ${out.totalDailyText}`);
+  if (out.perDoseText) lines.push(`Dosis per pemberian: ${out.perDoseText}`);
+  if (out.totalDailyText) lines.push(`Total harian: ${out.totalDailyText}`);
   for (const w of out.maxWarnings) lines.push(`⚠ ${w}`);
-  lines.push(`Source: ${drug.source.org}, ${drug.source.title} (${drug.source.year})`);
-  lines.push("Clinical decision support only — verify against local protocols and formulary.");
+  lines.push(`Sumber: ${drug.source.org}, ${drug.source.title} (${drug.source.year})`);
+  lines.push("Hanya alat bantu keputusan klinis. Verifikasi dengan protokol dan formularium setempat.");
   return lines.join("\n");
 }
 

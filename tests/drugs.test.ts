@@ -26,7 +26,7 @@ describe("amoxicillin pediatric dosing", () => {
   it("returns text-only schema when no weight provided", () => {
     const out = calculateDose(amox, {});
     expect(out.textOnly).toBe(true);
-    expect(out.notes.join(" ")).toContain("Weight not provided");
+    expect(out.notes.join(" ")).toContain("Berat badan belum diisi");
   });
 });
 
@@ -55,9 +55,9 @@ describe("doseToText", () => {
     const amox = drug("amoxicillin");
     const out = calculateDose(amox, { weightKg: 18, ageYears: 5 });
     const text = doseToText(amox, out);
-    expect(text).toContain("Amoxicillin");
-    expect(text).toContain("Dose per administration");
-    expect(text).toContain("Source:");
+    expect(text).toContain("Amoksisilin");
+    expect(text).toContain("Dosis per pemberian");
+    expect(text).toContain("Sumber:");
   });
 });
 

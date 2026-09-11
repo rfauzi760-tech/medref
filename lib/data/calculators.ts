@@ -5,7 +5,7 @@ import type { CalculatorTool } from "@/lib/types";
  * registry in lib/calc/calculators.ts.
  */
 
-export const CALCULATORS: CalculatorTool[] = [
+const RAW_CALCULATORS: CalculatorTool[] = [
   /* ---------------- Body measurements ---------------- */
   {
     id: "bmi", slug: "bmi", title: "Body Mass Index", abbreviation: "BMI", type: "calculator", category: "body",
@@ -18,11 +18,11 @@ export const CALCULATORS: CalculatorTool[] = [
     ],
     interpretation: "WHO adult classification: < 18.5 underweight · 18.5–24.9 normal · 25–29.9 overweight · ≥ 30 obese.",
     lastReviewed: "2025-06-01",
-    source: { org: "WHO", title: "Obesity and overweight — BMI classification", year: 2000, url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" },
+    source: { org: "WHO", title: "Obesity and overweight - BMI classification", year: 2000, url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" },
   },
   {
     id: "bsa", slug: "bsa", title: "Body Surface Area", abbreviation: "BSA", type: "calculator", category: "body",
-    description: "Mosteller and DuBois body surface area — used for chemotherapy dosing and cardiac index.",
+    description: "Mosteller and DuBois body surface area - used for chemotherapy dosing and cardiac index.",
     specialties: ["Oncology", "Cardiology", "Anesthesiology"], keywords: ["bsa", "body surface area", "mosteller", "dubois", "dosing"],
     formulaText: "Mosteller: √(weight × height / 3600)",
     inputs: [
@@ -48,7 +48,7 @@ export const CALCULATORS: CalculatorTool[] = [
 
   /* ---------------- Renal ---------------- */
   {
-    id: "egfr", slug: "egfr", title: "eGFR — CKD-EPI 2021", abbreviation: "eGFR", type: "calculator", category: "renal",
+    id: "egfr", slug: "egfr", title: "eGFR - CKD-EPI 2021", abbreviation: "eGFR", type: "calculator", category: "renal",
     description: "Estimated glomerular filtration rate using the race-free CKD-EPI 2021 creatinine equation (adults).",
     specialties: ["Nephrology", "Internal Medicine", "Geriatrics"], keywords: ["egfr", "ckd", "ckd-epi", "creatinine", "glomerular filtration"],
     formulaText: "CKD-EPI 2021: eGFR = 142 × min(Scr/κ,1)^α × max(Scr/κ,1)^−1.2 × 0.9938^age × 1.012 (if female)",
@@ -62,7 +62,7 @@ export const CALCULATORS: CalculatorTool[] = [
     source: { org: "Inker LA et al. (CKD-EPI)", title: "New creatinine- and cystatin C-based equations to estimate GFR without race", year: 2021, url: "https://www.nejm.org/doi/full/10.1056/NEJMoa2102953" },
   },
   {
-    id: "egfr-schwartz", slug: "egfr-schwartz", title: "eGFR — Bedside Schwartz (Children)", abbreviation: "Schwartz", type: "calculator", category: "renal",
+    id: "egfr-schwartz", slug: "egfr-schwartz", title: "eGFR - Bedside Schwartz (Children)", abbreviation: "Schwartz", type: "calculator", category: "renal",
     description: "Paediatric eGFR estimation (1–16 years) from height and creatinine.",
     specialties: ["Pediatrics", "Nephrology"], keywords: ["egfr", "schwartz", "children", "pediatric", "creatinine"],
     formulaText: "eGFR = 0.413 × height(cm) / creatinine(mg/dL)",
@@ -75,7 +75,7 @@ export const CALCULATORS: CalculatorTool[] = [
     source: { org: "Schwartz GJ et al.", title: "New equations to estimate GFR in children with CKD", year: 2009, url: "https://jasn.asnjournals.org/content/20/3/629" },
   },
   {
-    id: "crcl", slug: "crcl", title: "Creatinine Clearance — Cockcroft-Gault", abbreviation: "CrCl", type: "calculator", category: "renal",
+    id: "crcl", slug: "crcl", title: "Creatinine Clearance - Cockcroft-Gault", abbreviation: "CrCl", type: "calculator", category: "renal",
     description: "Creatinine clearance estimate used for drug dose adjustment.",
     specialties: ["Nephrology", "Internal Medicine", "Geriatrics"], keywords: ["crcl", "cockcroft", "gault", "creatinine clearance", "dosing"],
     formulaText: "CrCl = ((140 − age) × weight) / (72 × Scr) × 0.85 (female)",
@@ -90,7 +90,7 @@ export const CALCULATORS: CalculatorTool[] = [
   },
   {
     id: "meld-na", slug: "meld-na", title: "MELD-Na Score (Liver)", abbreviation: "MELD-Na", type: "calculator", category: "renal",
-    description: "Model for End-Stage Liver Disease with sodium — transplant prioritisation.",
+    description: "Model for End-Stage Liver Disease with sodium - transplant prioritisation.",
     specialties: ["Hepatology", "Gastroenterology", "Surgery"], keywords: ["meld", "liver", "cirrhosis", "transplant", "sodium", "prognosis"],
     formulaText: "MELD = 3.78·ln(bili) + 11.2·ln(INR) + 9.57·ln(Cr) + 6.43 · MELD-Na adds serum Na (clamped 120–137)",
     inputs: [
@@ -142,7 +142,7 @@ export const CALCULATORS: CalculatorTool[] = [
       { id: "glucose", label: "Glucose", unit: "mg/dL", type: "number", min: 50, max: 2000, step: 1, required: true },
     ],
     lastReviewed: "2025-06-01",
-    source: { org: "Katz MA", title: "Hyperglycemia-induced hyponatremia — calculation of expected serum sodium depression", year: 1973, url: "https://pubmed.ncbi.nlm.nih.gov/4637202/" },
+    source: { org: "Katz MA", title: "Hyperglycemia-induced hyponatremia - calculation of expected serum sodium depression", year: 1973, url: "https://pubmed.ncbi.nlm.nih.gov/4637202/" },
   },
   {
     id: "osmolality", slug: "osmolality", title: "Serum Osmolality (Calculated)", abbreviation: "Osm", type: "calculator", category: "electrolyte",
@@ -160,7 +160,7 @@ export const CALCULATORS: CalculatorTool[] = [
   },
   {
     id: "osmolar-gap", slug: "osmolar-gap", title: "Osmolar Gap", abbreviation: "OG", type: "calculator", category: "electrolyte",
-    description: "Difference between measured and calculated osmolality — detects unmeasured solutes.",
+    description: "Difference between measured and calculated osmolality - detects unmeasured solutes.",
     specialties: ["Emergency Medicine", "Nephrology", "Toxicology"], keywords: ["osmolar gap", "toxic alcohol", "methanol", "ethylene glycol", "overdose"],
     formulaText: "OG = measured − calculated osmolality",
     inputs: [
@@ -175,7 +175,7 @@ export const CALCULATORS: CalculatorTool[] = [
   },
   {
     id: "free-water-deficit", slug: "free-water-deficit", title: "Free Water Deficit", abbreviation: "FWD", type: "calculator", category: "electrolyte",
-    description: "Water deficit in hypernatremia — guides replacement volume.",
+    description: "Water deficit in hypernatremia - guides replacement volume.",
     specialties: ["Nephrology", "Endocrinology", "Internal Medicine"], keywords: ["free water", "hypernatremia", "deficit", "rehydration"],
     formulaText: "FWD = (Na − 140)/140 × TBW · TBW = 0.6 × wt (male), 0.5 × wt (female)",
     inputs: [
@@ -217,7 +217,7 @@ export const CALCULATORS: CalculatorTool[] = [
   },
   {
     id: "shock-index", slug: "shock-index", title: "Shock Index", abbreviation: "SI", type: "calculator", category: "cardio",
-    description: "Heart rate divided by systolic blood pressure — early marker of haemodynamic compromise.",
+    description: "Heart rate divided by systolic blood pressure - early marker of haemodynamic compromise.",
     specialties: ["Emergency Medicine", "Intensive Care", "Obstetrics & Gynecology"], keywords: ["shock index", "hemorrhage", "sepsis", "tachycardia"],
     formulaText: "SI = HR / SBP",
     inputs: [
@@ -269,7 +269,7 @@ export const CALCULATORS: CalculatorTool[] = [
     ],
     interpretation: "Normal ≤ 15 mmHg on room air; age-adjusted ≤ 2.5 + 0.21 × age.",
     lastReviewed: "2025-06-01",
-    source: { org: "Standard pulmonary physiology (West JB)", title: "Pulmonary Pathophysiology — the essentials", year: 2012 },
+    source: { org: "Standard pulmonary physiology (West JB)", title: "Pulmonary Pathophysiology - the essentials", year: 2012 },
   },
 
   /* ---------------- Fluids & infusion ---------------- */
@@ -301,7 +301,7 @@ export const CALCULATORS: CalculatorTool[] = [
     ],
     interpretation: "Replace deficit over 24–48 h; add maintenance and ongoing losses.",
     lastReviewed: "2025-06-01",
-    source: { org: "WHO", title: "The treatment of diarrhoea — a manual for physicians (plan B/C)", year: 2005, url: "https://www.who.int/publications/i/item/9241593180" },
+    source: { org: "WHO", title: "The treatment of diarrhoea - a manual for physicians (plan B/C)", year: 2005, url: "https://www.who.int/publications/i/item/9241593180" },
   },
   {
     id: "drip-rate", slug: "drip-rate", title: "Drip Rate (Drops per Minute)", abbreviation: "gtt/min", type: "calculator", category: "fluid",
@@ -401,5 +401,77 @@ export const CALCULATORS: CalculatorTool[] = [
     source: { org: "Holliday MA, Segar WE", title: "The maintenance need for water in parenteral fluid therapy", year: 1957, url: "https://publications.aap.org/pediatrics/article-abstract/19/5/823/26552" },
   },
 ];
+
+const CALCULATOR_TITLES: Record<string, string> = {
+  bmi: "Indeks Massa Tubuh",
+  bsa: "Luas Permukaan Tubuh",
+  ibw: "Berat Badan Ideal dan Terkoreksi",
+  egfr: "eGFR CKD-EPI 2021",
+  "egfr-schwartz": "eGFR Bedside Schwartz Anak",
+  crcl: "Klirens Kreatinin Cockcroft-Gault",
+  "meld-na": "Skor MELD-Na",
+  "anion-gap": "Anion Gap",
+  "corrected-calcium": "Kalsium Terkoreksi",
+  "corrected-sodium": "Natrium Terkoreksi pada Hiperglikemia",
+  osmolality: "Osmolalitas Serum",
+  "osmolar-gap": "Celah Osmolar",
+  "free-water-deficit": "Defisit Air Bebas",
+  bicarb: "Defisit Bikarbonat",
+  map: "Tekanan Arteri Rerata",
+  "shock-index": "Indeks Syok",
+  qtc: "Interval QTc Bazett dan Fridericia",
+  "pf-ratio": "Rasio PaO₂/FiO₂",
+  "aa-gradient": "Gradien O₂ Alveolar-Arteri",
+  "holliday-segar": "Cairan Rumatan Holliday-Segar",
+  "fluid-deficit": "Defisit Cairan Dehidrasi",
+  "drip-rate": "Laju Tetes per Menit",
+  "iv-rate": "Laju Infus IV",
+  "mgkg-dose": "Dosis Berbasis Berat Badan",
+  "infusion-rate": "Laju Vasopresor atau Infus",
+  dilution: "Kalkulator Pengenceran C1V1=C2V2",
+  "ga-edd": "Usia Kehamilan dan Taksiran Persalinan",
+  "paediatric-maint": "Cairan Rumatan Anak",
+};
+
+const SPECIALTY_ID: Record<string, string> = {
+  "Internal Medicine": "Penyakit Dalam", Nutrition: "Gizi", Endocrinology: "Endokrinologi", Oncology: "Onkologi",
+  Cardiology: "Kardiologi", Anesthesiology: "Anestesiologi", Nephrology: "Nefrologi", Geriatrics: "Geriatri",
+  Pediatrics: "Pediatri", Hepatology: "Hepatologi", "Emergency Medicine": "Kedokteran Emergensi",
+  Toxicology: "Toksikologi", "Intensive Care": "Perawatan Intensif", Pulmonology: "Pulmonologi",
+  "Obstetrics & Gynecology": "Obstetri dan Ginekologi", Neonatology: "Neonatologi", Nursing: "Keperawatan",
+};
+
+export function translateCalculatorText(value: string): string {
+  const replacements: [RegExp, string][] = [
+    [/Body weight/gi, "Berat badan"], [/Actual weight/gi, "Berat badan aktual"], [/Weight/gi, "Berat badan"],
+    [/Height/gi, "Tinggi badan"], [/Age/gi, "Usia"], [/Sex/gi, "Jenis kelamin"], [/Male/gi, "Laki-laki"], [/Female/gi, "Perempuan"],
+    [/Serum creatinine/gi, "Kreatinin serum"], [/Creatinine/gi, "Kreatinin"], [/Sodium/gi, "Natrium"], [/Calcium/gi, "Kalsium"],
+    [/Glucose/gi, "Glukosa"], [/Albumin/gi, "Albumin"], [/Heart rate/gi, "Frekuensi nadi"], [/Systolic/gi, "Sistolik"], [/Diastolic/gi, "Diastolik"],
+    [/Volume/gi, "Volume"], [/Duration/gi, "Durasi"], [/Concentration/gi, "Konsentrasi"], [/Dose/gi, "Dosis"],
+    [/Male/gi, "Laki-laki"], [/Female/gi, "Perempuan"], [/Yes/gi, "Ya"], [/No/gi, "Tidak"],
+    [/Reference/gi, "Referensi"], [/Category/gi, "Kategori"], [/Normal weight/gi, "Berat badan normal"],
+    [/Underweight/gi, "Berat badan kurang"], [/Overweight/gi, "Gizi lebih"], [/Obesity/gi, "Obesitas"],
+    [/Enter /gi, "Masukkan "], [/required/gi, "wajib"], [/outside plausible range/gi, "di luar rentang wajar"],
+  ];
+  return replacements.reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value).replace(/\s* - \s*/g, " - ");
+}
+
+export const CALCULATORS: CalculatorTool[] = RAW_CALCULATORS.map((tool) => {
+  const title = CALCULATOR_TITLES[tool.id] ?? translateCalculatorText(tool.title);
+  return {
+    ...tool,
+    title,
+    description: `Kalkulator ${title.toLowerCase()} berdasarkan formula klinis yang ditampilkan.`,
+    specialties: tool.specialties.map((item) => SPECIALTY_ID[item] ?? item),
+    inputs: tool.inputs.map((input) => ({
+      ...input,
+      label: translateCalculatorText(input.label),
+      help: input.help ? translateCalculatorText(input.help) : undefined,
+      options: input.options?.map((option) => ({ ...option, label: translateCalculatorText(option.label) })),
+    })),
+    formulaText: tool.formulaText ? translateCalculatorText(tool.formulaText) : undefined,
+    interpretation: "Gunakan hasil bersama penilaian klinis dan panduan yang berlaku.",
+  };
+});
 
 export const CALCULATORS_BY_SLUG: Record<string, CalculatorTool> = Object.fromEntries(CALCULATORS.map((c) => [c.slug, c]));

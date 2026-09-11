@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!tool) return {};
   return {
     title: `${tool.title}${tool.abbreviation ? ` (${tool.abbreviation})` : ""}`,
-    description: `${tool.description} ${tool.formulaText ?? ""} Source: ${tool.source.org}, ${tool.source.year}.`,
-    openGraph: { title: `${tool.title} — Clinical Calculators`, description: tool.description, type: "article" },
+    description: `${tool.description} ${tool.formulaText ?? ""} Sumber: ${tool.source.org}, ${tool.source.year}.`,
+    openGraph: { title: `${tool.title} - Kalkulator Klinis`, description: tool.description, type: "article" },
   };
 }
 
@@ -27,7 +27,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ slu
   if (!tool) notFound();
   return (
     <div>
-      <BackLink href="/calculators" label="All calculators" />
+      <BackLink href="/calculators" label="Semua kalkulator" />
       <CalculatorToolView tool={tool} />
     </div>
   );

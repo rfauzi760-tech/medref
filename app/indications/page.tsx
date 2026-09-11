@@ -22,7 +22,7 @@ export default function IndicationsPage() {
     <div>
       <PageHeader
         title="Indikasi & Kontraindikasi"
-        description="Referensi terstruktur prosedur klinis umum — indikasi, kontraindikasi absolut dan relatif, tindakan pencegahan, persiapan, dan komplikasi."
+        description="Referensi terstruktur prosedur klinis umum - indikasi, kontraindikasi absolut dan relatif, tindakan pencegahan, persiapan, dan komplikasi."
         count={procedureEntries.length}
         countLabel="prosedur"
       />
@@ -46,7 +46,7 @@ export default function IndicationsPage() {
       </div>
 
       {filtered.length === 0 ? (
-        <EmptyState message={`No procedures match “${q}”.`} />
+        <EmptyState message={`Tidak ada prosedur yang cocok dengan “${q}”.`} />
       ) : (
         <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 [&_.index-row]:border-[var(--line)] sm:[&_.index-row:nth-child(odd)]:border-r">
           {filtered.map((p) => (

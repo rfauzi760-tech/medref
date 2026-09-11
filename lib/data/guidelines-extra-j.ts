@@ -1,13 +1,13 @@
 import type { GuidelineEntry } from "@/lib/types";
 
-/** Panduan tambahan — bagian J: gastroenterologi, hepatobilier & bedah minor. */
+/** Panduan tambahan - bagian J: gastroenterologi, hepatobilier & bedah minor. */
 
 export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
   {
     id: "gerd", slug: "gerd", title: "GERD (Gastroesophageal Reflux Disease)", specialties: ["Internal Medicine", "Gastroenterology"],
     keywords: ["gerd", "refluks", "asam lambung", "heartburn", "regurgitasi"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Refluks asam lambung berulang yang mengganggu — heartburn dan/atau regurgitasi ≥ 2×/minggu, atau dengan komplikasi."],
+      overview: ["Refluks asam lambung berulang yang mengganggu - heartburn dan/atau regurgitasi ≥ 2×/minggu, atau dengan komplikasi."],
       diagnosticCriteria: ["Gejala khas (heartburn, regurgitasi) + respons empiris PPI 4–8 minggu; endoskopi bila alarm symptoms atau tidak respons.", "Los Angeles klasifikasi erosi esofagitis; esofagitis non-erosif bila endoskopi normal."],
       differentials: ["Dispepsia fungsional", "Tukak peptik", "Angina/ACS", "Esofagitis infeksi/eosinofilik", "Akhalasia"],
       classification: ["Non-erosif (NERD) · erosif (LA A–D) · komplikasi (striktur, Barrett, ulkus)."],
@@ -26,8 +26,8 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "dispepsia", slug: "dispepsia", title: "Dispepsia (Dyspepsia)", specialties: ["Internal Medicine", "Gastroenterology"],
     keywords: ["dispepsia", "maag", "nyeri ulu hati", "kembung", "cepat kenyang"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Sindrom nyeri/ketidaknyamanan epigastrium (nyeri ulu hati, kembung, cepat kenyang) — fungsional atau organik."],
-      diagnosticCriteria: ["≥ 1 gejala: nyeri epigastrium, rasa panas epigastrium, cepat kenyang, penuh setelah makan — ≥ 4 minggu (Rome IV untuk fungsional setelah endoskopi normal)."],
+      overview: ["Sindrom nyeri/ketidaknyamanan epigastrium (nyeri ulu hati, kembung, cepat kenyang) - fungsional atau organik."],
+      diagnosticCriteria: ["≥ 1 gejala: nyeri epigastrium, rasa panas epigastrium, cepat kenyang, penuh setelah makan - ≥ 4 minggu (Rome IV untuk fungsional setelah endoskopi normal)."],
       differentials: ["GERD", "Tukak peptik", "Kanker lambung", "Pankreatitis kronik", "Batu empedu", "Sindrom koroner (jarang)"],
       classification: ["Dispepsia organik (ulkus, keganasan, obat) vs fungsional; fungsional: sindrom nyeri epigastrium / sindrom distress pascamakan."],
       initialAssessment: ["Usia > 45–55 th, alarm symptoms (BB turun, anemia, disfagia, muntah persisten, massa) → endoskopi dini.", "Riwayat NSAID, H. pylori, alkohol, obat lain."],
@@ -45,7 +45,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "pud", slug: "pud", title: "Tukak Peptik (Peptic Ulcer Disease)", specialties: ["Internal Medicine", "Gastroenterology"],
     keywords: ["tukak peptik", "ulkus lambung", "ulkus duodenum", "pud", "h. pylori"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Defek mukosa lambung/duodenum menembus muskularis mukosa — tersering akibat H. pylori atau NSAID."],
+      overview: ["Defek mukosa lambung/duodenum menembus muskularis mukosa - tersering akibat H. pylori atau NSAID."],
       diagnosticCriteria: ["Endoskopi: ulkus aktif/penyembuhan; H. pylori dideteksi via biopsi/Urea Breath Test/antigen feses."],
       differentials: ["Dispepsia fungsional", "Kanker lambung", "GERD", "Gastritis", "Sindrom Zollinger-Ellison"],
       classification: ["Ulkus lambung vs duodenum; Forrest klasifikasi untuk risiko perdarahan (Ia–IIc)."],
@@ -64,8 +64,8 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "lgib", slug: "lgib", title: "Perdarahan Saluran Cerna Bawah (LGIB)", specialties: ["Internal Medicine", "Gastroenterology", "Surgery"],
     keywords: ["lgib", "perdarahan saluran cerna bawah", "hematokezia", "melena", "hemoroid berdarah"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Perdarahan distal ligamentum Treitz — hematokezia atau melena; sumber tersering hemoroid, divertikulosis, angiodisplasia, keganasan kolorektal."],
-      diagnosticCriteria: ["Hematokezia/melena dengan sumber distal — konfirmasi via kolonoskopi; singkirkan dulu sumber atas (10–15% LGIB sebenarnya UGIB masif)."],
+      overview: ["Perdarahan distal ligamentum Treitz - hematokezia atau melena; sumber tersering hemoroid, divertikulosis, angiodisplasia, keganasan kolorektal."],
+      diagnosticCriteria: ["Hematokezia/melena dengan sumber distal - konfirmasi via kolonoskopi; singkirkan dulu sumber atas (10–15% LGIB sebenarnya UGIB masif)."],
       differentials: ["UGIB masif", "Divertikulosis/divertikulitis", "Angiodisplasia", "Keganasan kolorektal", "Hemoroid/fisura", "IBD", "Polip pascapelektomi"],
       classification: ["Oakland score untuk risiko rebleeding/rawat; derajat keparahan klinis (hemodinamik stabil vs unstable)."],
       initialAssessment: ["Stabilisasi: 2 akses IV, resusitasi kristaloid, transfusi bila Hb < 7 g/dL (target 7–9).", "Anamnesis: onset, jumlah, warna darah, riwayat divertikulosis/hemoroid/keganasan, antikoagulan."],
@@ -83,7 +83,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "kolesistitis-akut", slug: "kolesistitis-akut", title: "Kolesistitis Akut", specialties: ["Surgery", "Internal Medicine", "Gastroenterology"],
     keywords: ["kolesistitis", "batu empedu", "kandung empedu", "nyeri kanan atas"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Inflamasi akut kandung empedu, umumnya akibat obstruksi duktus sistikus oleh batu — nyeri kanan atas, demam, leukositosis."],
+      overview: ["Inflamasi akut kandung empedu, umumnya akibat obstruksi duktus sistikus oleh batu - nyeri kanan atas, demam, leukositosis."],
       diagnosticCriteria: ["Tokyo Guidelines 2018: (A) tanda lokal (Murphy, massa/nyeri kuadran kanan atas) + (B) tanda sistemik (demam, CRP ↑, leukositosis) + (C) pencitraan (dinding tebal, distensi, batu, striae lemak) → definitif bila A+B+C atau A+B + 1 C."],
       differentials: ["Kolangitis akut", "Pankreatitis akut", "Pielonefritis/abses hepar", "UGIB/ulkus perforasi", "Pneumonia lobus bawah", "Hepatitis"],
       classification: ["Tokyo grade: I (ringan) · II (sedang: leukositosis > 18.000, massa, > 72 jam gejala) · III (berat: disfungsi organ)."],
@@ -103,13 +103,13 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "kolangitis-akut", slug: "kolangitis-akut", title: "Kolangitis Akut", specialties: ["Surgery", "Internal Medicine", "Gastroenterology"],
     keywords: ["kolangitis", "charcot triad", "reynolds pentad", "saluran empedu"], emergency: true, ageGroup: "adult",
     sections: {
-      overview: ["Infeksi saluran empedu akibat obstruksi (batu tersering, striktur, stent, tumor) — emergensi bilier; mortalitas tinggi bila terlambat."],
+      overview: ["Infeksi saluran empedu akibat obstruksi (batu tersering, striktur, stent, tumor) - emergensi bilier; mortalitas tinggi bila terlambat."],
       diagnosticCriteria: ["Tokyo 2018: (A) inflamasi sistemik (demam, CRP ↑, leukositosis) + (B) kolestasis (ikterus, ALP/GGT ↑, transaminase ↑) + (C) pencitraan (dilatasi saluran empedu, bukti etiologi) → definitif bila A + B + C."],
       differentials: ["Kolesistitis akut", "Hepatitis akut", "Abses hepar", "Pankreatitis akut", "Pielonefritis kanan"],
       classification: ["Grade I (ringan) · II (sedang: leukositosis, demam > 39°C, usia > 75, CRP tinggi) · III (berat: syok septik, disfungsi organ)."],
       initialAssessment: ["Charcot triad (nyeri + ikterus + demam) pada 50–70%; Reynolds pentad (+ syok + penurunan kesadaran) = grade III.", "Nilai hemodinamik dan tanda sepsis."],
       investigations: ["USG abdomen, fungsi hati, amilase/lipase, kultur darah, CBC, CRP."],
-      initialManagement: ["Resusitasi cairan, antibiotik IV empiris segera, koreksi elektrolit.", "Drainase bilier (ERCP ± EST, atau PTBD bila ERCP gagal) — segera pada grade II–III, elektif pada grade I yang respons antibiotik."],
+      initialManagement: ["Resusitasi cairan, antibiotik IV empiris segera, koreksi elektrolit.", "Drainase bilier (ERCP ± EST, atau PTBD bila ERCP gagal) - segera pada grade II–III, elektif pada grade I yang respons antibiotik."],
       definitiveManagement: ["ERCP + sfingterotomi + stone extraction; ulangi bila residual; kolesistektomi bila penyebab batu."],
       medications: ["Piperasilin-tazobaktam 4,5 g IV 3–4×/hari atau ceftriakson 2 g IV + metronidazol", "Kultur → sesuaikan antibiotik"],
       admissionCriteria: ["Semua kolangitis akut → rawat", "Grade II–III → ICU/HD"],
@@ -123,7 +123,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "apendisitis-akut", slug: "apendisitis-akut", title: "Apendisitis Akut", specialties: ["Surgery"],
     keywords: ["apendisitis", "nyeri perut kanan bawah", "usus buntu", "appendicitis"], emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Inflamasi apendiks vermiformis — tersering usia 10–30 tahun; diagnosis klinis + skor (Alvarado/ESR) + pencitraan bila meragukan."],
+      overview: ["Inflamasi apendiks vermiformis - tersering usia 10–30 tahun; diagnosis klinis + skor (Alvarado/ESR) + pencitraan bila meragukan."],
       diagnosticCriteria: ["Nyeri berpindah ke kuadran kanan bawah + nyeri tekan titik McBurney + tanda iritasi peritoneal; skor Alvarado ≥ 7 atau USG/CT konfirmasi."],
       differentials: ["Adenitis mesenterika", "Gastroenteritis", "Divertikulitis", "Kolik renal kanan", "KET/salpingitis (wanita usia subur)", "Invaginasi (anak)", "Perforasi ulkus"],
       classification: ["Sederhana (non-perforasi) vs perforasi; menurut patologi: kataral, supuratif, gangrenosa, perforasi."],
@@ -143,7 +143,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "ileus-obstruktif", slug: "ileus-obstruktif", title: "Ileus Obstruktif (Obstruksi Usus)", specialties: ["Surgery"],
     keywords: ["ileus", "obstruksi usus", "muntah fekal", "distensi abdomen"], emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Gangguan pasase isi usus — mekanik (adhesi, hernia, tumor, volvulus) atau paralitik; distensi, muntah, obstipasi, kolik."],
+      overview: ["Gangguan pasase isi usus - mekanik (adhesi, hernia, tumor, volvulus) atau paralitik; distensi, muntah, obstipasi, kolik."],
       diagnosticCriteria: ["Trias: nyeri kolik + muntah + obstipasi/henti flatus; foto polos/CT: dilatasi usus, air-fluid level, colon cutoff."],
       differentials: ["Ileus paralitik", "Pseudo-obstruksi (Ogilvie)", "Obstruksi usus halus (adhesi/hernia) vs kolon (tumor/volvulus)", "Peritonitis", "Obstipasi fungsional"],
       classification: ["Usus halus vs usus besar; sederhana vs strangulata (perfusi terganggu → emergensi bedah); total vs parsial."],
@@ -163,7 +163,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "hernia", slug: "hernia", title: "Hernia (Inkarserata & Strangulata)", specialties: ["Surgery"],
     keywords: ["hernia", "benjolan", "inkarserata", "strangulata", "hernia inguinalis"], emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Penonjolan organ/viskus melalui defek dinding — inguinalis tersering; komplikasi emergensi: inkarserasi (tidak dapat direduksi) dan strangulasi (iskemia)."],
+      overview: ["Penonjolan organ/viskus melalui defek dinding - inguinalis tersering; komplikasi emergensi: inkarserasi (tidak dapat direduksi) dan strangulasi (iskemia)."],
       diagnosticCriteria: ["Benjolan di lipat paha/umbilikus/dinding abdomen yang membesar saat mengejan; reducible atau tidak; inkarserasi bila tidak dapat direduksi; strangulasi bila ada nyeri hebat + tanda obstruksi/iskemia."],
       differentials: ["Hidrokel", "Limfadenopati inguinal", "Tumor testis/epididimitis (skrotum)", "Varikokel", "Abses inguinal"],
       classification: ["Inguinalis direk/indirek, femoralis, umbilicalis, insisional, epigastrik; reducible vs ireducible (inkarserata) vs strangulata."],
@@ -182,7 +182,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "peritonitis", slug: "peritonitis", title: "Peritonitis", specialties: ["Surgery", "Internal Medicine"],
     keywords: ["peritonitis", "nyeri perut menyeluruh", "defans muskuler", "abdomen akut"], emergency: true, ageGroup: "both",
     sections: {
-      overview: ["Inflamasi peritoneum — primer (SBP, dialisis) atau sekunder (perforasi viskus); nyeri abdomen menyeluruh, defans, demam."],
+      overview: ["Inflamasi peritoneum - primer (SBP, dialisis) atau sekunder (perforasi viskus); nyeri abdomen menyeluruh, defans, demam."],
       diagnosticCriteria: ["Nyeri abdomen difus + nyeri lepas + defans muskuler + demam + ileus; leukositosis; sumber primer ditemukan (perforasi, apendisitis, dll) atau SBP (asites PMN ≥ 250/mm³)."],
       differentials: ["Perforasi viskus (ulkus, apendiks, kolon)", "Pankreatitis akut berat", "SBP (sirosis)", "Peritonitis dialisis (CAPD)", "Abses intra-abdomen"],
       classification: ["Primer (SBP) vs sekunder (perforasi) vs tersier (persisten pascaoperasi)."],
@@ -202,7 +202,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "fisura-ani", slug: "fisura-ani", title: "Fisura Ani", specialties: ["Surgery", "Gastroenterology"],
     keywords: ["fisura ani", "nyeri saat bab", "darah segar", "anal fissure"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Robekan mukosa kanal ani — nyeri tajam saat defekasi + perdarahan segar; sering disertai konstipasi."],
+      overview: ["Robekan mukosa kanal ani - nyeri tajam saat defekasi + perdarahan segar; sering disertai konstipasi."],
       diagnosticCriteria: ["Anamnesis khas (nyeri robek saat BAB, darah segar di tisu) + inspeksi: fisura di garis tengah posterior (90%) / anterior (wanita)."],
       differentials: ["Hemoroid", "Abses/fistula perianal", "IBD (fisura multipel/atipikal)", "Karsinoma kanal ani", "ISK genital (nyeri saat BAB)"],
       classification: ["Akut (< 6–8 minggu) vs kronik (> 6–8 minggu, tepi fibrotik, skin tag, papila hipertrofi)."],
@@ -240,7 +240,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "lipoma", slug: "lipoma", title: "Lipoma", specialties: ["Surgery", "Dermatology"],
     keywords: ["lipoma", "benjolan lemak", "tumor jaringan lunak"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Tumor jinak jaringan lemak — benjolan lunak, mobile, tanpa nyeri; umumnya tidak memerlukan terapi."],
+      overview: ["Tumor jinak jaringan lemak - benjolan lunak, mobile, tanpa nyeri; umumnya tidak memerlukan terapi."],
       diagnosticCriteria: ["Benjolan subkutan lunak, kenyal, mobile, batas tegas, pertumbuhan lambat; ukuran 1–10 cm."],
       differentials: ["Kista epidermoid", "Liposarkoma (besar, dalam, pertumbuhan cepat)", "Hibernoma", "Limfadenopati", "Neurofibroma"],
       classification: ["Superfisial vs dalam; soliter vs multipel (lipomatosis)."],
@@ -259,7 +259,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "kista-epidermoid", slug: "kista-epidermoid", title: "Kista Epidermoid (Aterom)", specialties: ["Surgery", "Dermatology"],
     keywords: ["kista epidermoid", "aterom", "kista sebasea", "benjolan kulit"], emergency: false, ageGroup: "both",
     sections: {
-      overview: ["Kista subkutan berisi keratin dari folikel rambut — benjolan keras berisi massa putih keju dengan punctum sentral."],
+      overview: ["Kista subkutan berisi keratin dari folikel rambut - benjolan keras berisi massa putih keju dengan punctum sentral."],
       diagnosticCriteria: ["Benjolan subkutan mobile, berbatas tegas, dengan punctum; isi keratin (bukan sebum); dapat meradang/terinfeksi."],
       differentials: ["Lipoma", "Abses kulit", "Kista pilonidal", "Kista dermoid", "Karsinoma sel basal (jarang)"],
       classification: ["Tidak terinfeksi vs terinfeksi/meradang."],
@@ -278,7 +278,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "mastitis", slug: "mastitis", title: "Mastitis & Abses Payudara", specialties: ["Surgery", "Obstetrics & Gynecology"],
     keywords: ["mastitis", "abses payudara", "menyusui", "payudara merah"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Inflamasi/infeksi payudara, tersering pada ibu menyusui (S. aureus) — payudara merah, nyeri, demam; abses bila koleksi purulen."],
+      overview: ["Inflamasi/infeksi payudara, tersering pada ibu menyusui (S. aureus) - payudara merah, nyeri, demam; abses bila koleksi purulen."],
       diagnosticCriteria: ["Payudara nyeri + eritema + bengkak ± demam/malaise; abses: massa fluktuasi, USG menunjukkan koleksi."],
       differentials: ["Kanker payudara inflamasi (tanpa demam, progresif, kulit peau d'orange)", "Galaktokel", "Ektasia duktus", "Abses non-laktasional"],
       classification: ["Non-infeksi (stasis ASI) vs infeksi; laktasional vs non-laktasional; tanpa vs dengan abses."],
@@ -297,10 +297,10 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "fam", slug: "fam", title: "Fibroadenoma Mammae (FAM)", specialties: ["Surgery", "Obstetrics & Gynecology"],
     keywords: ["fibroadenoma", "fam", "benjolan payudara", "tumor payudara jinak"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Tumor jinak payudara paling umum pada wanita muda — benjolan bulat, mobile, kenyal, tidak nyeri; dipengaruhi hormon."],
+      overview: ["Tumor jinak payudara paling umum pada wanita muda - benjolan bulat, mobile, kenyal, tidak nyeri; dipengaruhi hormon."],
       diagnosticCriteria: ["Benjolan payudara mobile ('breast mouse'), batas tegas, kenyal, usia 15–35 tahun; USG/mamografi + FNA/biopsi bila meragukan."],
       differentials: ["Kanker payudara", "Kista payudara", "Hamartoma", "Galaktokel", "Abses kronik"],
-      classification: ["FAM sederhana (khas) vs kompleks (kalsifikasi, epitel hiperplastik — risiko sedikit lebih tinggi); juvenile FAM (besar, remaja)."],
+      classification: ["FAM sederhana (khas) vs kompleks (kalsifikasi, epitel hiperplastik - risiko sedikit lebih tinggi); juvenile FAM (besar, remaja)."],
       initialAssessment: ["Triple test: klinis + pencitraan (USG < 40 th, mamografi ≥ 40 th) + biopsi bila perlu (BIRADS 4)."],
       investigations: ["USG payudara, mamografi bila usia ≥ 40, FNA/core biopsy bila BIRADS 4 atau ukuran besar."],
       initialManagement: ["FAM sederhana dengan diagnosis pasti → observasi 6–12 bulanan; eksisi bila > 2–3 cm, tumbuh cepat, nyeri, atau atas permintaan pasien."],
@@ -316,7 +316,7 @@ export const EXTRA_GUIDELINES_J: GuidelineEntry[] = [
     id: "dismenore", slug: "dismenore", title: "Dismenore", specialties: ["Obstetrics & Gynecology"],
     keywords: ["dismenore", "nyeri haid", "kram menstruasi"], emergency: false, ageGroup: "adult",
     sections: {
-      overview: ["Nyeri kram perut bawah saat menstruasi — primer (tanpa patologi) atau sekunder (endometriosis, adenomiosis, mioma)."],
+      overview: ["Nyeri kram perut bawah saat menstruasi - primer (tanpa patologi) atau sekunder (endometriosis, adenomiosis, mioma)."],
       diagnosticCriteria: ["Nyeri kram siklik perut bawah selama menstruasi; primer dimulai 6–12 bulan setelah menarke; sekunder bila onset lebih lambat/progresif."],
       differentials: ["Endometriosis", "Adenomiosis", "Mioma uteri", "PID", "Kehamilan ektopik (nyeri + amenore)", "IBS"],
       classification: ["Primer (idiopatik, prostaglandin-mediated) vs sekunder (penyebab organik)."],

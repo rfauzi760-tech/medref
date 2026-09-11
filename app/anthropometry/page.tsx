@@ -11,11 +11,11 @@ import { PageHeader } from "@/components/shared";
 const GrowthChart = dynamic(() => import("@/components/growth-chart"), { ssr: false, loading: () => <div className="h-72 animate-pulse rounded-xl bg-zinc-100 dark:bg-zinc-800" /> });
 
 const INDICATOR_LABELS: Record<string, string> = {
-  "weight-for-age": "Weight-for-age",
-  "length-height-for-age": "Length/Height-for-age",
-  "weight-for-length-height": "Weight-for-length/height",
-  "bmi-for-age": "BMI-for-age",
-  "head-circumference-for-age": "Head circumference-for-age",
+  "weight-for-age": "Berat badan menurut usia",
+  "length-height-for-age": "Panjang/tinggi badan menurut usia",
+  "weight-for-length-height": "Berat badan menurut panjang/tinggi badan",
+  "bmi-for-age": "IMT menurut usia",
+  "head-circumference-for-age": "Lingkar kepala menurut usia",
 };
 
 export default function AnthropometryPage() {
@@ -48,14 +48,14 @@ export default function AnthropometryPage() {
   const copyText = useMemo(() => {
     if (!result || !showResults) return "";
     const lines = [
-      `Pediatric Anthropometry (WHO Child Growth Standards 2006)`,
-      `Sex: ${sex} · Age: ${ageLabel(ageMonths)}`,
+      `Antropometri Anak (Standar Pertumbuhan Anak WHO 2006)`,
+      `Jenis kelamin: ${sex === "male" ? "laki-laki" : "perempuan"} · Usia: ${ageLabel(ageMonths)}`,
     ];
     if (result.bmi) lines.push(`BMI: ${result.bmi.toFixed(1)} kg/m²`);
     for (const a of result.assessments) {
-      lines.push(`• ${INDICATOR_LABELS[a.indicator] ?? a.indicator}: z ${a.z} (P${a.percentile.toFixed(0)})${a.classification ? ` — ${a.classification}` : ""}`);
+      lines.push(`• ${INDICATOR_LABELS[a.indicator] ?? a.indicator}: z ${a.z} (P${a.percentile.toFixed(0)})${a.classification ? ` - ${a.classification}` : ""}`);
     }
-    lines.push("Source: WHO Child Growth Standards (2006)");
+    lines.push("Sumber: Standar Pertumbuhan Anak WHO (2006)");
     return lines.join("\n");
   }, [result, showResults, sex, ageMonths]);
 
@@ -73,7 +73,7 @@ export default function AnthropometryPage() {
     <div>
       <PageHeader
         title="Antropometri Anak"
-        description="Standar Pertumbuhan Anak WHO (2006) — z-score, persentil, klasifikasi status gizi, dan grafik pertumbuhan untuk anak 0–60 bulan."
+        description="Standar Pertumbuhan Anak WHO (2006) - z-score, persentil, klasifikasi status gizi, dan grafik pertumbuhan untuk anak 0–60 bulan."
       />
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px]">
@@ -81,7 +81,7 @@ export default function AnthropometryPage() {
         <div className="workspace-panel space-y-4 p-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Sex</label>
+              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Jenis kelamin</label>
               <div className="flex gap-2">
                 {(["male", "female"] as GrowthSex[]).map((s) => (
                   <button
@@ -90,13 +90,13 @@ export default function AnthropometryPage() {
                     onClick={() => setSex(s)}
                     className={`focus-ring flex-1 rounded-md border px-3 py-2 text-sm capitalize ${sex === s ? "border-accent bg-accent/10 text-ink" : "border-line hover:border-accent/50"}`}
                   >
-                    {s}
+                    {s === "male" ? "Laki-laki" : "Perempuan"}
                   </button>
                 ))}
               </div>
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Date of birth</label>
+              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Tanggal lahir</label>
               <input
                 type="date"
                 value={dob}
@@ -108,7 +108,7 @@ export default function AnthropometryPage() {
               />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Weight (kg)</label>
+              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Berat badan (kg)</label>
               <input
                 type="number"
                 min={0.1}
@@ -118,13 +118,13 @@ export default function AnthropometryPage() {
                   setWeight(e.target.value);
                   setTouched(true);
                 }}
-                placeholder="e.g. 9.5"
+                placeholder="mis. 9,5"
                 className="focus-ring w-full rounded-md border border-line bg-surface px-3 py-2 text-sm"
               />
             </div>
             <div>
               <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-                {isUnderTwo ? "Length (cm, recumbent)" : "Height (cm, standing)"}
+                {isUnderTwo ? "Panjang badan (cm, telentang)" : "Tinggi badan (cm, berdiri)"}
               </label>
               <input
                 type="number"
@@ -137,12 +137,12 @@ export default function AnthropometryPage() {
                   if (isUnderTwo) setLengthCm(e.target.value);
                   else setHeightCm(e.target.value);
                 }}
-                placeholder="e.g. 75"
+                placeholder="mis. 75"
                 className="focus-ring w-full rounded-md border border-line bg-surface px-3 py-2 text-sm"
               />
             </div>
             <div>
-              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Head circumference (cm, optional)</label>
+              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-200">Lingkar kepala (cm, opsional)</label>
               <input
                 type="number"
                 min={20}
@@ -153,7 +153,7 @@ export default function AnthropometryPage() {
                   setHead(e.target.value);
                   setTouched(true);
                 }}
-                placeholder="e.g. 46"
+                placeholder="mis. 46"
                 className="focus-ring w-full rounded-md border border-line bg-surface px-3 py-2 text-sm"
               />
             </div>
@@ -161,8 +161,8 @@ export default function AnthropometryPage() {
 
           {ageMonths >= 0 && !isNaN(ageMonths) && (
             <p className="text-xs text-zinc-400">
-              Age: <span className="font-medium text-zinc-600 dark:text-zinc-300">{ageLabel(ageMonths)}</span>
-              {ageMonths > 60 && <span className="ml-2 text-amber-600 dark:text-amber-400">— WHO standards cover 0–60 months only.</span>}
+              Usia: <span className="font-medium text-zinc-600 dark:text-zinc-300">{ageLabel(ageMonths)}</span>
+              {ageMonths > 60 && <span className="ml-2 text-amber-600 dark:text-amber-400"> - Standar WHO hanya mencakup usia 0–60 bulan.</span>}
             </p>
           )}
         </div>
@@ -171,7 +171,7 @@ export default function AnthropometryPage() {
         <div className="space-y-3">
           <div className="workspace-panel p-5 lg:sticky lg:top-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-200">Assessment</h2>
+              <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-200">Penilaian</h2>
               <div className="flex gap-2">
                 <CopyButton text={copyText} />
                 <PrintButton />
@@ -180,16 +180,16 @@ export default function AnthropometryPage() {
 
             {!showResults ? (
               <p className="py-8 text-center text-sm text-zinc-400">
-                Enter date of birth plus at least one measurement (weight or length/height) to assess growth.
+                Masukkan tanggal lahir dan minimal satu pengukuran berat atau panjang/tinggi badan.
               </p>
             ) : (
               <div className="mt-3 space-y-3">
                 {result!.status.stunting && <StatusPill label={`Stunting: ${result!.status.stunting}`} tone="danger" />}
                 {result!.status.wasting && <StatusPill label={`Wasting: ${result!.status.wasting}`} tone="danger" />}
-                {result!.status.underweight && <StatusPill label={`Underweight: ${result!.status.underweight}`} tone="warning" />}
-                {result!.status.overweight && <StatusPill label={`Overweight/obesity: ${result!.status.overweight}`} tone="warning" />}
-                {result!.status.thinness && <StatusPill label={`Thinness: ${result!.status.thinness}`} tone="warning" />}
-                {Object.keys(result!.status).length === 0 && <StatusPill label="Growth within normal range" tone="success" />}
+                {result!.status.underweight && <StatusPill label={`Berat badan kurang: ${result!.status.underweight}`} tone="warning" />}
+                {result!.status.overweight && <StatusPill label={`Gizi lebih/obesitas: ${result!.status.overweight}`} tone="warning" />}
+                {result!.status.thinness && <StatusPill label={`Kurus: ${result!.status.thinness}`} tone="warning" />}
+                {Object.keys(result!.status).length === 0 && <StatusPill label="Pertumbuhan dalam rentang normal" tone="success" />}
 
                 {result!.bmi && (
                   <div className="flex items-baseline justify-between rounded-lg bg-zinc-50 px-3 py-2 text-sm dark:bg-zinc-800/60">
@@ -225,7 +225,7 @@ export default function AnthropometryPage() {
       {/* Chart */}
       {showResults && chartIndicators.length > 0 && ageMonths >= 0 && ageMonths <= 60 && (
         <div className="mt-6 space-y-4">
-          <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-200">Growth charts (WHO standards)</h2>
+          <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-200">Grafik pertumbuhan (standar WHO)</h2>
           {chartIndicators.map((ind) => (
             <GrowthChart
               key={ind}

@@ -43,7 +43,7 @@ export default function ScoresPage() {
     <div>
       <PageHeader
         title="Skrining & Skor"
-        description="Skor klinis, aturan klinis, dan kriteria diagnosis yang tervalidasi. Setiap alat menghitung secara interaktif — pilih jawaban, baca interpretasi dan sumbernya."
+        description="Skor klinis, aturan klinis, dan kriteria diagnosis yang tervalidasi. Setiap alat menghitung secara interaktif - pilih jawaban, baca interpretasi dan sumbernya."
         count={SCORES.length}
         countLabel="alat"
       />
