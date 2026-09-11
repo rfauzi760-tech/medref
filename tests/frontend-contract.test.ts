@@ -31,6 +31,21 @@ describe("frontend design contract", () => {
     }
   });
 
+  test("global search uses the compact command palette treatment", () => {
+    const search = read("components/global-search.tsx");
+
+    expect(search).toContain("data-search-palette");
+    expect(search).toContain("focus-within:border-accent");
+    expect(search).toContain("max-w-2xl");
+  });
+
+  test("mounts Vercel Analytics once at the application root", () => {
+    const layout = read("app/layout.tsx");
+
+    expect(layout).toContain('@vercel/analytics/next');
+    expect(layout.match(/<Analytics \/>/g)).toHaveLength(1);
+  });
+
   test("reference indexes and reading pages use the shared system", () => {
     const indexes = [
       "app/scores/page.tsx", "app/calculators/page.tsx", "app/drugs/page.tsx",

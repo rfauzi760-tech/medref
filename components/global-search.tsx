@@ -87,15 +87,17 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 p-4 pt-[10vh] backdrop-blur-sm" onClick={() => setOpen(false)}>
+    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/55 p-3 pt-[8vh] backdrop-blur-[3px] sm:p-6 sm:pt-[12vh]" onClick={close}>
       <div
-        className="workspace-panel w-full max-w-xl overflow-hidden shadow-2xl"
+        data-search-palette
+        className="w-full max-w-2xl overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface-raised)] shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
+        aria-modal="true"
         aria-label="Pencarian global"
       >
-        <div className="flex items-center gap-2 border-b border-zinc-100 px-4 dark:border-zinc-800">
-          <Search className="h-4 w-4 shrink-0 text-zinc-400" />
+        <div className="m-2 flex h-13 items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 transition-[border-color,box-shadow] focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/15">
+          <Search className="h-5 w-5 shrink-0 text-[var(--muted)]" aria-hidden="true" />
           <input
             role="combobox"
             aria-expanded="true"
@@ -108,23 +110,26 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
             }}
             onKeyDown={onKeyDown}
             placeholder="Cari: sepsis, amoksisilin, J18, CURB…"
-            className="focus-ring h-12 w-full rounded bg-transparent text-sm outline-none placeholder:text-[var(--muted)]"
+            className="h-full min-w-0 flex-1 bg-transparent text-base text-[var(--ink)] outline-none placeholder:text-[var(--muted)]"
             autoFocus
           />
-          <button type="button" onClick={() => setOpen(false)} aria-label="Tutup pencarian" className="rounded p-1 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200">
-            <X className="h-4 w-4" />
+          <button type="button" onClick={close} aria-label="Tutup pencarian" className="focus-ring grid h-8 w-8 shrink-0 place-items-center rounded-md text-[var(--muted)] transition-colors hover:bg-black/5 hover:text-[var(--ink)] dark:hover:bg-white/5">
+            <X className="h-4 w-4" aria-hidden="true" />
           </button>
         </div>
 
-        <div id="global-search-results" className="thin-scroll max-h-[55vh] overflow-y-auto p-2">
+        <div id="global-search-results" role="listbox" className="thin-scroll max-h-[min(60vh,32rem)] overflow-y-auto border-t border-[var(--line)] p-2">
           {query.trim().length < 2 ? (
-            <p className="px-3 py-6 text-center text-sm text-zinc-400">Ketik minimal 2 karakter — mis. “sepsis”, “DBD”, “J18”.</p>
+            <div className="px-3 py-5 text-center">
+              <p className="text-sm text-[var(--muted)]">Ketik minimal 2 karakter untuk mencari seluruh pustaka klinis.</p>
+              <p className="mt-1 text-xs text-zinc-400">Coba “sepsis”, “DBD”, “J18”, atau nama obat.</p>
+            </div>
           ) : flat.length === 0 ? (
-            <p className="px-3 py-6 text-center text-sm text-zinc-400">Tidak ada hasil untuk “{query}”.</p>
+            <p className="px-3 py-6 text-center text-sm text-[var(--muted)]">Tidak ada hasil untuk “{query}”.</p>
           ) : (
             results.map((group) => (
-              <div key={group.key} className="mb-1">
-                <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-zinc-400">{group.label}</div>
+              <div key={group.key} className="mb-2 last:mb-0">
+                <div className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{group.label}</div>
                 {group.hits.map((hit) => {
                   const idx = flat.indexOf(hit);
                   return <SearchRow key={hit.id + hit.href} hit={hit} active={idx === active} onSelect={() => openHref(hit.href)} onHover={() => setActive(idx)} />;
@@ -135,10 +140,10 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
         </div>
 
         {flat.length > 0 && (
-          <div className="flex items-center gap-3 border-t border-zinc-100 px-4 py-2 text-[11px] text-zinc-400 dark:border-zinc-800">
-            <span className="flex items-center gap-1"><CornerDownLeft className="h-3 w-3" /> buka</span>
-            <span>↑↓ pilih</span>
-            <span>Esc tutup</span>
+          <div className="flex items-center gap-4 border-t border-[var(--line)] px-4 py-2 text-[10px] text-[var(--muted)]">
+            <span className="flex items-center gap-1"><CornerDownLeft className="h-3 w-3" /> Buka</span>
+            <span>↑↓ Pilih</span>
+            <span className="ml-auto">Esc Tutup</span>
           </div>
         )}
       </div>
@@ -150,9 +155,11 @@ function SearchRow({ hit, active, onSelect, onHover }: { hit: SearchHit; active:
   return (
     <button
       type="button"
+      role="option"
+      aria-selected={active}
       onMouseEnter={onHover}
       onClick={onSelect}
-      className={`flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left ${active ? "bg-accent/10 text-foreground" : "text-foreground"}`}
+      className={`focus-ring flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left transition-colors ${active ? "bg-accent/10 text-[var(--ink)]" : "text-[var(--ink)] hover:bg-black/[0.03] dark:hover:bg-white/[0.03]"}`}
     >
       <div className="min-w-0 flex-1">
         <div className="truncate text-sm font-medium">{hit.title}</div>
