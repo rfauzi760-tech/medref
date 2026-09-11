@@ -15,4 +15,19 @@ describe("frontend design contract", () => {
     }
     expect(css).not.toContain("linear-gradient(");
   });
+
+  test("shared workspace components expose semantic landmarks", () => {
+    const shell = read("components/shell.tsx");
+    const shared = read("components/shared.tsx");
+    const search = read("components/global-search.tsx");
+
+    expect(shell).toContain('aria-label="Navigasi klinis"');
+    expect(shell).toContain("data-workspace-shell");
+    expect(shell).toContain("data-active");
+    for (const className of ["workspace-panel", "section-band", "index-row"]) expect(shared).toContain(className);
+    expect(search).toContain('role="combobox"');
+    for (const path of ["components/theme-toggle.tsx", "components/action-buttons.tsx"]) {
+      expect(read(path)).toContain("aria-label");
+    }
+  });
 });
