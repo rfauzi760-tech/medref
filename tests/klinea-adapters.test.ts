@@ -21,6 +21,15 @@ describe("adapter konten kanonik Klinea", () => {
     expect(investigations).not.toContain(expect.stringContaining("Pengukuran tekanan darah Diagnosis:"));
   });
 
+  it("menjadikan Rencana Terapi A, B, dan C sebagai subjudul Diare Akut", () => {
+    const diare = GUIDELINES.find((item) => item.slug === "diare-anak");
+    const plans = (diare?.sections.initialManagement ?? []).filter(
+      (item) => typeof item !== "string" && /^Rencana Terapi [ABC]/.test(item.heading),
+    );
+    expect(plans).toHaveLength(3);
+    expect(plans.every((plan) => typeof plan !== "string" && plan.children.length > 0)).toBe(true);
+  });
+
   it("memakai katalog lengkap dan istilah Indonesia", () => {
     expect(DRUGS).toHaveLength(517);
     expect(DRUGS.find((item) => item.slug === "paracetamol")?.genericName).toBe(

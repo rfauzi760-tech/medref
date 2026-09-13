@@ -74,6 +74,25 @@ const structuredContent = (value: unknown): ClinicalContentItem[] => {
   return children;
 };
 
+const groupDiareTreatmentPlans = (items: ClinicalContentItem[]): ClinicalContentItem[] => {
+  const output: ClinicalContentItem[] = [];
+  let current: { heading: string; children: ClinicalContentItem[] } | undefined;
+
+  for (const item of items) {
+    if (typeof item === "string" && /^Rencana Terapi [ABC]\b/.test(item)) {
+      current = { heading: item.replace(/:\s*$/, ""), children: [] };
+      output.push(current);
+    } else if (current && !(typeof item === "string" && /^Antibiotik\b/.test(item))) {
+      current.children.push(item);
+    } else {
+      current = undefined;
+      output.push(item);
+    }
+  }
+
+  return output;
+};
+
 type KlineaField = {
   id?: string;
   label?: string;
@@ -319,7 +338,10 @@ export function canonicalGuidelines(legacyGuidelines: GuidelineEntry[]): Guideli
     const sections: GuidelineEntry["sections"] = {};
     for (const [sourceKey, targetKey] of Object.entries(sectionMap)) {
       if (!targetKey) continue;
-      const values = structuredContent(merged[sourceKey]);
+      const rawValues = structuredContent(merged[sourceKey]);
+      const values = guide.id === "diare-anak" && targetKey === "initialManagement"
+        ? groupDiareTreatmentPlans(rawValues)
+        : rawValues;
       if (values.length) sections[targetKey] = [...(sections[targetKey] ?? []), ...values];
     }
     const overview = structuredContent(merged.ringkas ?? merged.overview);

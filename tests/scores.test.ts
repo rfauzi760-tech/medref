@@ -199,3 +199,28 @@ describe("scoreToText", () => {
     expect(text).toContain("Skor total: 2");
   });
 });
+
+describe("Siriraj Stroke Score", () => {
+  const s = tool("siriraj-stroke-score");
+
+  it("menghitung contoh infark dan perdarahan", () => {
+    const infarction = evaluateScore(s, { consciousness: "consciousness::0", vomiting: "vomiting::0", headache: "headache::0", dbp: 80, atheroma: "atheroma::0" });
+    const hemorrhage = evaluateScore(s, { consciousness: "consciousness::2", vomiting: "vomiting::1", headache: "headache::1", dbp: 120, atheroma: "atheroma::0" });
+    expect(infarction.total).toBe(-4);
+    expect(infarction.range?.category).toBe("Mengarah ke infark");
+    expect(infarction.perVariable.find((item) => item.id === "dbp")?.points).toBe(8);
+    expect(hemorrhage.total).toBe(9);
+    expect(hemorrhage.range?.category).toBe("Mengarah ke perdarahan");
+  });
+
+  it("menggolongkan skor minus satu sampai satu sebagai tidak pasti", () => {
+    const ev = evaluateScore(s, { consciousness: "consciousness::0", vomiting: "vomiting::0", headache: "headache::0", dbp: 120, atheroma: "atheroma::0" });
+    expect(ev.total).toBe(0);
+    expect(ev.range?.category).toBe("Tidak pasti");
+  });
+
+  it("mewajibkan semua input", () => {
+    const ev = evaluateScore(s, { consciousness: "0", vomiting: "0" });
+    expect(ev.missing).toEqual(expect.arrayContaining(["Nyeri kepala", "Tekanan darah diastolik", "Penanda ateroma"]));
+  });
+});

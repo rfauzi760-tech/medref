@@ -18,4 +18,18 @@ describe("identitas dan teks antarmuka RFSmed", () => {
   it("membuat seluruh heading tebal", () => {
     expect(readFileSync("app/globals.css", "utf8")).toMatch(/h1,\s*h2,\s*h3\s*\{[\s\S]*?font-weight:\s*700/);
   });
+
+  it("menampilkan beranda ringkas dengan modul klinis terbaru", () => {
+    const home = readFileSync("app/page.tsx", "utf8");
+    expect(home).not.toContain("Keputusan klinis yang lebih jelas");
+    expect(home).not.toContain("Cakupan aktual");
+    for (const slug of [
+      "igd-toolkit", "scores", "emergency", "timer", "pediatric-emergency",
+      "ecg-atlas", "radiology-atlas", "emergency-dose", "bilirubin", "antidotes",
+      "pregnancy-drugs", "electrolytes", "ddx",
+    ]) {
+      expect(home).toContain(`"${slug}"`);
+    }
+    expect(readFileSync("app/layout.tsx", "utf8")).toContain("ModuleVisitTracker");
+  });
 });

@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Shell } from "@/components/shell";
+import { ModuleVisitTracker } from "@/components/module-visit-tracker";
 import { appName } from "@/lib/nav";
 
 const funnelSans = Funnel_Sans({
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="id" className={`${funnelSans.variable} ${funnelDisplay.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full">
         <Providers>
+          <ModuleVisitTracker />
           <Shell>{children}</Shell>
         </Providers>
         <Analytics />

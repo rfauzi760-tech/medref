@@ -1,59 +1,52 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Clock, Heart, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Clock, Heart } from "lucide-react";
 import { GlobalSearch } from "@/components/global-search";
 import { useFavorites, useRecentTools } from "@/components/use-local-store";
-import { getContentCoverage } from "@/lib/content-coverage";
-import { modules } from "@/lib/nav";
+import { appName, modules } from "@/lib/nav";
 import { SPECIALTIES } from "@/lib/specialties";
 
-const primaryModules = new Set(["scores", "calculators", "drugs", "interactions", "guidelines", "icd10"]);
+const primaryModuleSlugs = [
+  "igd-toolkit",
+  "scores",
+  "emergency",
+  "timer",
+  "pediatric-emergency",
+  "ecg-atlas",
+  "radiology-atlas",
+  "emergency-dose",
+  "bilirubin",
+  "antidotes",
+  "pregnancy-drugs",
+  "electrolytes",
+  "ddx",
+] as const;
+const primaryModules = new Set<string>(primaryModuleSlugs);
 
 export default function Home() {
   const { recent } = useRecentTools();
   const { favorites } = useFavorites();
-  const coverage = getContentCoverage();
   const visibleModules = modules.filter((module) => module.showInNav !== false);
-  const primary = visibleModules.filter((module) => primaryModules.has(module.slug));
+  const primary = primaryModuleSlugs
+    .map((slug) => modules.find((module) => module.slug === slug))
+    .filter((module) => module !== undefined);
   const secondary = visibleModules.filter((module) => !primaryModules.has(module.slug));
 
   return (
     <div className="space-y-12">
-      <section className="grid gap-8 border-b border-[var(--line)] pb-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
-        <div>
-          <span className="inline-flex rounded-md border border-accent/35 bg-accent/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Referensi klinis terbuka</span>
-          <h1 className="display-type mt-5 max-w-3xl text-4xl font-bold leading-[1.02] tracking-[-0.04em] sm:text-6xl">
-            Keputusan klinis yang lebih jelas, <span className="text-accent-strong dark:text-accent">dalam hitungan detik.</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-sm leading-6 text-[var(--muted)] sm:text-base">
-            Skor, kalkulator, dosis, panduan, ICD-10, pediatri, dan gizi dalam satu ruang kerja klinis.
-          </p>
+      <section className="grid gap-6 border-b border-[var(--line)] pb-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
+        <div className="flex items-center gap-4">
+          <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/35 bg-[#eefbf3] p-2.5 sm:h-20 sm:w-20">
+            <Image src="/rfsmed-mark.png" alt="Logo RFSmed" width={80} height={80} priority />
+          </span>
+          <h1 className="display-type text-4xl font-bold tracking-[-0.04em] sm:text-6xl">{appName}</h1>
         </div>
         <div className="workspace-panel p-3">
           <p className="mb-2 px-1 text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--muted)]">Cari seluruh pustaka</p>
           <GlobalSearch />
         </div>
-      </section>
-
-      <section aria-labelledby="coverage-title">
-        <div className="mb-4 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Cakupan aktual</p>
-            <h2 id="coverage-title" className="display-type mt-1 text-2xl font-bold">Isi yang tersedia hari ini</h2>
-          </div>
-          <ShieldCheck className="h-5 w-5 text-accent-strong dark:text-accent" aria-hidden="true" />
-        </div>
-        <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 lg:grid-cols-4">
-          {coverage.slice(0, 4).map((item) => (
-            <div key={item.label} className="border-b border-[var(--line)] p-4 last:border-b-0 sm:border-r sm:[&:nth-child(2)]:border-r-0 lg:border-b-0 lg:[&:nth-child(2)]:border-r lg:last:border-r-0">
-              <div className="display-type text-3xl font-light tabular-nums">{item.local}</div>
-              <div className="mt-1 text-xs font-medium">{item.label}</div>
-              <div className="mt-1 text-[10px] text-[var(--muted)]">{item.status === "complete" ? "Baseline tercapai" : "Koleksi bertumbuh"}</div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-2 text-[10px] leading-4 text-[var(--muted)]">Jumlah berasal dari data aplikasi. Koleksi interaksi, ICD-10, dan pangan belum mencakup seluruh inventaris pembanding.</p>
       </section>
 
       {(recent.length > 0 || favorites.length > 0) && (

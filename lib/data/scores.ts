@@ -9,6 +9,7 @@ import { EXTRA_SCORES_F } from "./scores-extra-f";
 import { EXTRA_SCORES_G } from "./scores-extra-g";
 import { EXTRA_SCORES_H } from "./scores-extra-h";
 import { EXTRA_SCORES_I } from "./scores-extra-i";
+import { SIRIRAJ_SCORE } from "./siriraj-score";
 
 /**
  * Screening, scoring and diagnostic-criteria library.
@@ -1006,6 +1007,6 @@ const RFS_SCORES: ScoreTool[] = [
   ...EXTRA_SCORES_I,
 ];
 
-export const SCORES: ScoreTool[] = canonicalScores(RFS_SCORES);
+export const SCORES: ScoreTool[] = [...canonicalScores(RFS_SCORES), SIRIRAJ_SCORE];
 
 export const SCORES_BY_SLUG: Record<string, ScoreTool> = Object.fromEntries(SCORES.map((s) => [s.slug, s]));
