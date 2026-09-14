@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { globSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
@@ -8,6 +8,11 @@ describe("identitas dan teks antarmuka RFSmed", () => {
   it("menggunakan nama RFSmed tanpa tagline merek", () => {
     expect(appName).toBe("RFSmed");
     expect(readFileSync("lib/nav.ts", "utf8")).not.toContain("appTagline");
+  });
+
+  it("tidak membiarkan favicon bawaan Vercel mengalahkan ikon RFSmed", () => {
+    expect(existsSync("app/favicon.ico")).toBe(false);
+    expect(readFileSync("app/layout.tsx", "utf8")).toContain('/rfsmed-mark.png');
   });
 
   it("tidak memakai em dash pada teks yang terlihat", () => {
