@@ -69,7 +69,7 @@ describe("frontend design contract", () => {
   });
 
   test("interactive tools share structured form language", () => {
-    const files = ["components/calculator-tool.tsx", "components/score-tool.tsx", "components/drug-view.tsx"];
+    const files = ["components/calculator-tool.tsx", "components/score-tool.tsx", "components/pediatric-dose-form.tsx"];
     for (const path of files) {
       const source = read(path);
       expect(source).toContain("section-band");
@@ -81,6 +81,7 @@ describe("frontend design contract", () => {
     expect(read(files[1])).toContain("/api/scores/");
     expect(read("app/api/scores/[slug]/route.ts")).toContain("evaluateScore");
     expect(read(files[2])).toContain("calculateDose");
+    expect(read("components/drug-view.tsx")).toContain("PediatricDoseForm");
   });
 
   test("specialized workspaces consume the shared visual system", () => {

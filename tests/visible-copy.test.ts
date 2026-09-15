@@ -37,4 +37,11 @@ describe("identitas dan teks antarmuka RFSmed", () => {
     }
     expect(readFileSync("app/layout.tsx", "utf8")).toContain("ModuleVisitTracker");
   });
+
+  it("menyediakan pintasan mode dosis obat anak", () => {
+    const nav = readFileSync("lib/nav.ts", "utf8");
+    expect(nav).toContain('name: "Dosis Obat Anak"');
+    expect(nav).toContain('href: "/drugs?mode=anak"');
+    expect(readFileSync("components/shell.tsx", "utf8")).toContain('searchParams.get("mode") === "anak"');
+  });
 });

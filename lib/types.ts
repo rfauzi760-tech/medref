@@ -195,6 +195,15 @@ export interface DrugDose {
   notes?: string[];
 }
 
+export interface DosePreparation {
+  id: string;
+  label: string;
+  drugAmount: number;
+  drugUnit: NonNullable<MgPerKgDose["doseUnit"]>;
+  carrierAmount: number;
+  carrierUnit: "mL" | "tablet" | "kapsul" | "suppositoria";
+}
+
 export interface Drug {
   id: string;
   slug: string;
@@ -210,6 +219,8 @@ export interface Drug {
   renalConsideration?: string;
   hepaticConsideration?: string;
   preparations?: string[];
+  /** Machine-readable preparations for safe dose-to-volume/unit conversion. */
+  dosePreparations?: DosePreparation[];
   pregnancy?: string;
   lactation?: string;
   notes?: string[];

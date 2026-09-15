@@ -142,6 +142,15 @@ export const modules: NavModule[] = [
     countLabel: "obat",
   },
   {
+    slug: "pediatric-drugs",
+    name: "Dosis Obat Anak",
+    description: "Regimen pediatrik, dosis berbasis berat badan, dan konversi sediaan.",
+    href: "/drugs?mode=anak",
+    icon: Baby,
+    count: CATALOG_COUNTS.drugs,
+    countLabel: "obat",
+  },
+  {
     slug: "interactions",
     name: "Interaksi Obat",
     description: "Pemeriksa interaksi obat antar pasangan obat secara berpasangan.",

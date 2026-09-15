@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { modules, appName } from "@/lib/nav";
@@ -12,10 +12,14 @@ import { ThemeToggle } from "@/components/theme-toggle";
 export function Shell({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const pediatricDrugMode = pathname.startsWith("/drugs") && searchParams.get("mode") === "anak";
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
+    if (href === "/drugs?mode=anak") return pediatricDrugMode;
+    if (href === "/drugs") return pathname.startsWith("/drugs") && !pediatricDrugMode;
+    return pathname.startsWith(href.split("?")[0]);
   };
 
   const nav = (

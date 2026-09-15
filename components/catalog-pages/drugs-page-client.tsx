@@ -4,15 +4,27 @@ import { useMemo, useState } from "react";
 import type { Drug } from "@/lib/types";
 import { PageHeader, FilterInput, ToolCard, EmptyState } from "@/components/shared";
 
-type DrugSummary = Pick<Drug, "slug" | "genericName" | "brandNames" | "drugClass" | "specialties" | "keywords" | "indications">;
+type DrugSummary = Pick<Drug, "slug" | "genericName" | "brandNames" | "drugClass" | "specialties" | "keywords" | "indications"> & {
+  hasPediatricDose: boolean;
+};
 
-export default function DrugsPageClient({ drugs, drugClasses }: { drugs: DrugSummary[]; drugClasses: string[] }) {
+export default function DrugsPageClient({
+  drugs,
+  drugClasses,
+  initialPediatricMode = false,
+}: {
+  drugs: DrugSummary[];
+  drugClasses: string[];
+  initialPediatricMode?: boolean;
+}) {
   const [q, setQ] = useState("");
   const [cls, setCls] = useState("");
+  const [pediatricOnly, setPediatricOnly] = useState(initialPediatricMode);
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
     return drugs.filter((d) => {
+      if (pediatricOnly && !d.hasPediatricDose) return false;
       if (cls && d.drugClass !== cls) return false;
       if (!query) return true;
       return (
@@ -23,17 +35,39 @@ export default function DrugsPageClient({ drugs, drugClasses }: { drugs: DrugSum
         d.indications.some((i) => i.toLowerCase().includes(query))
       );
     });
-  }, [q, cls]);
+  }, [q, cls, pediatricOnly, drugs]);
+
+  const pediatricCount = drugs.filter((drug) => drug.hasPediatricDose).length;
 
   return (
     <div>
       <PageHeader
-        title="Dosis Obat"
-        description="Referensi dosis dewasa dan anak dengan kalkulator dosis berbasis berat badan. Dosis disusun dari referensi terbitan standar; tidak pernah dikarang tanpa dasar."
-        count={drugs.length}
+        title={pediatricOnly ? "Dosis Obat Anak" : "Dosis Obat"}
+        description={pediatricOnly
+          ? "Cari regimen pediatrik, hitung dosis berbasis berat badan, dan konversikan ke sediaan yang tersedia."
+          : "Referensi dosis dewasa dan anak dengan kalkulator dosis berbasis berat badan. Dosis disusun dari referensi terbitan standar."}
+        count={pediatricOnly ? pediatricCount : drugs.length}
         countLabel="obat"
       />
-      <FilterInput value={q} onChange={setQ} placeholder="Cari obat… mis. amoksisilin, parasetamol, heparin" />
+      <div className="mb-4 inline-flex overflow-hidden rounded-lg border border-[var(--line)]" aria-label="Populasi obat">
+        <button
+          type="button"
+          aria-pressed={!pediatricOnly}
+          onClick={() => setPediatricOnly(false)}
+          className={`min-h-10 px-4 text-sm font-bold ${!pediatricOnly ? "bg-accent text-white" : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+        >
+          Semua
+        </button>
+        <button
+          type="button"
+          aria-pressed={pediatricOnly}
+          onClick={() => setPediatricOnly(true)}
+          className={`min-h-10 border-l border-[var(--line)] px-4 text-sm font-bold ${pediatricOnly ? "bg-accent text-white" : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+        >
+          Anak
+        </button>
+      </div>
+      <FilterInput value={q} onChange={setQ} placeholder="Cari nama generik, merek, kelas, atau indikasi" />
       <div className="mb-5 flex flex-wrap gap-2">
         <button
           onClick={() => setCls("")}
@@ -63,7 +97,7 @@ export default function DrugsPageClient({ drugs, drugClasses }: { drugs: DrugSum
                 slug: d.slug,
                 title: d.genericName,
                 description: `${d.drugClass} - ${d.indications.slice(0, 2).join("; ")}`,
-                href: `/drugs/${d.slug}`,
+                href: `/drugs/${d.slug}${pediatricOnly ? "?mode=anak" : ""}`,
                 specialties: d.specialties,
                 badge: d.drugClass,
               }}

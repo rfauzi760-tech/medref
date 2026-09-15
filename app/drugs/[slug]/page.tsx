@@ -15,14 +15,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function DrugPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function DrugPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ mode?: string }>;
+}) {
   const { slug } = await params;
+  const { mode } = await searchParams;
   const drug = DRUGS.find((d) => d.slug === slug);
   if (!drug) notFound();
   return (
     <div>
-      <BackLink href="/drugs" label="Semua obat" />
-      <DrugView drug={drug} />
+      <BackLink href={mode === "anak" ? "/drugs?mode=anak" : "/drugs"} label={mode === "anak" ? "Dosis obat anak" : "Semua obat"} />
+      <DrugView drug={drug} initialPediatricMode={mode === "anak"} />
     </div>
   );
 }
