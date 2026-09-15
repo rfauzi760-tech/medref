@@ -3,11 +3,13 @@
 import { useState } from "react";
 import type { DosePreparation, Drug } from "@/lib/types";
 import {
+  areDoseUnitsCompatible,
   calculateDose,
   doseToText,
   getDoseOptions,
   NEONATAL_MAX_AGE_YEARS,
   parseDosePreparations,
+  preparationMatchesRoute,
   resolveDosePopulation,
 } from "@/lib/calc/drugs";
 import { CopyButton, PrintButton } from "@/components/action-buttons";
@@ -58,7 +60,9 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
   const doseUnit = selectedEntry?.weightBased?.doseUnit ?? "mg";
   const canConvertPreparation = Boolean(selectedEntry?.weightBased);
 
-  const availablePreparations = uniquePreparations(drug).filter((item) => item.drugUnit === doseUnit);
+  const availablePreparations = uniquePreparations(drug).filter((item) =>
+    areDoseUnitsCompatible(doseUnit, item.drugUnit) && preparationMatchesRoute(item, selectedEntry?.route ?? ""),
+  );
   const manualDrugNumber = Number(manualDrugAmount);
   const manualCarrierNumber = Number(manualCarrierAmount);
   const manualPreparation: DosePreparation | undefined = preparationId === "manual" && manualDrugNumber > 0 && manualCarrierNumber > 0

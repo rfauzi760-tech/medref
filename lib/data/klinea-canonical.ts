@@ -1,5 +1,6 @@
 import "server-only";
 import content from "@/lib/generated/klinea-content.json";
+import { parseWeightBasedDose } from "@/lib/calc/drugs";
 import type {
   ClinicalContentItem,
   ClinicalSource,
@@ -263,7 +264,21 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
     const adultWeight = legacy?.doses.find((dose) => dose.population === "adult" || dose.population === "all")?.weightBased;
     const childWeight = legacy?.doses.find((dose) => dose.population === "pediatric" || dose.population === "all")?.weightBased;
     const adult = list(drug.dewasa).map((text, index) => ({ population: "adult" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? adultWeight : undefined }));
-    const child = list(drug.anak).map((text, index) => ({ population: "pediatric" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? childWeight : undefined }));
+    const child = list(drug.anak).map((text, index) => {
+      const parsedWeight = parseWeightBasedDose(text);
+      const fallbackWeight = index === 0 ? childWeight : undefined;
+      const sameRegimen = parsedWeight && fallbackWeight &&
+        parsedWeight.min === fallbackWeight.min &&
+        parsedWeight.max === (fallbackWeight.max ?? fallbackWeight.min) &&
+        parsedWeight.per === fallbackWeight.per &&
+        (parsedWeight.doseUnit ?? "mg") === (fallbackWeight.doseUnit ?? "mg");
+      return {
+        population: "pediatric" as const,
+        route: text.split(":")[0] || "Sesuai panduan",
+        text,
+        weightBased: sameRegimen ? { ...fallbackWeight, ...parsedWeight } : parsedWeight ?? fallbackWeight,
+      };
+    });
     return {
       id: drug.id,
       slug: DRUG_SLUG_ALIASES[drug.id] ?? drug.id,

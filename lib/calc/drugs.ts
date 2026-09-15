@@ -1,4 +1,4 @@
-import type { DosePopulation, DosePreparation, Drug, DrugDose } from "@/lib/types";
+import type { DosePopulation, DosePreparation, Drug, DrugDose, MgPerKgDose } from "@/lib/types";
 import { fmt, num } from "@/lib/calc/units";
 
 /**
@@ -97,37 +97,155 @@ function preparationId(drugAmount: number, drugUnit: string, carrierAmount: numb
   return `${drugAmount}-${drugUnit}-${carrierAmount}-${carrierUnit}`.toLowerCase();
 }
 
-/** Extract only unambiguous single-ingredient liquid concentrations. */
+function normalizedDrugUnit(value: string): DosePreparation["drugUnit"] {
+  const unit = value.toLowerCase();
+  return unit === "unit" || unit === "iu" ? "units" : unit as DosePreparation["drugUnit"];
+}
+
+function ascendingStrengths(value: string): number[] {
+  const values = value.split("/").map(numberFromText);
+  return values.every((item, index) => item > 0 && (index === 0 || item > values[index - 1])) ? values : [];
+}
+
+function inferredAdministration(item: string, carrierUnit: DosePreparation["carrierUnit"]): DosePreparation["administration"] {
+  if (carrierUnit === "tablet" || carrierUnit === "kapsul") return "oral";
+  if (carrierUnit === "suppositoria" || /\b(?:rektal|rectal|enema)\b/i.test(item)) return "rectal";
+  if (/\b(?:ampul|ampoule|vial|infus|injeksi|syringe)\b/i.test(item)) return "parenteral";
+  if (/\b(?:sirup|syrup|suspensi|drops?|tetes|oral)\b/i.test(item)) return "oral";
+  return undefined;
+}
+
+/** Extract unambiguous liquid concentrations and single-ingredient solid strengths. */
 export function parseDosePreparations(items: string[]): DosePreparation[] {
   const parsed: DosePreparation[] = [];
   const seen = new Set<string>();
-  const combinationStrength = /\d+(?:[.,]\d+)?\s*\/\s*\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|iu|units?)/i;
+  const pairedCombination = /\d+(?:[.,]\d+)?\s*\/\s*\d+(?:[.,]\d+)?(?:\s*(?:mg|mcg|g|iu|units?))?\s*(?:&|\+)\s*\d+(?:[.,]\d+)?\s*\/\s*\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|iu|units?)/i;
   const parenthesizedRatio = /\(\s*\d+(?:[.,]\d+)?\s*\/\s*\d+/;
   const liquid = /(\d+(?:[.,]\d+)?)\s*(mg|mcg|g|iu|units?)\s*(?:\/|per)\s*(\d+(?:[.,]\d+)?)?\s*(mL)\b/gi;
+  const sharedLiquid = /((?:\d+(?:[.,]\d+)?\s*\/\s*)+\d+(?:[.,]\d+)?)\s*(mg|mcg|g|iu|units?)\s*(?:\/|per)\s*(\d+(?:[.,]\d+)?)\s*mL\b/gi;
+  const solidForms: Array<{ pattern: RegExp; unit: DosePreparation["carrierUnit"] }> = [
+    { pattern: /\b(?:tablet|kaplet)\b/i, unit: "tablet" },
+    { pattern: /\b(?:kapsul|capsule)\b/i, unit: "kapsul" },
+    { pattern: /\b(?:supositoria|suppositoria|suppository)\b/i, unit: "suppositoria" },
+  ];
+
+  const add = (drugAmount: number, drugUnit: DosePreparation["drugUnit"], carrierAmount: number, carrierUnit: DosePreparation["carrierUnit"], sourceText: string) => {
+    if (!(drugAmount > 0) || !(carrierAmount > 0)) return;
+    const id = preparationId(drugAmount, drugUnit, carrierAmount, carrierUnit);
+    if (seen.has(id)) return;
+    seen.add(id);
+    parsed.push({
+      id,
+      label: `${drugAmount} ${drugUnit}/${carrierAmount === 1 && carrierUnit !== "mL" ? "" : `${carrierAmount} `}${carrierUnit}`,
+      drugAmount,
+      drugUnit,
+      carrierAmount,
+      carrierUnit,
+      administration: inferredAdministration(sourceText, carrierUnit),
+    });
+  };
 
   for (const item of items) {
-    if (combinationStrength.test(item) || parenthesizedRatio.test(item)) continue;
+    if (pairedCombination.test(item) || parenthesizedRatio.test(item) || /\b(?:kombinasi|komponen|elementar|salt|base)\b/i.test(item)) continue;
+    sharedLiquid.lastIndex = 0;
+    for (const match of item.matchAll(sharedLiquid)) {
+      const strengths = ascendingStrengths(match[1]);
+      if (!strengths.length) continue;
+      const drugUnit = normalizedDrugUnit(match[2]);
+      const carrierAmount = numberFromText(match[3]);
+      for (const drugAmount of strengths) add(drugAmount, drugUnit, carrierAmount, "mL", item);
+    }
+
     liquid.lastIndex = 0;
     for (const match of item.matchAll(liquid)) {
       const drugAmount = numberFromText(match[1]);
-      const rawUnit = match[2].toLowerCase();
-      const drugUnit = (rawUnit === "unit" || rawUnit === "iu" ? "units" : rawUnit) as DosePreparation["drugUnit"];
+      const drugUnit = normalizedDrugUnit(match[2]);
       const carrierAmount = match[3] ? numberFromText(match[3]) : 1;
-      if (!(drugAmount > 0) || !(carrierAmount > 0)) continue;
-      const id = preparationId(drugAmount, drugUnit, carrierAmount, "mL");
-      if (seen.has(id)) continue;
-      seen.add(id);
-      parsed.push({
-        id,
-        label: `${drugAmount} ${drugUnit}/${carrierAmount} mL`,
-        drugAmount,
-        drugUnit,
-        carrierAmount,
-        carrierUnit: "mL",
-      });
+      add(drugAmount, drugUnit, carrierAmount, "mL", item);
+    }
+
+    const form = solidForms.find(({ pattern }) => pattern.test(item));
+    if (!form) continue;
+    const strengthPattern = /((?:\d+(?:[.,]\d+)?\s*\/\s*)*\d+(?:[.,]\d+)?)\s*(mg|mcg|g|iu|units?)\b/gi;
+    for (const match of item.matchAll(strengthPattern)) {
+      const strengths = match[1].includes("/") ? ascendingStrengths(match[1]) : [numberFromText(match[1])];
+      const drugUnit = normalizedDrugUnit(match[2]);
+      for (const drugAmount of strengths) add(drugAmount, drugUnit, 1, form.unit, item);
     }
   }
   return parsed;
+}
+
+function doseUnit(value: string): NonNullable<MgPerKgDose["doseUnit"]> {
+  const normalized = value.toLowerCase();
+  return normalized === "unit" || normalized === "iu" ? "units" : normalized as NonNullable<MgPerKgDose["doseUnit"]>;
+}
+
+function convertUnit(value: number, from: NonNullable<MgPerKgDose["doseUnit"]>, to: NonNullable<MgPerKgDose["doseUnit"]>): number | undefined {
+  if (from === to) return value;
+  const toMg: Partial<Record<NonNullable<MgPerKgDose["doseUnit"]>, number>> = { mcg: 0.001, mg: 1, g: 1000 };
+  const fromFactor = toMg[from];
+  const toFactor = toMg[to];
+  return fromFactor !== undefined && toFactor !== undefined ? value * fromFactor / toFactor : undefined;
+}
+
+export function areDoseUnitsCompatible(from: NonNullable<MgPerKgDose["doseUnit"]>, to: NonNullable<MgPerKgDose["doseUnit"]>): boolean {
+  return convertUnit(1, from, to) !== undefined;
+}
+
+export function preparationMatchesRoute(preparation: DosePreparation, route: string): boolean {
+  if (!preparation.administration) return true;
+  const normalized = route.toLowerCase();
+  const accepted = new Set<DosePreparation["administration"]>();
+  if (/\b(?:oral|po)\b/.test(normalized)) accepted.add("oral");
+  if (/\b(?:iv|im|sc)\b|intravena|intramusk|subkutan|parenteral/.test(normalized)) accepted.add("parenteral");
+  if (/\bpr\b|rektal|rectal/.test(normalized)) accepted.add("rectal");
+  return accepted.size === 0 || accepted.has(preparation.administration);
+}
+
+/** Parse the first primary, non-infusion weight-based regimen from displayed dose text. */
+export function parseWeightBasedDose(text: string): MgPerKgDose | undefined {
+  const pattern = /(\d+(?:[.,]\d+)?)(?:\s*[-–]\s*(\d+(?:[.,]\d+)?))?\s*(mg|mcg|g|iu|units?)\s*\/\s*kg(?:bb)?(?:\s*\/\s*(dosis|hari|jam|menit))?/gi;
+  const matches = [...text.matchAll(pattern)].filter((match) =>
+    !/\bmaks(?:imum|imal)?\b[^.;:]{0,30}$/i.test(text.slice(Math.max(0, match.index! - 45), match.index)),
+  );
+  const match = matches[0];
+  if (!match || /^(?:jam|menit)$/i.test(match[4] ?? "")) return undefined;
+
+  const min = numberFromText(match[1]);
+  const max = match[2] ? numberFromText(match[2]) : min;
+  if (!(min > 0) || !(max >= min)) return undefined;
+  const unit = doseUnit(match[3]);
+  const per: MgPerKgDose["per"] = match[4]?.toLowerCase() === "hari" ? "day" : "dose";
+  const result: MgPerKgDose = { min, max, per, doseUnit: unit };
+  const nextMatchIndex = matches[1]?.index;
+  const semicolonIndex = text.indexOf(";", match.index);
+  const primaryEnd = [nextMatchIndex, semicolonIndex].filter((index): index is number => index !== undefined && index > match.index!).sort((a, b) => a - b)[0];
+  const primaryText = text.slice(match.index, primaryEnd);
+
+  const exactInterval = primaryText.match(/tiap\s+(\d+(?:[.,]\d+)?)\s*jam\b/i);
+  if (exactInterval) {
+    const hours = numberFromText(exactInterval[1]);
+    if (hours > 0 && 24 % hours === 0) result.frequencyPerDay = 24 / hours;
+  } else {
+    const divided = primaryText.match(/(?:terbagi|dibagi)(?:\s+menjadi)?\s+(\d+)\s*(?:dosis|kali)?\b/i);
+    if (divided) result.frequencyPerDay = numberFromText(divided[1]);
+    else if (/\bsekali sehari\b/i.test(primaryText)) result.frequencyPerDay = 1;
+    else if (/\bdua kali sehari\b/i.test(primaryText)) result.frequencyPerDay = 2;
+    else if (/\btiga kali sehari\b/i.test(primaryText)) result.frequencyPerDay = 3;
+  }
+
+  const maximum = primaryText.match(/maks(?:imum|imal)?\s*(\d+(?:[.,]\d+)?)\s*(mg|mcg|g|iu|units?)(?!\s*\/\s*kg)(?:\s*\/\s*(dosis|hari))?/i);
+  if (maximum) {
+    const converted = convertUnit(numberFromText(maximum[1]), doseUnit(maximum[2]), unit);
+    if (converted !== undefined) {
+      const maximumBasis = maximum[3]?.toLowerCase();
+      if (maximumBasis === "hari" || (!maximumBasis && per === "day")) result.maxDailyMg = converted;
+      else result.maxPerDoseMg = converted;
+      result.maxText = maximum[0];
+    }
+  }
+  return result;
 }
 
 export function pickDoseEntry(drug: Drug, inp: DoseCalculationInput): DrugDose | null {
@@ -235,11 +353,21 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   let preparationPerDoseMin: number | undefined;
   let preparationPerDoseMax: number | undefined;
   let preparationText: string | undefined;
-  if (inp.preparation && inp.preparation.drugUnit === unit && perDoseMin !== undefined && perDoseMax !== undefined) {
+  if (inp.preparation) {
+    const doseInPreparationUnitMin = perDoseMin !== undefined ? convertUnit(perDoseMin, unit, inp.preparation.drugUnit) : undefined;
+    const doseInPreparationUnitMax = perDoseMax !== undefined ? convertUnit(perDoseMax, unit, inp.preparation.drugUnit) : undefined;
+    const dailyInPreparationUnitMin = totalDailyMin !== undefined ? convertUnit(totalDailyMin, unit, inp.preparation.drugUnit) : undefined;
+    const dailyInPreparationUnitMax = totalDailyMax !== undefined ? convertUnit(totalDailyMax, unit, inp.preparation.drugUnit) : undefined;
     const carrierPerDrug = inp.preparation.carrierAmount / inp.preparation.drugAmount;
-    preparationPerDoseMin = perDoseMin * carrierPerDrug;
-    preparationPerDoseMax = perDoseMax * carrierPerDrug;
-    preparationText = `${rangeText(preparationPerDoseMin, preparationPerDoseMax)} ${inp.preparation.carrierUnit} per pemberian (${inp.preparation.label})`;
+    if (doseInPreparationUnitMin !== undefined && doseInPreparationUnitMax !== undefined) {
+      preparationPerDoseMin = doseInPreparationUnitMin * carrierPerDrug;
+      preparationPerDoseMax = doseInPreparationUnitMax * carrierPerDrug;
+      preparationText = `${rangeText(preparationPerDoseMin, preparationPerDoseMax)} ${inp.preparation.carrierUnit} per pemberian (${inp.preparation.label})`;
+    } else if (dailyInPreparationUnitMin !== undefined && dailyInPreparationUnitMax !== undefined) {
+      const dailyPreparationMin = dailyInPreparationUnitMin * carrierPerDrug;
+      const dailyPreparationMax = dailyInPreparationUnitMax * carrierPerDrug;
+      preparationText = `${rangeText(dailyPreparationMin, dailyPreparationMax)} ${inp.preparation.carrierUnit} per hari (${inp.preparation.label})`;
+    }
   }
 
   notes.push(

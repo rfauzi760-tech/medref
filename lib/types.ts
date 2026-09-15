@@ -202,6 +202,8 @@ export interface DosePreparation {
   drugUnit: NonNullable<MgPerKgDose["doseUnit"]>;
   carrierAmount: number;
   carrierUnit: "mL" | "tablet" | "kapsul" | "suppositoria";
+  /** Route inferred from the dosage form; omitted when the source is not specific. */
+  administration?: "oral" | "parenteral" | "rectal";
 }
 
 export interface Drug {
