@@ -28,6 +28,7 @@ const igdTools = [
   { id: "electrolytes", title: "Koreksi Elektrolit", subtitle: "Natrium, kalsium, kalium, magnesium", href: "/electrolytes", keywords: "defisit air hiponatremia hipokalemia" },
   { id: "ddx", title: "Mesin Diagnosis Banding", subtitle: "Prioritas diagnosis berdasarkan temuan", href: "/ddx", keywords: "differential diagnosis ddx" },
   { id: "pediatric-emergency", title: "Gawat Darurat Anak", subtitle: "Resusitasi pediatri", href: "/pediatric-emergency", keywords: "pediatric emergency anak" },
+  { id: "neonatal-resuscitation", title: "Resusitasi Neonatus", subtitle: "Skema bayi baru lahir saat persalinan", href: "/neonatal-resuscitation", keywords: "neonatal newborn asfiksia resusitasi bayi" },
   { id: "emergency", title: "Algoritma IGD", subtitle: "Alur kegawatan", href: "/emergency", keywords: "protokol emergensi" },
   { id: "timer", title: "Timer Protokol", subtitle: "Target waktu tindakan kritis", href: "/timer", keywords: "stroke pci sepsis trauma" },
   { id: "ecg-atlas", title: "Atlas EKG", subtitle: "43 pola elektrokardiografi", href: "/ecg-atlas", keywords: "curve of life irama iskemia" },

@@ -14,6 +14,7 @@ const primaryModuleSlugs = [
   "emergency",
   "timer",
   "pediatric-emergency",
+  "neonatal-resuscitation",
   "ecg-atlas",
   "radiology-atlas",
   "emergency-dose",

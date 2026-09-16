@@ -1,5 +1,9 @@
 import { describe, expect, test } from "vitest";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { NEONATAL_FLOW, NEONATAL_OXYGEN_TARGETS, NEONATAL_SOURCES } from "@/lib/neonatal-resuscitation";
+import { GUIDELINES } from "@/lib/data/guidelines";
+import { NeonatalFlowchart } from "@/components/neonatal-flowchart";
 
 describe("skema resusitasi neonatus", () => {
   test("setiap cabang bertujuan jelas dan dapat mencapai perawatan akhir", () => {
@@ -37,5 +41,27 @@ describe("skema resusitasi neonatus", () => {
     expect(NEONATAL_OXYGEN_TARGETS.map((item) => item.minute)).toEqual([2, 3, 4, 5, 10]);
     expect(NEONATAL_OXYGEN_TARGETS.map((item) => item.target)).toEqual(["65–70%", "70–75%", "75–80%", "80–85%", "85–95%"]);
     expect(NEONATAL_SOURCES.some((source) => source.url.includes("cpr.heart.org") && source.year === 2025)).toBe(true);
+  });
+
+  test("seluruh simpul dan tautan cabang muncul dalam skema aksesibel", () => {
+    const html = renderToStaticMarkup(createElement(NeonatalFlowchart));
+    expect((html.match(/data-flow-node=/g) ?? []).length).toBe(NEONATAL_FLOW.length);
+    for (const node of NEONATAL_FLOW) {
+      expect(html).toContain(`id="neonatal-${node.id}"`);
+      for (const branch of node.branches) expect(html).toContain(`href="#neonatal-${branch.to}"`);
+    }
+  });
+
+  test("panduan Asfiksia Neonatorum tidak memakai aturan lama yang bertentangan", () => {
+    const guide = GUIDELINES.find((item) => item.slug === "asfiksia-neo");
+    expect(guide).toBeDefined();
+    const classification = JSON.stringify(guide?.sections.classification ?? []);
+    const management = JSON.stringify(guide?.sections.initialManagement ?? []);
+    const investigations = JSON.stringify(guide?.sections.investigations ?? []);
+    const redFlags = JSON.stringify(guide?.sections.redFlags ?? []);
+    expect(classification).not.toMatch(/APGAR\s*[0-9]/i);
+    expect(management).toContain("30 detik ventilasi efektif");
+    expect(investigations).toContain("72 jam");
+    expect(redFlags).not.toMatch(/mekonium.*hisap trakea/i);
   });
 });

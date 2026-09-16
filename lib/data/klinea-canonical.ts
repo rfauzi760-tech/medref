@@ -349,6 +349,10 @@ export function canonicalGuidelines(legacyGuidelines: GuidelineEntry[]): Guideli
   return (content.guidelines as KlineaGuideline[]).map((guide) => {
     const normalizedName = clean(guide.name).toLowerCase();
     const legacy = byId.get(guide.id) ?? legacyGuidelines.find((item) => item.title.toLowerCase() === normalizedName);
+    // Keep the reviewed neonatal pathway and its guide aligned under the canonical route.
+    if (guide.id === "asfiksia-neo" && legacy?.slug === "asfiksia-neonatorum") {
+      return { ...legacy, id: guide.id, slug: guide.id };
+    }
     const merged: Dict = { ...guide, ...(extraById[guide.id] ?? {}) };
     const sections: GuidelineEntry["sections"] = {};
     for (const [sourceKey, targetKey] of Object.entries(sectionMap)) {

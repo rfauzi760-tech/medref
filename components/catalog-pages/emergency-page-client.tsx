@@ -13,6 +13,7 @@ export interface EmergencyPathwaySummary {
   specialties: string[];
   stepCount: number;
   redFlagCount: number;
+  href?: string;
 }
 
 export default function EmergencyPageClient({ items }: { items: EmergencyPathwaySummary[] }) {
@@ -38,7 +39,7 @@ export default function EmergencyPageClient({ items }: { items: EmergencyPathway
       <BackLink href="/igd-toolkit" label="Kembali ke Toolkit IGD" />
       <PageHeader
         title="Algoritma IGD"
-        description="Indeks alur kegawatan dari triase sampai disposisi. Setiap alur menghubungkan panduan, skor, dan kalkulator yang sudah tersedia, bukan konten baru."
+        description="Indeks alur kegawatan dari triase sampai disposisi, termasuk skema resusitasi neonatus."
         count={items.length}
         countLabel="alur"
       />
@@ -69,7 +70,7 @@ export default function EmergencyPageClient({ items }: { items: EmergencyPathway
           {filtered.map((item) => (
             <Link
               key={item.slug}
-              href={`/emergency/${item.slug}`}
+              href={item.href ?? `/emergency/${item.slug}`}
               className="index-row focus-ring group flex min-h-32 flex-col p-4 sm:odd:border-r"
             >
               <div className="flex items-start justify-between gap-2">
@@ -83,7 +84,7 @@ export default function EmergencyPageClient({ items }: { items: EmergencyPathway
               <h3 className="display-type mt-3 text-base font-bold group-hover:text-accent-strong dark:group-hover:text-accent">{item.title}</h3>
               <p className="mt-1.5 line-clamp-2 flex-1 text-xs leading-relaxed text-[var(--muted)]">{item.description}</p>
               <div className="mt-3 flex flex-wrap gap-1 text-[10px] text-[var(--muted)]">
-                <span className="rounded bg-accent/8 px-1.5 py-0.5 font-medium text-accent-strong/80 dark:text-accent/80">{item.stepCount} langkah</span>
+                <span className="rounded bg-accent/8 px-1.5 py-0.5 font-medium text-accent-strong/80 dark:text-accent/80">{item.href ? "Skema lengkap" : `${item.stepCount} langkah`}</span>
                 {item.redFlagCount > 0 && (
                   <span className="rounded bg-red-100 px-1.5 py-0.5 font-medium text-red-700 dark:bg-red-950 dark:text-red-300">{item.redFlagCount} tanda bahaya</span>
                 )}

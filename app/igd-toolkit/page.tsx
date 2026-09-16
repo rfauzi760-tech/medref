@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const toolSlugs = [
   "emergency-dose", "bilirubin", "antidotes", "pregnancy-drugs", "electrolytes",
-  "ddx", "pediatric-emergency", "emergency", "timer", "calculators",
+  "ddx", "pediatric-emergency", "neonatal-resuscitation", "emergency", "timer", "calculators",
 ];
 
 export default function IgdToolkitPage() {

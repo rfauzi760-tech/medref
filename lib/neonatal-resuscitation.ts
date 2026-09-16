@@ -71,7 +71,7 @@ export const NEONATAL_FLOW: readonly NeonatalFlowNode[] = [
     id: "ventilation",
     kind: "action",
     title: "Ventilasi tekanan positif",
-    body: ["Mulai dalam menit pertama bila apnea, megap-megap, atau denyut jantung <100/menit.", "Berikan 30–60 inflasi/menit. Pasang oksimeter preduktal dan pertimbangkan monitor jantung.", "Kenaikan denyut jantung adalah tanda utama ventilasi efektif."],
+    body: ["Mulai dalam menit pertama bila apnea, megap-megap, atau denyut jantung <100/menit.", "Berikan 30–60 inflasi/menit. Tekanan inflasi awal 20–30 cmH₂O dapat digunakan, lalu sesuaikan agar ventilasi efektif tanpa tekanan berlebihan.", "Pasang oksimeter preduktal dan pertimbangkan monitor jantung. Kenaikan denyut jantung adalah tanda utama ventilasi efektif."],
     branches: [{ label: "Evaluasi setelah ventilasi", to: "heart-rate-after-ventilation" }],
   },
   {

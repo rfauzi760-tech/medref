@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { modules } from "@/lib/nav";
+import { globalSearch } from "@/lib/search";
 
 describe("navigasi Toolkit IGD", () => {
   it("memuat hub dan seluruh modul baru dengan rute unik", () => {
@@ -14,5 +15,11 @@ describe("navigasi Toolkit IGD", () => {
     expect(modules.some((item) => item.slug === "emergency")).toBe(true);
     expect(modules.some((item) => item.slug === "ecg-atlas")).toBe(true);
     expect(modules.some((item) => item.slug === "radiology-atlas")).toBe(true);
+  });
+
+  it("menyediakan Resusitasi Neonatus sebagai modul terpisah dan hasil pencarian", () => {
+    expect(modules.find((item) => item.slug === "neonatal-resuscitation")?.href).toBe("/neonatal-resuscitation");
+    const hits = globalSearch("resusitasi neonatus").flatMap((group) => group.hits);
+    expect(hits.some((hit) => hit.href === "/neonatal-resuscitation")).toBe(true);
   });
 });
