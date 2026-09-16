@@ -131,6 +131,7 @@ const PATHWAYS: EmergencyPathway[] = [
       { kind: "guideline", ref: "stroke-hemoragik" },
       { kind: "guideline", ref: "tia" },
       { kind: "score", ref: "nihss" },
+      { kind: "score", ref: "siriraj-stroke-score" },
       { kind: "score", ref: "aspects" },
       { kind: "score", ref: "canadian-ct" },
       { kind: "score", ref: "ich-score" },

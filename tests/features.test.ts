@@ -47,6 +47,11 @@ describe("analisis gas darah", () => {
 });
 
 describe("alur IGD", () => {
+  test("alur stroke menampilkan Siriraj Stroke Score", () => {
+    const stroke = resolveAllPathways().find((entry) => entry.pathway.slug === "stroke-neurologi");
+    expect(stroke?.steps.some((step) => step.href === "/scores/siriraj-stroke-score")).toBe(true);
+  });
+
   test("slug alur unik dan setiap rujukan terselesaikan", () => {
     const slugs = EMERGENCY_PATHWAYS.map((pathway) => pathway.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
