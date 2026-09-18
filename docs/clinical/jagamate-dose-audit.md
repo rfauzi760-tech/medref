@@ -2,7 +2,7 @@
 
 Ditelaah 18 September 2026 melalui sesi pengguna yang masuk. Inventaris berisi 45 pilihan. Kolom RFSmed merujuk identitas klinis, bukan selalu ID berkas asal, karena beberapa ID katalog asal tidak cocok dengan nama obatnya. Status `tercakup` berarti entri sudah ada, bukan seluruh rincian Jaga Mate sudah setara. `Tunda` berarti angka atau konversi tambahan tidak boleh diaktifkan tanpa verifikasi.
 
-Keputusan akhir: 22 tercakup dalam katalog lama, 4 diperkaya, 1 obat baru, 18 ditunda untuk penambahan numerik. Dua pilihan garam diklofenak dan dua pilihan diazepam dipetakan ke entri induk yang sama dengan catatan rute/indikasi, bukan dihitung sebagai obat generik baru.
+Keputusan sementara: 22 tercakup dalam katalog lama, 10 diperkaya, 1 obat baru, 12 ditunda untuk penambahan numerik. Dua pilihan garam diklofenak dan dua pilihan diazepam dipetakan ke entri induk yang sama dengan catatan rute/indikasi, bukan dihitung sebagai obat generik baru.
 
 | No | Pilihan Jaga Mate | RFSmed | Temuan dan keputusan |
 |---:|---|---|---|
@@ -17,21 +17,21 @@ Keputusan akhir: 22 tercakup dalam katalog lama, 4 diperkaya, 1 obat baru, 18 di
 | 9 | Chlorpheniramine | klorfeniramin | Tercakup; pita usia perlu dipertahankan. |
 | 10 | Dimenhydrinate | dimenhidrinat | Tercakup; rute dan usia perlu pemeriksaan khusus. |
 | 11 | Diphenhydramine | difenhidramin | Tercakup; jangan gabung dosis antitusif dan antihistamin. |
-| 12 | Promethazine | difenhidramin-syr (Prometazin) | Tunda; ID katalog menyesatkan, batas usia dan risiko depresi napas perlu verifikasi. |
+| 12 | Promethazine | difenhidramin-syr (Prometazin) | Perkaya: dosis awal alergi usia ≥2 tahun dan larutan oral diverifikasi; dosis mg/kg lama tidak lagi dihitung otomatis, usia <2 tahun diblokir. ID katalog lama masih perlu migrasi aman. |
 | 13 | Amoxicillin | amoksisilin | Tercakup; tetes 100 mg/mL dan vial IV tidak otomatis cocok dengan regimen oral. |
 | 14 | Azithromycin | azitromisin | Tercakup; indikasi menentukan durasi dan maksimum. |
 | 15 | Cefadroxil | sefadroksil | Tercakup; sediaan dan rentang sudah ada. |
 | 16 | Cefixime | sefiksim | Tercakup; dosis anak sudah ada. |
 | 17 | Ceftriaxone | seftriakson | Perkaya regimen meningitis terpisah setelah verifikasi label resmi. |
-| 18 | Ciprofloxacin | siprofloksasin | Tunda; konsentrasi infus pada sumber tidak konsisten; jangan konversi oral/IV/tetes bersama. |
-| 19 | Cotrimoxazole (TMP/SMX) | kotrimoksazol | Tunda; dosis komponen TMP tidak boleh dikonversi memakai kekuatan total kombinasi. |
-| 20 | Erytromicin | eritromisin | Tunda; maksimum per pemberian pada sumber tampak tidak masuk akal. |
+| 18 | Ciprofloxacin | siprofloksasin | Perkaya: ISK komplikata/pielonefritis anak usia 1–17 tahun dipisah oral dan IV dengan label resmi; konsentrasi infus Jaga Mate yang janggal tidak digunakan. |
+| 19 | Cotrimoxazole (TMP/SMX) | kotrimoksazol | Perkaya: ISK/otitis anak usia ≥2 bulan dihitung berdasarkan TMP, dengan sediaan kombinasi yang komponen TMP-nya eksplisit. Indikasi lain tetap perlu telaah. |
+| 20 | Erytromicin | eritromisin | Perkaya: regimen oral etilsuksinat infeksi ringan-sedang tiap 6 jam dan suspensi 400 mg/5 mL diverifikasi pada label. Angka maksimum per pemberian Jaga Mate tidak digunakan. |
 | 21 | Gentamicin | gentamisin | Tunda; penyesuaian usia, ginjal, dan pemantauan kadar perlu dipisah. |
 | 22 | Levofloxacin | levofloksasin | Tunda; penggunaan anak bergantung indikasi dan usia. |
 | 23 | Metronidazole | metronidazol | Tercakup; indikasi berbeda memiliki interval berbeda. |
 | 24 | Acyclovir | asiklovir | Tercakup; oral dan IV harus dipisah. |
 | 25 | Adenosine | adenosin | Perkaya dosis eskalasi takikardia pediatrik setelah verifikasi AHA. |
-| 26 | Adrenaline | epinefrin | Tunda; konversi mL bergantung konsentrasi tepat dan rute resusitasi. |
+| 26 | Adrenaline | epinefrin | Perkaya: anafilaksis anak IM 1 mg/mL dipisah dari resusitasi IV. Batas 0,3 mg anak mengikuti sumber Indonesia; dosis lama yang memakai 0,5 mg tidak lagi dihitung otomatis. |
 | 27 | Diazepam (Kejang) | diazepam | Tunda; rute IV/rektal dan dosis maksimal berbeda. |
 | 28 | Antasida Doen | antasida | Tercakup; komposisi kombinasi produk perlu dibaca di label. |
 | 29 | Domperidone | domperidon | Tunda; risiko QT dan pembatasan usia/indikasi. |
@@ -50,7 +50,7 @@ Keputusan akhir: 22 tercakup dalam katalog lama, 4 diperkaya, 1 obat baru, 18 di
 | 42 | Acetylcysteine | nac | Tunda; regimen antidot dan mukolitik tidak boleh disatukan. |
 | 43 | Ambroxol | ambroksol | Perkaya konversi dosis tetap untuk usia 2–5 dan 6–11 tahun; sirup 15 dan 30 mg/5 mL. Jangan pakai dosis berbasis berat. |
 | 44 | Guaifenesin | guaifenesin | Tercakup; dosis berdasarkan usia. |
-| 45 | Salbutamol | salbutamol | Tunda; nebulisasi mL sumber tanpa konsentrasi produk tidak aman dikonversi. |
+| 45 | Salbutamol | salbutamol | Perkaya: dosis nebulisasi usia 2–12 tahun dan larutan pekat 2,5 mg/0,5 mL terverifikasi, dengan instruksi pengenceran; konversi oral tidak boleh dipakai. |
 
 ## Bukti primer untuk perubahan yang diaktifkan
 
@@ -59,6 +59,12 @@ Keputusan akhir: 22 tercakup dalam katalog lama, 4 diperkaya, 1 obat baru, 18 di
 - Adenosin takikardia pediatrik: [algoritme AHA/AAP 2025](https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-PALS-Tachyarrhythmia-250117.pdf). Dosis awal 0,1 mg/kg IV/IO (maksimum 6 mg), dosis berikutnya 0,2 mg/kg (maksimum 12 mg). Hanya untuk konteks algoritme PALS yang sesuai.
 - Prednisolon oral untuk eksaserbasi asma anak: [GINA 2026](https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf) menyebut 1–2 mg/kg/hari dengan batas 20 mg/hari pada usia <2 tahun, 30 mg/hari pada usia 2–5 tahun, dan 40 mg/hari pada anak lebih besar, biasanya 3–5 hari. [Label DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=93b372f7-b811-4c15-85c4-c6dbac342cb4) mencantumkan larutan oral 15 mg prednisolon basa/5 mL. Regimen antiinflamasi umum Jaga Mate tidak diaktifkan karena rentang indikasi terlalu luas.
 - Ambroksol: [label resmi AEMPS 15 mg/5 mL](https://cima.aemps.es/cima/dochtml/ft/63790/FT_63790.html) menetapkan 7,5 mg untuk usia 2–5 tahun dan 15 mg untuk usia 6–12 tahun per pemberian, hingga tiga kali sehari. [Label AEMPS 30 mg/5 mL](https://cima.aemps.es/cima/dochtml/ft/84165/FT_84165.html) memverifikasi konsentrasi sirup kuat. Konversi hanya aktif setelah pengguna memilih regimen umur yang sesuai dan memeriksa konsentrasi kemasan.
+- Kotrimoksazol: [label resmi DailyMed Sulfatrim](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b339af0b-4fa2-e8c3-e053-2995a90a6a34) menetapkan 8 mg/kg/hari trimetoprim dan 40 mg/kg/hari sulfametoksazol, dibagi 2 dosis tiap 12 jam untuk ISK/otitis anak ≥2 bulan. Suspensi berisi TMP 40 mg + SMX 200 mg per 5 mL; angka konversi harus memakai komponen TMP, bukan jumlah kedua komponen. Label juga menyatakan kontraindikasi usia <2 bulan dan penyesuaian ginjal.
+- Eritromisin etilsuksinat: [label resmi DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=86d6353c-2b58-4219-b31d-fb5b97789094) menetapkan 30–50 mg/kg/hari aktivitas eritromisin untuk infeksi ringan-sedang anak, dibagi tiap 6 jam; suspensi 200 dan 400 mg/5 mL tercantum. Angka maksimum per pemberian dari Jaga Mate tidak digunakan karena tidak sesuai konteks label.
+- Salbutamol inhalasi: [label resmi DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=953ab65b-b157-41b3-8f90-98fa9d7f20c5) menetapkan dosis awal 0,1–0,15 mg/kg untuk anak 2–12 tahun, maksimum 2,5 mg per pemberian; larutan pekat 0,5% berisi 2,5 mg/0,5 mL dan harus diencerkan hingga total 3 mL sebelum nebulisasi. Kalkulator kini menolak sediaan oral pada rute nebulisasi.
+- Prometazin: [label resmi DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bd8d1f9a-242c-440b-a5eb-a50f64a1c1d9) melarang penggunaan pada anak <2 tahun karena risiko depresi napas fatal dan menyebut 6,25–12,5 mg hingga tiga kali sehari untuk alergi anak. Larutan oral 6,25 mg/5 mL tercantum. Angka mg/kg lama dari Klinea tidak diberi konversi otomatis karena indikasinya tidak jelas.
+- Epinefrin IM anafilaksis anak: [petunjuk BPOM RI](https://e-meso.pom.go.id/web/useruploads/files/reference/2260122111801--Petunjuk%20Teknis%20Surveilans%20KIPI.pdf) menyebut 0,01 mg/kg larutan 1 mg/mL (1:1000), maksimum 0,3 mg anak, berulang setelah 5–15 menit bila perlu. Konsentrasi IM ini tidak boleh dipakai sebagai bolus IV; data lama yang memakai maksimum 0,5 mg anak dinonaktifkan sebagai hitungan.
+- Siprofloksasin: [label suspensi oral DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=905503ef-4277-44ca-aa4a-5a969a041e16) dan [label infus DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f406e796-17d9-4465-b8a7-00d966a4ba74) membedakan ISK komplikata/pielonefritis usia 1–17 tahun: oral 10–20 mg/kg tiap 12 jam (maksimum 750 mg/dosis), IV 6–10 mg/kg tiap 8 jam (maksimum 400 mg/dosis). Suspensi oral 250 mg/5 mL dan infus 2 mg/mL (200 mg/100 mL atau 400 mg/200 mL) terverifikasi. Infus diberikan selama 60 menit. Konsentrasi infus tidak konsisten dari Jaga Mate tidak dipakai.
 
 ## Masalah data asal RFSmed
 

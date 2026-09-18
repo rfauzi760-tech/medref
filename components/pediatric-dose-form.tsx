@@ -59,8 +59,9 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
   const selectedEntry = selectedDoseIndex !== undefined ? drug.doses[selectedDoseIndex] : undefined;
   const doseUnit = selectedEntry?.weightBased?.doseUnit ?? "mg";
   const canConvertPreparation = Boolean(selectedEntry?.weightBased || selectedEntry?.fixedDoseMg);
+  const curatedPreparationsOnly = drug.dosePreparations?.some((item) => item.routes?.length);
 
-  const availablePreparations = uniquePreparations(drug).filter((item) =>
+  const availablePreparations = (curatedPreparationsOnly ? drug.dosePreparations ?? [] : uniquePreparations(drug)).filter((item) =>
     areDoseUnitsCompatible(doseUnit, item.drugUnit) && preparationMatchesRoute(item, selectedEntry?.route ?? ""),
   );
   const manualDrugNumber = Number(manualDrugAmount);
@@ -82,7 +83,9 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
   const ageInvalid = explicitAgeYears !== undefined && (
     explicitAgeYears < 0 || explicitAgeYears > 120 ||
     (initialPediatricMode && explicitAgeYears >= 18) ||
+    (population === "adult" && explicitAgeYears < 18) ||
     (population === "pediatric" && explicitAgeYears >= 18) ||
+    (population === "pediatric" && explicitAgeYears < NEONATAL_MAX_AGE_YEARS) ||
     (population === "neonatal" && explicitAgeYears >= NEONATAL_MAX_AGE_YEARS)
   );
   const weightInvalid = weightNumber !== undefined && (!Number.isFinite(weightNumber) || weightNumber <= 0 || weightNumber > 300);
@@ -179,7 +182,7 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
           <select id="dose-preparation" value={preparationId} onChange={(event) => setPreparationId(event.target.value)} disabled={!canConvertPreparation} className={`${inputClass} disabled:cursor-not-allowed disabled:opacity-60`}>
             <option value="">{canConvertPreparation ? "Tanpa konversi sediaan" : "Konversi tidak tersedia"}</option>
             {availablePreparations.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}
-            <option value="manual">Masukkan konsentrasi manual</option>
+            {!curatedPreparationsOnly && <option value="manual">Masukkan konsentrasi manual</option>}
           </select>
         </div>
       </div>

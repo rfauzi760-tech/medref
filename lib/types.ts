@@ -212,7 +212,9 @@ export interface DosePreparation {
   carrierAmount: number;
   carrierUnit: "mL" | "tablet" | "kapsul" | "suppositoria";
   /** Route inferred from the dosage form; omitted when the source is not specific. */
-  administration?: "oral" | "parenteral" | "rectal";
+  administration?: "oral" | "parenteral" | "rectal" | "inhalation";
+  /** Optional exact route restriction for concentrations that differ by route (for example IM vs IV epinephrine). */
+  routes?: string[];
 }
 
 export interface Drug {

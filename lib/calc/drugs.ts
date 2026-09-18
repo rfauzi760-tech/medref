@@ -113,6 +113,7 @@ function ascendingStrengths(value: string): number[] {
 function inferredAdministration(item: string, carrierUnit: DosePreparation["carrierUnit"]): DosePreparation["administration"] {
   if (carrierUnit === "tablet" || carrierUnit === "kapsul") return "oral";
   if (carrierUnit === "suppositoria" || /\b(?:rektal|rectal|enema)\b/i.test(item)) return "rectal";
+  if (/\b(?:respules?|nebulisasi|nebulizer|inhalasi|inhalation)\b/i.test(item)) return "inhalation";
   if (/\b(?:ampul|ampoule|vial|infus|injeksi|syringe)\b/i.test(item)) return "parenteral";
   if (/\b(?:sirup|syrup|suspensi|drops?|tetes|oral)\b/i.test(item)) return "oral";
   return undefined;
@@ -149,7 +150,7 @@ export function parseDosePreparations(items: string[]): DosePreparation[] {
   };
 
   for (const item of items) {
-    if (pairedCombination.test(item) || parenthesizedRatio.test(item) || /\b(?:kombinasi|komponen|elementar|salt|base)\b/i.test(item)) continue;
+    if (pairedCombination.test(item) || parenthesizedRatio.test(item) || /\b1\s*:\s*10(?:00|000)\b/i.test(item) || /\b(?:kombinasi|komponen|elementar|salt|base)\b/i.test(item)) continue;
     sharedLiquid.lastIndex = 0;
     for (const match of item.matchAll(sharedLiquid)) {
       const strengths = ascendingStrengths(match[1]);
@@ -197,13 +198,18 @@ export function areDoseUnitsCompatible(from: NonNullable<MgPerKgDose["doseUnit"]
 }
 
 export function preparationMatchesRoute(preparation: DosePreparation, route: string): boolean {
+  if (preparation.routes?.length) {
+    const routeParts: string[] = route.toLowerCase().match(/\b(?:iv|io|im|sc|oral|po|pr)\b/g) ?? [];
+    if (!preparation.routes.some((item) => routeParts.includes(item.toLowerCase()))) return false;
+  }
   if (!preparation.administration) return true;
   const normalized = route.toLowerCase();
   const accepted = new Set<DosePreparation["administration"]>();
   if (/\b(?:oral|po)\b/.test(normalized)) accepted.add("oral");
   if (/\b(?:iv|im|sc)\b|intravena|intramusk|subkutan|parenteral/.test(normalized)) accepted.add("parenteral");
   if (/\bpr\b|rektal|rectal/.test(normalized)) accepted.add("rectal");
-  return accepted.size === 0 || accepted.has(preparation.administration);
+  if (/nebul|inhal|hirup/.test(normalized)) accepted.add("inhalation");
+  return accepted.has(preparation.administration);
 }
 
 /** Parse the first primary, non-infusion weight-based regimen from displayed dose text. */
@@ -272,6 +278,10 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   const maxWarnings: string[] = [];
   if (!entry) {
     return { entry: drug.doses[0], textOnly: true, notes: ["Data dosis belum tersedia. Periksa formularium setempat."], maxWarnings: [] };
+  }
+  const agePopulation = inp.ageYears !== undefined ? resolveDosePopulation({ ageYears: inp.ageYears }) : undefined;
+  if (agePopulation && entry.population !== "all" && entry.population !== agePopulation) {
+    return { entry, textOnly: true, notes: ["Regimen tidak sesuai kelompok usia pasien."], maxWarnings: [] };
   }
   if (entry.minAgeYears !== undefined || entry.maxAgeYears !== undefined) {
     if (inp.ageYears === undefined ||
@@ -367,20 +377,29 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   let preparationPerDoseMin: number | undefined;
   let preparationPerDoseMax: number | undefined;
   let preparationText: string | undefined;
-  if (inp.preparation) {
-    const doseInPreparationUnitMin = perDoseMin !== undefined ? convertUnit(perDoseMin, unit, inp.preparation.drugUnit) : undefined;
-    const doseInPreparationUnitMax = perDoseMax !== undefined ? convertUnit(perDoseMax, unit, inp.preparation.drugUnit) : undefined;
-    const dailyInPreparationUnitMin = totalDailyMin !== undefined ? convertUnit(totalDailyMin, unit, inp.preparation.drugUnit) : undefined;
-    const dailyInPreparationUnitMax = totalDailyMax !== undefined ? convertUnit(totalDailyMax, unit, inp.preparation.drugUnit) : undefined;
-    const carrierPerDrug = inp.preparation.carrierAmount / inp.preparation.drugAmount;
+  const preparation = inp.preparation;
+  const curatedOnly = drug.dosePreparations?.some((item) => item.routes?.length);
+  const preparationValid = preparation &&
+    Number.isFinite(preparation.drugAmount) && preparation.drugAmount > 0 &&
+    Number.isFinite(preparation.carrierAmount) && preparation.carrierAmount > 0 &&
+    areDoseUnitsCompatible(unit, preparation.drugUnit) &&
+    preparationMatchesRoute(preparation, entry.route) &&
+    (!curatedOnly || drug.dosePreparations?.some((item) => item.id === preparation.id));
+  if (preparation && !preparationValid) notes.push("Konversi sediaan tidak ditampilkan karena konsentrasi, satuan, atau rutenya tidak sesuai.");
+  if (preparation && preparationValid) {
+    const doseInPreparationUnitMin = perDoseMin !== undefined ? convertUnit(perDoseMin, unit, preparation.drugUnit) : undefined;
+    const doseInPreparationUnitMax = perDoseMax !== undefined ? convertUnit(perDoseMax, unit, preparation.drugUnit) : undefined;
+    const dailyInPreparationUnitMin = totalDailyMin !== undefined ? convertUnit(totalDailyMin, unit, preparation.drugUnit) : undefined;
+    const dailyInPreparationUnitMax = totalDailyMax !== undefined ? convertUnit(totalDailyMax, unit, preparation.drugUnit) : undefined;
+    const carrierPerDrug = preparation.carrierAmount / preparation.drugAmount;
     if (doseInPreparationUnitMin !== undefined && doseInPreparationUnitMax !== undefined) {
       preparationPerDoseMin = doseInPreparationUnitMin * carrierPerDrug;
       preparationPerDoseMax = doseInPreparationUnitMax * carrierPerDrug;
-      preparationText = `${rangeText(preparationPerDoseMin, preparationPerDoseMax)} ${inp.preparation.carrierUnit} per pemberian (${inp.preparation.label})`;
+      preparationText = `${rangeText(preparationPerDoseMin, preparationPerDoseMax)} ${preparation.carrierUnit} per pemberian (${preparation.label})`;
     } else if (dailyInPreparationUnitMin !== undefined && dailyInPreparationUnitMax !== undefined) {
       const dailyPreparationMin = dailyInPreparationUnitMin * carrierPerDrug;
       const dailyPreparationMax = dailyInPreparationUnitMax * carrierPerDrug;
-      preparationText = `${rangeText(dailyPreparationMin, dailyPreparationMax)} ${inp.preparation.carrierUnit} per hari (${inp.preparation.label})`;
+      preparationText = `${rangeText(dailyPreparationMin, dailyPreparationMax)} ${preparation.carrierUnit} per hari (${preparation.label})`;
     }
   }
 

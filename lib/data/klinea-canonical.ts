@@ -265,6 +265,8 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
     const childWeight = legacy?.doses.find((dose) => dose.population === "pediatric" || dose.population === "all")?.weightBased;
     const adult = list(drug.dewasa).map((text, index) => ({ population: "adult" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? adultWeight : undefined }));
     const child = list(drug.anak).map((text, index) => {
+      const unverifiedPromethazine = drug.id === "difenhidramin-syr";
+      const outdatedEpinephrine = drug.id === "epinefrin" && index === 0;
       const parsedWeight = parseWeightBasedDose(text);
       const fallbackWeight = index === 0 ? childWeight : undefined;
       const sameRegimen = parsedWeight && fallbackWeight &&
@@ -275,8 +277,11 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
       return {
         population: "pediatric" as const,
         route: text.split(":")[0] || "Sesuai panduan",
-        text,
-        weightBased: sameRegimen ? { ...fallbackWeight, ...parsedWeight } : parsedWeight ?? fallbackWeight,
+        text: unverifiedPromethazine ? text.replace(/hati-hati\s*<\s*2\s*th/i, "kontraindikasi <2 tahun") :
+          outdatedEpinephrine ? text.replace(/maks\s*0,5\s*mg/i, "maks 0,3 mg pada anak") : text,
+        minAgeYears: unverifiedPromethazine ? 2 : undefined,
+        weightBased: unverifiedPromethazine || outdatedEpinephrine ? undefined :
+          sameRegimen ? { ...fallbackWeight, ...parsedWeight } : parsedWeight ?? fallbackWeight,
       };
     });
     return {

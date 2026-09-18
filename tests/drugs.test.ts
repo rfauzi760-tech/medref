@@ -140,6 +140,16 @@ describe("pickDoseEntry", () => {
     expect(out.entry.indication).toBe("Sepsis neonatus");
   });
 
+  it("does not calculate an adult regimen for a child even when an index is passed directly", () => {
+    const fixture: Drug = {
+      ...drug("amoxicillin"),
+      doses: [{ population: "adult", route: "Oral", text: "20 mg/kg/dosis", weightBased: { min: 20, per: "dose" } }],
+    };
+    const result = calculateDose(fixture, { weightKg: 10, ageYears: 5, doseIndex: 0, population: "adult" });
+    expect(result.textOnly).toBe(true);
+    expect(result.perDoseMg).toBeUndefined();
+  });
+
   it("only offers dose entries compatible with the selected population", () => {
     const fixture: Drug = {
       ...drug("amoxicillin"),
@@ -211,6 +221,41 @@ describe("preparation route compatibility", () => {
     expect(preparationMatchesRoute(ampoule, "IV/IM")).toBe(true);
     expect(preparationMatchesRoute(tablet, "IV/IM")).toBe(false);
     expect(preparationMatchesRoute(tablet, "Oral")).toBe(true);
+  });
+
+  it("never offers oral products for nebulization and recognizes inhalation solution", () => {
+    const preparations = parseDosePreparations(["Respules nebulisasi 2,5 mg/2,5 mL", "Tablet 2 mg"]);
+    const respule = preparations.find((item) => item.carrierUnit === "mL")!;
+    const tablet = preparations.find((item) => item.carrierUnit === "tablet")!;
+    expect(respule.administration).toBe("inhalation");
+    expect(preparationMatchesRoute(respule, "Nebulisasi")).toBe(true);
+    expect(preparationMatchesRoute(tablet, "Nebulisasi")).toBe(false);
+    expect(preparationMatchesRoute(respule, "Oral")).toBe(false);
+  });
+
+  it("does not calculate a preparation volume when its route is incompatible", () => {
+    const drug: Drug = {
+      ...DRUGS.find((item) => item.slug === "salbutamol")!,
+      doses: [{
+        population: "pediatric", route: "Nebulisasi", text: "0,15 mg/kg per dosis",
+        weightBased: { min: 0.15, per: "dose", maxPerDoseMg: 2.5 },
+      }],
+    };
+    const tablet = parseDosePreparations(["Tablet 2 mg"])[0];
+    const result = calculateDose(drug, { weightKg: 10, ageYears: 5, preparation: tablet });
+    expect(result.perDoseMg).toBeCloseTo(1.5);
+    expect(result.preparationText).toBeUndefined();
+  });
+
+  it("keeps 1:1000 adrenaline ampoules from being inferred as an IV preparation", () => {
+    expect(parseDosePreparations(["Ampul epinefrin 1 mg/mL (1:1000)"])).toEqual([]);
+    const imPreparation = {
+      id: "epinefrin-im", label: "Epinefrin 1 mg/mL IM", drugAmount: 1,
+      drugUnit: "mg" as const, carrierAmount: 1, carrierUnit: "mL" as const,
+      administration: "parenteral" as const, routes: ["IM"],
+    };
+    expect(preparationMatchesRoute(imPreparation, "IM")).toBe(true);
+    expect(preparationMatchesRoute(imPreparation, "IV")).toBe(false);
   });
 });
 
