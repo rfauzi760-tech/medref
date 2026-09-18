@@ -280,6 +280,9 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   if (!entry) {
     return { entry: drug.doses[0], textOnly: true, notes: ["Data dosis belum tersedia. Periksa formularium setempat."], maxWarnings: [] };
   }
+  if ((entry.population === "pediatric" || entry.population === "neonatal") && inp.ageYears === undefined) {
+    return { entry, textOnly: true, notes: ["Isi usia pasien sebelum menghitung regimen anak atau neonatus."], maxWarnings: [] };
+  }
   const agePopulation = inp.ageYears !== undefined ? resolveDosePopulation({ ageYears: inp.ageYears }) : undefined;
   if (agePopulation && entry.population !== "all" && entry.population !== agePopulation) {
     return { entry, textOnly: true, notes: ["Regimen tidak sesuai kelompok usia pasien."], maxWarnings: [] };
@@ -389,10 +392,14 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
     Number.isFinite(preparation.carrierAmount) && preparation.carrierAmount > 0 &&
     areDoseUnitsCompatible(unit, preparation.drugUnit) &&
     preparationMatchesRoute(preparation, entry.route) &&
+    (preparation.minAgeYears === undefined || (inp.ageYears !== undefined && inp.ageYears >= preparation.minAgeYears)) &&
+    (preparation.maxAgeYears === undefined || (inp.ageYears !== undefined && inp.ageYears < preparation.maxAgeYears)) &&
     (!curatedOnly || drug.dosePreparations?.some((item) =>
       item.id === preparation.id && item.drugAmount === preparation.drugAmount &&
       item.drugUnit === preparation.drugUnit && item.carrierAmount === preparation.carrierAmount &&
-      item.carrierUnit === preparation.carrierUnit && item.administration === preparation.administration));
+      item.carrierUnit === preparation.carrierUnit && item.administration === preparation.administration &&
+      item.minAgeYears === preparation.minAgeYears && item.maxAgeYears === preparation.maxAgeYears &&
+      JSON.stringify(item.routes ?? []) === JSON.stringify(preparation.routes ?? [])));
   if (preparation && !preparationValid) notes.push("Konversi sediaan tidak ditampilkan karena konsentrasi, satuan, atau rutenya tidak sesuai.");
   if (preparation && preparationValid) {
     const doseInPreparationUnitMin = perDoseMin !== undefined ? convertUnit(perDoseMin, unit, preparation.drugUnit) : undefined;
@@ -442,13 +449,15 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
 /** Human-readable summary used for the copy button. */
 export function doseToText(drug: Drug, out: DoseCalculationOutput): string {
   const lines = [
-    `${drug.genericName} - ${out.entry.fixedDoseMg !== undefined ? "dosis tetap" : "dosis berbasis berat badan"}`,
+    `${drug.genericName} - ${out.textOnly ? "panduan dosis" : out.entry.fixedDoseMg !== undefined ? "dosis tetap" : "dosis berbasis berat badan"}`,
     `Rute: ${out.entry.route}${out.entry.indication ? ` (${out.entry.indication})` : ""}`,
   ];
+  if (out.textOnly) lines.push(`Panduan: ${out.entry.text}`);
   if (out.perDoseText) lines.push(`Dosis per pemberian: ${out.perDoseText}`);
   if (out.totalDailyText) lines.push(`Total harian: ${out.totalDailyText}`);
   if (out.preparationText) lines.push(`Sediaan: ${out.preparationText}`);
   for (const w of out.maxWarnings) lines.push(`⚠ ${w}`);
+  for (const note of out.notes) lines.push(`Catatan: ${note}`);
   const source = out.entry.source ?? drug.source;
   lines.push(`Sumber: ${source.org}, ${source.title} (${source.year})`);
   lines.push("Hanya alat bantu keputusan klinis. Verifikasi dengan protokol dan formularium setempat.");

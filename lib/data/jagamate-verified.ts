@@ -13,6 +13,10 @@ const AMBROXOL_LABEL = {
   org: "AEMPS", title: "Ficha técnica Ambroxol Normon 3 mg/mL", year: 2022,
   url: "https://cima.aemps.es/cima/dochtml/ft/63790/FT_63790.html",
 };
+const AMBROXOL_TABLET_LABEL = {
+  org: "AEMPS", title: "Ficha técnica Mucosan 30 mg comprimidos", year: 2022,
+  url: "https://cima.aemps.es/cima/dochtml/ft/56154/FT_56154.html",
+};
 const COTRIMOXAZOLE_LABEL = {
   org: "DailyMed", title: "Sulfatrim Pediatric Suspension", year: 2024,
   url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b339af0b-4fa2-e8c3-e053-2995a90a6a34",
@@ -69,8 +73,37 @@ const PHENYTOIN_LABEL = {
   org: "DailyMed", title: "Phenytoin Sodium Injection", year: 2024,
   url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=035a8d4e-2063-4240-83cb-d7eebcabe301",
 };
+const DIAZEPAM_INJECTION_LABEL = {
+  org: "DailyMed", title: "Diazepam Injection, USP", year: 2024,
+  url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=41044928-dd1f-40bf-1fa6-709dff559124",
+};
 
 export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
+  {
+    slug: "diazepam",
+    curatedPreparationsOnly: true,
+    dosePreparations: [{
+      id: "diazepam-iv-5mg-ml", label: "Diazepam injeksi 5 mg/mL, hanya IV",
+      drugAmount: 5, drugUnit: "mg", carrierAmount: 1, carrierUnit: "mL",
+      administration: "parenteral", routes: ["IV"],
+    }],
+    doses: [
+      {
+        population: "pediatric", route: "IV", indication: "Status epileptikus, dosis IV pertama",
+        minAgeYears: 0.25, maxAgeYears: 18,
+        text: "0,2 mg/kg IV perlahan selama 1 menit sebagai dosis pertama, maksimum 8 mg. Siapkan dukungan jalan napas dan pantau pernapasan serta tekanan darah.",
+        weightBased: { min: 0.2, per: "dose", maxPerDoseMg: 8, note: "Hanya dosis IV pertama, bukan dosis rektal atau jadwal berulang otomatis." },
+        preferredForCalculation: true, source: DIAZEPAM_INJECTION_LABEL,
+      },
+      {
+        population: "pediatric", route: "IV", indication: "Status epileptikus, dosis IV kedua bila perlu",
+        minAgeYears: 0.25, maxAgeYears: 18,
+        text: "Bila kejang berlanjut, 0,1 mg/kg IV perlahan selama 1 menit, maksimum 4 mg, 5 menit setelah dosis pertama. Pantau pernapasan dan tekanan darah.",
+        weightBased: { min: 0.1, per: "dose", maxPerDoseMg: 4, note: "Hanya dosis IV kedua setelah penilaian ulang, bukan frekuensi harian." },
+        source: DIAZEPAM_INJECTION_LABEL,
+      },
+    ],
+  },
   {
     slug: "domperidon",
     doses: [{
@@ -103,10 +136,11 @@ export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
   {
     slug: "setirizin",
     curatedPreparationsOnly: true,
-    dosePreparations: [{
-      id: "setirizin-5mg-5ml", label: "Setirizin larutan oral 5 mg/5 mL",
-      drugAmount: 5, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral",
-    }],
+    dosePreparations: [
+      { id: "setirizin-5mg-5ml", label: "Setirizin larutan oral 5 mg/5 mL", drugAmount: 5, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral" },
+      { id: "setirizin-kunyah-2.5mg", label: "Setirizin tablet kunyah 2,5 mg, usia ≥2 tahun", drugAmount: 2.5, drugUnit: "mg", carrierAmount: 1, carrierUnit: "tablet", administration: "oral", minAgeYears: 2 },
+      { id: "setirizin-kunyah-5mg", label: "Setirizin tablet kunyah 5 mg, usia ≥6 tahun", drugAmount: 5, drugUnit: "mg", carrierAmount: 1, carrierUnit: "tablet", administration: "oral", minAgeYears: 6 },
+    ],
     doses: [
       {
         population: "pediatric", route: "Oral", indication: "Rinitis alergi perenial atau urtikaria, 6–23 bulan",
@@ -289,6 +323,7 @@ export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
     dosePreparations: [
       { id: "ambroksol-15mg-5ml", label: "Ambroksol sirup 15 mg/5 mL", drugAmount: 15, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral" },
       { id: "ambroksol-30mg-5ml", label: "Ambroksol sirup 30 mg/5 mL", drugAmount: 30, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral" },
+      { id: "ambroksol-tablet-30mg-adult", label: "Ambroksol tablet 30 mg, hanya dewasa", drugAmount: 30, drugUnit: "mg", carrierAmount: 1, carrierUnit: "tablet", administration: "oral", minAgeYears: 18 },
     ],
     doses: [
       {
@@ -302,6 +337,18 @@ export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
         minAgeYears: 6, maxAgeYears: 12,
         text: "15 mg per pemberian hingga 3 kali sehari. Periksa konsentrasi sirup pada kemasan.",
         fixedDoseMg: 15, preferredForCalculation: true, source: AMBROXOL_LABEL,
+      },
+      {
+        population: "pediatric", route: "Oral", indication: "Mukolitik, usia 12–17 tahun",
+        minAgeYears: 12, maxAgeYears: 18,
+        text: "30 mg per pemberian hingga 3 kali sehari menggunakan larutan oral. Periksa konsentrasi; tablet 30 mg yang tercantum di sini hanya berlabel untuk dewasa.",
+        fixedDoseMg: 30, preferredForCalculation: true, source: AMBROXOL_LABEL,
+      },
+      {
+        population: "adult", route: "Oral", indication: "Mukolitik dewasa, dosis awal",
+        minAgeYears: 18,
+        text: "30 mg oral tiga kali sehari sebagai dosis awal; tinjau ulang setelah 2–3 hari dan kurangi frekuensi menurut label produk. Tablet 30 mg hanya untuk dewasa.",
+        fixedDoseMg: 30, preferredForCalculation: true, source: AMBROXOL_TABLET_LABEL,
       },
     ],
   },

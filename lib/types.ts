@@ -219,6 +219,9 @@ export interface DosePreparation {
   administration?: "oral" | "parenteral" | "rectal" | "inhalation";
   /** Optional exact route restriction for concentrations that differ by route (for example IM vs IV epinephrine). */
   routes?: string[];
+  /** Product-label age limits, distinct from the regimen's age limits. */
+  minAgeYears?: number;
+  maxAgeYears?: number;
 }
 
 export interface Drug {

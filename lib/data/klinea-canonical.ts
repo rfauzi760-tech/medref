@@ -275,6 +275,20 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
       const outdatedEpinephrine = drug.id === "epinefrin" && index === 0;
       const unverifiedChlorpheniramine = drug.id === "klorfeniramin";
       const unsafeLegacyCalculation = ["fenitoin", "domperidon", "ondansetron-anak"].includes(drug.id);
+      const unverifiedLegacyCalculation = ["diazepam", "gentamisin", "metamizol", "diklofenak", "asam-valproat"].includes(drug.id);
+      const saferInstruction = drug.id === "diazepam"
+        ? index === 0
+          ? "Kejang akut IV: dosis pertama dan kedua memiliki batas berbeda. Pilih regimen IV terverifikasi; jangan gunakan angka rektal untuk IV."
+          : "Diazepam rektal untuk klaster kejang memakai pita usia dan pembulatan sediaan dosis tunggal; dosis tidak boleh disamakan dengan IV."
+        : drug.id === "gentamisin"
+          ? "Dosis gentamisin anak harus mengikuti jadwal produk, usia, fungsi ginjal, dan kadar obat. Jangan gunakan angka sekali sehari ini tanpa protokol dan pemantauan."
+          : drug.id === "metamizol"
+            ? "Dosis metamizol anak bergantung rute dan produk serta memerlukan penilaian risiko agranulositosis. Angka lama tidak dihitung otomatis."
+            : drug.id === "diklofenak"
+              ? "Dosis diklofenak anak harus dibedakan menurut garam, sediaan, usia, dan indikasi. Angka lama tidak dihitung otomatis."
+              : drug.id === "asam-valproat"
+                ? "Valproat untuk epilepsi anak memerlukan titrasi individual, pemeriksaan fungsi hati, dan penilaian kontraindikasi. Angka lama tidak dihitung otomatis."
+                : undefined;
       const parsedWeight = parseWeightBasedDose(text);
       const fallbackWeight = index === 0 ? childWeight : undefined;
       const sameRegimen = parsedWeight && fallbackWeight &&
@@ -288,9 +302,9 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
         text: drug.id === "fenitoin" ? "Dosis muat fenitoin IV anak memerlukan laju infus dan pemantauan kardiopulmoner; pilih regimen terverifikasi di bawah." :
           drug.id === "domperidon" ? "Domperidon tidak lagi berizin untuk anak <12 tahun atau BB <35 kg menurut MHRA; pertimbangkan alternatif dan verifikasi aturan setempat." :
           unverifiedPromethazine ? text.replace(/hati-hati\s*<\s*2\s*th/i, "kontraindikasi <2 tahun") :
-          outdatedEpinephrine ? text.replace(/maks\s*0,5\s*mg/i, "maks 0,3 mg pada anak") : text,
+          outdatedEpinephrine ? text.replace(/maks\s*0,5\s*mg/i, "maks 0,3 mg pada anak") : saferInstruction ?? text,
         minAgeYears: unverifiedPromethazine ? 2 : undefined,
-        weightBased: unverifiedPromethazine || outdatedEpinephrine || unverifiedChlorpheniramine || unsafeLegacyCalculation ? undefined :
+        weightBased: unverifiedPromethazine || outdatedEpinephrine || unverifiedChlorpheniramine || unsafeLegacyCalculation || unverifiedLegacyCalculation ? undefined :
           sameRegimen ? { ...fallbackWeight, ...parsedWeight } : parsedWeight,
       };
     });

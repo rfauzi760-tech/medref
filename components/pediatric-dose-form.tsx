@@ -63,7 +63,9 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
     (!curatedPreparationsOnly || Boolean(drug.dosePreparations?.length));
 
   const availablePreparations = (curatedPreparationsOnly ? drug.dosePreparations ?? [] : uniquePreparations(drug)).filter((item) =>
-    areDoseUnitsCompatible(doseUnit, item.drugUnit) && preparationMatchesRoute(item, selectedEntry?.route ?? ""),
+    areDoseUnitsCompatible(doseUnit, item.drugUnit) && preparationMatchesRoute(item, selectedEntry?.route ?? "") &&
+    (item.minAgeYears === undefined || (resolvedAgeYears !== undefined && resolvedAgeYears >= item.minAgeYears)) &&
+    (item.maxAgeYears === undefined || (resolvedAgeYears !== undefined && resolvedAgeYears < item.maxAgeYears)),
   );
   const manualDrugNumber = Number(manualDrugAmount);
   const manualCarrierNumber = Number(manualCarrierAmount);
@@ -80,6 +82,17 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
   const selectedPreparation = preparationId === "manual"
     ? manualPreparation
     : availablePreparations.find((item) => item.id === preparationId);
+  const visiblePreparationId = preparationId === "manual" && !curatedPreparationsOnly
+    ? "manual" : selectedPreparation?.id ?? "";
+  const conversionHelp = !selectedEntry?.weightBased && !selectedEntry?.fixedDoseMg
+    ? "Regimen ini belum memiliki dosis numerik terverifikasi untuk konversi."
+    : curatedPreparationsOnly && !drug.dosePreparations?.length
+      ? "Kadar zat aktif pada sediaan belum terverifikasi, jadi konversi tidak dihitung."
+      : curatedPreparationsOnly && availablePreparations.length === 0
+        ? "Tidak ada sediaan terverifikasi yang cocok dengan usia dan rute ini."
+        : availablePreparations.length === 0
+          ? "Tidak ada sediaan terdaftar yang cocok. Periksa label sebelum memasukkan konsentrasi manual."
+          : undefined;
 
   const ageInvalid = explicitAgeYears !== undefined && (
     explicitAgeYears < 0 || explicitAgeYears > 120 ||
@@ -180,11 +193,12 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
 
         <div>
           <label htmlFor="dose-preparation" className={labelClass}>Sediaan untuk konversi</label>
-          <select id="dose-preparation" value={preparationId} onChange={(event) => setPreparationId(event.target.value)} disabled={!canConvertPreparation} className={`${inputClass} disabled:cursor-not-allowed disabled:opacity-60`}>
+          <select id="dose-preparation" value={visiblePreparationId} onChange={(event) => setPreparationId(event.target.value)} disabled={!canConvertPreparation} aria-describedby={conversionHelp ? "dose-preparation-help" : undefined} className={`${inputClass} disabled:cursor-not-allowed disabled:opacity-60`}>
             <option value="">{canConvertPreparation ? "Tanpa konversi sediaan" : "Konversi tidak tersedia"}</option>
             {availablePreparations.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}
             {!curatedPreparationsOnly && <option value="manual">Masukkan konsentrasi manual</option>}
           </select>
+          {conversionHelp && <p id="dose-preparation-help" className="mt-1 text-xs leading-relaxed text-[var(--muted)]">{conversionHelp}</p>}
         </div>
       </div>
 

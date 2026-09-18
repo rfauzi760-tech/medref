@@ -21,6 +21,12 @@ function drug(slug: string) {
 
 describe("amoxicillin pediatric dosing", () => {
   const amox = drug("amoxicillin");
+  it("requires age before calculating a pediatric regimen", () => {
+    const pediatricIndex = amox.doses.findIndex((dose) => dose.population === "pediatric");
+    const out = calculateDose(amox, { weightKg: 18, population: "pediatric", doseIndex: pediatricIndex });
+    expect(out.textOnly).toBe(true);
+    expect(out.notes.join(" ")).toContain("usia");
+  });
   it("uses the canonical 25–50 mg/kg/day range for an 18 kg child", () => {
     const out = calculateDose(amox, { weightKg: 18, ageYears: 5 });
     expect(out.textOnly).toBe(false);
@@ -77,6 +83,15 @@ describe("adult text dosing", () => {
 });
 
 describe("doseToText", () => {
+  it("includes the actual instruction for a text-only regimen", () => {
+    const item = drug("nac");
+    const index = item.doses.findIndex((entry) => entry.population === "adult" && entry.route === "Parasetamol");
+    const out = calculateDose(item, { ageYears: 30, doseIndex: index, weightKg: 60 });
+    expect(out.textOnly).toBe(true);
+    const copied = doseToText(item, out);
+    expect(copied).toContain("Keracunan parasetamol");
+    expect(copied).not.toContain("dosis berbasis berat badan");
+  });
   it("produces a structured summary with source", () => {
     const amox = drug("amoxicillin");
     const out = calculateDose(amox, { weightKg: 18, ageYears: 5 });

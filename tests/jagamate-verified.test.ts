@@ -55,6 +55,10 @@ describe("verified Jaga Mate enrichments", () => {
     expect(result.preparationPerDoseMin).toBe(2.5);
     const tablet = parseDosePreparations(drug.preparations ?? []).find((item) => item.carrierUnit === "tablet")!;
     expect(calculateDose(drug, { ageYears: 4, doseIndex: selected.index, preparation: tablet }).preparationText).toBeUndefined();
+    const chewable = drug.dosePreparations?.find((item) => item.id === "setirizin-kunyah-2.5mg");
+    expect(calculateDose(drug, { ageYears: 4, doseIndex: selected.index, preparation: chewable }).preparationPerDoseMin).toBe(1);
+    const olderChewable = drug.dosePreparations?.find((item) => item.id === "setirizin-kunyah-5mg");
+    expect(calculateDose(drug, { ageYears: 4, doseIndex: selected.index, preparation: olderChewable }).preparationText).toBeUndefined();
     expect(calculateDose(drug, { ageYears: 7, doseIndex: selected.index }).textOnly).toBe(true);
   });
 
@@ -113,6 +117,40 @@ describe("verified Jaga Mate enrichments", () => {
     expect(child.totalDailyMg).toBeUndefined();
     expect(calculateDose(drug, { ageYears: 0.02, weightKg: 3, doseIndex: childIndex }).textOnly).toBe(true);
   });
+  it("uses labeled pediatric IV diazepam first and second doses without rectal substitution", () => {
+    const drug = find("diazepam");
+    const firstIndex = drug.doses.findIndex((dose) => dose.indication === "Status epileptikus, dosis IV pertama");
+    const secondIndex = drug.doses.findIndex((dose) => dose.indication === "Status epileptikus, dosis IV kedua bila perlu");
+    expect(firstIndex).toBeGreaterThanOrEqual(0);
+    expect(secondIndex).toBeGreaterThanOrEqual(0);
+    const injection = drug.dosePreparations?.find((item) => item.id === "diazepam-iv-5mg-ml");
+    expect(injection).toBeDefined();
+    const first = calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: firstIndex, preparation: injection });
+    const second = calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: secondIndex, preparation: injection });
+    expect(first.perDoseMg).toBe(4);
+    expect(second.perDoseMg).toBe(2);
+    expect(first.preparationPerDoseMin).toBe(0.8);
+    expect(first.totalDailyMg).toBeUndefined();
+    expect(calculateDose(drug, { weightKg: 100, ageYears: 16, doseIndex: firstIndex }).perDoseMg).toBe(8);
+    expect(calculateDose(drug, { weightKg: 100, ageYears: 16, doseIndex: secondIndex }).perDoseMg).toBe(4);
+    expect(calculateDose(drug, { weightKg: 6, ageYears: 0.1, doseIndex: firstIndex }).textOnly).toBe(true);
+    const rectalIndex = drug.doses.findIndex((dose) => dose.population === "pediatric" && dose.route === "Rektal");
+    expect(calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: rectalIndex }).textOnly).toBe(true);
+    expect(calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: firstIndex,
+      preparation: { ...injection!, administration: "rectal" } }).preparationText).toBeUndefined();
+    expect(calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: firstIndex,
+      preparation: { ...injection!, routes: ["IM"] } }).preparationText).toBeUndefined();
+    expect(calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: firstIndex,
+      preparation: { ...injection!, routes: undefined } }).preparationText).toBeUndefined();
+  });
+  it("withholds unverified legacy calculations for route- or monitoring-sensitive drugs", () => {
+    for (const slug of ["gentamisin", "metamizol", "diklofenak", "asam-valproat"]) {
+      const drug = find(slug);
+      for (const option of getDoseOptions(drug, "pediatric", 8)) {
+        expect(calculateDose(drug, { weightKg: 25, ageYears: 8, doseIndex: option.index }).textOnly).toBe(true);
+      }
+    }
+  });
   it("adds systemic prednisolone separately from ophthalmic prednisolone", () => {
     const drug = find("prednisolon-sistemik");
     expect(drug.genericName).toBe("Prednisolon oral");
@@ -151,6 +189,12 @@ describe("verified Jaga Mate enrichments", () => {
     const tablet = parseDosePreparations(drug.preparations ?? []).find((item) => item.carrierUnit === "tablet")!;
     expect(calculateDose(drug, { ageYears: 5, doseIndex: index, preparation: tablet }).preparationText).toBeUndefined();
     expect(calculateDose(drug, { ageYears: 1, doseIndex: index, preparation: standard }).textOnly).toBe(true);
+    const adultTablet = preparations.find((item) => item.carrierUnit === "tablet")!;
+    const adultIndex = getDoseOptions(drug, "adult", 30)[0].index;
+    const adolescentIndex = getDoseOptions(drug, "pediatric", 15)[0].index;
+    expect(calculateDose(drug, { ageYears: 30, doseIndex: adultIndex, preparation: adultTablet }).preparationPerDoseMin).toBe(1);
+    expect(calculateDose(drug, { ageYears: 15, doseIndex: adolescentIndex, preparation: adultTablet }).preparationText).toBeUndefined();
+    expect(calculateDose(drug, { ageYears: 15, doseIndex: adolescentIndex, preparation: standard }).preparationPerDoseMin).toBe(10);
   });
 
   it("adds labeled 160 mg/5 mL oral paracetamol without losing old preparations", () => {
