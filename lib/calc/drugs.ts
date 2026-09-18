@@ -88,7 +88,8 @@ export function getDoseOptions(drug: Drug, population?: DoseCalculationInput["po
       indication: entry.indication,
       label: `${POPULATION_LABELS[entry.population]} · ${entry.indication ?? "Dosis umum"} · ${entry.route}`,
     }];
-  });
+  }).sort((left, right) => ageYears === undefined ? 0 :
+    Number(Boolean(drug.doses[right.index].preferredForCalculation)) - Number(Boolean(drug.doses[left.index].preferredForCalculation)));
 }
 
 function numberFromText(value: string): number {
@@ -281,12 +282,13 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   }
   const w = num(inp.weightKg);
   const wb = entry.weightBased;
+  const fixedDoseMg = entry.fixedDoseMg;
 
-  if (!wb) {
+  if (!wb && !(fixedDoseMg && fixedDoseMg > 0)) {
     return { entry, textOnly: true, notes: [...(entry.notes ?? [])], maxWarnings: [] };
   }
 
-  if (!(w > 0)) {
+  if (wb && !(w > 0)) {
     return {
       entry,
       textOnly: true,
@@ -295,7 +297,7 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
     };
   }
 
-  const unit = wb.doseUnit ?? "mg";
+  const unit = wb?.doseUnit ?? "mg";
   let perDoseMin: number | undefined;
   let perDoseMax: number | undefined;
   let totalDailyMin: number | undefined;
@@ -305,7 +307,10 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
     if (!maxWarnings.includes(message)) maxWarnings.push(message);
   };
 
-  if (wb.per === "dose") {
+  if (fixedDoseMg !== undefined) {
+    perDoseMin = fixedDoseMg;
+    perDoseMax = fixedDoseMg;
+  } else if (wb && wb.per === "dose") {
     perDoseMin = w * wb.min;
     perDoseMax = w * (wb.max ?? wb.min);
     if (wb.maxPerDoseMg && perDoseMax > wb.maxPerDoseMg) {
@@ -323,7 +328,7 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
       totalDailyMin = perDoseMin * wb.frequencyPerDay;
       totalDailyMax = perDoseMax * wb.frequencyPerDay;
     }
-  } else {
+  } else if (wb) {
     totalDailyMin = w * wb.min;
     totalDailyMax = w * (wb.max ?? wb.min);
     if (wb.maxDailyMg && totalDailyMax > wb.maxDailyMg) {
@@ -353,7 +358,7 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   const perDoseMg = midpoint(perDoseMin, perDoseMax);
   const totalDailyMg = midpoint(totalDailyMin, totalDailyMax);
   const perDoseText = perDoseMin !== undefined && perDoseMax !== undefined
-    ? `${rangeText(perDoseMin, perDoseMax)} ${unit}${wb.frequencyPerDay ? ` ×${wb.frequencyPerDay}/hari` : ""}`
+    ? `${rangeText(perDoseMin, perDoseMax)} ${unit}${wb?.frequencyPerDay ? ` ×${wb.frequencyPerDay}/hari` : ""}`
     : undefined;
   const totalDailyText = totalDailyMin !== undefined && totalDailyMax !== undefined
     ? `${rangeText(totalDailyMin, totalDailyMax)} ${unit}/hari`
@@ -379,11 +384,13 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
     }
   }
 
-  notes.push(
-    `Berdasarkan ${fmt(wb.min, 2)}${wb.max !== undefined ? ` sampai ${fmt(wb.max, 2)}` : ""} ${unit}/kg${wb.per === "day" ? "/hari" : ""}. Gunakan titik dalam rentang sesuai indikasi dan kondisi klinis.`,
-  );
-  if (wb.maxText) notes.push(wb.maxText);
-  if (wb.note) notes.push(wb.note);
+  if (wb) {
+    notes.push(
+      `Berdasarkan ${fmt(wb.min, 2)}${wb.max !== undefined ? ` sampai ${fmt(wb.max, 2)}` : ""} ${unit}/kg${wb.per === "day" ? "/hari" : ""}. Gunakan titik dalam rentang sesuai indikasi dan kondisi klinis.`,
+    );
+    if (wb.maxText) notes.push(wb.maxText);
+    if (wb.note) notes.push(wb.note);
+  }
   if (entry.notes) notes.push(...entry.notes);
 
   return {
@@ -408,7 +415,7 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
 /** Human-readable summary used for the copy button. */
 export function doseToText(drug: Drug, out: DoseCalculationOutput): string {
   const lines = [
-    `${drug.genericName} - dosis berbasis berat badan`,
+    `${drug.genericName} - ${out.entry.fixedDoseMg !== undefined ? "dosis tetap" : "dosis berbasis berat badan"}`,
     `Rute: ${out.entry.route}${out.entry.indication ? ` (${out.entry.indication})` : ""}`,
   ];
   if (out.perDoseText) lines.push(`Dosis per pemberian: ${out.perDoseText}`);

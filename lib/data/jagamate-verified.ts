@@ -9,8 +9,30 @@ const AHA_PALS_2025 = {
   org: "AHA/AAP", title: "Pediatric Tachyarrhythmia With a Pulse Algorithm", year: 2025,
   url: "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-PALS-Tachyarrhythmia-250117.pdf",
 };
+const AMBROXOL_LABEL = {
+  org: "AEMPS", title: "Ficha técnica Ambroxol Normon 3 mg/mL", year: 2022,
+  url: "https://cima.aemps.es/cima/dochtml/ft/63790/FT_63790.html",
+};
 
 export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
+  {
+    slug: "ambroksol",
+    preparations: ["Sirup oral 15 mg/5 mL"],
+    doses: [
+      {
+        population: "pediatric", route: "Oral", indication: "Mukolitik, usia 2–5 tahun",
+        minAgeYears: 2, maxAgeYears: 6,
+        text: "7,5 mg per pemberian hingga 3 kali sehari. Periksa konsentrasi sirup pada kemasan.",
+        fixedDoseMg: 7.5, preferredForCalculation: true, source: AMBROXOL_LABEL,
+      },
+      {
+        population: "pediatric", route: "Oral", indication: "Mukolitik, usia 6–11 tahun",
+        minAgeYears: 6, maxAgeYears: 12,
+        text: "15 mg per pemberian hingga 3 kali sehari. Periksa konsentrasi sirup pada kemasan.",
+        fixedDoseMg: 15, preferredForCalculation: true, source: AMBROXOL_LABEL,
+      },
+    ],
+  },
   {
     slug: "paracetamol",
     preparations: ["Sirup oral 160 mg/5 mL (periksa konsentrasi pada kemasan)"],

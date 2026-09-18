@@ -195,6 +195,10 @@ export interface DrugDose {
   /** human-readable standard dose */
   text: string;
   weightBased?: MgPerKgDose;
+  /** Exact amount per administration for age-banded or otherwise fixed-dose regimens. */
+  fixedDoseMg?: number;
+  /** Show this verified regimen before legacy text-only options when its age range matches. */
+  preferredForCalculation?: boolean;
   notes?: string[];
   /** Primary source for this specific regimen, when distinct from the drug-level source. */
   source?: ClinicalSource;

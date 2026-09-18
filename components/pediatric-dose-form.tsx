@@ -58,7 +58,7 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
     : options[0]?.index;
   const selectedEntry = selectedDoseIndex !== undefined ? drug.doses[selectedDoseIndex] : undefined;
   const doseUnit = selectedEntry?.weightBased?.doseUnit ?? "mg";
-  const canConvertPreparation = Boolean(selectedEntry?.weightBased);
+  const canConvertPreparation = Boolean(selectedEntry?.weightBased || selectedEntry?.fixedDoseMg);
 
   const availablePreparations = uniquePreparations(drug).filter((item) =>
     areDoseUnitsCompatible(doseUnit, item.drugUnit) && preparationMatchesRoute(item, selectedEntry?.route ?? ""),
@@ -104,14 +104,14 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
   return (
     <section className="workspace-panel overflow-hidden pb-4" aria-labelledby="dose-calculator-title">
       <div className="section-band flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h2 id="dose-calculator-title" className="display-type text-base font-bold">Kalkulator dosis berbasis berat badan</h2>
+        <h2 id="dose-calculator-title" className="display-type text-base font-bold">Kalkulator dosis dan konversi sediaan</h2>
         <div className="flex gap-2 sm:shrink-0">
           <CopyButton text={result ? doseToText(drug, result) : ""} label="Salin dosis" />
           <PrintButton />
         </div>
       </div>
       <p className="px-4 pt-4 text-xs text-[var(--muted)]">
-        Pilih regimen yang sesuai, lalu masukkan data pasien. RFSmed mempertahankan rentang dosis dan menerapkan batas maksimum yang tersedia.
+        Pilih regimen yang sesuai, lalu masukkan data pasien bila diperlukan. RFSmed mempertahankan rentang dosis dan menerapkan batas maksimum yang tersedia.
       </p>
 
       <div className="mt-4 grid gap-3 px-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -2,7 +2,7 @@ export const CATALOG_COUNTS = {
   scores: 163,
   calculators: 29,
   indications: 14,
-  drugs: 517,
+  drugs: 518,
   interactions: 2479,
   guidelines: 340,
   icd10: 638,

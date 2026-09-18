@@ -2,7 +2,7 @@
 
 Ditelaah 18 September 2026 melalui sesi pengguna yang masuk. Inventaris berisi 45 pilihan. Kolom RFSmed merujuk identitas klinis, bukan selalu ID berkas asal, karena beberapa ID katalog asal tidak cocok dengan nama obatnya. Status `tercakup` berarti entri sudah ada, bukan seluruh rincian Jaga Mate sudah setara. `Tunda` berarti angka atau konversi tambahan tidak boleh diaktifkan tanpa verifikasi.
 
-Keputusan akhir: 23 tercakup dalam katalog lama, 3 diperkaya, 1 obat baru, 18 ditunda untuk penambahan numerik. Dua pilihan garam diklofenak dan dua pilihan diazepam dipetakan ke entri induk yang sama dengan catatan rute/indikasi, bukan dihitung sebagai obat generik baru.
+Keputusan akhir: 22 tercakup dalam katalog lama, 4 diperkaya, 1 obat baru, 18 ditunda untuk penambahan numerik. Dua pilihan garam diklofenak dan dua pilihan diazepam dipetakan ke entri induk yang sama dengan catatan rute/indikasi, bukan dihitung sebagai obat generik baru.
 
 | No | Pilihan Jaga Mate | RFSmed | Temuan dan keputusan |
 |---:|---|---|---|
@@ -48,7 +48,7 @@ Keputusan akhir: 23 tercakup dalam katalog lama, 3 diperkaya, 1 obat baru, 18 di
 | 40 | Phenytoin | fenitoin | Tunda; loading dan rumatan, rute, dan konsentrasi infus berbeda. |
 | 41 | Sodium Valproate | asam-valproat | Tunda; indikasi, usia, fungsi hati, dan sediaan perlu diverifikasi. |
 | 42 | Acetylcysteine | nac | Tunda; regimen antidot dan mukolitik tidak boleh disatukan. |
-| 43 | Ambroxol | ambroksol | Tercakup; batas usia dan sediaan oral. |
+| 43 | Ambroxol | ambroksol | Perkaya konversi dosis tetap untuk usia 2–5 dan 6–11 tahun; sirup 15 dan 30 mg/5 mL. Jangan pakai dosis berbasis berat. |
 | 44 | Guaifenesin | guaifenesin | Tercakup; dosis berdasarkan usia. |
 | 45 | Salbutamol | salbutamol | Tunda; nebulisasi mL sumber tanpa konsentrasi produk tidak aman dikonversi. |
 
@@ -58,6 +58,7 @@ Keputusan akhir: 23 tercakup dalam katalog lama, 3 diperkaya, 1 obat baru, 18 di
 - Seftriakson meningitis pediatrik: [label DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a25ab5ea-c46d-4562-8f7e-0ccffc2ab069). Label menyebut 100 mg/kg/hari, maksimum 4 g/hari, sekali sehari atau dibagi tiap 12 jam. Regimen ini tidak berlaku otomatis untuk neonatus.
 - Adenosin takikardia pediatrik: [algoritme AHA/AAP 2025](https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-PALS-Tachyarrhythmia-250117.pdf). Dosis awal 0,1 mg/kg IV/IO (maksimum 6 mg), dosis berikutnya 0,2 mg/kg (maksimum 12 mg). Hanya untuk konteks algoritme PALS yang sesuai.
 - Prednisolon oral untuk eksaserbasi asma anak: [GINA 2026](https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf) menyebut 1–2 mg/kg/hari dengan batas 20 mg/hari pada usia <2 tahun, 30 mg/hari pada usia 2–5 tahun, dan 40 mg/hari pada anak lebih besar, biasanya 3–5 hari. [Label DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=93b372f7-b811-4c15-85c4-c6dbac342cb4) mencantumkan larutan oral 15 mg prednisolon basa/5 mL. Regimen antiinflamasi umum Jaga Mate tidak diaktifkan karena rentang indikasi terlalu luas.
+- Ambroksol: [label resmi AEMPS 15 mg/5 mL](https://cima.aemps.es/cima/dochtml/ft/63790/FT_63790.html) menetapkan 7,5 mg untuk usia 2–5 tahun dan 15 mg untuk usia 6–12 tahun per pemberian, hingga tiga kali sehari. [Label AEMPS 30 mg/5 mL](https://cima.aemps.es/cima/dochtml/ft/84165/FT_84165.html) memverifikasi konsentrasi sirup kuat. Konversi hanya aktif setelah pengguna memilih regimen umur yang sesuai dan memeriksa konsentrasi kemasan.
 
 ## Masalah data asal RFSmed
 
