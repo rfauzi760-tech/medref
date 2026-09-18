@@ -41,8 +41,139 @@ const CIPRO_IV_LABEL = {
   org: "DailyMed", title: "Ciprofloxacin Injection", year: 2022,
   url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f406e796-17d9-4465-b8a7-00d966a4ba74",
 };
+const CETIRIZINE_LABEL = {
+  org: "DailyMed", title: "Cetirizine Hydrochloride Oral Solution", year: 2024,
+  url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=71448ab0-e23e-4cf7-940e-7d67e7362fb4",
+};
+const CETIRIZINE_OTC_LABEL = {
+  org: "DailyMed", title: "Cetirizine Hydrochloride Oral Solution Drug Facts", year: 2025,
+  url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c6f08e78-10fc-48d0-a3e1-e227081548eb",
+};
+const CHLORPHENIRAMINE_LABEL = {
+  org: "DailyMed", title: "ED Chlorped Jr. Chlorpheniramine Maleate Liquid", year: 2025,
+  url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4a5e5968-1930-465a-9b8c-45ed936a0e11",
+};
+const GUAIFENESIN_LABEL = {
+  org: "DailyMed", title: "Guaifenesin Oral Solution USP", year: 2026,
+  url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=888b6a2e-6631-4585-a7fe-eb122eb51b23",
+};
+const WHO_ZINC = {
+  org: "WHO", title: "Zinc supplementation in the management of diarrhoea", year: 2011,
+  url: "https://www.who.int/tools/elena/bbc/zinc-diarrhoea",
+};
+const MHRA_DOMPERIDONE = {
+  org: "MHRA", title: "Domperidone for nausea and vomiting: lack of efficacy in children", year: 2019,
+  url: "https://www.gov.uk/drug-safety-update/domperidone-for-nausea-and-vomiting-lack-of-efficacy-in-children-reminder-of-contraindications-in-adults-and-adolescents",
+};
+const PHENYTOIN_LABEL = {
+  org: "DailyMed", title: "Phenytoin Sodium Injection", year: 2024,
+  url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=035a8d4e-2063-4240-83cb-d7eebcabe301",
+};
 
 export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
+  {
+    slug: "domperidon",
+    doses: [{
+      population: "pediatric", route: "Oral", indication: "Mual dan muntah, usia ≥12 tahun dan BB ≥35 kg",
+      minAgeYears: 12, maxAgeYears: 18, minWeightKg: 35,
+      text: "10 mg oral hingga 3 kali sehari selama sesingkat mungkin, umumnya tidak lebih dari 1 minggu. Hindari pada pemanjangan QT, gangguan elektrolit bermakna, dan obat yang memperpanjang QT atau menghambat CYP3A4.",
+      fixedDoseMg: 10, preferredForCalculation: true,
+      notes: ["Kebijakan MHRA: tidak lagi berizin untuk anak <12 tahun atau BB <35 kg karena manfaat tidak terbukti. Pastikan status dan label produk setempat."],
+      source: MHRA_DOMPERIDONE,
+    }],
+  },
+  {
+    slug: "fenitoin",
+    doses: [
+      {
+        population: "adult", route: "IV", indication: "Status epileptikus, dosis muat IV dewasa",
+        text: "10–15 mg/kg sebagai dosis muat IV perlahan, laju tidak melebihi 50 mg/menit. Pemantauan EKG, tekanan darah, dan napas wajib. Dosis rumatan adalah regimen terpisah, bukan frekuensi dosis muat.",
+        weightBased: { min: 10, max: 15, per: "dose", note: "Dosis muat tunggal. Jangan ulangi otomatis tiap 8 jam." },
+        preferredForCalculation: true, source: PHENYTOIN_LABEL,
+      },
+      {
+        population: "pediatric", route: "IV", indication: "Status epileptikus, dosis muat IV anak",
+        minAgeYears: 28 / 365.25, maxAgeYears: 18,
+        text: "15–20 mg/kg sebagai dosis muat IV perlahan. Laju tidak melebihi 1–3 mg/kg/menit atau 50 mg/menit, pilih yang lebih lambat. Pantau EKG, tekanan darah, dan napas; jangan berikan IM rutin.",
+        weightBased: { min: 15, max: 20, per: "dose", note: "Dosis muat tunggal. Laju infus harus dihitung terpisah dan dipantau." },
+        preferredForCalculation: true, source: PHENYTOIN_LABEL,
+      },
+    ],
+  },
+  {
+    slug: "setirizin",
+    curatedPreparationsOnly: true,
+    dosePreparations: [{
+      id: "setirizin-5mg-5ml", label: "Setirizin larutan oral 5 mg/5 mL",
+      drugAmount: 5, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral",
+    }],
+    doses: [
+      {
+        population: "pediatric", route: "Oral", indication: "Rinitis alergi perenial atau urtikaria, 6–23 bulan",
+        minAgeYears: 0.5, maxAgeYears: 2,
+        text: "2,5 mg oral sekali sehari. Pada usia 12–23 bulan, hanya bila perlu dapat ditingkatkan menjadi 2,5 mg tiap 12 jam sesuai penilaian klinis.",
+        fixedDoseMg: 2.5, preferredForCalculation: true, source: CETIRIZINE_LABEL,
+      },
+      {
+        population: "pediatric", route: "Oral", indication: "Urtikaria kronis, usia 2–5 tahun",
+        minAgeYears: 2, maxAgeYears: 6,
+        text: "Dosis awal 2,5 mg oral sekali sehari; maksimum 5 mg/hari menurut label.",
+        fixedDoseMg: 2.5, preferredForCalculation: true, source: CETIRIZINE_LABEL,
+      },
+      {
+        population: "pediatric", route: "Oral", indication: "Alergi, usia 6–17 tahun",
+        minAgeYears: 6, maxAgeYears: 18,
+        text: "5 mg oral sekali sehari sebagai dosis awal; dapat sampai 10 mg/hari bila diperlukan sesuai berat gejala. Periksa fungsi ginjal dan hati.",
+        fixedDoseMg: 5, preferredForCalculation: true, source: CETIRIZINE_OTC_LABEL,
+      },
+    ],
+  },
+  {
+    slug: "klorfeniramin",
+    preparations: ["Larutan oral klorfeniramin maleat tunggal 2 mg/5 mL"],
+    doses: [{
+      population: "pediatric", route: "Oral", indication: "Alergi, usia 6–11 tahun",
+      minAgeYears: 6, maxAgeYears: 12,
+      text: "2 mg oral tiap 4–6 jam bila perlu, maksimum 6 dosis dalam 24 jam. Sediaan tunggal 2 mg/5 mL atau setengah tablet 4 mg sesuai label.",
+      fixedDoseMg: 2, preferredForCalculation: true, source: CHLORPHENIRAMINE_LABEL,
+    }],
+  },
+  {
+    slug: "guaifenesin",
+    preparations: ["Larutan oral guaifenesin tunggal 100 mg/5 mL"],
+    doses: [
+      {
+        population: "pediatric", route: "Oral", indication: "Ekspektoran, usia 2–5 tahun",
+        minAgeYears: 2, maxAgeYears: 6,
+        text: "50–100 mg oral tiap 4 jam bila perlu, maksimum 6 dosis dalam 24 jam. Konsultasikan bila batuk menetap atau disertai gejala berat.",
+        fixedDoseMg: 50, fixedDoseMaxMg: 100, preferredForCalculation: true, source: GUAIFENESIN_LABEL,
+      },
+      {
+        population: "pediatric", route: "Oral", indication: "Ekspektoran, usia 6–11 tahun",
+        minAgeYears: 6, maxAgeYears: 12,
+        text: "100–200 mg oral tiap 4 jam bila perlu, maksimum 6 dosis dalam 24 jam.",
+        fixedDoseMg: 100, fixedDoseMaxMg: 200, preferredForCalculation: true, source: GUAIFENESIN_LABEL,
+      },
+    ],
+  },
+  {
+    slug: "zinc-sulfat",
+    curatedPreparationsOnly: true,
+    doses: [
+      {
+        population: "pediatric", route: "Oral", indication: "Diare akut, usia 28 hari sampai <6 bulan",
+        minAgeYears: 28 / 365.25, maxAgeYears: 0.5,
+        text: "10 mg zink elemental oral sekali sehari selama 10–14 hari, bersama oralit dan asupan makan/ASI yang diteruskan. Periksa kadar zink elemental pada kemasan.",
+        fixedDoseMg: 10, preferredForCalculation: true, source: WHO_ZINC,
+      },
+      {
+        population: "pediatric", route: "Oral", indication: "Diare akut, usia 6–59 bulan",
+        minAgeYears: 0.5, maxAgeYears: 5,
+        text: "20 mg zink elemental oral sekali sehari selama 10–14 hari, bersama oralit dan asupan makan/ASI yang diteruskan. Periksa kadar zink elemental pada kemasan.",
+        fixedDoseMg: 20, preferredForCalculation: true, source: WHO_ZINC,
+      },
+    ],
+  },
   {
     slug: "siprofloksasin",
     preparations: ["Suspensi oral 250 mg/5 mL setelah rekonstitusi"],
@@ -67,6 +198,7 @@ export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
   },
   {
     slug: "epinefrin",
+    curatedPreparationsOnly: true,
     dosePreparations: [{
       id: "epinefrin-im-1mg-1ml", label: "Epinefrin 1 mg/mL (1:1000), hanya IM",
       drugAmount: 1, drugUnit: "mg", carrierAmount: 1, carrierUnit: "mL",
@@ -86,6 +218,11 @@ export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
   {
     slug: "difenhidramin-syr",
     preparations: ["Larutan oral prometazin HCl 6,25 mg/5 mL"],
+    curatedPreparationsOnly: true,
+    dosePreparations: [{
+      id: "prometazin-6.25mg-5ml", label: "Prometazin HCl larutan oral 6,25 mg/5 mL",
+      drugAmount: 6.25, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral",
+    }],
     doses: [{
       population: "pediatric", route: "Oral", indication: "Alergi, dosis awal usia ≥2 tahun",
       minAgeYears: 2, maxAgeYears: 18,
@@ -128,6 +265,7 @@ export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
   },
   {
     slug: "kotrimoksazol",
+    curatedPreparationsOnly: true,
     doses: [{
       population: "pediatric", route: "Oral", indication: "ISK atau otitis media akut, usia ≥2 bulan",
       minAgeYears: 2 / 12,
@@ -147,6 +285,11 @@ export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
   {
     slug: "ambroksol",
     preparations: ["Sirup oral 15 mg/5 mL"],
+    curatedPreparationsOnly: true,
+    dosePreparations: [
+      { id: "ambroksol-15mg-5ml", label: "Ambroksol sirup 15 mg/5 mL", drugAmount: 15, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral" },
+      { id: "ambroksol-30mg-5ml", label: "Ambroksol sirup 30 mg/5 mL", drugAmount: 30, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral" },
+    ],
     doses: [
       {
         population: "pediatric", route: "Oral", indication: "Mukolitik, usia 2–5 tahun",

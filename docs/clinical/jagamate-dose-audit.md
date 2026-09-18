@@ -2,7 +2,7 @@
 
 Ditelaah 18 September 2026 melalui sesi pengguna yang masuk. Inventaris berisi 45 pilihan. Kolom RFSmed merujuk identitas klinis, bukan selalu ID berkas asal, karena beberapa ID katalog asal tidak cocok dengan nama obatnya. Status `tercakup` berarti entri sudah ada, bukan seluruh rincian Jaga Mate sudah setara. `Tunda` berarti angka atau konversi tambahan tidak boleh diaktifkan tanpa verifikasi.
 
-Keputusan sementara: 22 tercakup dalam katalog lama, 10 diperkaya, 1 obat baru, 12 ditunda untuk penambahan numerik. Dua pilihan garam diklofenak dan dua pilihan diazepam dipetakan ke entri induk yang sama dengan catatan rute/indikasi, bukan dihitung sebagai obat generik baru.
+Keputusan sementara: 18 tercakup dalam katalog lama, 16 diperkaya, 1 obat baru, 10 ditunda untuk penambahan numerik. Dua pilihan garam diklofenak dan dua pilihan diazepam dipetakan ke entri induk yang sama dengan catatan rute/indikasi, bukan dihitung sebagai obat generik baru.
 
 | No | Pilihan Jaga Mate | RFSmed | Temuan dan keputusan |
 |---:|---|---|---|
@@ -13,13 +13,13 @@ Keputusan sementara: 22 tercakup dalam katalog lama, 10 diperkaya, 1 obat baru, 
 | 5 | Metamizole Na | metamizol | Tunda; maksimum berbeda menurut rute dan sumber. |
 | 6 | Natrium Diclofenac | diklofenak | Tunda; bedakan garam, rute, dan produk. |
 | 7 | Paracetamol | parasetamol | Perkaya sediaan oral 160 mg/5 mL setelah verifikasi label. |
-| 8 | Cetirizine | setirizin | Tercakup; dosis berdasarkan pita usia, jangan otomatis berdasarkan berat. |
-| 9 | Chlorpheniramine | klorfeniramin | Tercakup; pita usia perlu dipertahankan. |
+| 8 | Cetirizine | setirizin | Perkaya: dosis awal menurut pita usia 6 bulan sampai 17 tahun dan konversi sirup 5 mg/5 mL diverifikasi. |
+| 9 | Chlorpheniramine | klorfeniramin | Perkaya: usia 6–11 tahun 2 mg/dosis dengan larutan tunggal 2 mg/5 mL; rumus mg/kg lama tidak dihitung otomatis. Usia lebih muda perlu penilaian dokter. |
 | 10 | Dimenhydrinate | dimenhidrinat | Tercakup; rute dan usia perlu pemeriksaan khusus. |
 | 11 | Diphenhydramine | difenhidramin | Tercakup; jangan gabung dosis antitusif dan antihistamin. |
 | 12 | Promethazine | difenhidramin-syr (Prometazin) | Perkaya: dosis awal alergi usia ≥2 tahun dan larutan oral diverifikasi; dosis mg/kg lama tidak lagi dihitung otomatis, usia <2 tahun diblokir. ID katalog lama masih perlu migrasi aman. |
-| 13 | Amoxicillin | amoksisilin | Tercakup; tetes 100 mg/mL dan vial IV tidak otomatis cocok dengan regimen oral. |
-| 14 | Azithromycin | azitromisin | Tercakup; indikasi menentukan durasi dan maksimum. |
+| 13 | Amoxicillin | amoxicillin | Tercakup; tetes 100 mg/mL dan vial IV tidak otomatis cocok dengan regimen oral. |
+| 14 | Azithromycin | azithromycin | Tercakup; indikasi menentukan durasi dan maksimum. |
 | 15 | Cefadroxil | sefadroksil | Tercakup; sediaan dan rentang sudah ada. |
 | 16 | Cefixime | sefiksim | Tercakup; dosis anak sudah ada. |
 | 17 | Ceftriaxone | seftriakson | Perkaya regimen meningitis terpisah setelah verifikasi label resmi. |
@@ -34,22 +34,22 @@ Keputusan sementara: 22 tercakup dalam katalog lama, 10 diperkaya, 1 obat baru, 
 | 26 | Adrenaline | epinefrin | Perkaya: anafilaksis anak IM 1 mg/mL dipisah dari resusitasi IV. Batas 0,3 mg anak mengikuti sumber Indonesia; dosis lama yang memakai 0,5 mg tidak lagi dihitung otomatis. |
 | 27 | Diazepam (Kejang) | diazepam | Tunda; rute IV/rektal dan dosis maksimal berbeda. |
 | 28 | Antasida Doen | antasida | Tercakup; komposisi kombinasi produk perlu dibaca di label. |
-| 29 | Domperidone | domperidon | Tunda; risiko QT dan pembatasan usia/indikasi. |
+| 29 | Domperidone | domperidon | Perkaya: hanya usia ≥12 tahun dan BB ≥35 kg, dosis tetap 10 mg; hitungan mg/kg anak lama dinonaktifkan karena pembatasan dan risiko QT. |
 | 30 | Omeprazole | omeprazol | Tercakup; dosis bergantung indikasi dan usia. |
 | 31 | Ondansetron | ondansetron | Tercakup; rute dan indikasi tidak boleh saling tertukar. |
 | 32 | Ranitidine | ondansetron-anak (Ranitidin) | Tunda; ID katalog tidak cocok dan peredaran produk harus diperiksa di BPOM. |
 | 33 | Sucralfate | sukralfat | Tercakup; sediaan tidak otomatis menjadi konversi dosis anak. |
-| 34 | Zinc (Diare) | zinc-sulfat | Tercakup; berbasis usia, bukan berat. |
+| 34 | Zinc (Diare) | zinc-sulfat | Perkaya: 10 atau 20 mg/hari zink elemental menurut usia untuk diare akut. Sirup tanpa kadar elemental yang jelas tidak dikonversi. |
 | 35 | Dexamethasone | deksametason | Tercakup; indikasi dan rute terpisah. |
 | 36 | Hydrocortisone | hidrokortison | Tercakup; ekuivalensi steroid tidak otomatis. |
 | 37 | Methylprednisolone | metilprednisolon | Tercakup; oral dan IV terpisah. |
 | 38 | Prednisolone | prednisolon-sistemik | Obat baru untuk asma oral; entri prednisolon-mata bukan substitusi sistemik. Dosis antiinflamasi umum sumber ditunda. |
 | 39 | Diazepam (Oral) | diazepam | Tunda; indikasi oral perlu terpisah dari kejang akut. |
-| 40 | Phenytoin | fenitoin | Tunda; loading dan rumatan, rute, dan konsentrasi infus berbeda. |
+| 40 | Phenytoin | fenitoin | Perkaya: dosis muat IV dewasa dan anak dipisah dari rumatan, dengan batas laju infus dan pemantauan berlabel; hitungan otomatis regimen lama dinonaktifkan. |
 | 41 | Sodium Valproate | asam-valproat | Tunda; indikasi, usia, fungsi hati, dan sediaan perlu diverifikasi. |
 | 42 | Acetylcysteine | nac | Tunda; regimen antidot dan mukolitik tidak boleh disatukan. |
 | 43 | Ambroxol | ambroksol | Perkaya konversi dosis tetap untuk usia 2–5 dan 6–11 tahun; sirup 15 dan 30 mg/5 mL. Jangan pakai dosis berbasis berat. |
-| 44 | Guaifenesin | guaifenesin | Tercakup; dosis berdasarkan usia. |
+| 44 | Guaifenesin | guaifenesin | Perkaya: rentang dosis usia 2–5 dan 6–11 tahun serta larutan tunggal 100 mg/5 mL diverifikasi. |
 | 45 | Salbutamol | salbutamol | Perkaya: dosis nebulisasi usia 2–12 tahun dan larutan pekat 2,5 mg/0,5 mL terverifikasi, dengan instruksi pengenceran; konversi oral tidak boleh dipakai. |
 
 ## Bukti primer untuk perubahan yang diaktifkan
@@ -65,7 +65,19 @@ Keputusan sementara: 22 tercakup dalam katalog lama, 10 diperkaya, 1 obat baru, 
 - Prometazin: [label resmi DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bd8d1f9a-242c-440b-a5eb-a50f64a1c1d9) melarang penggunaan pada anak <2 tahun karena risiko depresi napas fatal dan menyebut 6,25–12,5 mg hingga tiga kali sehari untuk alergi anak. Larutan oral 6,25 mg/5 mL tercantum. Angka mg/kg lama dari Klinea tidak diberi konversi otomatis karena indikasinya tidak jelas.
 - Epinefrin IM anafilaksis anak: [petunjuk BPOM RI](https://e-meso.pom.go.id/web/useruploads/files/reference/2260122111801--Petunjuk%20Teknis%20Surveilans%20KIPI.pdf) menyebut 0,01 mg/kg larutan 1 mg/mL (1:1000), maksimum 0,3 mg anak, berulang setelah 5–15 menit bila perlu. Konsentrasi IM ini tidak boleh dipakai sebagai bolus IV; data lama yang memakai maksimum 0,5 mg anak dinonaktifkan sebagai hitungan.
 - Siprofloksasin: [label suspensi oral DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=905503ef-4277-44ca-aa4a-5a969a041e16) dan [label infus DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f406e796-17d9-4465-b8a7-00d966a4ba74) membedakan ISK komplikata/pielonefritis usia 1–17 tahun: oral 10–20 mg/kg tiap 12 jam (maksimum 750 mg/dosis), IV 6–10 mg/kg tiap 8 jam (maksimum 400 mg/dosis). Suspensi oral 250 mg/5 mL dan infus 2 mg/mL (200 mg/100 mL atau 400 mg/200 mL) terverifikasi. Infus diberikan selama 60 menit. Konsentrasi infus tidak konsisten dari Jaga Mate tidak dipakai.
+- Setirizin: [label resep DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=71448ab0-e23e-4cf7-940e-7d67e7362fb4) menetapkan 2,5 mg sekali sehari untuk rinitis alergi perenial/urtikaria usia 6–23 bulan dan sebagai dosis awal urtikaria kronis usia 2–5 tahun. [Label OTC](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c6f08e78-10fc-48d0-a3e1-e227081548eb) mengizinkan 5 atau 10 mg sekali sehari mulai usia 6 tahun; kalkulator memakai 5 mg dosis awal. Sirup 5 mg/5 mL terverifikasi.
+- Klorfeniramin: [label tunggal DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4a5e5968-1930-465a-9b8c-45ed936a0e11) mencantumkan 2 mg atau 5 mL sediaan 2 mg/5 mL tiap 4–6 jam untuk usia 6–11 tahun, maksimal 6 dosis/hari. Usia <6 memerlukan konsultasi dokter menurut label tersebut.
+- Guaifenesin: [label tunggal DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=888b6a2e-6631-4585-a7fe-eb122eb51b23) mencantumkan 50–100 mg tiap 4 jam usia 2–5 tahun dan 100–200 mg tiap 4 jam usia 6–11 tahun, maksimal 6 dosis/hari, dalam larutan 100 mg/5 mL.
+- Zink diare: [WHO](https://www.who.int/tools/elena/bbc/zinc-diarrhoea) menetapkan 10 mg/hari pada bayi <6 bulan dan 20 mg/hari usia ≥6 bulan selama 10–14 hari. Dosis merujuk zink elemental, bukan massa garam zink sulfat. Kadar pada sediaan harus terbaca jelas sebelum konversi.
+- Domperidon: [peringatan MHRA](https://www.gov.uk/drug-safety-update/domperidone-for-nausea-and-vomiting-lack-of-efficacy-in-children-reminder-of-contraindications-in-adults-and-adolescents) menyatakan tidak lagi berizin untuk anak <12 tahun atau berat <35 kg karena manfaat tidak terbukti. Untuk remaja yang memenuhi syarat, dosis 10 mg hingga tiga kali sehari; periksa risiko QT dan interaksi. Status izin serta protokol Indonesia tetap harus diperiksa.
+- Fenitoin injeksi: [label DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=035a8d4e-2063-4240-83cb-d7eebcabe301) membedakan dosis muat IV dewasa 10–15 mg/kg dari anak 15–20 mg/kg. Batas laju dewasa 50 mg/menit; anak 1–3 mg/kg/menit atau 50 mg/menit, dipilih yang lebih lambat. Regimen rumatan tidak boleh dipakai sebagai frekuensi dosis muat.
+- Asetilsistein antidot: [label DailyMed](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d990ef51-ced2-4359-b99b-092334d2dc9b) menjelaskan tiga fase IV 150, 50, dan 100 mg/kg dalam 1, 4, dan 16 jam dengan volume pengenceran menurut berat. Parser lama yang menangkap hanya 100 mg/kg kini dinonaktifkan; kalkulator numerik lengkap ditunda sampai ketiga fase dan pengenceran dapat ditampilkan bersama.
+- Ranitidin: [BPOM RI](https://www.pom.go.id/penjelasan-publik/penjelasan-badan-pom-ri-tentang-produk-ranitidin-yang-dapat-diedarkan-kembali) memperbolehkan produk tertentu kembali beredar setelah evaluasi NDMA, bukan larangan menyeluruh di Indonesia. Produk dan izin edar spesifik harus diverifikasi; konversi otomatis data lama belum diaktifkan.
 
 ## Masalah data asal RFSmed
 
 Katalog kanonik mempunyai 517 entri. Beberapa ID-nya tidak sesuai nama obat, misalnya `ondansetron-anak` berisi Ranitidin dan `difenhidramin-syr` berisi Prometazin. Karena itu pencocokan klinis memakai nama dan indikasi, bukan ID saja. Penggabungan numerik tambahan yang belum tervalidasi ditunda, tidak diisi dengan asumsi dari tampilan sumber. Salinan mentah Jaga Mate, akun, dan token tidak disimpan.
+
+Audit keselamatan lanjutan menemukan 15 regimen dewasa yang sebelumnya mewarisi rumus berbasis berat dari entri lama meskipun instruksi dewasanya berbasis dosis tetap. Pewarisan tanpa kecocokan teks dinonaktifkan. Regimen anak oseltamivir berbasis pita berat dan warfarin berbasis INR juga tidak lagi dihitung sebagai rumus mg/kg otomatis. Pengguna harus memilih indikasi dan rute secara eksplisit bila bukan opsi pertama.
+
+Konversi otomatis kini hanya memakai sediaan terkurasi pada kotrimoksazol, epinefrin IM, setirizin anak, prometazin, ambroksol anak, dan zink diare. Pembatasan ini mencegah tablet yang tidak terbukti dapat dibagi, rasio obat kombinasi yang ambigu, dan massa garam zink disalahartikan sebagai zink elemental. Sediaan lain tetap dapat dicatat sebagai informasi produk, tetapi tidak menghasilkan angka volume/tablet otomatis.

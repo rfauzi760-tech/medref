@@ -10,8 +10,108 @@ function find(slug: string) {
 }
 
 describe("verified Jaga Mate enrichments", () => {
+  it("maps all 45 single-drug choices to exactly one RFSmed entry", () => {
+    const sourceChoices: Array<[string, string]> = [
+      ["Asam Mefenamat", "asam-mefenamat"], ["Ibuprofen", "ibuprofen"],
+      ["Kalium Diclofenac", "diklofenak"], ["Ketorolac", "ketorolak"],
+      ["Metamizole Na", "metamizol"], ["Natrium Diclofenac", "diklofenak"],
+      ["Paracetamol", "paracetamol"], ["Cetirizine", "setirizin"],
+      ["Chlorpheniramine", "klorfeniramin"], ["Dimenhydrinate", "dimenhidrinat"],
+      ["Diphenhydramine", "difenhidramin"], ["Promethazine", "difenhidramin-syr"],
+      ["Amoxicillin", "amoxicillin"], ["Azithromycin", "azithromycin"],
+      ["Cefadroxil", "sefadroksil"], ["Cefixime", "sefiksim"],
+      ["Ceftriaxone", "seftriakson"], ["Ciprofloxacin", "siprofloksasin"],
+      ["Cotrimoxazole", "kotrimoksazol"], ["Erytromicin", "eritromisin"],
+      ["Gentamicin", "gentamisin"], ["Levofloxacin", "levofloksasin"],
+      ["Metronidazole", "metronidazol"], ["Acyclovir", "asiklovir"],
+      ["Adenosine", "adenosin"], ["Adrenaline", "epinefrin"],
+      ["Diazepam (Kejang)", "diazepam"], ["Antasida Doen", "antasida"],
+      ["Domperidone", "domperidon"], ["Omeprazole", "omeprazol"],
+      ["Ondansetron", "ondansetron"], ["Ranitidine", "ondansetron-anak"],
+      ["Sucralfate", "sukralfat"], ["Zinc (Diare)", "zinc-sulfat"],
+      ["Dexamethasone", "deksametason"], ["Hydrocortisone", "hidrokortison"],
+      ["Methylprednisolone", "metilprednisolon"], ["Prednisolone", "prednisolon-sistemik"],
+      ["Diazepam (Oral)", "diazepam"], ["Phenytoin", "fenitoin"],
+      ["Sodium Valproate", "asam-valproat"], ["Acetylcysteine", "nac"],
+      ["Ambroxol", "ambroksol"], ["Guaifenesin", "guaifenesin"],
+      ["Salbutamol", "salbutamol"],
+    ];
+    expect(sourceChoices).toHaveLength(45);
+    for (const [sourceName, slug] of sourceChoices) {
+      expect(DRUGS.filter((item) => item.slug === slug), sourceName).toHaveLength(1);
+    }
+  });
   it("keeps the visible drug count synchronized with the catalog", () => {
     expect(CATALOG_COUNTS.drugs).toBe(DRUGS.length);
+  });
+  it("converts age-banded cetirizine only within the verified age and indication", () => {
+    const drug = find("setirizin");
+    const syrup = drug.dosePreparations?.find((item) => item.drugAmount === 5 && item.carrierAmount === 5);
+    expect(syrup).toBeDefined();
+    const selected = getDoseOptions(drug, "pediatric", 4)[0];
+    expect(selected.label).toContain("2–5 tahun");
+    const result = calculateDose(drug, { ageYears: 4, doseIndex: selected.index, preparation: syrup });
+    expect(result.perDoseMg).toBe(2.5);
+    expect(result.preparationPerDoseMin).toBe(2.5);
+    const tablet = parseDosePreparations(drug.preparations ?? []).find((item) => item.carrierUnit === "tablet")!;
+    expect(calculateDose(drug, { ageYears: 4, doseIndex: selected.index, preparation: tablet }).preparationText).toBeUndefined();
+    expect(calculateDose(drug, { ageYears: 7, doseIndex: selected.index }).textOnly).toBe(true);
+  });
+
+  it("converts verified chlorpheniramine only for ages 6–11 and leaves old mg/kg text uncalculated", () => {
+    const drug = find("klorfeniramin");
+    expect(drug.doses.find((dose) => dose.text.startsWith("0,35 mg/kg"))?.weightBased).toBeUndefined();
+    const selected = getDoseOptions(drug, "pediatric", 8)[0];
+    expect(selected.label).toContain("6–11 tahun");
+    const syrup = parseDosePreparations(drug.preparations ?? []).find((item) => item.drugAmount === 2 && item.carrierAmount === 5)!;
+    expect(calculateDose(drug, { ageYears: 8, doseIndex: selected.index, preparation: syrup }).preparationPerDoseMin).toBe(5);
+    expect(getDoseOptions(drug, "pediatric", 4)[0].index).not.toBe(selected.index);
+  });
+
+  it("converts guaifenesin age-band ranges into syrup ranges", () => {
+    const drug = find("guaifenesin");
+    const syrup = parseDosePreparations(drug.preparations ?? []).find((item) => item.drugAmount === 100 && item.carrierAmount === 5)!;
+    const younger = getDoseOptions(drug, "pediatric", 4)[0];
+    const older = getDoseOptions(drug, "pediatric", 8)[0];
+    const first = calculateDose(drug, { ageYears: 4, doseIndex: younger.index, preparation: syrup });
+    const second = calculateDose(drug, { ageYears: 8, doseIndex: older.index, preparation: syrup });
+    expect([first.preparationPerDoseMin, first.preparationPerDoseMax]).toEqual([2.5, 5]);
+    expect([second.preparationPerDoseMin, second.preparationPerDoseMax]).toEqual([5, 10]);
+    expect(calculateDose(drug, { ageYears: 1, doseIndex: younger.index }).textOnly).toBe(true);
+  });
+
+  it("separates elemental zinc doses before and after six months without guessing syrup strength", () => {
+    const drug = find("zinc-sulfat");
+    const infant = getDoseOptions(drug, "pediatric", 0.25)[0];
+    const child = getDoseOptions(drug, "pediatric", 1)[0];
+    expect(calculateDose(drug, { ageYears: 0.25, doseIndex: infant.index }).perDoseMg).toBe(10);
+    expect(calculateDose(drug, { ageYears: 1, doseIndex: child.index }).perDoseMg).toBe(20);
+    expect(calculateDose(drug, { ageYears: 0.25, doseIndex: child.index }).textOnly).toBe(true);
+    expect(drug.doses[child.index].text).toContain("elemental");
+  });
+  it("checks both age and weight before giving an adolescent domperidone conversion", () => {
+    const drug = find("domperidon");
+    const index = drug.doses.findIndex((dose) => dose.indication === "Mual dan muntah, usia ≥12 tahun dan BB ≥35 kg");
+    expect(index).toBeGreaterThanOrEqual(0);
+    const tablet = parseDosePreparations(drug.preparations ?? []).find((item) => item.drugAmount === 10 && item.carrierUnit === "tablet");
+    expect(calculateDose(drug, { ageYears: 14, weightKg: 40, doseIndex: index, preparation: tablet }).preparationPerDoseMin).toBe(1);
+    expect(calculateDose(drug, { ageYears: 11, weightKg: 40, doseIndex: index }).textOnly).toBe(true);
+    expect(calculateDose(drug, { ageYears: 14, weightKg: 30, doseIndex: index }).textOnly).toBe(true);
+  });
+  it("separates adult and child IV phenytoin loading without maintenance frequency", () => {
+    const drug = find("fenitoin");
+    const adultIndex = drug.doses.findIndex((dose) => dose.indication === "Status epileptikus, dosis muat IV dewasa");
+    const childIndex = drug.doses.findIndex((dose) => dose.indication === "Status epileptikus, dosis muat IV anak");
+    const ampoule = parseDosePreparations(drug.preparations ?? []).find((item) => item.drugAmount === 50 && item.carrierAmount === 1)!;
+    expect(getDoseOptions(drug, "adult", 30)[0].index).toBe(adultIndex);
+    expect(getDoseOptions(drug, "pediatric", 5)[0].index).toBe(childIndex);
+    const adult = calculateDose(drug, { ageYears: 30, weightKg: 60, doseIndex: adultIndex, preparation: ampoule });
+    const child = calculateDose(drug, { ageYears: 5, weightKg: 20, doseIndex: childIndex, preparation: ampoule });
+    expect([adult.perDoseMin, adult.perDoseMax]).toEqual([600, 900]);
+    expect([child.perDoseMin, child.perDoseMax]).toEqual([300, 400]);
+    expect(child.preparationPerDoseMin).toBe(6);
+    expect(child.totalDailyMg).toBeUndefined();
+    expect(calculateDose(drug, { ageYears: 0.02, weightKg: 3, doseIndex: childIndex }).textOnly).toBe(true);
   });
   it("adds systemic prednisolone separately from ophthalmic prednisolone", () => {
     const drug = find("prednisolon-sistemik");
@@ -38,7 +138,7 @@ describe("verified Jaga Mate enrichments", () => {
     expect(index).toBeGreaterThanOrEqual(0);
     expect(getDoseOptions(drug, "pediatric", 5)[0].index).toBe(index);
     expect(drug.doses[index].source?.url).toContain("cima.aemps.es");
-    const preparations = parseDosePreparations(drug.preparations ?? []);
+    const preparations = drug.dosePreparations ?? [];
     const standard = preparations.find((item) => item.drugAmount === 15 && item.carrierAmount === 5);
     const forte = preparations.find((item) => item.drugAmount === 30 && item.carrierAmount === 5);
     expect(standard).toBeDefined();
@@ -48,6 +148,8 @@ describe("verified Jaga Mate enrichments", () => {
     expect(result.perDoseMg).toBe(7.5);
     expect(result.preparationPerDoseMin).toBe(2.5);
     expect(calculateDose(drug, { ageYears: 5, doseIndex: index, preparation: forte }).preparationPerDoseMin).toBe(1.25);
+    const tablet = parseDosePreparations(drug.preparations ?? []).find((item) => item.carrierUnit === "tablet")!;
+    expect(calculateDose(drug, { ageYears: 5, doseIndex: index, preparation: tablet }).preparationText).toBeUndefined();
     expect(calculateDose(drug, { ageYears: 1, doseIndex: index, preparation: standard }).textOnly).toBe(true);
   });
 
@@ -95,6 +197,11 @@ describe("verified Jaga Mate enrichments", () => {
     expect(result.preparationPerDoseMin).toBe(10);
     expect(result.preparationText).toContain("TMP");
     expect(calculateDose(drug, { weightKg: 5, ageYears: 1 / 12, doseIndex: index, preparation }).textOnly).toBe(true);
+    expect(drug.curatedPreparationsOnly).toBe(true);
+    const ambiguous = parseDosePreparations(drug.preparations ?? [])[0];
+    expect(calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: index, preparation: ambiguous }).preparationText).toBeUndefined();
+    expect(calculateDose(drug, { weightKg: 20, ageYears: 5, doseIndex: index,
+      preparation: { ...preparation!, drugAmount: 200 } }).preparationText).toBeUndefined();
   });
 
   it("shows a four-dose erythromycin ethylsuccinate regimen and oral suspension conversion", () => {
@@ -136,8 +243,7 @@ describe("verified Jaga Mate enrichments", () => {
     expect(calculateDose(drug, { weightKg: 10, ageYears: 1, doseIndex: legacyIndex }).textOnly).toBe(true);
     const verifiedIndex = drug.doses.findIndex((dose) => dose.indication === "Alergi, dosis awal usia ≥2 tahun");
     expect(verifiedIndex).toBeGreaterThanOrEqual(0);
-    const oralSolution = parseDosePreparations(drug.preparations ?? [])
-      .find((item) => item.drugAmount === 6.25 && item.carrierAmount === 5);
+    const oralSolution = drug.dosePreparations?.find((item) => item.drugAmount === 6.25 && item.carrierAmount === 5);
     expect(oralSolution).toBeDefined();
     const result = calculateDose(drug, { ageYears: 5, doseIndex: verifiedIndex, preparation: oralSolution });
     expect(result.perDoseMg).toBe(6.25);

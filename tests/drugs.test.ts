@@ -28,12 +28,14 @@ describe("amoxicillin pediatric dosing", () => {
     expect(out.totalDailyMin).toBe(450);
     expect(out.totalDailyMax).toBe(900);
   });
-  it("caps at maximum daily dose (max 4 g/day)", () => {
+  it("does not inherit an unrelated adult maximum into the child regimen", () => {
     const out = calculateDose(amox, { weightKg: 50, ageYears: 15 });
-    expect(out.totalDailyMg).toBeLessThanOrEqual(4000);
+    expect(out.totalDailyMin).toBe(1250);
+    expect(out.totalDailyMax).toBe(2500);
+    expect(out.entry.weightBased?.maxDailyMg).toBeUndefined();
   });
   it("returns text-only schema when no weight provided", () => {
-    const out = calculateDose(amox, {});
+    const out = calculateDose(amox, { ageYears: 5 });
     expect(out.textOnly).toBe(true);
     expect(out.notes.join(" ")).toContain("Berat badan belum diisi");
   });
@@ -45,9 +47,11 @@ describe("paracetamol", () => {
     const out = calculateDose(pcm, { weightKg: 20, ageYears: 6 });
     expect(out.perDoseMg).toBe(250);
   });
-  it("warns when exceeding max daily (4 g adult cap)", () => {
+  it("does not apply a pediatric mg/kg formula to the adult fixed-dose instruction", () => {
     const out = calculateDose(pcm, { weightKg: 100, ageYears: 30 });
-    expect(out.maxWarnings.length).toBeGreaterThan(0);
+    expect(out.textOnly).toBe(true);
+    expect(out.perDoseMg).toBeUndefined();
+    expect(pcm.doses.find((entry) => entry.population === "adult" && entry.route === "IV")?.weightBased).toBeUndefined();
   });
 
   it("preserves the pediatric dose range and converts it to syrup volume", () => {
@@ -164,6 +168,59 @@ describe("pickDoseEntry", () => {
     expect(options[0]).toMatchObject({ index: 1, population: "pediatric" });
     expect(options[0].label).toContain("Terapi standar");
     expect(options[0].label).toContain("Oral");
+  });
+});
+
+describe("canonical regimen safety", () => {
+  it("does not inherit a pediatric weight formula into fixed adult instructions", () => {
+    for (const slug of ["paracetamol", "ibuprofen", "amoxicillin", "azithromycin", "ondansetron"]) {
+      const item = DRUGS.find((candidate) => candidate.slug === slug)!;
+      const adult = item.doses.find((entry) => entry.population === "adult")!;
+      expect(adult.weightBased, slug).toBeUndefined();
+    }
+  });
+
+  it("keeps the first route unless the user explicitly chooses another regimen", () => {
+    const fixture: Drug = {
+      ...drug("paracetamol"),
+      doses: [
+        { population: "adult", route: "Oral", text: "500 mg tiap 6 jam" },
+        { population: "adult", route: "IV", text: "15 mg/kg IV", weightBased: { min: 15, per: "dose" } },
+      ],
+    };
+    expect(calculateDose(fixture, { ageYears: 35, weightKg: 60 }).entry.route).toBe("Oral");
+    expect(calculateDose(fixture, { ageYears: 35, weightKg: 60, doseIndex: 1 }).entry.route).toBe("IV");
+  });
+
+  it("does not convert a weight-band or INR-titrated instruction as mg/kg", () => {
+    for (const slug of ["oseltamivir", "warfarin"]) {
+      const item = DRUGS.find((candidate) => candidate.slug === slug)!;
+      const pediatric = item.doses.find((entry) => entry.population === "pediatric")!;
+      expect(pediatric.weightBased, slug).toBeUndefined();
+    }
+  });
+
+  it("does not treat maintenance frequency or the final NAC phase as a loading dose", () => {
+    const phenytoin = drug("fenitoin").doses.find((entry) => entry.population === "adult")!;
+    const antidote = drug("nac").doses.find((entry) => entry.population === "adult" && entry.route === "Parasetamol")!;
+    expect(phenytoin.weightBased?.frequencyPerDay).toBeUndefined();
+    expect(antidote.weightBased).toBeUndefined();
+  });
+});
+
+describe("fixed age-band dose ranges", () => {
+  it("converts both endpoints of a verified fixed-dose range", () => {
+    const fixture: Drug = {
+      ...drug("guaifenesin"),
+      doses: [{ population: "pediatric", route: "Oral", text: "50–100 mg per pemberian", fixedDoseMg: 50, fixedDoseMaxMg: 100 }],
+    };
+    const preparation = { id: "syrup", label: "100 mg/5 mL", drugAmount: 100, drugUnit: "mg" as const,
+      carrierAmount: 5, carrierUnit: "mL" as const, administration: "oral" as const };
+    const out = calculateDose(fixture, { ageYears: 4, preparation });
+    expect(out.perDoseMin).toBe(50);
+    expect(out.perDoseMax).toBe(100);
+    expect(out.preparationPerDoseMin).toBe(2.5);
+    expect(out.preparationPerDoseMax).toBe(5);
   });
 });
 

@@ -58,8 +58,9 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
     : options[0]?.index;
   const selectedEntry = selectedDoseIndex !== undefined ? drug.doses[selectedDoseIndex] : undefined;
   const doseUnit = selectedEntry?.weightBased?.doseUnit ?? "mg";
-  const canConvertPreparation = Boolean(selectedEntry?.weightBased || selectedEntry?.fixedDoseMg);
-  const curatedPreparationsOnly = drug.dosePreparations?.some((item) => item.routes?.length);
+  const curatedPreparationsOnly = drug.curatedPreparationsOnly;
+  const canConvertPreparation = Boolean(selectedEntry?.weightBased || selectedEntry?.fixedDoseMg) &&
+    (!curatedPreparationsOnly || Boolean(drug.dosePreparations?.length));
 
   const availablePreparations = (curatedPreparationsOnly ? drug.dosePreparations ?? [] : uniquePreparations(drug)).filter((item) =>
     areDoseUnitsCompatible(doseUnit, item.drugUnit) && preparationMatchesRoute(item, selectedEntry?.route ?? ""),

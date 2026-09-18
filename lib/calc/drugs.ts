@@ -214,6 +214,8 @@ export function preparationMatchesRoute(preparation: DosePreparation, route: str
 
 /** Parse the first primary, non-infusion weight-based regimen from displayed dose text. */
 export function parseWeightBasedDose(text: string): MgPerKgDose | undefined {
+  // Conditional weight thresholds require an explicit branch, not a generic mg/kg formula.
+  if (/\([^)]*(?:<|>|≤|≥)\s*\d+(?:[.,]\d+)?\s*kg[^)]*\)/i.test(text)) return undefined;
   const pattern = /(\d+(?:[.,]\d+)?)(?:\s*[-–]\s*(\d+(?:[.,]\d+)?))?\s*(mg|mcg|g|iu|units?)\s*\/\s*kg(?:bb)?(?:\s*\/\s*(dosis|hari|jam|menit))?/gi;
   const matches = [...text.matchAll(pattern)].filter((match) =>
     !/\bmaks(?:imum|imal)?\b[^.;:]{0,30}$/i.test(text.slice(Math.max(0, match.index! - 45), match.index)),
@@ -267,9 +269,8 @@ export function pickDoseEntry(drug: Drug, inp: DoseCalculationInput): DrugDose |
     if (pop === "pediatric") return d.population === "pediatric" || d.population === "all";
     return d.population === "adult" || d.population === "all";
   });
-  // prefer a weight-based entry for the selected indication, else first candidate
-  const withWeight = candidates.find((d) => d.weightBased);
-  return withWeight ?? candidates[0] ?? null;
+  // Never silently switch route or indication merely because another entry is calculable.
+  return candidates[0] ?? null;
 }
 
 export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalculationOutput {
@@ -290,11 +291,15 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
       return { entry, textOnly: true, notes: ["Isi dan periksa usia pasien untuk memilih regimen sesuai rentang usia."], maxWarnings: [] };
     }
   }
+  if (entry.minWeightKg !== undefined && (!(num(inp.weightKg) >= entry.minWeightKg))) {
+    return { entry, textOnly: true, notes: [`Regimen ini memerlukan berat badan minimal ${entry.minWeightKg} kg.`], maxWarnings: [] };
+  }
   const w = num(inp.weightKg);
   const wb = entry.weightBased;
   const fixedDoseMg = entry.fixedDoseMg;
 
-  if (!wb && !(fixedDoseMg && fixedDoseMg > 0)) {
+  if (!wb && !(fixedDoseMg && fixedDoseMg > 0 &&
+    (entry.fixedDoseMaxMg === undefined || entry.fixedDoseMaxMg >= fixedDoseMg))) {
     return { entry, textOnly: true, notes: [...(entry.notes ?? [])], maxWarnings: [] };
   }
 
@@ -319,7 +324,7 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
 
   if (fixedDoseMg !== undefined) {
     perDoseMin = fixedDoseMg;
-    perDoseMax = fixedDoseMg;
+    perDoseMax = entry.fixedDoseMaxMg ?? fixedDoseMg;
   } else if (wb && wb.per === "dose") {
     perDoseMin = w * wb.min;
     perDoseMax = w * (wb.max ?? wb.min);
@@ -378,13 +383,16 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   let preparationPerDoseMax: number | undefined;
   let preparationText: string | undefined;
   const preparation = inp.preparation;
-  const curatedOnly = drug.dosePreparations?.some((item) => item.routes?.length);
+  const curatedOnly = drug.curatedPreparationsOnly;
   const preparationValid = preparation &&
     Number.isFinite(preparation.drugAmount) && preparation.drugAmount > 0 &&
     Number.isFinite(preparation.carrierAmount) && preparation.carrierAmount > 0 &&
     areDoseUnitsCompatible(unit, preparation.drugUnit) &&
     preparationMatchesRoute(preparation, entry.route) &&
-    (!curatedOnly || drug.dosePreparations?.some((item) => item.id === preparation.id));
+    (!curatedOnly || drug.dosePreparations?.some((item) =>
+      item.id === preparation.id && item.drugAmount === preparation.drugAmount &&
+      item.drugUnit === preparation.drugUnit && item.carrierAmount === preparation.carrierAmount &&
+      item.carrierUnit === preparation.carrierUnit && item.administration === preparation.administration));
   if (preparation && !preparationValid) notes.push("Konversi sediaan tidak ditampilkan karena konsentrasi, satuan, atau rutenya tidak sesuai.");
   if (preparation && preparationValid) {
     const doseInPreparationUnitMin = perDoseMin !== undefined ? convertUnit(perDoseMin, unit, preparation.drugUnit) : undefined;

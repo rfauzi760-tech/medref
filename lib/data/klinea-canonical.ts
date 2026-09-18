@@ -261,12 +261,20 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
   const legacyById = new Map(legacyDrugs.flatMap((drug) => [[drug.id, drug], [drug.slug, drug]]));
   return (content.drugs as KlineaDrug[]).map((drug) => {
     const legacy = legacyById.get(drug.id) ?? legacyById.get(DRUG_SLUG_ALIASES[drug.id]);
-    const adultWeight = legacy?.doses.find((dose) => dose.population === "adult" || dose.population === "all")?.weightBased;
     const childWeight = legacy?.doses.find((dose) => dose.population === "pediatric" || dose.population === "all")?.weightBased;
-    const adult = list(drug.dewasa).map((text, index) => ({ population: "adult" as const, route: text.split(":")[0] || "Sesuai panduan", text, weightBased: index === 0 ? adultWeight : undefined }));
+    const adult = list(drug.dewasa).map((text) => ({
+      population: "adult" as const,
+      route: text.split(":")[0] || "Sesuai panduan",
+      text: drug.id === "fenitoin" ? "Dosis muat fenitoin IV dewasa memerlukan regimen tersendiri, laju infus, dan pemantauan kardiopulmoner; pilih regimen terverifikasi di bawah." :
+        drug.id === "nac" && text.startsWith("Parasetamol") ? "Keracunan parasetamol: asetilsistein IV diberikan dalam tiga fase berturut-turut (150, 50, lalu 100 mg/kg); pilih protokol antidot lengkap dan volume pengenceran sesuai berat badan." : text,
+      weightBased: drug.id === "fenitoin" || (drug.id === "nac" && text.startsWith("Parasetamol"))
+        ? undefined : parseWeightBasedDose(text),
+    }));
     const child = list(drug.anak).map((text, index) => {
       const unverifiedPromethazine = drug.id === "difenhidramin-syr";
       const outdatedEpinephrine = drug.id === "epinefrin" && index === 0;
+      const unverifiedChlorpheniramine = drug.id === "klorfeniramin";
+      const unsafeLegacyCalculation = ["fenitoin", "domperidon", "ondansetron-anak"].includes(drug.id);
       const parsedWeight = parseWeightBasedDose(text);
       const fallbackWeight = index === 0 ? childWeight : undefined;
       const sameRegimen = parsedWeight && fallbackWeight &&
@@ -277,11 +285,13 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
       return {
         population: "pediatric" as const,
         route: text.split(":")[0] || "Sesuai panduan",
-        text: unverifiedPromethazine ? text.replace(/hati-hati\s*<\s*2\s*th/i, "kontraindikasi <2 tahun") :
+        text: drug.id === "fenitoin" ? "Dosis muat fenitoin IV anak memerlukan laju infus dan pemantauan kardiopulmoner; pilih regimen terverifikasi di bawah." :
+          drug.id === "domperidon" ? "Domperidon tidak lagi berizin untuk anak <12 tahun atau BB <35 kg menurut MHRA; pertimbangkan alternatif dan verifikasi aturan setempat." :
+          unverifiedPromethazine ? text.replace(/hati-hati\s*<\s*2\s*th/i, "kontraindikasi <2 tahun") :
           outdatedEpinephrine ? text.replace(/maks\s*0,5\s*mg/i, "maks 0,3 mg pada anak") : text,
         minAgeYears: unverifiedPromethazine ? 2 : undefined,
-        weightBased: unverifiedPromethazine || outdatedEpinephrine ? undefined :
-          sameRegimen ? { ...fallbackWeight, ...parsedWeight } : parsedWeight ?? fallbackWeight,
+        weightBased: unverifiedPromethazine || outdatedEpinephrine || unverifiedChlorpheniramine || unsafeLegacyCalculation ? undefined :
+          sameRegimen ? { ...fallbackWeight, ...parsedWeight } : parsedWeight,
       };
     });
     return {
@@ -295,7 +305,9 @@ export function canonicalDrugs(legacyDrugs: Drug[]): Drug[] {
       indications: list(drug.indikasi),
       doses: [...adult, ...child],
       contraindications: list(drug.kontra),
-      majorWarnings: list(drug.perhatian),
+      majorWarnings: drug.id === "ondansetron-anak"
+        ? [...list(drug.perhatian), "Ranitidin: hanya gunakan produk yang status izin edar dan cemaran NDMA-nya telah diverifikasi di BPOM."]
+        : list(drug.perhatian),
       preparations: list(drug.sediaan),
       pregnancy: legacy?.pregnancy,
       lactation: legacy?.lactation,

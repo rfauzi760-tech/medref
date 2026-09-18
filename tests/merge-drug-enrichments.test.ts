@@ -31,4 +31,9 @@ describe("mergeDrugEnrichments", () => {
     expect(() => mergeDrugEnrichments([base], [{ slug: "test", doses: [{ ...dose, source: undefined }] }], [])).toThrow();
     expect(() => mergeDrugEnrichments([base], [], [base])).toThrow();
   });
+
+  it("preserves an explicit curated-only conversion policy", () => {
+    const [drug] = mergeDrugEnrichments([base], [{ slug: "test", curatedPreparationsOnly: true }], []);
+    expect(drug.curatedPreparationsOnly).toBe(true);
+  });
 });

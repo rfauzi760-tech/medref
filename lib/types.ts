@@ -192,11 +192,15 @@ export interface DrugDose {
   /** Inclusive lower and exclusive upper age bounds for age-specific regimens. */
   minAgeYears?: number;
   maxAgeYears?: number;
+  /** Optional body-weight restriction independent of a mg/kg formula. */
+  minWeightKg?: number;
   /** human-readable standard dose */
   text: string;
   weightBased?: MgPerKgDose;
   /** Exact amount per administration for age-banded or otherwise fixed-dose regimens. */
   fixedDoseMg?: number;
+  /** Upper amount per administration when the verified fixed-dose regimen is a range. */
+  fixedDoseMaxMg?: number;
   /** Show this verified regimen before legacy text-only options when its age range matches. */
   preferredForCalculation?: boolean;
   notes?: string[];
@@ -234,6 +238,8 @@ export interface Drug {
   preparations?: string[];
   /** Machine-readable preparations for safe dose-to-volume/unit conversion. */
   dosePreparations?: DosePreparation[];
+  /** For combination or high-risk products, convert only explicitly verified concentrations. */
+  curatedPreparationsOnly?: boolean;
   pregnancy?: string;
   lactation?: string;
   notes?: string[];

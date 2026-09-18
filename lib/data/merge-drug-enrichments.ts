@@ -5,6 +5,7 @@ export interface DrugEnrichment {
   doses?: DrugDose[];
   preparations?: string[];
   dosePreparations?: DosePreparation[];
+  curatedPreparationsOnly?: boolean;
   keywords?: string[];
 }
 
@@ -36,6 +37,7 @@ export function mergeDrugEnrichments(base: Drug[], patches: DrugEnrichment[], ne
       dosePreparations: [...new Map(
         [...(old.dosePreparations ?? []), ...(patch.dosePreparations ?? [])].map((item) => [item.id, item]),
       ).values()],
+      curatedPreparationsOnly: patch.curatedPreparationsOnly ?? old.curatedPreparationsOnly,
       keywords: [...new Set([...old.keywords, ...(patch.keywords ?? [])])],
     };
   }
