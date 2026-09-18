@@ -77,8 +77,27 @@ const DIAZEPAM_INJECTION_LABEL = {
   org: "DailyMed", title: "Diazepam Injection, USP", year: 2024,
   url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=41044928-dd1f-40bf-1fa6-709dff559124",
 };
+const VALPROATE_ORAL_LABEL = {
+  org: "DailyMed", title: "Valproic Acid Oral Solution", year: 2026,
+  url: "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2314af65-b928-42a9-91eb-6372909ab4f5&version=3",
+};
 
 export const JAGAMATE_ENRICHMENTS: DrugEnrichment[] = [
+  {
+    slug: "asam-valproat",
+    curatedPreparationsOnly: true,
+    dosePreparations: [{
+      id: "valproat-oral-250mg-5ml", label: "Asam valproat larutan oral 250 mg/5 mL (sebagai garam natrium)",
+      drugAmount: 250, drugUnit: "mg", carrierAmount: 5, carrierUnit: "mL", administration: "oral",
+    }],
+    doses: [{
+      population: "pediatric", route: "Oral", indication: "Epilepsi absans, dosis awal oral",
+      minAgeYears: 2, maxAgeYears: 18,
+      text: "Mulai 15 mg/kg/hari oral untuk epilepsi absans. Titrasi 5–10 mg/kg/hari pada interval mingguan bila perlu; batas 60 mg/kg/hari. Jika total >250 mg/hari, bagi menjadi beberapa dosis. Periksa fungsi hati sebelum dan selama terapi, serta kontraindikasi POLG dan gangguan siklus urea.",
+      weightBased: { min: 15, per: "day", note: "Ini jumlah total per hari pada awal terapi. Jika >250 mg/hari, harus dibagi; kalkulator tidak menentukan jumlah dosis per pemberian. Pantau fungsi hati dan respons klinis." },
+      preferredForCalculation: true, source: VALPROATE_ORAL_LABEL,
+    }],
+  },
   {
     slug: "diazepam",
     curatedPreparationsOnly: true,

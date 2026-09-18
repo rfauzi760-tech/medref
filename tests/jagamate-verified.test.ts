@@ -144,12 +144,26 @@ describe("verified Jaga Mate enrichments", () => {
       preparation: { ...injection!, routes: undefined } }).preparationText).toBeUndefined();
   });
   it("withholds unverified legacy calculations for route- or monitoring-sensitive drugs", () => {
-    for (const slug of ["gentamisin", "metamizol", "diklofenak", "asam-valproat"]) {
+    for (const slug of ["gentamisin", "metamizol", "diklofenak"]) {
       const drug = find(slug);
       for (const option of getDoseOptions(drug, "pediatric", 8)) {
         expect(calculateDose(drug, { weightKg: 25, ageYears: 8, doseIndex: option.index }).textOnly).toBe(true);
       }
     }
+  });
+  it("uses a labeled valproate starting dose only for absence epilepsy and an explicit oral solution", () => {
+    const drug = find("asam-valproat");
+    const verifiedIndex = drug.doses.findIndex((dose) => dose.indication === "Epilepsi absans, dosis awal oral");
+    const legacyIndex = drug.doses.findIndex((dose) => dose.population === "pediatric" && dose.indication !== "Epilepsi absans, dosis awal oral");
+    expect(verifiedIndex).toBeGreaterThanOrEqual(0);
+    expect(calculateDose(drug, { ageYears: 5, weightKg: 20, doseIndex: legacyIndex }).textOnly).toBe(true);
+    const solution = drug.dosePreparations?.find((item) => item.id === "valproat-oral-250mg-5ml");
+    const result = calculateDose(drug, { ageYears: 5, weightKg: 20, doseIndex: verifiedIndex, preparation: solution });
+    expect(result.totalDailyMg).toBe(300);
+    expect(result.perDoseMg).toBeUndefined();
+    expect(result.preparationText).toContain("6 mL per hari");
+    expect(result.notes.join(" ")).toContain("dibagi");
+    expect(calculateDose(drug, { ageYears: 1, weightKg: 10, doseIndex: verifiedIndex }).textOnly).toBe(true);
   });
   it("adds systemic prednisolone separately from ophthalmic prednisolone", () => {
     const drug = find("prednisolon-sistemik");

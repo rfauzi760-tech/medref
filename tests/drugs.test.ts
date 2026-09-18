@@ -75,6 +75,12 @@ describe("paracetamol", () => {
 });
 
 describe("adult text dosing", () => {
+  it("does not assume an adult regimen from weight alone when age is missing", () => {
+    const item = drug("asam-valproat");
+    const out = calculateDose(item, { weightKg: 20 });
+    expect(out.textOnly).toBe(true);
+    expect(out.notes.join(" ")).toContain("usia");
+  });
   it("azithromycin adult shows text-only", () => {
     const out = calculateDose(drug("azithromycin"), { ageYears: 35 });
     expect(out.textOnly).toBe(true);

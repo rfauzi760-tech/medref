@@ -280,8 +280,8 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   if (!entry) {
     return { entry: drug.doses[0], textOnly: true, notes: ["Data dosis belum tersedia. Periksa formularium setempat."], maxWarnings: [] };
   }
-  if ((entry.population === "pediatric" || entry.population === "neonatal") && inp.ageYears === undefined) {
-    return { entry, textOnly: true, notes: ["Isi usia pasien sebelum menghitung regimen anak atau neonatus."], maxWarnings: [] };
+  if (inp.ageYears === undefined) {
+    return { entry, textOnly: true, notes: ["Isi usia pasien sebelum menghitung dosis agar kelompok usia tidak diasumsikan."], maxWarnings: [] };
   }
   const agePopulation = inp.ageYears !== undefined ? resolveDosePopulation({ ageYears: inp.ageYears }) : undefined;
   if (agePopulation && entry.population !== "all" && entry.population !== agePopulation) {
