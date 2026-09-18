@@ -37,6 +37,15 @@ export interface NavModule {
 
 export const modules: NavModule[] = [
   {
+    slug: "jagamate-tools",
+    name: "Dosis Anak dan Kalkulator",
+    description: "Obat tunggal, racikan, cairan, obstetri, emergensi, dan status gizi.",
+    href: "/jagamate-tools",
+    icon: Baby,
+    count: 45,
+    countLabel: "obat",
+  },
+  {
     slug: "igd-toolkit",
     name: "Toolkit IGD",
     description: "Kumpulan kalkulator dan referensi cepat untuk penanganan pasien di IGD.",
