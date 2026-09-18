@@ -25,6 +25,7 @@
 *.pem
 *.zip
 /.freebuff/
+/.worktrees/
 
 # debug
 npm-debug.log*
