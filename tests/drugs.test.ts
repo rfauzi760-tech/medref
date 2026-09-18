@@ -81,6 +81,14 @@ describe("doseToText", () => {
     expect(text).toContain("Total harian");
     expect(text).toContain("Sumber:");
   });
+  it("uses the selected regimen source when available", () => {
+    const item = drug("amoxicillin");
+    const source = { org: "DailyMed", title: "Regimen khusus", year: 2026, url: "https://dailymed.nlm.nih.gov" };
+    const fixture: Drug = { ...item, doses: [{ ...item.doses[0], source }] };
+    const result = calculateDose(fixture, { doseIndex: 0 });
+    expect(doseToText(fixture, result)).toContain("DailyMed, Regimen khusus (2026)");
+    expect(doseToText(fixture, result)).not.toContain(`Sumber: ${item.source.org}, ${item.source.title}`);
+  });
 });
 
 describe("pickDoseEntry", () => {

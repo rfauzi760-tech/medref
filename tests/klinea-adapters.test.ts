@@ -31,7 +31,7 @@ describe("adapter konten kanonik Klinea", () => {
   });
 
   it("memakai katalog lengkap dan istilah Indonesia", () => {
-    expect(DRUGS).toHaveLength(517);
+    expect(DRUGS).toHaveLength(518);
     expect(DRUGS.find((item) => item.slug === "paracetamol")?.genericName).toBe(
       "Parasetamol (Asetaminofen)",
     );

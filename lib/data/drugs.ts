@@ -1,5 +1,7 @@
 import type { Drug } from "@/lib/types";
 import { canonicalDrugs } from "./klinea-canonical";
+import { mergeDrugEnrichments } from "./merge-drug-enrichments";
+import { JAGAMATE_ENRICHMENTS, JAGAMATE_NEW_DRUGS } from "./jagamate-verified";
 import { EXTRA_DRUGS } from "./drugs-extra";
 import { EXTRA_DRUGS_B } from "./drugs-extra-b";
 import { EXTRA_DRUGS_C } from "./drugs-extra-c";
@@ -1394,7 +1396,7 @@ const RFS_DRUGS: Drug[] = [
   ...EXTRA_DRUGS_L,
 ];
 
-export const DRUGS: Drug[] = canonicalDrugs(RFS_DRUGS);
+export const DRUGS: Drug[] = mergeDrugEnrichments(canonicalDrugs(RFS_DRUGS), JAGAMATE_ENRICHMENTS, JAGAMATE_NEW_DRUGS);
 
 export const DRUGS_BY_SLUG: Record<string, Drug> = Object.fromEntries(DRUGS.map((d) => [d.slug, d]));
 export const DRUG_CLASSES: string[] = [...new Set(DRUGS.map((d) => d.drugClass))].sort();

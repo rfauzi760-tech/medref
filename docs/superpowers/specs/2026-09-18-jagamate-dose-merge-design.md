@@ -2,7 +2,7 @@
 
 ## Tujuan dan batas
 
-Lengkapi modul `Dosis Obat` RFSmed dari seluruh entri obat yang dapat diakses dalam akun Jaga Mate milik pengguna. Pengguna menyatakan memiliki izin penggunaan dan publikasi data. Pada 18 September 2026, daftar `Obat Tunggal` yang terlihat memuat 45 pilihan dalam sembilan kategori, sedangkan RFSmed memiliki sekitar 554 entri obat. Jumlah tersebut adalah titik awal audit, bukan alasan untuk menganggap rincian dosis RFSmed sudah lengkap.
+Lengkapi modul `Dosis Obat` RFSmed dari seluruh entri obat yang dapat diakses dalam akun Jaga Mate milik pengguna. Pengguna menyatakan memiliki izin penggunaan dan publikasi data. Pada 18 September 2026, daftar `Obat Tunggal` yang terlihat memuat 45 pilihan dalam sembilan kategori, sedangkan katalog kanonis yang benar-benar ditampilkan RFSmed memiliki 517 entri obat. Jumlah tersebut adalah titik awal audit, bukan alasan untuk menganggap rincian dosis RFSmed sudah lengkap.
 
 Lingkup pekerjaan adalah data obat tunggal: nama generik dan sinonim, indikasi, populasi/usia, rute, dosis, frekuensi, batas maksimum, sediaan, dan konversi. Fitur `Racikan`, kalkulator lain, tampilan Jaga Mate, akun, serta gamifikasi tidak disalin. Sesi, token, dan kredensial Jaga Mate tidak disimpan di repositori.
 

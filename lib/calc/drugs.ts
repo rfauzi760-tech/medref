@@ -76,9 +76,11 @@ function populationMatches(entry: DrugDose, population: DoseCalculationInput["po
   return entry.population === population || entry.population === "all";
 }
 
-export function getDoseOptions(drug: Drug, population?: DoseCalculationInput["population"]): DoseOption[] {
+export function getDoseOptions(drug: Drug, population?: DoseCalculationInput["population"], ageYears?: number): DoseOption[] {
   return drug.doses.flatMap((entry, index) => {
     if (!populationMatches(entry, population)) return [];
+    if (ageYears !== undefined && ((entry.minAgeYears !== undefined && ageYears < entry.minAgeYears) ||
+      (entry.maxAgeYears !== undefined && ageYears >= entry.maxAgeYears))) return [];
     return [{
       index,
       population: entry.population,
@@ -270,6 +272,13 @@ export function calculateDose(drug: Drug, inp: DoseCalculationInput): DoseCalcul
   if (!entry) {
     return { entry: drug.doses[0], textOnly: true, notes: ["Data dosis belum tersedia. Periksa formularium setempat."], maxWarnings: [] };
   }
+  if (entry.minAgeYears !== undefined || entry.maxAgeYears !== undefined) {
+    if (inp.ageYears === undefined ||
+      (entry.minAgeYears !== undefined && inp.ageYears < entry.minAgeYears) ||
+      (entry.maxAgeYears !== undefined && inp.ageYears >= entry.maxAgeYears)) {
+      return { entry, textOnly: true, notes: ["Isi dan periksa usia pasien untuk memilih regimen sesuai rentang usia."], maxWarnings: [] };
+    }
+  }
   const w = num(inp.weightKg);
   const wb = entry.weightBased;
 
@@ -406,7 +415,8 @@ export function doseToText(drug: Drug, out: DoseCalculationOutput): string {
   if (out.totalDailyText) lines.push(`Total harian: ${out.totalDailyText}`);
   if (out.preparationText) lines.push(`Sediaan: ${out.preparationText}`);
   for (const w of out.maxWarnings) lines.push(`⚠ ${w}`);
-  lines.push(`Sumber: ${drug.source.org}, ${drug.source.title} (${drug.source.year})`);
+  const source = out.entry.source ?? drug.source;
+  lines.push(`Sumber: ${source.org}, ${source.title} (${source.year})`);
   lines.push("Hanya alat bantu keputusan klinis. Verifikasi dengan protokol dan formularium setempat.");
   return lines.join("\n");
 }

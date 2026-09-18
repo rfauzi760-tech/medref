@@ -189,10 +189,15 @@ export interface DrugDose {
   population: DosePopulation;
   route: string;
   indication?: string;
+  /** Inclusive lower and exclusive upper age bounds for age-specific regimens. */
+  minAgeYears?: number;
+  maxAgeYears?: number;
   /** human-readable standard dose */
   text: string;
   weightBased?: MgPerKgDose;
   notes?: string[];
+  /** Primary source for this specific regimen, when distinct from the drug-level source. */
+  source?: ClinicalSource;
 }
 
 export interface DosePreparation {

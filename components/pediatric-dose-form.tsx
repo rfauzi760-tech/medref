@@ -52,7 +52,7 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
     population: population || undefined,
     pediatricMode: initialPediatricMode,
   });
-  const options = getDoseOptions(drug, effectivePopulation);
+  const options = getDoseOptions(drug, effectivePopulation, resolvedAgeYears);
   const selectedDoseIndex = doseIndex !== "" && options.some((option) => option.index === Number(doseIndex))
     ? Number(doseIndex)
     : options[0]?.index;
@@ -250,6 +250,13 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
           <div className="mt-3 space-y-1">
             {result.notes.map((note, index) => <p key={index} className="text-xs leading-relaxed text-[var(--muted)]">{note}</p>)}
           </div>
+          {result.entry.source?.url && (
+            <p className="mt-3 border-t border-[var(--line)] pt-3 text-xs text-[var(--muted)]">
+              Sumber regimen: <a href={result.entry.source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-[var(--foreground)]">
+                {result.entry.source.org}, {result.entry.source.title} ({result.entry.source.year})
+              </a>
+            </p>
+          )}
         </div>
       )}
 
