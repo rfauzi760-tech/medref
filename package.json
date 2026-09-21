@@ -11,7 +11,11 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "audit:coverage": "vitest run tests/coverage-audit.test.ts tests/data-validation.test.ts"
+    "audit:coverage": "vitest run tests/coverage-audit.test.ts tests/data-validation.test.ts",
+    "dev:vinext": "vinext dev --port 3001",
+    "build:vinext": "vinext build",
+    "start:vinext": "wrangler dev --config dist/server/wrangler.json",
+    "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -25,14 +29,23 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.56.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24.13.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vinext/cloudflare": "^1.0.0-beta.8",
+    "@vitejs/plugin-react": "^6.0.0",
+    "@vitejs/plugin-rsc": "^0.5.35",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
+    "react-server-dom-webpack": "^19.2.6",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^5.0.0"
-  }
+    "vinext": "^1.0.0-beta.10",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.0",
+    "wrangler": "^4.135.0"
+  },
+  "type": "module"
 }
