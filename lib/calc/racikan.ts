@@ -7,6 +7,8 @@ export interface RacikanIngredientInput {
   preparationId: string;
   /** mg/kg per dose, or mg/kg/day when the selected regimen uses a daily basis. */
   targetMgPerKg?: number;
+  /** Exact active-ingredient amount per packet when the source regimen is text-only. */
+  prescribedMg?: number;
 }
 
 export interface RacikanInput {
@@ -33,11 +35,11 @@ function preparations(drug: Drug): DosePreparation[] {
 
 export function getRacikanOptions(drug: Drug, ageYears: number) {
   const allowed = drug.doses.flatMap((entry, index) => {
-    if (!/\b(?:oral|po)\b/i.test(entry.route) || /\b(?:iv|im|sc|pr|io)\b/i.test(entry.route)) return [];
+    if (/\b(?:iv|im|sc|pr|io|nebul|inhal)\b/i.test(entry.route)) return [];
+    if (!/\b(?:oral|po)\b/i.test(entry.route) && !/(?:usia|tahun|bulan|\bth\b|[<>≥≤])/i.test(entry.route)) return [];
     if (entry.population !== "all" && entry.population !== (ageYears < 18 ? "pediatric" : "adult")) return [];
     if (entry.minAgeYears !== undefined && ageYears < entry.minAgeYears) return [];
     if (entry.maxAgeYears !== undefined && ageYears >= entry.maxAgeYears) return [];
-    if (!entry.weightBased && !entry.fixedDoseMg) return [];
     const products = preparations(drug).filter((item) =>
       (item.carrierUnit === "tablet" || item.carrierUnit === "kapsul") &&
       item.drugUnit === "mg" && preparationMatchesRoute(item, entry.route) &&
@@ -45,7 +47,8 @@ export function getRacikanOptions(drug: Drug, ageYears: number) {
       (item.maxAgeYears === undefined || ageYears < item.maxAgeYears),
     );
     if (!products.length) return [];
-    return [{ index, label: `${entry.indication ?? "Dosis umum"} · ${entry.route}`, basis: entry.weightBased?.per ?? "dose", minMgPerKg: entry.weightBased?.min, maxMgPerKg: entry.weightBased?.max ?? entry.weightBased?.min, products: products.map(({ id, label }) => ({ id, label })) }];
+    const manualDose = !entry.weightBased && !entry.fixedDoseMg;
+    return [{ index, label: `${entry.indication ?? "Dosis umum"} · ${entry.route}${manualDose ? " · dosis sesuai resep" : ""}`, basis: entry.weightBased?.per ?? "dose", minMgPerKg: entry.weightBased?.min, maxMgPerKg: entry.weightBased?.max ?? entry.weightBased?.min, manualDose, products: products.map(({ id, label }) => ({ id, label })) }];
   });
   return allowed;
 }
@@ -70,36 +73,43 @@ export function calculateRacikan(drugs: Record<string, Drug>, input: RacikanInpu
     if (!entry || !option) { reasons.push(`${drug.genericName}: belum ada regimen oral padat yang dapat dihitung untuk usia ini.`); continue; }
     const preparation = preparations(drug).find((candidate) => candidate.id === item.preparationId && option.products.some((product) => product.id === candidate.id));
     if (!preparation) { reasons.push(`${drug.genericName}: sediaan tablet/kapsul yang dipilih tidak sesuai.`); continue; }
-    const dose = calculateDose(drug, { ageYears: input.ageYears, weightKg: input.weightKg, doseIndex: item.doseIndex, preparation });
-    if (dose.textOnly || dose.perDoseMin === undefined || dose.perDoseMax === undefined || dose.preparationPerDoseMin === undefined) {
-      reasons.push(`${drug.genericName}: dosis atau konversi sediaan belum terverifikasi.`); continue;
-    }
-    if (entry.weightBased?.doseUnit && entry.weightBased.doseUnit !== "mg") {
-      reasons.push(`${drug.genericName}: satuan dosis bukan mg.`); continue;
-    }
-    const usualFrequency = entry.weightBased?.frequencyPerDay;
-    if (usualFrequency && input.frequencyPerDay > usualFrequency) {
-      reasons.push(`${drug.genericName}: frekuensi melampaui regimen terpilih.`); continue;
-    }
-    if (usualFrequency && input.frequencyPerDay !== usualFrequency && !/analges|antipire|antipyret/i.test(drug.drugClass)) {
-      reasons.push(`${drug.genericName}: frekuensi harus ${usualFrequency} kali sehari sesuai regimen.`); continue;
-    }
     let mgPerPacket: number;
-    if (entry.weightBased) {
+    if (option.manualDose) {
+      if (!Number.isFinite(item.prescribedMg) || !(item.prescribedMg! > 0) || item.prescribedMg! > 10_000) {
+        reasons.push(`${drug.genericName}: masukkan dosis zat aktif per bungkus sesuai resep.`); continue;
+      }
+      mgPerPacket = item.prescribedMg!;
+    } else {
+      const dose = calculateDose(drug, { ageYears: input.ageYears, weightKg: input.weightKg, doseIndex: item.doseIndex, preparation });
+      if (dose.textOnly || dose.perDoseMin === undefined || dose.perDoseMax === undefined || dose.preparationPerDoseMin === undefined) {
+        reasons.push(`${drug.genericName}: dosis atau konversi sediaan belum terverifikasi.`); continue;
+      }
+      if (entry.weightBased?.doseUnit && entry.weightBased.doseUnit !== "mg") {
+        reasons.push(`${drug.genericName}: satuan dosis bukan mg.`); continue;
+      }
+      const usualFrequency = entry.weightBased?.frequencyPerDay;
+      if (usualFrequency && input.frequencyPerDay > usualFrequency) {
+        reasons.push(`${drug.genericName}: frekuensi melampaui regimen terpilih.`); continue;
+      }
+      if (usualFrequency && input.frequencyPerDay !== usualFrequency && !/analges|antipire|antipyret/i.test(drug.drugClass)) {
+        reasons.push(`${drug.genericName}: frekuensi harus ${usualFrequency} kali sehari sesuai regimen.`); continue;
+      }
+      if (entry.weightBased) {
       const target = item.targetMgPerKg;
       if (!Number.isFinite(target) || target === undefined || target < entry.weightBased.min || target > (entry.weightBased.max ?? entry.weightBased.min)) {
         reasons.push(`${drug.genericName}: pilih target mg/kg dalam rentang regimen.`); continue;
       }
-      mgPerPacket = input.weightKg * target / (entry.weightBased.per === "day" ? usualFrequency ?? 0 : 1);
-    } else {
-      if (dose.perDoseMin !== dose.perDoseMax) { reasons.push(`${drug.genericName}: pilih dosis tepat dalam rentang, bukan titik tengah otomatis.`); continue; }
-      mgPerPacket = dose.perDoseMin;
-    }
-    if (!Number.isFinite(mgPerPacket) || mgPerPacket < dose.perDoseMin - 1e-9 || mgPerPacket > dose.perDoseMax + 1e-9) {
-      reasons.push(`${drug.genericName}: target melampaui batas dosis terhitung.`); continue;
-    }
-    if (entry.weightBased?.maxDailyMg && mgPerPacket * input.frequencyPerDay > entry.weightBased.maxDailyMg) {
-      reasons.push(`${drug.genericName}: total harian melampaui batas maksimum.`); continue;
+        mgPerPacket = input.weightKg * target / (entry.weightBased.per === "day" ? usualFrequency ?? 0 : 1);
+      } else {
+        if (dose.perDoseMin !== dose.perDoseMax) { reasons.push(`${drug.genericName}: pilih dosis tepat dalam rentang, bukan titik tengah otomatis.`); continue; }
+        mgPerPacket = dose.perDoseMin;
+      }
+      if (!Number.isFinite(mgPerPacket) || mgPerPacket < dose.perDoseMin - 1e-9 || mgPerPacket > dose.perDoseMax + 1e-9) {
+        reasons.push(`${drug.genericName}: target melampaui batas dosis terhitung.`); continue;
+      }
+      if (entry.weightBased?.maxDailyMg && mgPerPacket * input.frequencyPerDay > entry.weightBased.maxDailyMg) {
+        reasons.push(`${drug.genericName}: total harian melampaui batas maksimum.`); continue;
+      }
     }
     const totalMg = mgPerPacket * input.packets;
     const productUnits = totalMg * preparation.carrierAmount / preparation.drugAmount;

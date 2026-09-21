@@ -6,8 +6,8 @@ import type { RacikanResult } from "@/lib/calc/racikan";
 import { CopyButton } from "@/components/action-buttons";
 
 type Choice = { name: string; slug: string };
-type Option = { index: number; label: string; basis: "day" | "dose"; minMgPerKg?: number; maxMgPerKg?: number; products: { id: string; label: string }[] };
-type Ingredient = { id: number; slug: string; doseIndex: string; preparationId: string; targetMgPerKg: string };
+type Option = { index: number; label: string; basis: "day" | "dose"; minMgPerKg?: number; maxMgPerKg?: number; manualDose?: boolean; products: { id: string; label: string }[] };
+type Ingredient = { id: number; slug: string; doseIndex: string; preparationId: string; targetMgPerKg: string; prescribedMg: string };
 const fieldClass = "focus-ring h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 text-sm";
 const labelClass = "mb-1 block text-xs font-bold text-[var(--muted)]";
 
@@ -16,7 +16,7 @@ export function RacikanForm({ choices }: { choices: Choice[] }) {
   const [weight, setWeight] = useState("");
   const [packets, setPackets] = useState("10");
   const [frequency, setFrequency] = useState("3");
-  const [ingredients, setIngredients] = useState<Ingredient[]>([{ id: 1, slug: "", doseIndex: "", preparationId: "", targetMgPerKg: "" }]);
+  const [ingredients, setIngredients] = useState<Ingredient[]>([{ id: 1, slug: "", doseIndex: "", preparationId: "", targetMgPerKg: "", prescribedMg: "" }]);
   const [nextId, setNextId] = useState(2);
   const [options, setOptions] = useState<{ key: string; values: Record<number, { name: string; options: Option[] }> }>({ key: "", values: {} });
   const [result, setResult] = useState<RacikanResult | null>(null);
@@ -50,7 +50,7 @@ export function RacikanForm({ choices }: { choices: Choice[] }) {
     try {
       const response = await fetch("/api/racikan", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
         ageYears: Number(age), weightKg: Number(weight), packets: Number(packets), frequencyPerDay: Number(frequency),
-        ingredients: ingredients.map((item) => ({ slug: item.slug, doseIndex: Number(item.doseIndex), preparationId: item.preparationId, targetMgPerKg: item.targetMgPerKg ? Number(item.targetMgPerKg) : undefined })),
+        ingredients: ingredients.map((item) => ({ slug: item.slug, doseIndex: Number(item.doseIndex), preparationId: item.preparationId, targetMgPerKg: item.targetMgPerKg ? Number(item.targetMgPerKg) : undefined, prescribedMg: item.prescribedMg ? Number(item.prescribedMg) : undefined })),
       }) });
       const body = await response.json();
       if (!response.ok) setError(body.error ?? "Hitungan gagal."); else setResult(body as RacikanResult);
@@ -80,16 +80,17 @@ export function RacikanForm({ choices }: { choices: Choice[] }) {
         return <fieldset key={item.id} className="rounded-lg border border-[var(--line)] p-4">
           <legend className="px-1 text-sm font-bold">Bahan {index + 1}</legend>
           <div className="grid gap-3 sm:grid-cols-2">
-            <label><span className={labelClass}>Obat</span><select className={fieldClass} required value={item.slug} onChange={(event) => update(item.id, { slug: event.target.value, doseIndex: "", preparationId: "", targetMgPerKg: "" })}><option value="">Pilih obat</option>{choices.map((choice) => <option key={choice.name} value={choice.slug}>{choice.name}</option>)}</select></label>
-            <label><span className={labelClass}>Indikasi dan regimen oral</span><select className={fieldClass} required value={item.doseIndex} onChange={(event) => update(item.id, { doseIndex: event.target.value, preparationId: "", targetMgPerKg: "" })}><option value="">Pilih regimen</option>{metadata?.options.map((option) => <option key={option.index} value={option.index}>{option.label}</option>)}</select></label>
-            <label><span className={labelClass}>Sediaan tablet/kapsul</span><select className={fieldClass} required value={item.preparationId} onChange={(event) => update(item.id, { preparationId: event.target.value })}><option value="">Pilih sediaan</option>{selected?.products.map((product) => <option key={product.id} value={product.id}>{product.label}</option>)}</select></label>
+            <label><span className={labelClass}>Obat</span><select className={fieldClass} required value={item.slug} onChange={(event) => update(item.id, { slug: event.target.value, doseIndex: "", preparationId: "", targetMgPerKg: "", prescribedMg: "" })}><option value="">Pilih obat</option>{choices.map((choice) => <option key={choice.name} value={choice.slug}>{choice.name}</option>)}</select></label>
+            <label><span className={labelClass}>Indikasi dan regimen oral</span><select className={fieldClass} required disabled={!age || !metadata} value={item.doseIndex} onChange={(event) => update(item.id, { doseIndex: event.target.value, preparationId: "", targetMgPerKg: "", prescribedMg: "" })}><option value="">{!age ? "Isi usia terlebih dahulu" : "Pilih regimen"}</option>{metadata?.options.map((option) => <option key={option.index} value={option.index}>{option.label}</option>)}</select></label>
+            <label><span className={labelClass}>Sediaan tablet/kapsul</span><select className={fieldClass} required disabled={!selected} value={item.preparationId} onChange={(event) => update(item.id, { preparationId: event.target.value })}><option value="">Pilih sediaan</option>{selected?.products.map((product) => <option key={product.id} value={product.id}>{product.label}</option>)}</select></label>
             {selected?.minMgPerKg !== undefined && <label><span className={labelClass}>Target mg/kg{selected.basis === "day" ? "/hari" : "/dosis"} ({selected.minMgPerKg} sampai {selected.maxMgPerKg})</span><input className={fieldClass} type="number" min={selected.minMgPerKg} max={selected.maxMgPerKg} step="any" required value={item.targetMgPerKg} onChange={(event) => update(item.id, { targetMgPerKg: event.target.value })} /></label>}
+            {selected?.manualDose && <label><span className={labelClass}>Dosis zat aktif per bungkus (mg), sesuai resep</span><input className={fieldClass} type="number" min="0.001" max="10000" step="any" required value={item.prescribedMg} onChange={(event) => update(item.id, { prescribedMg: event.target.value })} /></label>}
           </div>
           {item.slug && metadata && metadata.options.length === 0 && <p className="mt-3 text-sm text-amber-600 dark:text-amber-300">Belum ada regimen oral padat yang aman dihitung otomatis untuk usia ini. <Link href={`/drugs/${item.slug}?mode=anak`} className="font-bold underline underline-offset-2">Buka panduan obat</Link>.</p>}
           {ingredients.length > 1 && <button type="button" onClick={() => { setIngredients((current) => current.filter((candidate) => candidate.id !== item.id)); setResult(null); }} className="focus-ring mt-3 rounded-lg border border-[var(--line)] px-3 py-2 text-xs font-bold">Hapus bahan</button>}
         </fieldset>;
       })}
-      <button type="button" disabled={ingredients.length >= 8} onClick={() => { setIngredients((current) => [...current, { id: nextId, slug: "", doseIndex: "", preparationId: "", targetMgPerKg: "" }]); setNextId((value) => value + 1); setResult(null); }} className="focus-ring rounded-lg border border-[var(--line)] px-4 py-2 text-sm font-bold disabled:opacity-50">Tambah bahan</button>
+      <button type="button" disabled={ingredients.length >= 8} onClick={() => { setIngredients((current) => [...current, { id: nextId, slug: "", doseIndex: "", preparationId: "", targetMgPerKg: "", prescribedMg: "" }]); setNextId((value) => value + 1); setResult(null); }} className="focus-ring rounded-lg border border-[var(--line)] px-4 py-2 text-sm font-bold disabled:opacity-50">Tambah bahan</button>
     </div>
     <button type="submit" disabled={loading} className="focus-ring rounded-lg bg-accent px-5 py-2.5 text-sm font-bold text-white disabled:opacity-50">{loading ? "Menghitung..." : "Hitung racikan"}</button>
     {error && <p role="alert" className="text-sm text-red-600 dark:text-red-300">{error}</p>}

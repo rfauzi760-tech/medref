@@ -8,6 +8,26 @@ const paracetamolOption = getRacikanOptions(drugs.paracetamol, 5)[0];
 const paracetamolIngredient = { slug: "paracetamol", doseIndex: paracetamolOption.index, preparationId: paracetamolOption.products.find((item) => item.label.includes("500"))!.id, targetMgPerKg: 10 };
 
 describe("racikan worksheet", () => {
+  it("menampilkan regimen dan sediaan Asam Mefenamat untuk dosis resep manual", () => {
+    const options = getRacikanOptions(drugs["asam-mefenamat"], 15);
+    expect(options.length).toBeGreaterThan(0);
+    expect(options.some((option) => option.manualDose && option.products.some((product) => product.label.includes("500 mg")))).toBe(true);
+  });
+
+  it("menghitung Asam Mefenamat dari dosis per bungkus yang ditetapkan", () => {
+    const option = getRacikanOptions(drugs["asam-mefenamat"], 15).find((item) => item.manualDose)!;
+    const product = option.products.find((item) => item.label.includes("500 mg"))!;
+    const result = calculateRacikan(drugs, {
+      ageYears: 15,
+      weightKg: 50,
+      packets: 10,
+      frequencyPerDay: 3,
+      ingredients: [{ slug: "asam-mefenamat", doseIndex: option.index, preparationId: product.id, prescribedMg: 250 }],
+    });
+    expect(result.status, JSON.stringify(result)).toBe("ok");
+    if (result.status === "ok") expect(result.ingredients[0].productUnits).toBe(5);
+  });
+
   it("calculates an exact oral solid amount without rounding tablets", () => {
     const result = calculateRacikan(drugs, {
       ...base,
