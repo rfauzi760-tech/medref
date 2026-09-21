@@ -5,6 +5,7 @@ import { Plus, X, AlertTriangle, ShieldAlert, Info, Minus } from "lucide-react";
 import type { DrugInteraction, InteractionSeverity } from "@/lib/types";
 import { PageHeader } from "@/components/shared";
 import { SourceBlock } from "@/components/source-block";
+import { filterInteractionSuggestions } from "@/lib/calc/interaction-search";
 
 const SEVERITY_STYLE: Record<InteractionSeverity, { label: string; cls: string }> = {
   contraindicated: { label: "Kontraindikasi", cls: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200 border-red-300 dark:border-red-800" },
@@ -30,19 +31,16 @@ type InteractionPair = {
 export default function InteractionsPageClient({ drugs }: { drugs: DrugSummary[] }) {
   const [added, setAdded] = useState<DrugSummary[]>([]);
   const [query, setQuery] = useState("");
+  const [drugClass, setDrugClass] = useState("");
   const [checked, setChecked] = useState(false);
   const [pairs, setPairs] = useState<InteractionPair[]>([]);
   const [requestFailed, setRequestFailed] = useState(false);
 
   const suggestions = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (q.length < 2) return [];
-    return drugs.filter(
-      (d) =>
-        !added.some((a) => a.slug === d.slug) &&
-        (d.genericName.toLowerCase().includes(q) || d.brandNames?.some((b) => b.toLowerCase().includes(q))),
-    ).slice(0, 8);
-  }, [query, added]);
+    return filterInteractionSuggestions(drugs, added.map((drug) => drug.slug), query, drugClass);
+  }, [query, drugClass, added, drugs]);
+  const drugClasses = useMemo(() => [...new Set(drugs.map((drug) => drug.drugClass))].sort((a, b) => a.localeCompare(b, "id")), [drugs]);
+  const searchActive = query.trim().length >= 2 || Boolean(drugClass);
 
   useEffect(() => {
     if (added.length < 2) {
@@ -111,29 +109,43 @@ export default function InteractionsPageClient({ drugs }: { drugs: DrugSummary[]
           ))}
         </div>
 
-        <div className="relative mt-3">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Cari obat untuk ditambahkan… mis. warfarin, klaritromisin"
-            className="focus-ring w-full rounded-md border border-line bg-surface px-3 py-2 pr-10 text-sm"
-          />
-          <Plus className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
-          {suggestions.length > 0 && (
-            <div className="absolute inset-x-0 top-full z-10 mt-1 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
-              {suggestions.map((d) => (
-                <button
-                  key={d.slug}
-                  type="button"
-                  onClick={() => add(d)}
-                  className="flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-sm hover:bg-accent/5"
-                >
-                  <span className="truncate">{d.genericName}</span>
-                  <span className="shrink-0 text-[10px] text-zinc-400">{d.drugClass}</span>
-                </button>
-              ))}
-            </div>
-          )}
+        <div className="mt-3 grid gap-2 sm:grid-cols-[minmax(0,1fr)_16rem]">
+          <div className="relative">
+            <label htmlFor="interaction-drug-search" className="sr-only">Cari obat</label>
+            <input
+              id="interaction-drug-search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Cari obat untuk ditambahkan… mis. warfarin"
+              className="focus-ring w-full rounded-md border border-line bg-surface px-3 py-2 pr-10 text-sm"
+            />
+            <Plus className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
+          </div>
+          <div>
+            <label htmlFor="interaction-drug-class" className="sr-only">Kelas obat</label>
+            <select id="interaction-drug-class" value={drugClass} onChange={(event) => setDrugClass(event.target.value)} className="focus-ring h-full min-h-10 w-full rounded-md border border-line bg-surface px-3 py-2 text-sm">
+              <option value="">Semua kelas</option>
+              {drugClasses.map((item) => <option key={item} value={item}>{item}</option>)}
+            </select>
+          </div>
+          <div className="relative sm:col-span-2">
+            {suggestions.length > 0 && (
+              <div className="absolute inset-x-0 top-0 z-10 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+                {suggestions.map((d) => (
+                  <button
+                    key={d.slug}
+                    type="button"
+                    onClick={() => add(d)}
+                    className="flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-sm hover:bg-accent/5"
+                  >
+                    <span className="truncate">{d.genericName}</span>
+                    <span className="shrink-0 text-[10px] text-zinc-400">{d.drugClass}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+            {searchActive && suggestions.length === 0 && <p role="status" className="rounded-md border border-dashed border-[var(--line)] px-3 py-2 text-sm text-[var(--muted)]">Tidak ada obat yang cocok.</p>}
+          </div>
         </div>
       </div>
 

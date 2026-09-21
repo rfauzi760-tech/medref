@@ -3,7 +3,7 @@ import DrugsPageClient from "@/components/catalog-pages/drugs-page-client";
 import { DrugToolsIndex } from "@/components/drug-tools-index";
 import { RacikanForm } from "@/components/racikan-form";
 import { PageHeader } from "@/components/shared";
-import { DRUGS, DRUG_CLASSES } from "@/lib/data/drugs";
+import { DRUGS } from "@/lib/data/drugs";
 import { JAGAMATE_DRUG_CHOICES } from "@/lib/data/jagamate-choices";
 
 export default async function DrugsPage({ searchParams }: { searchParams: Promise<{ mode?: string; tab?: string }> }) {
@@ -29,6 +29,6 @@ export default async function DrugsPage({ searchParams }: { searchParams: Promis
     </> : tab === "tools" ? <>
       <PageHeader title="Kalkulator terkait dosis" description="Kalkulator cairan, obstetri, emergensi, dan status gizi dalam halaman dosis obat." />
       <DrugToolsIndex />
-    </> : <DrugsPageClient drugs={drugs} drugClasses={DRUG_CLASSES} initialPediatricMode={mode === "anak"} />}
+    </> : <DrugsPageClient drugs={drugs} initialPediatricMode={mode === "anak"} />}
   </div>;
 }

@@ -10,22 +10,18 @@ type DrugSummary = Pick<Drug, "slug" | "genericName" | "brandNames" | "drugClass
 
 export default function DrugsPageClient({
   drugs,
-  drugClasses,
   initialPediatricMode = false,
 }: {
   drugs: DrugSummary[];
-  drugClasses: string[];
   initialPediatricMode?: boolean;
 }) {
   const [q, setQ] = useState("");
-  const [cls, setCls] = useState("");
   const [pediatricOnly, setPediatricOnly] = useState(initialPediatricMode);
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
     return drugs.filter((d) => {
       if (pediatricOnly && !d.hasPediatricDose) return false;
-      if (cls && d.drugClass !== cls) return false;
       if (!query) return true;
       return (
         d.genericName.toLowerCase().includes(query) ||
@@ -35,7 +31,7 @@ export default function DrugsPageClient({
         d.indications.some((i) => i.toLowerCase().includes(query))
       );
     });
-  }, [q, cls, pediatricOnly, drugs]);
+  }, [q, pediatricOnly, drugs]);
 
   const pediatricCount = drugs.filter((drug) => drug.hasPediatricDose).length;
 
@@ -68,23 +64,6 @@ export default function DrugsPageClient({
         </button>
       </div>
       <FilterInput value={q} onChange={setQ} placeholder="Cari nama generik, merek, kelas, atau indikasi" />
-      <div className="mb-5 flex flex-wrap gap-2">
-        <button
-          onClick={() => setCls("")}
-          className={`rounded-full border px-3 py-1 text-xs font-medium ${!cls ? "border-accent bg-accent/10 text-accent-strong dark:text-accent" : "border-zinc-200 text-zinc-500 hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-400"}`}
-        >
-          Semua kelas
-        </button>
-        {drugClasses.map((c) => (
-          <button
-            key={c}
-            onClick={() => setCls(cls === c ? "" : c)}
-            className={`rounded-full border px-3 py-1 text-xs font-medium ${cls === c ? "border-accent bg-accent/10 text-accent-strong dark:text-accent" : "border-zinc-200 text-zinc-500 hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-400"}`}
-          >
-            {c}
-          </button>
-        ))}
-      </div>
 
       {filtered.length === 0 ? (
         <EmptyState message={`Tidak ada obat yang cocok dengan “${q}”.`} />
