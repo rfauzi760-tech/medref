@@ -1,0 +1,848 @@
+[
+  {
+    "id": "DDInter1009",
+    "name": "Ketoprofen",
+    "drugbank_id": "DB01009",
+    "slug": "ketoprofen"
+  },
+  {
+    "id": "DDInter1010",
+    "name": "Ketorolac",
+    "drugbank_id": "DB00465",
+    "slug": "ketorolak"
+  },
+  {
+    "id": "DDInter1013",
+    "name": "Labetalol",
+    "drugbank_id": "DB00598",
+    "slug": "labetalol"
+  },
+  {
+    "id": "DDInter1014",
+    "name": "Lacosamide",
+    "drugbank_id": "DB06218",
+    "slug": "lakosamid"
+  },
+  {
+    "id": "DDInter1019",
+    "name": "Lamivudine",
+    "drugbank_id": "DB00709",
+    "slug": "lamivudin"
+  },
+  {
+    "id": "DDInter1028",
+    "name": "Latanoprost",
+    "drugbank_id": "DB00654",
+    "slug": "latanoprost"
+  },
+  {
+    "id": "DDInter1033",
+    "name": "Leflunomide",
+    "drugbank_id": "DB01097",
+    "slug": "leflunomid"
+  },
+  {
+    "id": "DDInter1055",
+    "name": "Levofloxacin",
+    "drugbank_id": "DB01137",
+    "slug": "levofloksasin"
+  },
+  {
+    "id": "DDInter1070",
+    "name": "Linagliptin",
+    "drugbank_id": "DB08882",
+    "slug": "linagliptin"
+  },
+  {
+    "id": "DDInter1079",
+    "name": "Lisinopril",
+    "drugbank_id": "DB00722",
+    "slug": "lisinopril"
+  },
+  {
+    "id": "DDInter1092",
+    "name": "Lorazepam",
+    "drugbank_id": "DB00186",
+    "slug": "lorazepam"
+  },
+  {
+    "id": "DDInter1095",
+    "name": "Losartan",
+    "drugbank_id": "DB00678",
+    "slug": "losartan"
+  },
+  {
+    "id": "DDInter1146",
+    "name": "Memantine",
+    "drugbank_id": "DB01043",
+    "slug": "memantin"
+  },
+  {
+    "id": "DDInter1164",
+    "name": "Metformin",
+    "drugbank_id": "DB00331",
+    "slug": "metformin"
+  },
+  {
+    "id": "DDInter1189",
+    "name": "Methylphenidate",
+    "drugbank_id": "DB00422",
+    "slug": "metilfenidat"
+  },
+  {
+    "id": "DDInter1191",
+    "name": "Methylprednisolone",
+    "drugbank_id": "DB00959",
+    "slug": "metilprednisolon"
+  },
+  {
+    "id": "DDInter1200",
+    "name": "Metoprolol",
+    "drugbank_id": "DB00264",
+    "slug": "metoprolol"
+  },
+  {
+    "id": "DDInter1202",
+    "name": "Metronidazole",
+    "drugbank_id": "DB00916",
+    "slug": "metronidazol"
+  },
+  {
+    "id": "DDInter1208",
+    "name": "Micafungin",
+    "drugbank_id": "DB01141",
+    "slug": "mikafungin"
+  },
+  {
+    "id": "DDInter1212",
+    "name": "Midazolam",
+    "drugbank_id": "DB00683",
+    "slug": "midazolam"
+  },
+  {
+    "id": "DDInter1230",
+    "name": "Mirtazapine",
+    "drugbank_id": "DB00370",
+    "slug": "mirtazapin"
+  },
+  {
+    "id": "DDInter1247",
+    "name": "Moxifloxacin",
+    "drugbank_id": "DB00218",
+    "slug": "moksifloksasin"
+  },
+  {
+    "id": "DDInter1262",
+    "name": "Naloxone",
+    "drugbank_id": "DB01183",
+    "slug": "nalokson"
+  },
+  {
+    "id": "DDInter1266",
+    "name": "Naproxen",
+    "drugbank_id": "DB00788",
+    "slug": "naproksen"
+  },
+  {
+    "id": "DDInter1295",
+    "name": "Nimodipine",
+    "drugbank_id": "DB00393",
+    "slug": "nimodipin"
+  },
+  {
+    "id": "DDInter130",
+    "name": "Atenolol",
+    "drugbank_id": "DB00335",
+    "slug": "atenolol"
+  },
+  {
+    "id": "DDInter1303",
+    "name": "Nitrofurantoin",
+    "drugbank_id": "DB00698",
+    "slug": "nitrofurantoin"
+  },
+  {
+    "id": "DDInter133",
+    "name": "Atorvastatin",
+    "drugbank_id": "DB01076",
+    "slug": "atorvastatin"
+  },
+  {
+    "id": "DDInter1342",
+    "name": "Ondansetron",
+    "drugbank_id": "DB00904",
+    "slug": "ondansetron"
+  },
+  {
+    "id": "DDInter1350",
+    "name": "Oseltamivir",
+    "drugbank_id": "DB00198",
+    "slug": "oseltamivir"
+  },
+  {
+    "id": "DDInter1360",
+    "name": "Oxcarbazepine",
+    "drugbank_id": "DB00776",
+    "slug": "okskarbazepin"
+  },
+  {
+    "id": "DDInter1366",
+    "name": "Oxycodone",
+    "drugbank_id": "DB00497",
+    "slug": "oksikodon"
+  },
+  {
+    "id": "DDInter14",
+    "name": "Acetaminophen",
+    "drugbank_id": "DB00316",
+    "slug": "paracetamol"
+  },
+  {
+    "id": "DDInter1460",
+    "name": "Phenytoin",
+    "drugbank_id": "DB00252",
+    "slug": "fenitoin"
+  },
+  {
+    "id": "DDInter1505",
+    "name": "Pramipexole",
+    "drugbank_id": "DB00413",
+    "slug": "pramipeksol"
+  },
+  {
+    "id": "DDInter1513",
+    "name": "Prednisolone",
+    "drugbank_id": "DB00860",
+    "slug": "prednisolon-sistemik"
+  },
+  {
+    "id": "DDInter1516",
+    "name": "Pregabalin",
+    "drugbank_id": "DB00230",
+    "slug": "pregabalin"
+  },
+  {
+    "id": "DDInter1538",
+    "name": "Propofol",
+    "drugbank_id": "DB00818",
+    "slug": "propofol"
+  },
+  {
+    "id": "DDInter1539",
+    "name": "Propranolol",
+    "drugbank_id": "DB00571",
+    "slug": "propranolol"
+  },
+  {
+    "id": "DDInter1553",
+    "name": "Quetiapine",
+    "drugbank_id": "DB01224",
+    "slug": "quetiapin"
+  },
+  {
+    "id": "DDInter1557",
+    "name": "Quinine",
+    "drugbank_id": "DB00468",
+    "slug": "kina"
+  },
+  {
+    "id": "DDInter1565",
+    "name": "Ramipril",
+    "drugbank_id": "DB00178",
+    "slug": "ramipril"
+  },
+  {
+    "id": "DDInter157",
+    "name": "Azithromycin",
+    "drugbank_id": "DB00207",
+    "slug": "azithromycin"
+  },
+  {
+    "id": "DDInter158",
+    "name": "Aztreonam",
+    "drugbank_id": "DB00355",
+    "slug": "aztreonam"
+  },
+  {
+    "id": "DDInter1609",
+    "name": "Rivaroxaban",
+    "drugbank_id": "DB06228",
+    "slug": "rivaroxaban"
+  },
+  {
+    "id": "DDInter1614",
+    "name": "Roflumilast",
+    "drugbank_id": "DB01656",
+    "slug": "roflumilast"
+  },
+  {
+    "id": "DDInter1622",
+    "name": "Rosuvastatin",
+    "drugbank_id": "DB01098",
+    "slug": "rosuvastatin"
+  },
+  {
+    "id": "DDInter1632",
+    "name": "Salbutamol",
+    "drugbank_id": "DB01001",
+    "slug": "salbutamol"
+  },
+  {
+    "id": "DDInter1666",
+    "name": "Sildenafil",
+    "drugbank_id": "DB00203",
+    "slug": "sildenafil"
+  },
+  {
+    "id": "DDInter1675",
+    "name": "Simvastatin",
+    "drugbank_id": "DB00641",
+    "slug": "simvastatin"
+  },
+  {
+    "id": "DDInter1679",
+    "name": "Sitagliptin",
+    "drugbank_id": "DB01261",
+    "slug": "sitagliptin"
+  },
+  {
+    "id": "DDInter1696",
+    "name": "Solifenacin",
+    "drugbank_id": "DB01591",
+    "slug": "solifenacin"
+  },
+  {
+    "id": "DDInter1704",
+    "name": "Sotalol",
+    "drugbank_id": "DB00489",
+    "slug": "sotalol"
+  },
+  {
+    "id": "DDInter1712",
+    "name": "Streptokinase",
+    "drugbank_id": "DB00086",
+    "slug": "streptokinase"
+  },
+  {
+    "id": "DDInter1730",
+    "name": "Sumatriptan",
+    "drugbank_id": "DB00669",
+    "slug": "sumatriptan"
+  },
+  {
+    "id": "DDInter1735",
+    "name": "Tacrolimus",
+    "drugbank_id": "DB00864",
+    "slug": "takrolimus"
+  },
+  {
+    "id": "DDInter1745",
+    "name": "Tamsulosin",
+    "drugbank_id": "DB00706",
+    "slug": "tamsulosin"
+  },
+  {
+    "id": "DDInter1746",
+    "name": "Tapentadol",
+    "drugbank_id": "DB06204",
+    "slug": "tapentadol"
+  },
+  {
+    "id": "DDInter1759",
+    "name": "Telmisartan",
+    "drugbank_id": "DB00966",
+    "slug": "telmisartan"
+  },
+  {
+    "id": "DDInter1802",
+    "name": "Ticagrelor",
+    "drugbank_id": "DB08816",
+    "slug": "ticagrelor"
+  },
+  {
+    "id": "DDInter1805",
+    "name": "Tigecycline",
+    "drugbank_id": "DB00560",
+    "slug": "tigesiklin"
+  },
+  {
+    "id": "DDInter1825",
+    "name": "Tofacitinib",
+    "drugbank_id": "DB08895",
+    "slug": "tofacitinib"
+  },
+  {
+    "id": "DDInter1841",
+    "name": "Tramadol",
+    "drugbank_id": "DB00193",
+    "slug": "tramadol"
+  },
+  {
+    "id": "DDInter1853",
+    "name": "Tretinoin",
+    "drugbank_id": "DB00755",
+    "slug": "tretinoin"
+  },
+  {
+    "id": "DDInter1927",
+    "name": "Venlafaxine",
+    "drugbank_id": "DB00285",
+    "slug": "venlafaksin"
+  },
+  {
+    "id": "DDInter1928",
+    "name": "Verapamil",
+    "drugbank_id": "DB00661",
+    "slug": "verapamil"
+  },
+  {
+    "id": "DDInter1941",
+    "name": "Vitamin A",
+    "drugbank_id": "DB00162",
+    "slug": "vitamin-a"
+  },
+  {
+    "id": "DDInter1942",
+    "name": "Vitamin D",
+    "drugbank_id": "DB11094",
+    "slug": "vitamin-d"
+  },
+  {
+    "id": "DDInter1943",
+    "name": "Vitamin E",
+    "drugbank_id": "DB00163",
+    "slug": "vitamin-e"
+  },
+  {
+    "id": "DDInter1946",
+    "name": "Voriconazole",
+    "drugbank_id": "DB00582",
+    "slug": "vorikonazol"
+  },
+  {
+    "id": "DDInter1951",
+    "name": "Warfarin",
+    "drugbank_id": "DB00682",
+    "slug": "warfarin"
+  },
+  {
+    "id": "DDInter2025",
+    "name": "Candesartan",
+    "drugbank_id": "DB13919",
+    "slug": "candesartan"
+  },
+  {
+    "id": "DDInter211",
+    "name": "Biperiden",
+    "drugbank_id": "DB00810",
+    "slug": "biperiden"
+  },
+  {
+    "id": "DDInter216",
+    "name": "Bisoprolol",
+    "drugbank_id": "DB00612",
+    "slug": "bisoprolol"
+  },
+  {
+    "id": "DDInter252",
+    "name": "Bupropion",
+    "drugbank_id": "DB01156",
+    "slug": "bupropion"
+  },
+  {
+    "id": "DDInter260",
+    "name": "Cabergoline",
+    "drugbank_id": "DB00248",
+    "slug": "kabergolin"
+  },
+  {
+    "id": "DDInter263",
+    "name": "Caffeine",
+    "drugbank_id": "DB00201",
+    "slug": "kafein-sitrat"
+  },
+  {
+    "id": "DDInter292",
+    "name": "Captopril",
+    "drugbank_id": "DB01197",
+    "slug": "captopril"
+  },
+  {
+    "id": "DDInter306",
+    "name": "Caspofungin",
+    "drugbank_id": "DB00520",
+    "slug": "kaspofungin"
+  },
+  {
+    "id": "DDInter310",
+    "name": "Cefadroxil",
+    "drugbank_id": "DB01140",
+    "slug": "sefadroksil"
+  },
+  {
+    "id": "DDInter319",
+    "name": "Cefixime",
+    "drugbank_id": "DB00671",
+    "slug": "sefiksim"
+  },
+  {
+    "id": "DDInter323",
+    "name": "Cefotaxime",
+    "drugbank_id": "DB00493",
+    "slug": "sefotaksim"
+  },
+  {
+    "id": "DDInter334",
+    "name": "Ceftriaxone",
+    "drugbank_id": "DB01212",
+    "slug": "seftriakson"
+  },
+  {
+    "id": "DDInter336",
+    "name": "Celecoxib",
+    "drugbank_id": "DB00482",
+    "slug": "celecoxib"
+  },
+  {
+    "id": "DDInter339",
+    "name": "Cephalexin",
+    "drugbank_id": "DB00567",
+    "slug": "sefadroksil-syr"
+  },
+  {
+    "id": "DDInter343",
+    "name": "Cetirizine",
+    "drugbank_id": "DB00341",
+    "slug": "setirizin"
+  },
+  {
+    "id": "DDInter368",
+    "name": "Cholestyramine",
+    "drugbank_id": "DB01432",
+    "slug": "kolestiramin"
+  },
+  {
+    "id": "DDInter384",
+    "name": "Ciprofloxacin",
+    "drugbank_id": "DB00537",
+    "slug": "siprofloksasin"
+  },
+  {
+    "id": "DDInter393",
+    "name": "Clarithromycin",
+    "drugbank_id": "DB01211",
+    "slug": "klaritromisin"
+  },
+  {
+    "id": "DDInter411",
+    "name": "Clonazepam",
+    "drugbank_id": "DB01068",
+    "slug": "klonazepam"
+  },
+  {
+    "id": "DDInter413",
+    "name": "Clopidogrel",
+    "drugbank_id": "DB00758",
+    "slug": "clopidogrel"
+  },
+  {
+    "id": "DDInter419",
+    "name": "Clozapine",
+    "drugbank_id": "DB00363",
+    "slug": "clozapine"
+  },
+  {
+    "id": "DDInter456",
+    "name": "Cyclophosphamide",
+    "drugbank_id": "DB00531",
+    "slug": "siklofosfamid"
+  },
+  {
+    "id": "DDInter457",
+    "name": "Cycloserine",
+    "drugbank_id": "DB00260",
+    "slug": "sikloserin"
+  },
+  {
+    "id": "DDInter474",
+    "name": "Dapagliflozin",
+    "drugbank_id": "DB06292",
+    "slug": "dapagliflozin"
+  },
+  {
+    "id": "DDInter488",
+    "name": "Deferasirox",
+    "drugbank_id": "DB01609",
+    "slug": "deferasirox"
+  },
+  {
+    "id": "DDInter500",
+    "name": "Denosumab",
+    "drugbank_id": "DB06643",
+    "slug": "denosumab"
+  },
+  {
+    "id": "DDInter513",
+    "name": "Dexamethasone",
+    "drugbank_id": "DB01234",
+    "slug": "deksametason"
+  },
+  {
+    "id": "DDInter520",
+    "name": "Dexmedetomidine",
+    "drugbank_id": "DB00633",
+    "slug": "deksmedetomidin"
+  },
+  {
+    "id": "DDInter527",
+    "name": "Dextromethorphan",
+    "drugbank_id": "DB00514",
+    "slug": "dmp"
+  },
+  {
+    "id": "DDInter534",
+    "name": "Diazepam",
+    "drugbank_id": "DB00829",
+    "slug": "diazepam"
+  },
+  {
+    "id": "DDInter54",
+    "name": "Alprazolam",
+    "drugbank_id": "DB00404",
+    "slug": "alprazolam"
+  },
+  {
+    "id": "DDInter56",
+    "name": "Alteplase",
+    "drugbank_id": "DB00009",
+    "slug": "alteplase"
+  },
+  {
+    "id": "DDInter561",
+    "name": "Diltiazem",
+    "drugbank_id": "DB00343",
+    "slug": "diltiazem"
+  },
+  {
+    "id": "DDInter582",
+    "name": "Dolutegravir",
+    "drugbank_id": "DB08930",
+    "slug": "dolutegravir"
+  },
+  {
+    "id": "DDInter583",
+    "name": "Donepezil",
+    "drugbank_id": "DB00843",
+    "slug": "donepezil"
+  },
+  {
+    "id": "DDInter592",
+    "name": "Doxazosin",
+    "drugbank_id": "DB00590",
+    "slug": "doksazosin"
+  },
+  {
+    "id": "DDInter624",
+    "name": "Efavirenz",
+    "drugbank_id": "DB00625",
+    "slug": "efavirenz"
+  },
+  {
+    "id": "DDInter636",
+    "name": "Empagliflozin",
+    "drugbank_id": "DB09038",
+    "slug": "empagliflozin"
+  },
+  {
+    "id": "DDInter638",
+    "name": "Enalapril",
+    "drugbank_id": "DB00584",
+    "slug": "enalapril"
+  },
+  {
+    "id": "DDInter647",
+    "name": "Entecavir",
+    "drugbank_id": "DB00442",
+    "slug": "entecavir"
+  },
+  {
+    "id": "DDInter668",
+    "name": "Ertapenem",
+    "drugbank_id": "DB00303",
+    "slug": "ertapenem"
+  },
+  {
+    "id": "DDInter672",
+    "name": "Escitalopram",
+    "drugbank_id": "DB01175",
+    "slug": "escitalopram"
+  },
+  {
+    "id": "DDInter675",
+    "name": "Esmolol",
+    "drugbank_id": "DB00187",
+    "slug": "esmolol"
+  },
+  {
+    "id": "DDInter695",
+    "name": "Ethosuximide",
+    "drugbank_id": "DB00593",
+    "slug": "etosuksimid"
+  },
+  {
+    "id": "DDInter707",
+    "name": "Ezetimibe",
+    "drugbank_id": "DB00973",
+    "slug": "ezetimibe"
+  },
+  {
+    "id": "DDInter713",
+    "name": "Febuxostat",
+    "drugbank_id": "DB04854",
+    "slug": "febuxostat"
+  },
+  {
+    "id": "DDInter735",
+    "name": "Filgrastim",
+    "drugbank_id": "DB00099",
+    "slug": "filgrastim"
+  },
+  {
+    "id": "DDInter740",
+    "name": "Flecainide",
+    "drugbank_id": "DB01195",
+    "slug": "flekainid"
+  },
+  {
+    "id": "DDInter747",
+    "name": "Fludrocortisone",
+    "drugbank_id": "DB00687",
+    "slug": "fludrokortison"
+  },
+  {
+    "id": "DDInter748",
+    "name": "Flumazenil",
+    "drugbank_id": "DB01205",
+    "slug": "flumazenil"
+  },
+  {
+    "id": "DDInter76",
+    "name": "Amiodarone",
+    "drugbank_id": "DB01118",
+    "slug": "amiodaron"
+  },
+  {
+    "id": "DDInter775",
+    "name": "Fondaparinux",
+    "drugbank_id": "DB00569",
+    "slug": "fondaparinux"
+  },
+  {
+    "id": "DDInter79",
+    "name": "Amlodipine",
+    "drugbank_id": "DB00381",
+    "slug": "amlodipin"
+  },
+  {
+    "id": "DDInter790",
+    "name": "Furosemide",
+    "drugbank_id": "DB00695",
+    "slug": "furosemid"
+  },
+  {
+    "id": "DDInter791",
+    "name": "Gabapentin",
+    "drugbank_id": "DB00996",
+    "slug": "gabapentin"
+  },
+  {
+    "id": "DDInter812",
+    "name": "Gemfibrozil",
+    "drugbank_id": "DB01241",
+    "slug": "gemfibrozil"
+  },
+  {
+    "id": "DDInter815",
+    "name": "Gentamicin",
+    "drugbank_id": "DB00798",
+    "slug": "gentamisin"
+  },
+  {
+    "id": "DDInter83",
+    "name": "Amoxicillin",
+    "drugbank_id": "DB01060",
+    "slug": "amoxicillin"
+  },
+  {
+    "id": "DDInter843",
+    "name": "Griseofulvin",
+    "drugbank_id": "DB00400",
+    "slug": "griseofulvin"
+  },
+  {
+    "id": "DDInter853",
+    "name": "Haloperidol",
+    "drugbank_id": "DB00502",
+    "slug": "haloperidol"
+  },
+  {
+    "id": "DDInter856",
+    "name": "Heparin",
+    "drugbank_id": "DB01109",
+    "slug": "heparin"
+  },
+  {
+    "id": "DDInter89",
+    "name": "Ampicillin",
+    "drugbank_id": "DB00415",
+    "slug": "ampisilin"
+  },
+  {
+    "id": "DDInter900",
+    "name": "Ibuprofen",
+    "drugbank_id": "DB01050",
+    "slug": "ibuprofen"
+  },
+  {
+    "id": "DDInter916",
+    "name": "Indapamide",
+    "drugbank_id": "DB00808",
+    "slug": "indapamid"
+  },
+  {
+    "id": "DDInter970",
+    "name": "Ipratropium",
+    "drugbank_id": "DB00332",
+    "slug": "ipratropium"
+  },
+  {
+    "id": "DDInter971",
+    "name": "Ipratropium (nasal)",
+    "drugbank_id": "DB00332",
+    "slug": "ipratropium-nasal"
+  },
+  {
+    "id": "DDInter972",
+    "name": "Irbesartan",
+    "drugbank_id": "DB01029",
+    "slug": "irbesartan"
+  },
+  {
+    "id": "DDInter986",
+    "name": "Isoniazid",
+    "drugbank_id": "DB00951",
+    "slug": "isoniazid"
+  },
+  {
+    "id": "DDInter991",
+    "name": "Isotretinoin",
+    "drugbank_id": "DB00982",
+    "slug": "isotretinoin"
+  },
+  {
+    "id": "DDInter996",
+    "name": "Ivabradine",
+    "drugbank_id": "DB09083",
+    "slug": "ivabradine"
+  }
+]

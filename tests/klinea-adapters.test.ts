@@ -7,7 +7,7 @@ import { ICD10 } from "@/lib/data/icd10";
 import { INTERACTIONS } from "@/lib/data/interactions";
 import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 
-describe("adapter konten kanonik Klinea", () => {
+describe("adapter konten klinis", () => {
   it("mempertahankan hierarki subjudul dan butir panduan", () => {
     const hypertension = GUIDELINES.find((item) => item.slug === "hipertensi");
     const investigations = hypertension?.sections.investigations ?? [];
@@ -44,9 +44,10 @@ describe("adapter konten kanonik Klinea", () => {
     expect(nutritionGuidance).toHaveLength(16);
   });
 
-  it("mengembangkan interaksi kelompok menjadi pasangan obat", () => {
-    expect(INTERACTIONS.length).toBeGreaterThan(152);
-    expect(INTERACTIONS.some((item) => item.mechanism.includes("kalium"))).toBe(true);
+  it("memakai pasangan DDInter 2.0 dengan sumber yang dapat ditelusuri", () => {
+    expect(INTERACTIONS).toHaveLength(4788);
+    expect(INTERACTIONS.every((item) => item.source.org === "DDInter 2.0")).toBe(true);
+    expect(INTERACTIONS.some((item) => item.a === "warfarin" && item.b === "ibuprofen")).toBe(true);
   });
 
   it("memisahkan panduan emergensi dan non-emergensi", () => {

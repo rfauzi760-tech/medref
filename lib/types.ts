@@ -259,8 +259,8 @@ export interface DrugInteraction {
   b: string;
   severity: InteractionSeverity;
   mechanism: string;
-  effect: string;
-  management: string;
+  effect?: string;
+  management?: string;
   source: ClinicalSource;
 }
 

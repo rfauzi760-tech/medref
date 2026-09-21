@@ -158,8 +158,8 @@ export default function InteractionsPageClient({ drugs }: { drugs: DrugSummary[]
             ) : loading ? (
               <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">Memeriksa…</span>
             ) : totalInteractions === 0 ? (
-              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
-                Tidak ditemukan interaksi dalam basis data untuk pasangan ini
+              <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-800 dark:bg-amber-950 dark:text-amber-200">
+                Tidak ada catatan pasangan ini di DDInter 2.0. Ini bukan bukti bahwa interaksi tidak ada.
               </span>
             ) : (
               <>
@@ -189,14 +189,14 @@ export default function InteractionsPageClient({ drugs }: { drugs: DrugSummary[]
                       <span className="font-medium text-zinc-500 dark:text-zinc-400">Mekanisme: </span>
                       {interaction.mechanism}
                     </p>
-                    <p className="text-sm text-zinc-700 dark:text-zinc-200">
+                    {interaction.effect && <p className="text-sm text-zinc-700 dark:text-zinc-200">
                       <span className="font-medium text-zinc-500 dark:text-zinc-400">Efek: </span>
                       {interaction.effect}
-                    </p>
-                    <div className="rounded-lg bg-zinc-50 px-3 py-2 text-sm dark:bg-zinc-800/60">
-                      <span className="font-medium text-zinc-500 dark:text-zinc-400">Penanganan: </span>
+                    </p>}
+                    {interaction.management && <div className="rounded-lg bg-zinc-50 px-3 py-2 text-sm dark:bg-zinc-800/60">
+                      <span className="font-medium text-zinc-500 dark:text-zinc-400">Catatan sumber: </span>
                       {interaction.management}
-                    </div>
+                    </div>}
                   </div>
                 ) : (
                   <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
@@ -220,7 +220,7 @@ export default function InteractionsPageClient({ drugs }: { drugs: DrugSummary[]
           </div>
 
           <div className="mt-4">
-            <SourceBlock source={{ org: "Klinea", title: "Basis data interaksi obat", year: 2026, url: "https://www.klinea.id/app.html" }} />
+            <SourceBlock source={{ org: "DDInter 2.0", title: "Curated drug-drug interaction database", year: 2025, url: "https://ddinter2.scbdd.com/" }} />
           </div>
         </div>
       )}
