@@ -37,15 +37,6 @@ export interface NavModule {
 
 export const modules: NavModule[] = [
   {
-    slug: "jagamate-tools",
-    name: "Dosis Anak dan Kalkulator",
-    description: "Obat tunggal, racikan, cairan, obstetri, emergensi, dan status gizi.",
-    href: "/jagamate-tools",
-    icon: Baby,
-    count: 45,
-    countLabel: "obat",
-  },
-  {
     slug: "igd-toolkit",
     name: "Toolkit IGD",
     description: "Kumpulan kalkulator dan referensi cepat untuk penanganan pasien di IGD.",
@@ -144,18 +135,9 @@ export const modules: NavModule[] = [
   {
     slug: "drugs",
     name: "Dosis Obat",
-    description: "Referensi dosis dewasa & anak dengan kalkulator dosis berbasis berat badan.",
+    description: "Dosis dewasa dan anak, konversi sediaan, racikan, serta kalkulator terkait.",
     href: "/drugs",
     icon: Pill,
-    count: CATALOG_COUNTS.drugs,
-    countLabel: "obat",
-  },
-  {
-    slug: "pediatric-drugs",
-    name: "Dosis Obat Anak",
-    description: "Regimen pediatrik, dosis berbasis berat badan, dan konversi sediaan.",
-    href: "/drugs?mode=anak",
-    icon: Baby,
     count: CATALOG_COUNTS.drugs,
     countLabel: "obat",
   },

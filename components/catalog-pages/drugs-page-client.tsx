@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import type { Drug } from "@/lib/types";
 import { PageHeader, FilterInput, ToolCard, EmptyState } from "@/components/shared";
 
@@ -50,10 +49,6 @@ export default function DrugsPageClient({
         count={pediatricOnly ? pediatricCount : drugs.length}
         countLabel="obat"
       />
-      <div className="mb-4 flex flex-wrap gap-2">
-        <Link href="/drugs/racikan" className="focus-ring rounded-lg border border-accent/40 px-3 py-2 text-sm font-bold text-accent-strong dark:text-accent">Racikan obat anak</Link>
-        <Link href="/jagamate-tools" className="focus-ring rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-bold">Kalkulator anak</Link>
-      </div>
       <div className="mb-4 inline-flex overflow-hidden rounded-lg border border-[var(--line)]" aria-label="Populasi obat">
         <button
           type="button"

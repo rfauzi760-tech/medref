@@ -197,6 +197,21 @@ export function areDoseUnitsCompatible(from: NonNullable<MgPerKgDose["doseUnit"]
   return convertUnit(1, from, to) !== undefined;
 }
 
+export function convertPrescribedDose(
+  amount: number,
+  unit: NonNullable<MgPerKgDose["doseUnit"]>,
+  preparation?: DosePreparation,
+): { carrierAmount: number; text: string } | undefined {
+  if (!preparation || !Number.isFinite(amount) || amount <= 0 || preparation.drugAmount <= 0 || preparation.carrierAmount <= 0) return undefined;
+  const converted = convertUnit(amount, unit, preparation.drugUnit);
+  if (converted === undefined) return undefined;
+  const carrierAmount = converted * preparation.carrierAmount / preparation.drugAmount;
+  return {
+    carrierAmount,
+    text: `${fmt(carrierAmount, carrierAmount < 10 ? 2 : 1)} ${preparation.carrierUnit} (${preparation.label})`,
+  };
+}
+
 export function preparationMatchesRoute(preparation: DosePreparation, route: string): boolean {
   if (preparation.routes?.length) {
     const routeParts: string[] = route.toLowerCase().match(/\b(?:iv|io|im|sc|oral|po|pr)\b/g) ?? [];
@@ -209,6 +224,7 @@ export function preparationMatchesRoute(preparation: DosePreparation, route: str
   if (/\b(?:iv|im|sc)\b|intravena|intramusk|subkutan|parenteral/.test(normalized)) accepted.add("parenteral");
   if (/\bpr\b|rektal|rectal/.test(normalized)) accepted.add("rectal");
   if (/nebul|inhal|hirup/.test(normalized)) accepted.add("inhalation");
+  if (accepted.size === 0) return true;
   return accepted.has(preparation.administration);
 }
 

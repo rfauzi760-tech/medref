@@ -24,7 +24,7 @@ export default async function JagamateToolPage({ params }: { params: Promise<{ t
   if (!(tool in tools)) notFound();
   const item = tools[tool as ToolSlug];
   return <div>
-    <BackLink href="/jagamate-tools" label="Dosis anak dan kalkulator" />
+    <BackLink href="/drugs?tab=tools" label="Dosis Obat" />
     <PageHeader title={item.title} description={item.description} />
     <JagamateToolsForm tool={tool as ToolSlug} />
     <p className="mt-4 text-xs text-[var(--muted)]">Sumber: <a href={item.source} target="_blank" rel="noreferrer" className="underline underline-offset-2">baca panduan atau studi asli</a>. Hasil adalah alat bantu, bukan pengganti penilaian klinis.</p>

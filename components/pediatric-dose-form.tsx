@@ -5,6 +5,7 @@ import type { DosePreparation, Drug } from "@/lib/types";
 import {
   areDoseUnitsCompatible,
   calculateDose,
+  convertPrescribedDose,
   doseToText,
   getDoseOptions,
   NEONATAL_MAX_AGE_YEARS,
@@ -43,6 +44,7 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
   const [manualDrugAmount, setManualDrugAmount] = useState("");
   const [manualCarrierAmount, setManualCarrierAmount] = useState("");
   const [manualCarrierUnit, setManualCarrierUnit] = useState<DosePreparation["carrierUnit"]>("mL");
+  const [prescribedAmount, setPrescribedAmount] = useState("");
 
   const weightNumber = weight ? Number(weight) : undefined;
   const explicitAgeYears = ageInYears(age, ageUnit);
@@ -59,8 +61,8 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
   const selectedEntry = selectedDoseIndex !== undefined ? drug.doses[selectedDoseIndex] : undefined;
   const doseUnit = selectedEntry?.weightBased?.doseUnit ?? "mg";
   const curatedPreparationsOnly = drug.curatedPreparationsOnly;
-  const canConvertPreparation = Boolean(selectedEntry?.weightBased || selectedEntry?.fixedDoseMg) &&
-    (!curatedPreparationsOnly || Boolean(drug.dosePreparations?.length));
+  const hasAutomaticDose = Boolean(selectedEntry?.weightBased || selectedEntry?.fixedDoseMg);
+  const canConvertPreparation = Boolean(selectedEntry) && (!curatedPreparationsOnly || Boolean(drug.dosePreparations?.length));
 
   const availablePreparations = (curatedPreparationsOnly ? drug.dosePreparations ?? [] : uniquePreparations(drug)).filter((item) =>
     areDoseUnitsCompatible(doseUnit, item.drugUnit) && preparationMatchesRoute(item, selectedEntry?.route ?? "") &&
@@ -84,8 +86,8 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
     : availablePreparations.find((item) => item.id === preparationId);
   const visiblePreparationId = preparationId === "manual" && !curatedPreparationsOnly
     ? "manual" : selectedPreparation?.id ?? "";
-  const conversionHelp = !selectedEntry?.weightBased && !selectedEntry?.fixedDoseMg
-    ? "Regimen ini belum memiliki dosis numerik terverifikasi untuk konversi."
+  const conversionHelp = !hasAutomaticDose
+    ? "Dosis otomatis belum tersedia. Pilih sediaan lalu masukkan jumlah zat aktif yang sudah ditetapkan dokter."
     : curatedPreparationsOnly && !drug.dosePreparations?.length
       ? "Kadar zat aktif pada sediaan belum terverifikasi, jadi konversi tidak dihitung."
       : curatedPreparationsOnly && availablePreparations.length === 0
@@ -111,6 +113,10 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
         doseIndex: selectedDoseIndex,
         preparation: selectedPreparation,
       })
+    : undefined;
+  const prescribedNumber = Number(prescribedAmount);
+  const prescribedConversion = !hasAutomaticDose && selectedPreparation
+    ? convertPrescribedDose(prescribedNumber, doseUnit, selectedPreparation)
     : undefined;
 
   const availablePopulations = (["adult", "pediatric", "neonatal"] as const).filter((item) =>
@@ -225,6 +231,15 @@ export function PediatricDoseForm({ drug, initialPediatricMode = false }: { drug
             </div>
           </div>
         </fieldset>
+      )}
+
+      {!hasAutomaticDose && selectedEntry && (
+        <div className="mx-4 mt-3 rounded-lg border border-[var(--line)] p-3">
+          <label htmlFor="prescribed-dose" className={labelClass}>Dosis zat aktif yang sudah ditetapkan ({doseUnit})</label>
+          <input id="prescribed-dose" type="number" min={0.001} step="any" value={prescribedAmount} onChange={(event) => setPrescribedAmount(event.target.value)} placeholder="Masukkan dosis per pemberian" className={inputClass} />
+          {prescribedConversion && <p className="mt-3 rounded-lg bg-accent/10 px-3 py-2 text-sm font-bold text-accent-strong dark:text-accent">Hasil konversi: {prescribedConversion.text}</p>}
+          <p className="mt-2 text-xs text-[var(--muted)]">Kolom ini hanya mengonversi dosis yang sudah ditetapkan. RFSmed tidak menentukan dosis dari regimen teks.</p>
+        </div>
       )}
 
       {(ageInvalid || weightInvalid) && (

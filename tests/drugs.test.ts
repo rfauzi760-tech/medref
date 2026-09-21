@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   areDoseUnitsCompatible,
   calculateDose,
+  convertPrescribedDose,
   pickDoseEntry,
   doseToText,
   getDoseOptions,
@@ -18,6 +19,21 @@ function drug(slug: string) {
   if (!d) throw new Error(`missing drug ${slug}`);
   return d;
 }
+
+describe("konversi dosis yang sudah ditentukan", () => {
+  it("mengubah dosis mg menjadi volume meski regimen hanya berupa teks", () => {
+    const preparation = parseDosePreparations(["Sirup 125 mg/5 mL"])[0];
+    expect(convertPrescribedDose(250, "mg", preparation)).toMatchObject({
+      carrierAmount: 10,
+      text: "10 mL (125 mg/5 mL)",
+    });
+  });
+
+  it("menolak satuan yang tidak kompatibel", () => {
+    const preparation = parseDosePreparations(["Larutan 100 units/mL"])[0];
+    expect(convertPrescribedDose(10, "mg", preparation)).toBeUndefined();
+  });
+});
 
 describe("amoxicillin pediatric dosing", () => {
   const amox = drug("amoxicillin");
@@ -292,6 +308,11 @@ describe("dose unit compatibility", () => {
 });
 
 describe("preparation route compatibility", () => {
+  it("tidak memblokir sediaan ketika kolom rute berisi batas usia lama", () => {
+    const tablet = parseDosePreparations(["Tablet 500 mg"])[0];
+    expect(preparationMatchesRoute(tablet, "> 14 th")).toBe(true);
+  });
+
   it("does not offer oral tablets for an IV or IM regimen", () => {
     const preparations = parseDosePreparations(["Ampul 30 mg/mL", "Tablet 10 mg"]);
     const ampoule = preparations.find((item) => item.carrierUnit === "mL")!;

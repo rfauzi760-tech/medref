@@ -44,7 +44,7 @@ export default function CalculatorsPageClient({ calculators }: { calculators: Ca
         count={calculators.length}
         countLabel="kalkulator"
       />
-      <Link href="/jagamate-tools" className="focus-ring mb-4 inline-flex rounded-lg border border-accent/40 px-3 py-2 text-sm font-bold text-accent-strong dark:text-accent">Cairan, diare, obstetri, dan luka bakar</Link>
+      <Link href="/drugs?tab=tools" className="focus-ring mb-4 inline-flex rounded-lg border border-accent/40 px-3 py-2 text-sm font-bold text-accent-strong dark:text-accent">Cairan, diare, obstetri, dan luka bakar</Link>
       <FilterInput value={q} onChange={setQ} placeholder="Cari kalkulator… mis. eGFR, anion gap, MAP" />
       <div className="mb-5 flex flex-wrap gap-2">
         <button
