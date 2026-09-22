@@ -5,6 +5,13 @@ export interface EcgModuleSource {
   url: string;
 }
 
+export type EcgModuleBlock =
+  | { kind: "heading"; title: string; text?: string }
+  | { kind: "bullets"; title?: string; items: string[] }
+  | { kind: "table"; title?: string; headers: string[]; rows: string[][] }
+  | { kind: "algorithm"; title: string; steps: { label: string; text: string }[] }
+  | { kind: "cases"; title: string; cases: { title: string; text: string }[] };
+
 export interface EcgModuleMeeting {
   number: number;
   title: string;
@@ -12,6 +19,7 @@ export interface EcgModuleMeeting {
   objectives: string[];
   lessons: { title: string; points: string[] }[];
   practice: string[];
+  detailBlocks?: EcgModuleBlock[];
   sources: EcgModuleSource[];
 }
 
@@ -37,6 +45,114 @@ export const ECG_MODULE_MEETINGS: readonly EcgModuleMeeting[] = [
     practice: [
       "Baca tiga EKG normal menggunakan urutan yang sama, lalu tulis satu kesimpulan singkat.",
       "Tandai lead yang saling berdekatan dan jelaskan mengapa perubahan pada dua lead berdekatan lebih bermakna daripada satu lead saja.",
+    ],
+    detailBlocks: [
+      { kind: "heading", title: "1. Elektrofisiologi jantung", text: "Semua sel jantung berasal dari jaringan otot, tetapi sebagian berdiferensiasi menjadi sel kontraktil, penghantar, atau pacemaker. Pembagian ini membantu menjelaskan mengapa impuls dapat dibuat, diperlambat, atau muncul sebagai escape rhythm." },
+      { kind: "table", title: "Tiga kelompok sel", headers: ["Sel", "Fungsi utama", "Lokasi utama"], rows: [
+        ["Muscle", "Kontraksi", "Atrium dan ventrikel"],
+        ["Conducting", "Propagasi listrik cepat", "Sistem His-Purkinje"],
+        ["Pacemaker", "Automaticity dan pembentukan impuls", "SA node serta fokus junctional dan Purkinje bila terjadi escape"],
+      ] },
+      { kind: "heading", title: "AV node: tiga zona fungsional", text: "AV node memperlambat impuls agar pengisian ventrikel tetap berlangsung dan membatasi jumlah impuls atrium yang mencapai ventrikel." },
+      { kind: "bullets", items: [
+        "AN atau atrionodal: zona masuk dari atrium.",
+        "N atau nodal: zona penundaan utama, sekitar 0,1 detik sebagai gambaran fisiologis, bukan angka tetap untuk setiap pasien.",
+        "NH atau nodo-Hisian: zona keluar menuju bundle of His.",
+        "Suplai AV node terutama berasal dari RCA pada dominansi kanan. Pada dominansi kiri, suplai dapat berasal dari LCx. Karena itu, inferior STEMI dapat disertai AV block, tetapi hubungan tersebut tidak bersifat mutlak.",
+      ] },
+      { kind: "heading", title: "Jalur konduksi normal", text: "SA node → miokardium atrium → AV node → bundle of His → bundle branch kanan dan kiri → Purkinje → miokardium ventrikel. Cardiac skeleton memisahkan atrium dan ventrikel sehingga jalur fisiologis utama melewati AV node. Bundle kiri dapat dibahas sebagai fascicle anterior, posterior, dan komponen septal, walaupun pembagian fascicle dapat berbeda antar referensi." },
+      { kind: "table", title: "Aksi potensial sel otot ventrikel", headers: ["Fase", "Proses", "Arus ion dominan"], rows: [
+        ["0", "Depolarisasi cepat", "Influks Na⁺"],
+        ["1", "Repolarisasi awal", "Efluks K⁺ transien"],
+        ["2", "Plateau", "Influks Ca²⁺ yang menyeimbangkan efluks K⁺"],
+        ["3", "Repolarisasi akhir", "Efluks K⁺ setelah kanal Ca²⁺ menutup"],
+        ["4", "Resting potential sekitar -90 mV", "Keseimbangan ion membran"],
+      ] },
+      { kind: "bullets", title: "Aksi potensial SA node dan AV node", items: [
+        "Fase 0 terutama bergantung pada influks Ca²⁺, sehingga depolarisasi dan konduksi nodal lebih lambat daripada sel miokard ventrikel.",
+        "Sel nodal tidak memiliki fase 1 dan plateau yang jelas seperti sel otot ventrikel.",
+        "Fase 4 mengalami depolarisasi spontan melalui funny current dan arus kalsium. Ivabradine menghambat funny current pada indikasi yang sesuai, tetapi tidak boleh dipakai sebagai pengganti evaluasi penyebab takikardia.",
+      ] },
+      { kind: "heading", title: "Refractory period", text: "Sel yang baru mengalami depolarisasi memerlukan waktu untuk memulihkan kanal ion. Absolute refractory period berarti stimulus baru tidak dapat menghasilkan propagasi. Effective refractory period berarti depolarisasi mungkin terjadi, tetapi belum dapat menghasilkan propagasi efektif. Relative refractory period berarti stimulus lebih kuat dapat memicu respons. Konsep supernormal dan re-entry bersifat elektrofisiologis dan tidak boleh dipakai sendirian untuk menentukan diagnosis klinis." },
+      { kind: "bullets", title: "Chronotropic dan dromotropic", items: [
+        "Chronotropic: perubahan frekuensi pembentukan impuls SA node, terutama dipengaruhi kemiringan fase 4.",
+        "Dromotropic: perubahan kecepatan konduksi, terutama pada AV node.",
+        "Contoh klinis: PAC dapat tidak diikuti QRS bila AV node atau sistem distal masih refrakter.",
+      ] },
+      { kind: "heading", title: "2. Sistem 12 lead", text: "Lead adalah sudut pandang terhadap vektor listrik. Depolarisasi yang bergerak menuju kutub positif lead menghasilkan defleksi positif, sedangkan depolarisasi yang menjauh menghasilkan defleksi negatif. Arah repolarisasi memiliki hubungan berlawanan terhadap defleksi karena polaritas gelombangnya berbeda." },
+      { kind: "bullets", title: "Aplikasi vektor", items: [
+        "R-wave progression: V1-V2 biasanya memiliki R kecil dan S dalam, sedangkan V5-V6 memiliki R lebih besar dan S lebih kecil karena vektor ventrikel dominan bergerak ke kiri dan posterior.",
+        "Transition zone biasanya berada sekitar V3-V4. Progression yang buruk dapat disebabkan infark lama, RVH, dextrocardia, variasi tubuh, atau kesalahan penempatan lead.",
+        "P bifasik di V1 mencerminkan depolarisasi atrium kanan yang lebih dekat ke V1 dan atrium kiri yang lebih menjauh.",
+        "Small septal q dapat muncul pada lead lateral karena depolarisasi septum dari kiri ke kanan. Q patologis tidak ditentukan dari satu angka saja, tetapi dari durasi, kedalaman, distribusi, dan konteks.",
+      ] },
+      { kind: "heading", title: "3. Tracing EKG dan nilai normal", text: "Nilai normal adalah rentang dan harus dibaca bersama usia, jenis kelamin, frekuensi, lead, teknik rekaman, serta konteks klinis. Angka berikut adalah panduan pendidikan, bukan pengganti interpretasi profesional." },
+      { kind: "table", title: "Parameter dasar", headers: ["Parameter", "Panduan umum", "Makna"], rows: [
+        ["P wave", "Durasi <120 ms, amplitudo biasanya <2,5 mm di lead inferior, positif di II dan negatif di aVR pada ritme sinus", "Depolarisasi atrium"],
+        ["PR interval", "120-200 ms, diukur dari awal P sampai awal QRS", "Konduksi atrium ke ventrikel dan delay AV"],
+        ["QRS", "Biasanya <120 ms", "Depolarisasi ventrikel"],
+        ["ST segment", "Dekat garis isoelektrik", "Fase awal repolarisasi ventrikel"],
+        ["T wave", "Umumnya asimetris dan mengikuti arah QRS dominan", "Repolarisasi ventrikel"],
+        ["QT atau QTc", "Ukur dari awal QRS sampai akhir T; gunakan metode koreksi yang sesuai", "Total depolarisasi dan repolarisasi ventrikel"],
+      ] },
+      { kind: "bullets", title: "Detail yang sering menjadi jebakan", items: [
+        "PR segment berbeda dari PR interval. PR segment adalah bagian isoelektrik setelah P sampai awal QRS dan dapat membantu menilai perubahan perikarditis.",
+        "Q adalah defleksi negatif pertama sebelum R. Defleksi negatif setelah R disebut S. Bila seluruh kompleks negatif tanpa R, gunakan istilah QS.",
+        "Intrinsicoid deflection adalah waktu dari awal QRS sampai puncak R pada lead prekordial. Pemanjangan dapat mendukung keterlambatan aktivasi ventrikel, tetapi tidak boleh menjadi diagnosis tunggal.",
+        "ST depression up-sloping dapat bersifat fisiologis pada konteks tertentu, sedangkan horizontal atau down-sloping lebih mengkhawatirkan bila sesuai gejala dan perubahan serial.",
+        "QTc bergantung pada metode koreksi. QTc >500 ms sering dipakai sebagai sinyal peningkatan risiko torsades, tetapi keputusan klinis harus memasukkan obat, elektrolit, frekuensi, dan riwayat pasien.",
+      ] },
+      { kind: "table", title: "Ringkasan cepat", headers: ["Parameter", "Pertanyaan saat membaca"], rows: [
+        ["P wave", "Apakah ada, seragam, dan berasal dari sinus?"],
+        ["PR", "Apakah konstan, memanjang, atau berubah sebelum dropped beat?"],
+        ["QRS", "Sempit atau lebar, dan apakah morfologinya konsisten?"],
+        ["ST-T", "Apakah ada perubahan teritorial, difus, dinamis, atau sekunder terhadap QRS?"],
+        ["QTc", "Apakah memanjang setelah mempertimbangkan frekuensi dan metode koreksi?"],
+      ] },
+      { kind: "heading", title: "4. Irama jantung", text: "Pisahkan selalu aktivitas atrium dan ventrikel. Pada AV dissociation, atrium dan ventrikel dapat dikendalikan oleh pacemaker yang berbeda. Atrial rate lebih cepat daripada ventricular rate mendukung blok AV tinggi atau total, sedangkan ventricular rate yang lebih cepat dapat terlihat pada VT atau AIVR." },
+      { kind: "table", title: "Rate intrinsik pacemaker", headers: ["Pacemaker", "Rate intrinsik perkiraan"], rows: [
+        ["SA node", "60-100/menit"],
+        ["Junctional atau AV", "40-60/menit"],
+        ["Ventrikel atau Purkinje distal", "<40/menit"],
+      ] },
+      { kind: "bullets", title: "Kriteria ritme sinus", items: [
+        "P positif di II, III, aVF, negatif di aVR, dan dapat bifasik di V1.",
+        "Setiap P diikuti QRS dengan hubungan PR yang sesuai.",
+        "Morfologi P seragam dan ritme PP biasanya teratur.",
+        "Frekuensi 60-100/menit disebut sinus rhythm; kurang dari 60 adalah sinus bradikardia dan lebih dari 100 adalah sinus takikardia pada dewasa.",
+        "Sinus arrhythmia adalah variasi interval PP dengan morfologi P sinus, sering terkait respirasi pada orang muda.",
+      ] },
+      { kind: "algorithm", title: "5. Algoritme membaca irama", steps: [
+        { label: "Langkah 1: P wave", text: "Tentukan apakah P terlihat, apakah morfologinya sinus, apakah P seragam, dan apakah ada lebih dari satu morfologi P. Jika P tidak terlihat, cari AF, flutter, P yang tersembunyi di T atau QRS, sinus arrest, dan artefak." },
+        { label: "Langkah 2: PR interval", text: "Tentukan apakah atrium dan ventrikel terhubung. PR konstan, PR memanjang progresif, dropped beat, atau disosiasi AV mengarahkan diagnosis yang berbeda." },
+        { label: "Langkah 3: QRS", text: "Tentukan apakah ventrikel dikendalikan dari atas atau bawah AV node. QRS sempit biasanya menunjukkan aktivasi melalui sistem His-Purkinje, sedangkan QRS lebar memerlukan penilaian BBB, pre-eksitasi, pacing, hiperkalemia, toksisitas natrium, atau VT." },
+      ] },
+      { kind: "table", title: "Hubungan rate atrium dan ventrikel", headers: ["Pola", "Kemungkinan utama"], rows: [
+        ["A = V, P diikuti QRS, PR sesuai", "Ritme sinus"],
+        ["A > V", "Flutter dengan blok, high-grade AV block, atau total AV block"],
+        ["V > A", "VT, AIVR, atau ritme junctional dengan konduksi retrograd"],
+      ] },
+      { kind: "bullets", title: "Wide-complex tachycardia", items: [
+        "AV dissociation, capture beat, fusion beat, dan concordance prekordial sangat mendukung VT bila benar-benar terlihat.",
+        "Aksis ekstrem atau morfologi yang tidak sesuai pola BBB tipikal menambah kecurigaan, tetapi tidak ada satu tanda yang selalu memastikan diagnosis.",
+        "QRS yang lebih sempit tidak menyingkirkan VT. Pada kondisi tidak pasti, keselamatan pasien didahulukan dan algoritme takikardia kompleks lebar harus diikuti.",
+      ] },
+      { kind: "table", title: "RP interval pada narrow-complex regular tachycardia", headers: ["Pola", "Kemungkinan"], rows: [
+        ["P tersembunyi di QRS atau RP sangat pendek", "AVNRT lebih mungkin"],
+        ["Short RP dengan P retrograd", "AVRT atau mekanisme re-entry lain"],
+        ["Long RP", "Atrial tachycardia atau takikardia dengan konduksi retrograd"],
+      ] },
+      { kind: "cases", title: "6. Kasus latihan", cases: [
+        { title: "Kasus 1: inferior STEMI dengan AV dissociation", text: "PP reguler dan RR reguler, tetapi hubungan PR berubah. QRS sempit mendukung escape junctional. ST elevation inferior dan reciprocal change perlu memicu evaluasi ACS segera, termasuk pertimbangan lead kanan dan posterior sesuai gejala." },
+        { title: "Kasus 2: escape ventrikel", text: "P sinus lebih cepat daripada QRS, QRS lebar, dan rate escape lambat. Ini lebih mengkhawatirkan daripada escape junctional karena cadangan pacemaker dan perfusi dapat lebih buruk." },
+        { title: "Kasus 3: isorhythmic AV dissociation", text: "P kadang tampak menempel pada QRS karena rate atrium dan ventrikel kebetulan berdekatan. Jangan memberi label Mobitz II atau 2:1 block hanya dari satu lead tanpa menilai strip lebih panjang." },
+        { title: "Kasus 4: sinus bradikardia dengan junctional escape", text: "P dan QRS dapat tetap 1:1, tetapi fokus junctional mengambil alih saat sinus melambat. Bedakan dari total AV block dengan menilai hubungan P-QRS dan regularitas masing-masing." },
+        { title: "Kasus 5: AF yang menjadi reguler", text: "AF biasanya irregularly irregular. Bila ritme menjadi sangat reguler, pikirkan blok AV tinggi dengan escape atau efek obat dan cocokkan dengan riwayat digoksin, beta-blocker, atau calcium-channel blocker." },
+        { title: "Kasus 6 dan 7: wide-complex tachycardia", text: "Cari AV dissociation, capture beat, atau fusion beat. Bila pasien tidak stabil, ikuti algoritme ALS dan jangan menunda terapi demi klasifikasi sempurna." },
+        { title: "Kasus 8: sinus takikardia dan P yang tersembunyi", text: "Pada frekuensi tinggi, P dapat menumpang pada T sehingga T tampak seperti memiliki dua puncak. Cari morfologi yang konsisten dan hubungan P-QRS sebelum menyimpulkan SVT." },
+        { title: "Kasus 9: AVNRT", text: "Takikardia reguler kompleks sempit dengan P sulit terlihat, pseudo-R' di V1 atau pseudo-S di inferior dapat mendukung AVNRT, tetapi diagnosis tetap memerlukan konteks dan algoritme takikardia." },
+        { title: "Kasus 10: MAT", text: "Takikardia dengan sedikitnya tiga morfologi P, PR bervariasi, dan RR ireguler. Sering dikaitkan dengan penyakit paru, tetapi tetap korelasikan dengan oksigenasi, obat, dan penyebab metabolik." },
+      ] },
     ],
     sources: [
       { org: "AHA/ACC/HRS", title: "Recommendations for the Standardization and Interpretation of the ECG, Part I", year: 2007, url: "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.106.180200" },
