@@ -205,6 +205,15 @@ export const modules: NavModule[] = [
     countLabel: "pola",
   },
   {
+    slug: "ecg-module",
+    name: "Modul EKG",
+    description: "Kurikulum EKG enam pertemuan dengan rujukan guideline dan jurnal primer.",
+    href: "/ecg-module",
+    icon: BookOpen,
+    count: 6,
+    countLabel: "pertemuan",
+  },
+  {
     slug: "radiology-atlas",
     name: "Imaging",
     description: "Pengenalan cepat 159 pola X-ray, CT, MRI, dan USG.",

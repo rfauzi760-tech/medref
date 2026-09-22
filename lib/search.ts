@@ -32,6 +32,7 @@ const igdTools = [
   { id: "emergency", title: "Algoritma IGD", subtitle: "Alur kegawatan", href: "/emergency", keywords: "protokol emergensi" },
   { id: "timer", title: "Timer Protokol", subtitle: "Target waktu tindakan kritis", href: "/timer", keywords: "stroke pci sepsis trauma" },
   { id: "ecg-atlas", title: "Atlas EKG", subtitle: "43 pola elektrokardiografi", href: "/ecg-atlas", keywords: "curve of life irama iskemia" },
+  { id: "ecg-module", title: "Modul EKG", subtitle: "Kurikulum enam pertemuan", href: "/ecg-module", keywords: "belajar ekg elektrokardiografi modul pertemuan ritme iskemia" },
   { id: "radiology-atlas", title: "Imaging", subtitle: "159 pola radiologi", href: "/radiology-atlas", keywords: "monochrome worlds xray ct mri usg" },
 ];
 
