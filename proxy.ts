@@ -1,8 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createRateLimiter, isBlockedAgent } from "@/lib/security/request-policy";
 
-const limiter = createRateLimiter({ limit: 80, windowMs: 60_000 });
-const imageLimiter = createRateLimiter({ limit: 600, windowMs: 60_000 });
+const limiter = createRateLimiter({ limit: 160, windowMs: 60_000 });
+const imageLimiter = createRateLimiter({ limit: 1_200, windowMs: 60_000 });
 
 const protectionHeaders = {
   "X-Robots-Tag": "noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai",
