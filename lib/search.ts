@@ -6,8 +6,6 @@ import { DRUGS } from "@/lib/data/drugs";
 import { GUIDELINES } from "@/lib/data/guidelines";
 import { ICD10 } from "@/lib/data/icd10";
 import { PROCEDURES } from "@/lib/data/indications";
-import { foods } from "@/lib/data/foods";
-import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 import type { SearchGroup, SearchHit } from "@/lib/search-types";
 
 type ScoreItem = (typeof SCORES)[number];
@@ -16,8 +14,6 @@ type DrugItem = (typeof DRUGS)[number];
 type GuideItem = (typeof GUIDELINES)[number];
 type IcdItem = (typeof ICD10)[number];
 type ProcItem = (typeof PROCEDURES)[number];
-type FoodItem = (typeof foods)[number];
-type NutritionItem = (typeof nutritionGuidance)[number];
 
 const igdTools = [
   { id: "igd-toolkit", title: "Toolkit IGD", subtitle: "Kumpulan alat kegawatdaruratan", href: "/igd-toolkit", keywords: "emergensi gawat darurat" },
@@ -31,9 +27,7 @@ const igdTools = [
   { id: "neonatal-resuscitation", title: "Resusitasi Neonatus", subtitle: "Skema bayi baru lahir saat persalinan", href: "/neonatal-resuscitation", keywords: "neonatal newborn asfiksia resusitasi bayi" },
   { id: "emergency", title: "Algoritma IGD", subtitle: "Alur kegawatan", href: "/emergency", keywords: "protokol emergensi" },
   { id: "timer", title: "Timer Protokol", subtitle: "Target waktu tindakan kritis", href: "/timer", keywords: "stroke pci sepsis trauma" },
-  { id: "ecg-atlas", title: "Atlas EKG", subtitle: "43 pola elektrokardiografi", href: "/ecg-atlas", keywords: "curve of life irama iskemia" },
   { id: "ecg-module", title: "Modul EKG", subtitle: "Kurikulum enam pertemuan", href: "/ecg-module", keywords: "belajar ekg elektrokardiografi modul pertemuan ritme iskemia" },
-  { id: "radiology-atlas", title: "Imaging", subtitle: "159 pola radiologi", href: "/radiology-atlas", keywords: "monochrome worlds xray ct mri usg" },
 ];
 
 interface GroupDef<T> {
@@ -115,26 +109,6 @@ const groups: GroupDef<unknown>[] = [
       return { id: p.slug, title: p.title, subtitle: "Indikasi dan kontraindikasi", href: `/indications/${p.slug}`, group: "indications" };
     },
   },
-  {
-    key: "nutrition",
-    label: "Bahan Pangan",
-    items: foods as unknown[],
-    keys: ["name", "nameId", "category"],
-    map: (item) => {
-      const f = item as FoodItem;
-      return { id: f.id, title: f.name, subtitle: f.category, href: `/nutrition?q=${encodeURIComponent(f.name)}`, group: "nutrition", badge: f.category };
-    },
-  },
-  {
-    key: "nutrition-guidance",
-    label: "Panduan Gizi Klinis",
-    items: nutritionGuidance as unknown[],
-    keys: ["title", "keywords", "specialties"],
-    map: (item) => {
-      const n = item as NutritionItem;
-      return { id: n.slug, title: n.title, subtitle: "Panduan gizi klinis", href: `/nutrition-guidance/${n.slug}`, group: "nutrition-guidance" };
-    },
-  },
 ];
 
 const engines = groups.map((g) => ({
@@ -167,5 +141,4 @@ export const allSearchableSlugs = {
   drugs: DRUGS.map((d) => d.slug),
   guidelines: GUIDELINES.map((g) => g.slug),
   indications: PROCEDURES.map((p) => p.slug),
-  nutritionGuidance: nutritionGuidance.map((n) => n.slug),
 };

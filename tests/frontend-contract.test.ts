@@ -49,14 +49,14 @@ describe("frontend design contract", () => {
   test("reference indexes and reading pages use the shared system", () => {
     const indexes = [
       "components/catalog-pages/scores-page-client.tsx", "components/catalog-pages/calculators-page-client.tsx", "components/catalog-pages/drugs-page-client.tsx",
-      "components/catalog-pages/guidelines-page-client.tsx", "components/catalog-pages/indications-page-client.tsx", "components/catalog-pages/nutrition-page-client.tsx",
-      "components/catalog-pages/nutrition-guidance-page-client.tsx", "components/catalog-pages/specialties-page-client.tsx", "components/catalog-pages/icd10-page-client.tsx",
+      "components/catalog-pages/guidelines-page-client.tsx", "components/catalog-pages/indications-page-client.tsx",
+      "components/catalog-pages/specialties-page-client.tsx", "components/catalog-pages/icd10-page-client.tsx",
     ];
     for (const path of indexes) expect(read(path)).toContain("PageHeader");
     for (const path of indexes.slice(0, 6).concat("components/catalog-pages/icd10-page-client.tsx")) expect(read(path)).toContain("index-row");
     const details = [
       "app/guidelines/[slug]/page.tsx", "app/indications/[slug]/page.tsx",
-      "app/nutrition-guidance/[slug]/page.tsx", "app/specialties/[slug]/page.tsx",
+      "app/specialties/[slug]/page.tsx",
     ];
     for (const path of details) expect(read(path)).toMatch(/workspace-panel|section-band/);
   });
@@ -87,12 +87,11 @@ describe("frontend design contract", () => {
   test("specialized workspaces consume the shared visual system", () => {
     const paths = [
       "app/anthropometry/page.tsx", "components/growth-chart.tsx", "app/development/page.tsx",
-      "components/catalog-pages/immunization-page-client.tsx", "components/catalog-pages/interactions-page-client.tsx", "components/catalog-pages/meal-planner-page-client.tsx",
-      "components/catalog-pages/nutrition-page-client.tsx",
+      "components/catalog-pages/immunization-page-client.tsx", "components/catalog-pages/interactions-page-client.tsx",
     ];
     paths[2] = "components/catalog-pages/development-page-client.tsx";
     for (const path of paths) expect(read(path)).toContain("workspace-panel");
-    for (const path of paths.filter((path) => !path.includes("growth-chart") && !path.includes("nutrition-page-client"))) {
+    for (const path of paths.filter((path) => !path.includes("growth-chart"))) {
       expect(read(path)).toContain("focus-ring");
     }
     expect(read(paths[0])).toContain("assess");

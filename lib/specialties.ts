@@ -32,7 +32,7 @@ export const SPECIALTIES: Specialty[] = [
   { slug: "intensive-care", name: "Perawatan Intensif", description: "Dukungan organ, hemodinamik, dan penyakit kritis." },
   { slug: "geriatrics", name: "Geriatri", description: "Perawatan pasien lanjut usia." },
   { slug: "palliative-care", name: "Paliatif", description: "Kontrol gejala dan perawatan akhir hayat." },
-  { slug: "nutrition", name: "Gizi", description: "Gizi klinis, diet, dan perencanaan makan." },
+  { slug: "nutrition", name: "Gizi", description: "Penilaian dan konseling gizi klinis." },
   { slug: "nursing", name: "Keperawatan", description: "Prosedur klinis dan perawatan infus." },
   { slug: "toxicology", name: "Toksikologi", description: "Penanganan keracunan dan overdosis." },
 ];

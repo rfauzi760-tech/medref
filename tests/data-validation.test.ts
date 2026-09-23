@@ -10,8 +10,6 @@ import { drugInteractions } from "@/lib/data/interactions";
 import { procedureEntries } from "@/lib/data/indications";
 import { guidelines } from "@/lib/data/guidelines";
 import { icd10Codes } from "@/lib/data/icd10";
-import { foods } from "@/lib/data/foods";
-import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 import { milestoneAges } from "@/lib/data/milestones";
 import { immunizationSchedule } from "@/lib/data/immunization";
 
@@ -74,8 +72,6 @@ describe("validasi struktur data klinis", () => {
 
   test("dataset lain: id unik", () => {
     expect(dupes(icd10Codes.map((c) => c.code))).toEqual([]);
-    expect(dupes(foods.map((f) => f.id))).toEqual([]);
-    expect(dupes(nutritionGuidance.map((n) => n.slug))).toEqual([]);
     expect(dupes(procedureEntries.map((p) => p.slug))).toEqual([]);
     expect(dupes(milestoneAges.map((m) => String(m.ageMonths)))).toEqual([]);
     for (const v of immunizationSchedule.vaccines) expect(v.doses.length).toBeGreaterThan(0);

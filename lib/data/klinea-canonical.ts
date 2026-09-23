@@ -6,13 +6,11 @@ import type {
   ClinicalSource,
   Drug,
   DrugInteraction,
-  FoodItem,
   GuidelineEntry,
   GuidelineSectionKey,
   Icd10Entry,
   MilestoneAge,
   MilestoneDomain,
-  NutritionGuidance,
   ScoreRange,
   ScoreTool,
   ScoreVariable,
@@ -427,43 +425,6 @@ export const canonicalIcd10: Icd10Entry[] = (content.icd10 as Dict[]).map((row) 
   id: clean(row.nm),
   chapter: chapters[clean(row.c)[0]] ?? "Lainnya",
 }));
-
-export const canonicalFoods: FoodItem[] = (content.foods as Dict[]).map((row) => ({
-  id: clean(row.id) === "pisang" ? "banana" : clean(row.id),
-  name: clean(row.nm),
-  nameId: clean(row.nm),
-  category: clean(row.cat),
-  servingG: number(row.g),
-  kcal: number(row.kcal) ?? 0,
-  protein: number(row.p) ?? 0,
-  fat: number(row.f) ?? 0,
-  carbs: number(row.c) ?? 0,
-  fiber: number(row.fib),
-  sodium: number(row.na),
-  potassium: number(row.k),
-}));
-
-export const canonicalNutrition: NutritionGuidance[] = (content.nutrition as Dict[]).map((row) => {
-  const calc = (row.calc && typeof row.calc === "object" ? row.calc : {}) as Dict;
-  const calculationNotes = Object.entries(calc).map(([key, value]) => {
-    const labels: Record<string, string> = { kcalKg: "Energi", protKg: "Protein", naMax: "Batas natrium", fluid: "Cairan" };
-    const shown = Array.isArray(value) ? value.join(" sampai ") : clean(value);
-    return `${labels[key] ?? key}: ${shown}`;
-  });
-  return {
-    id: clean(row.id),
-    slug: clean(row.id),
-    title: clean(row.nm),
-    specialties: [clean(row.cat), "Gizi klinis"].filter(Boolean),
-    keywords: [...words(row.nm), ...words(row.cat)],
-    summary: clean(row.ringkas),
-    principles: [...calculationNotes, ...list(row.catatan)],
-    foodsRecommended: list(row.anjur),
-    foodsLimited: list(row.batasi),
-    references: [KLINEA_SOURCE],
-    lastReviewed: REVIEWED,
-  };
-});
 
 const domainMap: Record<string, MilestoneDomain> = {
   "motorik kasar": "gross",

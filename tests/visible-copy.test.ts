@@ -30,7 +30,7 @@ describe("identitas dan teks antarmuka RFSmed", () => {
     expect(home).not.toContain("Cakupan aktual");
     for (const slug of [
       "igd-toolkit", "scores", "emergency", "timer", "pediatric-emergency",
-      "ecg-atlas", "radiology-atlas", "emergency-dose", "bilirubin", "antidotes",
+      "emergency-dose", "bilirubin", "antidotes",
       "pregnancy-drugs", "electrolytes", "ddx",
     ]) {
       expect(home).toContain(`"${slug}"`);

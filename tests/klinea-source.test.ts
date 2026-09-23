@@ -14,8 +14,8 @@ describe("canonical Klinea content snapshot", () => {
     expect(data.guidelines).toHaveLength(340);
     expect(Object.keys(data.guidelineExtra)).toHaveLength(340);
     expect(data.icd10).toHaveLength(638);
-    expect(data.foods).toHaveLength(478);
-    expect(data.nutrition).toHaveLength(16);
+    expect(data).not.toHaveProperty("foods");
+    expect(data).not.toHaveProperty("nutrition");
     expect(data.milestones).toHaveLength(16);
   });
 

@@ -14,8 +14,6 @@ import { drugInteractions } from "@/lib/data/interactions";
 import { procedureEntries } from "@/lib/data/indications";
 import { guidelines } from "@/lib/data/guidelines";
 import { icd10Codes } from "@/lib/data/icd10";
-import { foods } from "@/lib/data/foods";
-import { nutritionGuidance } from "@/lib/data/nutritionGuidance";
 import { globalSearch } from "@/lib/search";
 import canonical from "@/lib/generated/klinea-content.json";
 
@@ -545,9 +543,7 @@ describe("audit cakupan terhadap situs acuan (coverage audit)", () => {
       "Interaksi Obat (DRUG_IX)": drugInteractions.length,
       "Panduan Klinis (GUIDELINES)": guidelines.length,
       "Kamus ICD-10": icd10Codes.length,
-      "Bahan Pangan (FOODS)": foods.length,
       "Indikasi & Kontraindikasi": procedureEntries.length,
-      "Panduan Gizi Klinis": nutritionGuidance.length,
     };
     const lines: string[] = [];
     lines.push("");
@@ -559,7 +555,6 @@ describe("audit cakupan terhadap situs acuan (coverage audit)", () => {
     for (const [m, n] of Object.entries(local)) {
       if (!REFERENCE_MODULES[m]) lines.push(`${m.padEnd(38)} ${String("-").padStart(6)} ${String(n).padStart(6)}`);
     }
-    lines.push(`Panduan gizi klinis lokal: ${nutritionGuidance.length} kondisi.`);
     console.log(lines.join("\n"));
     expect(true).toBe(true);
   });

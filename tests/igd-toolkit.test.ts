@@ -10,11 +10,12 @@ describe("navigasi Toolkit IGD", () => {
     expect(new Set(found.map((item) => item.href)).size).toBe(found.length);
   });
 
-  it("mempertahankan modul anak, emergensi, EKG, dan imaging", () => {
+  it("mempertahankan modul anak, emergensi, dan materi EKG", () => {
     expect(modules.some((item) => item.slug === "pediatric-emergency")).toBe(true);
     expect(modules.some((item) => item.slug === "emergency")).toBe(true);
-    expect(modules.some((item) => item.slug === "ecg-atlas")).toBe(true);
-    expect(modules.some((item) => item.slug === "radiology-atlas")).toBe(true);
+    expect(modules.some((item) => item.slug === "ecg-module")).toBe(true);
+    expect(modules.some((item) => item.slug === "ecg-atlas")).toBe(false);
+    expect(modules.some((item) => item.slug === "radiology-atlas")).toBe(false);
   });
 
   it("menyediakan Resusitasi Neonatus sebagai modul terpisah dan hasil pencarian", () => {

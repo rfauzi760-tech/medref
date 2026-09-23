@@ -1,30 +1,18 @@
 import type { Metadata } from "next";
 import { BackLink, PageHeader } from "@/components/shared";
-import { ECG_ATLAS_ENTRIES } from "@/lib/data/ecg-atlas";
-import { getAtlasImages } from "@/lib/data/atlas-images";
 import { ECG_MODULE_MEETINGS, type EcgModuleBlock } from "@/lib/data/ecg-module";
+import illustrations from "@/lib/data/ecg-module-illustrations.json";
 
 export const metadata: Metadata = {
   title: "Modul EKG | RFSmed",
   description: "Kurikulum EKG lima bab berbahasa Indonesia dengan rujukan guideline dan jurnal primer.",
 };
 
-const MEETING_IMAGE_INDICES: Record<number, number[]> = {
-  1: [0, 1],
-  2: [2, 3, 11, 12, 13, 14],
-  3: [17, 18, 20, 21, 23, 24],
-  4: [37, 38, 41, 42],
-  5: [5, 6, 7, 8, 25, 26, 28, 29],
-};
-
 function imagesForMeeting(number: number) {
-  return (MEETING_IMAGE_INDICES[number] ?? []).flatMap((entryIndex) => {
-    const entry = ECG_ATLAS_ENTRIES[entryIndex];
-    return getAtlasImages("ecg", entryIndex).slice(0, 1).map((image) => ({
-      ...image,
-      title: entry?.title ?? "Pola EKG",
-    }));
-  });
+  return illustrations.flatMap((image, index) => image.chapter === number ? [{
+    src: `/api/ecg-module-image/${index}`,
+    title: image.caption,
+  }] : []);
 }
 
 function DetailBlocks({ blocks }: { blocks: EcgModuleBlock[] }) {
@@ -135,7 +123,7 @@ export default function EcgModulePage() {
               {imagesForMeeting(meeting.number).length > 0 && (
                 <section className="mt-6 border-t border-[var(--line)] pt-4">
                   <h2 className="text-sm font-bold text-[var(--foreground)]">Gambar referensi</h2>
-                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Contoh visual dari Atlas EKG RFSmed. Buka gambar untuk melihat pola lebih besar.</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Contoh rekaman untuk latihan pada bab ini. Buka gambar untuk melihat lebih besar.</p>
                   <div className="mt-3 grid gap-3 sm:grid-cols-3">
                     {imagesForMeeting(meeting.number).map((image) => (
                       <figure key={`${meeting.number}-${image.src}`} className="overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)]">

@@ -6,6 +6,4 @@ export const CATALOG_COUNTS = {
   interactions: 4788,
   guidelines: 340,
   icd10: 638,
-  foods: 478,
-  nutritionGuidance: 16,
 } as const;

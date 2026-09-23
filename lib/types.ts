@@ -355,42 +355,6 @@ export interface Icd10Entry {
 }
 
 /* ------------------------------------------------------------------ */
-/* Nutrition                                                           */
-/* ------------------------------------------------------------------ */
-
-export interface FoodItem {
-  id: string;
-  name: string;
-  nameId?: string;
-  category: string;
-  /** per 100 g */
-  kcal: number;
-  protein: number;
-  carbs: number;
-  fat: number;
-  fiber?: number;
-  sodium?: number;
-  potassium?: number;
-  /** typical serving size in grams */
-  servingG?: number;
-}
-
-export interface NutritionGuidance {
-  id: string;
-  slug: string;
-  title: string;
-  specialties: string[];
-  keywords: string[];
-  summary: string;
-  principles: string[];
-  foodsRecommended: string[];
-  foodsLimited: string[];
-  sampleDay?: string[];
-  references: ClinicalSource[];
-  lastReviewed: string;
-}
-
-/* ------------------------------------------------------------------ */
 /* Pediatrics                                                          */
 /* ------------------------------------------------------------------ */
 

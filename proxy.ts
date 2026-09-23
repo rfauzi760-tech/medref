@@ -26,7 +26,7 @@ export function proxy(request: NextRequest) {
   }
 
   const key = clientKey(request);
-  const rate = key ? (request.nextUrl.pathname.startsWith("/api/atlas-image/") ? imageLimiter : limiter).consume(key) : null;
+  const rate = key ? (request.nextUrl.pathname.startsWith("/api/ecg-module-image/") ? imageLimiter : limiter).consume(key) : null;
   if (rate && !rate.allowed) {
     return new NextResponse("Terlalu banyak permintaan. Coba lagi nanti.", {
       status: 429,
