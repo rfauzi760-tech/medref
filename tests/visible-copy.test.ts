@@ -12,7 +12,7 @@ describe("identitas dan teks antarmuka RFSmed", () => {
 
   it("tidak membiarkan favicon bawaan Vercel mengalahkan ikon RFSmed", () => {
     expect(existsSync("app/favicon.ico")).toBe(false);
-    expect(readFileSync("app/layout.tsx", "utf8")).toContain('/rfsmed-mark.png');
+    expect(readFileSync("app/layout.tsx", "utf8")).toContain('/rfsmed-symbol.svg');
   });
 
   it("tidak memakai em dash pada teks yang terlihat", () => {

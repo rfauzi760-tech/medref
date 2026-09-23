@@ -90,10 +90,6 @@ h3 {
   font-weight: 700 !important;
 }
 
-.brand-mark {
-  filter: hue-rotate(98deg) saturate(1.15);
-}
-
 ::selection {
   background: color-mix(in srgb, var(--accent) 45%, transparent);
   color: var(--ink);

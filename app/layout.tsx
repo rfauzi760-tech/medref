@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   manifest: "/manifest.webmanifest",
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/rfsmed-symbol.svg" },
   robots: {
     index: false,
     follow: false,

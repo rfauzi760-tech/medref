@@ -38,7 +38,7 @@ export default function Home() {
       <section className="grid gap-6 border-b border-[var(--line)] pb-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
         <div className="flex items-center gap-4">
           <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/35 bg-white p-2.5 sm:h-20 sm:w-20">
-            <Image className="brand-mark" src="/rfsmed-mark.png" alt="Logo RFSmed" width={80} height={80} priority />
+            <Image src="/rfsmed-symbol.svg" alt="Logo RFSmed" width={64} height={64} priority />
           </span>
           <h1 className="display-type text-4xl font-bold tracking-[-0.04em] sm:text-6xl">{appName}</h1>
         </div>

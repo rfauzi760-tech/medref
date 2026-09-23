@@ -51,7 +51,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const brand = (
     <Link href="/" onClick={() => setMobileOpen(false)} className="focus-ring flex items-center gap-2.5 rounded-lg px-4 py-4">
       <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-accent/40 bg-white p-1">
-        <Image className="brand-mark" src="/rfsmed-mark.png" alt="" width={24} height={24} priority />
+        <Image src="/rfsmed-symbol.svg" alt="" width={24} height={24} priority />
       </span>
       <span className="display-type block text-[15px] font-bold leading-tight">{appName}</span>
     </Link>
@@ -80,7 +80,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </button>
         <Link href="/" className="flex items-center gap-2">
           <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/40 bg-white p-1">
-            <Image className="brand-mark" src="/rfsmed-mark.png" alt="" width={20} height={20} priority />
+            <Image src="/rfsmed-symbol.svg" alt="" width={20} height={20} priority />
           </span>
           <span className="text-sm font-semibold">{appName}</span>
         </Link>
