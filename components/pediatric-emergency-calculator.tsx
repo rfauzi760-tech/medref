@@ -183,8 +183,8 @@ export default function PediatricEmergencyCalculator({ vitalRanges }: { vitalRan
             <div className="mt-1 flex gap-2">
               <input type="number" min="0" step="0.1" inputMode="decimal" value={age} onChange={(event) => setAge(event.target.value)} placeholder="mis. 2" className="focus-ring h-11 min-w-0 flex-1 rounded-lg border border-[var(--line)] bg-[var(--surface-raised)] px-3 text-sm font-medium outline-none" />
               <div className="flex overflow-hidden rounded-lg border border-[var(--line)]">
-                <button type="button" onClick={() => setAgeUnit("years")} className={`px-3 text-xs font-semibold ${ageUnit === "years" ? "bg-accent text-white" : "bg-[var(--surface-raised)] text-[var(--muted)]"}`}>Tahun</button>
-                <button type="button" onClick={() => setAgeUnit("months")} className={`px-3 text-xs font-semibold ${ageUnit === "months" ? "bg-accent text-white" : "bg-[var(--surface-raised)] text-[var(--muted)]"}`}>Bulan</button>
+                <button type="button" onClick={() => setAgeUnit("years")} className={`px-3 text-xs font-semibold ${ageUnit === "years" ? "bg-accent-button text-accent-ink" : "bg-[var(--surface-raised)] text-[var(--muted)]"}`}>Tahun</button>
+                <button type="button" onClick={() => setAgeUnit("months")} className={`px-3 text-xs font-semibold ${ageUnit === "months" ? "bg-accent-button text-accent-ink" : "bg-[var(--surface-raised)] text-[var(--muted)]"}`}>Bulan</button>
               </div>
             </div>
           </label>

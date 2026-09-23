@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   manifest: "/manifest.webmanifest",
-  icons: { icon: "/rfsmed-mark.png" },
+  icons: { icon: "/icon.svg" },
   robots: {
     index: false,
     follow: false,
@@ -51,8 +51,8 @@ export const dynamic = "force-dynamic";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f6f2" },
-    { media: "(prefers-color-scheme: dark)", color: "#070a08" },
+    { media: "(prefers-color-scheme: light)", color: "#e2fdff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d0c1d" },
   ],
   width: "device-width",
   initialScale: 1,

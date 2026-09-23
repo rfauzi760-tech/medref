@@ -5,34 +5,65 @@
 @theme inline {
   --color-background: var(--canvas);
   --color-foreground: var(--ink);
+  --color-ink: var(--ink);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
   --font-sans: var(--font-funnel-sans);
   --font-display: var(--font-funnel-display);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
+  --color-accent-button: var(--accent-button);
+  --color-accent-ink: var(--accent-ink);
 }
 
 :root {
-  --canvas: #f5f6f2;
-  --surface: #fbfcf8;
+  --canvas: #e2fdff;
+  --surface: #f5fdff;
   --surface-raised: #ffffff;
-  --ink: #111512;
-  --muted: #667069;
-  --line: #dce1dc;
-  --accent: #75dca0;
-  --accent-strong: #176d43;
-  --accent-ink: #0d4027;
+  --ink: #161b33;
+  --muted: #46527f;
+  --line: #bfd7ff;
+  --accent: #5465ff;
+  --accent-strong: #4351dd;
+  --accent-button: #4351dd;
+  --accent-ink: #ffffff;
+  --accent-soft: #bfd7ff;
+  --accent-selected: #9bb1ff;
+  --accent-hover: #788bff;
 }
 
 .dark {
-  --canvas: #070a08;
-  --surface: #0d120f;
-  --surface-raised: #121814;
-  --ink: #f1f6f2;
-  --muted: #98a49c;
-  --line: #243029;
-  --accent: #9af4bb;
-  --accent-strong: #9af4bb;
-  --accent-ink: #071e12;
+  --canvas: #0d0c1d;
+  --surface: #161b33;
+  --surface-raised: #20243f;
+  --ink: #ffffff;
+  --muted: #ffffff;
+  --line: #474973;
+  --accent: #a69cac;
+  --accent-strong: #ffffff;
+  --accent-button: #474973;
+  --accent-ink: #ffffff;
+  --accent-soft: #474973;
+  --accent-selected: #a69cac;
+  --accent-hover: #474973;
+}
+
+/* Keep all dark-mode typography white while leaving SVG accent colors intact. */
+.dark *:not(svg):not(svg *) {
+  color: #ffffff !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.dark svg text {
+  fill: #ffffff !important;
+  color: #ffffff !important;
 }
 
 body {
@@ -59,6 +90,10 @@ h3 {
   font-weight: 700 !important;
 }
 
+.brand-mark {
+  filter: hue-rotate(98deg) saturate(1.15);
+}
+
 ::selection {
   background: color-mix(in srgb, var(--accent) 45%, transparent);
   color: var(--ink);
@@ -76,7 +111,7 @@ h3 {
   gap: 0.625rem;
   min-height: 3rem;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 92%, var(--accent));
+  background: color-mix(in srgb, var(--surface) 92%, var(--accent-soft));
   padding: 0.75rem 1rem;
 }
 
@@ -90,12 +125,12 @@ h3 {
 }
 
 .index-row:hover {
-  background: color-mix(in srgb, var(--surface) 88%, var(--accent));
+  background: color-mix(in srgb, var(--surface) 88%, var(--accent-hover));
 }
 
 [data-active="true"] {
-  border-color: color-mix(in srgb, var(--accent) 52%, var(--line));
-  background: color-mix(in srgb, var(--surface) 82%, var(--accent));
+  border-color: color-mix(in srgb, var(--accent-selected) 52%, var(--line));
+  background: color-mix(in srgb, var(--surface) 82%, var(--accent-soft));
   color: var(--ink);
 }
 

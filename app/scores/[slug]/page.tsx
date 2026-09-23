@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!tool) return {};
   return {
     title: `${tool.title}${tool.abbreviation ? ` (${tool.abbreviation})` : ""}`,
-    description: `${tool.description} Sumber: ${tool.source.org}, ${tool.source.year}.`,
+    description: `${tool.description}${tool.source ? ` Sumber: ${tool.source.org}, ${tool.source.year}.` : ""}`,
     openGraph: { title: `${tool.title} - Skrining dan Skor`, description: tool.description, type: "article" },
   };
 }

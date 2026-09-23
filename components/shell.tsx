@@ -33,7 +33,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             href={m.href}
             onClick={() => setMobileOpen(false)}
             data-active={active}
-            className="focus-ring flex min-h-9 items-center gap-2.5 rounded-lg border border-transparent px-2.5 py-2 text-[13px] text-zinc-600 transition-colors hover:bg-black/[0.035] hover:text-zinc-950 dark:text-zinc-300 dark:hover:bg-white/[0.05] dark:hover:text-white"
+            className="focus-ring flex min-h-9 items-center gap-2.5 rounded-lg border border-transparent px-2.5 py-2 text-[13px] text-[var(--muted)] transition-colors hover:bg-black/[0.035] hover:text-[var(--ink)] dark:hover:bg-white/[0.05]"
           >
             <Icon className="h-4 w-4 shrink-0" />
             <span className="min-w-0 flex-1 truncate">{m.name}</span>
@@ -50,8 +50,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   const brand = (
     <Link href="/" onClick={() => setMobileOpen(false)} className="focus-ring flex items-center gap-2.5 rounded-lg px-4 py-4">
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-accent/40 bg-[#eefbf3] p-1">
-        <Image src="/rfsmed-mark.png" alt="" width={24} height={24} priority />
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-accent/40 bg-white p-1">
+        <Image className="brand-mark" src="/rfsmed-mark.png" alt="" width={24} height={24} priority />
       </span>
       <span className="display-type block text-[15px] font-bold leading-tight">{appName}</span>
     </Link>
@@ -79,8 +79,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <Menu className="h-5 w-5" />
         </button>
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/40 bg-[#eefbf3] p-1">
-            <Image src="/rfsmed-mark.png" alt="" width={20} height={20} priority />
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/40 bg-white p-1">
+            <Image className="brand-mark" src="/rfsmed-mark.png" alt="" width={20} height={20} priority />
           </span>
           <span className="text-sm font-semibold">{appName}</span>
         </Link>
@@ -96,7 +96,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <div className="absolute inset-y-0 left-0 flex w-72 flex-col border-r border-[var(--line)] bg-[var(--surface)] shadow-xl">
             <div className="flex items-center justify-between pr-2">
               {brand}
-              <button type="button" onClick={() => setMobileOpen(false)} aria-label="Tutup navigasi" className="rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              <button type="button" onClick={() => setMobileOpen(false)} aria-label="Tutup navigasi" className="rounded-lg p-2 text-[var(--muted)] hover:bg-black/5 dark:hover:bg-white/5">
                 <X className="h-5 w-5" />
               </button>
             </div>

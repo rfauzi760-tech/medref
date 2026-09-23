@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!drug) return {};
   return {
     title: `${drug.genericName} - Dosis`,
-    description: `${drug.drugClass}. Indikasi: ${drug.indications.join("; ")}. Dosis dewasa dan anak dengan perhitungan berbasis berat badan. Sumber: ${drug.source.org}, ${drug.source.year}.`,
+    description: `${drug.drugClass}. Indikasi: ${drug.indications.join("; ")}. Dosis dewasa dan anak dengan perhitungan berbasis berat badan.${drug.source ? ` Sumber: ${drug.source.org}, ${drug.source.year}.` : ""}`,
     openGraph: { title: `${drug.genericName} - Dosis Obat`, description: drug.drugClass, type: "article" },
   };
 }

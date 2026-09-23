@@ -90,7 +90,7 @@ export default function ProtocolTimer({ protocols }: { protocols: EmergencyProto
                     <Pause className="h-4 w-4" /> Jeda
                   </button>
                 ) : (
-                  <button onClick={start} className="focus-ring inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+                  <button onClick={start} className="focus-ring inline-flex items-center gap-2 rounded-lg bg-accent-button px-4 py-2 text-sm font-semibold hover:opacity-90">
                     <Play className="h-4 w-4" /> Mulai
                   </button>
                 )}

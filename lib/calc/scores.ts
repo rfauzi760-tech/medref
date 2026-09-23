@@ -124,7 +124,7 @@ export function scoreToText(tool: ScoreTool, ev: ScoreEvaluation): string {
   }
   for (const m of ev.appliedModifiers) lines.push(`• ${m.note} (${m.delta > 0 ? "+" : ""}${m.delta} poin)`);
   if (ev.range?.action) lines.push(`Langkah berikut: ${ev.range.action}`);
-  lines.push(`Sumber: ${tool.source.org}, ${tool.source.title} (${tool.source.year})`);
+  if (tool.source) lines.push(`Sumber: ${tool.source.org}, ${tool.source.title} (${tool.source.year})`);
   lines.push("Hanya alat bantu keputusan klinis. Tidak menggantikan penilaian klinis.");
   return lines.join("\n");
 }

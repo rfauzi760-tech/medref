@@ -50,7 +50,7 @@ export default function DrugsPageClient({
           type="button"
           aria-pressed={!pediatricOnly}
           onClick={() => setPediatricOnly(false)}
-          className={`min-h-10 px-4 text-sm font-bold ${!pediatricOnly ? "bg-accent text-white" : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+          className={`min-h-10 px-4 text-sm font-bold ${!pediatricOnly ? "bg-accent-button text-accent-ink" : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}
         >
           Semua
         </button>
@@ -58,7 +58,7 @@ export default function DrugsPageClient({
           type="button"
           aria-pressed={pediatricOnly}
           onClick={() => setPediatricOnly(true)}
-          className={`min-h-10 border-l border-[var(--line)] px-4 text-sm font-bold ${pediatricOnly ? "bg-accent text-white" : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+          className={`min-h-10 border-l border-[var(--line)] px-4 text-sm font-bold ${pediatricOnly ? "bg-accent-button text-accent-ink" : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}
         >
           Anak
         </button>

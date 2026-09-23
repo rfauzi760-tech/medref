@@ -36,14 +36,19 @@ const number = (value: unknown): number | undefined => {
 };
 
 const sourceFrom = (refs: unknown): ClinicalSource[] => {
-  if (!Array.isArray(refs) || refs.length === 0) return [KLINEA_SOURCE];
-  return refs.map((ref) => {
-    const row = ref as Dict;
-    return {
-      org: clean(row.src) || "Klinea",
-      title: clean(row.src) || "Referensi klinis",
+  if (!Array.isArray(refs) || refs.length === 0) return [];
+  return refs.flatMap((ref) => {
+    if (!ref || (typeof ref !== "string" && typeof ref !== "object")) return [];
+    const row = (typeof ref === "string" ? { src: ref } : ref) as Dict;
+    const org = clean(row.src);
+    const title = clean(row.title) || org;
+    const url = clean(row.url);
+    if (!org || /klinea|gawatcepat\.forum/i.test(`${org} ${title} ${url}`)) return [];
+    return [{
+      org,
+      title,
       year: Number.parseInt(clean(row.year), 10) || 2026,
-    };
+    }];
   });
 };
 
