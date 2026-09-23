@@ -6,16 +6,15 @@ import { ECG_MODULE_MEETINGS, type EcgModuleBlock } from "@/lib/data/ecg-module"
 
 export const metadata: Metadata = {
   title: "Modul EKG | RFSmed",
-  description: "Kurikulum EKG enam pertemuan berbahasa Indonesia dengan rujukan guideline dan jurnal primer.",
+  description: "Kurikulum EKG lima bab berbahasa Indonesia dengan rujukan guideline dan jurnal primer.",
 };
 
 const MEETING_IMAGE_INDICES: Record<number, number[]> = {
   1: [0, 1],
-  2: [2, 3, 4],
-  3: [17, 20, 21],
-  4: [37, 41, 42],
-  5: [5, 8, 25],
-  6: [7, 9, 34],
+  2: [2, 3, 11, 12, 13, 14],
+  3: [17, 18, 20, 21, 23, 24],
+  4: [37, 38, 41, 42],
+  5: [5, 6, 7, 8, 25, 26, 28, 29],
 };
 
 function imagesForMeeting(number: number) {
@@ -85,9 +84,9 @@ export default function EcgModulePage() {
       <BackLink href="/" label="Kembali ke beranda" />
       <PageHeader
         title="Modul EKG"
-        description="Kurikulum orisinal enam pertemuan untuk membaca EKG secara sistematis, mengenali kegawatan, dan mengomunikasikan hasil dengan jelas."
+        description="Kurikulum orisinal lima bab untuk membaca EKG secara sistematis, mengenali kegawatan, dan mengomunikasikan hasil dengan jelas."
         count={ECG_MODULE_MEETINGS.length}
-        countLabel="pertemuan"
+        countLabel="bab"
       />
 
       <section className="mb-5 rounded-xl border border-amber-300/50 bg-amber-50/60 p-4 text-sm leading-6 text-amber-950 dark:border-amber-700/40 dark:bg-amber-950/20 dark:text-amber-100">
@@ -101,7 +100,7 @@ export default function EcgModulePage() {
               <span className="flex items-start gap-3">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-sm font-bold text-accent-strong dark:text-accent">{meeting.number}</span>
                 <span className="min-w-0 flex-1">
-                  <strong className="display-type block text-base font-bold">Day {meeting.number}: {meeting.title}</strong>
+                  <strong className="display-type block text-base font-bold">Bab {meeting.number}: {meeting.title}</strong>
                   <span className="mt-1 block text-sm leading-6 text-[var(--muted)]">{meeting.summary}</span>
                 </span>
               </span>
