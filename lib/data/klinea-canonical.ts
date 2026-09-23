@@ -134,6 +134,20 @@ const scoreRange = (row: Dict): ScoreRange => {
   };
 };
 
+const ALVARADO_WARNINGS = [
+  "Pada perempuan usia subur, skor ini tidak membedakan apendisitis dari penyebab ginekologis. Pertimbangkan kehamilan ektopik, torsi adneksa, dan radang panggul; lakukan tes kehamilan bila pasien mungkin hamil.",
+  "Pada anak prasekolah, gejala dapat tidak khas dan skor saja tidak cukup untuk menyingkirkan apendisitis. Pada lansia, skor juga kurang andal untuk membedakan apendisitis sederhana dan berkomplikasi.",
+  "Jangan gunakan skor sebagai satu-satunya dasar untuk operasi atau untuk menunda pemeriksaan. Bila kondisi memburuk, nyeri menetap, atau ada kecurigaan komplikasi, lanjutkan evaluasi meski skornya rendah.",
+  "Dalam meta-analisis, RIPASA memiliki sensitivitas lebih tinggi tetapi spesifisitas lebih rendah daripada Alvarado. Hasil ini tidak berarti RIPASA selalu lebih baik; pertimbangkan validasi setempat dan temuan klinis.",
+];
+
+const ALVARADO_SOURCE: ClinicalSource = {
+  org: "World Society of Emergency Surgery",
+  title: "Diagnosis and Treatment of Acute Appendicitis: 2025 Edition of the WSES Jerusalem Guidelines",
+  year: 2026,
+  url: "https://doi.org/10.1001/jamasurg.2025.6218",
+};
+
 function toolVariables(tool: KlineaTool, legacy?: ScoreTool): ScoreVariable[] {
   if (legacy) {
     const translate = (value: string) => value
@@ -213,23 +227,30 @@ export function canonicalScores(legacyScores: ScoreTool[]): ScoreTool[] {
         ? (extra.pita as Dict[]).map(scoreRange)
         : [{ min: -9999, max: 9999, category: "Interpretasi", label: clean(tool.guideline) || "Lihat panduan klinis", tone: "info" as const }];
     const references = sourceFrom(extra.refs);
+    const isAlvarado = tool.id === "alvarado";
     return {
       ...legacy,
       id: tool.id,
       slug: legacy?.slug ?? tool.id,
       title: clean(tool.name) || tool.id,
-      description: clean(tool.blurb) || clean(extra.dasar) || "Alat bantu klinis.",
+      description: isAlvarado
+        ? "Membantu memperkirakan kemungkinan apendisitis akut dari gejala, pemeriksaan, dan hasil darah."
+        : clean(tool.blurb) || clean(extra.dasar) || "Alat bantu klinis.",
       specialties: list(tool.sp),
       keywords: [...words(tool.name), ...words(tool.blurb), tool.id],
       type: "score",
       category: tool.showScore === false ? "criteria" : "score",
       variables: toolVariables(tool, legacy),
       ranges,
-      indication: flatten(extra.pakai).join(" ") || clean(tool.guideline),
-      limitations: flatten(extra.jangan).join(" "),
-      warnings: flatten(extra.jangan),
+      indication: isAlvarado
+        ? "Alat bantu penilaian awal pada pasien yang diduga mengalami apendisitis. Skor membantu memilah pasien berisiko rendah dan menengah yang mungkin perlu observasi atau pemeriksaan lanjutan, tetapi tidak menetapkan diagnosis atau keputusan operasi sendirian."
+        : flatten(extra.pakai).join(" ") || clean(tool.guideline),
+      limitations: isAlvarado
+        ? "Pada orang dewasa, skor Alvarado kurang spesifik untuk memastikan apendisitis. Hasilnya perlu dibaca bersama kondisi pasien, pemeriksaan fisik, dan pemeriksaan penunjang."
+        : flatten(extra.jangan).join(" "),
+      warnings: isAlvarado ? ALVARADO_WARNINGS : flatten(extra.jangan),
       lastReviewed: REVIEWED,
-      source: references[0],
+      source: isAlvarado ? ALVARADO_SOURCE : references[0],
     };
   });
 }

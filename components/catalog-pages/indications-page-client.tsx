@@ -10,7 +10,7 @@ export default function IndicationsPageClient({ items }: { items: ProcedureSumma
   const [q, setQ] = useState("");
   const [specialty, setSpecialty] = useState("");
 
-  const specialties = useMemo(() => [...new Set(items.flatMap((p) => p.specialties))].sort(), []);
+  const specialties = useMemo(() => [...new Set(items.flatMap((p) => p.specialties))].sort(), [items]);
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
     return items.filter((p) => {
@@ -18,13 +18,13 @@ export default function IndicationsPageClient({ items }: { items: ProcedureSumma
       if (!query) return true;
       return p.title.toLowerCase().includes(query) || p.keywords.some((k) => k.includes(query)) || p.definition.toLowerCase().includes(query);
     });
-  }, [q, specialty]);
+  }, [items, q, specialty]);
 
   return (
     <div>
       <PageHeader
         title="Indikasi & Kontraindikasi"
-        description="Referensi terstruktur prosedur klinis umum - indikasi, kontraindikasi absolut dan relatif, tindakan pencegahan, persiapan, dan komplikasi."
+        description="Ringkasan tujuan prosedur, kondisi yang perlu diwaspadai, serta persiapan dan komplikasinya. Sesuaikan keputusan dengan kondisi pasien dan protokol rumah sakit."
         count={items.length}
         countLabel="prosedur"
       />
@@ -34,7 +34,7 @@ export default function IndicationsPageClient({ items }: { items: ProcedureSumma
           onClick={() => setSpecialty("")}
           className={`rounded-full border px-3 py-1 text-xs font-medium ${!specialty ? "border-accent bg-accent/10 text-accent-strong dark:text-accent" : "border-zinc-200 text-zinc-500 hover:border-zinc-300 dark:border-zinc-700 dark:text-zinc-400"}`}
         >
-          All
+          Semua spesialisasi
         </button>
         {specialties.map((s) => (
           <button
