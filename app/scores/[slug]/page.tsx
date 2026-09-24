@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SCORES } from "@/lib/data/scores";
 import { ScoreToolView } from "@/components/score-tool";
+import { KpspForm } from "@/components/kpsp-form";
 import { BackLink } from "@/components/shared";
 import type { PublicScoreTool } from "@/lib/score-public";
 
@@ -36,7 +37,11 @@ export default async function ScorePage({ params }: { params: Promise<{ slug: st
   return (
     <div>
       <BackLink href="/scores" label="Semua skor" />
-      <ScoreToolView tool={publicScore(tool)} />
+      {tool.slug === "kpsp" ? (
+        <KpspForm title={tool.title} abbreviation={tool.abbreviation} specialties={tool.specialties} />
+      ) : (
+        <ScoreToolView tool={publicScore(tool)} />
+      )}
     </div>
   );
 }

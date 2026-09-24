@@ -159,10 +159,10 @@ export const EXTRA_SCORES_H: ScoreTool[] = [
   },
   {
     id: "kpsp", slug: "kpsp", title: "KPSP (Kuesioner Pra Skrining Perkembangan)", abbreviation: "KPSP", type: "score", category: "score",
-    description: "Kuesioner Pra Skrining Perkembangan Kemenkes RI - 9–10 pertanyaan sesuai usia untuk deteksi dini keterlambatan perkembangan.",
+    description: "Formulir KPSP resmi Kemenkes untuk 16 kelompok usia 3–72 bulan, dilengkapi butir, petunjuk pelaksanaan, gambar peragaan, dan interpretasi hasil.",
     specialties: ["Pediatrics"], keywords: ["kpsp", "skrining", "perkembangan", "kemenkes", "deteksi dini"],
-    indication: "Skrining perkembangan rutin anak 0–72 bulan (usia 3, 6, 9, 12, 15, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72 bulan).", limitations: "Hasil 'meragukan' → ulangi 2 minggu; 'penyimpangan' → rujuk.",
-    lastReviewed: "2025-06-01", source: { org: "Kemenkes RI", title: "Buku KIA & Pedoman Pelaksanaan Stimulasi, Deteksi dan Intervensi Dini Tumbuh Kembang Anak (SDIDTK)", year: 2022 },
+    indication: "Skrining perkembangan anak menggunakan formulir usia 3, 6, 9, 12, 15, 18, 21, 24, 30, 36, 42, 48, 54, 60, 66, atau 72 bulan.", limitations: "Skrining bukan diagnosis. Hasil meragukan perlu stimulasi dan pemeriksaan ulang; hasil penyimpangan perlu dirujuk.",
+    lastReviewed: "2025-05-01", source: { org: "Kemenkes RI", title: "Buku KIA dan Pedoman Nasional Tata Laksana Klinis 2025", year: 2025 },
     variables: [
       { id: "q1", label: "Pertanyaan 1 dijawab YA", shortLabel: "Q1", type: "bool" }, { id: "q2", label: "Pertanyaan 2 dijawab YA", shortLabel: "Q2", type: "bool" },
       { id: "q3", label: "Pertanyaan 3 dijawab YA", shortLabel: "Q3", type: "bool" }, { id: "q4", label: "Pertanyaan 4 dijawab YA", shortLabel: "Q4", type: "bool" },
