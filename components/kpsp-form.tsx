@@ -39,7 +39,7 @@ export function KpspForm({ title, abbreviation, specialties }: { title: string; 
             {title}
             {abbreviation && <span className="ml-2 rounded bg-zinc-100 px-2 py-0.5 font-mono text-sm text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">{abbreviation}</span>}
           </h1>
-          <p className="mt-1 max-w-3xl text-sm text-zinc-500 dark:text-zinc-400">Pilih formulir sesuai kelompok usia anak. Semua butir dan gambar petunjuk ditampilkan dari formulir resmi Kemenkes.</p>
+          <p className="mt-1 max-w-3xl text-sm text-zinc-500 dark:text-zinc-400">Pilih formulir sesuai kelompok usia anak. Butir dan gambar peragaan tersedia pada lembar resmi Kemenkes untuk usia tersebut.</p>
         </div>
         <SpecialtyTags specialties={specialties} />
       </div>
@@ -70,16 +70,11 @@ export function KpspForm({ title, abbreviation, specialties }: { title: string; 
               <div className="space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-semibold">Butir KPSP usia {ageForm.months} bulan</h3>
-                  <a href={`${formUrl}#page=${ageForm.page}`} target="_blank" rel="noreferrer" className="text-sm font-medium text-accent underline underline-offset-2">Buka formulir Kemenkes</a>
                 </div>
-                <p className="text-sm text-[var(--muted)]">Lihat pertanyaan, cara melakukan, dan gambar peragaan pada lembar resmi berikut, lalu catat jawaban setiap butir.</p>
-                <iframe
-                  key={ageForm.months}
-                  src={`${formUrl}#page=${ageForm.page}&toolbar=0&navpanes=0`}
-                  title={`Formulir KPSP Kemenkes usia ${ageForm.months} bulan`}
-                  className="h-[72vh] max-h-[760px] min-h-[480px] w-full rounded-lg border border-[var(--line)] bg-white"
-                  loading="lazy"
-                />
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4">
+                  <p className="max-w-xl text-sm text-[var(--muted)]">Lembar usia {ageForm.months} bulan memuat pertanyaan lengkap, cara pelaksanaan, dan gambar peragaan. Buka lembar resmi, lalu catat jawaban setiap butir di bawah.</p>
+                  <a href={`${formUrl}#page=${ageForm.page}`} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-11 items-center rounded-lg bg-accent-button px-4 py-2 text-sm font-semibold text-accent-ink">Lihat lembar resmi · halaman {ageForm.page}</a>
+                </div>
               </div>
 
               <div className="space-y-3">
