@@ -29,9 +29,6 @@ export default function GuidelinesPageClient({ items }: { items: GuidelineSummar
     <div>
       <PageHeader
         title="Panduan Klinis"
-        description="Halaman referensi ringkas untuk dipakai di samping tempat tidur - diagnosis, klasifikasi, tatalaksana, kriteria rawat, tanda bahaya, dan referensi."
-        count={items.length}
-        countLabel="panduan"
       />
       <FilterInput value={q} onChange={setQ} placeholder="Cari panduan… mis. demam berdarah, sepsis, diabetes" />
 

@@ -1,7 +1,7 @@
 import type { ClinicalSource } from "@/lib/types";
 
 export function SourceBlock({ source, lastReviewed, compact = false }: { source?: ClinicalSource; lastReviewed?: string; compact?: boolean }) {
-  if (!source || /klinea|gawatcepat\.forum/i.test(`${source.org} ${source.title} ${source.url ?? ""}`)) return null;
+  if (!source || /auctus|klinea|jagamate|gawatcepat/i.test(`${source.org} ${source.title} ${source.url ?? ""}`)) return null;
 
   const inner = (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">

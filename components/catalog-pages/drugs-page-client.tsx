@@ -33,17 +33,10 @@ export default function DrugsPageClient({
     });
   }, [q, pediatricOnly, drugs]);
 
-  const pediatricCount = drugs.filter((drug) => drug.hasPediatricDose).length;
-
   return (
     <div>
       <PageHeader
         title={pediatricOnly ? "Dosis Obat Anak" : "Dosis Obat"}
-        description={pediatricOnly
-          ? "Cari regimen pediatrik, hitung dosis berbasis berat badan, dan konversikan ke sediaan yang tersedia."
-          : "Referensi dosis dewasa dan anak dengan kalkulator dosis berbasis berat badan. Dosis disusun dari referensi terbitan standar."}
-        count={pediatricOnly ? pediatricCount : drugs.length}
-        countLabel="obat"
       />
       <div className="mb-4 inline-flex overflow-hidden rounded-lg border border-[var(--line)]" aria-label="Populasi obat">
         <button

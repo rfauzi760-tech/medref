@@ -92,7 +92,6 @@ export default function InteractionsPageClient({ drugs }: { drugs: DrugSummary[]
     <div>
       <PageHeader
         title="Cek Interaksi Obat"
-        description="Tambahkan beberapa obat untuk memeriksa interaksi berpasangan. Hasil berbasis kumpulan interaksi mapan yang dikurasi - tanpa data karangan."
       />
 
       {/* Selection panel */}

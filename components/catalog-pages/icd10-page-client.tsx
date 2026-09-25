@@ -40,9 +40,6 @@ export default function Icd10PageClient({ items }: { items: Icd10Entry[] }) {
     <div>
       <PageHeader
         title="Kamus ICD-10"
-        description="Pencarian cepat kode ICD-10 dengan istilah Indonesia dan Inggris. Salin kode sekali klik - dirancang untuk pemakaian di titik pelayanan."
-        count={items.length}
-        countLabel="kode"
       />
       <FilterInput value={q} onChange={setQ} placeholder="Cari kode atau diagnosis… mis. J18, pneumonia, diabetes" />
       <div className="mb-5 flex flex-wrap gap-2">

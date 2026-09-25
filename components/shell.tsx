@@ -37,11 +37,6 @@ export function Shell({ children }: { children: React.ReactNode }) {
           >
             <Icon className="h-4 w-4 shrink-0" />
             <span className="min-w-0 flex-1 truncate">{m.name}</span>
-            {m.count > 0 && (
-              <span className="shrink-0 font-mono text-[10px] text-zinc-400">
-                {m.count}
-              </span>
-            )}
           </Link>
         );
       })}
@@ -63,9 +58,6 @@ export function Shell({ children }: { children: React.ReactNode }) {
       <aside className="no-print fixed inset-y-0 left-0 z-30 hidden w-[248px] flex-col border-r border-[var(--line)] bg-[var(--surface)] lg:flex">
         {brand}
         <div className="thin-scroll flex-1 overflow-y-auto">{nav}</div>
-        <div className="border-t border-[var(--line)] p-4 text-[10px] leading-relaxed text-[var(--muted)]">
-          Alat pendukung keputusan &amp; edukasi klinis. Tidak menggantikan penilaian klinis profesional atau protokol institusi setempat.
-        </div>
       </aside>
 
       {/* Mobile top bar */}
@@ -123,14 +115,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
         <main className="mx-auto max-w-[1180px] px-4 py-7 lg:px-8 lg:py-10">{children}</main>
 
-        <footer className="no-print mx-auto max-w-[1180px] px-4 pb-8 text-[10px] leading-relaxed text-[var(--muted)] lg:px-8">
-          <hr className="mb-3 border-[var(--line)]" />
-          {appName} adalah alat pendukung keputusan &amp; edukasi klinis. Seluruh konten disusun secara independen dari sumber publik resmi yang dikutip
-          (WHO, CDC, KDIGO, perhimpunan spesialis, studi validasi asli) dan ditelaah untuk akurasi, tetapi tidak menggantikan penilaian klinis profesional
-          atau protokol institusi setempat. Periksa kembali setiap dosis dan keputusan terhadap formularium serta panduan setempat Anda.
-          Sumber ditampilkan pada setiap alat.
-          {" "}<Link href="/terms" className="font-semibold underline underline-offset-2">Ketentuan Penggunaan</Link>.
+        <footer className="no-print mx-auto max-w-[1180px] px-4 pb-6 text-xs text-[var(--muted)] lg:px-8">
+          <Link href="/terms" className="underline underline-offset-2 hover:text-[var(--ink)]">Ketentuan Penggunaan</Link>
         </footer>
+
       </div>
     </div>
   );

@@ -72,14 +72,7 @@ export default function EcgModulePage() {
       <BackLink href="/" label="Kembali ke beranda" />
       <PageHeader
         title="Modul EKG"
-        description="Kurikulum orisinal lima bab untuk membaca EKG secara sistematis, mengenali kegawatan, dan mengomunikasikan hasil dengan jelas."
-        count={ECG_MODULE_MEETINGS.length}
-        countLabel="bab"
       />
-
-      <section className="mb-5 rounded-xl border border-amber-300/50 bg-amber-50/60 p-4 text-sm leading-6 text-amber-950 dark:border-amber-700/40 dark:bg-amber-950/20 dark:text-amber-100">
-        <strong className="font-bold">Catatan penggunaan.</strong> Materi ini adalah ringkasan pendidikan orisinal, bukan salinan modul Auctus. Gunakan bersama penilaian klinis, guideline terbaru, dan protokol institusi.
-      </section>
 
       <div className="space-y-3">
         {ECG_MODULE_MEETINGS.map((meeting, index) => (

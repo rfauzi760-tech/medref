@@ -16,7 +16,6 @@ export default function NeonatalResuscitationPage() {
       <BackLink href="/igd-toolkit" label="Kembali ke Toolkit IGD" />
       <PageHeader
         title="Resusitasi Neonatus"
-        description="Alur bayi baru lahir saat persalinan. Berbeda dari resusitasi anak di luar masa transisi kelahiran."
       />
 
       <p className="mb-6 rounded-lg border border-amber-400/40 bg-amber-50/60 px-4 py-3 text-xs leading-relaxed text-amber-950 dark:bg-amber-950/20 dark:text-amber-100">

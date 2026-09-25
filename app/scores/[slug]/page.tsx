@@ -4,13 +4,14 @@ import { SCORES } from "@/lib/data/scores";
 import { ScoreToolView } from "@/components/score-tool";
 import { KpspForm } from "@/components/kpsp-form";
 import { BackLink } from "@/components/shared";
-import type { PublicScoreTool } from "@/lib/score-public";
+import { requiresServerScoreCalculation, type PublicScoreTool } from "@/lib/score-public";
 
 function publicScore(tool: (typeof SCORES)[number]): PublicScoreTool {
   const { compute: _compute, variables, ...rest } = tool;
   void _compute;
   return {
     ...rest,
+    requiresServerCalculation: requiresServerScoreCalculation(tool),
     variables: variables.map(({ scale: _scale, hideWhen: _hideWhen, ...variable }) => {
       void _scale;
       void _hideWhen;

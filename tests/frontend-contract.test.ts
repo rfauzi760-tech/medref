@@ -78,9 +78,14 @@ describe("frontend design contract", () => {
       expect(source).toContain("focus-ring");
     }
     expect(read(files[0])).toContain("runCalculator");
+    expect(read(files[0])).not.toContain("fetch(");
+    expect(read(files[1])).toContain("evaluateScore");
+    expect(read(files[1])).toContain("calculateSpecialScore");
+    expect(read(files[1])).not.toContain("useEffect");
     expect(read(files[1])).toContain("/api/scores/");
-    expect(read("app/api/scores/[slug]/route.ts")).toContain("evaluateScore");
     expect(read(files[2])).toContain("calculateDose");
+    expect(read(files[2])).not.toContain("fetch(");
+    expect(read("app/api/scores/[slug]/route.ts")).toContain("evaluateScore");
     expect(read("components/drug-view.tsx")).toContain("PediatricDoseForm");
   });
 

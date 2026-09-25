@@ -40,9 +40,6 @@ export default function CalculatorsPageClient({ calculators }: { calculators: Ca
     <div>
       <PageHeader
         title="Kalkulator Klinis"
-        description="Kalkulator tubuh, ginjal, cairan, elektrolit, kardiovaskular, dan dosis obat. Setiap rumus diuji unit terhadap nilai referensi terbitan."
-        count={calculators.length}
-        countLabel="kalkulator"
       />
       <Link href="/drugs?tab=tools" className="focus-ring mb-4 inline-flex rounded-lg border border-accent/40 px-3 py-2 text-sm font-bold text-accent-strong dark:text-accent">Cairan, diare, obstetri, dan luka bakar</Link>
       <FilterInput value={q} onChange={setQ} placeholder="Cari kalkulator… mis. eGFR, anion gap, MAP" />
@@ -70,7 +67,7 @@ export default function CalculatorsPageClient({ calculators }: { calculators: Ca
         <div className="space-y-8">
           {grouped.map(([label, tools]) => (
             <section key={label}>
-              <h2 className="display-type mb-3 text-lg font-bold">{label} · {tools.length}</h2>
+              <h2 className="display-type mb-3 text-lg font-bold">{label}</h2>
               <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 [&_.index-row]:border-[var(--line)] sm:[&_.index-row:nth-child(odd)]:border-r">
                 {tools.map((c) => (
                   <ToolCard

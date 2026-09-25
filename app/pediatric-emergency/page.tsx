@@ -16,7 +16,6 @@ export default function PediatricEmergencyPage() {
       <BackLink href="/igd-toolkit" label="Kembali ke Toolkit IGD" />
       <PageHeader
         title="Gawat Darurat Anak"
-        description="Satu masukan untuk estimasi berat badan, ukuran jalan napas, dosis resusitasi, energi listrik, dan ambang tanda vital anak."
       />
       <Link href="/neonatal-resuscitation" className="focus-ring mb-5 flex items-center justify-between gap-3 rounded-lg border border-accent/35 bg-accent/5 px-4 py-3 text-sm hover:border-accent">
         <span><strong className="font-bold">Resusitasi Neonatus</strong><span className="mt-0.5 block text-xs text-[var(--muted)]">Skema khusus bayi baru lahir saat persalinan.</span></span>

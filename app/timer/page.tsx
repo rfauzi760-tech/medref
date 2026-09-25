@@ -13,9 +13,6 @@ export default function TimerPage() {
       <BackLink href="/igd-toolkit" label="Kembali ke Toolkit IGD" />
       <PageHeader
         title="Timer Protokol"
-        description="Penghitung waktu untuk alur waktu-kritis. Pilih protokol, mulai timer, dan bandingkan waktu berjalan dengan target yang dipublikasikan."
-        count={EMERGENCY_PROTOCOLS.length}
-        countLabel="protokol"
       />
       <ProtocolTimer protocols={EMERGENCY_PROTOCOLS} />
     </div>

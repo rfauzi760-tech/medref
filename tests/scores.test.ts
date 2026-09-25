@@ -1,15 +1,26 @@
 import { describe, expect, it } from "vitest";
 import { evaluateScore, isComplete, scoreToText } from "@/lib/calc/scores";
 import { SCORES } from "@/lib/data/scores";
-
+import { requiresServerScoreCalculation } from "@/lib/score-public";
 function tool(slug: string) {
   const t = SCORES.find((x) => x.slug === slug);
   if (!t) throw new Error(`missing tool ${slug}`);
   return t;
 }
 
+describe("client-side score processing", () => {
+  it("keeps most scoring tools calculable without a Worker request", () => {
+    const localScores = SCORES.filter((score) => !requiresServerScoreCalculation(score));
+    expect(localScores.length).toBeGreaterThan(SCORES.length / 2);
+  });
+});
+
 describe("qSOFA", () => {
   const q = tool("qsofa");
+  it("can be evaluated in the browser without a Worker request", () => {
+    expect(requiresServerScoreCalculation(q)).toBe(false);
+  });
+
   it("scores 0 for a normal patient", () => {
     const ev = evaluateScore(q, { rr: "0", sbp: "0", gcs: "0" });
     expect(ev.total).toBe(0);
@@ -167,6 +178,10 @@ describe("HEART score", () => {
 
 describe("Sarnat staging (compute hook)", () => {
   const s = tool("sarnat");
+  it("retains server evaluation for custom clinical rules", () => {
+    expect(requiresServerScoreCalculation(s)).toBe(true);
+  });
+
   it("classifies mild (stage 1) for a full-term infant with hyperalertness", () => {
     const ev = evaluateScore(s, { ga: "term", level: "hyperalert" });
     expect(ev.total).toBe(1);

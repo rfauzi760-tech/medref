@@ -3,18 +3,18 @@ import { ArrowUpRight } from "lucide-react";
 
 const groups = [
   { title: "Cairan dan diare", links: [
-    ["Rencana terapi diare A, B, C", "/jagamate-tools/diare"],
+    ["Rencana terapi diare A, B, C", "/tools-dosis/diare"],
     ["Rumatan cairan Holliday-Segar", "/calculators/holliday-segar"],
     ["Defisit cairan", "/calculators/fluid-deficit"],
-    ["Resusitasi syok", "/jagamate-tools/syok"],
+    ["Resusitasi syok", "/tools-dosis/syok"],
   ] },
   { title: "Obstetri", links: [
-    ["Usia kehamilan dan HPL", "/jagamate-tools/kehamilan"],
-    ["Taksiran berat janin dari TFU", "/jagamate-tools/taksiran-janin"],
+    ["Usia kehamilan dan HPL", "/tools-dosis/kehamilan"],
+    ["Taksiran berat janin dari TFU", "/tools-dosis/taksiran-janin"],
   ] },
   { title: "Emergensi", links: [
     ["Glasgow Coma Scale", "/scores/gcs"],
-    ["Resusitasi luka bakar", "/jagamate-tools/luka-bakar"],
+    ["Resusitasi luka bakar", "/tools-dosis/luka-bakar"],
   ] },
   { title: "Status gizi", links: [
     ["Antropometri anak", "/anthropometry"],

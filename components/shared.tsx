@@ -14,18 +14,10 @@ export function SectionBand({ children, action }: { children: React.ReactNode; a
   );
 }
 
-export function PageHeader({ title, description, count, countLabel }: { title: string; description?: string; count?: number; countLabel?: string }) {
+export function PageHeader({ title }: { title: string }) {
   return (
     <div className="mb-7 border-b border-[var(--line)] pb-5">
-      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h1 className="display-type text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{title}</h1>
-        {count !== undefined && (
-          <span className="rounded-md border border-accent/30 bg-accent/10 px-2 py-1 font-mono text-[10px] font-medium text-accent-strong dark:text-accent">
-            {count} {countLabel}
-          </span>
-        )}
-      </div>
-      {description && <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">{description}</p>}
+      <h1 className="display-type text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{title}</h1>
     </div>
   );
 }

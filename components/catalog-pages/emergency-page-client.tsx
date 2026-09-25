@@ -39,9 +39,6 @@ export default function EmergencyPageClient({ items }: { items: EmergencyPathway
       <BackLink href="/igd-toolkit" label="Kembali ke Toolkit IGD" />
       <PageHeader
         title="Algoritma IGD"
-        description="Indeks alur kegawatan dari triase sampai disposisi, termasuk skema resusitasi neonatus."
-        count={items.length}
-        countLabel="alur"
       />
       <FilterInput value={q} onChange={setQ} placeholder="Cari alur… mis. syok, nyeri dada, kejang" />
 

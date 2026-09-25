@@ -73,7 +73,6 @@ export default function AnthropometryPage() {
     <div>
       <PageHeader
         title="Antropometri Anak"
-        description="Standar Pertumbuhan Anak WHO (2006) - z-score, persentil, klasifikasi status gizi, dan grafik pertumbuhan untuk anak 0–60 bulan."
       />
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px]">

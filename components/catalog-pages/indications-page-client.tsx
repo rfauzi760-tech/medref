@@ -24,9 +24,6 @@ export default function IndicationsPageClient({ items }: { items: ProcedureSumma
     <div>
       <PageHeader
         title="Indikasi & Kontraindikasi"
-        description="Ringkasan tujuan prosedur, kondisi yang perlu diwaspadai, serta persiapan dan komplikasinya. Sesuaikan keputusan dengan kondisi pasien dan protokol rumah sakit."
-        count={items.length}
-        countLabel="prosedur"
       />
       <FilterInput value={q} onChange={setQ} placeholder="Cari prosedur… mis. kateter, intubasi, pungsi lumbal" />
       <div className="mb-5 flex flex-wrap gap-2">

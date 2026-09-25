@@ -50,7 +50,6 @@ export default function ImmunizationPageClient({ schedule }: { schedule: Immuniz
     <div>
       <PageHeader
         title="Imunisasi"
-        description="Jadwal imunisasi anak Indonesia (Kemenkes RI / IDAI). Masukkan tanggal lahir dan tandai dosis yang telah diterima untuk melihat yang jatuh tempo, akan datang, atau terlambat."
       />
 
       <div className="workspace-panel mb-6 grid gap-4 p-5 sm:grid-cols-2">

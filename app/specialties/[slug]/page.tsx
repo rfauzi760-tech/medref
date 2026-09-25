@@ -40,14 +40,11 @@ export default async function SpecialtyPage({ params }: { params: Promise<{ slug
       <BackLink href="/specialties" label="Semua spesialisasi" />
       <div className="mb-6">
         <h1 className="display-type text-3xl font-bold tracking-tight sm:text-4xl">{name}</h1>
-        <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{spec.description}</p>
       </div>
       <div className="space-y-8">
         {sections.map((s) => (
           <section key={s.label}>
-            <h2 className="display-type mb-3 text-lg font-bold">
-              {s.label} · {s.cards.length}
-            </h2>
+            <h2 className="display-type mb-3 text-lg font-bold">{s.label}</h2>
             <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 [&_.index-row]:border-[var(--line)] sm:[&_.index-row:nth-child(odd)]:border-r">{s.cards}</div>
           </section>
         ))}

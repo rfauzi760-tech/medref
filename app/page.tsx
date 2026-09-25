@@ -57,21 +57,16 @@ export default function Home() {
 
       <section aria-labelledby="modules-title">
         <div className="mb-4">
-          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-accent-strong dark:text-accent">Ruang kerja</p>
-          <h2 id="modules-title" className="display-type mt-1 text-2xl font-bold">Modul klinis utama</h2>
+          <h2 id="modules-title" className="display-type text-2xl font-bold">Modul klinis utama</h2>
         </div>
         <div className="workspace-panel grid overflow-hidden md:grid-cols-2">
           {primary.map((module) => {
             const Icon = module.icon;
             return (
-              <Link key={module.slug} href={module.href} className="index-row focus-ring group flex min-h-36 gap-4 p-5 md:odd:border-r md:[&:nth-last-child(-n+2)]:border-b-0">
+              <Link key={module.slug} href={module.href} className="index-row focus-ring group flex min-h-24 gap-4 p-4 md:odd:border-r md:[&:nth-last-child(-n+2)]:border-b-0">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent-strong dark:text-accent"><Icon className="h-4 w-4" /></span>
                 <span className="min-w-0 flex-1">
-                  <span className="flex items-start justify-between gap-4">
-                    <span className="display-type text-lg font-medium">{module.name}</span>
-                    {module.count > 0 && <span className="font-mono text-[10px] text-[var(--muted)]">{module.count}</span>}
-                  </span>
-                  <span className="mt-2 block text-xs leading-5 text-[var(--muted)]">{module.description}</span>
+                  <span className="display-type text-lg font-medium">{module.name}</span>
                 </span>
                 <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--muted)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
@@ -90,7 +85,6 @@ export default function Home() {
                 <Link key={module.slug} href={module.href} className="index-row focus-ring group flex items-center gap-3 px-4 py-3">
                   <Icon className="h-4 w-4 text-accent-strong dark:text-accent" />
                   <span className="flex-1 text-sm font-medium">{module.name}</span>
-                  {module.count > 0 && <span className="font-mono text-[10px] text-[var(--muted)]">{module.count}</span>}
                   <ArrowUpRight className="h-3.5 w-3.5 text-[var(--muted)]" />
                 </Link>
               );

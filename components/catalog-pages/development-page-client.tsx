@@ -88,7 +88,6 @@ export default function DevelopmentPageClient({
     <div className="space-y-6">
       <PageHeader
         title="Perkembangan Anak"
-        description="Panduan pemantauan perkembangan anak, skrining KPSP, tanda waspada, stimulasi, dan tindak lanjut berdasarkan sumber IDAI serta Kementerian Kesehatan."
       />
 
       <div className="rounded-xl border border-accent/30 bg-accent/5 p-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-200">

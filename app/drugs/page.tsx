@@ -24,10 +24,10 @@ export default async function DrugsPage({ searchParams }: { searchParams: Promis
       {tabs.map(([value, label]) => <Link key={value} href={value === "obat" ? "/drugs" : `/drugs?tab=${value}`} aria-current={tab === value ? "page" : undefined} className={`min-h-10 border-l border-[var(--line)] px-4 py-2 text-sm font-bold first:border-l-0 ${tab === value ? "bg-accent-button text-accent-ink" : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}>{label}</Link>)}
     </nav>
     {tab === "racikan" ? <>
-      <PageHeader title="Racikan obat anak" description="Hitung jumlah tiap bahan berdasarkan regimen dan sediaan yang dipilih." />
+      <PageHeader title="Racikan obat anak" />
       <RacikanForm choices={JAGAMATE_DRUG_CHOICES.map((item) => ({ name: item.sourceName, slug: item.slug }))} />
     </> : tab === "tools" ? <>
-      <PageHeader title="Kalkulator terkait dosis" description="Kalkulator cairan, obstetri, emergensi, dan status gizi dalam halaman dosis obat." />
+      <PageHeader title="Kalkulator terkait dosis" />
       <DrugToolsIndex />
     </> : <DrugsPageClient drugs={drugs} initialPediatricMode={mode === "anak"} />}
   </div>;

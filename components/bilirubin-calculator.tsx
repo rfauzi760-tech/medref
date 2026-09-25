@@ -18,7 +18,7 @@ export default function BilirubinCalculator() {
 
   return <div>
     <BackLink href="/igd-toolkit" label="Kembali ke Toolkit IGD" />
-    <PageHeader title="Kalkulator Bilirubin Neonatus" description="Ambang terapi hiperbilirubinemia bayi usia gestasi 35 minggu atau lebih berdasarkan AAP 2022." />
+    <PageHeader title="Kalkulator Bilirubin Neonatus" />
     <div className="grid gap-5 lg:grid-cols-2">
       <section className="workspace-panel overflow-hidden"><SectionBand>Data bayi</SectionBand><div className="grid gap-4 p-5 sm:grid-cols-2">
         <label className="text-xs font-bold">Usia gestasi, minggu<input type="number" min="35" max="40" value={ga} onChange={(e) => setGa(Number(e.target.value))} className={field} /></label>

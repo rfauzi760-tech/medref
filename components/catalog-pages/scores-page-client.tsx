@@ -45,9 +45,6 @@ export default function ScoresPageClient({ scores }: { scores: ScoreSummary[] })
     <div>
       <PageHeader
         title="Skrining & Skor"
-        description="Skor klinis, aturan klinis, dan kriteria diagnosis yang tervalidasi. Setiap alat menghitung secara interaktif - pilih jawaban, baca interpretasi dan sumbernya."
-        count={scores.length}
-        countLabel="alat"
       />
       <FilterInput value={q} onChange={setQ} placeholder="Cari skor… mis. qSOFA, Wells, CURB" />
       <div className="mb-5 flex flex-wrap gap-2">
@@ -74,7 +71,7 @@ export default function ScoresPageClient({ scores }: { scores: ScoreSummary[] })
         <div className="space-y-8">
           {grouped.map(([cat, tools]) => (
             <section key={cat}>
-              <h2 className="display-type mb-3 text-lg font-bold">{CATEGORY_LABELS[cat] ?? cat} · {tools.length}</h2>
+              <h2 className="display-type mb-3 text-lg font-bold">{CATEGORY_LABELS[cat] ?? cat}</h2>
               <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 [&_.index-row]:border-[var(--line)] sm:[&_.index-row:nth-child(odd)]:border-r">
                 {tools.map((t) => (
                   <ToolCard

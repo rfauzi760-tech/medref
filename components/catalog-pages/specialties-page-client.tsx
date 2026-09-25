@@ -15,7 +15,6 @@ export default function SpecialtiesPageClient({ items }: { items: SpecialtySumma
     <div>
       <PageHeader
         title="Spesialisasi"
-        description="Setiap alat terhubung ke spesialisasi melalui metadata - halaman ini menggabungkannya secara otomatis, sehingga konten tidak pernah diduplikasi manual."
       />
       <div className="workspace-panel grid overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
         {items.map((s) => (
