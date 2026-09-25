@@ -28,13 +28,12 @@ describe("identitas dan teks antarmuka RFSmed", () => {
     const home = readFileSync("app/page.tsx", "utf8");
     expect(home).not.toContain("Keputusan klinis yang lebih jelas");
     expect(home).not.toContain("Cakupan aktual");
-    for (const slug of [
-      "igd-toolkit", "scores", "emergency", "timer", "pediatric-emergency",
-      "emergency-dose", "bilirubin", "antidotes",
-      "pregnancy-drugs", "electrolytes", "ddx",
-    ]) {
-      expect(home).toContain(`"${slug}"`);
-    }
+    const primarySlugs = home.match(/const primaryModuleSlugs = \[([\s\S]*?)\] as const;/)?.[1];
+    expect(primarySlugs?.match(/"([^"]+)"/g)).toEqual([
+      '"drugs"', '"calculators"', '"guidelines"', '"scores"', '"interactions"',
+      '"indications"', '"anthropometry"', '"immunization"', '"development"',
+      '"ecg-module"', '"icd10"', '"igd-toolkit"',
+    ]);
     expect(readFileSync("app/layout.tsx", "utf8")).toContain("ModuleVisitTracker");
   });
 

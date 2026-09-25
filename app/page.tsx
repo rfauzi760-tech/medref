@@ -9,33 +9,33 @@ import { appName, modules } from "@/lib/nav";
 import { SPECIALTIES } from "@/lib/specialties";
 
 const primaryModuleSlugs = [
-  "igd-toolkit",
+  "drugs",
+  "calculators",
+  "guidelines",
   "scores",
-  "emergency",
-  "timer",
-  "pediatric-emergency",
-  "neonatal-resuscitation",
-  "emergency-dose",
-  "bilirubin",
-  "antidotes",
-  "pregnancy-drugs",
-  "electrolytes",
-  "ddx",
+  "interactions",
+  "indications",
+  "anthropometry",
+  "immunization",
+  "development",
+  "ecg-module",
+  "icd10",
+  "igd-toolkit",
 ] as const;
 const primaryModules = new Set<string>(primaryModuleSlugs);
-const primaryModuleDescriptions: Record<(typeof primaryModuleSlugs)[number], string> = {
-  "igd-toolkit": "Ringkasan alat dan panduan untuk penanganan kegawatdaruratan.",
-  scores: "Hitung skor klinis dari temuan pasien secara interaktif.",
-  emergency: "Alur penilaian awal dan tata laksana kondisi emergensi.",
-  timer: "Pengatur waktu untuk membantu mengikuti protokol klinis.",
-  "pediatric-emergency": "Panduan praktis untuk kegawatdaruratan pada anak.",
-  "neonatal-resuscitation": "Langkah resusitasi dan stabilisasi bayi baru lahir.",
-  "emergency-dose": "Hitung dosis obat yang digunakan dalam kondisi darurat.",
-  bilirubin: "Bantu menilai bilirubin dan menentukan tindak lanjut bayi baru lahir.",
-  antidotes: "Referensi penanganan keracunan dan penggunaan antidot.",
-  "pregnancy-drugs": "Tinjau keamanan obat selama kehamilan dan menyusui.",
-  electrolytes: "Bantu menghitung koreksi gangguan elektrolit.",
-  ddx: "Susun kemungkinan diagnosis berdasarkan temuan klinis.",
+const primaryModuleDescriptions: Record<string, string> = {
+  drugs: "Cari dosis, sediaan, dan regimen obat dewasa maupun anak.",
+  calculators: "Kumpulan kalkulator untuk analisis dan perhitungan klinis.",
+  guidelines: "Telusuri panduan klinis dan rekomendasi tata laksana.",
+  scores: "Gunakan instrumen skrining dan skor klinis.",
+  interactions: "Periksa interaksi antarobat dan tingkat risikonya.",
+  indications: "Telusuri indikasi, kontraindikasi, dan perhatian penggunaan.",
+  anthropometry: "Nilai pertumbuhan anak dengan standar antropometri.",
+  immunization: "Lihat jadwal dan rekomendasi imunisasi.",
+  development: "Tinjau capaian perkembangan dan skrining anak.",
+  "ecg-module": "Pelajari materi EKG dan contoh rekaman.",
+  icd10: "Cari kode diagnosis dalam klasifikasi ICD-10.",
+  "igd-toolkit": "Akses cepat ke alur dan alat bantu kegawatdaruratan.",
 };
 
 export default function Home() {
