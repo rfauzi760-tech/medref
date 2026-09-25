@@ -14,6 +14,9 @@
       "migrations_dir": "migrations"
     }
   ],
+  "vars": {
+    "RESEND_FROM_EMAIL": "RFSmed <noreply@rfsmed.web.id>"
+  },
   "assets": {
     "directory": "dist/client",
     "not_found_handling": "none",

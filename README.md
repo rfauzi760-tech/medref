@@ -52,7 +52,7 @@ Konten klinis tidak ditujukan untuk pengambilan otomatis:
 - `app/robots.ts` menolak seluruh perayapan.
 - Katalog mentah tidak dikirim ke bundel klien; klien memanggil API server.
 - Akun dan sesi disimpan di Cloudflare D1. Cookie sesi memakai `HttpOnly`, `SameSite=Lax`, dan `Secure` di produksi; halaman modul dan API memvalidasi sesi di server.
-- Login email/kata sandi tersedia. Google dan Apple baru muncul setelah kredensial OAuth ditambahkan sebagai secret Worker; verifikasi email dan pemulihan sandi belum dikonfigurasi.
+- Login email/kata sandi tersedia. Google dan Apple baru muncul setelah kredensial OAuth ditambahkan sebagai secret Worker. Verifikasi email melalui Resend aktif setelah `RESEND_API_KEY` ditambahkan sebagai secret Worker; pemulihan sandi belum dikonfigurasi.
 
 ## Pengembangan lokal
 

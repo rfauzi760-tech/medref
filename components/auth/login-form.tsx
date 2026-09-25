@@ -2,11 +2,20 @@
 
 import { useState, type FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { Apple, LoaderCircle } from "lucide-react";
 import { authClient } from "@/lib/auth/client";
 import { normalizeReturnTo } from "@/lib/auth/access-policy";
 
-export function LoginForm({ googleEnabled, appleEnabled }: { googleEnabled: boolean; appleEnabled: boolean }) {
+export function LoginForm({
+  googleEnabled,
+  appleEnabled,
+  emailVerificationEnabled,
+}: {
+  googleEnabled: boolean;
+  appleEnabled: boolean;
+  emailVerificationEnabled: boolean;
+}) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const destination = normalizeReturnTo(searchParams.get("next"));
@@ -16,6 +25,9 @@ export function LoginForm({ googleEnabled, appleEnabled }: { googleEnabled: bool
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
+  const [verificationPending, setVerificationPending] = useState(false);
+  const [verificationNotice, setVerificationNotice] = useState("");
+  const [resending, setResending] = useState(false);
 
   const completeLogin = () => {
     router.replace(destination);
@@ -32,9 +44,19 @@ export function LoginForm({ googleEnabled, appleEnabled }: { googleEnabled: bool
         : await authClient.signIn.email({ email: email.trim(), password, callbackURL: destination });
 
       if (result.error) {
+        if (mode === "signin" && emailVerificationEnabled && result.error.status === 403) {
+          setVerificationNotice("Email ini belum diverifikasi. Minta tautan baru melalui tombol di bawah.");
+          setVerificationPending(true);
+          return;
+        }
         setError(mode === "signin"
           ? "Tidak dapat masuk. Periksa email dan kata sandi, lalu coba kembali."
           : "Akun belum dapat dibuat. Periksa kembali data yang dimasukkan.");
+        return;
+      }
+      if (mode === "signup" && emailVerificationEnabled) {
+        setVerificationNotice(`Jika akun berhasil dibuat, tautan verifikasi akan dikirim ke ${email.trim()}. Periksa juga folder spam.`);
+        setVerificationPending(true);
         return;
       }
       completeLogin();
@@ -42,6 +64,23 @@ export function LoginForm({ googleEnabled, appleEnabled }: { googleEnabled: bool
       setError("Layanan login sedang tidak tersedia. Coba lagi sebentar.");
     } finally {
       setPending(false);
+    }
+  }
+
+  async function resendVerificationEmail() {
+    setError("");
+    setResending(true);
+    try {
+      const result = await authClient.sendVerificationEmail({ email: email.trim(), callbackURL: destination });
+      if (result.error) {
+        setError("Tautan belum dapat dikirim. Coba lagi sebentar.");
+        return;
+      }
+      setVerificationNotice(`Tautan verifikasi baru dikirim ke ${email.trim()}.`);
+    } catch {
+      setError("Tautan belum dapat dikirim. Coba lagi sebentar.");
+    } finally {
+      setResending(false);
     }
   }
 
@@ -63,58 +102,81 @@ export function LoginForm({ googleEnabled, appleEnabled }: { googleEnabled: bool
       <div className="space-y-2 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent-strong dark:text-accent">RFSmed</p>
         <h1 className="display-type text-2xl font-bold text-[var(--ink)]">
-          {mode === "signin" ? "Masuk ke akun" : "Buat akun"}
+          {verificationPending ? "Verifikasi email" : mode === "signin" ? "Masuk ke akun" : "Buat akun"}
         </h1>
         <p className="text-sm leading-6 text-[var(--muted)]">
-          {mode === "signin" ? "Masuk untuk membuka referensi dan alat klinis." : "Buat akun gratis untuk menggunakan RFSmed."}
+          {verificationPending
+            ? "Satu langkah lagi untuk membuka RFSmed."
+            : mode === "signin" ? "Masuk untuk membuka referensi dan alat klinis." : "Buat akun gratis untuk menggunakan RFSmed."}
         </p>
       </div>
 
-      {(googleEnabled || appleEnabled) && (
-        <div className="space-y-2">
-          {googleEnabled && (
-            <button type="button" disabled={pending} onClick={() => void signInSocial("google")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
-              <span aria-hidden="true" className="font-bold text-base">G</span> Lanjutkan dengan Google
-            </button>
-          )}
-          {appleEnabled && (
-            <button type="button" disabled={pending} onClick={() => void signInSocial("apple")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
-              <Apple aria-hidden="true" className="h-4 w-4" /> Lanjutkan dengan Apple
-            </button>
-          )}
-          <div className="flex items-center gap-3 py-1 text-xs text-[var(--muted)]"><span className="h-px flex-1 bg-[var(--line)]" />atau dengan email<span className="h-px flex-1 bg-[var(--line)]" /></div>
+      {verificationPending ? (
+        <div className="space-y-4 text-center">
+          <p role="status" className="rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-4 py-3 text-sm leading-6 text-[var(--ink)]">
+            {verificationNotice || `Kami mengirim tautan verifikasi ke ${email.trim()}. Periksa juga folder spam.`}
+          </p>
+          <p className="text-sm leading-6 text-[var(--muted)]">Klik tautan dalam email untuk mengaktifkan akun. Tautan berlaku 24 jam.</p>
+          {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
+          <button type="button" disabled={resending} onClick={() => void resendVerificationEmail()} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-60">
+            {resending && <LoaderCircle aria-hidden="true" className="h-4 w-4 animate-spin" />}
+            Kirim ulang tautan
+          </button>
+          <button type="button" className="text-sm font-semibold text-accent-strong underline underline-offset-2 dark:text-accent" onClick={() => { setVerificationPending(false); setVerificationNotice(""); setMode("signin"); setError(""); }}>
+            Kembali ke masuk
+          </button>
         </div>
-      )}
+      ) : (
+        <>
+          {(googleEnabled || appleEnabled) && (
+            <div className="space-y-2">
+              {googleEnabled && (
+                <button type="button" disabled={pending} onClick={() => void signInSocial("google")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
+                  <span aria-hidden="true" className="font-bold text-base">G</span> Lanjutkan dengan Google
+                </button>
+              )}
+              {appleEnabled && (
+                <button type="button" disabled={pending} onClick={() => void signInSocial("apple")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
+                  <Apple aria-hidden="true" className="h-4 w-4" /> Lanjutkan dengan Apple
+                </button>
+              )}
+              <div className="flex items-center gap-3 py-1 text-xs text-[var(--muted)]"><span className="h-px flex-1 bg-[var(--line)]" />atau dengan email<span className="h-px flex-1 bg-[var(--line)]" /></div>
+            </div>
+          )}
 
-      <form className="space-y-4" onSubmit={(event) => void submit(event)}>
-        {mode === "signup" && (
+          <form className="space-y-4" onSubmit={(event) => void submit(event)}>
+            {mode === "signup" && (
+              <label className="block space-y-1.5 text-sm font-medium text-[var(--ink)]">
+                Nama
+                <input required autoComplete="name" maxLength={80} value={name} onChange={(event) => setName(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
+              </label>
+            )}
+            <label className="block space-y-1.5 text-sm font-medium text-[var(--ink)]">
+              Email
+              <input required type="email" autoComplete="email" maxLength={254} value={email} onChange={(event) => setEmail(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
+            </label>
           <label className="block space-y-1.5 text-sm font-medium text-[var(--ink)]">
-            Nama
-            <input required autoComplete="name" maxLength={80} value={name} onChange={(event) => setName(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
+            Kata sandi
+            <input required type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} minLength={12} maxLength={128} value={password} onChange={(event) => setPassword(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
+            {mode === "signup" && <span className="block text-xs font-normal text-[var(--muted)]">Minimal 12 karakter.</span>}
+            {mode === "signup" && emailVerificationEnabled && <span className="block text-xs font-normal text-[var(--muted)]">Tautan verifikasi akan dikirim ke email Anda.</span>}
           </label>
-        )}
-        <label className="block space-y-1.5 text-sm font-medium text-[var(--ink)]">
-          Email
-          <input required type="email" autoComplete="email" maxLength={254} value={email} onChange={(event) => setEmail(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
-        </label>
-        <label className="block space-y-1.5 text-sm font-medium text-[var(--ink)]">
-          Kata sandi
-          <input required type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} minLength={12} maxLength={128} value={password} onChange={(event) => setPassword(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
-          {mode === "signup" && <span className="block text-xs font-normal text-[var(--muted)]">Minimal 12 karakter.</span>}
-        </label>
-        {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
-        <button type="submit" disabled={pending} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 text-sm font-bold text-slate-950 transition-opacity hover:opacity-90 disabled:opacity-60">
-          {pending && <LoaderCircle aria-hidden="true" className="h-4 w-4 animate-spin" />}
-          {mode === "signin" ? "Masuk" : "Buat akun"}
-        </button>
-      </form>
+            {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
+            <button type="submit" disabled={pending} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 text-sm font-bold text-slate-950 transition-opacity hover:opacity-90 disabled:opacity-60">
+              {pending && <LoaderCircle aria-hidden="true" className="h-4 w-4 animate-spin" />}
+              {mode === "signin" ? "Masuk" : "Buat akun"}
+            </button>
+          </form>
 
-      <p className="text-center text-sm text-[var(--muted)]">
-        {mode === "signin" ? "Belum punya akun?" : "Sudah punya akun?"}{" "}
-        <button type="button" className="font-semibold text-accent-strong underline underline-offset-2 dark:text-accent" onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(""); }}>
-          {mode === "signin" ? "Daftar" : "Masuk"}
-        </button>
-      </p>
+          <p className="text-center text-sm text-[var(--muted)]">
+            {mode === "signin" ? "Belum punya akun?" : "Sudah punya akun?"}{" "}
+            <button type="button" className="font-semibold text-accent-strong underline underline-offset-2 dark:text-accent" onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(""); }}>
+              {mode === "signin" ? "Daftar" : "Masuk"}
+            </button>
+          </p>
+          <p className="text-center text-xs text-[var(--muted)]">Dengan mendaftar, Anda menyetujui <Link href="/terms" className="underline underline-offset-2">ketentuan</Link> dan <Link href="/privacy" className="underline underline-offset-2">pemberitahuan privasi</Link>.</p>
+        </>
+      )}
     </section>
   );
 }
