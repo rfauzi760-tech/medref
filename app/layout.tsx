@@ -22,12 +22,11 @@ export const metadata: Metadata = {
     default: appName,
     template: `%s · ${appName}`,
   },
-  description:
-    "Platform pendukung keputusan klinis: skor skrining, kalkulator, dosis obat, interaksi obat, panduan klinis, ICD-10, tumbuh kembang anak, dan gizi.",
+  description: "Referensi klinis untuk praktik sehari-hari.",
   applicationName: appName,
   openGraph: {
     title: appName,
-    description: "Pendukung keputusan klinis, gratis diakses: skor, kalkulator, obat, panduan klinis, ICD-10 dan lainnya.",
+    description: "Referensi klinis untuk praktik sehari-hari.",
     type: "website",
   },
   manifest: "/manifest.webmanifest",
