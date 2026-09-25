@@ -11,6 +11,7 @@ export interface AuthRuntimeEnvironment {
   GOOGLE_CLIENT_SECRET?: string;
   APPLE_CLIENT_ID?: string;
   APPLE_CLIENT_SECRET?: string;
+  RFS_ADMIN_EMAIL?: string;
   NODE_ENV?: string;
 }
 

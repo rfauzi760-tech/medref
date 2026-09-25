@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "medref",
+  "keep_vars": true,
   "compatibility_date": "2026-09-21",
   "compatibility_flags": [
     "nodejs_compat"
@@ -15,7 +16,8 @@
     }
   ],
   "vars": {
-    "RESEND_FROM_EMAIL": "RFSmed <noreply@rfsmed.web.id>"
+    "RESEND_FROM_EMAIL": "RFSmed <noreply@rfsmed.web.id>",
+    "RFS_ADMIN_EMAIL": "rfauzi760@gmail.com"
   },
   "assets": {
     "directory": "dist/client",

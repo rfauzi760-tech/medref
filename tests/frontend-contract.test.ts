@@ -46,6 +46,13 @@ describe("frontend design contract", () => {
     expect(layout.match(/<Analytics \/>/g)).toHaveLength(1);
   });
 
+  test("shows RFSmed branding on the login form", () => {
+    const login = read("components/auth/login-form.tsx");
+
+    expect(login).toContain('src="/rfsmed-symbol.svg"');
+    expect(login).toContain('alt="RFSmed"');
+  });
+
   test("reference indexes and reading pages use the shared system", () => {
     const indexes = [
       "components/catalog-pages/scores-page-client.tsx", "components/catalog-pages/calculators-page-client.tsx", "components/catalog-pages/drugs-page-client.tsx",

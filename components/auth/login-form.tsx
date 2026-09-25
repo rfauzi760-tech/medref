@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Apple, LoaderCircle } from "lucide-react";
 import { authClient } from "@/lib/auth/client";
 import { normalizeReturnTo } from "@/lib/auth/access-policy";
@@ -100,7 +101,10 @@ export function LoginForm({
   return (
     <section className="workspace-panel mx-auto w-full max-w-md space-y-6 p-6 sm:p-8">
       <div className="space-y-2 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent-strong dark:text-accent">RFSmed</p>
+        <div className="flex items-center justify-center gap-2">
+          <Image src="/rfsmed-symbol.svg" alt="RFSmed" width={36} height={36} priority className="h-9 w-9" />
+          <span className="text-sm font-bold text-[var(--ink)]">RFSmed</span>
+        </div>
         <h1 className="display-type text-2xl font-bold text-[var(--ink)]">
           {verificationPending ? "Verifikasi email" : mode === "signin" ? "Masuk ke akun" : "Buat akun"}
         </h1>
