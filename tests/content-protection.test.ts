@@ -55,8 +55,13 @@ describe("perlindungan konten", () => {
     expect(isBlockedAgent("Mozilla/5.0 AppleWebKit/537.36 Chrome/140 Safari/537.36")).toBe(false);
   });
 
-  it("menerapkan pemeriksaan bot juga ke aset statis dan gambar", () => {
+  it("menjaga Cloudflare menyajikan aset statis langsung agar CSS dan JavaScript tetap berfungsi", () => {
     expect(proxyConfig.matcher).toContain("/:path*");
+
+    const workerConfig = JSON.parse(readFileSync(join(root, "wrangler.jsonc"), "utf8")) as {
+      assets: { run_worker_first?: boolean };
+    };
+    expect(workerConfig.assets.run_worker_first).not.toBe(true);
   });
 
   it("membatasi permintaan berulang berdasarkan kunci klien", () => {
