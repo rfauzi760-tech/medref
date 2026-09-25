@@ -2,7 +2,8 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { createRateLimiter, isBlockedAgent } from "@/lib/security/request-policy";
+import { createRateLimiter, getRateLimitScope, isBlockedAgent } from "@/lib/security/request-policy";
+import nextConfig from "../next.config";
 
 const root = process.cwd();
 
@@ -14,6 +15,30 @@ function sourceFiles(directory: string): string[] {
 }
 
 describe("perlindungan konten", () => {
+  it("mengarahkan semua URL rfsmed.vercel.app ke domain utama", async () => {
+    const redirects = await nextConfig.redirects?.();
+
+    expect(redirects).toContainEqual(expect.objectContaining({
+      source: "/:path*",
+      destination: "https://rfsmed.web.id/:path*",
+      permanent: true,
+      has: [{ type: "host", value: "rfsmed.vercel.app" }],
+    }));
+  });
+
+  it("membangun Worker dengan vinext dan tetap memakai Next.js di Vercel", () => {
+    const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as {
+      scripts: Record<string, string>;
+    };
+    const vercelConfig = JSON.parse(readFileSync(join(root, "vercel.json"), "utf8")) as {
+      buildCommand: string;
+    };
+
+    expect(packageJson.scripts.build).toBe("npm run build:vinext");
+    expect(packageJson.scripts["build:next"]).toBe("next build");
+    expect(vercelConfig.buildCommand).toBe("npm run build:next");
+  });
+
   it("memblokir crawler AI yang dikenal tanpa memblokir browser biasa", () => {
     expect(isBlockedAgent("Mozilla/5.0 compatible; GPTBot/1.2")).toBe(true);
     expect(isBlockedAgent("ClaudeBot/1.0")).toBe(true);
@@ -29,6 +54,17 @@ describe("perlindungan konten", () => {
     expect(limiter.consume("client-a", 200).allowed).toBe(false);
     expect(limiter.consume("client-a", 1_001).allowed).toBe(true);
     expect(limiter.consume("client-b", 200).allowed).toBe(true);
+  });
+
+  it("tidak membatasi kunjungan halaman atau API biasa", () => {
+    expect(getRateLimitScope("/")).toBe(null);
+    expect(getRateLimitScope("/guidelines/sepsis")).toBe(null);
+    expect(getRateLimitScope("/api/search")).toBe(null);
+    expect(getRateLimitScope("/api/scores/kpsp")).toBe(null);
+  });
+
+  it("tetap membatasi endpoint proxy gambar EKG", () => {
+    expect(getRateLimitScope("/api/ecg-module-image/example")).toBe("ecg-image");
   });
 
   it("menonaktifkan indeks dan menyediakan ketentuan penggunaan", () => {

@@ -12,6 +12,10 @@ export function isBlockedAgent(userAgent: string): boolean {
   return blockedAgentPattern.test(userAgent);
 }
 
+export function getRateLimitScope(pathname: string): "ecg-image" | null {
+  return pathname.startsWith("/api/ecg-module-image/") ? "ecg-image" : null;
+}
+
 export function createRateLimiter({ limit, windowMs }: { limit: number; windowMs: number }) {
   const buckets = new Map<string, { count: number; resetAt: number }>();
 

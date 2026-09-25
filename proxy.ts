@@ -1,7 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { createRateLimiter, isBlockedAgent } from "@/lib/security/request-policy";
+import { createRateLimiter, getRateLimitScope, isBlockedAgent } from "@/lib/security/request-policy";
 
-const limiter = createRateLimiter({ limit: 160, windowMs: 60_000 });
 const imageLimiter = createRateLimiter({ limit: 1_200, windowMs: 60_000 });
 
 const protectionHeaders = {
@@ -26,7 +25,9 @@ export function proxy(request: NextRequest) {
   }
 
   const key = clientKey(request);
-  const rate = key ? (request.nextUrl.pathname.startsWith("/api/ecg-module-image/") ? imageLimiter : limiter).consume(key) : null;
+  const rate = key && getRateLimitScope(request.nextUrl.pathname) === "ecg-image"
+    ? imageLimiter.consume(key)
+    : null;
   if (rate && !rate.allowed) {
     return new NextResponse("Terlalu banyak permintaan. Coba lagi nanti.", {
       status: 429,
