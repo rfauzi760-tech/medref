@@ -1,10 +1,15 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
+import { NextRequest } from "next/server";
 import { describe, expect, it } from "vitest";
 
 import { createRateLimiter, getRateLimitScope, isBlockedAgent } from "@/lib/security/request-policy";
+import {
+  getGoogleInspectionRobotsRules,
+  isGoogleInspectionAllowed,
+} from "@/lib/security/google-inspection";
 import nextConfig from "../next.config";
-import { config as proxyConfig } from "../proxy";
+import { config as proxyConfig, proxy as handleProxy } from "../proxy";
 
 const root = process.cwd();
 
@@ -52,7 +57,53 @@ describe("perlindungan konten", () => {
     expect(isBlockedAgent("Mozilla/5.0 (compatible; Googlebot/2.1)")).toBe(true);
     expect(isBlockedAgent("Scrapy/2.11.0 (+https://example.org/bot)")).toBe(true);
     expect(isBlockedAgent("Go-http-client/1.1")).toBe(true);
+    expect(isBlockedAgent("Mozilla/5.0 (compatible; Google-InspectionTool/1.0)")).toBe(true);
     expect(isBlockedAgent("Mozilla/5.0 AppleWebKit/537.36 Chrome/140 Safari/537.36")).toBe(false);
+  });
+
+  it("membuka sementara hanya halaman publik dan aset antarmuka untuk alat inspeksi Google", () => {
+    const inspectionAgent = "Mozilla/5.0 (compatible; Google-InspectionTool/1.0)";
+    const now = Date.parse("2026-09-26T00:00:00.000Z");
+
+    expect(isGoogleInspectionAllowed(inspectionAgent, "/", "GET", now)).toBe(true);
+    expect(isGoogleInspectionAllowed(inspectionAgent, "/login", "HEAD", now)).toBe(true);
+    expect(isGoogleInspectionAllowed(inspectionAgent, "/_next/static/chunk.js", "GET", now)).toBe(true);
+    expect(isGoogleInspectionAllowed(inspectionAgent, "/guidelines/sepsis", "GET", now)).toBe(false);
+    expect(isGoogleInspectionAllowed(inspectionAgent, "/api/auth/sign-in", "GET", now)).toBe(false);
+    expect(isGoogleInspectionAllowed(inspectionAgent, "/", "POST", now)).toBe(false);
+    expect(isGoogleInspectionAllowed("Googlebot/2.1", "/", "GET", now)).toBe(false);
+    expect(isGoogleInspectionAllowed(inspectionAgent, "/", "GET", Date.parse("2026-10-03T00:00:00.000Z"))).toBe(false);
+  });
+
+  it("memberi izin robots hanya ke Google Inspection Tool dan hanya sampai batas waktu", () => {
+    const activeRules = getGoogleInspectionRobotsRules(Date.parse("2026-09-26T00:00:00.000Z"));
+    expect(activeRules).toContainEqual(expect.objectContaining({
+      userAgent: "Google-InspectionTool",
+      allow: expect.arrayContaining(["/$", "/login$", "/_next/static/"]),
+      disallow: "/",
+    }));
+    expect(activeRules).toContainEqual({ userAgent: "*", disallow: "/" });
+
+    expect(getGoogleInspectionRobotsRules(Date.parse("2026-10-03T00:00:00.000Z"))).toEqual([
+      { userAgent: "*", disallow: "/" },
+    ]);
+  });
+
+  it("menerapkan pengecualian di proxy tanpa membuka halaman klinis atau API", async () => {
+    const inspectionAgent = "Mozilla/5.0 (compatible; Google-InspectionTool/1.0)";
+    const homepage = await handleProxy(new NextRequest("https://rfsmed.web.id/", {
+      headers: { "user-agent": inspectionAgent },
+    }));
+    const clinicalPage = await handleProxy(new NextRequest("https://rfsmed.web.id/drugs", {
+      headers: { "user-agent": inspectionAgent },
+    }));
+    const api = await handleProxy(new NextRequest("https://rfsmed.web.id/api/auth/sign-in", {
+      headers: { "user-agent": inspectionAgent },
+    }));
+
+    expect(homepage.status).toBe(200);
+    expect(clinicalPage.status).toBe(403);
+    expect(api.status).toBe(403);
   });
 
   it("menjaga Cloudflare menyajikan aset statis langsung agar CSS dan JavaScript tetap berfungsi", () => {
@@ -92,7 +143,7 @@ describe("perlindungan konten", () => {
 
     expect(layout).toContain("index: false");
     expect(layout).toContain("follow: false");
-    expect(robots).toContain('disallow: "/"');
+    expect(robots).toContain("getGoogleInspectionRobotsRules");
     expect(terms).toContain("pelatihan model AI");
     expect(terms).toContain("scraping");
   });

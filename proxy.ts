@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
 import { createRateLimiter, getRateLimitScope, isBlockedAgent } from "@/lib/security/request-policy";
+import { isGoogleInspectionAllowed } from "@/lib/security/google-inspection";
 import { getApiAuthDecision, getPageAuthDecision } from "@/lib/auth/access-policy";
 import { auth, authRuntimeEnabled } from "@/lib/auth";
 
@@ -20,7 +21,9 @@ function clientKey(request: NextRequest): string | null {
 
 export async function proxy(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") ?? "";
-  if (!userAgent || isBlockedAgent(userAgent)) {
+  const pathname = request.nextUrl.pathname;
+  const inspectionAllowed = isGoogleInspectionAllowed(userAgent, pathname, request.method);
+  if (!userAgent || (isBlockedAgent(userAgent) && !inspectionAllowed)) {
     return new NextResponse("Akses otomatis tidak diizinkan.", {
       status: 403,
       headers: protectionHeaders,
@@ -44,7 +47,6 @@ export async function proxy(request: NextRequest) {
     });
   }
 
-  const pathname = request.nextUrl.pathname;
   const isApi = pathname.startsWith("/api/");
   const needsSession = isApi
     ? !getApiAuthDecision(pathname, false).allowed
