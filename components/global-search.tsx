@@ -3,6 +3,7 @@
 import { Search, X, CornerDownLeft } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth/client";
 import type { SearchGroup, SearchHit } from "@/lib/search-types";
 
 export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: boolean; onNavigate?: () => void }) {
@@ -12,6 +13,7 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
   const [results, setResults] = useState<SearchGroup[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  const { data: session, isPending: sessionPending } = authClient.useSession();
 
   const flat = useMemo(() => results.flatMap((g) => g.hits), [results]);
 
@@ -40,10 +42,24 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
     };
   }, [query]);
 
-  const openPalette = useCallback(() => {
+  const openPalette = useCallback(async () => {
+    let activeSession = session;
+    if (!activeSession && sessionPending) {
+      try {
+        activeSession = (await authClient.getSession()).data;
+      } catch {
+        activeSession = null;
+      }
+    }
+
+    if (!activeSession) {
+      router.push("/login?next=%2F");
+      return;
+    }
+
     setActive(0);
     setOpen(true);
-  }, []);
+  }, [router, session, sessionPending]);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -65,16 +81,14 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setOpen((o) => {
-          if (!o) setActive(0);
-          return !o;
-        });
+        if (open) setOpen(false);
+        else void openPalette();
       }
       if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [open, openPalette]);
 
   useEffect(() => {
     if (open || autoFocus) inputRef.current?.focus();
@@ -99,7 +113,7 @@ export function GlobalSearch({ autoFocus = false, onNavigate }: { autoFocus?: bo
     return (
       <button
         type="button"
-        onClick={openPalette}
+        onClick={() => void openPalette()}
         aria-label="Buka pencarian global"
         className="focus-ring flex h-10 w-full items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface-raised)] px-3 text-left text-sm text-[var(--muted)] transition-colors hover:border-accent/50"
       >
