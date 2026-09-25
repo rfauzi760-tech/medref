@@ -6,9 +6,9 @@ import { PageHeader } from "@/components/shared";
 import { DRUGS } from "@/lib/data/drugs";
 import { JAGAMATE_DRUG_CHOICES } from "@/lib/data/jagamate-choices";
 
-export default async function DrugsPage({ searchParams }: { searchParams: Promise<{ mode?: string; tab?: string }> }) {
-  const { mode, tab = "obat" } = await searchParams;
-  const drugs = DRUGS.map(({ slug, genericName, brandNames, drugClass, specialties, keywords, indications, doses }) => ({
+export default async function DrugsPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
+  const { tab = "obat" } = await searchParams;
+  const drugs = DRUGS.map(({ slug, genericName, brandNames, drugClass, specialties, keywords, indications }) => ({
     slug,
     genericName,
     brandNames,
@@ -16,7 +16,6 @@ export default async function DrugsPage({ searchParams }: { searchParams: Promis
     specialties,
     keywords,
     indications,
-    hasPediatricDose: doses.some((dose) => dose.population === "pediatric" || dose.population === "all"),
   }));
   const tabs = [["obat", "Daftar obat"], ["racikan", "Racikan"], ["tools", "Kalkulator"]] as const;
   return <div>
@@ -29,6 +28,6 @@ export default async function DrugsPage({ searchParams }: { searchParams: Promis
     </> : tab === "tools" ? <>
       <PageHeader title="Kalkulator Dosis dan Cairan" />
       <DrugToolsIndex />
-    </> : <DrugsPageClient drugs={drugs} initialPediatricMode={mode === "anak"} />}
+    </> : <DrugsPageClient drugs={drugs} />}
   </div>;
 }

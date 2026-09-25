@@ -9,7 +9,7 @@ describe("navigasi dosis", () => {
     expect(doseModules.map((item) => item.slug)).toEqual(["drugs"]);
   });
 
-  it("memperlakukan dosis anak sebagai filter di modul Dosis Obat yang sama", () => {
+  it("menampilkan dewasa dan anak dalam satu daftar tanpa filter Anak", () => {
     const shell = readFileSync("components/shell.tsx", "utf8");
     const drugList = readFileSync("components/catalog-pages/drugs-page-client.tsx", "utf8");
     const drugDetail = readFileSync("app/drugs/[slug]/page.tsx", "utf8");
@@ -17,7 +17,9 @@ describe("navigasi dosis", () => {
     expect(shell).not.toContain("pediatricDrugMode");
     expect(shell).toContain('if (href === "/drugs") return pathname.startsWith("/drugs");');
     expect(drugList).toContain('title="Dosis Obat"');
-    expect(drugList).toMatch(/>\s*Anak\s*<\/button>/);
+    expect(drugList).not.toMatch(/>\s*Anak\s*<\/button>/);
+    expect(drugList).not.toContain("pediatricOnly");
+    expect(drugList).toContain('href: `/drugs/${d.slug}`');
     expect(drugDetail.match(/label="Kembali ke Dosis Obat"/g)).toHaveLength(1);
   });
 
