@@ -12,6 +12,10 @@ function imagesForMeeting(number: number) {
   return illustrations.flatMap((image, index) => image.chapter === number ? [{
     src: `/api/ecg-module-image/${index}`,
     title: image.caption,
+    author: "author" in image ? image.author : undefined,
+    sourceUrl: "sourceUrl" in image ? image.sourceUrl : undefined,
+    license: "license" in image ? image.license : undefined,
+    licenseUrl: "licenseUrl" in image ? image.licenseUrl : undefined,
   }] : []);
 }
 
@@ -53,14 +57,7 @@ function DetailBlocks({ blocks }: { blocks: EcgModuleBlock[] }) {
             </ol>
           </section>
         );
-        return (
-          <section key={`${block.kind}-${index}`}>
-            <h3 className="text-sm font-bold text-[var(--foreground)]">{block.title}</h3>
-            <div className="mt-3 space-y-3">
-              {block.cases.map((item) => <article key={item.title} className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-4"><h4 className="text-sm font-bold text-[var(--foreground)]">{item.title}</h4><p className="mt-1.5 text-sm leading-7 text-[var(--muted)]">{item.text}</p></article>)}
-            </div>
-          </section>
-        );
+        return null;
       })}
     </div>
   );
@@ -123,7 +120,14 @@ export default function EcgModulePage() {
                         <a href={image.src} target="_blank" rel="noreferrer" className="block">
                           <img src={image.src} alt={image.title} loading="lazy" className="aspect-[4/3] w-full object-contain" />
                         </a>
-                        <figcaption className="px-3 py-2 text-xs font-semibold leading-5 text-[var(--muted)]">{image.title}</figcaption>
+                        <figcaption className="px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                          <span className="block font-semibold">{image.title}</span>
+                          {image.author && image.sourceUrl && image.license && image.licenseUrl && (
+                            <span className="mt-1 block text-[10px] font-normal">
+                              Sumber: <a className="underline underline-offset-2" href={image.sourceUrl} target="_blank" rel="noreferrer">{image.author}, Wikimedia Commons</a>. Lisensi: <a className="underline underline-offset-2" href={image.licenseUrl} target="_blank" rel="noreferrer">{image.license}</a>.
+                            </span>
+                          )}
+                        </figcaption>
                       </figure>
                     ))}
                   </div>

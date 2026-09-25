@@ -9,8 +9,7 @@ export type EcgModuleBlock =
   | { kind: "heading"; title: string; text?: string }
   | { kind: "bullets"; title?: string; items: string[] }
   | { kind: "table"; title?: string; headers: string[]; rows: string[][] }
-  | { kind: "algorithm"; title: string; steps: { label: string; text: string }[] }
-  | { kind: "cases"; title: string; cases: { title: string; text: string }[] };
+  | { kind: "algorithm"; title: string; steps: { label: string; text: string }[] };
 
 export interface EcgModuleMeeting {
   number: number;
@@ -142,17 +141,6 @@ export const ECG_MODULE_MEETINGS: readonly EcgModuleMeeting[] = [
         ["Short RP dengan P retrograd", "AVRT atau mekanisme re-entry lain"],
         ["Long RP", "Atrial tachycardia atau takikardia dengan konduksi retrograd"],
       ] },
-      { kind: "cases", title: "6. Kasus latihan", cases: [
-        { title: "Kasus 1: inferior STEMI dengan AV dissociation", text: "PP reguler dan RR reguler, tetapi hubungan PR berubah. QRS sempit mendukung escape junctional. ST elevation inferior dan reciprocal change perlu memicu evaluasi ACS segera, termasuk pertimbangan lead kanan dan posterior sesuai gejala." },
-        { title: "Kasus 2: escape ventrikel", text: "P sinus lebih cepat daripada QRS, QRS lebar, dan rate escape lambat. Ini lebih mengkhawatirkan daripada escape junctional karena cadangan pacemaker dan perfusi dapat lebih buruk." },
-        { title: "Kasus 3: isorhythmic AV dissociation", text: "P kadang tampak menempel pada QRS karena rate atrium dan ventrikel kebetulan berdekatan. Jangan memberi label Mobitz II atau 2:1 block hanya dari satu lead tanpa menilai strip lebih panjang." },
-        { title: "Kasus 4: sinus bradikardia dengan junctional escape", text: "P dan QRS dapat tetap 1:1, tetapi fokus junctional mengambil alih saat sinus melambat. Bedakan dari total AV block dengan menilai hubungan P-QRS dan regularitas masing-masing." },
-        { title: "Kasus 5: AF yang menjadi reguler", text: "AF biasanya irregularly irregular. Bila ritme menjadi sangat reguler, pikirkan blok AV tinggi dengan escape atau efek obat dan cocokkan dengan riwayat digoksin, beta-blocker, atau calcium-channel blocker." },
-        { title: "Kasus 6 dan 7: wide-complex tachycardia", text: "Cari AV dissociation, capture beat, atau fusion beat. Bila pasien tidak stabil, ikuti algoritme ALS dan jangan menunda terapi demi klasifikasi sempurna." },
-        { title: "Kasus 8: sinus takikardia dan P yang tersembunyi", text: "Pada frekuensi tinggi, P dapat menumpang pada T sehingga T tampak seperti memiliki dua puncak. Cari morfologi yang konsisten dan hubungan P-QRS sebelum menyimpulkan SVT." },
-        { title: "Kasus 9: AVNRT", text: "Takikardia reguler kompleks sempit dengan P sulit terlihat, pseudo-R' di V1 atau pseudo-S di inferior dapat mendukung AVNRT, tetapi diagnosis tetap memerlukan konteks dan algoritme takikardia." },
-        { title: "Kasus 10: MAT", text: "Takikardia dengan sedikitnya tiga morfologi P, PR bervariasi, dan RR ireguler. Sering dikaitkan dengan penyakit paru, tetapi tetap korelasikan dengan oksigenasi, obat, dan penyebab metabolik." },
-      ] },
     ],
     sources: [
       { org: "AHA/ACC/HRS", title: "Recommendations for the Standardization and Interpretation of the ECG, Part I", year: 2007, url: "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.106.180200" },
@@ -243,14 +231,6 @@ export const ECG_MODULE_MEETINGS: readonly EcgModuleMeeting[] = [
         "Cari penyebab metabolik atau sistemik seperti hiperkalemia, hipotermia, hipoksia, hipotiroid, infeksi berat, dan peningkatan tonus vagal.",
         "Bandingkan EKG lama. Blok baru, QRS lebar, escape lambat, atau jeda panjang meningkatkan kekhawatiran dan kebutuhan evaluasi segera.",
       ] },
-      { kind: "cases", title: "Kasus latihan dan kunci penalaran", cases: [
-        { title: "Kasus A: laju sekitar 150/menit, kompleks sempit, sangat reguler", text: "Jangan langsung menyebut AVNRT. Cari aktivitas atrium di inferior leads dan V1, hitung kemungkinan flutter 2:1, lalu periksa apakah P sinus terlihat dan konsisten." },
-        { title: "Kasus B: ireguler tanpa P sinus yang jelas", text: "AF menjadi pertimbangan kuat. Tetap periksa artefak, ektopi, flutter dengan blok variabel, dan apakah QRS lebar atau ada tanda pre-eksitasi." },
-        { title: "Kasus C: PR makin panjang sebelum QRS hilang", text: "Pola mendukung Mobitz I bila siklus progresi dan reset dapat ditunjukkan. Cari gejala, lokasi kemungkinan, obat, serta perubahan dari EKG sebelumnya." },
-        { title: "Kasus D: satu P tidak diikuti QRS, PR beat lain tampak tetap", text: "Pertimbangkan Mobitz II, tetapi singkirkan blocked PAC tersembunyi dan artefak. Ulangi strip lebih panjang dan nilai lebar QRS serta kondisi klinis." },
-        { title: "Kasus E: P dan QRS teratur tetapi tidak berkaitan; P lebih cepat", text: "Temuan mendukung AV dissociation dengan escape, termasuk kemungkinan high-grade atau complete AV block. Pastikan hubungan tersebut bukan kebetulan dan evaluasi perfusi segera." },
-        { title: "Kasus F: P dan QRS teratur tetapi ventricular rate lebih cepat", text: "AV dissociation saja tidak sama dengan blok total. Pertimbangkan VT atau AIVR, periksa lebar QRS, capture/fusion beat, penyakit struktural, dan konteks reperfusi." },
-      ] },
     ],
     sources: [
       { org: "AHA", title: "2025 Adult Advanced Life Support Guidelines", year: 2025, url: "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support" },
@@ -336,13 +316,6 @@ export const ECG_MODULE_MEETINGS: readonly EcgModuleMeeting[] = [
         "Menyebut STEMI/NSTEMI hanya dari EKG. Diagnosis infark memerlukan bukti cedera miokard akut dalam konteks iskemia; EKG sendiri tidak mengukur troponin.",
         "Menunda aktivasi jalur akut demi mencari label arteri culprit yang sempurna.",
       ] },
-      { kind: "cases", title: "Kasus latihan", cases: [
-        { title: "Kasus A: nyeri dada, ST berubah di II, III, aVF", text: "Sebutkan distribusi inferior, cari reciprocal change di I/aVL, periksa tekanan darah dan tanda RV, lalu pertimbangkan lead kanan. Jangan menyimpulkan arteri culprit dari satu ciri EKG saja." },
-        { title: "Kasus B: nyeri dada, depresi ST V1-V3 dan R tinggi", text: "Pola dapat merupakan cerminan perubahan posterior. Rekam V7-V9 bila sesuai, bandingkan EKG serial, dan aktifkan jalur evaluasi ACS sesuai kondisi." },
-        { title: "Kasus C: perubahan T anterior saat nyeri telah mereda", text: "T bifasik atau inversi dalam simetris di V2-V3 pada konteks yang sesuai menimbulkan kecurigaan pola Wellens. Jangan menyamakan dengan varian normal tanpa menilai gejala dan biomarker." },
-        { title: "Kasus D: ST elevation luas dan PR depression", text: "Perikarditis termasuk diferensial, tetapi evaluasi tetap mencakup ACS, miokarditis, dan penyebab lain. Distribusi difus tidak dengan sendirinya menyingkirkan oklusi." },
-        { title: "Kasus E: gejala menetap, EKG awal nondiagnostik", text: "Satu EKG normal atau nondiagnostik tidak mengeksklusi ACS. Ulangi EKG saat gejala berubah dan lanjutkan pemeriksaan biomarker serta penilaian klinis." },
-      ] },
     ],
     sources: [
       { org: "ESC", title: "2023 Guidelines for the Management of Acute Coronary Syndromes", year: 2023, url: "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/acute-coronary-syndromes/" },
@@ -419,13 +392,6 @@ export const ECG_MODULE_MEETINGS: readonly EcgModuleMeeting[] = [
         "Jika ada sinkop saat olahraga, nyeri dada exertional, riwayat keluarga kematian mendadak, atau pola repolarisasi abnormal, evaluasi struktural dan spesialis diperlukan.",
       ] },
       { kind: "heading", title: "4. Perubahan ST-T sekunder dan pola khusus", text: "Depolarisasi yang terlambat mengubah repolarisasi. Karena itu, QRS yang abnormal dapat disertai ST-T diskordan tanpa iskemia akut. Pembacaan perlu membandingkan arah dan proporsi ST terhadap QRS serta menggabungkannya dengan gejala dan perubahan serial." },
-      { kind: "cases", title: "Kasus latihan", cases: [
-        { title: "Kasus A: I positif, aVF negatif, II positif", text: "Aksis mengarah kiri tetapi mungkin masih dalam rentang sekitar 0 sampai −30 derajat. Tinjau lead II dan morfologi lainnya sebelum menyebut deviasi aksis kiri patologis." },
-        { title: "Kasus B: I positif, aVF negatif, II negatif", text: "Deviasi aksis kiri lebih mungkin. Cari pola qR di I/aVL dan rS inferior yang mendukung LAFB serta singkirkan LVH, infark inferior lama, dan penyebab lain." },
-        { title: "Kasus C: QRS lebar dengan rSR' di V1 dan S lebar di I/V6", text: "Temuan mendukung RBBB bila durasi dan morfologi memenuhi kriteria. Periksa apakah ada LAFB, perubahan ST-T, dan keluhan sinkop atau penyakit struktural." },
-        { title: "Kasus D: tegangan tinggi pada atlet tanpa gejala", text: "Voltase saja tidak membuktikan LVH patologis. Tinjau kriteria atlet, repolarisasi, riwayat keluarga, tekanan darah, dan indikasi imaging." },
-        { title: "Kasus E: PR pendek, awal QRS terslurring", text: "Delta wave dengan QRS lebar pada irama sinus mendukung pola pre-eksitasi. Dokumentasikan dan hubungkan dengan gejala, riwayat palpitasi/sinkop, serta kemungkinan takikardia pre-eksitasi." },
-      ] },
     ],
     sources: [
       { org: "AHA/ACC/HRS", title: "Recommendations for ECG Standardization, Part III: Intraventricular Conduction Disturbances", year: 2009, url: "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191095" },
@@ -503,14 +469,6 @@ export const ECG_MODULE_MEETINGS: readonly EcgModuleMeeting[] = [
         "Efek digoksin berbeda dari keracunan digoksin. Scooped ST dapat ditemukan pada penggunaan terapetik.",
         "Perubahan elektrolit dapat memengaruhi beberapa segmen sekaligus dan tidak selalu mengikuti urutan yang dihafal.",
         "Periksa sumber obat dan protokol toksikologi setempat sebelum membuat keputusan terapi; modul ini tidak memberikan dosis penanganan aritmia atau overdosis.",
-      ] },
-      { kind: "cases", title: "Kasus latihan", cases: [
-        { title: "Kasus A: takikardia reguler, QRS lebar, pasien tampak tidak stabil", text: "Panggil bantuan, tentukan nadi dan stabilitas, siapkan tindakan sesuai algoritme ALS. Setelah keselamatan ditangani, cari tanda VT dan penyebab reversibel." },
-        { title: "Kasus B: QRS lebar ireguler dengan variasi bentuk", text: "Pertimbangkan AF pre-eksitasi, AF dengan aberansi, dan VT polimorfik. Periksa EKG sinus lama untuk delta wave, nilai QT sebelumnya, dan jangan memakai pendekatan SVT reguler." },
-        { title: "Kasus C: episode polymorphic VT setelah jeda panjang", text: "Cari QT panjang sebelum episode, obat pemanjang QT, bradikardia, hipokalemia, dan hipomagnesemia. Bila QT sebelumnya normal, evaluasi penyebab lain seperti iskemia." },
-        { title: "Kasus D: T tinggi runcing dan QRS mulai melebar", text: "Hiperkalemia perlu dipertimbangkan, tetapi periksa hasil kalium segera, fungsi ginjal, obat, dan kondisi klinis. Jangan menunggu pola sine-wave untuk mengenali bahaya." },
-        { title: "Kasus E: depresi ST berbentuk scoop pada pengguna digoksin", text: "Temuan dapat mencerminkan efek digoksin. Untuk menilai toksisitas, gunakan gejala, ritme, paparan, waktu pengambilan kadar, fungsi ginjal, dan elektrolit." },
-        { title: "Kasus F: QTc mesin panjang pada pasien dengan QRS 160 ms", text: "Konfirmasi QT dan akhir T secara manual, tinjau metode koreksi, dan pertimbangkan bahwa QRS lebar memperpanjang QT mentah. Penilaian repolarisasi dapat memerlukan JT oleh klinisi." },
       ] },
     ],
     sources: [

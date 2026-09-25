@@ -14,8 +14,10 @@ export async function GET(
 
   let upstream: Response;
   try {
+    const isWikimedia = illustrations[index].src.includes("commons.wikimedia.org/");
     upstream = await fetch(illustrations[index].src, {
       cache: "no-store",
+      ...(isWikimedia ? { headers: { "User-Agent": "RFSmed/1.0 (+https://rfsmed.web.id)" } } : {}),
       signal: AbortSignal.timeout(10_000),
     });
   } catch {

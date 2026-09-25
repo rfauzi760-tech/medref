@@ -128,5 +128,104 @@
     "chapter": 5,
     "caption": "Contoh EKG untuk latihan interpretasi",
     "src": "https://gexttcnploxaneobntip.supabase.co/storage/v1/object/public/atlas-images/ekg/1b2452bc-f8da-4e42-8722-4163c7936af1/d07b1d89-1787664318588.jfif"
+  },
+  {
+    "chapter": 1,
+    "caption": "Diagram posisi elektroda dan hubungan sadapan EKG 12 lead.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/ECGcolor.svg",
+    "author": "Madhero88",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ECGcolor.svg",
+    "license": "Domain publik",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:ECGcolor.svg"
+  },
+  {
+    "chapter": 1,
+    "caption": "Contoh rekaman EKG 12 sadapan dewasa untuk orientasi pembacaan.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/12_lead_ECG_of_a_26_year_old_male.jpg",
+    "author": "MoodyGroove",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:12_lead_ECG_of_a_26_year_old_male.jpg",
+    "license": "Domain publik",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:12_lead_ECG_of_a_26_year_old_male.jpg"
+  },
+  {
+    "chapter": 1,
+    "caption": "Ilustrasi kompleks EKG reguler pada kertas grid.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Normal_ECG_2.svg",
+    "author": "Madhero88",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Normal_ECG_2.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "chapter": 2,
+    "caption": "Perbandingan sinyal EKG fibrilasi atrium dan irama sinus; panel atas juga memuat PPG.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Atrial_fibrillation_vs._normal_sinus_rhythm.svg",
+    "author": "Peter H. Charlton",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atrial_fibrillation_vs._normal_sinus_rhythm.svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "chapter": 2,
+    "caption": "Rekaman EKG fibrilasi atrium dengan respons ventrikel terkontrol, sekitar 90 kali/menit.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/ECG_Atrial_Fibrillation_90_bpm.jpg",
+    "author": "Ewingdo",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ECG_Atrial_Fibrillation_90_bpm.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "chapter": 3,
+    "caption": "Ilustrasi perubahan EKG pada infark miokard.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Myocardial_infarction_ECG.svg",
+    "author": "Madhero88",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Myocardial_infarction_ECG.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "chapter": 3,
+    "caption": "Rekaman 12 sadapan dengan elevasi ST di II, III, dan aVF pada infark inferior.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/ECG_001.jpg",
+    "author": "Glenlarson",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ECG_001.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "chapter": 4,
+    "caption": "Ilustrasi pola left bundle branch block (LBBB) pada sadapan yang ditampilkan.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_bundle_branch_block.svg",
+    "author": "Madhero88",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Left_bundle_branch_block.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "chapter": 4,
+    "caption": "Ilustrasi EKG pada sindrom pacemaker.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/ECG_pacemaker_syndrome.svg",
+    "author": "GiggsHammouri",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ECG_pacemaker_syndrome.svg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "chapter": 5,
+    "caption": "Rekaman pasien dengan hiperkalemia (kalium 8,2 mmol/L) dan gelombang T runcing.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyperkalemia_ECG.jpg",
+    "author": "Michael-Joseph F. Agbayani dan Eddieson Gonzales",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hyperkalemia_ECG.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "chapter": 5,
+    "caption": "EKG 12 sadapan dengan QT memanjang dan torsades de pointes.",
+    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Torsades_de_Pointes_TdP.png",
+    "author": "Jer5150",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torsades_de_Pointes_TdP.png",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
   }
 ]
