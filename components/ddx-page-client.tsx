@@ -8,8 +8,8 @@ interface Result { id:string; diagnosis:string; specialty:string; cantMiss:boole
 
 export default function DdxPageClient() {
   const [findings,setFindings]=useState<Finding[]>([]), [selected,setSelected]=useState<string[]>([]), [results,setResults]=useState<Result[]>([]), [loading,setLoading]=useState(false);
-  useEffect(()=>{fetch('/api/ddx',{cache:'no-store'}).then(r=>r.json()).then((d:{findings:Finding[]})=>setFindings(d.findings));},[]);
-  useEffect(()=>{if(!selected.length)return; const controller=new AbortController(); const timer=setTimeout(()=>fetch('/api/ddx',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({selected}),signal:controller.signal}).then(r=>r.json()).then((d:{items:Result[]})=>setResults(d.items)).then(()=>setLoading(false)).catch(()=>undefined),120); return()=>{clearTimeout(timer);controller.abort();};},[selected]);
+  useEffect(()=>{fetch('/api/ddx',{cache:'no-store'}).then(r=>r.json() as Promise<{findings:Finding[]}>).then((d)=>setFindings(d.findings));},[]);
+  useEffect(()=>{if(!selected.length)return; const controller=new AbortController(); const timer=setTimeout(()=>fetch('/api/ddx',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({selected}),signal:controller.signal}).then(r=>r.json() as Promise<{items:Result[]}>).then((d)=>setResults(d.items)).then(()=>setLoading(false)).catch(()=>undefined),120); return()=>{clearTimeout(timer);controller.abort();};},[selected]);
   const groups=useMemo(()=>[...new Set(findings.map(x=>x.group))],[findings]);
   const toggle=(id:string)=>{const next=selected.includes(id)?selected.filter(x=>x!==id):[...selected,id]; setSelected(next); if(!next.length)setResults([]); setLoading(next.length>0);};
   const labels=new Map(findings.map(x=>[x.id,x.label]));

@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
+import { resolve } from "node:path";
+
+const isNextBuild = process.env.npm_lifecycle_event === "build:next" || process.env.VERCEL === "1";
 
 const nextConfig: NextConfig = {
+  ...(isNextBuild ? {
+  turbopack: {
+    resolveAlias: {
+      "cloudflare:workers": "./lib/auth/cloudflare-env.vercel.ts",
+    },
+  },
+  webpack(config) {
+    config.resolve.alias["cloudflare:workers"] = resolve(process.cwd(), "lib/auth/cloudflare-env.vercel.ts");
+    return config;
+  },
+  } : {}),
   async redirects() {
     return [
       {

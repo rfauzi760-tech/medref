@@ -8,12 +8,25 @@ import { useState } from "react";
 import { modules, appName } from "@/lib/nav";
 import { GlobalSearch } from "@/components/global-search";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { SessionControl } from "@/components/auth/session-control";
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const pediatricDrugMode = pathname.startsWith("/drugs") && searchParams.get("mode") === "anak";
+
+  if (pathname === "/login") {
+    return (
+      <div data-workspace-shell className="min-h-screen bg-[var(--canvas)]">
+        <header className="mx-auto flex max-w-5xl items-center justify-between px-4 py-5 lg:px-8">
+          <Link href="/" className="display-type text-base font-bold text-[var(--ink)]">{appName}</Link>
+          <ThemeToggle />
+        </header>
+        <main className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-5xl place-items-center px-4 py-8 lg:px-8">{children}</main>
+      </div>
+    );
+  }
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -76,9 +89,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </span>
           <span className="text-sm font-semibold">{appName}</span>
         </Link>
-        <div className="ml-auto flex items-center gap-2">
-          <ThemeToggle />
-        </div>
+        <div className="ml-auto flex items-center gap-2"><SessionControl /><ThemeToggle /></div>
       </header>
 
       {/* Mobile slide-over */}
@@ -103,9 +114,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <div className="w-full max-w-xl">
             <GlobalSearch />
           </div>
-          <div className="ml-auto">
-            <ThemeToggle />
-          </div>
+          <div className="ml-auto flex items-center gap-2"><SessionControl /><ThemeToggle /></div>
         </header>
 
         {/* Mobile search bar */}

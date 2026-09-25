@@ -6,6 +6,14 @@
     "nodejs_compat"
   ],
   "main": "vinext/server/fetch-handler",
+  "d1_databases": [
+    {
+      "binding": "AUTH_DB",
+      "database_name": "medref-auth",
+      "database_id": "135034e4-6a61-4c05-9dc3-dc88133b6324",
+      "migrations_dir": "migrations"
+    }
+  ],
   "assets": {
     "directory": "dist/client",
     "not_found_handling": "none",

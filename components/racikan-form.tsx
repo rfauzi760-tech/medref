@@ -52,7 +52,7 @@ export function RacikanForm({ choices }: { choices: Choice[] }) {
         ageYears: Number(age), weightKg: Number(weight), packets: Number(packets), frequencyPerDay: Number(frequency),
         ingredients: ingredients.map((item) => ({ slug: item.slug, doseIndex: Number(item.doseIndex), preparationId: item.preparationId, targetMgPerKg: item.targetMgPerKg ? Number(item.targetMgPerKg) : undefined, prescribedMg: item.prescribedMg ? Number(item.prescribedMg) : undefined })),
       }) });
-      const body = await response.json();
+      const body = await response.json() as { error?: string };
       if (!response.ok) setError(body.error ?? "Hitungan gagal."); else setResult(body as RacikanResult);
     } catch { setError("Koneksi gagal. Coba lagi."); }
     finally { setLoading(false); }

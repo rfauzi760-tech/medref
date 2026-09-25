@@ -9,7 +9,7 @@ interface Drug { id:string; name:string; category:string; pregnancyRating:string
 
 export default function ClinicalReferencePageClient({ mode }: { mode: "antidotes" | "pregnancy" }) {
   const [items, setItems] = useState<(Antidote|Drug)[]>([]), [query,setQuery]=useState(""), [open,setOpen]=useState<string|null>(null), [loading,setLoading]=useState(true);
-  useEffect(() => { const timer=setTimeout(() => { fetch(`${mode==='antidotes'?'/api/antidotes':'/api/pregnancy-drugs'}?q=${encodeURIComponent(query)}`,{cache:'no-store'}).then(r=>r.json()).then((d:{items:(Antidote|Drug)[]})=>setItems(d.items)).finally(()=>setLoading(false)); },150); return ()=>clearTimeout(timer); },[mode,query]);
+  useEffect(() => { const timer=setTimeout(() => { fetch(`${mode==='antidotes'?'/api/antidotes':'/api/pregnancy-drugs'}?q=${encodeURIComponent(query)}`,{cache:'no-store'}).then(r=>r.json() as Promise<{items:(Antidote|Drug)[]}>).then((d)=>setItems(d.items)).finally(()=>setLoading(false)); },150); return ()=>clearTimeout(timer); },[mode,query]);
   const isAntidote=mode==='antidotes';
   return <div><BackLink href="/igd-toolkit" label="Kembali ke Toolkit IGD"/><PageHeader title={isAntidote?'Panduan Toksikologi & Antidot':'Obat pada Kehamilan & Menyusui'}/>
     {!isAntidote && <div className="mb-5 rounded-lg border border-amber-400/40 bg-amber-50 p-4 text-xs leading-5 text-amber-950 dark:bg-amber-950/20 dark:text-amber-100"><strong className="block font-bold">Catatan penting</strong>Kategori kehamilan historis harus dibaca bersama usia gestasi, indikasi, dosis, durasi, dan data terbaru. Jangan menghentikan obat penting secara mendadak.</div>}

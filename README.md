@@ -1,6 +1,6 @@
 # RFSmed: Free Clinical Decision Support
 
-A production-quality, 100% free clinical reference and decision-support platform in **Bahasa Indonesia-first**. Every module is accessible to every user: no accounts, no subscriptions, no Plus/Pro tiers, no locked features.
+A clinical reference platform in **Bahasa Indonesia-first**. The home page is public; clinical modules require a free account and a valid login session. No paid tiers or payment processing are enabled.
 
 **Alat pendukung keputusan & edukasi klinis. Tidak menggantikan penilaian klinis profesional atau protokol institusi setempat.** Sumber ditampilkan pada setiap alat.
 
@@ -48,9 +48,11 @@ Pencarian, evaluasi skor, dan pemeriksaan interaksi berjalan di server melalui `
 
 Konten klinis tidak ditujukan untuk pengambilan otomatis:
 
-- `proxy.ts` memblokir agen AI/crawler yang dikenal, membatasi 80 permintaan per menit per IP, dan mengirim header `X-Robots-Tag: noindex`.
+- `proxy.ts` memblokir agen otomatis yang dikenal berdasarkan user-agent dan mengirim header `X-Robots-Tag: noindex`; pembatasan laju diterapkan khusus pada gambar EKG dan endpoint autentikasi.
 - `app/robots.ts` menolak seluruh perayapan.
 - Katalog mentah tidak dikirim ke bundel klien; klien memanggil API server.
+- Akun dan sesi disimpan di Cloudflare D1. Cookie sesi memakai `HttpOnly`, `SameSite=Lax`, dan `Secure` di produksi; halaman modul dan API memvalidasi sesi di server.
+- Login email/kata sandi tersedia. Google dan Apple baru muncul setelah kredensial OAuth ditambahkan sebagai secret Worker; verifikasi email dan pemulihan sandi belum dikonfigurasi.
 
 ## Pengembangan lokal
 
@@ -95,16 +97,12 @@ Saat ini hanya Kamus ICD-10 yang masih di bawah baseline. Item yang belum ada ti
 ada; gunakan `npm run audit:coverage` untuk melihat jumlah aktual dan menambah konten dari sumber
 otoritatif.
 
-## Deploy ke Vercel
+## Hosting
 
-Proyek Next.js (App Router) tanpa database server: semua data klinis berupa modul TypeScript
-terstruktur yang dibaca dari salinan JSON lokal, sehingga ter-deploy sebagai situs penuh di Vercel.
-
-1. Push repositori ke GitHub, lalu **Add New → Project** di Vercel (auto-detect Next.js, tanpa env var).
-2. Atau dari terminal:
-   ```bash
-   npx vercel --prod
-   ```
+Cloudflare Workers melayani aplikasi dan autentikasi di `rfsmed.web.id`. Akun dan sesi disimpan
+di database D1 `medref-auth`; skema basis data diterapkan lewat migrasi di `migrations/`.
+Push ke repositori GitHub yang terhubung untuk menerbitkan perubahan ke Cloudflare. Domain Vercel
+lama hanya mengalihkan pengunjung ke domain utama.
 
 ## Struktur proyek
 
