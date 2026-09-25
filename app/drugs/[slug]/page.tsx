@@ -28,7 +28,7 @@ export default async function DrugPage({
   if (!drug) notFound();
   return (
     <div>
-      <BackLink href={mode === "anak" ? "/drugs?mode=anak" : "/drugs"} label={mode === "anak" ? "Dosis obat anak" : "Semua obat"} />
+      <BackLink href={mode === "anak" ? "/drugs?mode=anak" : "/drugs"} label="Kembali ke Dosis Obat" />
       <DrugView drug={drug} initialPediatricMode={mode === "anak"} />
     </div>
   );

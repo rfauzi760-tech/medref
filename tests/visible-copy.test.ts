@@ -42,6 +42,6 @@ describe("identitas dan teks antarmuka RFSmed", () => {
     expect(nav).toContain('name: "Dosis Obat"');
     expect(nav).not.toContain('name: "Dosis Obat Anak"');
     expect(nav).not.toContain('name: "Dosis Anak dan Kalkulator"');
-    expect(readFileSync("components/shell.tsx", "utf8")).toContain('searchParams.get("mode") === "anak"');
+    expect(readFileSync("components/shell.tsx", "utf8")).toContain('if (href === "/drugs") return pathname.startsWith("/drugs");');
   });
 });

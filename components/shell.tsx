@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { modules, appName } from "@/lib/nav";
@@ -13,8 +13,6 @@ import { SessionControl } from "@/components/auth/session-control";
 export function Shell({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const pediatricDrugMode = pathname.startsWith("/drugs") && searchParams.get("mode") === "anak";
 
   if (pathname === "/login") {
     return (
@@ -30,8 +28,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    if (href === "/drugs?mode=anak") return pediatricDrugMode;
-    if (href === "/drugs") return pathname.startsWith("/drugs") && !pediatricDrugMode;
+    if (href === "/drugs") return pathname.startsWith("/drugs");
     return pathname.startsWith(href.split("?")[0]);
   };
 

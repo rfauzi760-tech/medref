@@ -27,7 +27,7 @@ export default async function DrugsPage({ searchParams }: { searchParams: Promis
       <PageHeader title="Racikan obat anak" />
       <RacikanForm choices={JAGAMATE_DRUG_CHOICES.map((item) => ({ name: item.sourceName, slug: item.slug }))} />
     </> : tab === "tools" ? <>
-      <PageHeader title="Kalkulator terkait dosis" />
+      <PageHeader title="Kalkulator Dosis dan Cairan" />
       <DrugToolsIndex />
     </> : <DrugsPageClient drugs={drugs} initialPediatricMode={mode === "anak"} />}
   </div>;

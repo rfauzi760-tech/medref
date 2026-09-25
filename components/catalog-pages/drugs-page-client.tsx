@@ -36,7 +36,7 @@ export default function DrugsPageClient({
   return (
     <div>
       <PageHeader
-        title={pediatricOnly ? "Dosis Obat Anak" : "Dosis Obat"}
+        title="Dosis Obat"
       />
       <div className="mb-4 inline-flex overflow-hidden rounded-lg border border-[var(--line)]" aria-label="Populasi obat">
         <button

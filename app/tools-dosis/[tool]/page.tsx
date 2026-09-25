@@ -23,8 +23,9 @@ export default async function DoseToolPage({ params }: { params: Promise<{ tool:
   const { tool } = await params;
   if (!(tool in tools)) notFound();
   const item = tools[tool as ToolSlug];
+  const isObstetricTool = tool === "kehamilan" || tool === "taksiran-janin";
   return <div>
-    <BackLink href="/drugs?tab=tools" label="Dosis Obat" />
+    <BackLink href={isObstetricTool ? "/calculators" : "/drugs?tab=tools"} label={isObstetricTool ? "Kalkulator Klinis" : "Kalkulator Dosis dan Cairan"} />
     <PageHeader title={item.title} />
     <JagamateToolsForm tool={tool as ToolSlug} />
     <p className="mt-4 text-xs text-[var(--muted)]">Sumber: <a href={item.source} target="_blank" rel="noreferrer" className="underline underline-offset-2">baca panduan atau studi asli</a>. Hasil adalah alat bantu, bukan pengganti penilaian klinis.</p>

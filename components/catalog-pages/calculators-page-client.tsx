@@ -24,7 +24,7 @@ export default function CalculatorsPageClient({ calculators }: { calculators: Ca
         c.description.toLowerCase().includes(query)
       );
     });
-  }, [q, cat]);
+  }, [calculators, q, cat]);
 
   const grouped = useMemo(() => {
     const byCat = new Map<string, typeof calculators>();
@@ -41,7 +41,10 @@ export default function CalculatorsPageClient({ calculators }: { calculators: Ca
       <PageHeader
         title="Kalkulator Klinis"
       />
-      <Link href="/drugs?tab=tools" className="focus-ring mb-4 inline-flex rounded-lg border border-accent/40 px-3 py-2 text-sm font-bold text-accent-strong dark:text-accent">Cairan, diare, obstetri, dan luka bakar</Link>
+      <div className="mb-4 flex flex-wrap gap-2">
+        <Link href="/drugs?tab=tools" className="focus-ring inline-flex rounded-lg border border-accent/40 px-3 py-2 text-sm font-bold text-accent-strong dark:text-accent">Kalkulator dosis dan cairan</Link>
+        <Link href="/tools-dosis/taksiran-janin" className="focus-ring inline-flex rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-bold text-[var(--muted)] hover:text-[var(--foreground)]">Taksiran berat janin dari TFU</Link>
+      </div>
       <FilterInput value={q} onChange={setQ} placeholder="Cari kalkulator… mis. eGFR, anion gap, MAP" />
       <div className="mb-5 flex flex-wrap gap-2">
         <button
