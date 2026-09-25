@@ -6,7 +6,7 @@ export interface RateLimitResult {
 }
 
 const blockedAgentPattern =
-  /(?:GPTBot|ChatGPT-User|OAI-SearchBot|ClaudeBot|Claude-Web|anthropic-ai|PerplexityBot|Perplexity-User|CCBot|Bytespider|Google-Extended|Applebot-Extended|Meta-ExternalAgent|Meta-ExternalFetcher|cohere-ai|Diffbot|ImagesiftBot|Omgilibot|YouBot|Amazonbot|AI2Bot|Ai2Bot-Dolma|Timpibot|Webzio-Extended|FacebookBot|FriendlyCrawler|PetalBot|SemrushBot|AhrefsBot|MJ12bot|DotBot|DataForSeoBot|BLEXBot|serpstatbot|crawler|spider|scraper|HeadlessChrome|Playwright|Puppeteer|python-requests|python-httpx|curl\/|wget\/)/i;
+  /(?:GPTBot|ChatGPT-User|OAI-SearchBot|ClaudeBot|Claude-Web|anthropic-ai|PerplexityBot|Perplexity-User|CCBot|Bytespider|Google-Extended|Applebot-Extended|Meta-ExternalAgent|Meta-ExternalFetcher|cohere-ai|Diffbot|ImagesiftBot|Omgilibot|YouBot|Amazonbot|AI2Bot|Ai2Bot-Dolma|Timpibot|Webzio-Extended|FacebookBot|FriendlyCrawler|PetalBot|SemrushBot|AhrefsBot|MJ12bot|DotBot|DataForSeoBot|BLEXBot|serpstatbot|[\w.-]*bot\b|crawler|spider|scraper|scrapy|headless|playwright|puppeteer|selenium|webdriver|phantomjs|python-requests|python-httpx|aiohttp|go-http-client|node-fetch|undici|okhttp|libwww-perl|java\/|curl\/|wget\/)/i;
 
 export function isBlockedAgent(userAgent: string): boolean {
   return blockedAgentPattern.test(userAgent);

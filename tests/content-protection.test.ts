@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 
 import { createRateLimiter, getRateLimitScope, isBlockedAgent } from "@/lib/security/request-policy";
 import nextConfig from "../next.config";
+import { config as proxyConfig } from "../proxy";
 
 const root = process.cwd();
 
@@ -44,6 +45,18 @@ describe("perlindungan konten", () => {
     expect(isBlockedAgent("ClaudeBot/1.0")).toBe(true);
     expect(isBlockedAgent("PerplexityBot/1.0")).toBe(true);
     expect(isBlockedAgent("Mozilla/5.0 AppleWebKit/537.36 Chrome/140 Safari/537.36")).toBe(false);
+  });
+
+  it("memblokir bot umum dan klien otomasi, bukan hanya crawler AI", () => {
+    expect(isBlockedAgent("Mozilla/5.0 (compatible; ExampleResearchBot/2.1)")).toBe(true);
+    expect(isBlockedAgent("Mozilla/5.0 (compatible; Googlebot/2.1)")).toBe(true);
+    expect(isBlockedAgent("Scrapy/2.11.0 (+https://example.org/bot)")).toBe(true);
+    expect(isBlockedAgent("Go-http-client/1.1")).toBe(true);
+    expect(isBlockedAgent("Mozilla/5.0 AppleWebKit/537.36 Chrome/140 Safari/537.36")).toBe(false);
+  });
+
+  it("menerapkan pemeriksaan bot juga ke aset statis dan gambar", () => {
+    expect(proxyConfig.matcher).toContain("/:path*");
   });
 
   it("membatasi permintaan berulang berdasarkan kunci klien", () => {
