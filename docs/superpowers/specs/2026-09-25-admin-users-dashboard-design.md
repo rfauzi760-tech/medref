@@ -12,6 +12,7 @@ Provide the owner with a private, read-only view of registered RFSmed accounts. 
 - Query only the `user` fields above and `account.providerId`. Never read or return password hashes, OAuth tokens, session tokens, raw session records, or verification tokens.
 - Keep the dashboard read-only. No account deletion, role changes, exports, or other admin actions are in scope.
 - If the admin allowlist is not configured in a deployment, deny access by default.
+- Improve the login page brand header with the existing RFSmed icon at `public/icon-192.svg`, preserving the current form, light/dark styling, and responsive layout.
 
 ## Alternatives considered
 
@@ -24,6 +25,7 @@ Provide the owner with a private, read-only view of registered RFSmed accounts. 
 - Confirm unauthenticated requests cannot read the account list.
 - Confirm a signed-in account with a different email receives 403.
 - Confirm the exact owner email can view the page and pagination/search return only allowlisted fields.
+- Confirm the login icon renders with meaningful alternative text and does not break the form layout on mobile or desktop.
 - Run targeted tests and the production build; do not test by listing production users or displaying credential data.
 
 ## Rollout note
