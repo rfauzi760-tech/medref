@@ -27,6 +27,9 @@ export interface AbgInterpretation {
   acidBaseStatus: "asidemia" | "alkalemia" | "normal";
   primary: string;
   compensation: string;
+  compensationLabel?: string;
+  compensationUnit?: string;
+  compensationDetail?: string;
   anionGap?: number;
   correctedAnionGap?: number;
   deltaRatio?: number;
@@ -55,6 +58,9 @@ export function interpretAbg(input: AbgInput): AbgInterpretation {
 
   let primary = "Tidak ada gangguan asam-basa utama";
   let compensation = "Dalam batas normal.";
+  let compensationLabel: string | undefined;
+  let compensationUnit: string | undefined;
+  let compensationDetail: string | undefined;
   let isMixed = false;
 
   if (acidBaseStatus === "asidemia") {
@@ -78,13 +84,20 @@ export function interpretAbg(input: AbgInput): AbgInterpretation {
     } else if (lowHco3) {
       primary = "Asidosis metabolik";
       const expectedPco2 = 1.5 * hco3 + 8;
-      compensation = `Winter: pCO2 diharapkan ${fmt(expectedPco2, 1)} ± 2 mmHg`;
+      const expectedLow = expectedPco2 - 2;
+      const expectedHigh = expectedPco2 + 2;
+      const expectedRange = `${fmt(expectedLow, 1)}–${fmt(expectedHigh, 1)} mmHg`;
+      compensationLabel = "Kompensasi yang diharapkan";
+      compensation = `${fmt(expectedPco2, 1)} ± 2`;
+      compensationUnit = "mmHg";
       if (pco2 > expectedPco2 + 2) {
-        compensation += " (pCO2 lebih tinggi, ada komponen asidosis respiratorik)";
+        compensationDetail = `Rumus Winter memperkirakan rentang pCO₂ ${expectedRange}. pCO₂ aktual ${fmt(pco2, 1)} mmHg berada di atas rentang; pertimbangkan asidosis respiratorik tambahan.`;
         isMixed = true;
       } else if (pco2 < expectedPco2 - 2) {
-        compensation += " (pCO2 lebih rendah, ada komponen alkalosis respiratorik)";
+        compensationDetail = `Rumus Winter memperkirakan rentang pCO₂ ${expectedRange}. pCO₂ aktual ${fmt(pco2, 1)} mmHg berada di bawah rentang; pertimbangkan alkalosis respiratorik tambahan.`;
         isMixed = true;
+      } else {
+        compensationDetail = `Rumus Winter memperkirakan rentang pCO₂ ${expectedRange}. pCO₂ aktual ${fmt(pco2, 1)} mmHg masih sesuai dengan kompensasi.`;
       }
     } else {
       primary = "Asidemia dengan pCO2 dan HCO3 dalam batas normal";
@@ -126,7 +139,15 @@ export function interpretAbg(input: AbgInput): AbgInterpretation {
     compensation = "pH normal dengan pCO2 dan HCO3 rendah; korelasi klinis diperlukan.";
   }
 
-  const result: AbgInterpretation = { acidBaseStatus, primary, compensation, isMixed };
+  const result: AbgInterpretation = {
+    acidBaseStatus,
+    primary,
+    compensation,
+    compensationLabel,
+    compensationUnit,
+    compensationDetail,
+    isMixed,
+  };
 
   if (typeof input.na === "number" && typeof input.cl === "number") {
     const anionGap = input.na - input.cl - hco3;
@@ -168,7 +189,12 @@ export function abgToCalcResult(input: AbgInput): CalcResult {
   const lines: CalcResultLine[] = [
     { label: "Status asam-basa", value: interpretation.acidBaseStatus, tone },
     { label: "Gangguan utama", value: interpretation.primary, tone },
-    { label: "Kompensasi", value: interpretation.compensation },
+    {
+      label: interpretation.compensationLabel ?? "Kompensasi",
+      value: interpretation.compensation,
+      unit: interpretation.compensationUnit,
+      detail: interpretation.compensationDetail,
+    },
   ];
 
   if (interpretation.anionGap !== undefined) {
@@ -189,6 +215,6 @@ export function abgToCalcResult(input: AbgInput): CalcResult {
 
   return {
     lines,
-    note: "Interpretasi otomatis memakai rumus kompensasi standar. Selalu korelasikan dengan kondisi klinis dan nilai laboratorium lain.",
+    note: "Cara baca: asidemia berarti pH berada di bawah 7,35. Gangguan utama menunjuk komponen primer, yaitu perubahan pCO₂ atau HCO₃⁻. Kompensasi adalah respons paru atau ginjal yang membantu mengimbangi perubahan pH. Nilai aktual di luar rentang perkiraan dapat menandakan gangguan tambahan. Cocokkan hasil dengan kondisi klinis.",
   };
 }

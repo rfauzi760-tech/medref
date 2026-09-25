@@ -1,5 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { interpretAbg } from "@/lib/calc/abg";
+import { translateCalculatorText } from "@/lib/calc/calculator-text";
 import { runCalculator } from "@/lib/calc/calculators";
 import { CALCULATORS } from "@/lib/data/calculators";
 import { EMERGENCY_PATHWAYS } from "@/lib/data/emergency";
@@ -8,6 +9,11 @@ import { resolveAllPathways } from "@/lib/emergency";
 import { bestSourceTier, guidelineSourceTier, sourceTier } from "@/lib/evidence";
 
 describe("analisis gas darah", () => {
+  test("terjemahan hasil tidak merusak kata normal", () => {
+    expect(translateCalculatorText("Dalam batas normal.")).toBe("Dalam batas normal.");
+    expect(translateCalculatorText("No")).toBe("Tidak");
+  });
+
   test("asidosis metabolik dengan kompensasi adekuat", () => {
     const result = interpretAbg({ ph: 7.3, pco2: 30, hco3: 15 });
     expect(result.acidBaseStatus).toBe("asidemia");
@@ -43,6 +49,28 @@ describe("analisis gas darah", () => {
     const res = runCalculator({ slug: "abg" }, { ph: 7.3, pco2: 30, hco3: 15 });
     expect(res.lines.length).toBeGreaterThan(0);
     expect(res.lines.some((line) => line.value.includes("Asidosis metabolik"))).toBe(true);
+  });
+
+  test("hasil Winter menjelaskan rentang kompensasi dan membandingkan pCO2 aktual", () => {
+    const result = runCalculator({ slug: "abg" }, { ph: 7.3, pco2: 30, hco3: 14 });
+    const compensation = result.lines.find((line) => line.label === "Kompensasi yang diharapkan");
+
+    expect(compensation).toMatchObject({
+      label: "Kompensasi yang diharapkan",
+      value: "29 ± 2",
+      unit: "mmHg",
+    });
+    expect(compensation?.detail).toContain("rentang pCO₂ 27–31 mmHg");
+    expect(compensation?.detail).toContain("pCO₂ aktual 30 mmHg");
+    expect(compensation?.detail).toContain("sesuai dengan kompensasi");
+  });
+
+  test("hasil Winter menandai pCO2 di atas rentang sebagai kemungkinan gangguan tambahan", () => {
+    const result = runCalculator({ slug: "abg" }, { ph: 7.2, pco2: 35, hco3: 14 });
+    const compensation = result.lines.find((line) => line.label === "Kompensasi yang diharapkan");
+
+    expect(compensation?.detail).toContain("di atas rentang");
+    expect(compensation?.detail).toContain("asidosis respiratorik tambahan");
   });
 });
 

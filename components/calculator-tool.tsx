@@ -163,18 +163,18 @@ export function CalculatorToolView({ tool }: { tool: CalculatorTool }) {
                 {result.lines.map((l, i) => (
                   <div
                     key={i}
-                    className={`flex items-baseline justify-between gap-2 rounded-lg border px-3 py-2 ${
+                    className={`rounded-lg border px-3 py-2 ${
                       l.tone ? toneClasses[l.tone] : "border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800/60"
                     }`}
                   >
-                    <div className="min-w-0">
-                      <div className="text-xs font-medium opacity-80">{translateCalculatorText(l.label)}</div>
-                      {l.detail && <div className="text-[11px] opacity-70">{translateCalculatorText(l.detail)}</div>}
+                    <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
+                      <div className="min-w-0 text-xs font-medium opacity-80">{translateCalculatorText(l.label)}</div>
+                      <div className="min-w-0 max-w-full break-words text-left sm:max-w-[65%] sm:text-right">
+                        <span className="whitespace-normal break-words text-base font-bold">{translateCalculatorText(l.value)}</span>
+                        {l.unit && <span className="ml-1 whitespace-nowrap text-xs opacity-70">{l.unit}</span>}
+                      </div>
                     </div>
-                    <div className="shrink-0 text-right">
-                      <span className="text-base font-bold">{translateCalculatorText(l.value)}</span>
-                      {l.unit && <span className="ml-1 text-xs opacity-70">{l.unit}</span>}
-                    </div>
+                    {l.detail && <div className="mt-1 break-words text-[11px] leading-relaxed opacity-70">{translateCalculatorText(l.detail)}</div>}
                   </div>
                 ))}
                 {result.note && <p className="pt-1 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">{translateCalculatorText(result.note)}</p>}

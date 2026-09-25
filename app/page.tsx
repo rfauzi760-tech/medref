@@ -23,6 +23,20 @@ const primaryModuleSlugs = [
   "ddx",
 ] as const;
 const primaryModules = new Set<string>(primaryModuleSlugs);
+const primaryModuleDescriptions: Record<(typeof primaryModuleSlugs)[number], string> = {
+  "igd-toolkit": "Ringkasan alat dan panduan untuk penanganan kegawatdaruratan.",
+  scores: "Hitung skor klinis dari temuan pasien secara interaktif.",
+  emergency: "Alur penilaian awal dan tata laksana kondisi emergensi.",
+  timer: "Pengatur waktu untuk membantu mengikuti protokol klinis.",
+  "pediatric-emergency": "Panduan praktis untuk kegawatdaruratan pada anak.",
+  "neonatal-resuscitation": "Langkah resusitasi dan stabilisasi bayi baru lahir.",
+  "emergency-dose": "Hitung dosis obat yang digunakan dalam kondisi darurat.",
+  bilirubin: "Bantu menilai bilirubin dan menentukan tindak lanjut bayi baru lahir.",
+  antidotes: "Referensi penanganan keracunan dan penggunaan antidot.",
+  "pregnancy-drugs": "Tinjau keamanan obat selama kehamilan dan menyusui.",
+  electrolytes: "Bantu menghitung koreksi gangguan elektrolit.",
+  ddx: "Susun kemungkinan diagnosis berdasarkan temuan klinis.",
+};
 
 export default function Home() {
   const { recent } = useRecentTools();
@@ -63,10 +77,11 @@ export default function Home() {
           {primary.map((module) => {
             const Icon = module.icon;
             return (
-              <Link key={module.slug} href={module.href} className="index-row focus-ring group flex min-h-24 gap-4 p-4 md:odd:border-r md:[&:nth-last-child(-n+2)]:border-b-0">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent-strong dark:text-accent"><Icon className="h-4 w-4" /></span>
+              <Link key={module.slug} href={module.href} className="index-row focus-ring group flex min-h-28 items-start gap-4 p-4 md:odd:border-r md:[&:nth-last-child(-n+2)]:border-b-0">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent-strong dark:text-accent"><Icon className="h-4 w-4" /></span>
                 <span className="min-w-0 flex-1">
-                  <span className="display-type text-lg font-medium">{module.name}</span>
+                  <span className="display-type block text-lg font-medium">{module.name}</span>
+                  <span className="mt-1 block text-sm leading-5 text-[var(--muted)]">{primaryModuleDescriptions[module.slug]}</span>
                 </span>
                 <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--muted)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
