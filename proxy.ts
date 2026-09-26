@@ -42,9 +42,12 @@ export async function proxy(request: NextRequest) {
       if (!authRuntimeEnabled) {
         return Response.json({ message: "Layanan sesi belum dikonfigurasi." }, { status: 503 });
       }
-      // Normalize NextRequest to a standard Fetch Request before handing it
-      // to Better Auth; its router otherwise treats nested auth paths as 404.
-      return auth.handler(new Request(request.url, request));
+      // Vinext's proxy URL is an internal URL in production. Rebuild the
+      // request against Better Auth's canonical base while preserving method,
+      // headers, query, and body from the incoming request.
+      const authContext = await auth.$context;
+      const authUrl = new URL(`${pathname}${request.nextUrl.search}`, authContext.baseURL);
+      return auth.handler(new Request(authUrl, request));
     } catch {
       return Response.json({ message: "Layanan sesi sedang tidak tersedia." }, { status: 503 });
     }
