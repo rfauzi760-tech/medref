@@ -58,7 +58,7 @@ describe("perlindungan Turnstile pada autentikasi", () => {
   it("mengingatkan pengguna untuk memakai penyedia yang sama pada email yang sudah terdaftar", () => {
     const loginForm = readFileSync(join(root, "components/auth/login-form.tsx"), "utf8");
 
-    expect(loginForm).toContain("Sudah pernah masuk dengan Google atau Apple? Pilih tombol penyedia yang sama.");
-    expect(loginForm).toContain("Jika email ini sudah terdaftar melalui Google atau Apple, email verifikasi baru tidak dikirim.");
+    expect(loginForm).toContain("Sudah mendaftar dengan Google? Masuk dengan Google.");
+    expect(loginForm).not.toContain("terdaftar melalui Google atau Apple");
   });
 });

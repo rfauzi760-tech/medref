@@ -170,7 +170,7 @@ export function LoginForm({
         return;
       }
       if (mode === "signup" && verificationEnabled) {
-        setVerificationNotice(`Jika email ini belum pernah dipakai di RFSmed, tautan verifikasi sedang dikirim ke ${email.trim()}. Jika Anda sebelumnya masuk dengan Google atau Apple, kembali dan pilih metode yang sama.`);
+        setVerificationNotice(`Jika Anda sebelumnya mendaftar dengan Google, kembali ke halaman masuk dan pilih Masuk dengan Google.`);
         setVerificationPending(true);
         setResendCooldown(30);
         return;
@@ -261,7 +261,7 @@ export function LoginForm({
           <p role="status" className="rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-4 py-3 text-sm leading-6 text-[var(--ink)]">
             {verificationNotice || `Kami mengirim tautan verifikasi ke ${email.trim()}. Periksa juga folder spam.`}
           </p>
-          {(providers.google || providers.apple) && <p role="note" className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-left text-sm leading-6 text-[var(--ink)]">Jika email ini sudah terdaftar melalui Google atau Apple, email verifikasi baru tidak dikirim. Kembali ke halaman masuk dan gunakan tombol penyedia yang sama; akun tidak otomatis ditautkan.</p>}
+          {providers.google && <p role="note" className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-left text-sm leading-6 text-[var(--ink)]">Sudah mendaftar dengan Google? Masuk dengan Google.</p>}
           <p className="text-sm leading-6 text-[var(--muted)]">Klik tautan dalam email untuk mengaktifkan akun. Tautan berlaku 24 jam.</p>
           {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
           <button type="button" disabled={resending || resendCooldown > 0 || !captchaToken} onClick={() => void resendVerificationEmail()} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-60">
@@ -302,7 +302,7 @@ export function LoginForm({
               Email
               <input required type="email" autoComplete="email" maxLength={254} value={email} onChange={(event) => setEmail(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
             </label>
-            {mode === "signup" && (providers.google || providers.apple) && <p role="note" className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs leading-5 text-[var(--ink)]">Sudah pernah masuk dengan Google atau Apple? Pilih tombol penyedia yang sama. Daftar dengan email tidak otomatis menghubungkan akun.</p>}
+            {mode === "signup" && providers.google && <p role="note" className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs leading-5 text-[var(--ink)]">Sudah mendaftar dengan Google? Masuk dengan Google.</p>}
           <label className="block space-y-1.5 text-sm font-medium text-[var(--ink)]">
             Kata sandi
             <input required type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} minLength={12} maxLength={128} value={password} onChange={(event) => setPassword(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
