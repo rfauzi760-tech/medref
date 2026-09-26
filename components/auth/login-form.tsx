@@ -4,12 +4,12 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import { Apple, LoaderCircle } from "lucide-react";
 import { authClient } from "@/lib/auth/client";
 import { normalizeReturnTo } from "@/lib/auth/access-policy";
 
 const TURNSTILE_SITE_KEY = "0x4AAAAAAFEDFHmxH6ScuRd6";
+const TURNSTILE_SCRIPT_URL = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
 type TurnstileRenderOptions = {
   sitekey: string;
@@ -70,6 +70,38 @@ export function LoginForm({
       })
       .catch(() => undefined);
     return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    if (window.turnstile) {
+      queueMicrotask(() => setTurnstileReady(true));
+      return;
+    }
+
+    const existingScript = document.querySelector<HTMLScriptElement>("script[data-rfsmed-turnstile]");
+    const script = existingScript ?? document.createElement("script");
+    const onLoad = () => {
+      if (window.turnstile) {
+        setTurnstileReady(true);
+      } else {
+        setError("Verifikasi Cloudflare gagal dimuat. Periksa koneksi lalu coba lagi.");
+      }
+    };
+    const onError = () => setError("Verifikasi Cloudflare gagal dimuat. Periksa koneksi lalu coba lagi.");
+
+    script.addEventListener("load", onLoad);
+    script.addEventListener("error", onError);
+    if (!existingScript) {
+      script.src = TURNSTILE_SCRIPT_URL;
+      script.async = true;
+      script.dataset.rfsmedTurnstile = "true";
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      script.removeEventListener("load", onLoad);
+      script.removeEventListener("error", onError);
+    };
   }, []);
 
   useEffect(() => {
@@ -186,13 +218,6 @@ export function LoginForm({
   }
 
   return (
-    <>
-    <Script
-      src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-      strategy="afterInteractive"
-      onReady={() => setTurnstileReady(true)}
-      onError={() => setError("Verifikasi Cloudflare gagal dimuat. Periksa koneksi lalu coba lagi.")}
-    />
     <section className="workspace-panel mx-auto w-full max-w-md space-y-6 p-6 sm:p-8">
       <div className="space-y-2 text-center">
         <div className="flex items-center justify-center gap-2">
@@ -228,8 +253,9 @@ export function LoginForm({
         <>
           <div className="space-y-2">
             <div ref={turnstileContainerRef} className="flex min-h-[65px] justify-center" />
-            {!captchaToken && <p role="status" className="text-center text-xs text-[var(--muted)]">Selesaikan verifikasi keamanan untuk melanjutkan.</p>}
+            {!captchaToken && !error && <p role="status" className="text-center text-xs text-[var(--muted)]">{turnstileReady ? "Selesaikan verifikasi keamanan untuk melanjutkan." : "Memuat verifikasi keamanan…"}</p>}
           </div>
+          {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
           {(providers.google || providers.apple) && (
             <div className="space-y-2">
               {providers.google && (
@@ -263,7 +289,6 @@ export function LoginForm({
             {mode === "signup" && <span className="block text-xs font-normal text-[var(--muted)]">Minimal 12 karakter.</span>}
             {mode === "signup" && verificationEnabled && <span className="block text-xs font-normal text-[var(--muted)]">Tautan verifikasi akan dikirim ke email Anda.</span>}
           </label>
-            {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
             <button type="submit" disabled={pending || !captchaToken} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 text-sm font-bold text-slate-950 transition-opacity hover:opacity-90 disabled:opacity-60">
               {pending && <LoaderCircle aria-hidden="true" className="h-4 w-4 animate-spin" />}
               {mode === "signin" ? "Masuk" : "Buat akun"}
@@ -280,6 +305,5 @@ export function LoginForm({
         </>
       )}
     </section>
-    </>
   );
 }
