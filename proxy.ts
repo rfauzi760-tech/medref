@@ -42,7 +42,9 @@ export async function proxy(request: NextRequest) {
       if (!authRuntimeEnabled) {
         return Response.json({ message: "Layanan sesi belum dikonfigurasi." }, { status: 503 });
       }
-      return auth.handler(request);
+      // Normalize NextRequest to a standard Fetch Request before handing it
+      // to Better Auth; its router otherwise treats nested auth paths as 404.
+      return auth.handler(new Request(request.url, request));
     } catch {
       return Response.json({ message: "Layanan sesi sedang tidak tersedia." }, { status: 503 });
     }

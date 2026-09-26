@@ -185,7 +185,7 @@ describe("perlindungan konten", () => {
     expect(authRoute).toContain('import("@/lib/auth")');
     const proxy = readFileSync(join(root, "proxy.ts"), "utf8");
     expect(proxy).toContain('pathname.startsWith("/api/auth/")');
-    expect(proxy).toContain("auth.handler(request)");
+    expect(proxy).toContain("auth.handler(new Request(request.url, request))");
     expect(proxy).toContain('pathname !== "/api/auth/providers"');
 
     const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as { scripts: Record<string, string> };
