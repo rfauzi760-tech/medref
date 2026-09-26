@@ -1,12 +1,33 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { Apple, LoaderCircle } from "lucide-react";
 import { authClient } from "@/lib/auth/client";
 import { normalizeReturnTo } from "@/lib/auth/access-policy";
+
+const TURNSTILE_SITE_KEY = "0x4AAAAAAFEDFHmxH6ScuRd6";
+
+type TurnstileRenderOptions = {
+  sitekey: string;
+  action: string;
+  callback: (token: string) => void;
+  "expired-callback": () => void;
+  "error-callback": () => void;
+};
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (container: HTMLElement, options: TurnstileRenderOptions) => string;
+      reset: (widgetId?: string) => void;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
 
 export function LoginForm({
   googleEnabled,
@@ -29,6 +50,10 @@ export function LoginForm({
   const [verificationPending, setVerificationPending] = useState(false);
   const [verificationNotice, setVerificationNotice] = useState("");
   const [resending, setResending] = useState(false);
+  const [turnstileReady, setTurnstileReady] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState("");
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
   const [providers, setProviders] = useState({ google: googleEnabled, apple: appleEnabled });
   const [verificationEnabled, setVerificationEnabled] = useState(emailVerificationEnabled);
 
@@ -47,6 +72,35 @@ export function LoginForm({
     return () => controller.abort();
   }, []);
 
+  useEffect(() => {
+    const container = turnstileContainerRef.current;
+    const turnstile = window.turnstile;
+    if (!turnstileReady || verificationPending || !container || !turnstile) return;
+
+    turnstileWidgetIdRef.current = turnstile.render(container, {
+      sitekey: TURNSTILE_SITE_KEY,
+      action: "auth",
+      callback: (token) => {
+        setCaptchaToken(token);
+        setError("");
+      },
+      "expired-callback": () => setCaptchaToken(""),
+      "error-callback": () => {
+        setCaptchaToken("");
+        setError("Verifikasi Cloudflare gagal dimuat. Periksa koneksi lalu coba lagi.");
+      },
+    });
+
+    return () => {
+      const widgetId = turnstileWidgetIdRef.current;
+      if (widgetId) {
+        turnstile.remove(widgetId);
+        turnstileWidgetIdRef.current = null;
+      }
+      setCaptchaToken("");
+    };
+  }, [turnstileReady, verificationPending]);
+
   const completeLogin = () => {
     router.replace(destination);
     router.refresh();
@@ -54,12 +108,16 @@ export function LoginForm({
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!captchaToken) {
+      setError("Selesaikan verifikasi Cloudflare terlebih dahulu.");
+      return;
+    }
     setError("");
     setPending(true);
     try {
       const result = mode === "signup"
-        ? await authClient.signUp.email({ name: name.trim(), email: email.trim(), password, callbackURL: destination })
-        : await authClient.signIn.email({ email: email.trim(), password, callbackURL: destination });
+        ? await authClient.signUp.email({ name: name.trim(), email: email.trim(), password, callbackURL: destination, fetchOptions: { headers: { "x-captcha-response": captchaToken } } })
+        : await authClient.signIn.email({ email: email.trim(), password, callbackURL: destination, fetchOptions: { headers: { "x-captcha-response": captchaToken } } });
 
       if (result.error) {
         if (mode === "signin" && verificationEnabled && result.error.status === 403) {
@@ -82,7 +140,14 @@ export function LoginForm({
       setError("Layanan login sedang tidak tersedia. Coba lagi sebentar.");
     } finally {
       setPending(false);
+      resetCaptcha();
     }
+  }
+
+  function resetCaptcha() {
+    setCaptchaToken("");
+    const widgetId = turnstileWidgetIdRef.current;
+    if (widgetId && window.turnstile) window.turnstile.reset(widgetId);
   }
 
   async function resendVerificationEmail() {
@@ -103,19 +168,31 @@ export function LoginForm({
   }
 
   async function signInSocial(provider: "google" | "apple") {
+    if (!captchaToken) {
+      setError("Selesaikan verifikasi Cloudflare terlebih dahulu.");
+      return;
+    }
     setError("");
     setPending(true);
     try {
-      const result = await authClient.signIn.social({ provider, callbackURL: destination });
+      const result = await authClient.signIn.social({ provider, callbackURL: destination, fetchOptions: { headers: { "x-captcha-response": captchaToken } } });
       if (result.error) setError("Login dengan penyedia tersebut belum berhasil. Coba lagi.");
     } catch {
       setError("Login dengan penyedia tersebut belum berhasil. Coba lagi.");
     } finally {
       setPending(false);
+      resetCaptcha();
     }
   }
 
   return (
+    <>
+    <Script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+      strategy="afterInteractive"
+      onReady={() => setTurnstileReady(true)}
+      onError={() => setError("Verifikasi Cloudflare gagal dimuat. Periksa koneksi lalu coba lagi.")}
+    />
     <section className="workspace-panel mx-auto w-full max-w-md space-y-6 p-6 sm:p-8">
       <div className="space-y-2 text-center">
         <div className="flex items-center justify-center gap-2">
@@ -149,15 +226,19 @@ export function LoginForm({
         </div>
       ) : (
         <>
+          <div className="space-y-2">
+            <div ref={turnstileContainerRef} className="flex min-h-[65px] justify-center" />
+            {!captchaToken && <p role="status" className="text-center text-xs text-[var(--muted)]">Selesaikan verifikasi keamanan untuk melanjutkan.</p>}
+          </div>
           {(providers.google || providers.apple) && (
             <div className="space-y-2">
               {providers.google && (
-                <button type="button" disabled={pending} onClick={() => void signInSocial("google")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
+                <button type="button" disabled={pending || !captchaToken} onClick={() => void signInSocial("google")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
                   <span aria-hidden="true" className="font-bold text-base">G</span> Lanjutkan dengan Google
                 </button>
               )}
               {providers.apple && (
-                <button type="button" disabled={pending} onClick={() => void signInSocial("apple")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
+                <button type="button" disabled={pending || !captchaToken} onClick={() => void signInSocial("apple")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
                   <Apple aria-hidden="true" className="h-4 w-4" /> Lanjutkan dengan Apple
                 </button>
               )}
@@ -183,7 +264,7 @@ export function LoginForm({
             {mode === "signup" && verificationEnabled && <span className="block text-xs font-normal text-[var(--muted)]">Tautan verifikasi akan dikirim ke email Anda.</span>}
           </label>
             {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
-            <button type="submit" disabled={pending} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 text-sm font-bold text-slate-950 transition-opacity hover:opacity-90 disabled:opacity-60">
+            <button type="submit" disabled={pending || !captchaToken} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 text-sm font-bold text-slate-950 transition-opacity hover:opacity-90 disabled:opacity-60">
               {pending && <LoaderCircle aria-hidden="true" className="h-4 w-4 animate-spin" />}
               {mode === "signin" ? "Masuk" : "Buat akun"}
             </button>
@@ -199,5 +280,6 @@ export function LoginForm({
         </>
       )}
     </section>
+    </>
   );
 }

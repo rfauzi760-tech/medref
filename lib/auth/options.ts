@@ -1,4 +1,5 @@
 import { waitUntil } from "cloudflare:workers";
+import { captcha } from "better-auth/plugins";
 import { sendResendVerificationEmail } from "./resend-email";
 
 export interface AuthRuntimeEnvironment {
@@ -7,6 +8,7 @@ export interface AuthRuntimeEnvironment {
   BETTER_AUTH_URL?: string;
   RESEND_API_KEY?: string;
   RESEND_FROM_EMAIL?: string;
+  TURNSTILE_SECRET?: string;
   GOOGLE_CLIENT_ID?: string;
   GOOGLE_CLIENT_SECRET?: string;
   APPLE_CLIENT_ID?: string;
@@ -16,7 +18,7 @@ export interface AuthRuntimeEnvironment {
 }
 
 export function createAuthOptions(runtime: AuthRuntimeEnvironment) {
-  const production = runtime.NODE_ENV === "production";
+  const production = runtime.NODE_ENV === "production" || process.env.NODE_ENV === "production";
   const emailVerificationEnabled = Boolean(runtime.RESEND_API_KEY && runtime.RESEND_FROM_EMAIL);
   const socialProviders = {
     ...(runtime.GOOGLE_CLIENT_ID && runtime.GOOGLE_CLIENT_SECRET
@@ -40,6 +42,13 @@ export function createAuthOptions(runtime: AuthRuntimeEnvironment) {
       "http://localhost:3001",
     ],
     ...(runtime.AUTH_DB ? { database: runtime.AUTH_DB } : {}),
+    plugins: [captcha({
+      provider: "cloudflare-turnstile",
+      secretKey: runtime.TURNSTILE_SECRET ?? "",
+      endpoints: ["/sign-in/email", "/sign-up/email", "/sign-in/social"],
+      expectedAction: "auth",
+      allowedHostnames: production ? ["rfsmed.web.id"] : ["rfsmed.web.id", "localhost", "127.0.0.1"],
+    })],
     emailAndPassword: {
       enabled: true,
       requireEmailVerification: emailVerificationEnabled,
