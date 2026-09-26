@@ -1,6 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "medref",
+  "workers_dev": false,
+  "preview_urls": false,
   "keep_vars": true,
   "compatibility_date": "2026-09-21",
   "compatibility_flags": [
