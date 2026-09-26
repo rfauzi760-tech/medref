@@ -6,6 +6,12 @@ import { KpspForm } from "@/components/kpsp-form";
 import { BackLink } from "@/components/shared";
 import { requiresServerScoreCalculation, type PublicScoreTool } from "@/lib/score-public";
 
+export function generateStaticParams() {
+  return SCORES.map(({ slug }) => ({ slug }));
+}
+
+export const dynamicParams = false;
+
 function publicScore(tool: (typeof SCORES)[number]): PublicScoreTool {
   const { compute: _compute, variables, ...rest } = tool;
   void _compute;

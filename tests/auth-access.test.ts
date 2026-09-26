@@ -5,6 +5,7 @@ describe("kebijakan akses sesi", () => {
   it("membiarkan beranda dan halaman login tetap terbuka", () => {
     expect(getPageAuthDecision("/", false)).toEqual({ allowed: true });
     expect(getPageAuthDecision("/login", false)).toEqual({ allowed: true });
+    expect(getPageAuthDecision("/login/", false)).toEqual({ allowed: true });
   });
 
   it("mengalihkan modul klinis yang belum terautentikasi dan mempertahankan tujuan", () => {
@@ -31,5 +32,6 @@ describe("kebijakan akses sesi", () => {
     expect(normalizeReturnTo("https://evil.example/path")).toBe("/");
     expect(normalizeReturnTo("//evil.example/path")).toBe("/");
     expect(normalizeReturnTo("/drugs?mode=anak")).toBe("/drugs?mode=anak");
+    expect(normalizeReturnTo("/login/")).toBe("/");
   });
 });

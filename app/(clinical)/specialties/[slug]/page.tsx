@@ -8,6 +8,12 @@ import { guidelines } from "@/lib/data/guidelines";
 import { procedureEntries } from "@/lib/data/indications";
 import { ToolCard, BackLink } from "@/components/shared";
 
+export function generateStaticParams() {
+  return SPECIALTIES.map(({ slug }) => ({ slug }));
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const s = SPECIALTIES.find((x) => x.slug === slug);

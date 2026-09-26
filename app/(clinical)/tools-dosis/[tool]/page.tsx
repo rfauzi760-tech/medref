@@ -14,6 +14,12 @@ const tools = {
 
 type ToolSlug = keyof typeof tools;
 
+export function generateStaticParams() {
+  return Object.keys(tools).map((tool) => ({ tool }));
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: { params: Promise<{ tool: string }> }): Promise<Metadata> {
   const { tool } = await params;
   return { title: `${tools[tool as ToolSlug]?.title ?? "Kalkulator"} | RFSmed` };

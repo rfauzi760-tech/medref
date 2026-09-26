@@ -8,7 +8,7 @@ export function normalizeReturnTo(value: string | null | undefined): string {
 
   try {
     const url = new URL(value, "https://rfsmed.invalid");
-    if (url.origin !== "https://rfsmed.invalid" || url.pathname === "/login") return "/";
+    if (url.origin !== "https://rfsmed.invalid" || url.pathname.replace(/\/+$/, "") === "/login") return "/";
     return `${url.pathname}${url.search}`;
   } catch {
     return "/";
@@ -17,8 +17,9 @@ export function normalizeReturnTo(value: string | null | undefined): string {
 
 export function getPageAuthDecision(pathAndSearch: string, authenticated: boolean): AuthDecision {
   const pathname = pathAndSearch.split(/[?#]/, 1)[0] || "/";
+  const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
   if (
-    PUBLIC_PAGE_PATHS.has(pathname) ||
+    PUBLIC_PAGE_PATHS.has(normalizedPathname) ||
     pathname.startsWith("/_next/") ||
     pathname.startsWith("/assets/") ||
     /^\/(?:favicon\.ico|manifest\.webmanifest|robots\.txt|sitemap\.xml|[^/]+\.(?:svg|png|jpe?g|webp|woff2?))$/i.test(pathname)

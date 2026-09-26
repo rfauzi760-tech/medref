@@ -148,7 +148,7 @@ describe("perlindungan konten", () => {
     expect(terms).toContain("scraping");
   });
 
-  it("menjaga basis data klinis di sisi server", () => {
+  it("menjaga data sensitif server dan mewajibkan sesi pada halaman statis", () => {
     const canonical = readFileSync(join(root, "lib/data/klinea-canonical.ts"), "utf8");
     expect(canonical).toContain('import "server-only"');
 
@@ -161,19 +161,32 @@ describe("perlindungan konten", () => {
     }
 
     const gatedLayout = readFileSync(join(root, "app/(clinical)/layout.tsx"), "utf8");
-    expect(gatedLayout).toContain('export const dynamic = "force-dynamic"');
+    expect(gatedLayout).toContain("StaticSessionGate");
+    const sessionGate = readFileSync(join(root, "components/auth/static-session-gate.tsx"), "utf8");
+    expect(sessionGate).toContain("authClient.useSession()");
+    expect(sessionGate).toContain("/login?next=");
 
     const rootLayout = readFileSync(join(root, "app/layout.tsx"), "utf8");
     expect(rootLayout).not.toContain("force-dynamic");
   });
 
-  it("menjaga halaman publik tetap dapat dirender statis", () => {
+  it("menghasilkan halaman statis tanpa mengubah endpoint autentikasi", () => {
     const publicPages = ["app/page.tsx", "app/terms/page.tsx", "app/privacy/page.tsx"];
     for (const page of publicPages) {
       expect(readFileSync(join(root, page), "utf8"), page).not.toContain("force-dynamic");
     }
 
     const login = readFileSync(join(root, "app/login/page.tsx"), "utf8");
-    expect(login).toContain('export const dynamic = "force-dynamic"');
+    expect(login).not.toContain("force-dynamic");
+    expect(login).toContain("googleEnabled");
+    expect(login).toContain("emailVerificationEnabled");
+    const authRoute = readFileSync(join(root, "app/api/auth/[...all]/route.ts"), "utf8");
+    expect(authRoute).toContain('import("better-auth/next-js")');
+    expect(authRoute).toContain('import("@/lib/auth")');
+
+    const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as { scripts: Record<string, string> };
+    expect(packageJson.scripts["build:vinext"]).toContain("RFS_STATIC_EXPORT=1");
+    const wrangler = readFileSync(join(root, "wrangler.jsonc"), "utf8");
+    expect(wrangler).toContain('"run_worker_first": ["/api/*"]');
   });
 });

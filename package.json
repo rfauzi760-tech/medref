@@ -14,9 +14,9 @@
     "test": "vitest run",
     "audit:coverage": "vitest run tests/coverage-audit.test.ts tests/data-validation.test.ts",
     "dev:vinext": "vinext dev --port 3001",
-    "build:vinext": "vinext build",
+    "build:vinext": "RFS_STATIC_EXPORT=1 vinext build",
     "start:vinext": "wrangler dev --config dist/server/wrangler.json",
-    "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
+    "deploy:vinext": "RFS_STATIC_EXPORT=1 vinext-cloudflare deploy --config dist/server/wrangler.json"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

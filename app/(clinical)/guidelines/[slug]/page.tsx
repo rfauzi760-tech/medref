@@ -6,6 +6,12 @@ import { BackLink } from "@/components/shared";
 import { SourceBlock } from "@/components/source-block";
 import { ClinicalContent } from "@/components/clinical-content";
 
+export function generateStaticParams() {
+  return guidelines.map(({ slug }) => ({ slug }));
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const g = guidelines.find((x) => x.slug === slug);

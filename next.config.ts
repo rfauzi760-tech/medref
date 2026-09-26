@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 const isNextBuild = process.env.npm_lifecycle_event === "build:next" || process.env.VERCEL === "1";
 
 const nextConfig: NextConfig = {
+  ...(process.env.RFS_STATIC_EXPORT === "1" ? { output: "export", trailingSlash: true } : {}),
   ...(isNextBuild ? {
   turbopack: {
     resolveAlias: {

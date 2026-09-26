@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -29,6 +29,23 @@ export function LoginForm({
   const [verificationPending, setVerificationPending] = useState(false);
   const [verificationNotice, setVerificationNotice] = useState("");
   const [resending, setResending] = useState(false);
+  const [providers, setProviders] = useState({ google: googleEnabled, apple: appleEnabled });
+  const [verificationEnabled, setVerificationEnabled] = useState(emailVerificationEnabled);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("/api/auth/providers", { credentials: "same-origin", signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Provider status unavailable");
+        return response.json() as Promise<{ socialProviders?: { google?: boolean; apple?: boolean }; emailVerificationEnabled?: boolean }>;
+      })
+      .then((settings) => {
+        setProviders({ google: settings.socialProviders?.google === true, apple: settings.socialProviders?.apple === true });
+        setVerificationEnabled(settings.emailVerificationEnabled === true);
+      })
+      .catch(() => undefined);
+    return () => controller.abort();
+  }, []);
 
   const completeLogin = () => {
     router.replace(destination);
@@ -45,7 +62,7 @@ export function LoginForm({
         : await authClient.signIn.email({ email: email.trim(), password, callbackURL: destination });
 
       if (result.error) {
-        if (mode === "signin" && emailVerificationEnabled && result.error.status === 403) {
+        if (mode === "signin" && verificationEnabled && result.error.status === 403) {
           setVerificationNotice("Email ini belum diverifikasi. Minta tautan baru melalui tombol di bawah.");
           setVerificationPending(true);
           return;
@@ -55,7 +72,7 @@ export function LoginForm({
           : "Akun belum dapat dibuat. Periksa kembali data yang dimasukkan.");
         return;
       }
-      if (mode === "signup" && emailVerificationEnabled) {
+      if (mode === "signup" && verificationEnabled) {
         setVerificationNotice(`Jika akun berhasil dibuat, tautan verifikasi akan dikirim ke ${email.trim()}. Periksa juga folder spam.`);
         setVerificationPending(true);
         return;
@@ -132,14 +149,14 @@ export function LoginForm({
         </div>
       ) : (
         <>
-          {(googleEnabled || appleEnabled) && (
+          {(providers.google || providers.apple) && (
             <div className="space-y-2">
-              {googleEnabled && (
+              {providers.google && (
                 <button type="button" disabled={pending} onClick={() => void signInSocial("google")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
                   <span aria-hidden="true" className="font-bold text-base">G</span> Lanjutkan dengan Google
                 </button>
               )}
-              {appleEnabled && (
+              {providers.apple && (
                 <button type="button" disabled={pending} onClick={() => void signInSocial("apple")} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] text-sm font-semibold text-[var(--ink)] hover:bg-black/[0.035] disabled:opacity-60 dark:hover:bg-white/[0.05]">
                   <Apple aria-hidden="true" className="h-4 w-4" /> Lanjutkan dengan Apple
                 </button>
@@ -163,7 +180,7 @@ export function LoginForm({
             Kata sandi
             <input required type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} minLength={12} maxLength={128} value={password} onChange={(event) => setPassword(event.target.value)} className="focus-ring min-h-11 w-full rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-3 text-sm" />
             {mode === "signup" && <span className="block text-xs font-normal text-[var(--muted)]">Minimal 12 karakter.</span>}
-            {mode === "signup" && emailVerificationEnabled && <span className="block text-xs font-normal text-[var(--muted)]">Tautan verifikasi akan dikirim ke email Anda.</span>}
+            {mode === "signup" && verificationEnabled && <span className="block text-xs font-normal text-[var(--muted)]">Tautan verifikasi akan dikirim ke email Anda.</span>}
           </label>
             {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
             <button type="submit" disabled={pending} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 text-sm font-bold text-slate-950 transition-opacity hover:opacity-90 disabled:opacity-60">

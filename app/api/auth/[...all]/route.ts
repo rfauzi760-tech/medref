@@ -1,11 +1,16 @@
-import { toNextJsHandler } from "better-auth/next-js";
-import { auth, authRuntimeEnabled } from "@/lib/auth";
-
-const handlers = toNextJsHandler(auth);
-
 function unavailable() {
   return Response.json({ message: "Layanan sesi belum dikonfigurasi." }, { status: 503 });
 }
 
-export const GET = (request: Request) => authRuntimeEnabled ? handlers.GET(request) : unavailable();
-export const POST = (request: Request) => authRuntimeEnabled ? handlers.POST(request) : unavailable();
+async function handle(method: "GET" | "POST", request: Request) {
+  const [{ toNextJsHandler }, { auth, authRuntimeEnabled }] = await Promise.all([
+    import("better-auth/next-js"),
+    import("@/lib/auth"),
+  ]);
+  if (!authRuntimeEnabled) return unavailable();
+  const handlers = toNextJsHandler(auth);
+  return handlers[method](request);
+}
+
+export const GET = (request: Request) => handle("GET", request);
+export const POST = (request: Request) => handle("POST", request);

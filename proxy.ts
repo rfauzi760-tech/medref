@@ -3,7 +3,6 @@ import { getSessionCookie } from "better-auth/cookies";
 import { createRateLimiter, getRateLimitScope, isBlockedAgent } from "@/lib/security/request-policy";
 import { isGoogleInspectionAllowed } from "@/lib/security/google-inspection";
 import { getApiAuthDecision, getPageAuthDecision } from "@/lib/auth/access-policy";
-import { auth, authRuntimeEnabled } from "@/lib/auth";
 
 const imageLimiter = createRateLimiter({ limit: 1_200, windowMs: 60_000 });
 
@@ -20,6 +19,10 @@ function clientKey(request: NextRequest): string | null {
 }
 
 export async function proxy(request: NextRequest) {
+  // Vinext renders static HTML in a local Node process. Do not apply runtime
+  // session redirects or crawler policy to those build-only requests.
+  if (process.env.VINEXT_PRERENDER === "1") return NextResponse.next();
+
   const userAgent = request.headers.get("user-agent") ?? "";
   const pathname = request.nextUrl.pathname;
   const inspectionAllowed = isGoogleInspectionAllowed(userAgent, pathname, request.method);
@@ -54,8 +57,10 @@ export async function proxy(request: NextRequest) {
 
   if (needsSession) {
     let authenticated = false;
-    if (getSessionCookie(request) && authRuntimeEnabled) {
+    if (getSessionCookie(request)) {
       try {
+        const { auth, authRuntimeEnabled } = await import("@/lib/auth");
+        if (!authRuntimeEnabled) throw new Error("Auth runtime is not configured");
         authenticated = Boolean(await auth.api.getSession({ headers: request.headers }));
       } catch {
         return new NextResponse("Layanan sesi sedang tidak tersedia. Coba lagi nanti.", {

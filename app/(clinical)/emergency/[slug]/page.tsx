@@ -4,8 +4,14 @@ import { notFound } from "next/navigation";
 import { BookOpen, Calculator, ListChecks, Timer } from "lucide-react";
 import { BackLink } from "@/components/shared";
 import { ClinicalContent } from "@/components/clinical-content";
-import { EMERGENCY_KIND_LABEL, getEmergencyPathway, resolvePathway, type ResolvedEmergencyRef } from "@/lib/emergency";
+import { EMERGENCY_KIND_LABEL, getEmergencyPathway, resolveAllPathways, resolvePathway, type ResolvedEmergencyRef } from "@/lib/emergency";
 import type { EmergencyRefKind } from "@/lib/data/emergency";
+
+export function generateStaticParams() {
+  return resolveAllPathways().map(({ pathway }) => ({ slug: pathway.slug }));
+}
+
+export const dynamicParams = false;
 
 const KIND_ICON: Record<EmergencyRefKind, typeof BookOpen> = {
   guideline: BookOpen,
