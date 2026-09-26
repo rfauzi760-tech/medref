@@ -12,7 +12,7 @@ describe("navigasi dosis", () => {
   it("menampilkan dewasa dan anak dalam satu daftar tanpa filter Anak", () => {
     const shell = readFileSync("components/shell.tsx", "utf8");
     const drugList = readFileSync("components/catalog-pages/drugs-page-client.tsx", "utf8");
-    const drugDetail = readFileSync("app/drugs/[slug]/page.tsx", "utf8");
+    const drugDetail = readFileSync("app/(clinical)/drugs/[slug]/page.tsx", "utf8");
 
     expect(shell).not.toContain("pediatricDrugMode");
     expect(shell).toContain('if (href === "/drugs") return pathname.startsWith("/drugs");');

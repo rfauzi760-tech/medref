@@ -62,8 +62,8 @@ describe("frontend design contract", () => {
     for (const path of indexes) expect(read(path)).toContain("PageHeader");
     for (const path of indexes.slice(0, 6).concat("components/catalog-pages/icd10-page-client.tsx")) expect(read(path)).toContain("index-row");
     const details = [
-      "app/guidelines/[slug]/page.tsx", "app/indications/[slug]/page.tsx",
-      "app/specialties/[slug]/page.tsx",
+      "app/(clinical)/guidelines/[slug]/page.tsx", "app/(clinical)/indications/[slug]/page.tsx",
+      "app/(clinical)/specialties/[slug]/page.tsx",
     ];
     for (const path of details) expect(read(path)).toMatch(/workspace-panel|section-band/);
   });
@@ -98,7 +98,7 @@ describe("frontend design contract", () => {
 
   test("specialized workspaces consume the shared visual system", () => {
     const paths = [
-      "app/anthropometry/page.tsx", "components/growth-chart.tsx", "app/development/page.tsx",
+      "app/(clinical)/anthropometry/page.tsx", "components/growth-chart.tsx", "app/(clinical)/development/page.tsx",
       "components/catalog-pages/immunization-page-client.tsx", "components/catalog-pages/interactions-page-client.tsx",
     ];
     paths[2] = "components/catalog-pages/development-page-client.tsx";

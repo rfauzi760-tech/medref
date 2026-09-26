@@ -160,7 +160,20 @@ describe("perlindungan konten", () => {
       expect(source, file).not.toMatch(/from\s+["']@\/lib\/generated\//);
     }
 
-    const layout = readFileSync(join(root, "app/layout.tsx"), "utf8");
-    expect(layout).toContain('export const dynamic = "force-dynamic"');
+    const gatedLayout = readFileSync(join(root, "app/(clinical)/layout.tsx"), "utf8");
+    expect(gatedLayout).toContain('export const dynamic = "force-dynamic"');
+
+    const rootLayout = readFileSync(join(root, "app/layout.tsx"), "utf8");
+    expect(rootLayout).not.toContain("force-dynamic");
+  });
+
+  it("menjaga halaman publik tetap dapat dirender statis", () => {
+    const publicPages = ["app/page.tsx", "app/terms/page.tsx", "app/privacy/page.tsx"];
+    for (const page of publicPages) {
+      expect(readFileSync(join(root, page), "utf8"), page).not.toContain("force-dynamic");
+    }
+
+    const login = readFileSync(join(root, "app/login/page.tsx"), "utf8");
+    expect(login).toContain('export const dynamic = "force-dynamic"');
   });
 });
