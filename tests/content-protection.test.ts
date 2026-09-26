@@ -32,6 +32,11 @@ describe("perlindungan konten", () => {
     }));
   });
 
+  it("mengarahkan /admin ke path admin kanonis dengan trailing slash", () => {
+    const adminPage = readFileSync(join(root, "app/(clinical)/admin/page.tsx"), "utf8");
+    expect(adminPage).toContain('redirect("/admin/users/")');
+  });
+
   it("membangun Worker dengan vinext dan tetap memakai Next.js di Vercel", () => {
     const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as {
       scripts: Record<string, string>;
