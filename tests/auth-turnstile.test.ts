@@ -54,4 +54,11 @@ describe("perlindungan Turnstile pada autentikasi", () => {
     expect(loginForm).toContain("authClient.sendVerificationEmail({ email: email.trim(), callbackURL: destination, fetchOptions: { headers: { \"x-captcha-response\": captchaToken } } })");
     expect(loginForm).toContain("resendCooldown");
   });
+
+  it("mengingatkan pengguna untuk memakai penyedia yang sama pada email yang sudah terdaftar", () => {
+    const loginForm = readFileSync(join(root, "components/auth/login-form.tsx"), "utf8");
+
+    expect(loginForm).toContain("Sudah pernah masuk dengan Google atau Apple? Pilih tombol penyedia yang sama.");
+    expect(loginForm).toContain("Jika email ini sudah terdaftar melalui Google atau Apple, email verifikasi baru tidak dikirim.");
+  });
 });
