@@ -14,7 +14,7 @@ describe("perlindungan Turnstile pada autentikasi", () => {
     expect(captchaPlugin?.options).toMatchObject({
       provider: "cloudflare-turnstile",
       secretKey: "worker-secret",
-      endpoints: ["/sign-in/email", "/sign-up/email", "/sign-in/social"],
+      endpoints: ["/sign-in/email", "/sign-up/email", "/sign-in/social", "/send-verification-email"],
       expectedAction: "auth",
       allowedHostnames: ["rfsmed.web.id", "localhost", "127.0.0.1"],
     });
@@ -51,5 +51,7 @@ describe("perlindungan Turnstile pada autentikasi", () => {
     expect(loginForm).toContain("authClient.signIn.email(");
     expect(loginForm).toContain("authClient.signUp.email(");
     expect(loginForm).toContain("authClient.signIn.social(");
+    expect(loginForm).toContain("authClient.sendVerificationEmail({ email: email.trim(), callbackURL: destination, fetchOptions: { headers: { \"x-captcha-response\": captchaToken } } })");
+    expect(loginForm).toContain("resendCooldown");
   });
 });

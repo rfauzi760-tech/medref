@@ -1,4 +1,3 @@
-import { waitUntil } from "cloudflare:workers";
 import { captcha } from "better-auth/plugins";
 import { sendResendVerificationEmail } from "./resend-email";
 
@@ -45,7 +44,7 @@ export function createAuthOptions(runtime: AuthRuntimeEnvironment) {
     plugins: [captcha({
       provider: "cloudflare-turnstile",
       secretKey: runtime.TURNSTILE_SECRET ?? "",
-      endpoints: ["/sign-in/email", "/sign-up/email", "/sign-in/social"],
+      endpoints: ["/sign-in/email", "/sign-up/email", "/sign-in/social", "/send-verification-email"],
       expectedAction: "auth",
       allowedHostnames: production ? ["rfsmed.web.id"] : ["rfsmed.web.id", "localhost", "127.0.0.1"],
     })],
@@ -59,16 +58,12 @@ export function createAuthOptions(runtime: AuthRuntimeEnvironment) {
     ...(emailVerificationEnabled ? {
       emailVerification: {
         sendVerificationEmail: async ({ user, url }: { user: { email: string }; url: string }) => {
-          const delivery = sendResendVerificationEmail({
+          await sendResendVerificationEmail({
             apiKey: runtime.RESEND_API_KEY!,
             from: runtime.RESEND_FROM_EMAIL!,
             to: user.email,
             url,
-          }).catch((error: unknown) => {
-            const status = error instanceof Error ? error.message.match(/\((\d{3})\)$/)?.[1] : undefined;
-            console.error(`RFSmed verification email delivery failed${status ? ` (${status})` : ""}.`);
           });
-          waitUntil(delivery);
         },
         sendOnSignUp: true,
         sendOnSignIn: false,
@@ -89,7 +84,7 @@ export function createAuthOptions(runtime: AuthRuntimeEnvironment) {
       customRules: {
         "/sign-in/email": { window: 60, max: 5 },
         "/sign-up/email": { window: 60, max: 3 },
-        "/send-verification-email": { window: 60, max: 3 },
+        "/send-verification-email": { window: 30, max: 1 },
         "/sign-in/social": { window: 60, max: 10 },
       },
     },

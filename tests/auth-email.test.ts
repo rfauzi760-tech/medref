@@ -28,6 +28,7 @@ describe("email verification setup", () => {
     expect(options.emailAndPassword.requireEmailVerification).toBe(true);
     expect(options.emailVerification?.sendOnSignUp).toBe(true);
     expect(options.emailVerification?.sendOnSignIn).toBe(false);
+    expect(options.rateLimit?.customRules?.["/send-verification-email"]).toEqual({ window: 30, max: 1 });
 
     const fetchMock = vi.fn().mockResolvedValue(new Response(null, { status: 200 }));
     vi.stubGlobal("fetch", fetchMock);
@@ -58,5 +59,17 @@ describe("email verification setup", () => {
       to: "clinician@example.com",
       url: "https://rfsmed.web.id/verify",
     })).rejects.toThrow("Email delivery failed (403)");
+  });
+
+  it("does not hide provider delivery failures from the verification callback", async () => {
+    const options = createAuthOptions({
+      RESEND_API_KEY: "re_test_key",
+      RESEND_FROM_EMAIL: "RFSmed <noreply@rfsmed.web.id>",
+    });
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("", { status: 403 })));
+
+    await expect(options.emailVerification?.sendVerificationEmail(
+      { user: { email: "clinician@example.com" }, url: "https://rfsmed.web.id/verify" },
+    )).rejects.toThrow("Email delivery failed (403)");
   });
 });

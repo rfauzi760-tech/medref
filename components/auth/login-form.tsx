@@ -50,12 +50,19 @@ export function LoginForm({
   const [verificationPending, setVerificationPending] = useState(false);
   const [verificationNotice, setVerificationNotice] = useState("");
   const [resending, setResending] = useState(false);
+  const [resendCooldown, setResendCooldown] = useState(0);
   const [turnstileReady, setTurnstileReady] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
   const turnstileContainerRef = useRef<HTMLDivElement>(null);
   const turnstileWidgetIdRef = useRef<string | null>(null);
   const [providers, setProviders] = useState({ google: googleEnabled, apple: appleEnabled });
   const [verificationEnabled, setVerificationEnabled] = useState(emailVerificationEnabled);
+
+  useEffect(() => {
+    if (resendCooldown <= 0) return;
+    const timer = window.setInterval(() => setResendCooldown((seconds) => Math.max(0, seconds - 1)), 1000);
+    return () => window.clearInterval(timer);
+  }, [resendCooldown]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -107,7 +114,7 @@ export function LoginForm({
   useEffect(() => {
     const container = turnstileContainerRef.current;
     const turnstile = window.turnstile;
-    if (!turnstileReady || verificationPending || !container || !turnstile) return;
+    if (!turnstileReady || !container || !turnstile) return;
 
     turnstileWidgetIdRef.current = turnstile.render(container, {
       sitekey: TURNSTILE_SITE_KEY,
@@ -131,7 +138,7 @@ export function LoginForm({
       }
       setCaptchaToken("");
     };
-  }, [turnstileReady, verificationPending]);
+  }, [turnstileReady]);
 
   const completeLogin = () => {
     router.replace(destination);
@@ -163,8 +170,9 @@ export function LoginForm({
         return;
       }
       if (mode === "signup" && verificationEnabled) {
-        setVerificationNotice(`Jika akun berhasil dibuat, tautan verifikasi akan dikirim ke ${email.trim()}. Periksa juga folder spam.`);
+        setVerificationNotice(`Pendaftaran diterima. Tautan verifikasi sedang dikirim ke ${email.trim()}. Jika belum masuk, periksa folder spam atau minta tautan baru setelah 30 detik.`);
         setVerificationPending(true);
+        setResendCooldown(30);
         return;
       }
       completeLogin();
@@ -183,19 +191,28 @@ export function LoginForm({
   }
 
   async function resendVerificationEmail() {
+    if (!captchaToken || resendCooldown > 0 || resending) {
+      if (!captchaToken) setError("Selesaikan verifikasi Cloudflare terlebih dahulu.");
+      return;
+    }
     setError("");
     setResending(true);
     try {
-      const result = await authClient.sendVerificationEmail({ email: email.trim(), callbackURL: destination });
+      const result = await authClient.sendVerificationEmail({ email: email.trim(), callbackURL: destination, fetchOptions: { headers: { "x-captcha-response": captchaToken } } });
       if (result.error) {
-        setError("Tautan belum dapat dikirim. Coba lagi sebentar.");
+        setError(result.error.status === 429
+          ? "Terlalu sering meminta tautan. Tunggu 30 detik sebelum mencoba lagi."
+          : "Tautan verifikasi gagal dikirim. Periksa koneksi lalu coba lagi.");
+        if (result.error.status === 429) setResendCooldown(30);
         return;
       }
       setVerificationNotice(`Tautan verifikasi baru dikirim ke ${email.trim()}.`);
+      setResendCooldown(30);
     } catch {
-      setError("Tautan belum dapat dikirim. Coba lagi sebentar.");
+      setError("Tautan verifikasi gagal dikirim. Periksa koneksi lalu coba lagi.");
     } finally {
       setResending(false);
+      resetCaptcha();
     }
   }
 
@@ -234,6 +251,11 @@ export function LoginForm({
         </p>
       </div>
 
+      <div className="space-y-2">
+        <div ref={turnstileContainerRef} className="flex min-h-[65px] justify-center" />
+        {!captchaToken && !error && <p role="status" className="text-center text-xs text-[var(--muted)]">{turnstileReady ? "Selesaikan verifikasi keamanan untuk melanjutkan." : "Memuat verifikasi keamanan…"}</p>}
+      </div>
+
       {verificationPending ? (
         <div className="space-y-4 text-center">
           <p role="status" className="rounded-lg border border-[var(--line)] bg-[var(--canvas)] px-4 py-3 text-sm leading-6 text-[var(--ink)]">
@@ -241,9 +263,9 @@ export function LoginForm({
           </p>
           <p className="text-sm leading-6 text-[var(--muted)]">Klik tautan dalam email untuk mengaktifkan akun. Tautan berlaku 24 jam.</p>
           {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
-          <button type="button" disabled={resending} onClick={() => void resendVerificationEmail()} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-60">
+          <button type="button" disabled={resending || resendCooldown > 0 || !captchaToken} onClick={() => void resendVerificationEmail()} className="focus-ring flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-60">
             {resending && <LoaderCircle aria-hidden="true" className="h-4 w-4 animate-spin" />}
-            Kirim ulang tautan
+            {resendCooldown > 0 ? `Kirim ulang tautan (${resendCooldown} dtk)` : "Kirim ulang tautan"}
           </button>
           <button type="button" className="text-sm font-semibold text-accent-strong underline underline-offset-2 dark:text-accent" onClick={() => { setVerificationPending(false); setVerificationNotice(""); setMode("signin"); setError(""); }}>
             Kembali ke masuk
@@ -251,10 +273,6 @@ export function LoginForm({
         </div>
       ) : (
         <>
-          <div className="space-y-2">
-            <div ref={turnstileContainerRef} className="flex min-h-[65px] justify-center" />
-            {!captchaToken && !error && <p role="status" className="text-center text-xs text-[var(--muted)]">{turnstileReady ? "Selesaikan verifikasi keamanan untuk melanjutkan." : "Memuat verifikasi keamanan…"}</p>}
-          </div>
           {error && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-200">{error}</p>}
           {(providers.google || providers.apple) && (
             <div className="space-y-2">
