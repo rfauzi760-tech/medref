@@ -183,6 +183,10 @@ describe("perlindungan konten", () => {
     const authRoute = readFileSync(join(root, "app/api/auth/[...all]/route.ts"), "utf8");
     expect(authRoute).toContain('import("better-auth/next-js")');
     expect(authRoute).toContain('import("@/lib/auth")');
+    const proxy = readFileSync(join(root, "proxy.ts"), "utf8");
+    expect(proxy).toContain('pathname.startsWith("/api/auth/")');
+    expect(proxy).toContain("auth.handler(request)");
+    expect(proxy).toContain('pathname !== "/api/auth/providers"');
 
     const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as { scripts: Record<string, string> };
     expect(packageJson.scripts["build:vinext"]).toContain("RFS_STATIC_EXPORT=1");

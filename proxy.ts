@@ -33,6 +33,21 @@ export async function proxy(request: NextRequest) {
     });
   }
 
+  // Keep Better Auth endpoints in the Worker even with a static asset build.
+  // Vinext's deployed catch-all route can otherwise return a platform 404 for
+  // nested paths such as /api/auth/sign-in/email and OAuth callbacks.
+  if ((pathname === "/api/auth" || pathname.startsWith("/api/auth/")) && pathname !== "/api/auth/providers") {
+    try {
+      const { auth, authRuntimeEnabled } = await import("@/lib/auth");
+      if (!authRuntimeEnabled) {
+        return Response.json({ message: "Layanan sesi belum dikonfigurasi." }, { status: 503 });
+      }
+      return auth.handler(request);
+    } catch {
+      return Response.json({ message: "Layanan sesi sedang tidak tersedia." }, { status: 503 });
+    }
+  }
+
   const key = clientKey(request);
   const rate = key && getRateLimitScope(request.nextUrl.pathname) === "ecg-image"
     ? imageLimiter.consume(key)
