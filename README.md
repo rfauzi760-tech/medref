@@ -24,7 +24,7 @@ Jumlah di bawah diverifikasi dari data aplikasi melalui `npm run audit:coverage`
 | Kamus ICD-10 | `/icd10` | 638 kode dengan istilah Indonesia, salin sekali klik |
 | Antropometri Anak | `/anthropometry` | Standar pertumbuhan WHO (0-60 bulan), z-score, persentil, grafik pertumbuhan |
 | Perkembangan Anak | `/development` | Tonggak perkembangan 5 domain + tanda bahaya |
-| Imunisasi | `/immunization` | Jadwal Indonesia (Kemenkes/IDAI): selesai / jatuh tempo / terlambat |
+| Imunisasi | `/immunization` | Jadwal Imunisasi Anak 0–18 Tahun (IDAI 2024): selesai / jatuh tempo / terlambat |
 | Database Gizi | `/nutrition` | 478 bahan pangan Indonesia (per 100 g) |
 | Perencana Makan | `/meal-planner` | Rencana makan terstruktur dari database gizi |
 | Panduan Gizi Klinis | `/nutrition-guidance` | 16 kondisi (diabetes, CKD, hipertensi, dislipidemia, obesitas, malnutrisi, kehamilan, dan lainnya) |

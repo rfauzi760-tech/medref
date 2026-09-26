@@ -162,14 +162,15 @@ export default function ImmunizationPageClient({ schedule }: { schedule: Immuniz
           </div>
 
           <p className="text-xs leading-relaxed text-zinc-400">
-            Waktu pemberian mengikuti jadwal dasar Kemenkes RI dengan rekomendasi IDAI. Dosis kejar (catch-up) harus mengikuti
-            pedoman nasional terkini - konsultasikan dengan dokter anak bila imunisasi anak tertunda.
+            Waktu pemberian mengikuti Jadwal Imunisasi Anak Usia 0–18 Tahun rekomendasi IDAI 2024 (primer, catch-up, booster,
+            daerah endemis, dan risiko tinggi). Dosis kejar (catch-up) harus mengikuti pedoman nasional terkini -
+            konsultasikan dengan dokter anak bila imunisasi anak tertunda.
           </p>
         </div>
       )}
 
       <div className="mt-8">
-        <SourceBlock source={schedule.source} lastReviewed="2025-06-01" />
+        <SourceBlock source={schedule.source} lastReviewed="2026-09-26" />
       </div>
     </div>
   );
